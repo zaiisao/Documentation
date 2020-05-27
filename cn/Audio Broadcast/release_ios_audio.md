@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS
-updatedAt: Mon May 25 2020 08:22:35 GMT+0800 (CST)
+updatedAt: Wed May 27 2020 11:39:58 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 语音 SDK 的发版说明。
@@ -16,6 +16,60 @@ iOS 语音 SDK 支持两种主要场景:
 -   语音直播
 
 点击 [语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms) 以及 [音频互动直播产品概述](https://docs.agora.io/cn/Audio%20Broadcast/product_live_audio?platform=All%20Platforms) 了解关键特性。
+
+## **3.0.1 版**
+
+该版本于 2020 年 5 月 27 日发布。
+
+**升级必看**
+
+#### iOS 静态库升级动态库
+
+为提升开发体验，该版本将 SDK 由静态库升级为动态库，不再支持静态库。使用动态库可以提高库的安全等级，方便 app 上传至 App Store，且避免与第三方库产生不兼容等问题。
+
+如果你由之前版本的静态库升级为当前版本，需要重新集成，详见[升级指南](../../cn/Audio%20Broadcast/migration_apple.md)。
+
+<div class="alert note">iOS 13.3.1 版本对动态库的支持有已知问题，已在 iOS 13.4 版本修复。</div>
+
+**新增特性**
+
+#### 1. 调整音乐文件音调
+
+为方便调整混音时音乐文件的播放音调，该版本新增 `setAudioMixingPitch` 方法。通过设置该方法的 `pitch` 参数，你可以升高或降低音乐文件的音调。该方法仅对音乐文件音调有效，对本地人声不生效。
+
+#### 2. 变声与混响
+
+为提高用户的音频体验，该版本在 `setLocalVoiceChanger` 和 `setLocalVoiceReverbPreset` 中分别新增以下枚举值：
+
+- 新增了以 `AgoraAudioVoiceBeauty` 为前缀和以 `AgoraAudioGeneralBeautyVoice` 为前缀的枚举值，分别实现美音或语聊美声功能。
+- 新增了以 `AgoraAudioReverbPresetFx` 为前缀的枚举值和 `AgoraAudioReverbPresetVirtualStereo`，分别实现增强版混响效果和虚拟立体声效果。
+
+你可以查看进阶功能[变声与混响](../../cn/Audio%20Broadcast/voice_changer_apple.md)了解使用方法和注意事项。
+
+#### 3. 远端音频数据后处理多频道支持 (C++)
+
+在多频道场景下，为方便后处理各频道的远端音视频数据，该版本在 `IAudioFrameObserver` 类中新增 [`isMultipleChannelFrameWanted`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html#a4b6bdf2a975588cd49c2da2b6eff5956) 和 [`onPlaybackAudioFrameBeforeMixingEx`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html#ab0cf02ba307e91086df04cda4355905b)。
+
+成功注册音频观测器后，如果你将 `isMultipleChannelFrameWanted` 的返回值设为 `true`，就可以通过上述回调获取多个频道对应的音频数据。在多频道场景下，我们建议你将返回值设为 `true`。
+
+**改进**
+
+- 该版本优化了通话时的音频效果。频道中多个用户同时讲话时，不会减弱任何一方的音频效果。
+- 该版本降低了对设备整体 CPU 的占用。
+
+**问题修复**
+
+- 修复了 `didRemoteAudioStateChanged` 回调不准、音频无声、混音、声音卡顿等问题。
+- 修复了通话无法正常结束、`didClientRoleChanged` 回调多次等问题。
+
+**API 变更**
+
+该版本新增以下 API：
+
+-  [`setAudioMixingPitch`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setAudioMixingPitch:)
+- [`AgoraAudioVoiceChanger`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Constants/AgoraAudioVoiceChanger.html) 枚举中新增以 `AgoraAudioVoiceBeauty` 为前缀和以 `AgoraAudioGeneralBeautyVoice` 为前缀的枚举值
+- [`AgoraAudioReverbPreset`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Constants/AgoraAudioReverbPreset.html) 枚举中新增以 `AgoraAudioReverbPresetFx` 为前缀的枚举值，以及 `AgoraAudioReverbPresetVirtualStereo` 枚举值
+- [`AgoraRtcRemoteAudioStats`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcRemoteAudioStats.html) 中新增 `totalActiveTime`
 
 ## **3.0.0.2 版**
 
@@ -96,7 +150,7 @@ iOS 语音 SDK 支持两种主要场景:
 
 为方便用户在同一时间加入多个频道，该版本新增了 [`AgoraRtcChannel`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcChannel.html) 和 [`AgoraRtcChannelDelegate`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcChannelDelegate.html) 类。通过创建多个 `AgoraRtcChannel` 对象，用户可以加入各 `AgoraRtcChannel` 对象对应的频道中，实现多频道功能。
 
-加入多个频道后，用户可以同时接收多个频道的流，但只能同时在一个频道内发流。该功能适用于用户需要同时接收多个频道的流，或频繁切换频道发流的场景。详细的集成步骤和注意事项，请参考《[加入多频道](../../cn/Audio%20Broadcast/multiple_channel_apple.md)》。
+加入多个频道后，用户可以同时接收多个频道的流，但只能同时在一个频道内发流。该功能适用于用户需要同时接收多个频道的流，或频繁切换频道发流的场景。详细的集成步骤和注意事项，请参考[加入多频道](../../cn/Audio%20Broadcast/multiple_channel_apple.md)。
 
 #### 2. 调节本地播放的指定远端用户音量
 
@@ -104,7 +158,7 @@ iOS 语音 SDK 支持两种主要场景:
 
 #### 3. 媒体播放器组件
 
-为丰富直播玩法，Agora 发布了媒体播放器组件，支持主播在直播过程中，播放本地或在线媒体资源，并同步分享给频道内所有用户。详情请参考《[媒体播放器组件发版说明](https://docs.agora.io/cn/Interactive%20Broadcast/mediaplayer_release_ios?platform=iOS)》。
+为丰富直播玩法，Agora 发布了媒体播放器组件，支持主播在直播过程中，播放本地或在线媒体资源，并同步分享给频道内所有用户。详情请参考[媒体播放器组件发版说明](https://docs.agora.io/cn/Interactive%20Broadcast/mediaplayer_release_ios?platform=iOS)。
 
 **改进**
 
@@ -505,6 +559,10 @@ iOS 语音 SDK 支持两种主要场景:
 ##### 5. 设置日志文件大小
 
 Agora SDK 有 2 个日志文件，每个文件默认大小为 512 KB。为解决该大小无法满足部分用户需求的问题，该版本新增接口 [`setLogFileSize`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLogFileSize:)，用于设置 SDK 输出的日志文件大小。
+
+##### 6. 云代理服务
+
+支持使用云代理服务，方便部署企业防火墙的用户正常使用 Agora 的服务，详见[使用云代理服务](../../cn/Audio%20Broadcast/cloudproxy_native.md)。
 
 #### 功能改进
 
