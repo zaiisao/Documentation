@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Mon May 25 2020 08:21:50 GMT+0800 (CST)
+updatedAt: Wed May 27 2020 11:43:26 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -14,6 +14,57 @@ The Voice SDK supports the following scenarios:
 - Live voice broadcast
 
 For the key features included in each scenario, see [Voice Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms) and [Audio Broadcast Overview](https://docs.agora.io/en/Audio%20Broadcast/product_live_audio?platform=All_Platforms).
+
+## v3.0.1
+
+v3.0.1 was released on May 27, 2020.
+
+**Compatibility changes**
+
+#### Dynamic library
+
+This release replaces the static library with a dynamic library for the following reasons:
+
+- Improving overall security.
+- Avoiding incompatibility issues with other third-party libraries.
+- Making it easier to upload the app to the App Store.
+
+To upgrade the RTC Native SDK, you must re-integrate the dynamic library, `AgoraRtcKit.framework`. This process should take no more than five minutes. See [Migration Guide](../../en/Audio%20Broadcast/migration_apple.md).
+
+**New features**
+
+#### 1. Audio mixing pitch
+
+To set the pitch of the local music file during audio mixing, this release adds `setAudioMixingPitch`. You can set the `pitch` parameter to increase or decrease the pitch of the music file. This method sets the pitch of the local music file only. It does not affect the pitch of a human voice.
+
+#### 2. Voice enhancement
+
+To improve the audio quality, this release adds the following enumerate elements in `setLocalVoiceChanger` and `setLocalVoiceReverbPreset`:
+
+- `AgoraAudioVoiceChanger` adds several elements that have the prefixes `AgoraAudioVoiceBeauty` and `AgoraAudioGeneralBeautyVoice`. The `AgoraAudioVoiceBeauty` elements enhance the local voice, and the `AgoraAudioGeneralBeautyVoice` enumerations add gender-based enhancement effects.
+- `AgoraAudioReverbPreset` adds the enumeration `AgoraAudioReverbPresetVirtualStereo` and several enumerations that have the prefix `AgoraAudioReverbPresetFx`. The `AgoraAudioReverbPresetVirtualStereo` enumeration implements reverberation in the virtual stereo, and the `AgoraAudioReverbPresetFx` enumerations implement additional enhanced reverberation effects.
+
+See [Set the Voice Changer and Reverberation Effects](../../en/Audio%20Broadcast/voice_changer_apple.md) for more information.
+
+#### 3. Data post-processing in multiple channels (C++)
+
+This release adds support for post-processing remote audio data in a multi-channel scenario by adding [`isMultipleChannelFrameWanted`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html#a4b6bdf2a975588cd49c2da2b6eff5956) and [`onPlaybackAudioFrameBeforeMixingEx`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html#ab0cf02ba307e91086df04cda4355905b) in the `IAudioFrameObserver` class.
+
+After successfully registering the audio observer, if you set the return value of `isMultipleChannelFrameWanted` as `true`, you can get the corresponding audio data from `onPlaybackAudioFrameBeforeMixingEx`. In a multi-channel scenario, Agora recommends setting the return value as `true`.
+
+**Fixed issues**
+
+- This release fixed audio mixing issues.
+- This release fixed issues relating to authentication with an App ID and a token.
+
+**API changes**
+
+This release adds the following APIs:
+
+-  [`setAudioMixingPitch`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setAudioMixingPitch:)
+- Several elements that have the prefixes `AgoraAudioVoiceBeauty` and `AgoraAudioGeneralBeautyVoice` in the [`AgoraAudioVoiceChanger`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Constants/AgoraAudioVoiceChanger.html) enumeration
+- `AgoraAudioReverbPresetVirtualStereo` and several elements that have the prefixes `AgoraAudioReverbPresetFx` in the [`AgoraAudioReverbPreset`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Constants/AgoraAudioReverbPreset.html) enumeration
+- `totalActiveTime` in the [`AgoraRtcRemoteAudioStats`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcRemoteAudioStats.html) class
 
 ## v3.0.0.2
 
@@ -106,7 +157,7 @@ The dynamic library is located in the framework folder as an independent library
 
 To enable a user to join an unlimited number of channels at a time, this release adds the [`AgoraRtcChannel`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcChannel.html) and [`AgoraRtcChannelDelegate`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcChannelDelegate.html) classes. By creating multiple `AgoraRtcChannel` objects, a user can join the corresponding channels at the same time.
 
-After joining multiple channels, users can receive the audio and video streams of all the channels, but publish one stream to only one channel at a time. This feature applies to scenarios where users need to receive streams from multiple channels, or frequently switch between channels to publish streams. See [Join multiple channels](../../en/Audio%20Broadcast/multiple_channel_apple.md) for details.
+After joining multiple channels, users can receive the audio streams of all the channels, but publish one stream to only one channel at a time. This feature applies to scenarios where users need to receive streams from multiple channels, or frequently switch between channels to publish streams. See [Join multiple channels](../../en/Audio%20Broadcast/multiple_channel_apple.md) for details.
 
 #### 2. Adjusting the playback volume of the specified remote user
 
