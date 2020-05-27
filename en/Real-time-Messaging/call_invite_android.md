@@ -3,7 +3,7 @@
 title: Call Invitation
 description: 
 platform: Android
-updatedAt: Tue May 12 2020 10:13:42 GMT+0800 (CST)
+updatedAt: Wed May 27 2020 03:32:31 GMT+0800 (CST)
 ---
 # Call Invitation
 ## Introduction
