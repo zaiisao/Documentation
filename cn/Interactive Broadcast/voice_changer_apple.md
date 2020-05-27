@@ -3,7 +3,7 @@
 title: 变声与混响
 description: How to set voice effects for iOS and macOS
 platform: iOS,macOS
-updatedAt: Tue May 19 2020 08:24:55 GMT+0800 (CST)
+updatedAt: Wed May 27 2020 11:13:45 GMT+0800 (CST)
 ---
 # 变声与混响
 ## 功能描述
@@ -16,68 +16,151 @@ updatedAt: Tue May 19 2020 08:24:55 GMT+0800 (CST)
 - iOS: [实现音视频通话](../../cn/Interactive%20Broadcast/start_call_ios.md)/[实现互动直播](../../cn/Interactive%20Broadcast/start_live_ios.md)
 - macOS: [实现音视频通话](../../cn/Interactive%20Broadcast/start_call_mac.md)/[实现互动直播](../../cn/Interactive%20Broadcast/start_live_mac.md)
 
-### 使用预置效果
+### 预设声音效果
 
-通过 `setLocalVoiceChanger` 可以选择以下预设的语音变声效果：
+#### 变声
 
-- 老男孩
-- 小男孩
-- 小女孩
-- 猪八戒
-- 空灵
-- 绿巨人
+通常在语聊场景中，通过 `setLocalVoiceChanger` 中以下枚举值，你可以实现变声效果：
+
+| 枚举值                 | 变声效果 |
+| :--------------------- | :------- |
+| AgoraAudioVoiceChangerOldMan   | 老年男性   |
+| AgoraAudioVoiceChangerBabyBoy  | 小男孩   |
+| AgoraAudioVoiceChangerBabyGirl | 小女孩   |
+| AgoraAudioVoiceChangerZhuBaJie | 猪八戒   |
+| AgoraAudioVoiceChangerEthereal | 空灵     |
+| AgoraAudioVoiceChangerHulk     | 绿巨人   |
+
+<div class="alert note">同一时间，只能实现变声、美音、语聊美声、混响效果中的一种。</div>
 
 ```swift
 // swift
-// 设置变声效果为老男孩
-agoraKit.setLocalVoiceChanger(.oldMan)
-
-// 关闭变声效果
-agoraKit.setLocalVoiceChanger(.off)
+// 预设变声效果为老年男性
+agoraKit.setLocalVoiceChanger(.voiceChangerOldMan)
+// 关闭效果
+agoraKit.setLocalVoiceReverbPreset(.voiceChangerOff)
 ```
 
 ```objective-c
 // objective-c
-// 设置变声效果为老男孩
+// 预设变声效果为老年男性
 [self.agoraKit setLocalVoiceChanger: AgoraAudioVoiceChangerOldMan];
-
-// 关闭变声效果
+// 关闭效果
 [self.agoraKit setLocalVoiceChanger: AgoraAudioVoiceChangerOff];
 ```
 
-通过 `setLocalVoiceReverbPreset` 可以选择以下预设的语音混响效果：
+####  美音
 
-- 流行
-- R&B
-- 摇滚
-- 嘻哈
-- 演唱会
-- KTV
-- 录音棚
+通常在语聊或歌唱场景中，通过 `setLocalVoiceChanger` 中以下枚举值，你可以实现美音效果：
+
+| 枚举值                  | 美音效果 |
+| :---------------------- | :------- |
+| AgoraAudioVoiceBeautyVigorous   | 浑厚     |
+| AgoraAudioVoiceBeautyDeep       | 低沉     |
+| AgoraAudioVoiceBeautyMellow     | 圆润     |
+| AgoraAudioVoiceBeautyFalsetto   | 假音     |
+| AgoraAudioVoiceBeautyFull       | 饱满     |
+| AgoraAudioVoiceBeautyClear      | 清澈     |
+| AgoraAudioVoiceBeautyResounding | 高亢     |
+| AgoraAudioVoiceBeautyRinging    | 嘹亮     |
+| AgoraAudioVoiceBeautySpacial    | 空旷     |
+
+<div class="alert note">同一时间，只能实现变声、美音、语聊美声、混响效果中的一种。</div>
 
 ```swift
 // swift
-// 设置混响效果为流行
-agoraKit.setLocalVoiceReverbPreset(.popular)
+// 预设美音效果为浑厚
+agoraKit.setLocalVoiceChanger(.voiceBeautyVigorous)
+// 关闭效果
+agoraKit.setLocalVoiceChanger(.voiceChangerOff)
+```
 
+```objective-c
+// objective-c
+// 预设美音效果为浑厚
+[self.agoraKit setLocalVoiceChanger: AgoraAudioVoiceBeautyVigorous];
+// 关闭效果
+[self.agoraKit setLocalVoiceChanger: AgoraAudioVoiceChangerOff];
+```
+
+#### 语聊美声
+
+通常在语聊场景中，通过 `setLocalVoiceChanger` 中以下枚举值，你可以实现语聊美声效果：
+
+| 枚举值                               | 语聊美声效果 |
+| :----------------------------------- | :----------- |
+| AgoraAudioGeneralBeautyVoiceMaleMagnetic   | 磁性（男）   |
+| AgoraAudioGeneralBeautyVoiceFemaleFresh    | 清新（女）   |
+| AgoraAudioGeneralBeautyVoiceFemaleVitality | 活力（女）   |
+
+<div class="alert warning">该功能主要细化了男声和女声各自的特点，请确保使用 <tt>AgoraAudioGeneralBeautyVoiceMaleMagnetic</tt> 处理男声，使用 <tt>AgoraAudioGeneralBeautyVoiceFemaleFresh</tt> 或 <tt>AgoraAudioGeneralBeautyVoiceFemaleVitality</tt> 处理女声，否则音频可能会产生失真。</div>
+
+<div class="alert note">同一时间，只能实现变声、美音、语聊美声、混响效果中的一种。</div>
+
+```swift
+// swift
+// 预设语聊美声效果为磁性（男）
+agoraKit.setLocalVoiceChanger(.generalBeautyVoiceMaleMagnetic)
+// 关闭效果
+agoraKit.setLocalVoiceChanger(.voiceChangerOff)
+```
+
+```objective-c
+// objective-c
+// 预设语聊美声效果为磁性（男）
+[self.agoraKit setLocalVoiceChanger: AgoraAudioGeneralBeautyVoiceMaleMagnetic];
+// 关闭效果
+[self.agoraKit setLocalVoiceChanger: AgoraAudioVoiceChangerOff];
+```
+
+#### 混响
+
+通过 `setLocalVoiceReverbPreset`，你可以实现以下混响效果：
+
+| 枚举值                        | 描述                                                         |
+| :---------------------------- | :----------------------------------------------------------- |
+| AgoraAudioReverbPresetPopular          | 流行                                                         |
+| AgoraAudioReverbPresetRnB              | R&B                                                          |
+| AgoraAudioReverbPresetRock             | 摇滚                                                         |
+| AgoraAudioReverbPresetHipHop           | 嘻哈                                                         |
+| AgoraAudioReverbPresetVocalConcert    | 演唱会                                                       |
+| AgoraAudioReverbPresetKTV              | KTV                                                          |
+| AgoraAudioReverbPresetStudio           | 录音棚                                                       |
+| AgoraAudioReverbPresetFxKTV           | KTV（增强版）                                                |
+| AgoraAudioReverbPresetFxVocalConcert | 演唱会（增强版）                                             |
+| AgoraAudioReverbPresetFxUncle         | 大叔                                                         |
+| AgoraAudioReverbPresetFxSister        | 小姐姐                                                       |
+| AgoraAudioReverbPresetFxStudio        | 录音棚（增强版）                                             |
+| AgoraAudioReverbPresetFxPopular       | 流行（增强版）                                               |
+| AgoraAudioReverbPresetFxRNB           | R&B（增强版）                                                |
+| AgoraAudioReverbPresetFxPhonograph    | 留声机                                                       |
+| AgoraAudioReverbPresetVirtualStereo          | 虚拟立体声。虚拟立体声是指将单声道的音轨渲染出立体声的效果，使频道内所有用户听到有空间感的声音效果。 |
+
+<div class="alert warning">当使用以 <tt>AgoraAudioReverbPresetFx</tt> 为前缀的枚举值时，请确保在调用该方法前将 <tt>setAudioProfile</tt> 的 <tt>profile</tt> 参数设置为 <tt>AgoraAudioProfileMusicHighQuality(4)</tt> 或 <tt>AgoraAudioProfileMusicHighQualityStereo(5)</tt>，否则该方法设置无效。</div>
+
+<div class="alert note"><li>同一时间，只能实现变声、美音、语聊美声、混响效果中的一种。<li>为达到更好的混响效果，Agora 推荐使用以 <tt>AgoraAudioReverbPresetFx</tt> 为前缀的枚举值。<li>当使用 <tt>AgoraAudioReverbPresetVirtualStereo</tt> 设置虚拟立体声时，Agora 推荐在调用该方法前将 <tt>setAudioProfile</tt> 的 <tt>profile</tt> 参数设置为 <tt>AgoraAudioProfileMusicHighQualityStereo(5)</tt>。</div>
+
+```swift
+// swift
+// 预设混响效果为演唱会（增强版 ）
+agoraKit.setLocalVoiceChanger(.fxVocalConcert)
 // 关闭混响效果
 agoraKit.setLocalVoiceReverbPreset(.off)
 ```
 
 ```objective-c
 // objective-c
-// 设置混响效果为流行
-[self.agoraKit setLocalVoiceReverbPreset: AgoraAudioReverbPresetPopular];
-
+// 预设混响效果为演唱会（增强版 ）
+[self.agoraKit setLocalVoiceReverbPreset: AgoraAudioReverbPresetFxVocalConcert];
 // 关闭混响效果
 [self.agoraKit setLocalVoiceReverbPreset: AgoraAudioReverbPresetOff];
 ```
 
-### 定制变声和混响效果
+### 定制声音效果
 
-如果预置效果无法满足你的需求，你也可以自行调整音调、均衡和混响设置。
+如果预设效果无法满足你的需求，你也可以通过 `setLocalVoicePitch`、`setLocalVoiceEqualization` 和 `setLocalVoiceReverb` 自行调整音调、均衡和混响效果。
 
-你可以根据以下方式把原始声音变 FM 的效果。
+你可以根据以下示例代码把原始声音变成绿巨人霍克的声音。
 
 ```swift
 // swift
@@ -113,8 +196,6 @@ agoraKit.setLocalVoiceReverbOf(.wetDelay, withValue: 135)
 // 混响持续的强度，取值范围为 [0, 100]，值越大，混响越强
 agoraKit.setLocalVoiceReverbOf(.strength, withValue: 45)
 ```
-
-
 
 ```objective-c
 // objective-c
@@ -164,4 +245,8 @@ agoraKit.setLocalVoiceReverbOf(.strength, withValue: 45)
 我们在 GitHub 提供实现了变声与混响功能的 iOS 开源示例项目。你可以下载体验 [Agora-RTC-With-Voice-Changer-iOS (Swift)](https://github.com/AgoraIO/Advanced-Audio/tree/master/iOS%26macOS/Agora-RTC-With-Voice-Changer-iOS)，并参考 [`EffectViewController.swift`](https://github.com/AgoraIO/Advanced-Audio/blob/master/iOS%26macOS/Agora-RTC-With-Voice-Changer-iOS/Agora-RTC-With-Voice-Changer-iOS/EffectViewController.swift)。
 
 ## 开发注意事项
-以上方法都有返回值，返回值小于 0 表示方法调用失败。
+
+- 本文所有方法对人声的处理效果最佳，Agora 不推荐调用这类方法处理含人声和音乐的音频数据。
+- Agora 建议不要同时使用预设声音效果相关方法和定制声音效果相关方法，否则可能会发生未定义行为。若需同时使用，请在调用预设声音效果相关方法后调用定制声音效果相关方法，否则定制声音效果相关方法会不生效。
+- Agora 建议不要同时使用 `setLocalVoiceChanger` 和 `setLocalVoiceReverbPreset` 方法，否则先调用的方法会不生效。
+- 为达到更好的声音效果，Agora 推荐在调用 `setLocalVoiceChanger` 或 `setLocalVoiceReverbPreset` 前将 `setAudioProfile` 的 `profile` 参数设置为 `AgoraAudioProfileMusicHighQuality(4)` 或 `AgoraAudioProfileMusicHighQualityStereo(5)`。
