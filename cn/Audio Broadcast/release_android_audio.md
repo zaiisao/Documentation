@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Wed May 27 2020 11:13:16 GMT+0800 (CST)
+updatedAt: Wed May 27 2020 11:13:22 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 语音 SDK 的发版说明。
@@ -15,7 +15,7 @@ Android 语音 SDK 支持两种主要场景:
 -   语音通话
 -   语音直播
 
-点击 [语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms) 以及 [音频互动直播产品概述](https://docs.agora.io/cn/Audio%20Broadcast/product_live_audio?platform=All%20Platforms) 了解关键特性。
+点击[语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms) 以及 [音频互动直播产品概述](https://docs.agora.io/cn/Audio%20Broadcast/product_live_audio?platform=All%20Platforms)了解关键特性。
 
 #### 已知问题和局限性
 
@@ -33,6 +33,52 @@ Android 语音 SDK 支持两种主要场景:
 以 Android 9 为目标平台的应用应采用私有 DNS API。 具体而言，当系统解析程序正在执行 DNS-over-TLS 时，应用应确保任何内置 DNS 客户端均使用加密的 DNS 查找与系统相同的主机名，或停用它而改用系统解析程序。
 
 详情请参考 [Android 隐私权变更](https://developer.android.com/about/versions/pie/android-9.0-changes-28?hl=zh-CN#privacy-changes-p)。
+
+## **3.0.1 版**
+
+该版本于 2020 年 5 月 27 日发布。
+
+**新增特性**
+
+#### 1. 调整音乐文件音调
+
+为方便调整混音时音乐文件的播放音调，该版本新增 `setAudioMixingPitch` 方法。通过设置该方法的 `pitch` 参数，你可以升高或降低音乐文件的音调。该方法仅对音乐文件音调有效，对本地人声不生效。
+
+#### 2. 变声与混响
+
+为提高用户的音频体验，该版本在 `setLocalVoiceChanger` 和 `setLocalVoiceReverbPreset` 中分别新增以下枚举值：
+
+- 新增了以 `VOICE_BEAUTY` 为前缀和以 `GENERAL_BEAUTY_VOICE` 为前缀的枚举值，分别实现美音或语聊美声功能。
+- 新增了以 `AUDIO_REVERB_FX` 为前缀的枚举值和 `AUDIO_VIRTUAL_STEREO`，分别实现增强版混响效果和虚拟立体声效果。
+
+你可以查看进阶功能《变声与混响》了解使用方法和注意事项。
+
+#### 3. 远端音频数据后处理多频道支持 (C++)
+
+在多频道场景下，为方便后处理各频道的远端音频数据，该版本新增如下 C++ 接口：
+
+- `IAudioFrameObserver` 类中新增 [`isMultipleChannelFrameWanted`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html?transId=5d9b9980-9985-11ea-ba71-75bee5b5d68c#a4b6bdf2a975588cd49c2da2b6eff5956) 和 [`onPlaybackAudioFrameBeforeMixingEx`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/v3.0.1/classagora_1_1media_1_1_i_audio_frame_observer.html?transId=5d9b9980-9985-11ea-ba71-75bee5b5d68c#ab0cf02ba307e91086df04cda4355905b)。
+
+成功注册音频观测器后，如果你将 `isMultipleChannelFrameWanted` 的返回值设为 `true`，就可以通过上述回调获取多个频道对应的音频数据。在多频道场景下，我们建议你将返回值设为 `true`。
+
+**改进**
+
+- 该版本基于华为 EMUI 10 版本以上的手机，实现了耳返低延时。
+- 该版本优化了通话时的音频效果。频道中多个用户同时讲话时，不会减弱任何一方的音频效果。
+- 该版本降低了对设备整体 CPU 的占用。
+
+**问题修复**
+
+- 修复了 `onRemoteAudioStateChanged` 回调不准、音频无声、混音、声音卡顿等问题。
+- 修复了通话无法正常结束、`onClientRoleChanged` 回调多次、偶现崩溃、上麦逻辑、加密互通等问题。
+
+**API 变更**
+
+该版本新增以下 API：
+
+- [`setAudioMixingPitch`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/v3.0.1/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a1ffa38f7445ff0ba71515c931f2f4f6a)
+- 以 [`VOICE_BEAUTY`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_constants.html#a6e16001b5e0f252460d584131fc11750) 为前缀、以 [`GENERAL_BEAUTY_VOICE`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_constants.html#ab77b264331a44b104e5d1b333fc39ed8) 为前缀和以 [`AUDIO_REVERB_FX`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_constants.html#a238965ba87ce04aaaa50c45f57c8727d) 为前缀的枚举值，以及 [`AUDIO_VIRTUAL_STEREO`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_constants.html#a4488f5ef2274a3e2e0dff5721f3bb708) 枚举值
+- `RemoteAudioStats` 中新增 [`totalActiveTime`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_audio_stats.html#a18b02fb2d2af40bc0730c2c916a5729d)
 
 ## **3.0.0.2 版**
 
