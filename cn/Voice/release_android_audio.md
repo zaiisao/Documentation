@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Wed May 27 2020 11:13:22 GMT+0800 (CST)
+updatedAt: Wed May 27 2020 11:16:50 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 语音 SDK 的发版说明。
@@ -51,7 +51,7 @@ Android 语音 SDK 支持两种主要场景:
 - 新增了以 `VOICE_BEAUTY` 为前缀和以 `GENERAL_BEAUTY_VOICE` 为前缀的枚举值，分别实现美音或语聊美声功能。
 - 新增了以 `AUDIO_REVERB_FX` 为前缀的枚举值和 `AUDIO_VIRTUAL_STEREO`，分别实现增强版混响效果和虚拟立体声效果。
 
-你可以查看进阶功能《变声与混响》了解使用方法和注意事项。
+你可以查看进阶功能[变声与混响](../../cn/Voice/voice_changer_android.md)了解使用方法和注意事项。
 
 #### 3. 远端音频数据后处理多频道支持 (C++)
 
