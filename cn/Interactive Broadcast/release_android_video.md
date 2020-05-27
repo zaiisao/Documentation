@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Wed May 27 2020 11:20:51 GMT+0800 (CST)
+updatedAt: Wed May 27 2020 11:23:34 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -118,7 +118,7 @@ Android 视频 SDK 支持两种主要场景:
 - [`RENDER_MODE_FILL`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_video_canvas.html#a80d484794fab78276f5d55d3d95851d8)
 - `RtcChannel` 中新增 [`setRemoteVideoRenderer`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_channel.html#a25538dc7eb3c2fe34e103f86c555f130)
 - `RemoteAudioStats` 中新增 [`totalActiveTime`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_audio_stats.html#a18b02fb2d2af40bc0730c2c916a5729d)
-- `RemoteVideoStats` 中新增 [`totalActiveTime`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_audio_stats.html#a18b02fb2d2af40bc0730c2c916a5729d)
+- `RemoteVideoStats` 中新增 [`totalActiveTime`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_video_stats.html#adc903aec128b9094b5f85b9286d3486a)
 
 ## **3.0.0.2 版**
 
