@@ -3,7 +3,7 @@
 title: 播放音效/音乐混音
 description: How to play audio effect files and enable audio mixing
 platform: iOS,macOS
-updatedAt: Tue May 19 2020 09:13:29 GMT+0800 (CST)
+updatedAt: Wed May 27 2020 11:37:38 GMT+0800 (CST)
 ---
 # 播放音效/音乐混音
 ## 功能描述
@@ -127,6 +127,8 @@ Agora 混音功能支持如下设置：
 
 - 混音或替换： 混音指的是音乐文件的音频流跟麦克风采集的音频流进行混音（叠加）并编码发送给对方；替换指的是麦克风采集的音频被音乐文件的音频流替换掉，对方只能听见音乐播放。
 - 循环：可以设置是否循环播放混音文件，以及循环次数。
+- 调节音量：可以同时或分别调节音乐文件在本地和远端的播放音量。
+- 调节音调：可以分别调节本地人声的音调和音乐文件的音调。
 
 ### 实现方法
 
@@ -172,6 +174,15 @@ NSInteger cycle = 1;
 ### API 参考
 
 - [`startAudioMixing`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startAudioMixing:loopback:replace:cycle:)
+- [`stopAudioMixing`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopAudioMixing)
+- [`adjustAudioMixingVolume`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingVolume:)
+- [`setLocalVoicePitch`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoicePitch:)
+- [`setAudioMixingPitch`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setAudioMixingPitch:)
+- [`pauseAudioMixing`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/pauseAudioMixing)
+- [`resumeAudioMixing`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/resumeAudioMixing)
+- [`getAudioMixingDuration`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getAudioMixingDuration)
+- [`getAudioMixingCurrentPosition`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getAudioMixingCurrentPosition)
+- [`setAudioMixingPosition`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setAudioMixingPosition:)
 
 ### 开发注意事项
 
