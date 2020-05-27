@@ -3,7 +3,7 @@
 title: 信息安全说明
 description: 
 platform: All Platforms
-updatedAt: Tue May 26 2020 06:28:25 GMT+0800 (CST)
+updatedAt: Wed May 27 2020 09:57:41 GMT+0800 (CST)
 ---
 # 信息安全说明
 ## 简介
@@ -61,7 +61,7 @@ updatedAt: Tue May 26 2020 06:28:25 GMT+0800 (CST)
 
 ### 数据安全
 
-用户与声网服务器间的通讯将受到声网私有传输协议、安全传输层协议（TLS）和 Web Socket Secure (WSS) 等协议的保护，你也可选择采用高级加密标准 (AES) 或自定义加密算法对音视频数据进行端到端的加密保护。声网 SD-RTN™ 在传输过程中没有任何可对传输的信息进行解密的密钥。通话内容信息只能在终端设备上（如客户端 app 和本地服务端录制服务器）通过客户授权密钥才能解密。
+用户与声网服务器间的通讯将受到声网私有传输协议、安全传输层协议（TLS）和 Web Socket Secure (WSS) 等协议的保护，你也可选择采用高级加密标准 (AES) 或自定义加密算法对音视频数据进行加密保护。声网 SD-RTN™ 在传输过程中没有任何可对传输的信息进行解密的密钥。通话内容信息只能在终端设备上（如客户端 app 和本地服务端录制服务器）通过客户授权密钥才能解密。
 
 ### 数据可用性
 
@@ -137,7 +137,7 @@ updatedAt: Tue May 26 2020 06:28:25 GMT+0800 (CST)
 
 ### 如何使用声网 SDK 保护数据安全？
 
-为保证传输数据的安全性，声网服务支持音视频数据端到端加密。客户可以使用声网预置的 AES-128-XTS，AES-128-CFB，AES-256-XTS 等算法，或通过客户自定义的加密算法实现加密，请参考所需平台的[媒体流加密文档](https://docs.agora.io/cn/Interactive%20Broadcast/channel_encryption_android?platform=Android)。加密密钥完全由客户自行生成和分发。声网推荐客户针对每个频道使用独立密钥以实现最高等级的数据安全。
+为保证传输数据的安全性，声网服务支持音视频数据加密。客户可以使用声网预置的 AES-128-XTS，AES-128-CFB，AES-256-XTS 等算法，或通过客户自定义的加密算法实现加密，请参考所需平台的[媒体流加密文档](https://docs.agora.io/cn/Interactive%20Broadcast/channel_encryption_android?platform=Android)。加密密钥完全由客户自行生成和分发。声网推荐客户针对每个频道使用独立密钥以实现最高等级的数据安全。
 
 ### 声网的网络如何应对 DDoS 攻击？
 
