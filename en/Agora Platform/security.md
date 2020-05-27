@@ -3,7 +3,7 @@
 title: Information Security Policy
 description: 
 platform: All Platforms
-updatedAt: Tue May 26 2020 06:26:23 GMT+0800 (CST)
+updatedAt: Wed May 27 2020 09:56:58 GMT+0800 (CST)
 ---
 # Information Security Policy
 ## Introduction
@@ -43,7 +43,7 @@ All customer data, in all formats or media types, is classified according to the
 
 ### Data security
 
-The communication between the user and the Agora server is protected by transmission protocols, such as the Agora private transmission protocol, Transport Layer Security (TLS) and Web Socket Secure (WSS). You can also use Advanced Encryption Standard (AES) or a customized encryption algorithm for end-to-end encryption of audio and video data. 
+The communication between the user and the Agora server is protected by transmission protocols, such as the Agora private transmission protocol, Transport Layer Security (TLS) and Web Socket Secure (WSS). You can also use Advanced Encryption Standard (AES) or a customized encryption algorithm for the encryption of audio and video data. 
 
 During data transmission, the Agora SD-RTN™ does not transmit any encryption key information. Call content information can only be decrypted on the terminal device (such as the client app and the customer's on-premise recording server) through the client authorization key.
 
@@ -123,7 +123,7 @@ To facilitate troubleshooting and verification, please include the following inf
 
 ### How do I use an Agora SDK to protect my data security?
 
-To ensure the security of the transmitted data, Agora services provide end-to-end encryption for audio and video data. Customers can use AES-128-XTS, AES-128-CFB, AES-256-XTS or other algorithms preset by Agora, or use customized encryption algorithms to achieve encryption, see [Channel Encryption](https://docs.agora.io/en/Interactive%20Broadcast/channel_encryption_android?platform=Android). The encryption key is completely generated and distributed by the customer. Agora recommends that customers use separate keys for each channel to achieve the highest level of data security.
+To ensure the security of the transmitted data, Agora services provide the encryption for audio and video data. Customers can use AES-128-XTS, AES-128-CFB, AES-256-XTS or other algorithms preset by Agora, or use customized encryption algorithms to achieve encryption, see [Channel Encryption](https://docs.agora.io/en/Interactive%20Broadcast/channel_encryption_android?platform=Android). The encryption key is completely generated and distributed by the customer. Agora recommends that customers use separate keys for each channel to achieve the highest level of data security.
 
 ### How does the Agora network respond to DDoS attacks?
 
