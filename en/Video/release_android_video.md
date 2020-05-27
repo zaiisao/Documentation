@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Thu May 21 2020 06:18:22 GMT+0800 (CST)
+updatedAt: Wed May 27 2020 11:20:16 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for Android.
@@ -32,6 +32,92 @@ If your app needs to access a device's hardware serial number, you should instea
 Apps targeting Android 9 should honor the private DNS APIs. In particular, apps should ensure that, if the system resolver is doing DNS-over-TLS, any built-in DNS client either uses encrypted DNS to the same hostname as the system, or is disabled in favor of the system resolver.
 
 For more information about privacy changes, see [Android Privacy Changes](https://developer.android.com/about/versions/pie/android-9.0-changes-28#privacy-changes-p).
+
+## v3.0.1
+
+v3.0.1 was released on May 27, 2020.
+
+**Compatibility changes**
+
+#### Frame position for the video observer (C++)
+
+As of this release, to get the video frame from the `onPreEncodeVideoFrame` callback, you must set `POSITION_PRE_ENCODER(1<<2)` in [`getObservedFramePosition`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#ad4c174389264630ffb1b2d24c6030013) as the frame position to observe, as well as implementing the `onPreEncodeVideoFrame` callback.
+
+**New features**
+
+#### 1. Audio mixing pitch
+
+To set the pitch of the local music file during audio mixing, this release adds `setAudioMixingPitch`. You can set the `pitch` parameter to increase or decrease the pitch of the music file. This method sets the pitch of the local music file only. It does not affect the pitch of a human voice.
+
+#### 2. Voice enhancement
+
+To improve the audio quality, this release adds the following enumerate elements in `setLocalVoiceChanger` and `setLocalVoiceReverbPreset`:
+
+- `VOICE_CHANGER_PRESET` adds several elements that have the prefixes `VOICE_BEAUTY` and `GENERAL_BEAUTY_VOICE`. The `VOICE_BEAUTY` elements enhance the local voice, and the `GENERAL_BEAUTY_VOICE` enumerations add gender-based enhancement effects.
+- `AUDIO_REVERB_PRESET` adds the enumeration `AUDIO_VIRTUAL_STEREO` and several enumerations that have the prefix `AUDIO_REVERB_FX`. The `AUDIO_VIRTUAL_STEREO` enumeration implements reverberation in the virtual stereo, and the `AUDIO_REVERB_FX` enumerations implement additional enhanced reverberation effects.
+
+See [Set the Voice Changer and Reverberation Effects](../../en/Video/voice_changer_android.md) for more information.
+
+#### 3. Face detection
+
+This release enables local face detection. After you call `enableFaceDetection` to enable this function, the SDK triggers the `onFacePositionChanged` callback in real time to report the detection results, including the distance between the human face and the device screen. This function can remind users to keep a certain distance from the screen.
+
+#### 4. Fill mode
+
+To improve the user experience of watching videos, this release adds a video display mode `RENDER_MODE_FILL`. This mode zooms and stretches the video to fill the display window. You can select this mode when calling the following methods:
+
+- `setupLocalVideo`
+- `setupRemoteVideo`
+- `setLocalRenderMode`
+- `setRemoteRenderMode`
+
+#### 5. Remote video renderer in multiple channels
+
+This release adds `setRemoteVideoRenderer` in the `RtcChannel` class to enable users who join the channel using the `RtcChannel` object to customize the remote video renderer.
+
+#### 6. Data post-processing in multiple channels (C++)
+
+This release adds support for post-processing remote audio and video data in a multi-channel scenario by adding the following C++ methods:
+
+- The `IAudioFrameObserver` class:  [`isMultipleChannelFrameWanted`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html#a4b6bdf2a975588cd49c2da2b6eff5956) and [`onPlaybackAudioFrameBeforeMixingEx`](https://docs.agora.io/en/Video/API%20Reference/cpp/v3.0.1/classagora_1_1media_1_1_i_audio_frame_observer.html#ab0cf02ba307e91086df04cda4355905b).
+- The `IVideoFrameObserver` class: [`isMultipleChannelFrameWanted`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#aa6bf2611907a097ec359b83f1e3ba49a) and [`onRenderVideoFrameEx`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#ad325db8ee3a04e667e6db3d1a84f381d).
+
+After successfully registering the audio or video observer, if you set the return value of `isMultipleChannelFrameWanted` as `true`, you can get the corresponding audio or video data from `onPlaybackAudioFrameBeforeMixingEx` or `onRenderVideoFrameEx`. In a multi-channel scenario, Agora recommends setting the return value as `true`.
+
+**Improvements**
+
+#### Frame position (C++)
+
+After successfully registering the video observer, you can observe and get the video frame at each node of video processing. To conserve power consumption, this release enables customizing the frame position for the video observer. Set the return value of the [`getObservedFramePosition`](https://docs.agora.io/en/Video/API%20Reference/cpp/v3.0.1/classagora_1_1media_1_1_i_video_frame_observer.html#ad4c174389264630ffb1b2d24c6030013)  callback to set the position to observe:
+
+- The position after capturing the video frame.
+- The position before receiving the remote video frame.
+- The position before encoding the frame.
+
+#### Others
+
+- Implements low in-ear device latency on Huawei phones with EMUI v10 and above.
+- Improves in-call audio quality. When multiple users speak at the same time, the SDK does not decrease volume of any speaker.
+- Reduces overall CPU usage of the device.
+
+**Fixed issues**
+
+- Inaccurate report of the `onRemoteAudioStateChanged` callback, no audio, audio mixing and audio freezing.
+- An occasional black screen issue.
+- Failure to end a call, inaccurate report of the `onClientRoleChanged` callback, occasional crashes, and interoperability when using encryption.
+
+**API changes**
+
+This release adds the following APIs:
+
+- [`setAudioMixingPitch`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a1ffa38f7445ff0ba71515c931f2f4f6a)
+- The enumeration [`AUDIO_VIRTUAL_STEREO`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_constants.html#a4488f5ef2274a3e2e0dff5721f3bb708) and several elements that have the prefixes [`VOICE_BEAUTY`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_constants.html#a6e16001b5e0f252460d584131fc11750), [`GENERAL_BEAUTY_VOICE`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_constants.html#ab77b264331a44b104e5d1b333fc39ed8), and [`AUDIO_REVERB_FX`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_constants.html#a238965ba87ce04aaaa50c45f57c8727d)
+- [`enableFaceDetection`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a20ee30231265a5f898384a7974e3f2b1)
+- [`onFacePositionChanged`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a629081c0db3ecf7dfc057d5f04598c77)
+- [`RENDER_MODE_FILL`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_video_canvas.html#a80d484794fab78276f5d55d3d95851d8)
+- [`setRemoteVideoRenderer`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_channel.html#a25538dc7eb3c2fe34e103f86c555f130) in `RtcChannel`
+- [`totalActiveTime`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_audio_stats.html#a18b02fb2d2af40bc0730c2c916a5729d) in `RemoteAudioStats`
+- [`totalActiveTime`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_audio_stats.html#a18b02fb2d2af40bc0730c2c916a5729d) in `RemoteVideoStats`
 
 ## v3.0.0.2
 
