@@ -3,7 +3,7 @@
 title: Set the Voice Changer and Reverberation Effects
 description: How to set voice effects on iOS and macOS
 platform: iOS,macOS
-updatedAt: Thu May 21 2020 04:08:37 GMT+0800 (CST)
+updatedAt: Wed May 27 2020 11:13:24 GMT+0800 (CST)
 ---
 # Set the Voice Changer and Reverberation Effects
 ## Introduction 
@@ -17,60 +17,101 @@ Before proceeding, ensure that you implement a basic call or live broadcast in y
 - iOS: [Start a Call](../../en/Audio%20Broadcast/start_call_ios.md)/[Start a Live Broadcast](../../en/Audio%20Broadcast/start_live_ios.md)
 - macOS: [Start a Call](../../en/Audio%20Broadcast/start_call_mac.md)/[Start a Live Broadcast](../../en/Audio%20Broadcast/start_live_mac.md)
 
-### Use a preset voice changer and reverberation effect
+### Preset voice effects
+
+#### Voice enhancement
 
 You can use one of the following preset voice changer options by calling `setLocalVoiceChanger`:
 
-- An old man's voice.
-- A little boy's voice.
-- A little girl's voice.
-- Zhu Bajie's voice (Zhu Bajie is a character from Journey to the West who has a voice like a growling bear).
-- Ethereal vocal effects.
-- Hulk's voice.
+| Voice effect             | Description                                                  | Scenario          |
+| :----------------------- | :----------------------------------------------------------- | :---------------- |
+| AgoraAudioVoiceChangerXXX        | Changes the local voice to an old man, a little boy, or the Hulk. | Voice talk        |
+| AgoraAudioVoiceBeautyXXX         | Beautifies the local voice by making it sound more vigorous, resounding, or adding spatial resonance. | <li>Voice talk<li>Singing</li> |
+| AgoraAudioGeneralBeautyVoiceXXX | Adds gender-based beautification effects to the local voice:<li>For a male voice: Adds magnetism to the voice.<li>For a female voice: Adds freshness or vitality to the voice.</li> | Voice talk        |
+
+See details in the following table:
+
+| Enumeration                          | Description                                                  |
+| :----------------------------------- | :----------------------------------------------------------- |
+| AgoraAudioVoiceChangerOldMan                 | The voice of an old man.                                     |
+| AgoraAudioVoiceChangerBabyBoy                | The voice of a little boy.                                   |
+| AgoraAudioVoiceChangerBabyGirl               | The voice of a little girl.                                  |
+| AgoraAudioVoiceChangerZhuBaJie               | The voice of Zhu Bajie, a character in *Journey to the West* who has a voice like that of a growling bear. |
+| AgoraAudioVoiceChangerEthereal               | The ethereal voice.                                          |
+| AgoraAudioVoiceChangerHulk                   | The voice of Hulk.                                           |
+| AgoraAudioVoiceBeautyVigorous                | A more vigorous voice.                                       |
+| AgoraAudioVoiceBeautyDeep                    | A deeper voice.                                              |
+| AgoraAudioVoiceBeautyMellow                  | A mellower voice.                                            |
+| AgoraAudioVoiceBeautyFalsetto                | Falsetto.                                                    |
+| AgoraAudioVoiceBeautyFull                    | A fuller voice.                                              |
+| AgoraAudioVoiceBeautyClear                   | A clearer voice.                                             |
+| AgoraAudioVoiceBeautyResounding              | A more resounding voice.                                     |
+| AgoraAudioVoiceBeautyRinging                 | A more ringing voice.                                        |
+| AgoraAudioVoiceBeautySpacial                 | A more spatially resonant voice.                             |
+| AgoraAudioGeneralBeautyVoiceMaleMagnetic   | (For male only) A more magnetic voice. Do not use it for speakers with a female-sounding voice; otherwise, voice distortion occurs. |
+| AgoraAudioGeneralBeautyVoiceFemaleFresh    | (For female only) A fresher voice. Do not use it for speakers with a male-sounding voice; otherwise, voice distortion occurs. |
+| AgoraAudioGeneralBeautyVoiceFemaleVitality | (For female only) A more vital voice. Do not use it for speakers with a male-sounding voice; otherwise, voice distortion occurs. |
+
+<div class="alert warning">Enumerations that begin with <tt>AgoraAudioGeneralBeautyVoice</tt> add gender-based beautification effect to the local voice.<p>Gender-based beautification effect works well only when applied to voices with the following characteristics:<p><li>Suitable for male-sounding voices: <tt>AgoraAudioGeneralBeautyVoiceMaleMagnetic</tt>.<li>Suitable for female-sounding voices: <tt>AgoraAudioGeneralBeautyVoiceFemaleFresh</tt> or <tt>AgoraAudioGeneralBeautyVoiceFemaleVitality</tt>.</li></p><p>Using an unsuitable effect can lead to voice distortion.</li></div>
+
+<div class="alert note">Do not use this method with <tt>setLocalVoiceReverbPreset</tt>, because the method called later overrides the one called earlier.</div>
 
 ```swift
 // swift
-// Set the voice changer as old man
-agoraKit.setLocalVoiceChanger(.oldMan)
-
-// Turn off the voice changer
-agoraKit.setLocalVoiceChanger(.off)
+// Beautifies the local voice by making it sound more vigorous.
+agoraKit.setLocalVoiceChanger(.voiceBeautyVigorous)
+// Disables voice enhancement.
+agoraKit.setLocalVoiceChanger(.voiceChangerOff)
 ```
 
 ```objective-c
 // objective-c
-// Set the voice changer as old man
-[self.agoraKit setLocalVoiceChanger: AgoraAudioVoiceChangerOldMan];
-
-// Turn off the voice changer
+// Beautifies the local voice by making it sound more vigorous.
+[self.agoraKit setLocalVoiceChanger: AgoraAudioVoiceBeautyVigorous];
+// Disables voice enhancement.
 [self.agoraKit setLocalVoiceChanger: AgoraAudioVoiceChangerOff];
 ```
 
-You can use one of the following preset reverberation effects by calling `setLocalVoiceReverbPreset`:
+#### Voice reverberation
 
-- Pop music
-- R&B
-- Rock music
-- Hip-hop
-- Pop concert
-- KTV
-- Recording studio
+You can use one of the following preset voice reverberation options by calling `setLocalVoiceReverbPreset`:
+
+| Enumeration                   | Description                                                  |
+| :---------------------------- | :----------------------------------------------------------- |
+| AgoraAudioReverbPresetPopular          | The reverberation style typical of popular music.            |
+| AgoraAudioReverbPresetRnB              | The reverberation style typical of R&B music.                |
+| AgoraAudioReverbPresetRock             | The reverberation style typical of rock music.               |
+| AgoraAudioReverbPresetHipHop           | The reverberation style typical of hip-hop music.            |
+| AgoraAudioReverbPresetVocalConcert    | The reverberation style typical of a concert hall.           |
+| AgoraAudioReverbPresetKTV              | The reverberation style typical of a KTV venue.              |
+| AgoraAudioReverbPresetStudio           | The reverberation style typical of a recording studio.       |
+| AgoraAudioReverbPresetFxKTV           | The reverberation style typical of a KTV venue (enhanced).   |
+| AgoraAudioReverbPresetFxVocalConcert | The reverberation style typical of a concert hall (enhanced). |
+| AgoraAudioReverbPresetFxUncle         | The reverberation style typical of an uncle's voice.         |
+| AgoraAudioReverbPresetFxSister        | The reverberation style typical of a sister's voice.         |
+| AgoraAudioReverbPresetFxStudio        | The reverberation style typical of a recording studio (enhanced). |
+| AgoraAudioReverbPresetFxPopular       | The reverberation style typical of popular music (enhanced). |
+| AgoraAudioReverbPresetFxRNB           | The reverberation style typical of R&B music (enhanced).     |
+| AgoraAudioReverbPresetFxPhonograph    | The reverberation style typical of a vintage phonograph.     |
+| AgoraAudioReverbPresetVirtualStereo          | A reverberation style that adds a virtual stereo effect. The virtual stereo is an effect that renders the monophonic audio as the stereo audio, so that all users in the channel can hear the stereo voice effect. To achieve better virtual stereo reverberation, Agora recommends setting `profile` in `setAudioProfile` as `AgoraAudioProfileMusicHighQualityStereo(5)`. |
+
+<div class="alert warning">When calling the <tt>setLocalVoiceReverbPreset</tt> method with an enumeration that begins with <tt>AgoraAudioReverbPresetFx</tt>, ensure that you set the <tt>profile</tt> parameter passed to the <tt>setAudioProfile</tt> as <tt>AgoraAudioProfileMusicHighQuality(4)</tt> or <tt>AgoraAudioProfileMusicHighQualityStereo(5)</tt>. Failure to do so prevents the <tt>setLocalVoiceReverbPreset</tt> method from setting the corresponding voice reverberation option.</div>
+
+<div class="alert note">Do not use this method with <tt>setLocalVoiceChanger</tt>, because the method called later overrides the one called earlier.</div>
 
 ```swift
 // swift
-// Set the reverberation preset as pop
-agoraKit.setLocalVoiceReverbPreset(.popular)
-
-// Turn off the reverberation
+// Sets the reverberation style typical of a concert hall (enhanced).
+agoraKit.setLocalVoiceChanger(.fxVocalConcert)
+// Disables the voice reverberation.
 agoraKit.setLocalVoiceReverbPreset(.off)
 ```
 
 ```objective-c
 // objective-c
-// Set the reverberation preset as pop
-[self.agoraKit setLocalVoiceReverbPreset: AgoraAudioReverbPresetPopular];
-
-// Turn off the reverberation
+// Sets the reverberation style typical of a concert hall (enhanced).
+[self.agoraKit setLocalVoiceReverbPreset: AgoraAudioReverbPresetFxVocalConcert];
+// Disables the voice reverberation.
 [self.agoraKit setLocalVoiceReverbPreset: AgoraAudioReverbPresetOff];
 ```
 
@@ -78,7 +119,7 @@ agoraKit.setLocalVoiceReverbPreset(.off)
 
 You can also customize the voice effects by adjusting the voice pitch, equalization, and reverberation settings.
 
-The following sample code shows how to set the FM voice effect.
+The following sample code shows how to change from the original voice to Hulk's voice.
 
 ```swift
 // swift
@@ -163,4 +204,8 @@ agoraKit.setLocalVoiceReverbOf(.strength, withValue: 45)
 We provide open-source demo iOS projects on GitHub. You can try [Agora-RTC-With-Voice-Changer-iOS](https://github.com/AgoraIO/Advanced-Audio/tree/master/iOS%26macOS/Agora-RTC-With-Voice-Changer-iOS) for Swift and refer to the source code in [`EffectViewController.swift`](https://github.com/AgoraIO/Advanced-Audio/blob/master/iOS%26macOS/Agora-RTC-With-Voice-Changer-iOS/Agora-RTC-With-Voice-Changer-iOS/EffectViewController.swift).
 
 ## Considerations
-The API methods have return values. If the method call fails, the return value is < 0.
+
+- All methods mentioned in this guide work best with a human voice, and Agora recommends not using it for audio containing both music and a human voice.
+- Agora recommends not using the methods for presetting voice effects and methods for customizing voice effects together. Failure to do so may result in undefined behaviors. If you want to use preset voice effects together with methods that customize voice effects, call the preset methods before the customization methods, or the method called later overrides the one called earlier.
+- Agora recommends not using `setLocalVoiceChanger` and `setLocalVoiceReverbPreset` together, or the method called later overrides the one called earlier.
+- To achieve a better voice effect quality, Agora recommends setting the `profile` parameter passed to the `setAudioProfile` as `AgoraAudioProfileMusicHighQuality(4)` or `AgoraAudioProfileMusicHighQualityStereo(5)` before calling `setLocalVoiceChanger` or `setLocalVoiceReverbPreset`.
