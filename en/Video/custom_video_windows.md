@@ -3,7 +3,7 @@
 title: Custom Video Source and Renderer
 description: 
 platform: Windows
-updatedAt: Wed May 27 2020 02:44:47 GMT+0800 (CST)
+updatedAt: Wed May 27 2020 02:45:00 GMT+0800 (CST)
 ---
 # Custom Video Source and Renderer
 ## Introduction
@@ -166,6 +166,8 @@ bool CExternalVideoFrameObserver::onRenderVideoFrame(unsigned int uid, VideoFram
   return true;
 }
 
+lpAgoraEngine->enableVideo();
+
 // Enable the external video source mode and register the video observer. Use the observer to pass the video data from the external source to the engine and then from the engine to the app.
 agora::util::AutoPtr<agora::media::IMediaEngine> mediaEngine;
 mediaEngine.queryInterface(lpAgoraEngine, agora::AGORA_IID_MEDIA_ENGINE);
@@ -187,7 +189,7 @@ We provide an open source [Agora-Media-Source-Windows](https://github.com/AgoraI
 ### API reference
 
 - [`setExternalVideoSource`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_media_engine.html#a6716908edc14317f2f6f14ee4b1c01b7)
-- [`pullVideoFrame`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_media_engine.html#ae064aedfdb6ac63a981ca77a6b315985)
+- [`pushVideoFrame`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_media_engine.html#ae064aedfdb6ac63a981ca77a6b315985)
 
 ## Considerations
 
