@@ -3,7 +3,7 @@
 title: Agora Video Broadcasting Overview
 description: 
 platform: All Platforms
-updatedAt: Mon Mar 30 2020 04:35:41 GMT+0800 (CST)
+updatedAt: Thu May 28 2020 08:56:54 GMT+0800 (CST)
 ---
 # Agora Video Broadcasting Overview
 The Agora Native SDK for Video Broadcasting enables one-to-many and many-to-many audio or video live streaming. 
@@ -58,7 +58,7 @@ See the following sample code for application scenarios:
 
 ## Compatibility
 
-The Agora Native SDK for Interactive Broadcast is supported on platforms such as iOS, Android, Windows, macOS, Electron, Linux, and Web, and allows for cross-platform connections. The following is a list of supported platforms and their versions.
+The Agora Native SDK for Interactive Broadcast is supported on platforms such as iOS, Android, Windows, macOS, Electron, Unity, and Web, and allows for cross-platform connections. The following is a list of supported platforms and their versions.
 
 | Platform             | Supported Version                                            |
 | -------------------- | ------------------------------------------------------------ |
