@@ -29,6 +29,7 @@ Agora 在 GitHub 上提供开源的互动直播示例项目 [OpenLive-Voice-Only
 ### 创建 iOS 项目
 
 参考以下步骤创建一个 iOS 项目。若已有 iOS 项目，可以直接查看[集成 SDK](#IntegrateSDK)。
+
 <details>
 	<summary><font color="#3ab7f8">创建 iOS 项目</font></summary>
 	
@@ -77,7 +78,7 @@ end
 
   <div class="alert warning">根据 Apple 官方要求，App 的 Extension 不允许包含动态库。如果工程中的 Extension 需要集成 SDK，则集成动态库时需将文件状态改为 <b>Do Not Embed</b>。</div>
 
- <div class="alert note">若需使用媒体流加密功能，需添加 <b>AgoraRtcCryptoLoader.framework</b>。添加后 app 体积会增大。</li></div>
+ <div class="alert note">若需使用媒体流加密功能，需添加 <b>AgoraRtcCryptoLoader.framework</b>。添加后 app 体积会增大。</div>
  
 **动态库添加前**：
  
