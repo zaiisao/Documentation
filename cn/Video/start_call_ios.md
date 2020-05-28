@@ -82,11 +82,11 @@ end
 
 1. 前往 [SDK 下载页面](https://docs.agora.io/cn/Agora%20Platform/downloads)，获取最新版的 Agora SDK，然后解压。
 2. 将 **libs** 文件夹内的 **AgoraRtcKit.framework** 文件复制到项目文件夹下。
-4. 打开 **Xcode**（以 Xcode 11.0 为例），进入 **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content**  菜单，点击 **+** 添加 **AgoraRtcKit.framework** 文件，再点击 **Add Other…**，找到本地文件打开。添加完成后，项目会自动链接其他系统库。
+3. 打开 **Xcode**（以 Xcode 11.0 为例），进入 **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content**  菜单，点击 **+** 添加 **AgoraRtcKit.framework** 文件，再点击 **Add Other…**，找到本地文件打开。添加完成后，项目会自动链接其他系统库。
 
   <div class="alert warning">根据 Apple 官方要求，App 的 Extension 不允许包含动态库。如果工程中的 Extension 需要集成 SDK，则集成动态库时需将文件状态改为 <b>Do Not Embed</b>。</div>
 
- <div class="alert note">若需使用媒体流加密功能，需添加 <b>AgoraRtcCryptoLoader.framework</b>。添加后 app 体积会增大。</li></br></div>
+ <div class="alert note">若需使用媒体流加密功能，需添加 <b>AgoraRtcCryptoLoader.framework</b>。添加后 app 体积会增大。</li></div>
  
 **动态库添加前**：
  
