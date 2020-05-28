@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Thu Apr 30 2020 02:01:40 GMT+0800 (CST)
+updatedAt: Thu May 28 2020 08:55:43 GMT+0800 (CST)
 ---
 # 产品概述
 视频通话 SDK 可实现一对一单聊、多人群聊，同时具备纯语音通话和视频通话功能。
@@ -35,7 +35,7 @@ updatedAt: Thu Apr 30 2020 02:01:40 GMT+0800 (CST)
 
 ### 平台兼容
 
-视频通话支持 iOS、Android、Windows、macOS、Electron、Linux、Web、小程序，并支持平台间互通，具体的兼容性要求见下表。
+视频通话支持 iOS、Android、Windows、macOS、Electron、Unity、Web、小程序，并支持平台间互通，具体的兼容性要求见下表。
 
 | 平台       | 支持版本                                                     |
 | ---------- | ------------------------------------------------------------ |
