@@ -3,12 +3,12 @@
 title: Small Classroom
 description: 
 platform: All Platforms
-updatedAt: Tue Mar 10 2020 07:05:55 GMT+0800 (CST)
+updatedAt: Thu May 28 2020 03:56:03 GMT+0800 (CST)
 ---
 # Small Classroom
 ## Introduction
 
-In an Agora Small Classroom scenario, a teacher gives an online lesson to multiple students, and both the teacher and students can interact with each other in real time. The common small classroom scenario has one teacher for two, four, or six students. The number of students in a small clasroom should not exceed 16.
+In an Agora Small Classroom scenario, a teacher gives an online lesson to multiple students, and both the teacher and students can interact with each other in real time. The common small classroom scenario has one teacher for two, four, or six students. The number of students in a small classroom should not exceed 16.
 
 This article describes how to use the Agora SDKs to implement a small classroom scenario.
 
