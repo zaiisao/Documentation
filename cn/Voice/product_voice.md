@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Tue Apr 28 2020 09:13:00 GMT+0800 (CST)
+updatedAt: Thu May 28 2020 08:55:44 GMT+0800 (CST)
 ---
 # 产品概述
 语音通话可以实现纯语音的一对一单聊和多人群聊，不具备视频通话功能，包体积更小，适用于各种语音社交、语音会议等场景。
@@ -32,7 +32,7 @@ updatedAt: Tue Apr 28 2020 09:13:00 GMT+0800 (CST)
 
 ### 平台兼容
 
-语音通话支持 iOS、Android、Windows、macOS、Electron、Linux、Web、小程序，并支持平台间互通，具体的兼容性要求见下表。
+语音通话支持 iOS、Android、Windows、macOS、Electron、Unity、Web、小程序，并支持平台间互通，具体的兼容性要求见下表。
 
 | 平台       | 支持版本                                                     |
 | ---------- | ------------------------------------------------------------ |
