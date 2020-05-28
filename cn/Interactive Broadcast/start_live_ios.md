@@ -72,7 +72,7 @@ end
 
 **方法二：手动复制 SDK 文件**
 
-1. 前往 [SDK 下载页面](https://docs.agora.io/cn/Agora%20Platform/downloads)，获取最新版的 Agora SDK，然后解压。=
+1. 前往 [SDK 下载页面](https://docs.agora.io/cn/Agora%20Platform/downloads)，获取最新版的 Agora SDK，然后解压。
 2. 将 **libs** 文件夹内的 **AgoraRtcKit.framework** 文件复制到项目文件夹下。
 4. 打开 **Xcode**（以 Xcode 11.0 为例），进入 **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content**  菜单，点击 **+** 添加 **AgoraRtcKit.framework** 文件，再点击 **Add Other…**，找到本地文件打开。添加完成后，项目会自动链接其他系统库。
 
@@ -80,13 +80,13 @@ end
 
  <div class="alert note">若需使用媒体流加密功能，需添加 <b>AgoraRtcCryptoLoader.framework</b>。添加后 app 体积会增大。</li></br></div>
  
- **动态库添加前**：
+**动态库添加前**：
  
- ![](https://web-cdn.agora.io/docs-files/1583329514061)
+![](https://web-cdn.agora.io/docs-files/1583329514061)
  
- **动态库添加后**：
+**动态库添加后**：
  
- ![](https://web-cdn.agora.io/docs-files/1584688934447)
+![](https://web-cdn.agora.io/docs-files/1584688934447)
 
 ### 添加媒体设备权限
 
