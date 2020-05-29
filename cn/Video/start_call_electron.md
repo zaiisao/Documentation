@@ -3,7 +3,7 @@
 title: 实现视频通话
 description: 
 platform: Electron
-updatedAt: Wed May 20 2020 07:50:58 GMT+0800 (CST)
+updatedAt: Fri May 29 2020 06:38:46 GMT+0800 (CST)
 ---
 # 实现视频通话
 本文介绍如何使用 Agora Electron SDK 快速实现视频通话。
@@ -50,7 +50,7 @@ Agora 在 GitHub 提供一个开源的 [Agora Electron Quickstart](https://githu
 	
 **方法二：官网下载 SDK 并引入**
 
-<div class="alert note">如果你选择官网下载并引入的方式，请务必使用 Eletron 3.0.6。</div>
+<div class="alert note">如果你选择官网下载并引入的方式，请务必使用 Electron 3.0.6。</div>
 
 1. 前往官网 [SDK Downloads](https://docs.agora.io/cn/Agora%20Platform/downloads) 页面下载 Agora SDK for Electron
 2. 将下载下来的 SDK 拷贝至你的项目根目录下
