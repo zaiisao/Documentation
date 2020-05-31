@@ -3,7 +3,7 @@
 title: Signaling vs. Agora RTM SDK
 description: 
 platform: Linux Java
-updatedAt: Sun Nov 03 2019 08:12:46 GMT+0800 (CST)
+updatedAt: Sun May 31 2020 03:20:38 GMT+0800 (CST)
 ---
 # Signaling vs. Agora RTM SDK
 This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Messaging APIs. 
@@ -134,19 +134,16 @@ This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Me
 | Method                               | Signaling          | Real-time Messaging |
 | ------------------------------------ | ------------------ | ------------------- |
 | Sets a channel attribute.            | `channelSetAttr`   | [addOrUpdateChannelAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a997a31e6bfe1edc9b6ef58a931ef3f23)<sup>1</sup>   |
-| Deletes a channel attribute.         | `channelDelAttr`   | [deleteChannelAttributesByKeys](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a4cbf3329abda4940b73a75455cd1dc06)<sup>1</sup>   |
+| Deletes a channel attribute.         | `channelDelAttr`   | [deleteChannelAttributesByKeys](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a4cbf3329abda4940b73a75455cd1dc06)   |
 | Deletes all attributes of a channel. | `channelClearAttr` |  [clearChannelAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a6ed0ef4baacda8fa00eda5373d17f59f)<sup>1</sup>   |
-| Substitutes the attributes of a specified channel with new ones | N/A | [setChannelAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#ad25f51a3671db50e348ec6c170044ec6)<sup>1</sup>   |
+| Substitutes the attributes of a specified channel with new ones | N/A | [setChannelAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#ad25f51a3671db50e348ec6c170044ec6)   |
 | Gets all attributes of a specified channel | N/A | [getChannelAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a81f14a747a4012815ab4ba8d9e480fb6) |
 | Gets the attributes of a specified channel by attribute keys | N/A | [getChannelAttributesByKeys](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a358b47f4b42d678fafa76f3f30290e5e) |
 
-<sup>1</sup> With the Agora RTM SDK, you can update the attribute(s) of a channel without the need to join it. 
-
 | Event                           | Signaling              | Real-time Messaging |
 | ------------------------------- | ---------------------- | ------------------- |
-| A channel attribute is updated. | `onChannelAttrUpdated` | [onAttributesUpdated](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_rtm_channel_listener.html#a2904a1f1f78c497b9176fffb853be96f) <sup>2</sup>  |
+| A channel attribute is updated. | `onChannelAttrUpdated` | [onAttributesUpdated](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_rtm_channel_listener.html#a2904a1f1f78c497b9176fffb853be96f)   |
 
-<sup>2</sup>  This callback is disabled by default. It is enabled only when the user, who updates the attributes of the channel, sets [enableNotificationToChannelMembers](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_channel_attribute_options.html#a2f240727791b3ad1af97f4a399ce1579) as true.
 
 ## Retrieving a member list of the current channel
 
@@ -160,8 +157,6 @@ This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Me
 | --------------------------------------------- | ------------- | ----------------------- |
 | Returns the user list in a specified channel. | `onInvokeRet` | [onSuccess](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5)/[onFailure](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a1f9145a3eb119e32cfc0afa938062396) |
 
-> <sup>1</sup> You must join an RtmChannel before retrieving a member list of it. When the number of the channel members exceeds 512, the Agora RTM SDK only returns a list of randomly selected 512 channel members. 
-
 
 
 ## Retrieving the Number of Users of a Specified Channel
@@ -169,8 +164,6 @@ This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Me
 | Method                                                | Signaling             | Real-time Messaging |
 | ----------------------------------------------------- | --------------------- | ------------------- |
 | Retrieves the number of users in a specified channel. | `channelQueryUserNum` | [getChannelMemberCount](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#aff0384f2a004ed75498e20e1917352e4)<sup>1</sup>   |
-
-> <sup>1</sup>  The Agora RTM SDK supports retrieving the member count of up to 32 channels. 
 
 | Event                                               | Signaling                     | Real-time Messaging |
 | --------------------------------------------------- | ----------------------------- | ------------------- |
