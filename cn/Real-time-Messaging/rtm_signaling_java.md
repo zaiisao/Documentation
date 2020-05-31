@@ -3,7 +3,7 @@
 title: 信令 与 RTM 功能对照表
 description: 
 platform: Linux Java
-updatedAt: Sun May 31 2020 03:28:50 GMT+0800 (CST)
+updatedAt: Sun May 31 2020 03:28:58 GMT+0800 (CST)
 ---
 # 信令 与 RTM 功能对照表
 本页对比 Agora Signaling SDK 与 Agora RTM SDK 的区别。
@@ -132,7 +132,7 @@ updatedAt: Sun May 31 2020 03:28:50 GMT+0800 (CST)
 
 | 方法                 | 信令               | 实时消息 |
 | -------------------- | ------------------ | ------------ |
-| 设置一条频道属性     | `channelSetAttr`   | [`setChannelAttributes`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#ad25f51a3671db50e348ec6c170044ec6) |
+| 设置一条频道属性     | `channelSetAttr`   | [`addOrUpdateChannelAttributes`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a997a31e6bfe1edc9b6ef58a931ef3f23)  |
 | 删除一条频道属性     | `channelDelAttr`   | [`deleteChannelAttributesByKeys`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a4cbf3329abda4940b73a75455cd1dc06)         |
 | 删除频道的全部属性。 | `channelClearAttr` | [`clearChannelAttributes`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a6ed0ef4baacda8fa00eda5373d17f59f)          |
 
