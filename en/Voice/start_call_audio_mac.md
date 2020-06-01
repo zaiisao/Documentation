@@ -64,7 +64,7 @@ Choose either of the following methods to integrate the Agora SDK into your proj
 
 1. Go to [SDK Downloads](https://docs.agora.io/en/Agora%20Platform/downloads), download the latest version of the Agora SDK for macOS, and unzip the downloaded SDK package.	
 2. Copy the **AgoraRtcEngineKit.framework** file in the **libs** folder to the project folder.
-3. Open **Xcode** (take the Xcode 11.0 as an example), go to the **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content** menu, click **Add Other...** after clicking **+** to add **AgoraRtcKit.framework**. Once added, the project automatically links to other system libraries.
+3. Open **Xcode** (take the Xcode 11.0 as an example), go to the **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content** menu, click **Add Other...** after clicking **+** to add **AgoraRtcKit.framework**. Once added, the project automatically links to other system libraries. To ensure that the dynamic library signature is the same as the app signature, you need to set the **Embed** attribute of the dynamic library to **Embed & Sign**.
   <div class="alert warning">According to the requirement of Apple, the Extension of app cannot contain the dynamic library. If you need to integrate the SDK with the dynamic library in the Extension, change the file status as <b>Do Not Embed</b>.</div>
 
  **Before integrating the dynamic library**：
