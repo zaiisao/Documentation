@@ -3,7 +3,7 @@
 title: 信令 与 RTM 功能对照表
 description: 
 platform: Linux Java
-updatedAt: Mon Jun 01 2020 02:47:46 GMT+0800 (CST)
+updatedAt: Mon Jun 01 2020 02:47:52 GMT+0800 (CST)
 ---
 # 信令 与 RTM 功能对照表
 本页对比 Agora Signaling SDK 与 Agora RTM SDK 的区别。
@@ -132,13 +132,16 @@ updatedAt: Mon Jun 01 2020 02:47:46 GMT+0800 (CST)
 
 | 方法                 | 信令               | 实时消息 |
 | -------------------- | ------------------ | ------------ |
-| 设置一条频道属性     | `channelSetAttr`   | [`addOrUpdateChannelAttributes`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a997a31e6bfe1edc9b6ef58a931ef3f23)  |
-| 删除一条频道属性     | `channelDelAttr`   | [`deleteChannelAttributesByKeys`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a4cbf3329abda4940b73a75455cd1dc06)         |
-| 删除频道的全部属性。 | `channelClearAttr` | [`clearChannelAttributes`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a6ed0ef4baacda8fa00eda5373d17f59f)          |
+| 设置一条频道属性     | `channelSetAttr`   | [addOrUpdateChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a997a31e6bfe1edc9b6ef58a931ef3f23)  |
+| 删除一条频道属性     | `channelDelAttr`   | [deleteChannelAttributesByKeys](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a4cbf3329abda4940b73a75455cd1dc06)         |
+| 删除频道的全部属性 | `channelClearAttr` | [clearChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a6ed0ef4baacda8fa00eda5373d17f59f)          |
+| 全量设置某指定频道的属性 | N/A | [setChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#ad25f51a3671db50e348ec6c170044ec6)   |
+| 获取某指定频道的全部属性 | N/A | [getChannelAttributes](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a81f14a747a4012815ab4ba8d9e480fb6) |
+| 获取某指定频道指定属性名的属性 | N/A | [getChannelAttributesByKeys](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a358b47f4b42d678fafa76f3f30290e5e) |
 
 | 事件           | 信令                   | 实时消息 |
 | -------------- | ---------------------- | ------------ |
-| 频道属性已更新 | `onChannelAttrUpdated` | [`onAttributesUpdated`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_rtm_channel_listener.html#a2904a1f1f78c497b9176fffb853be96f)          |
+| 频道属性已更新 | `onChannelAttrUpdated` | [onAttributesUpdated](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_rtm_channel_listener.html#a2904a1f1f78c497b9176fffb853be96f)          |
 
 
 
@@ -160,7 +163,7 @@ updatedAt: Mon Jun 01 2020 02:47:46 GMT+0800 (CST)
 
 | 方法                 | 信令                  | 实时消息 |
 | -------------------- | --------------------- | ------------ |
-| 获取指定频道成员人数 | `channelQueryUserNum` | [`getChannelMemberCount`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#aff0384f2a004ed75498e20e1917352e4)          |
+| 获取指定频道成员人数 | `channelQueryUserNum` | [getChannelMemberCount](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#aff0384f2a004ed75498e20e1917352e4)          |
 
 
 
