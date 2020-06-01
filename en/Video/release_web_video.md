@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Mon Jun 01 2020 02:04:16 GMT+0800 (CST)
+updatedAt: Mon Jun 01 2020 05:39:10 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -89,6 +89,20 @@ See the table below for the web browser support of the Agora Web SDK:
 - The Agora Web SDK does not support code obfuscation.
 
 For more issues, see [Web FAQs](https://docs.agora.io/en/search?type=faq&platform=Web).
+
+## v3.1.1
+
+v3.1.1 was released on June 1, 2020.
+
+**Improvements**
+
+From this release, the RTMP converter supports the Agora cloud proxy service.
+
+**Fixed issues**
+
+- Occasional reconnection errors.
+- Failure to destroy the player after the user unsubscribes from a remote stream.
+- The SDK failed to trigger the callback when the local user called `getLocalVideoStats` within three seconds after publishing a stream.
 
 ## v3.1.0
 
