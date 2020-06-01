@@ -3,7 +3,7 @@
 title: 集成录制 SDK
 description: How to integrate recording SDK
 platform: Linux Java
-updatedAt: Fri May 08 2020 04:11:19 GMT+0800 (CST)
+updatedAt: Mon Jun 01 2020 09:16:18 GMT+0800 (CST)
 ---
 # 集成录制 SDK
 本页介绍如何设置环境以及集成 Agora 本地服务端录制 SDK。
