@@ -3,7 +3,7 @@
 title: 信令 与 RTM 功能对照表
 description: 
 platform: Linux Java
-updatedAt: Sun May 31 2020 03:28:58 GMT+0800 (CST)
+updatedAt: Mon Jun 01 2020 02:08:50 GMT+0800 (CST)
 ---
 # 信令 与 RTM 功能对照表
 本页对比 Agora Signaling SDK 与 Agora RTM SDK 的区别。
@@ -136,8 +136,6 @@ updatedAt: Sun May 31 2020 03:28:58 GMT+0800 (CST)
 | 删除一条频道属性     | `channelDelAttr`   | [`deleteChannelAttributesByKeys`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a4cbf3329abda4940b73a75455cd1dc06)         |
 | 删除频道的全部属性。 | `channelClearAttr` | [`clearChannelAttributes`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a6ed0ef4baacda8fa00eda5373d17f59f)          |
 
-> Agora RTM SDK v1.1 将支持频道属性相关操作。
-
 | 事件           | 信令                   | 实时消息 |
 | -------------- | ---------------------- | ------------ |
 | 频道属性已更新 | `onChannelAttrUpdated` | [`onAttributesUpdated`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_rtm_channel_listener.html#a2904a1f1f78c497b9176fffb853be96f)          |
@@ -148,15 +146,13 @@ updatedAt: Sun May 31 2020 03:28:58 GMT+0800 (CST)
 
 | 方法                   | 信令     | 实时消息             |
 | ---------------------- | -------- | ------------------------ |
-| 获取指定频道的成员列表 | `invoke` | [getMembers](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a567aca5f866cf71c3b679ae09b4bf626)<sup>1</sup> |
+| 获取指定频道的成员列表 | `invoke` | [getMembers](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a567aca5f866cf71c3b679ae09b4bf626) |
 
 
 
 | 事件                   | 信令          | 实时消息            |
 | ---------------------- | ------------- | ----------------------- |
 | 返回指定频道的成员列表 | `onInvokeRet` | [onSuccess](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5)/[onFailure](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a1f9145a3eb119e32cfc0afa938062396) |
-
-> <sup>1</sup> 你必须加入一个 RtmChannel 频道后才能获取该频道的成员列表。当频道人员超过 512 人上限，Agora RTM SDK 会随机返回频道内的 512 个当前频道成员。 
 
 
 
@@ -225,11 +221,9 @@ updatedAt: Sun May 31 2020 03:28:58 GMT+0800 (CST)
 ## 更新 Token
 
 
-
 | 方法           | 信令 | 实时消息 |
 | -------------- | ---- | ------------ |
 | 更新当前 Token | N/A  | [renewToken](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a9a6d33282509384165709107d7a89353)  |
-
 
 
 | 事件             | 信令 | 实时消息            |
