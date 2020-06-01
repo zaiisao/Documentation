@@ -3,7 +3,7 @@
 title: 升级至 3.0.1 版本 (iOS/macOS)
 description: 
 platform: All Platforms
-updatedAt: Mon Jun 01 2020 07:25:04 GMT+0800 (CST)
+updatedAt: Mon Jun 01 2020 07:25:56 GMT+0800 (CST)
 ---
 # 升级至 3.0.1 版本 (iOS/macOS)
 本文描述 Agora iOS SDK 和 Agora macOS SDK 中库的变更，及升级到 3.0.1 版本时用户需要注意的集成方法。
@@ -47,7 +47,7 @@ updatedAt: Mon Jun 01 2020 07:25:04 GMT+0800 (CST)
 
 ## 从 3.0.0 之前版本升级到 3.0.1 版本
 
-1. 打开 Xcode（以 Xcode 11.0 为例），在项目导航栏中移除 `AgoraRtcEngineKit.framework` 库文件。
+1. 打开 Xcode（以 Xcode 11.0 为例），在项目导航栏中移除 `AgoraRtcEngineKit.framework`。
 2. 进入 **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content** 菜单，点击 **-** 移除以下库文件：
 
 <table>
@@ -68,5 +68,5 @@ updatedAt: Mon Jun 01 2020 07:25:04 GMT+0800 (CST)
 
   <div class="alert note"><li>在 iOS 平台上，<tt>CoreTelephony.framework</tt> 仅适用于 Agora 语音 SDK。<tt>CoreML.framework</tt> 和 <tt>VideoToolbox.framework</tt> 仅适用于 Agora 视频 SDK。<li>在 macOS 平台上，<tt>VideoToolbox.framework</tt> 仅适用于 Agora 视频 SDK。</li></div>
 
-3. 点击 **+**，再点击 **Add Other…** 添加 3.0.1 版本 SDK 的 `AgoraRtcKit.framework` 库文件。
+3. 点击 **+**，再点击 **Add Other…** 添加 3.0.1 版本 SDK 的 `AgoraRtcKit.framework`。
 4. 修改 `AgoraRtcKit.framework` 的 **Embed** 属性为 **Embed & Sign**。
