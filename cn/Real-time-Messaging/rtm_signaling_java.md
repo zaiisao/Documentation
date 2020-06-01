@@ -3,7 +3,7 @@
 title: 信令 与 RTM 功能对照表
 description: 
 platform: Linux Java
-updatedAt: Mon Jun 01 2020 02:08:50 GMT+0800 (CST)
+updatedAt: Mon Jun 01 2020 02:41:00 GMT+0800 (CST)
 ---
 # 信令 与 RTM 功能对照表
 本页对比 Agora Signaling SDK 与 Agora RTM SDK 的区别。
