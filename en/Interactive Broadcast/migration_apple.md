@@ -3,7 +3,7 @@
 title: Upgrade to v3.0.1 on iOS/macOS
 description: 
 platform: All Platforms
-updatedAt: Wed May 27 2020 11:17:31 GMT+0800 (CST)
+updatedAt: Mon Jun 01 2020 07:26:41 GMT+0800 (CST)
 ---
 # Upgrade to v3.0.1 on iOS/macOS
 This article describes the library changes of the Agora RTC SDK for iOS and macOS, and how to upgrade to v3.0.1 from versions with the static library.
@@ -33,7 +33,7 @@ As of v3.0.1, the SDK includes only the dynamic library `AgoraRtcKit.framework`.
  
  <div class="alert note"><li>On iOS, <tt>CoreTelephony.framework</tt> only applies to the Agora Voice SDK, <tt>CoreML.framework</tt> and <tt>VideoToolbox.framework</tt> only apply to the Agora Video SDK.<li>On macOS, <tt>VideoToolbox.framework</tt> only applies to the Agora Video SDK.</li></div>
 
-3. Change the status of `AgoraRtcKit.framework` to **Embed & Sign**.
+3. Change the **Embed** attribute of `AgoraRtcKit.framework` to **Embed & Sign**.
 
 ## Upgrade from versions earlier than v3.0.0
 
@@ -50,4 +50,4 @@ As of v3.0.1, the SDK includes only the dynamic library `AgoraRtcKit.framework`.
 
 3. Click **+**, and then click **Add Other...** to add `AgoraRtcKit.framework` of the v3.0.1 SDK.
 
-4. Change the status of `AgoraRtcKit.framework` to **Embed & Sign**.
+4. Change the **Embed** attribute of `AgoraRtcKit.framework` to **Embed & Sign**.
