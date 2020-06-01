@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Mon Jun 01 2020 02:08:04 GMT+0800 (CST)
+updatedAt: Mon Jun 01 2020 05:39:33 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -89,6 +89,22 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 - Agora Web SDK 暂不支持代码二次混淆。
 
 更多问题，详见 [Web 常见问题集](https://docs.agora.io/cn/search?type=faq&platform=Web)。
+
+## 3.1.1 版
+
+该版本于 2020 年 6 月 1 日发布。
+
+**改进**
+
+从该版本起，RTMP 推流支持使用云代理服务。
+
+**问题修复**
+
+该版本修复了以下问题：
+
+- 偶现的重连错误。
+- 取消订阅后未销毁播放器。
+- 在发布流成功后的三秒內调用 `getLocalVideoStats` 无法触发回调。
 
 ## 3.1.0 版
 
