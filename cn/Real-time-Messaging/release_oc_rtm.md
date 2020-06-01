@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS,macOS
-updatedAt: Mon Jun 01 2020 08:29:25 GMT+0800 (CST)
+updatedAt: Mon Jun 01 2020 08:29:39 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -11,7 +11,7 @@ updatedAt: Mon Jun 01 2020 08:29:25 GMT+0800 (CST)
 Agora 实时消息 SDK 提供了稳定可靠、低延时、高并发的全球消息云服务，帮助你快速构建实时通信场景,  可实现消息通道、呼叫、聊天、状态同步等功能。点击[实时消息产品概述](../../cn/Real-time-Messaging/product_rtm.md)了解更多详情。
 
 
-## 1.3.0 版 (Beta)
+## 1.3.0 版
 
 该版本于 2020 年 5 月 11 日发布。
 
