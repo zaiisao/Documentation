@@ -6,7 +6,7 @@ platform: Web
 updatedAt: Thu Jan 02 2020 12:45:18 GMT+0800 (CST)
 ---
 # Signaling vs. Agora RTM SDK
-This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Messaging APIs. 
+This page compares the legacy Agora Signaling APIs with the Agora Real-time Messaging APIs. 
 
 ## Login & Logout
 
