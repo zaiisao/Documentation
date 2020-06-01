@@ -3,12 +3,12 @@
 title: Signaling vs. Agora RTM SDK
 description: 
 platform: Linux Java
-updatedAt: Mon Jun 01 2020 02:32:17 GMT+0800 (CST)
+updatedAt: Mon Jun 01 2020 02:32:32 GMT+0800 (CST)
 ---
 # Signaling vs. Agora RTM SDK
 This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Messaging APIs. 
 
-## Login & Logout
+## Login and logout
 
 | Method                 | Signaling                              | Real-time Messaging                  |
 | ---------------------- | -------------------------------------- | ------------------------------------ |
@@ -49,7 +49,7 @@ This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Me
 >
 > <sup>2</sup> The Agora Signaling SDK returns the `onMessageSendSuccess` callback when the server receives the peer-to-peer message; the Agora RTM SDK returns the [onSuccess](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5) callback when the specified user receives the message. 
 
-## Querying the online status of specified user(s)
+## Querying the online status of specified users
 
 | Method                                         | Signaling            | Real-time Messaging      |
 | ---------------------------------------------- | -------------------- | ------------------------ |
@@ -67,13 +67,13 @@ This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Me
 
 | Method                                              | Signaling        | Real-time Messaging                   |
 | --------------------------------------------------- | ---------------- | ------------------------------------- |
-| Sets the local user's attribute                     | `setAttr`        | [addOrUpdateLocalUserAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a765b186d62ed3ef6d67a5e875b040875)      |
+| Sets the local user's attribute.                     | `setAttr`        | [addOrUpdateLocalUserAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a765b186d62ed3ef6d67a5e875b040875)      |
 | Gets an attribute of the local user.                | `getAttr`        | [getUserAttributesBykeys](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a3b927c35cca5ebd31afb976d60e99193)<sup>1</sup> |
 | Gets all attributes of the local user.              | `getAttrAll`     | [getUserAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#aee9a6c027f35b652781f654a89433755)<sup>2</sup>       |
 | Gets all attributes of the specified user.          | `getUserAttrAll` | [getUserAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#aee9a6c027f35b652781f654a89433755)                   |
 | Replaces the local user's attributes with new ones. | N/A              | [setLocalUserAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a339b7b2371ff2b86137b6db6c1c66294)              |
 | Deletes the specified attributes of the local user. | N/A              | [deleteLocaluserAttributeByKeys](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a2477533989c1bb9ced831af210f1dba4)      |
-| Clears the local user's attributes                  | N/A              | [clearLocalUserAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#ae0c6c5c5bae6020e69009441d8a41785)            |
+| Clears the local user's attributes.                  | N/A              | [clearLocalUserAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#ae0c6c5c5bae6020e69009441d8a41785)            |
 |                                                     |                  |                                       |
 
 | Event                                                 | Signaling               | Real-time Messaging     |
@@ -84,7 +84,7 @@ This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Me
 > - <sup>2</sup> The [getUserAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#aee9a6c027f35b652781f654a89433755) method allows you to retrieve the attributes from either the local user or a specified peer user. 
 > - The Agora RTM SDK does not support special attributes for now. 
 
-## Joining or Leaving a Channel
+## Joining or leaving a channel
 
 | Method                      | Signaling      | Real-time Messaging         |
 | --------------------------- | -------------- | --------------------------- |
@@ -136,7 +136,9 @@ This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Me
 | Sets a channel attribute.            | `channelSetAttr`   | [addOrUpdateChannelAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a997a31e6bfe1edc9b6ef58a931ef3f23)   |
 | Deletes a channel attribute.         | `channelDelAttr`   | [deleteChannelAttributesByKeys](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a4cbf3329abda4940b73a75455cd1dc06)   |
 | Deletes all attributes of a channel. | `channelClearAttr` |  [clearChannelAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a6ed0ef4baacda8fa00eda5373d17f59f) |
-
+| Substitutes the attributes of a specified channel with new ones. | N/A | [setChannelAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#ad25f51a3671db50e348ec6c170044ec6)   |
+| Gets all attributes of a specified channel. | N/A | [getChannelAttributes](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a81f14a747a4012815ab4ba8d9e480fb6) |
+| Gets the attributes of a specified channel by attribute keys. | N/A | [getChannelAttributesByKeys](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a358b47f4b42d678fafa76f3f30290e5e) |
 
 | Event                           | Signaling              | Real-time Messaging |
 | ------------------------------- | ---------------------- | ------------------- |
@@ -157,7 +159,7 @@ This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Me
 
 
 
-## Retrieving the Number of Users of a Specified Channel
+## Retrieving the number of users of a specified channel
 
 | Method                                                | Signaling             | Real-time Messaging |
 | ----------------------------------------------------- | --------------------- | ------------------- |
@@ -167,15 +169,13 @@ This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Me
 | --------------------------------------------------- | ----------------------------- | ------------------- |
 | Returns the number of users in a specified channel. | `onChannelQueryUserNumResult` | [onSuccess](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a7206b30500655c4a73d146acf50cb6f5)/[onFailure](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_result_callback.html#a1f9145a3eb119e32cfc0afa938062396)   |
 
-## Call Invitation
-
-
+## Call invitation
 
 
 | Method                                                       | Signaling                                | Real-time Messaging                 |
 | ------------------------------------------------------------ | ---------------------------------------- | ----------------------------------- |
 | Gets an RTM call manager.                                    | N/A                                      | [getRtmCallManager](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#ab3ae053d5617855ddbbdae9149067cfd)<sup>1</sup>     |
-| Allows the caller to create and manage a `LocalInvitation.`  | N/A                                      | [createLocalInvitation](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_call_manager.html#a1756dca077267acaa407c6901daa2248)<sup>2</sup> |
+| Allows the caller to create and manage a `LocalInvitation`.  | N/A                                      | [createLocalInvitation](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_call_manager.html#a1756dca077267acaa407c6901daa2248)<sup>2</sup> |
 | Allows the caller to send a call invite to a specified user (callee). | `channelInviteUser`/`channelInviteUser2` | [sendLocalInvitation](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_call_manager.html#af899697061305ca840e829b92c78e353)<sup>3</sup>   |
 | Allows the caller to send a call invite to land-line user.   | `channelInviteDTMF`                      | N/A                                 |
 | Allows the caller to cancel a sent call invite.              | `channelInviteEnd`                       | [cancelLocalInvitation](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_call_manager.html#a5f03bfe1cfd6987fbc7b5a4dc484f564)<sup>4</sup> |
@@ -221,7 +221,6 @@ This page juxtaposes the legacy Agora Signaling APIs with the Agora Real-time Me
 > <sup>7</sup> The SDK returns the [onRemoteInvitationFailure](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_rtm_call_event_listener.html#a6f9f2bbbfbcb0a766c6f1b2e4a8314a1) to the callee if the call invitation process has started but ends in failure. Scenarios include: the caller is offline, the [RemoteInvitation](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_remote_invitation.html) object times out, and the [RemoteInvitation](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_remote_invitation.html) ojbect expires. 
 
 ## Renewing a Token
-
 
 
 | Method                    | Signaling | Real-time Messaging |
