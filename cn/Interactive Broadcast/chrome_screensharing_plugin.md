@@ -3,7 +3,7 @@
 title: Chrome 屏幕共享插件
 description: 
 platform: Web
-updatedAt: Tue Aug 20 2019 02:52:32 GMT+0800 (CST)
+updatedAt: Tue Jun 02 2020 07:56:14 GMT+0800 (CST)
 ---
 # Chrome 屏幕共享插件
 在 Chrome 上使用屏幕共享功能需要安装 Agora 提供的屏幕共享插件。
@@ -20,10 +20,10 @@ updatedAt: Tue Aug 20 2019 02:52:32 GMT+0800 (CST)
 
 点击打开插件文件夹中的 `manifest.json` 文件，然后将你的网页域名添加到 `matches` 行。
 
-例如，假设你使用 localhost 运行你的网页，将 `"://localhost/"` 添加到 `matches` 的值中：
+例如，假设你使用 localhost 运行你的网页，将 `"*://localhost/*"` 添加到 `matches` 的值中：
 
 ```json
-"matches": ["://localhost/","*://*.agora.io/*","*://webdemo.agora.io/*","*://webdemo.agorabeckon.com/*","*://videocall.agora.io/*"]
+"matches": ["*://localhost/*","*://*.agora.io/*","*://webdemo.agora.io/*","*://webdemo.agorabeckon.com/*","*://videocall.agora.io/*"]
 ```
 
 ## 安装插件并获取插件 ID
