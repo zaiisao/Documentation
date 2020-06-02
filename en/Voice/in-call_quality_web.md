@@ -3,7 +3,7 @@
 title: Report Call Statistics
 description: In-call quality for web
 platform: Web
-updatedAt: Mon Jan 06 2020 07:43:09 GMT+0800 (CST)
+updatedAt: Tue Jun 02 2020 03:07:11 GMT+0800 (CST)
 ---
 # Report Call Statistics
 ## Introduction
@@ -49,11 +49,13 @@ Call the  [`Client.getTransportStats`](https://docs.agora.io/en/Voice/API%20Refe
   - `RTT`: The RTT (Round-Trip Time) between the SDK and the access node of the SD-RTN, in ms.
 
 ``` javascript
-client.getTransportStats((stats) => {
+setInterval(() => {
+  client.getTransportStats((stats) => {
     console.log(`Current Transport RTT: ${stats.RTT}`);
     console.log(`Current Network Type: ${stats.networkType}`);
     console.log(`Current Transport OutgoingAvailableBandwidth: ${stats.OutgoingAvailableBandwidth}`);
-});                           
+  });
+}, 1000)                        
 ```
 
 <a name ="reference"></a>
@@ -80,14 +82,16 @@ Call the [`Client.getSessionStats`](https://docs.agora.io/en/Voice/API%20Referen
     - If the local user is a host: The number of hosts in the channel.
 
 ```javascript
-client.getSessionStats((stats) => {
+setInterval(() => {
+  client.getSessionStats((stats) => {
     console.log(`Current Session Duration: ${stats.Duration}`);
     console.log(`Current Session UserCount: ${stats.UserCount}`);
     console.log(`Current Session SendBytes: ${stats.SendBytes}`);
     console.log(`Current Session RecvBytes: ${stats.RecvBytes}`);
     console.log(`Current Session SendBitrate: ${stats.SendBitrate}`);
     console.log(`Current Session RecvBitrate: ${stats.RecvBitrate}`);
-});
+  });
+}, 1000)
 ```
 
 > - This method only supports Google Chrome.
@@ -106,16 +110,18 @@ client.getSessionStats((stats) => {
   - `SendLevel`: Energy level of the sent audio.
 
 ``` javascript
-client.getLocalAudioStats((localAudioStats) => {
+setInterval(() => {
+  client.getLocalAudioStats((localAudioStats) => {
     for(var uid in localAudioStats){
-         console.log(`Audio CodecType from ${uid}: ${localAudioStats[uid].CodecType}`);
-         console.log(`Audio MuteState from ${uid}: ${localAudioStats[uid].MuteState}`);
-         console.log(`Audio RecordingLevel from ${uid}: ${localAudioStats[uid].RecordingLevel}`);
-         console.log(`Audio SamplingRate from ${uid}: ${localAudioStats[uid].SamplingRate}`);
-         console.log(`Audio SendBitrate from ${uid}: ${localAudioStats[uid].SendBitrate}`);
-         console.log(`Audio SendLevel from ${uid}: ${localAudioStats[uid].SendLevel}`);
+      console.log(`Audio CodecType from ${uid}: ${localAudioStats[uid].CodecType}`);
+      console.log(`Audio MuteState from ${uid}: ${localAudioStats[uid].MuteState}`);
+      console.log(`Audio RecordingLevel from ${uid}: ${localAudioStats[uid].RecordingLevel}`);
+      console.log(`Audio SamplingRate from ${uid}: ${localAudioStats[uid].SamplingRate}`);
+      console.log(`Audio SendBitrate from ${uid}: ${localAudioStats[uid].SendBitrate}`);
+      console.log(`Audio SendLevel from ${uid}: ${localAudioStats[uid].SendLevel}`);
     }
-});
+  });
+}, 1000)
 ```
 
 - Call the [`Client.getLocalVideoStats`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.client.html#getlocalvideostats) method to get the **video** statistics of the local stream, including:
@@ -133,22 +139,24 @@ client.getLocalAudioStats((localAudioStats) => {
   - `TotalFreezeTime`: Total freeze time of the encoded video, in seconds.
 
 ``` javascript
-client.getLocalVideoStats((localVideoStats) => {
+setInterval(() => {
+  client.getLocalVideoStats((localVideoStats) => {
     for(var uid in localVideoStats){
-         console.log(`Video CaptureFrameRate from ${uid}: ${localVideoStats[uid].CaptureFrameRate}`);
-         console.log(`Video CaptureResolutionHeight from ${uid}: ${localVideoStats[uid].CaptureResolutionHeight}`);
-         console.log(`Video CaptureResolutionWidth from ${uid}: ${localVideoStats[uid].CaptureResolutionWidth}`);
-         console.log(`Video EncodeDelay from ${uid}: ${localVideoStats[uid].EncodeDelay}`);
-         console.log(`Video MuteState from ${uid}: ${localVideoStats[uid].MuteState}`);
-         console.log(`Video SendBitrate from ${uid}: ${localVideoStats[uid].SendBitrate}`);
-         console.log(`Video SendFrameRate from ${uid}: ${localVideoStats[uid].SendFrameRate}`);
-         console.log(`Video SendResolutionHeight from ${uid}: ${localVideoStats[uid].SendResolutionHeight}`);
-         console.log(`Video SendResolutionWidth from ${uid}: ${localVideoStats[uid].SendResolutionWidth}`);
-         console.log(`Video TargetSendBitrate from ${uid}: ${localVideoStats[uid].TargetSendBitrate}`);
-         console.log(`Video TotalDuration from ${uid}: ${localVideoStats[uid].TotalDuration}`);
-         console.log(`Video TotalFreezeTime from ${uid}: ${localVideoStats[uid].TotalFreezeTime}`);
+      console.log(`Video CaptureFrameRate from ${uid}: ${localVideoStats[uid].CaptureFrameRate}`);
+      console.log(`Video CaptureResolutionHeight from ${uid}: ${localVideoStats[uid].CaptureResolutionHeight}`);
+      console.log(`Video CaptureResolutionWidth from ${uid}: ${localVideoStats[uid].CaptureResolutionWidth}`);
+      console.log(`Video EncodeDelay from ${uid}: ${localVideoStats[uid].EncodeDelay}`);
+      console.log(`Video MuteState from ${uid}: ${localVideoStats[uid].MuteState}`);
+      console.log(`Video SendBitrate from ${uid}: ${localVideoStats[uid].SendBitrate}`);
+      console.log(`Video SendFrameRate from ${uid}: ${localVideoStats[uid].SendFrameRate}`);
+      console.log(`Video SendResolutionHeight from ${uid}: ${localVideoStats[uid].SendResolutionHeight}`);
+      console.log(`Video SendResolutionWidth from ${uid}: ${localVideoStats[uid].SendResolutionWidth}`);
+      console.log(`Video TargetSendBitrate from ${uid}: ${localVideoStats[uid].TargetSendBitrate}`);
+      console.log(`Video TotalDuration from ${uid}: ${localVideoStats[uid].TotalDuration}`);
+      console.log(`Video TotalFreezeTime from ${uid}: ${localVideoStats[uid].TotalFreezeTime}`);
     }
-});
+  });
+}, 1000)
 ```
 
 > - This method only supports Google Chrome.
@@ -177,19 +185,21 @@ client.getLocalVideoStats((localVideoStats) => {
   | `TransportDelay`    | Transport delay (ms). Delay from sending to receiving the audio.<br>Stages 2 + 3 + 4 in the above figure. |
 
 ``` javascript
-client.getRemoteAudioStats((remoteAudioStatsMap) => {
+setInterval(() => {
+  client.getRemoteAudioStats((remoteAudioStatsMap) => {
     for(var uid in remoteAudioStatsMap){
-         console.log(`Audio CodecType from ${uid}: ${remoteAudioStatsMap[uid].CodecType}`);
-         console.log(`Audio End2EndDelay from ${uid}: ${remoteAudioStatsMap[uid].End2EndDelay}`);
-         console.log(`Audio MuteState from ${uid}: ${remoteAudioStatsMap[uid].MuteState}`);
-         console.log(`Audio PacketLossRate from ${uid}: ${remoteAudioStatsMap[uid].PacketLossRate}`);
-         console.log(`Audio RecvBitrate from ${uid}: ${remoteAudioStatsMap[uid].RecvBitrate}`);
-         console.log(`Audio RecvLevel from ${uid}: ${remoteAudioStatsMap[uid].RecvLevel}`);
-         console.log(`Audio TotalFreezeTime from ${uid}: ${remoteAudioStatsMap[uid].TotalFreezeTime}`);
-         console.log(`Audio TotalPlayDuration from ${uid}: ${remoteAudioStatsMap[uid].TotalPlayDuration}`);
-         console.log(`Audio TransportDelay from ${uid}: ${remoteAudioStatsMap[uid].TransportDelay}`);
+      console.log(`Audio CodecType from ${uid}: ${remoteAudioStatsMap[uid].CodecType}`);
+      console.log(`Audio End2EndDelay from ${uid}: ${remoteAudioStatsMap[uid].End2EndDelay}`);
+      console.log(`Audio MuteState from ${uid}: ${remoteAudioStatsMap[uid].MuteState}`);
+      console.log(`Audio PacketLossRate from ${uid}: ${remoteAudioStatsMap[uid].PacketLossRate}`);
+      console.log(`Audio RecvBitrate from ${uid}: ${remoteAudioStatsMap[uid].RecvBitrate}`);
+      console.log(`Audio RecvLevel from ${uid}: ${remoteAudioStatsMap[uid].RecvLevel}`);
+      console.log(`Audio TotalFreezeTime from ${uid}: ${remoteAudioStatsMap[uid].TotalFreezeTime}`);
+      console.log(`Audio TotalPlayDuration from ${uid}: ${remoteAudioStatsMap[uid].TotalPlayDuration}`);
+      console.log(`Audio TransportDelay from ${uid}: ${remoteAudioStatsMap[uid].TransportDelay}`);
     }
-});
+  });
+}, 1000)
 ```
 
 **Statistics of remote video streams**
@@ -214,22 +224,24 @@ client.getRemoteAudioStats((remoteAudioStatsMap) => {
   | `TransportDelay`         | Transport delay (ms). Delay from sending to receiving the video.<br/>Stages 2 + 3 + 4 in the above figure. |
 
 ``` javascript
-client.getRemoteVideoStats((remoteVideoStatsMap) => {
+setInterval(() => {
+  client.getRemoteVideoStats((remoteVideoStatsMap) => {
     for(var uid in remoteVideoStatsMap){
-         console.log(`Video End2EndDelay from ${uid}: ${remoteVideoStatsMap[uid].End2EndDelay}`);
-         console.log(`Video MuteState from ${uid}: ${remoteVideoStatsMap[uid].MuteState}`);
-         console.log(`Video PacketLossRate from ${uid}: ${remoteVideoStatsMap[uid].PacketLossRate}`);
-         console.log(`Video RecvBitrate from ${uid}: ${remoteVideoStatsMap[uid].RecvBitrate}`);
-         console.log(`Video RecvResolutionHeight from ${uid}: ${remoteVideoStatsMap[uid].RecvResolutionHeight}`);
-         console.log(`Video RecvResolutionWidth from ${uid}: ${remoteVideoStatsMap[uid].RecvResolutionWidth}`);
-         console.log(`Video RenderFrameRate from ${uid}: ${remoteVideoStatsMap[uid].RenderFrameRate}`);
-         console.log(`Video RenderResolutionHeight from ${uid}: ${remoteVideoStatsMap[uid].RenderResolutionHeight}`);
-         console.log(`Video RenderResolutionWidth from ${uid}: ${remoteVideoStatsMap[uid].RenderResolutionWidth}`);
-         console.log(`Video TotalFreezeTime from ${uid}: ${remoteVideoStatsMap[uid].TotalFreezeTime}`);
-         console.log(`Video TotalPlayDuration from ${uid}: ${remoteVideoStatsMap[uid].TotalPlayDuration}`);
-         console.log(`Video TransportDelay from ${uid}: ${remoteVideoStatsMap[uid].TransportDelay}`);
+      console.log(`Video End2EndDelay from ${uid}: ${remoteVideoStatsMap[uid].End2EndDelay}`);
+      console.log(`Video MuteState from ${uid}: ${remoteVideoStatsMap[uid].MuteState}`);
+      console.log(`Video PacketLossRate from ${uid}: ${remoteVideoStatsMap[uid].PacketLossRate}`);
+      console.log(`Video RecvBitrate from ${uid}: ${remoteVideoStatsMap[uid].RecvBitrate}`);
+      console.log(`Video RecvResolutionHeight from ${uid}: ${remoteVideoStatsMap[uid].RecvResolutionHeight}`);
+      console.log(`Video RecvResolutionWidth from ${uid}: ${remoteVideoStatsMap[uid].RecvResolutionWidth}`);
+      console.log(`Video RenderFrameRate from ${uid}: ${remoteVideoStatsMap[uid].RenderFrameRate}`);
+      console.log(`Video RenderResolutionHeight from ${uid}: ${remoteVideoStatsMap[uid].RenderResolutionHeight}`);
+      console.log(`Video RenderResolutionWidth from ${uid}: ${remoteVideoStatsMap[uid].RenderResolutionWidth}`);
+      console.log(`Video TotalFreezeTime from ${uid}: ${remoteVideoStatsMap[uid].TotalFreezeTime}`);
+      console.log(`Video TotalPlayDuration from ${uid}: ${remoteVideoStatsMap[uid].TotalPlayDuration}`);
+      console.log(`Video TransportDelay from ${uid}: ${remoteVideoStatsMap[uid].TransportDelay}`);
     }
-});
+  });
+}, 1000)
 ```
 
 > - This method only supports Google Chrome.
