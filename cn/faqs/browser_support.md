@@ -3,7 +3,7 @@
 title: Agora Web SDK 支持哪些浏览器？
 description: 
 platform: Web
-updatedAt: Mon Apr 13 2020 16:07:37 GMT+0800 (CST)
+updatedAt: Tue Jun 02 2020 11:45:26 GMT+0800 (CST)
 ---
 # Agora Web SDK 支持哪些浏览器？
 Agora Web SDK 支持所有主流浏览器，支持的浏览器及平台如下。
@@ -75,6 +75,8 @@ Agora Web SDK 支持所有主流浏览器，支持的浏览器及平台如下。
 
 ## 使用限制
 
+Chrome 81 及以上版本、Safari 和 Firefox 浏览器需要在获得媒体设备权限后才能获取设备 ID，详见[为什么在 Chrome 81 浏览器上无法获取设备 ID？](../../cn/faq/empty_deviceId.md)
+
 ### Chrome
 
 Agora Web SDK 是基于 WebRTC 实现的采集和编解码，而 Chrome 又是第一批支持 WebRTC 的先行者，所以在 Chrome 上的限制最少，已知限制：
@@ -86,17 +88,18 @@ Agora Web SDK 是基于 WebRTC 实现的采集和编解码，而 Chrome 又是�
 ### Safari
 
 - Safari 12.1 及之前版本仅支持 H.264 编解码格式。
-- Safari 只支持视频帧率设为 30 fps。
 - 设备权限
   - Safari 无法获取输出设备信息，因此不支持 `getPlayoutDevices` 和 `setAudioOutput` 这两个方法。
   - 如果 Safari 浏览器没有打开自动播放，直接播放音视频流会听不到声音，必须在播放前调用 `navigator.mediaDevices.getUserMedia` 方法获取设备权限。
 - Safari 不支持 `addTrack` 和 `removeTrack`。
+- Safari 不支持[双流模式](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#dual-stream)。
 - iOS 端 Safari 不支持 `setAudioLevel` 方法。
 - iOS 端 Safari 上存在语音路由问题：可能出现插着耳机但是仍然从扬声器出声，或者没有耳机却从听筒出声的情况。
 
 ### Firefox 
 
 - 如果 Web 端使用 Firefox 浏览器，Native 端使用 iOS 设备，Firefox 看到的视频方向会发生旋转。
+- Firefox 只支持视频帧率设为 30 fps。
 - 在部分设备上 Firefox 设置视频编码配置不生效，目前已知有此问题的设备如下：
   - MacBook Pro (13-inch, 2016, Two Thunderbolt 3 ports)
   - Windows 10 (MI)
