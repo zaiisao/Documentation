@@ -3,7 +3,7 @@
 title: Chrome Extension for Screen Sharing
 description: 
 platform: Web
-updatedAt: Fri Aug 23 2019 01:22:44 GMT+0800 (CST)
+updatedAt: Tue Jun 02 2020 07:56:05 GMT+0800 (CST)
 ---
 # Chrome Extension for Screen Sharing
 To enable screen sharing on Chrome, you need to add our Chrome extension for screen sharing.
@@ -26,10 +26,10 @@ Follow these steps to add the screen-sharing extension.
 
 Open the `manifest.json` file in the extension folder, and add the domain name of your web app in the line beginning with `"matches"`.
 
-For example, if you are running your web app on localhost, add `"://localhost/"` to the values of `"matches"`:
+For example, if you are running your web app on localhost, add `"*://localhost/*"` to the values of `"matches"`:
 
 ```json
-"matches": ["://localhost/","*://*.agora.io/*","*://webdemo.agora.io/*","*://webdemo.agorabeckon.com/*","*://videocall.agora.io/*"]
+"matches": ["*://localhost/*","*://*.agora.io/*","*://webdemo.agora.io/*","*://webdemo.agorabeckon.com/*","*://videocall.agora.io/*"]
 ```
 
 ### 3. Load the extension and get the extension ID
