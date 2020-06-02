@@ -3,7 +3,7 @@
 title: 通话中质量监测
 description: 通话中质量透明 Web
 platform: Web
-updatedAt: Wed Mar 04 2020 05:28:27 GMT+0800 (CST)
+updatedAt: Tue Jun 02 2020 03:03:04 GMT+0800 (CST)
 ---
 # 通话中质量监测
 ## 功能描述
@@ -46,11 +46,13 @@ client.getSystemStats((stats) => {
   - `RTT`：Agora Web SDK 到 Agora SD-RTN 接入节点的平均往返延时（ RTT，Round-Trip Time），单位 ms。
 
 ``` javascript
-client.getTransportStats((stats) => {
+setInterval(() => {
+  client.getTransportStats((stats) => {
     console.log(`Current Transport RTT: ${stats.RTT}`);
     console.log(`Current Network Type: ${stats.networkType}`);
     console.log(`Current Transport OutgoingAvailableBandwidth: ${stats.OutgoingAvailableBandwidth}`);
-});                           
+  });
+}, 1000)                       
 ```
 <a name ="reference"></a>
 
@@ -71,14 +73,16 @@ client.getTransportStats((stats) => {
 - `UserCount`：通信场景下，该值为当前频道内的用户人数。直播场景下，如果本地用户为主播，该值为当前频道内的主播人数；如果本地用户为观众，该值为当前频道内的主播人数 + 1。
 
 ```javascript
-client.getSessionStats((stats) => {
+setInterval(() => {
+  client.getSessionStats((stats) => {
     console.log(`Current Session Duration: ${stats.Duration}`);
     console.log(`Current Session UserCount: ${stats.UserCount}`);
     console.log(`Current Session SendBytes: ${stats.SendBytes}`);
     console.log(`Current Session RecvBytes: ${stats.RecvBytes}`);
     console.log(`Current Session SendBitrate: ${stats.SendBitrate}`);
     console.log(`Current Session RecvBitrate: ${stats.RecvBitrate}`);
-});
+  });
+}, 1000)
 ```
 
 > - 本方法仅支持 Chrome 浏览器。
@@ -98,16 +102,18 @@ client.getSessionStats((stats) => {
   - `SendLevel`：音频发送能量。
 
 ``` javascript
-client.getLocalAudioStats((localAudioStats) => {
+setInterval(() => {
+  client.getLocalAudioStats((localAudioStats) => {
     for(var uid in localAudioStats){
-         console.log(`Audio CodecType from ${uid}: ${localAudioStats[uid].CodecType}`);
-         console.log(`Audio MuteState from ${uid}: ${localAudioStats[uid].MuteState}`);
-         console.log(`Audio RecordingLevel from ${uid}: ${localAudioStats[uid].RecordingLevel}`);
-         console.log(`Audio SamplingRate from ${uid}: ${localAudioStats[uid].SamplingRate}`);
-         console.log(`Audio SendBitrate from ${uid}: ${localAudioStats[uid].SendBitrate}`);
-         console.log(`Audio SendLevel from ${uid}: ${localAudioStats[uid].SendLevel}`);
+      console.log(`Audio CodecType from ${uid}: ${localAudioStats[uid].CodecType}`);
+      console.log(`Audio MuteState from ${uid}: ${localAudioStats[uid].MuteState}`);
+      console.log(`Audio RecordingLevel from ${uid}: ${localAudioStats[uid].RecordingLevel}`);
+      console.log(`Audio SamplingRate from ${uid}: ${localAudioStats[uid].SamplingRate}`);
+      console.log(`Audio SendBitrate from ${uid}: ${localAudioStats[uid].SendBitrate}`);
+      console.log(`Audio SendLevel from ${uid}: ${localAudioStats[uid].SendLevel}`);
     }
-});
+  });
+}, 1000)
 ```
 
 - [`Client.getLocalVideoStats`](https://docs.agora.io/cn/Video/API%20Reference/web/interfaces/agorartc.client.html#getlocalvideostats) 方法提供本地发布流的**视频**统计数据，一个 uid 对应一组数据，包括：
@@ -125,22 +131,24 @@ client.getLocalAudioStats((localAudioStats) => {
   - `TotalFreezeTime`：视频编码卡顿总时间，单位为秒。
 
 ``` javascript
-client.getLocalVideoStats((localVideoStats) => {
+setInterval(() => {
+  client.getLocalVideoStats((localVideoStats) => {
     for(var uid in localVideoStats){
-         console.log(`Video CaptureFrameRate from ${uid}: ${localVideoStats[uid].CaptureFrameRate}`);
-         console.log(`Video CaptureResolutionHeight from ${uid}: ${localVideoStats[uid].CaptureResolutionHeight}`);
-         console.log(`Video CaptureResolutionWidth from ${uid}: ${localVideoStats[uid].CaptureResolutionWidth}`);
-         console.log(`Video EncodeDelay from ${uid}: ${localVideoStats[uid].EncodeDelay}`);
-         console.log(`Video MuteState from ${uid}: ${localVideoStats[uid].MuteState}`);
-         console.log(`Video SendBitrate from ${uid}: ${localVideoStats[uid].SendBitrate}`);
-         console.log(`Video SendFrameRate from ${uid}: ${localVideoStats[uid].SendFrameRate}`);
-         console.log(`Video SendResolutionHeight from ${uid}: ${localVideoStats[uid].SendResolutionHeight}`);
-         console.log(`Video SendResolutionWidth from ${uid}: ${localVideoStats[uid].SendResolutionWidth}`);
-         console.log(`Video TargetSendBitrate from ${uid}: ${localVideoStats[uid].TargetSendBitrate}`);
-         console.log(`Video TotalDuration from ${uid}: ${localVideoStats[uid].TotalDuration}`);
-         console.log(`Video TotalFreezeTime from ${uid}: ${localVideoStats[uid].TotalFreezeTime}`);
+      console.log(`Video CaptureFrameRate from ${uid}: ${localVideoStats[uid].CaptureFrameRate}`);
+      console.log(`Video CaptureResolutionHeight from ${uid}: ${localVideoStats[uid].CaptureResolutionHeight}`);
+      console.log(`Video CaptureResolutionWidth from ${uid}: ${localVideoStats[uid].CaptureResolutionWidth}`);
+      console.log(`Video EncodeDelay from ${uid}: ${localVideoStats[uid].EncodeDelay}`);
+      console.log(`Video MuteState from ${uid}: ${localVideoStats[uid].MuteState}`);
+      console.log(`Video SendBitrate from ${uid}: ${localVideoStats[uid].SendBitrate}`);
+      console.log(`Video SendFrameRate from ${uid}: ${localVideoStats[uid].SendFrameRate}`);
+      console.log(`Video SendResolutionHeight from ${uid}: ${localVideoStats[uid].SendResolutionHeight}`);
+      console.log(`Video SendResolutionWidth from ${uid}: ${localVideoStats[uid].SendResolutionWidth}`);
+      console.log(`Video TargetSendBitrate from ${uid}: ${localVideoStats[uid].TargetSendBitrate}`);
+      console.log(`Video TotalDuration from ${uid}: ${localVideoStats[uid].TotalDuration}`);
+      console.log(`Video TotalFreezeTime from ${uid}: ${localVideoStats[uid].TotalFreezeTime}`);
     }
-});
+  });
+}, 1000)
 ```
 
 > - 这两个方法仅支持 Chrome 浏览器。
@@ -168,19 +176,21 @@ client.getLocalVideoStats((localVideoStats) => {
 
 
 ``` javascript
-client.getRemoteAudioStats((remoteAudioStatsMap) => {
+setInterval(() => {
+  client.getRemoteAudioStats((remoteAudioStatsMap) => {
     for(var uid in remoteAudioStatsMap){
-         console.log(`Audio CodecType from ${uid}: ${remoteAudioStatsMap[uid].CodecType}`);
-         console.log(`Audio End2EndDelay from ${uid}: ${remoteAudioStatsMap[uid].End2EndDelay}`);
-         console.log(`Audio MuteState from ${uid}: ${remoteAudioStatsMap[uid].MuteState}`);
-         console.log(`Audio PacketLossRate from ${uid}: ${remoteAudioStatsMap[uid].PacketLossRate}`);
-         console.log(`Audio RecvBitrate from ${uid}: ${remoteAudioStatsMap[uid].RecvBitrate}`);
-         console.log(`Audio RecvLevel from ${uid}: ${remoteAudioStatsMap[uid].RecvLevel}`);
-         console.log(`Audio TotalFreezeTime from ${uid}: ${remoteAudioStatsMap[uid].TotalFreezeTime}`);
-         console.log(`Audio TotalPlayDuration from ${uid}: ${remoteAudioStatsMap[uid].TotalPlayDuration}`);
-         console.log(`Audio TransportDelay from ${uid}: ${remoteAudioStatsMap[uid].TransportDelay}`);
+      console.log(`Audio CodecType from ${uid}: ${remoteAudioStatsMap[uid].CodecType}`);
+      console.log(`Audio End2EndDelay from ${uid}: ${remoteAudioStatsMap[uid].End2EndDelay}`);
+      console.log(`Audio MuteState from ${uid}: ${remoteAudioStatsMap[uid].MuteState}`);
+      console.log(`Audio PacketLossRate from ${uid}: ${remoteAudioStatsMap[uid].PacketLossRate}`);
+      console.log(`Audio RecvBitrate from ${uid}: ${remoteAudioStatsMap[uid].RecvBitrate}`);
+      console.log(`Audio RecvLevel from ${uid}: ${remoteAudioStatsMap[uid].RecvLevel}`);
+      console.log(`Audio TotalFreezeTime from ${uid}: ${remoteAudioStatsMap[uid].TotalFreezeTime}`);
+      console.log(`Audio TotalPlayDuration from ${uid}: ${remoteAudioStatsMap[uid].TotalPlayDuration}`);
+      console.log(`Audio TransportDelay from ${uid}: ${remoteAudioStatsMap[uid].TransportDelay}`);
     }
-});
+  });
+}, 1000)
 ```
 
 **获取远端订阅流的视频统计数据**
@@ -205,22 +215,24 @@ client.getRemoteAudioStats((remoteAudioStatsMap) => {
 
 
 ``` javascript
-client.getRemoteVideoStats((remoteVideoStatsMap) => {
+setInterval(() => {
+  client.getRemoteVideoStats((remoteVideoStatsMap) => {
     for(var uid in remoteVideoStatsMap){
-         console.log(`Video End2EndDelay from ${uid}: ${remoteVideoStatsMap[uid].End2EndDelay}`);
-         console.log(`Video MuteState from ${uid}: ${remoteVideoStatsMap[uid].MuteState}`);
-         console.log(`Video PacketLossRate from ${uid}: ${remoteVideoStatsMap[uid].PacketLossRate}`);
-         console.log(`Video RecvBitrate from ${uid}: ${remoteVideoStatsMap[uid].RecvBitrate}`);
-         console.log(`Video RecvResolutionHeight from ${uid}: ${remoteVideoStatsMap[uid].RecvResolutionHeight}`);
-         console.log(`Video RecvResolutionWidth from ${uid}: ${remoteVideoStatsMap[uid].RecvResolutionWidth}`);
-         console.log(`Video RenderFrameRate from ${uid}: ${remoteVideoStatsMap[uid].RenderFrameRate}`);
-         console.log(`Video RenderResolutionHeight from ${uid}: ${remoteVideoStatsMap[uid].RenderResolutionHeight}`);
-         console.log(`Video RenderResolutionWidth from ${uid}: ${remoteVideoStatsMap[uid].RenderResolutionWidth}`);
-         console.log(`Video TotalFreezeTime from ${uid}: ${remoteVideoStatsMap[uid].TotalFreezeTime}`);
-         console.log(`Video TotalPlayDuration from ${uid}: ${remoteVideoStatsMap[uid].TotalPlayDuration}`);
-         console.log(`Video TransportDelay from ${uid}: ${remoteVideoStatsMap[uid].TransportDelay}`);
+      console.log(`Video End2EndDelay from ${uid}: ${remoteVideoStatsMap[uid].End2EndDelay}`);
+      console.log(`Video MuteState from ${uid}: ${remoteVideoStatsMap[uid].MuteState}`);
+      console.log(`Video PacketLossRate from ${uid}: ${remoteVideoStatsMap[uid].PacketLossRate}`);
+      console.log(`Video RecvBitrate from ${uid}: ${remoteVideoStatsMap[uid].RecvBitrate}`);
+      console.log(`Video RecvResolutionHeight from ${uid}: ${remoteVideoStatsMap[uid].RecvResolutionHeight}`);
+      console.log(`Video RecvResolutionWidth from ${uid}: ${remoteVideoStatsMap[uid].RecvResolutionWidth}`);
+      console.log(`Video RenderFrameRate from ${uid}: ${remoteVideoStatsMap[uid].RenderFrameRate}`);
+      console.log(`Video RenderResolutionHeight from ${uid}: ${remoteVideoStatsMap[uid].RenderResolutionHeight}`);
+      console.log(`Video RenderResolutionWidth from ${uid}: ${remoteVideoStatsMap[uid].RenderResolutionWidth}`);
+      console.log(`Video TotalFreezeTime from ${uid}: ${remoteVideoStatsMap[uid].TotalFreezeTime}`);
+      console.log(`Video TotalPlayDuration from ${uid}: ${remoteVideoStatsMap[uid].TotalPlayDuration}`);
+      console.log(`Video TransportDelay from ${uid}: ${remoteVideoStatsMap[uid].TransportDelay}`);
     }
-});
+  });
+}, 1000)
 ```
 
 > - 这两个方法仅支持 Chrome 浏览器。
