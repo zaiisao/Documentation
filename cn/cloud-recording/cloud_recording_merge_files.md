@@ -3,7 +3,7 @@
 title: 合并音视频文件
 description: 解释如何通过转码脚本将音频和视频合并，或转换文件格式
 platform: All Platforms
-updatedAt: Sun Apr 26 2020 01:21:22 GMT+0800 (CST)
+updatedAt: Tue Jun 02 2020 10:42:31 GMT+0800 (CST)
 ---
 # 合并音视频文件
 ## 功能描述
