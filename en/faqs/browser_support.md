@@ -3,7 +3,7 @@
 title: Which browsers does the Agora Web SDK support?
 description: 
 platform: Web
-updatedAt: Tue Jun 02 2020 14:25:26 GMT+0800 (CST)
+updatedAt: Tue Jun 02 2020 14:26:19 GMT+0800 (CST)
 ---
 # Which browsers does the Agora Web SDK support?
 The Agora Web SDK supports all mainstream browsers. 
@@ -92,7 +92,7 @@ The Agora Web SDK is based on WebRTC and works best on Chrome.
 - Device permissions
   - Safari does not support getting the output device information, so it does not support the `getPlayoutDevices` and `setAudioOutput` methods.
   - If **Auto-Play** is not enabled on Safari, the stream playback has no audio. You have to call the `navigator.mediaDevices.getUserMedia` method to get the device permissions before playing a stream.
-     ![](https://web-cdn.agora.io/docs-files/1591069728706)
+    ![](https://web-cdn.agora.io/docs-files/1591079062644)
 - Safari does not support the `addTrack` and `removeTrack` methods.
 - Safari does not support the [dual-stream mode](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#dual-stream).
 - Safari does not support the `getAudioLevel` method on iOS.
