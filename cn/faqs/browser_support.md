@@ -3,7 +3,7 @@
 title: Agora Web SDK 支持哪些浏览器？
 description: 
 platform: Web
-updatedAt: Tue Jun 02 2020 11:45:26 GMT+0800 (CST)
+updatedAt: Tue Jun 02 2020 11:51:55 GMT+0800 (CST)
 ---
 # Agora Web SDK 支持哪些浏览器？
 Agora Web SDK 支持所有主流浏览器，支持的浏览器及平台如下。
@@ -84,13 +84,16 @@ Agora Web SDK 是基于 WebRTC 实现的采集和编解码，而 Chrome 又是�
 - Chrome 版本要求 58 及以上。
 - 部分 Android 设备上，Chrome 不支持 H.264 编解码格式。
 - 部分 API 需要 Chrome 更高版本支持，具体见 API 参考内的描述。
+- 在所有使用 AMD 芯片和部分使用 Intel 芯片的 Windows 设备上，Chrome 使用 H.264 编码时，发送码率可能达不到设定值。你可以使用 VP8 编码或者尝试关闭硬件加速。
 
 ### Safari
 
+- Safari 11 只支持 480P 及以上分辨率。
 - Safari 12.1 及之前版本仅支持 H.264 编解码格式。
 - 设备权限
   - Safari 无法获取输出设备信息，因此不支持 `getPlayoutDevices` 和 `setAudioOutput` 这两个方法。
   - 如果 Safari 浏览器没有打开自动播放，直接播放音视频流会听不到声音，必须在播放前调用 `navigator.mediaDevices.getUserMedia` 方法获取设备权限。
+    ![](https://web-cdn.agora.io/docs-files/1591069399605)
 - Safari 不支持 `addTrack` 和 `removeTrack`。
 - Safari 不支持[双流模式](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#dual-stream)。
 - iOS 端 Safari 不支持 `setAudioLevel` 方法。
