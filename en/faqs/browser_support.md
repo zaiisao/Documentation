@@ -3,7 +3,7 @@
 title: Which browsers does the Agora Web SDK support?
 description: 
 platform: Web
-updatedAt: Mon Apr 13 2020 16:03:00 GMT+0800 (CST)
+updatedAt: Tue Jun 02 2020 11:50:09 GMT+0800 (CST)
 ---
 # Which browsers does the Agora Web SDK support?
 The Agora Web SDK supports all mainstream browsers. 
@@ -75,6 +75,8 @@ Due to the various browser engine implementations, support for some features may
 
 ## Limitation
 
+On Chrome 81 or later, Safari, and Firefox, device IDs are only available after the user has granted permissions to use the media device. See [Why can't I get device ID on Chrome 81?](https://docs.agora.io/en/faq/empty_deviceId)
+	
 ### Chrome
 
 The Agora Web SDK is based on WebRTC and works best on Chrome.
@@ -85,17 +87,18 @@ The Agora Web SDK is based on WebRTC and works best on Chrome.
 ### Safari
 
 - Safari 12.1 or earlier only supports the H.264 codec.
-- Safari does not support changing the frame rate (30 fps by default).
 - Device permissions
   - Safari does not support getting the output device information, so it does not support the `getPlayoutDevices` and `setAudioOutput` methods.
   - If **Auto-Play** is not enabled on Safari, the stream playback has no audio. You have to call the `navigator.mediaDevices.getUserMedia` method to get the device permissions before playing a stream.
 - Safari does not support the `addTrack` and `removeTrack` methods.
+- Safari does not support the [dual-stream mode](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#dual-stream).
 - Safari does not support the `getAudioLevel` method on iOS.
 - Occasional audio routing issues on iOS Safari: The audio is routed to the speakerphone when a headset is connected, or the audio is routed to the earpiece when no headset is connected.
 
 ### Firefox
 
 - When the Firefox browser interoperates with the Native SDK for iOS, the video in the Firefox browser is rotated.
+- Firefox does not support changing the frame rate (30 fps by default).
 - Setting the video profile on Firefox does not take effect on the following devices:
   - MacBook Pro (13-inch, 2016, Two Thunderbolt 3 ports)
   - Windows 10 (MI)
