@@ -3,7 +3,7 @@
 title: Which browsers does the Agora Web SDK support?
 description: 
 platform: Web
-updatedAt: Tue Jun 02 2020 11:50:09 GMT+0800 (CST)
+updatedAt: Tue Jun 02 2020 11:50:59 GMT+0800 (CST)
 ---
 # Which browsers does the Agora Web SDK support?
 The Agora Web SDK supports all mainstream browsers. 
@@ -83,13 +83,16 @@ The Agora Web SDK is based on WebRTC and works best on Chrome.
 - The Agora Web SDK supports Chrome 58 or later.
 - On some Android devices, Chrome does not support the H.264 codec.
 - Some APIs require later versions of Chrome, see the API Reference for details.
+- On all AMD-based and some Intel-based devices with the Windows operating system, if Chrome uses the H.264 codec, the video transmission bitrate may be lower than the set value. To resolve it, you can set the browser to use the VP8 codec or try to disable hardware acceleration.
 
 ### Safari
 
+- Safari 11 only supports the video resolution of 480P and higher.
 - Safari 12.1 or earlier only supports the H.264 codec.
 - Device permissions
   - Safari does not support getting the output device information, so it does not support the `getPlayoutDevices` and `setAudioOutput` methods.
   - If **Auto-Play** is not enabled on Safari, the stream playback has no audio. You have to call the `navigator.mediaDevices.getUserMedia` method to get the device permissions before playing a stream.
+     ![](https://web-cdn.agora.io/docs-files/1591069728706)
 - Safari does not support the `addTrack` and `removeTrack` methods.
 - Safari does not support the [dual-stream mode](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#dual-stream).
 - Safari does not support the `getAudioLevel` method on iOS.
