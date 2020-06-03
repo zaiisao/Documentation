@@ -1,11 +1,11 @@
 
 ---
-title: 声网 SDK 支持哪些平台和版本
+title: 声网 SDK 支持哪些平台和版本？
 description: 
 platform: All Platforms
-updatedAt: Mon Dec 16 2019 13:49:25 GMT+0800 (CST)
+updatedAt: Wed Jun 03 2020 10:41:54 GMT+0800 (CST)
 ---
-# 声网 SDK 支持哪些平台和版本
+# 声网 SDK 支持哪些平台和版本？
 Agora 各个产品的 SDK 支持的平台和版本不尽相同。
 
 ## 音视频通话/互动直播
@@ -19,6 +19,7 @@ Agora 音视频通话/互动直播 SDK 支持 Android、iOS、Windows、macOS、
 | Windows    | XP SP3 及以上版本                                            |
 | macOS      | 10.0 及以上版本                                              |
 | Electron      | 1.8.3 及以上版本                                              |
+| Unity      |  2017 及以上版本                                              |
 | 微信小程序 | 最新版本                                                     |
 | Web        | Agora Web SDK 支持的浏览器及平台详见 [Agora Web SDK 兼容性说明](https://docs.agora.io/cn/Interactive%20Broadcast/release_web_video?platform=Web#兼容性说明)。 |
 
