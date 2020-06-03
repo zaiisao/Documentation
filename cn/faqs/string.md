@@ -1,11 +1,11 @@
 
 ---
-title: 如何使用 String 型用户 ID
+title: 如何使用 String 型用户 ID？
 description: 
 platform: All Platforms
-updatedAt: Wed May 20 2020 18:55:08 GMT+0800 (CST)
+updatedAt: Wed Jun 03 2020 10:38:55 GMT+0800 (CST)
 ---
-# 如何使用 String 型用户 ID
+# 如何使用 String 型用户 ID？
 ## 场景描述
 
 <div class="alert warning">该功能目前正在验证阶段。如需使用，我们建议你联系声网技术支持。<p>以下产品或功能不支持 String 型的用户 ID：<li><a href="https://docs.agora.io/cn/cloud-recording/product_cloud_recording?platform=All%20Platforms">云录制</a ><li><a href="https://docs.agora.io/cn/Interactive%20Broadcast/cdn_streaming_android?platform=Android">RTMP 推流</a ><li><a href="https://docs.agora.io/cn/Agora%20Platform/dashboard_restful_communication?platform=All%20Platforms">RESTful API</a ></p></div>
