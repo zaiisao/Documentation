@@ -3,7 +3,7 @@
 title: 加入多频道
 description: 加入多频道v3.0首次上线
 platform: Windows
-updatedAt: Fri Mar 06 2020 04:00:33 GMT+0800 (CST)
+updatedAt: Thu Jun 04 2020 08:44:12 GMT+0800 (CST)
 ---
 # 加入多频道
 ## 功能描述
@@ -79,7 +79,7 @@ bool JoinChannelWithIChannel(const char *channelId, const char *token, const cha
 4. 调用 `IChannel` 对象中的 `joinChannel` 方法加入第二个频道。
 5. 重复步骤 2、3，创建多个 `IChannel` 对象，然后分别调用这些 `IChannel` 对象中的 `joinChannel` 方法，加入更多频道。
 
-该方法适用于只需要将音、视频流固定发布到某个频道的场景。对于已经使用 Agora SDK 实现实时音视频功能的开发者，该方法不涉及原有代码逻辑变动。
+该方法适用于只需要将音、视频流固定发布到 RtcEngine 频道的场景。对于已经使用 Agora SDK 实现实时音视频功能的开发者，该方法不涉及原有代码逻辑变动。
 
 **API 调用时序**
 
@@ -96,6 +96,10 @@ bool JoinChannelWithIChannel(const char *channelId, const char *token, const cha
 - [`IChannelEventHandler`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_channel_event_handler.html) 类
 
 ## 开发注意事项
+
+### 精细订阅限制
+
+如果你在调用 `RtcChannel` 对象中的 `joinChannel` 方法加入频道时将 `autoSubscribeAudio` 或 `autoSubscribeVideo` 设为 `false`，选择不自动订阅音频流或视频流，那么加入频道后，你不能再调用 `muteRemoteAudioStream`(false) 或 `muteRemoteVideoStream`(false) 接收指定用户的音频流或视频流。如想实现上述操作，我们建议在加入频道前调用  `setDefaultMuteAllRemoteAudioStreams`(true) 或 `setDefaultMuteAllRemoteVideoStreams`(true) 设置默认不接收所有音频流或所有视频流。
 
 ### 设置远端视图
 
@@ -116,7 +120,7 @@ SDK 仅支持用户同一时间在一个频道内发布音、视频流。因此�
   - 调用频道一的 `publish` 方法后，未调用频道一的 `unpublish` 方法结束发布，就调用频道二的 `publish` 方法；
 - 通过混用 `IRtcEngine` 类和 `IChannel` 类加入多频道：
   - 通信场景下，通过 `IRtcEngine` 类加入频道一，然后通过 `IChannel` 类加入频道二后，试图调用 `IChannel` 类的 `publish` 方法；
-  - 直播场景下，以主播身份通过 `IRtcEngine` 类加入频道一，然后通过 `IChannel` 类加入频道二后，试图调用 `IChannel` 类的 `publish` 方法；
+  - 直播场景下，通过 `IRtcEngine` 类加入频道一，然后通过 `IChannel` 类加入频道二后，试图调用 `IChannel` 类的 `publish` 方法；
   - 直播场景下，加入多个频道后，试图以观众身份调用 `IChannel` 类的 `publish` 方法；
   - 调用 `IChannel` 类的 `publish` 方法后，未调用对应 `IChannel` 类的 `unpublish` 方法，就试图通过 `IRtcEngine` 类的 `joinChannel` 方法加入频道。
 
