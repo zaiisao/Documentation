@@ -3,7 +3,7 @@
 title: 发送和接收图片或文件消息
 description: 
 platform: Android
-updatedAt: Mon May 11 2020 04:07:54 GMT+0800 (CST)
+updatedAt: Thu Jun 04 2020 03:26:42 GMT+0800 (CST)
 ---
 # 发送和接收图片或文件消息
 ## 功能描述
