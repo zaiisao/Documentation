@@ -3,7 +3,7 @@
 title: Join Multiple Channels
 description: 3.0 feature multi-channel
 platform: iOS,macOS
-updatedAt: Wed Mar 04 2020 05:49:15 GMT+0800 (CST)
+updatedAt: Thu Jun 04 2020 08:48:12 GMT+0800 (CST)
 ---
 # Join Multiple Channels
 ## Introduction
