@@ -3,7 +3,7 @@
 title: Join Multiple Channels
 description: 3.0 feature multi-channel
 platform: iOS,macOS
-updatedAt: Thu Jun 04 2020 08:48:12 GMT+0800 (CST)
+updatedAt: Thu Jun 04 2020 08:48:35 GMT+0800 (CST)
 ---
 # Join Multiple Channels
 ## Introduction
@@ -75,7 +75,7 @@ Follow these steps to implement the multi-channel function in your project:
 3. Call `joinChannelByToken` of the `AgoraRtcChannel` class to join the second channel.
 4. Repeat steps 2 and 3 to create multiple `AgoraRtcChannel` objects, and call the `joinChannelByToken` method of each object to join these channels.
 
-This approach applies to scenarios where you publish streams only to a specified channel. If you have implemented RTC functions with an earlier version of our SDK, this approach does not require any change to your existing code.
+This approach applies to scenarios where you publish streams only to the RtcEngine channel. If you have implemented RTC functions with an earlier version of our SDK, this approach does not require any change to your existing code.
 
 **API call sequence**
 
@@ -93,6 +93,16 @@ We also provide an open-source sample project [Breakout Class](https://github.co
 
 ## Considerations
 
+### Subscription limits
+
+When joining a channel by calling `joinChannelByToken` in the `AgoraRtcChannel` class, if you set `autoSubscribeAudio` or `autoSubscribeVideo` as false, you cannot resume receiving the audio or video stream of a specified user by calling `muteRemoteAudioStream`(false) or `muteRemoteVideoStream`(false).
+
+To resume receiving a specified stream, take the following steps:
+
+1. Call `setDefaultMuteAllRemoteAudioStreams`(true) or `setDefaultMuteAllRemoteVideoStreams`(true) before joining the channel.
+2. Join the channel.
+3. Call `muteRemoteAudioStream`(false) or `muteRemoteVideoStream`(false), and specify the user whose stream you want to resume receiving.
+
 ### Setting the remote video
 
 In video scenarios, if the remote user joins the channel using `AgoraRtcChannel`, ensure that you specify the channel ID of the remote user in  [AgoraRtcVideoCanvas](https://docs.agora.io/en/Voice/API%20Reference/oc/v3.0.0/Classes/AgoraRtcVideoCanvas.html) when setting the remote video view. 
@@ -107,6 +117,6 @@ You must meet the following requirements to implementing the multi-channel funct
   - After calling the `publish` method in Channel 1, you need to call the `unpublish` method in Channel 1 before calling the publish method in Channel 2.
 - When joining multiple channels using both the `AgoraRtcEngineKit` and `AgoraRtcChannel` classes:
   - In the Communication profile, if you join Channel 1 using the `AgoraRtcEngineKit` class, and Channel 2 using the `AgoraRtcChannel` class, you cannot call `publish` in the `AgoraRtcChannel` class.
-  - In the Live-Broadcast profile, if you join Channel 1 as a broadcaster using the `AgoraRtcEgineKit` class, and Channel 2 through the `AgoraRtcChannel` class, you cannot call `publish` in the `AgoraRtcChannel` class.
+  - In the Live-Broadcast profile, if you join Channel 1 using the `AgoraRtcEgineKit` class, and Channel 2 through the `AgoraRtcChannel` class, you cannot call `publish` in the `AgoraRtcChannel` class.
   - In the Live-Broadcast profile, after joining multiple channels, you cannot call the `publish` method in the `AgoraRtcChannel` class as an AUDIENCE.
   - After calling `publish` in the `AgoraRtcChannel` class, you need to call `unpublish` in the `AgoraRtcChannel` class. Otherwise, you cannot call `joinChannelByToken` in the `AgoraRtcEngineKit` class.
