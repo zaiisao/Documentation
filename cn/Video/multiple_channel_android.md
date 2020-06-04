@@ -3,7 +3,7 @@
 title: 加入多频道
 description: 加入多频道v3.0首次上线
 platform: Android
-updatedAt: Fri Mar 06 2020 04:00:02 GMT+0800 (CST)
+updatedAt: Thu Jun 04 2020 08:38:21 GMT+0800 (CST)
 ---
 # 加入多频道
 ## 功能描述
