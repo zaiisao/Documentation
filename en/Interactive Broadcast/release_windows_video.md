@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Wed May 27 2020 11:09:50 GMT+0800 (CST)
+updatedAt: Fri Jun 05 2020 02:18:00 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK.
@@ -44,11 +44,7 @@ To improve the audio quality, this release adds the following enumerate elements
 
 See the advanced guide [Set the Voice Changer and Reverberation Effects](../../en/Interactive%20Broadcast/voice_changer_windows.md) for more information.
 
-#### 3. Face detection
-
-This release enables local face detection. After you call `enableFaceDetection` to enable this function, the SDK triggers the `onFacePositionChanged` callback in real time to report the detection results, including the distance between the human face and the device screen. This function can remind users to keep a certain distance from the screen.
-
-#### 4. Fill mode
+#### 3. Fill mode
 
 To improve the user experience of watching videos, this release adds a video display mode `RENDER_MODE_FILL(4)`. This mode zooms and stretches the video to fill the display window. You can select this mode when calling the following methods:
 - `setupLocalVideo`
@@ -56,7 +52,7 @@ To improve the user experience of watching videos, this release adds a video dis
 - `setLocalRenderMode`
 - `setRemoteRenderMode`
 
-#### 5. Data post-processing in multiple channels
+#### 4. Data post-processing in multiple channels
 
 This release adds support for post-processing remote audio and video data in a multi-channel scenario by adding the following C++ methods:
 
@@ -87,8 +83,6 @@ This release adds the following APIs:
 - [`setAudioMixingPitch`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a26b117f7e097801b03522f7da9257425)
 - Nine enumerations in [`VOICE_CHANGER_PRESET`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/namespaceagora_1_1rtc.html#ae29d1fb09d785334eabf0f3def8b4117), such as `AUDIO_REVERB_FX_KTV`
 - Twelve enumerations in [`AUDIO_REVERB_PRESET`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/namespaceagora_1_1rtc.html#a2476d004b44df3950ef62022cd41e564), such as `VOICE_BEAUTY_VIGOROUS`
-- [`enableFaceDetection`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a2a4a87a51a473071f3457db87d93fe80)
-- [`onFacePositionChanged`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a643406cfc93f3e55c67a4f64d0896337)
 - `RENDER_MODE_FILL(4)` in the [`RENDER_MODE_TYPE`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/namespaceagora_1_1rtc.html#af41dbc1deee1e6996b3476282da6aa49) enum
 - [`isMultipleChannelFrameWanted`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html#a4b6bdf2a975588cd49c2da2b6eff5956) and [`onPlaybackAudioFrameBeforeMixingEx`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html#ab0cf02ba307e91086df04cda4355905b) in the [`IAudioFrameObserver`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html) class
 - [`isMultipleChannelFrameWanted`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#aa6bf2611907a097ec359b83f1e3ba49a) and [`onRenderVideoFrameEx`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#ad325db8ee3a04e667e6db3d1a84f381d) in the [`IVideoFrameObserver`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html) class
