@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: Web
-updatedAt: Mon May 11 2020 09:30:30 GMT+0800 (CST)
+updatedAt: Fri Jun 05 2020 08:58:55 GMT+0800 (CST)
 ---
 # 实现语音通话
 <div class="alert note">提示：<br/>
@@ -22,7 +22,7 @@ updatedAt: Mon May 11 2020 09:30:30 GMT+0800 (CST)
 
 ## 前提条件
 
-1. 安装一款 Agora Web SDK 支持的浏览器，如下表所示：
+1. 安装一款 Agora Web SDK 支持的浏览器，如下表所示：     <div class="alert info">Agora 推荐使用最新版本的 Chrome 浏览器。</div>
 
    | 平台         | Chrome 58+ | Firefox 56+ | Safari 11+ | Opera 45+ | QQ 浏览器 10.5+ | 360 安全浏览器 | 微信浏览器 |
    | ------------ | ---------- | ----------- | ---------- | --------- | --------------- | -------------- | ---------- |
