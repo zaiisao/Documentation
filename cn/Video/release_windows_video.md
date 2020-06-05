@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Wed May 27 2020 11:10:16 GMT+0800 (CST)
+updatedAt: Fri Jun 05 2020 02:04:00 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -45,11 +45,7 @@ Windows 视频 SDK 支持 X86 和 X64 架构。
 
 你可以查看进阶功能[变声与混响](../../cn/Video/voice_changer_windows.md)了解使用方法和注意事项。
 
-#### 3. 人脸检测
-
-该版本新增人脸检测功能。通过 `enableFaceDetection` 方法开启人脸检测后，SDK 会实时触发 `onFacePositionChanged` 回调，向本地用户报告检测出的一系列结果，包括人脸距设备屏幕的距离。该功能可用于提醒用户注意用眼卫生，和屏幕保持一定距离。
-
-#### 4. 全屏显示视频
+#### 3. 全屏显示视频
 
 为提高用户观看视频的体验，该版本在视频显示模式中新增 `RENDER_MODE_FILL(4)` 模式。设置该模式后，视频尺寸会进行缩放和拉伸直至充满显示视图。你可以在调用以下方法设置用户视图时选择该显示模式：
 - `setupLocalVideo`
@@ -57,7 +53,7 @@ Windows 视频 SDK 支持 X86 和 X64 架构。
 - `setLocalRenderMode`
 - `setRemoteRenderMode`
 
-#### 5. 远端音视频数据后处理多频道支持
+#### 4. 远端音视频数据后处理多频道支持
 
 在多频道场景下，为方便后处理各频道的远端音视频数据，该版本新增如下 C++ 接口：
 
@@ -88,8 +84,6 @@ Windows 视频 SDK 支持 X86 和 X64 架构。
 - [`setAudioMixingPitch`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a26b117f7e097801b03522f7da9257425)
 - [`VOICE_CHANGER_PRESET`](https://docs.agora.io/cn/Video/API%20Reference/cpp/namespaceagora_1_1rtc.html#ae29d1fb09d785334eabf0f3def8b4117) `enum` 中新增 `AUDIO_REVERB_FX_KTV` 等 9 个枚举值
 - [`AUDIO_REVERB_PRESET`](https://docs.agora.io/cn/Video/API%20Reference/cpp/namespaceagora_1_1rtc.html#a2476d004b44df3950ef62022cd41e564) `enum` 中新增 `VOICE_BEAUTY_VIGOROUS` 等 12 个枚举值
-- [`enableFaceDetection`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a2a4a87a51a473071f3457db87d93fe80)
-- [`onFacePositionChanged`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a643406cfc93f3e55c67a4f64d0896337)
 - [`RENDER_MODE_TYPE`](https://docs.agora.io/cn/Video/API%20Reference/cpp/namespaceagora_1_1rtc.html#af41dbc1deee1e6996b3476282da6aa49) `enum` 中新增 `RENDER_MODE_FILL(4)`
 - [`IAudioFrameObserver`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html) 类中新增 [`isMultipleChannelFrameWanted`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html#a4b6bdf2a975588cd49c2da2b6eff5956) 和 [`onPlaybackAudioFrameBeforeMixingEx`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html#ab0cf02ba307e91086df04cda4355905b)
 - [`IVideoFrameObserver`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html) 类中新增 [`isMultipleChannelFrameWanted`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#aa6bf2611907a097ec359b83f1e3ba49a) 和 [`onRenderVideoFrameEx`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1media_1_1_i_video_frame_observer.html#ad325db8ee3a04e667e6db3d1a84f381d) 
