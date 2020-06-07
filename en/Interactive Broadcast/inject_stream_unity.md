@@ -50,8 +50,7 @@ Refer to the following steps to inject an online media stream:
 2. The host in a channel calls the `RemoveInjectStreamUrl` method to remove the injected media stream.
 	If the method call is successful, SDK triggers the `OnUserOfflineHandler (uid:666)` callback to all the users in the channel.
 	
-	<div class="alert note">Do not need to call the <tt>RemoveInjectStreamUrl</tt> method if the host has left the channel.</div>
-
+	<div class="alert note">No need to call the <tt>RemoveInjectStreamUrl</tt> method if the host has left the channel.</div>
 
 ### Sample code
 
@@ -64,6 +63,7 @@ injectStreamConfig.videoFramerate = 15;
 injectStreamConfig.videoBitrate = 400;
 injectStreamConfig.audioSampleRate = AUDIO_SAMPLE_RATE_TYPE.AUDIO_SAMPLE_RATE_44100;
 injectStreamConfig.audioChannels = 1;
+injectStreamConfig.audioBitrate = 48000;
 
 // Inject an online media stream.
 mRtcEngine.AddInjectStreamUrl(url, injectStreamConfig);
