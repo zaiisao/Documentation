@@ -3,7 +3,7 @@
 title: 输入在线媒体流
 description: 
 platform: Android
-updatedAt: Tue Mar 24 2020 09:43:34 GMT+0800 (CST)
+updatedAt: Mon Jun 08 2020 02:55:13 GMT+0800 (CST)
 ---
 # 输入在线媒体流
 ## 功能描述
@@ -64,7 +64,8 @@ String urlPath = "Some online RTMP/HLS url path"
   config.videoGop = 30;
   config.videoFramerate = 15;
   config.videoBitrate = 400;
-  config.audioSampleRate = LiveInjectStreamConfig.AudioSampleRateType.TYPE_44100;        		   config.audioBitrate = 48;
+  config.audioSampleRate = LiveInjectStreamConfig.AudioSampleRateType.TYPE_48000; 
+  config.audioBitrate = 48;
   config.audioChannels = 1;
 
   rtcEngine.addInjectStreamUrl(urlPath, config);

@@ -3,7 +3,7 @@
 title: 屏幕共享
 description: 
 platform: Web
-updatedAt: Fri May 15 2020 09:03:37 GMT+0800 (CST)
+updatedAt: Mon Jun 08 2020 05:58:52 GMT+0800 (CST)
 ---
 # 屏幕共享
 ## 功能简介
@@ -92,8 +92,6 @@ screenStream = AgoraRTC.createStream({
 
 Agora Web SDK 从 3.0.0 版本起支持在 Windows 平台的 Chrome 浏览器 74 及以上版本同时共享屏幕和本地播放的背景音，在 `createStream` 时把 `screen` 字段和 `screenAudio` 字段都设为 `true` 即可。
 
-> 我们建议同时将 `audio` 设为 `false`。如果 `screenAudio` 和 `audio` 都设置为 `true`，音视频流中只会包含本地播放的背景音。
-
 ```javascript
 screenStream = AgoraRTC.createStream({
   streamID: uid,
@@ -104,7 +102,18 @@ screenStream = AgoraRTC.createStream({
 });
 ```
 
-<div class="alert note">注意：<li>设置了 <code>screenAudio</code> 为 <code>true</code> 后，还需要在屏幕共享的弹出框上勾选<b>分享音频</b>才能真正生效。</li><li>如果选择共享单个应用窗口无法使用分享音频功能。</li></div>
+<div class="alert note">注意事项：
+	<ul>
+		<li>在创建屏幕共享的流时要注意区分 <code>audio</code> 和 <code>screenAudio</code> 字段：
+			<ul>
+				<li><code>audio</code> 字段用于控制创建的流中是否包含由本地音频输入设备采集的音频。</li>
+				<li><code>screenAudio</code> 字段用于控制创建的流中是否包含本地播放的声音。</li>
+			</ul>
+			我们建议在屏幕共享的流中将 <code>audio</code> 设为 <code>false</code>。如果 <code>screenAudio</code> 和 <code>audio</code> 都设置为 <code>true</code>，屏幕共享流中只会包含本地播放的背景音。</li>
+		<li>设置了 <code>screenAudio</code> 为 <code>true</code> 后，还需要在屏幕共享的弹出框上勾选<b>分享音频</b>才能真正生效。</li>
+		<li>如果选择共享单个应用窗口无法使用分享音频功能。</li>
+		</ul>
+</div>
 
 ![](https://web-cdn.agora.io/docs-files/1574070243757)
 

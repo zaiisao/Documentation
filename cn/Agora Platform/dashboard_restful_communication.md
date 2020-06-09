@@ -3,7 +3,7 @@
 title: RESTful API
 description: 
 platform: All Platforms
-updatedAt: Fri May 15 2020 08:23:53 GMT+0800 (CST)
+updatedAt: Tue Jun 09 2020 02:02:22 GMT+0800 (CST)
 ---
 # RESTful API
 ## 认证
@@ -163,7 +163,7 @@ BaseUrl：**https://api.agora.io/dev**
 
 **请求参数**
 
-#### 包体参数
+#### 查询参数
 
 | 参数名 | 描述 |
 | ---------------- | ---------------- |
@@ -173,10 +173,7 @@ BaseUrl：**https://api.agora.io/dev**
 **请求示例**
 
 ```json
-{
-  "id": "xxxx",
-  "name": "xxxx"
-}
+https://api.agora.io/dev/v1/project?id=xxxx&name=project1
 ```
 
 **响应参数**
@@ -674,7 +671,7 @@ BaseUrl: **https://api.agora.io/dev**
 
 **请求参数**
 
-#### 包体参数
+#### 查询参数
 
 | 参数名 | 描述 |
 | ---------------- | ---------------- |
@@ -683,9 +680,7 @@ BaseUrl: **https://api.agora.io/dev**
 **请求示例**
 
 ```json
-{
-  "appid": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2"
-}
+https://api.agora.io/dev/v1/kicking-rule?appid=4855xxxxxxxxxxxxxxxxxxxxxxxxeae2
 ```
 
 **响应参数**

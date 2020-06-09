@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Unity
-updatedAt: Mon Apr 13 2020 15:29:48 GMT+0800 (CST)
+updatedAt: Sun Jun 07 2020 06:20:10 GMT+0800 (CST)
 ---
 # 游戏 API
 <div class="alert note">互动游戏 Unity SDK 将不再维护，请使用 RTC Unity SDK 替代。详情见<a href="https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/unity/index.html">API 参考</a >。</div>
@@ -59,7 +59,7 @@ public static IRtcEngine GetEngine (string appId);
 #### 查询引擎实例 (QueryEngine)
 
 ```
-puiblic static IRtcEngine QueryEngine();
+public static IRtcEngine QueryEngine();
 ```
 
 该方法查询引擎实例。与 `GetEngine` 不同的是，如果没有现成的实例，该方法不会自动创建一个实例。

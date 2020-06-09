@@ -62,7 +62,7 @@ Agora 视频互动直播提供丰富的功能，你可以根据自己的场景�
 | ---------- | ------------------------------------------------------------ |
 	| Android    | <p>4.1+</p><p>Android SDK 支持如下 ABI：</p><ul><li>armeabi-v7a<li>arm64-v8a<li>x86<li>x86_64                                                         |
 | iOS        | 8.0+                                                         |
-	| Windows    | <p>Windows 7</p><p>Windows SDK 支持如下架构：<p><ul><li>x86<li>x64                                                      |
+	| Windows    | <p>Windows 7+</p><p>Windows SDK 支持如下架构：<p><ul><li>x86<li>x64                                                      |
 | macOS      | 10.0+                                                        |
 | Unity      | <p>2017+</p><p>Unity SDK 支持如下平台：<p><ul><li>Android (armeabi-v7a、arm64-v8a、x86)<li>iOS<li>Windows (x86、x86_64)<li>macOS                                                         |
 | 微信小程序 | 支持                                                         |
