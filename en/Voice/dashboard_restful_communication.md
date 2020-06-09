@@ -3,7 +3,7 @@
 title: RESTful API
 description: 
 platform: All Platforms
-updatedAt: Fri May 15 2020 08:32:44 GMT+0800 (CST)
+updatedAt: Tue Jun 09 2020 02:02:11 GMT+0800 (CST)
 ---
 # RESTful API
 ## Authentication
@@ -159,7 +159,7 @@ Gets the information of a specified project.
 
 **Request parameter**
 
-#### Body parameter
+#### Query parameter
 
 | Parameter | Description |
 | ---------------- | ---------------- |
@@ -169,10 +169,7 @@ Gets the information of a specified project.
 **Request sample**
 
 ```json
-{
-  "id": "xxxxx",
-  "name": "xxxxx"
-}
+https://api.agora.io/dev/v1/project?id=xxxx&name=project1
 ```
 
 **Response parameter**
@@ -670,7 +667,7 @@ Gets the list of all banning rules.
 
 **Request parameter**
 
-#### Body parameter
+#### Query parameter
 
 | Parameter | Description |
 | ---------------- | ---------------- |
@@ -679,9 +676,7 @@ Gets the list of all banning rules.
 **Request sample**
 
 ```json
-{
-  "appid": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2"
-}
+https://api.agora.io/dev/v1/kicking-rule?appid=4855xxxxxxxxxxxxxxxxxxxxxxxxeae2
 ```
 
 **Response parameter**

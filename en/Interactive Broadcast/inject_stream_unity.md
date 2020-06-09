@@ -3,7 +3,7 @@
 title: Inject Online Media Stream
 description: 
 platform: Unity
-updatedAt: Fri May 15 2020 09:55:55 GMT+0800 (CST)
+updatedAt: Mon Jun 08 2020 02:56:16 GMT+0800 (CST)
 ---
 # Inject Online Media Stream
 ## Introduction
@@ -39,7 +39,7 @@ Before proceeding, ensure that you implement a basic live broadcast in your proj
 
 Refer to the following steps to inject an online media stream:
 
-1. The host in a channel calls the `AddInjectStreamUrl` method to inject an online media stream to the live broadcast channel. You can modify the parameter values of `streamConfig` to set the resolution, bitrate and frame rate of the injected stream. See [`InjectStreanConfig`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/unity/structagora__gaming__rtc_1_1_inject_stream_config.html).
+1. The host in a channel calls the `AddInjectStreamUrl` method to inject an online media stream to the live broadcast channel. You can modify the parameter values of `streamConfig` to set the resolution, bitrate and frame rate of the injected stream. See [`InjectStreamConfig`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/unity/structagora__gaming__rtc_1_1_inject_stream_config.html).
 	
 	<div class="alert note">Only one online media stream can be injected into the same channel at the same time.</div>
 
@@ -50,7 +50,8 @@ Refer to the following steps to inject an online media stream:
 2. The host in a channel calls the `RemoveInjectStreamUrl` method to remove the injected media stream.
 	If the method call is successful, SDK triggers the `OnUserOfflineHandler (uid:666)` callback to all the users in the channel.
 	
-	<div class="alert note">No need to call the <tt>RemoveInjectStreamUrl</tt> method if the host has left the channel.</div>
+	<div class="alert note">You do not need to call the <tt>RemoveInjectStreamUrl</tt> method if the host has left the channel.</div>
+
 
 ### Sample code
 
@@ -61,9 +62,9 @@ injectStreamConfig.height = 0;
 injectStreamConfig.videoGop = 30;
 injectStreamConfig.videoFramerate = 15;
 injectStreamConfig.videoBitrate = 400;
-injectStreamConfig.audioSampleRate = AUDIO_SAMPLE_RATE_TYPE.AUDIO_SAMPLE_RATE_44100;
+injectStreamConfig.audioSampleRate = AUDIO_SAMPLE_RATE_TYPE.AUDIO_SAMPLE_RATE_48000;
 injectStreamConfig.audioChannels = 1;
-injectStreamConfig.audioBitrate = 48000;
+injectStreamConfig.audioBitrate = 48;
 
 // Inject an online media stream.
 mRtcEngine.AddInjectStreamUrl(url, injectStreamConfig);

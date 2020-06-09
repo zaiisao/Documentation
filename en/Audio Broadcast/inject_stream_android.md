@@ -3,7 +3,7 @@
 title: Inject Online Media Stream
 description: 
 platform: Android
-updatedAt: Wed Dec 11 2019 10:32:02 GMT+0800 (CST)
+updatedAt: Mon Jun 08 2020 02:56:13 GMT+0800 (CST)
 ---
 # Inject Online Media Stream
 ## Introduction
@@ -39,7 +39,7 @@ Before proceeding, ensure that you implement a basic live broadcast in your proj
 
 Refer to the following steps to inject an online media stream:
 
-1. The host in a channel calls the `addInjectStreamUrl` method to inject an online media stream to the live broadcast channel. You can modify the parameter values of `config` to set the resolution, bitrate and frame rate of the injected stream. See [InjectStreanConfig](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1live_1_1_live_inject_stream_config.html).
+1. The host in a channel calls the `addInjectStreamUrl` method to inject an online media stream to the live broadcast channel. You can modify the parameter values of `config` to set the resolution, bitrate and frame rate of the injected stream. See [InjectStreamConfig](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1live_1_1_live_inject_stream_config.html).
 	> Only one online media stream can be injected into the same channel at the same time.
 
 	If the method call is successful, SDK triggers the `onUserJoined (uid:666)` callback to all the users in the channel, and triggers the `onStreamInjectedStatus` callback to the local host.
@@ -63,7 +63,8 @@ String urlPath = "Some online RTMP/HLS url path"
   config.videoGop = 30;
   config.videoFramerate = 15;
   config.videoBitrate = 400;
-  config.audioSampleRate = LiveInjectStreamConfig.AudioSampleRateType.TYPE_44100;        		   config.audioBitrate = 48;
+  config.audioSampleRate = LiveInjectStreamConfig.AudioSampleRateType.TYPE_48000; 
+  config.audioBitrate = 48;
   config.audioChannels = 1;
 
   rtcEngine.addInjectStreamUrl(urlPath, config);

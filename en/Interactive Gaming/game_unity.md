@@ -3,7 +3,7 @@
 title: Interactive Gaming API
 description: 
 platform: Unity
-updatedAt: Mon Apr 13 2020 15:39:47 GMT+0800 (CST)
+updatedAt: Sun Jun 07 2020 06:19:38 GMT+0800 (CST)
 ---
 # Interactive Gaming API
 <div class="alert note">Agora no longer maintains the Agora Unity SDK for Interactive Gaming, use the Agora RTC Unity SDK instead. See more details in <a href="https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/unity/index.html">API Reference</a >.</div>
@@ -45,7 +45,7 @@ This method gets an engine instance. If none exists, it creates an instance. Onc
 #### Query an Engine Instance (QueryEngine)
 
 ```
-puiblic static IRtcEngine QueryEngine();
+public static IRtcEngine QueryEngine();
 ```
 
 This method queries an engine instance. Unlike `GetEngine`, `QueryEngine` will not create a new instance if none exists.

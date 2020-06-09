@@ -3,7 +3,7 @@
 title: Manage Members & Roles
 description: 
 platform: All Platforms
-updatedAt: Fri Apr 03 2020 11:50:31 GMT+0800 (CST)
+updatedAt: Fri Jun 05 2020 09:04:18 GMT+0800 (CST)
 ---
 # Manage Members & Roles
 You can add members to your account and set these members as different roles with specified permissions.
@@ -51,7 +51,7 @@ Click **Role Management** in the left navigation menu and enter the **Role Manag
 
 Agora predefines five roles for you. The permissions of these five predefined roles are as follows:
 
-- **Administrator** has full access. The administrator can view the usage, Agora Analytics, the account balance and transactions, and manage projects and members.
+- **Admin** has full access. The administrator can view the usage, Agora Analytics, the account balance and transactions, and manage projects and members.
 - **Finance** has access to the Billing Center.
 - **Product/Operation** has access to the Product & Usage page.
 - **CS/Maintenance** has access to the Agora Analytics page.

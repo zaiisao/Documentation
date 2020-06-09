@@ -3,7 +3,7 @@
 title: Inject Online Media Stream
 description: 
 platform: Windows
-updatedAt: Wed Dec 11 2019 10:31:46 GMT+0800 (CST)
+updatedAt: Mon Jun 08 2020 02:58:55 GMT+0800 (CST)
 ---
 # Inject Online Media Stream
 ## Introduction
@@ -39,7 +39,7 @@ Before proceeding, ensure that you implement a basic live broadcast in your proj
 
 Refer to the following steps to inject an online media stream:
 
-1. The host in a channel calls the `addInjectStreamUrl` method to inject an online media stream to the live broadcast channel. You can modify the parameter values of `config` to set the resolution, bitrate and frame rate of the injected stream. See [InjectStreanConfig](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_inject_stream_config.html).
+1. The host in a channel calls the `addInjectStreamUrl` method to inject an online media stream to the live broadcast channel. You can modify the parameter values of `config` to set the resolution, bitrate and frame rate of the injected stream. See [InjectStreamConfig](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_inject_stream_config.html).
 	> Only one online media stream can be injected into the same channel at the same time.
 
 	If the method call is successful, SDK triggers the `onUserJoined (uid:666)` callback to all the users in the channel, and triggers the `onStreamInjectedStatus` callback to the local host.

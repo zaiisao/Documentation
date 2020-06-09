@@ -3,7 +3,7 @@
 title: Inject Online Media Stream
 description: 
 platform: Web
-updatedAt: Fri Mar 27 2020 06:09:03 GMT+0800 (CST)
+updatedAt: Mon Jun 08 2020 05:42:02 GMT+0800 (CST)
 ---
 # Inject Online Media Stream
 ## Introduction
@@ -44,7 +44,7 @@ Before proceeding, ensure that you implement a basic live broadcast in your proj
 
 Refer to the following steps to inject an online media stream:
 
-1. The host in a channel calls the `Client.addInjectStreamUrl` method to inject an online media stream to the live broadcast channel. You can modify the parameter values of `config` to set the resolution, bitrate and frame rate of the injected stream. See [InjectStreanConfig](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.injectstreamconfig.html).
+1. The host in a channel calls the `Client.addInjectStreamUrl` method to inject an online media stream to the live broadcast channel. You can modify the parameter values of `config` to set the resolution, bitrate and frame rate of the injected stream. See [InjectStreamConfig](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.injectstreamconfig.html).
 	> Only one online media stream can be injected into the same channel at the same time.
 
 	If the method call is successful, SDK triggers the `Client.on("stream-added"` and `Client.on("peer-online")` callbacks to all the users in the channel, and triggers the **`Client.on("streamInjectedStatus")`** callback to the local host.
@@ -52,7 +52,7 @@ Refer to the following steps to inject an online media stream:
 	
 2. The host in a channel calls the `Client.removeInjectStreamUrl` method to remove the injected media stream.
 	If the method call is successful, SDK triggers the `Client.on("peer-leave")` and `Client.on("stream-removed")`callbacks to all the users in the channel.
-	> Do not need to call this method if the host has left the channel.
+	> You do not need to call this method if the host has left the channel.
 
 
 ### Sample code

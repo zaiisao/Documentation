@@ -3,7 +3,7 @@
 title: Start an Audio Broadcast
 description: 
 platform: Web
-updatedAt: Mon May 11 2020 09:39:03 GMT+0800 (CST)
+updatedAt: Fri Jun 05 2020 09:04:16 GMT+0800 (CST)
 ---
 # Start an Audio Broadcast
 <div class="alert note">Agora will soon release the Agora Web SDK NG, the next generation of the Agora Web SDK. The internal architecture of the Agora Web SDK NG is fully optimized, and the usability of its APIs greatly improved. Click <a href="https://agoraio-community.github.io/AgoraWebSDK-NG/en/">here</a> to learn more about the Agora Web SDK NG.</div>
@@ -22,7 +22,7 @@ You can also use this [online demo](https://webdemo.agora.io/agora-web-showcase/
 
 ## Prerequisites
 
-1. Install a browser supported by the Agora Web SDK, as shown in the following table:
+1. Install a browser supported by the Agora Web SDK, as shown in the following table:     <div class="alert info">Agora recommends using the latest Chrome browser.</div>
 
    | Platform             | Chrome 58 or later | Firefox 56 or later | Safari 11 or later | Opera 45 or later | QQ Browser 10.5 or later | 360 Secure Browser | WeChat Built-in Browser |
    | :------------------- | :----------------- | :------------------ | :----------------- | :---------------- | :--------- | :----------------- | :---------------------- |
