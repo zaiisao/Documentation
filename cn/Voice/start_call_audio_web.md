@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: Web
-updatedAt: Fri Jun 05 2020 08:58:55 GMT+0800 (CST)
+updatedAt: Wed Jun 10 2020 03:06:01 GMT+0800 (CST)
 ---
 # 实现语音通话
 <div class="alert note">提示：<br/>
@@ -31,7 +31,7 @@ updatedAt: Fri Jun 05 2020 08:58:55 GMT+0800 (CST)
    | macOS 10+    | ✔          | ✔           | ✔          | ✔         | ✔               | ✘              | ✘          |
    | Windows 7+   | ✔          | ✔           | **N/A**    | ✔         | ✔               | ✔              | ✘          |
 
-2. 获得一个有效的 Agora 账号。 （免费[注册](https://sso.agora.io/cn/signup)）
+2. 有效的 [Agora 账户](https://docs.agora.io/cn/Agora%20Platform/sign_in_and_sign_up)和 [App ID](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#获取-app-id)。
 
 <div class="alert note">如果你的网络环境部署了防火墙，请根据<a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">应用企业防火墙限制</a>打开相关端口。</div>
 
@@ -205,7 +205,7 @@ var option = {
 
 ### 加入频道
 
-1. 加入频道前，我们需要先创建并初始化一个客户端对象。
+1. 加入频道前，我们需要先创建并初始化一个客户端对象。你需要在该步骤中填入项目的 App ID。
 
    ```javascript
    // Create a client
@@ -223,12 +223,6 @@ var option = {
 
    - `mode` 用于设置[频道场景](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms%23live-broadcast-core-concepts#频道场景)。一对一或多人通话中，建议设为 `"rtc"` ，使用通信场景；[互动直播](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms%23live-broadcast-core-concepts#a-name-livea直播核心概念)中，建议设为 `"live"`，使用直播场景。
    - `codec` 用于设置浏览器使用的编解码格式。如果你需要使用 Safari 12.1 及之前版本，将该参数设为 `"h264"`；如果你需要在手机上使用 Agora Web SDK，请参考[移动端使用 Web SDK](https://docs.agora.io/cn/faq/web_on_mobile)。
-   
-你需要在该步骤中填入项目的 App ID。请参考如下步骤在控制台[创建 Agora 项目](https://docs.agora.io/cn/Agora%20Platform/manage_projects?platform=All%20Platforms)并获取 [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id )。
-
-1. 登录[控制台](https://console.agora.io/)，点击左侧导航栏的**[项目管理](https://console.agora.io/projects)**图标 ![](https://web-cdn.agora.io/docs-files/1551254998344)。
-2. 点击**创建**，按照屏幕提示设置项目名，选择一种鉴权机制，然后点击**提交**。
-3. 在**项目管理**页面，你可以获取该项目的 **App ID**。
 	 
 <div class="alert note">为方便演示，我们的示例项目在网页上设置了一个文本框用于输入 App ID。在实际的应用中，App ID 应该是在代码中填写的。</div> 
 

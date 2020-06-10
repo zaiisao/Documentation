@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: Android
-updatedAt: Tue Apr 28 2020 13:27:52 GMT+0800 (CST)
+updatedAt: Tue Jun 09 2020 03:50:47 GMT+0800 (CST)
 ---
 # 实现语音通话
 本文介绍如何使用 Agora 语音通话 SDK 快速实现语音通话。
@@ -17,7 +17,7 @@ updatedAt: Tue Apr 28 2020 13:27:52 GMT+0800 (CST)
 * Android Studio 3.0 或以上版本
 * Android SDK API 等级 16 或以上
 * 支持 Android 4.1 或以上版本的移动设备
-* 有效的 Agora 账户（免费[注册](https://dashboard.agora.io/)）
+* 有效的 [Agora 账户](https://docs.agora.io/cn/Agora%20Platform/sign_in_and_sign_up) 和 [App ID](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#%E8%8E%B7%E5%8F%96-app-id)
 
 <div class="alert note">如果你的网络环境部署了防火墙，请根据<a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">应用企业防火墙限制</a>打开相关端口。</div>
 
@@ -296,13 +296,7 @@ private fun checkSelfPermission(permission. String, requestCode: Int): Boolean {
 
 在调用其他 Agora API 前，需要创建并初始化 RtcEngine 对象。
 
-你需要在该步骤中填入项目的 App ID。请参考如下步骤在控制台[创建 Agora 项目](https://docs.agora.io/cn/Agora%20Platform/manage_projects?platform=All%20Platforms)并获取 [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id )。
-
-1. 登录[控制台](https://console.agora.io/)，点击左侧导航栏的**[项目管理](https://console.agora.io/projects)**图标 ![](https://web-cdn.agora.io/docs-files/1551254998344)。
-2. 点击**创建**，按照屏幕提示设置项目名，选择一种鉴权机制，然后点击**提交**。
-3. 在**项目管理**页面，你可以获取该项目的 **App ID**。
-
-调用 `create` 方法，传入获取到的 App ID，即可初始化 RtcEngine。
+将获取到的 App ID 添加到 `string.xml` 文件中的 `agora_app_id` 一栏。调用 `create` 方法，传入获取到的 App ID，即可初始化 RtcEngine。
 
 你还根据场景需要，在初始化时注册想要监听的回调事件，如远端用户下线或静音回调。注意不要在这些回调中进行 UI 操作。
 
