@@ -55,8 +55,8 @@ Agora 在 GitHub 上提供开源的互动直播示例项目 [OpenLive-Voice-Only
 **方法一：使用 CocoaPods 自动集成**
 
 1. 开始前确保你已安装 **Cocoapods**。参考 [Getting Started with CocoaPods](https://guides.cocoapods.org/using/getting-started.html#getting-started) 安装说明。
-2. 在 **Terminal** 里进入项目根目录，并运行 `pod init` 命令。项目文件夹下会生成一个 **Podfile** 文本文件。
-3. 打开 **Podfile** 文件，修改文件为如下内容。注意将 `Your App` 替换为你的 Target 名称。
+2. 在 **Terminal** 里进入项目根目录，并运行 `pod init` 命令。项目文件夹下会生成一个 `Podfile` 文本文件。
+3. 打开 `Podfile` 文件，修改文件为如下内容。注意将 `Your App` 替换为你的 Target 名称。
 ```
 # platform :ios, '9.0' use_frameworks!
 target 'Your App' do
@@ -67,18 +67,21 @@ end
  <div class="alert note">若需使用媒体流加密功能，将  <tt>pod 'AgoraRtcEngine_iOS'</tt> 替换为 <tt>pod 'AgoraRtcEngine_iOS_Crypto'</tt>。添加加密库后 app 体积会增大。</div>
 
 4. 在 **Terminal** 内运行 `pod update` 命令更新本地库版本。
-5. 运行 `pod install` 命令安装 Agora SDK。成功安装后，**Terminal** 中会显示 `Pod installation complete!`，此时项目文件夹下会生成一个 **xcworkspace** 文件。
-6. 打开新生成的 **xcworkspace** 文件。
+5. 运行 `pod install` 命令安装 Agora SDK。成功安装后，**Terminal** 中会显示 `Pod installation complete!`，此时项目文件夹下会生成一个 `xcworkspace` 文件。
+6. 打开新生成的 `xcworkspace` 文件。
 
 **方法二：手动复制 SDK 文件**
 
-1. 前往 [SDK 下载页面](https://docs.agora.io/cn/Agora%20Platform/downloads)，获取最新版的 Agora SDK，然后解压。
-2. 将 **libs** 文件夹内的 **AgoraRtcKit.framework** 文件复制到项目文件夹下。
-3. 打开 **Xcode**（以 Xcode 11.0 为例），进入 **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content**  菜单，点击 **+**，再点击 **Add Other…** 添加 **AgoraRtcKit.framework** 文件。添加完成后，项目会自动链接其他系统库。为保证动态库的签名和 app 的签名一致，你需要将动态库的 <b>Embed</b> 属性设置为 <b>Embed & Sign</b>。
+1. 前往 [SDK 下载页面](https://docs.agora.io/cn/Agora%20Platform/downloads)，获取最新版的 Agora SDK，然后解压。SDK 包中有两种 `AgoraRtcKit.framework` 和 `AgoraRtcCryptoLoader.framework`，区别如下：
+ - `libs` 文件夹内的 `AgoraRtcKit.framework` 和 `AgoraRtcCryptoLoader.framework` 包含 armv7 和 arm64 架构，不支持模拟器。集成该库后，app 可以直接上架 App Store。
+ - `ALL_ARCHITECTURE` 文件夹内的 `AgoraRtcKit.framework` 和 `AgoraRtcCryptoLoader.framework` 包含 armv7、arm64 、x86_64 和 i386 架构，支持模拟器。集成该库后，app 不能直接上架 App Store，你需要在上架前手动移除库中的 x86_64 和 i386 架构。
+ ![](https://web-cdn.agora.io/docs-files/1591775772856)
+2. 将 `AgoraRtcKit.framework` 复制到项目文件夹下。 
+3. 打开 **Xcode**（以 Xcode 11.0 为例），进入 **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content**  菜单，点击 **+**，再点击 **Add Other…** 添加 `AgoraRtcKit.framework`。添加完成后，项目会自动链接其他系统库。为保证动态库的签名和 app 的签名一致，你需要将动态库的 <b>Embed</b> 属性设置为 <b>Embed & Sign</b>。
 
-<div class="alert warning">根据 Apple 官方要求，App 的 Extension 不允许包含动态库。如果工程中的 Extension 需要集成 SDK，则集成动态库时需将文件状态改为 <b>Do Not Embed</b>。</div>
+ <div class="alert warning">根据 Apple 官方要求，App 的 Extension 不允许包含动态库。如果工程中的 Extension 需要集成 SDK，则集成动态库时需将文件状态改为 <b>Do Not Embed</b>。</div>
 
- <div class="alert note">若需使用媒体流加密功能，需添加 <b>AgoraRtcCryptoLoader.framework</b>。添加后 app 体积会增大。</div>
+  <div class="alert note">若需使用媒体流加密功能，需添加 <tt>AgoraRtcCryptoLoader.framework</tt>。添加后 app 体积会增大。</div>
  
 **动态库添加前**：
  

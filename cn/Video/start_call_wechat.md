@@ -3,7 +3,7 @@
 title: 实现视频通话
 description: wechat call 
 platform: 微信小程序
-updatedAt: Tue Mar 31 2020 03:23:07 GMT+0800 (CST)
+updatedAt: Tue Jun 09 2020 04:29:02 GMT+0800 (CST)
 ---
 # 实现视频通话
 本文介绍如何使用 Agora 微信小程序 SDK 快速实现视频通话。
@@ -17,7 +17,7 @@ Agora 在 GitHub 上提供一个开源的实时音视频示例项目 [Agora-Mini
 ![](https://web-cdn.agora.io/docs-files/1568009947551)
 
 ## 开发环境要求
-* 有效的 Agora 账号（免费[注册](https://dashboard.agora.io/)）
+* 有效的 [Agora 账户](https://docs.agora.io/cn/Agora%20Platform/sign_in_and_sign_up) 和 [App ID](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#%E8%8E%B7%E5%8F%96-app-id)
 * [微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/devtools.html)
 * 请确保你的微信小程序基础库支持 live-pusher 及 live-player 组件，且这两个组件在微信开发者工具中打开。
 * 在微信公众平台账号的开发设置中，给予以下域名请求权限：

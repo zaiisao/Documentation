@@ -3,7 +3,7 @@
 title: 实现视频通话
 description: 
 platform: Android
-updatedAt: Wed Apr 29 2020 08:28:10 GMT+0800 (CST)
+updatedAt: Tue Jun 09 2020 03:54:27 GMT+0800 (CST)
 ---
 # 实现视频通话
 本文介绍如何使用 Agora 视频 SDK 快速实现视频通话。
@@ -28,7 +28,7 @@ Agora 在 GitHub 上提供一个开源的一对一视频通话示例项目 [Agor
 * Android Studio 3.0 或以上版本
 * Android SDK API 等级 16 或以上
 * 支持 Android 4.1 或以上版本的移动设备
-* 有效的 Agora 账户（免费[注册](https://dashboard.agora.io/)）
+* 有效的 [Agora 账户](https://docs.agora.io/cn/Agora%20Platform/sign_in_and_sign_up) 和 [App ID](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#%E8%8E%B7%E5%8F%96-app-id)
 
 <div class="alert note">如果你的网络环境部署了防火墙，请根据<a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">应用企业防火墙限制</a>打开相关端口。</div>
 
@@ -356,13 +356,7 @@ private fun checkSelfPermission(permission. String, requestCode: Int): Boolean {
 
 在调用其他 Agora API 前，需要创建并初始化 RtcEngine 对象。
 
-你需要在该步骤中填入项目的 App ID。请参考如下步骤在控制台[创建 Agora 项目](https://docs.agora.io/cn/Agora%20Platform/manage_projects?platform=All%20Platforms)并获取 [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id )。
-
-1. 登录[控制台](https://console.agora.io/)，点击左侧导航栏的**[项目管理](https://console.agora.io/projects)**图标 ![](https://web-cdn.agora.io/docs-files/1551254998344)。
-2. 点击**创建**，按照屏幕提示设置项目名，选择一种鉴权机制，然后点击**提交**。
-3. 在**项目管理**页面，你可以获取该项目的 **App ID**。
-
-调用 `create` 方法，传入获取到的 App ID，即可初始化 RtcEngine。
+将获取到的 App ID 添加到 `string.xml` 文件中的 `agora_app_id` 一栏。调用 `create` 方法，传入获取到的 App ID，即可初始化 RtcEngine。
 
 你还根据场景需要，在初始化时注册想要监听的回调事件，如本地用户加入频道，及解码远端用户视频首帧等。注意不要在这些回调中进行 UI 操作。
 
@@ -539,7 +533,7 @@ private fun joinChannel() {
 
 ### 7. 设置远端视图
 
-视频通话中，通常你也需要看到其他用户。在加入频道后，可通过调用 `setupRemoteVideo` 方法设置远端用户的视图。
+视频通话中，通常你也需要看到其他用户。在加入频道后，可通过调用 `setupRemoteVideo` 方法设置远端用户的视图。远端视图和本地视图的区别就是需要设置远端用户的 UID。
 
 远端用户成功加入频道后，SDK 会触发 `onFirstRemoteVideoDecoded` 回调，该回调中会包含这个远端用户的 uid 信息。在该回调中调用 `setupRemoteVideo` 方法，传入获取到的 uid，设置远端用户的视图。
 

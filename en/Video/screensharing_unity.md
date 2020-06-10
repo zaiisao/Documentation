@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: Unity
-updatedAt: Fri Apr 03 2020 03:35:21 GMT+0800 (CST)
+updatedAt: Wed Jun 10 2020 04:20:51 GMT+0800 (CST)
 ---
 # Share the Screen
 ## Introduction
@@ -87,7 +87,7 @@ public class ShareScreen : MonoBehaviour
        mRtcEngine.EnableVideoObserver();
        // Configures the external video source.
        mRtcEngine.SetExternalVideoSource(true, false);
-       // Joins a channel
+       // Joins a channel.
        mRtcEngine.JoinChannel(channelName, null, 0);
        // Creates a rectangular region of the screen.
        mRect = new Rect(0, 0, Screen.width, Screen.height);
@@ -104,15 +104,15 @@ public class ShareScreen : MonoBehaviour
    IEnumerator shareScreen()
    {
        yield return new WaitForEndOfFrame();
-       // Reads the Pixels of the rectangle you create.
+       // Reads the pixels of the rectangle you create.
        mTexture.ReadPixels(mRect, 0, 0);
-       // Applies the Pixels read from the rectangle to the texture.
+       // Applies the pixels read from the rectangle to the texture.
        mTexture.Apply();
-       // Gets the Raw Texture data from the texture and apply it to an array of bytes.
+       // Gets the raw texture data and apply it to an array of bytes.
        byte[] bytes = mTexture.GetRawTextureData();
        // Gives enough space for the bytes array.
        int size = Marshal.SizeOf(bytes[0]) * bytes.Length;
-       // Checks whether the IRtcEngine instance is existed.
+       // Checks whether the IRtcEngine instance exists.
        IRtcEngine rtc = IRtcEngine.QueryEngine();
        if (rtc != null)
        {
@@ -122,7 +122,7 @@ public class ShareScreen : MonoBehaviour
            externalVideoFrame.type = ExternalVideoFrame.VIDEO_BUFFER_TYPE.VIDEO_BUFFER_RAW_DATA;
            // Sets the format of the video pixel.
            externalVideoFrame.format = ExternalVideoFrame.VIDEO_PIXEL_FORMAT.VIDEO_PIXEL_BGRA;
-           // Applies raw data.
+           // Applies the raw data.
            externalVideoFrame.buffer = bytes;
            // Sets the width (pixel) of the video frame.
            externalVideoFrame.stride = (int)mRect.width;

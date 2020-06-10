@@ -3,7 +3,7 @@
 title: Start a Video Call
 description: 
 platform: Android
-updatedAt: Wed Apr 29 2020 08:37:47 GMT+0800 (CST)
+updatedAt: Tue Jun 09 2020 04:45:40 GMT+0800 (CST)
 ---
 # Start a Video Call
 Use this guide to quickly start a basic video call with the Agora Video SDK for Android.
@@ -17,7 +17,7 @@ We provide an open-source [Agora-Android-Tutorial-1to1](https://github.com/Agora
 * Android Studio 3.0 or later
 * Android SDK API Level 16 or higher
 * A mobile device running Android 4.1 or later
-* A valid Agora account ([Sign up](https://dashboard.agora.io/) for free)
+* A valid [Agora account](https://docs.agora.io/en/Agora%20Platform/sign_in_and_sign_up) and an [App ID](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#get-an-app-id)
 
 <div class="alert note">Open the specified ports in <a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a> if your network has a firewall.</div>
 
@@ -336,13 +336,7 @@ private fun checkSelfPermission(permission. String, requestCode: Int): Boolean {
 
 Create and initialize the RtcEngine object before calling any other Agora APIs.
 
-In this step, you need to use the App ID of your project. Follow these steps to [create an Agora project](https://docs.agora.io/en/Agora%20Platform/manage_projects?platform=All%20Platforms) in Console and get an [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id ).
-
-1. Go to [Console](https://dashboard.agora.io/) and click the **[Project Management](https://dashboard.agora.io/projects)** icon ![](https://web-cdn.agora.io/docs-files/1551254998344) on the left navigation panel. 
-2. Click **Create** and follow the on-screen instructions to set the project name, choose an authentication mechanism, and Click **Submit**. 
-3. On the **Project Management** page, find the **App ID** of your project. 
-
-Call the `create` method and pass in the App ID to initialize the RtcEngine object.
+In the `string.xml` file, replace `agora_app_id` with your App ID. Call the `create` method and pass in the App ID to initialize the RtcEngine object.
 
 You can also listen for callback events, such as when the local user joins the channel, and when the first video frame of a remote user is decoded. Do not implement UI operations in these callbacks.
 
@@ -520,7 +514,7 @@ private fun joinChannel() {
 
 ### 7. Set the remote video view
 
-In a video call, you should be able to see other users too. This is achieved by calling the `setupRemoteVideo` method after joining the channel.
+In a video call, you should be able to see other users too. This is achieved by calling the `setupRemoteVideo` method after joining the channel. The difference between setting the local and remote view is that you need to specify the ID of the remote user when setting up the remote view.
 
 Shortly after a remote user joins the channel, the SDK gets the remote user's ID in the `onFirstRemoteVideoDecoded` callback. Call the `setupRemoteVideo` method in the callback, and pass in the uid to set the video view of the remote user.
 
@@ -683,7 +677,9 @@ Run the project on your Android device. You can see both the local and remote vi
 ## Reference
 
 - We provide an open-source [Group-Video-Call](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-Android) demo project that implements the group video call on GitHub. For scenarios involving group video calls, you can download the demo project as a code source reference.
-- [How can I set the log file?](https://docs.agora.io/en/faq/logfile)
-- [How can I solve black screen issues?](https://docs.agora.io/en/faq/video_blank)
-- [Why is no audio or video captured on Android 9 devices?](https://docs.agora.io/en/faq/android_background)
+- For how to implement a video call with the chatting functionality, see [How To: Build A Communication App With Chat And Video Calling In Android](https://www.agora.io/en/blog/build-app-with-chat-and-video-calling-android).
+- FAQ: [How can I set the log file?](https://docs.agora.io/en/faq/logfile)
+- FAQ: [How can I solve black screen issues?](https://docs.agora.io/en/faq/video_blank)
+- FAQ: [Why is no audio or video captured on Android 9 devices?](https://docs.agora.io/en/faq/android_background)
+
 	
