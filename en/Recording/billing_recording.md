@@ -135,11 +135,16 @@ For example, let's say a recording server is in a channel for 30 minutes. It rec
 
 
 
-### Recording resolution calculation when dual-stream mode is enabled 
-When the remote video stream being recorded enables [dual-stream mode](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-dualadual-stream-mode), the recording service can receive only one stream at a time: 
+### Video resolution in the dual-stream scenario
 
-- If it is the high-video stream, then the recording composite resolution is calculated based on the high-video stream resolution that the remote user sets. 
-- If it is the low-video stream, then the recording composite resolution is calculated based on the resolution of the actually received stream. 
+When the user being recorded enables [dual-stream mode](https://docs.agora.io/en/Agora Platform/terms?platform=All Platforms#a-name-dualadual-stream-mode), the recording service can receive only one stream at a time:
+
+- If the recording server records the high-quality video stream, the aggregate video resolution is calculated based on the resolution of the high-quality video.
+- If the recording server records the low-quality video stream, the aggregate video resolution is calculated based on the resolution of the video received by the server.
+
+### Resolution calibration
+
+When calculating the aggregate resolution, Agora counts the resolution of 225,280 (640 × 352) as 640 × 360.
 
 
 
