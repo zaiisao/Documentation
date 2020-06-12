@@ -3,7 +3,7 @@
 title: 实现视频直播
 description: 
 platform: macOS
-updatedAt: Fri May 22 2020 03:08:07 GMT+0800 (CST)
+updatedAt: Fri Jun 12 2020 05:21:13 GMT+0800 (CST)
 ---
 # 实现视频直播
 本文介绍如何使用 Agora SDK 快速实现互动直播。
@@ -12,13 +12,13 @@ updatedAt: Fri May 22 2020 03:08:07 GMT+0800 (CST)
 
 ## 示例项目
 
-Agora 在 GitHub 上提供开源的互动直播示例项目 [OpenLive-macOS-Objective-C](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS-Objective-C)/[OpenLive-macOS-Swift](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS)。在实现相关功能前，你可以下载并查看源代码。
+Agora 在 GitHub 上提供开源的互动直播示例项目 [OpenLive-macOS-Objective-C](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS-Objective-C) 或 [OpenLive-macOS-Swift](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS)。在实现相关功能前，你可以下载并查看源代码。
 
 ## 前提条件
 
 - Xcode 9.0 或以上版本
 - 支持 macOS 10.10 或以上版本的 macOS 设备
-- 有效的 Agora 账户（免费[注册](https://sso.agora.io/cn/signup)）
+- 有效的 [Agora 账户](https://docs.agora.io/cn/Agora%20Platform/sign_in_and_sign_up) 和 [App ID](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#%E8%8E%B7%E5%8F%96-app-id)
 
 <div class="alert note">如果你的网络环境部署了防火墙，请根据<a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">应用企业防火墙限制</a>打开相关端口。</div>
 
@@ -179,12 +179,6 @@ import AgoraRtcEngineKit
 ### 3. 初始化 AgoraRtcEngineKit
 
 在调用其他 Agora API 前，需要创建并初始化 AgoraRtcEngineKit 对象。
-
-你需要在该步骤中填入项目的 App ID。请参考如下步骤在控制台[创建 Agora 项目](https://docs.agora.io/cn/Agora%20Platform/manage_projects?platform=All%20Platforms)并获取 [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id )。
-
-1. 登录[控制台](https://console.agora.io/)，点击左侧导航栏的**[项目管理](https://console.agora.io/projects)**图标 ![](https://web-cdn.agora.io/docs-files/1551254998344)。
-2. 点击**创建**，按照屏幕提示设置项目名，选择一种鉴权机制，然后点击**提交**。
-3. 在**项目管理**页面，你可以获取该项目的 **App ID**。
 
 调用 `sharedEngineWithAppId` 方法，传入获取到的 App ID，即可初始化 `AgoraRtcEngineKit`。
 
@@ -395,7 +389,7 @@ func leaveChannel() {
 
 ### 示例代码
 
-你可以在 [OpenLive-macOS-Objective-C](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS-Objective-C)/[OpenLive-macOS-Swift](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS) 示例项目中查看完整的源码和代码逻辑。
+你可以在 [OpenLive-macOS-Objective-C](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS-Objective-C) 或 [OpenLive-macOS-Swift](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS) 示例项目中查看完整的源码和代码逻辑。
 
 ## 运行项目
 
