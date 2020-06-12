@@ -3,12 +3,12 @@
 title: Start a Video Call
 description: 
 platform: macOS
-updatedAt: Fri Jun 12 2020 05:33:47 GMT+0800 (CST)
+updatedAt: Fri Jun 12 2020 06:43:40 GMT+0800 (CST)
 ---
 # Start a Video Call
 Use this guide to quickly start a basic video call demo with the Agora Video SDK for macOS.
 
-## Try the demo
+## Sample project
 
 We provide an open-source [Agora-macOS-Tutorial-Objective-C-1to1](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-macOS-Tutorial-Objective-C-1to1) or [Agora-macOS-Tutorial-Swift-1to1](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-macOS-Tutorial-Swift-1to1) demo project that implements the basic one-to-one video call on GitHub. You can try the demo and view the source code.
 
@@ -336,9 +336,6 @@ func leaveChannel() {
  view.window!.close()
  }
 ```
-
-### Sample code
-You can find the sample code logic in the [VideoChatViewController.m](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-macOS-Tutorial-Objective-C-1to1/Agora-Mac-Tutorial-Objective-C/VideoChatViewController.m) or the [VideoChatViewController.swift](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-macOS-Tutorial-Swift-1to1/Agora-Mac-Tutorial-Swift/VideoChatViewController.swift) file in the Agora-macOS-Tutorial-Objective-C-1to1 or the Agora-macOS-Tutorial-Swift-1to1 demo project.
 
 ## Run the project
 Run the project on your macOS device. You can see both the local and remote video views when you successfully start a one-to-one video call in the app.

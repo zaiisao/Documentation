@@ -159,7 +159,7 @@ When calculating the aggregate resolution, Agora counts the resolution of 225,28
 
 
 <details>
-	<summary><font color="#3ab7f8">Question: Does Agora charge differently if I use a different recording mode?</font></summary>
+	<summary><font color="#3ab7f8">Question: How does Agora charge if I use different recording modes?</font></summary>
 
 Your recording fee has nothing to do with the recording mode you choose. Regardless of whether you use the individual mode or composite mode, your recording fee relates only to the number of the streams recorded, the recording time, and the aggregate recording resolutions. The number of the streams recorded does not affect the recording duration, but affects the aggregate recording resolution.
 

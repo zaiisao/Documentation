@@ -3,14 +3,14 @@
 title: Start an Audio Broadcast
 description: 
 platform: iOS
-updatedAt: Fri Jun 12 2020 05:29:39 GMT+0800 (CST)
+updatedAt: Fri Jun 12 2020 06:39:17 GMT+0800 (CST)
 ---
 # Start an Audio Broadcast
 Use this guide to quickly start an audio broadcast demo with the Agora Voice SDK for iOS.
 
 The difference between a broadcast and a call is that users have roles in a broadcast. You can set your role as either Broadcaster or Audience. The broadcaster sends and receives streams while the audience receives streams only.
 
-## Try the demo
+## Sample project
 
 We provide an open-source [OpenLive-Voice-Only-iOS-Objective-C](https://github.com/AgoraIO/Basic-Audio-Broadcasting/tree/master/OpenLive-Voice-Only-iOS-Objective-C) or [OpenLive-Voice-Only-iOS](https://github.com/AgoraIO/Basic-Audio-Broadcasting/tree/master/OpenLive-Voice-Only-iOS) demo project that implements the basic audio broadcast on GitHub. You can try the demo and view the source code.
 
@@ -273,10 +273,6 @@ func leaveChannel() {
     navigationController?.popViewController(animated: true)
     }
 ```
-
-### Sample code
-
-You can find the sample code logic in the [OpenLive-Voice-Only-iOS-Objective-C](https://github.com/AgoraIO/Basic-Audio-Broadcasting/tree/master/OpenLive-Voice-Only-iOS-Objective-C) or [OpenLive-Voice-Only-iOS](https://github.com/AgoraIO/Basic-Audio-Broadcasting/tree/master/OpenLive-Voice-Only-iOS) demo project.
 
 ## Run the project
 

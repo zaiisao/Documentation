@@ -3,14 +3,14 @@
 title: Start an Audio Broadcast
 description: 
 platform: macOS
-updatedAt: Fri Jun 12 2020 05:32:15 GMT+0800 (CST)
+updatedAt: Fri Jun 12 2020 06:40:18 GMT+0800 (CST)
 ---
 # Start an Audio Broadcast
 Use this guide to quickly start an audio broadcast demo with the Agora Voice SDK for macOS.
 
 The difference between a broadcast and a call is that users have roles in a broadcast. You can set your role as either Broadcaster or Audience. The broadcaster sends and receives streams while the audience receives streams only.
 
-## Try the demo
+## Sample project
 
 We provide an open-source [OpenLive-macOS-Objective-C](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS-Objective-C) or [OpenLive-macOS-Swift](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS) demo project that implements the basic video broadcast on GitHub. You can try the demo and view the source code.
 
@@ -271,7 +271,7 @@ For more details on the parameter settings, see [joinChannelByToken](https://doc
 agoraKit.joinChannel(byToken: KeyCenter.Token, channelId: channelId, info: nil, uid: 0, joinSuccess: nil)
 ```
 
-### 9. Leave the channel
+### 7. Leave the channel
 
 Call the `leaveChannel` method to leave the current call according to your scenario, for example, when the call ends, when you need to close the app, or when your app runs in the background.
 
@@ -296,10 +296,6 @@ func leaveChannel() {
     navigationController?.popViewController(animated: true)
     }
 ```
-
-### Sample code
-
-You can find the sample code logic in the [OpenLive-macOS-Objective-C](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS-Objective-C) or [OpenLive-macOS-Swift](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS) demo project.
 
 ## Run the project
 

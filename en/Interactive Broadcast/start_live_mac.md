@@ -3,14 +3,14 @@
 title: Start a Video Broadcast
 description: 
 platform: macOS
-updatedAt: Fri Jun 12 2020 05:33:01 GMT+0800 (CST)
+updatedAt: Fri Jun 12 2020 06:42:24 GMT+0800 (CST)
 ---
 # Start a Video Broadcast
 Use this guide to quickly start an interactive broadcast demo with the Agora Video SDK for macOS.
 
 The difference between a broadcast and a call is that users have roles in a broadcast. You can set your role as either Broadcaster or Audience. The broadcaster sends and receives streams while the audience receives streams only.
 
-## Try the demo
+## Sample project
 
 We provide an open-source [OpenLive-macOS-Objective-C](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS-Objective-C) or [OpenLive-macOS-Swift](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS) demo project that implements the basic video broadcast on GitHub. You can try the demo and view the source code.
 
@@ -379,10 +379,6 @@ func leaveChannel() {
     navigationController?.popViewController(animated: true)
     }
 ```
-
-### Sample code
-
-You can find the sample code logic in the [OpenLive-macOS-Objective-C](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS-Objective-C) or the [OpenLive-macOS-Swift](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS) demo project.
 
 ## Run the project
 
