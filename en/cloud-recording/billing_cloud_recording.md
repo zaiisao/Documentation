@@ -156,7 +156,7 @@ When the remote video stream being recorded enables [dual-stream mode](https://d
 <details>
 	<summary><font color="#3ab7f8">Question: Does Agora charge differently if I use a different recording mode?</font></summary>
 
-Your recording fee has nothing to do with the recording mode you choose. Regardless of whether you use the individual mode or composite mode, your recording fee relates only to the number of the streams recorded, the recording time, and the aggregate recording resolutions. 
+Your recording fee has nothing to do with the recording mode you choose. Regardless of whether you use the individual mode or composite mode, your recording fee relates only to the number of the streams recorded, the recording time, and the aggregate recording resolutions. The number of the streams recorded does not affect the recording duration, but affects the aggregate recording resolution.
 
 </details>
 

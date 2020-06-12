@@ -52,8 +52,8 @@ Choose either of the following methods to integrate the Agora SDK into your proj
 **Method 1: Automatically integrate the SDK with CocoaPods**
 
 1. Ensure that you have installed **CocoaPods** before the following steps. See the installation guide in [Getting Started with CocoaPods](https://guides.cocoapods.org/using/getting-started.html#getting-started).
-2. In **Terminal**, go to the project path and run the `pod init` command to create a **Podfile** in the project folder.
-3. Open the **Podfile**, delete all contents and input the following contents. Remember to change **Your App** to the target name of your project.
+2. In **Terminal**, go to the project path and run the `pod init` command to create a `Podfile` in the project folder.
+3. Open the `Podfile`, delete all contents and input the following contents. Remember to change **Your App** to the target name of your project.
 ```
 # platform :ios, '9.0' use_frameworks!
 target 'Your App' do
@@ -64,25 +64,28 @@ end
 <div class="alert note">Ensure that you use <tt>pod 'AgoraRtcEngine_iOS_Crypto'</tt> to replace <tt>pod 'AgoraRtcEngine_iOS'</tt> when using the channel encryption function. After integrating the encryption library, the app size increases.</div>
 
 4. Go back to **Terminal**, and run the `pod update` command to update the local libraries.
-5. Run the `pod install` command to install the Agora SDK. Once you successfully install the SDK, it shows `Pod installation complete!` in Terminal, and you can see an **xcworkspace** file in the project folder.
-6. Open the generated xcworkspace file in **Xcode**.
+5. Run the `pod install` command to install the Agora SDK. Once you successfully install the SDK, it shows `Pod installation complete!` in Terminal, and you can see an `xcworkspace` file in the project folder.
+6. Open the generated `xcworkspace` file in **Xcode**.
 
 **Method 2: Manually add the SDK files**
 
-1. Go to [SDK Downloads](https://docs.agora.io/en/Agora%20Platform/downloads), download the latest version of the Agora SDK for iOS, and unzip the downloaded SDK package.
-2. Copy the **AgoraRtcKit.framework** file in the **libs** folder to the project folder.
-3. Open **Xcode** (take the Xcode 11.0 as an example), go to the **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content** menu, click **Add Other...** after clicking **+** to add **AgoraRtcKit.framework**. Once added, the project automatically links to other system libraries. To ensure that the signature of the dynamic library is the same as the signature of the app, you need to set the **Embed** attribute of the dynamic library to **Embed & Sign**.
+1. Go to [SDK Downloads](https://docs.agora.io/en/Agora%20Platform/downloads), download the latest version of the Agora SDK for iOS, and unzip the downloaded SDK package. The SDK package contains two types of `AgoraRtcKit.framework` and `AgoraRtcCryptoLoader.framework`, and you can find the following differences:
+ - The `AgoraRtcKit.framework` and `AgoraRtcCryptoLoader.framework` in the `libs` folder contains armv7 and arm64 architecture, and does not support a simulator. After integrating these libraries, the app can be uploaded to the App Store directly.
+ - The `AgoraRtcKit.framework` and `AgoraRtcCryptoLoader.framework` file in the `ALL_ARCHITECTURE` folder contains armv7, arm64, x86_64 and i386 architecture, and supports simulators. After integrating these libraries, the app cannot be uploaded to the App Store directly, and you need to remove x86_64 and i386 architecture in the libraries manually before uploading the app.
+![](https://web-cdn.agora.io/docs-files/1591776711076)
+2. Copy `AgoraRtcKit.framework` to the project folder.
+3. Open **Xcode** (take the Xcode 11.0 as an example), go to the **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content** menu, click **Add Other...** after clicking **+** to add `AgoraRtcKit.framework`. Once added, the project automatically links to other system libraries. To ensure that the signature of the dynamic library is the same as the signature of the app, you need to set the **Embed** attribute of the dynamic library to **Embed & Sign**.
   <div class="alert warning">According to the requirement of Apple, the Extension of app cannot contain the dynamic library. If you need to integrate the SDK with the dynamic library in the Extension, change the file status as <b>Do Not Embed</b>.</div>
 
- <div class="alert note">Ensure that you integrate <b>AgoraRtcCryptoLoader.framework</b> when using the channel encryption function. After integrating the library, the app size increases.</div>
+ <div class="alert note">Ensure that you integrate <tt>AgoraRtcCryptoLoader.framework</tt> when using the channel encryption function. After integrating the library, the app size increases.</div>
 
- **Before integrating the dynamic library**：
+**Before integrating the dynamic library**：
  
- ![](https://web-cdn.agora.io/docs-files/1583329514061)
+![](https://web-cdn.agora.io/docs-files/1583329514061)
  
- **After integrating the dynamic library**：
+**After integrating the dynamic library**：
  
- ![](https://web-cdn.agora.io/docs-files/1584688934447)
+![](https://web-cdn.agora.io/docs-files/1584688934447)
 
 
 ### Add project permissions

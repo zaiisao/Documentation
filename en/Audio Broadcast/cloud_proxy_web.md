@@ -3,7 +3,7 @@
 title: Use Cloud Proxy
 description: How to enable cloud proxy on Web
 platform: Web
-updatedAt: Thu May 28 2020 09:52:48 GMT+0800 (CST)
+updatedAt: Wed Jun 10 2020 06:49:48 GMT+0800 (CST)
 ---
 # Use Cloud Proxy
 ## Introduction

@@ -156,7 +156,7 @@ When the remote video stream being recorded enables [dual-stream mode](https://d
 <details>
 	<summary><font color="#3ab7f8">Question: Does Agora charge differently if I use a different recording mode?</font></summary>
 
-Your recording fee has nothing to do with the recording mode you choose. Regardless of whether you use the individual mode or composite mode, your recording fee relates only to the number of the streams recorded, the recording time, and the aggregate recording resolutions. 
+Your recording fee has nothing to do with the recording mode you choose. Regardless of whether you use the individual mode or composite mode, your recording fee relates only to the number of the streams recorded, the recording time, and the aggregate recording resolutions. The number of the streams recorded does not affect the recording duration, but affects the aggregate recording resolution.
 
 </details>
 
@@ -166,7 +166,7 @@ Your recording fee has nothing to do with the recording mode you choose. Regardl
 <details>
 	<summary><font color="#3ab7f8">Question: Does Agora charge the screen capture function separately?</font></summary>
 
-We do not charge the screen capture function separately. Screen capture is a different form of the recording function. The recording service has to join the corresponding channel and subscribe to the specified video streams all the time in order to capture screens at the specified interval. Therefore, if you have enabled the screen capture function, we charge you for the full-time recording of the corresponding stream, but do do charge you for the screen capture function separately. 
+Agora does not charge for the screen capture function separately. Screen capture is a different form of the recording function. The recording service joins the corresponding channel and subscribes to the specified video streams all the time in order to capture screens at the specified interval. Therefore, if you have enabled the screen capture function, Agora charges you for the full-time recording of the corresponding stream, but do not charge you for the screen capture function separately.
 
 </details>
 

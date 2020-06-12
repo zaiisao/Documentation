@@ -2,7 +2,7 @@
 ---
 title: In-ear Monitoring
 description: How to enable in-ear monitoring and adjust the volume
-platform: All Platforms
+platform: Android
 updatedAt: Wed Sep 25 2019 10:09:04 GMT+0800 (CST)
 ---
 # In-ear Monitoring

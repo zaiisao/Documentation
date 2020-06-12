@@ -3,7 +3,7 @@
 title: Start an Audio Broadcast
 description: 
 platform: Web
-updatedAt: Fri Jun 05 2020 09:04:16 GMT+0800 (CST)
+updatedAt: Wed Jun 10 2020 03:13:44 GMT+0800 (CST)
 ---
 # Start an Audio Broadcast
 <div class="alert note">Agora will soon release the Agora Web SDK NG, the next generation of the Agora Web SDK. The internal architecture of the Agora Web SDK NG is fully optimized, and the usability of its APIs greatly improved. Click <a href="https://agoraio-community.github.io/AgoraWebSDK-NG/en/">here</a> to learn more about the Agora Web SDK NG.</div>
@@ -31,7 +31,7 @@ You can also use this [online demo](https://webdemo.agora.io/agora-web-showcase/
    | macOS 10 or later    | ✔                  | ✔                   | ✔                  | ✔                 | ✔          | ✘                  | ✘                       |
    | Windows 7 or later   | ✔                  | ✔                   | N/A                | ✔                 | ✔          | ✔                  | ✘                       |
 
-2. Get a valid Agora account. ([Sign up](https://sso.agora.io/en/signup) for free)
+2. Get a valid [Agora account](https://docs.agora.io/en/Agora%20Platform/sign_in_and_sign_up) and an [App ID](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#get-an-app-id).
 
 <div class="alert note">Open the specified ports in <a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a> if your network has a firewall.</div>
 
@@ -222,12 +222,6 @@ Pay attention to the settings of `mode` and `codec` when creating the client:
 
 - `mode` determines the [channel profile](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#channel-profile). We use the `rtc` mode for one-to-one or group calls and the `live` mode for [live broadcasts](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#live-broadcast-core-concepts).
 - `codec` sets the codec that the web browser uses for encoding and decoding. Set it as `h264` as long as Safari 12.1 or earlier is involved in the call. If you need to use the web app on mobile phones, see [Use Web SDK on Mobile Devices](https://docs.agora.io/en/faq/web_on_mobile) for details.
-
-In this step, you need to use the App ID of your project. Follow these steps to [create an Agora project](https://docs.agora.io/en/Agora%20Platform/manage_projects?platform=All%20Platforms) in Console and get an [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id ).
-
-1. Go to [Console](https://dashboard.agora.io/) and click the **[Project Management](https://dashboard.agora.io/projects)** icon ![](https://web-cdn.agora.io/docs-files/1551254998344) on the left navigation panel. 
-2. Click **Create** and follow the on-screen instructions to set the project name, choose an authentication mechanism, and Click **Submit**. 
-3. On the **Project Management** page, find the **App ID** of your project. 
 
 ### Set the client role
 

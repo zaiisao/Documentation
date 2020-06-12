@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: Windows
-updatedAt: Tue Jan 14 2020 02:30:33 GMT+0800 (CST)
+updatedAt: Thu Jun 11 2020 09:45:28 GMT+0800 (CST)
 ---
 # Share the Screen
 ## Introduction
@@ -148,7 +148,6 @@ Windows assigns a unique window identifier (windowId) for each window with a dat
 	```
 
 
-
 ### API Reference
 
 * [`startScreenCaptureByWindowId`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#add5ba807256e8e4469a512be14e10e52)
@@ -157,6 +156,10 @@ Windows assigns a unique window identifier (windowId) for each window with a dat
 * [`setScreenCaptureContentHint`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#aff9003c492450dbd8c3f3b9835186c95)
 * [`updateScreenCaptureRegion`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ae2ab9c3ff28b64c601f938ab45644586)
 * [`stopScreenCapture`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a77412ab7c8653289a28212e60bd00673)
+
+## Enable both screen sharing and video
+
+We provide an open-source [Agora-Screen-Sharing-Windows](https://github.com/AgoraIO/Advanced-Video/tree/dev/win-screenshare/Screensharing/Agora-Screen-Sharing-Windows) demo project on GitHub that implements screen sharing and publishing the local video stream. You can download it and refer to the source code.
 
 ## Considerations
 - v2.4.0 deprecates the `startScreenCapture` method. You can still use it, but we no longer recommend it.

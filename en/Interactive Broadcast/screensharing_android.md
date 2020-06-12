@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: Android
-updatedAt: Wed Apr 15 2020 03:55:17 GMT+0800 (CST)
+updatedAt: Thu Jun 11 2020 09:45:48 GMT+0800 (CST)
 ---
 # Share the Screen
 ## Introduction
@@ -48,7 +48,11 @@ rtcEngine.pushExternalVideoFrame(new AgoraVideoFrame(...));
 projection.stop();
 ```
 
-We also provide an open-souce [Switch External Video](https://github.com/AgoraIO/Advanced-Video/blob/master/Android/sample-switch-external-video) demo project on GitHub. You can go to the repository to download it. You can try the demo and refer to the source code of the `startScreenShare` method in the [`switchVideoInputActivity.java`](https://github.com/AgoraIO/Advanced-Video/blob/master/Android/sample-switch-external-video/src/main/java/io/agora/advancedvideo/switchvideoinput/SwitchVideoInputActivity.java) file.
+We also provide an open-souce [Switch External Video](https://github.com/AgoraIO/Advanced-Video/blob/master/Android/sample-switch-external-video) demo project on GitHub that implements screen sharing. You can download it and refer to the source code of the `startScreenShare` method in the [`switchVideoInputActivity.java`](https://github.com/AgoraIO/Advanced-Video/blob/master/Android/sample-switch-external-video/src/main/java/io/agora/advancedvideo/switchvideoinput/SwitchVideoInputActivity.java) file.
+
+## Enable both screen sharing and video
+
+We provide an open-source [Agora-Screen-Sharing-Android](https://github.com/AgoraIO/Advanced-Video/tree/dev/win-screenshare/Screensharing/Agora-Screen-Sharing-Android) demo project on GitHub that implements screen sharing and publishing the local video stream. You can download it and refer to the source code.
 
 ## Considerations
 
