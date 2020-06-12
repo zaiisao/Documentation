@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API 回调服务
 description: Cloud recording restful api callback
 platform: All Platforms
-updatedAt: Mon Jun 08 2020 07:25:50 GMT+0800 (CST)
+updatedAt: Fri Jun 12 2020 05:02:54 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 回调服务
 Agora 提供消息通知服务，你可以配置一个接收回调的 HTTP/HTTPS 服务器地址来接收云端录制的事件通知。当事件发生时，Agora 云端录制服务会将事件消息发送给 Agora 消息通知服务器，然后 Agroa 消息通知服务器会通过 HTTP/HTTPS 请求将事件投递给你的服务器。
@@ -48,6 +48,7 @@ Agora 提供消息通知服务，你可以配置一个接收回调的 HTTP/HTTPS
 | [3](#3)   | 0（云端录制服务） | 云端录制服务状态发生变化                                     |
 | [4](#4)   | 0（云端录制服务） | 生成录制索引文件                                             |
 | [11](#11)   | 0（云端录制服务） | 云端录制服务结束任务并退出                                             |
+| [12](#12)   | 0（云端录制服务） | 云端录制[启用高可用机制](https://docs.agora.io/cn/faq/high-availability)                                             |
 | [30](#30) | 2（上传模块）     | 上传服务已启动                                               |
 | [31](#31) | 2（上传模块）     | 所有录制文件已上传至指定的第三方云存储                       |
 | [32](#32) | 2（上传模块）     | 所有录制文件已经全部上传完成，但至少有一片上传到 Agora 备份云 |
@@ -116,6 +117,13 @@ Agora 提供消息通知服务，你可以配置一个接收回调的 HTTP/HTTPS
 - `leaveStatus`：Number 类型，退出状态。
   - `0`：正常退出，即录制结束、录制文件成功上传后，录制服务退出。
   - `1`：异常退出，例如参数设置错误，导致录制停止。
+
+### <a name="12"></a>12 session_failover
+
+`eventType` 为 12 表示云端录制启用高可用机制，`details` 中包含以下字段：
+
+- `msgName`：String 类型，消息名称，即 `session_failover`。
+- `newUid`：Number 类型，启用高可用机制后，云端录制随机指定的录制 UID。云端录制将使用该录制 UID 加入频道，不再使用原有的录制 UID。
 
 ### <a name="30"></a>30 uploader_started
 

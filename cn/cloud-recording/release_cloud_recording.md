@@ -3,7 +3,7 @@
 title: 云端录制更新历史
 description: 
 platform: Linux
-updatedAt: Thu Jun 11 2020 04:01:55 GMT+0800 (CST)
+updatedAt: Fri Jun 12 2020 04:40:47 GMT+0800 (CST)
 ---
 # 云端录制更新历史
 ## 简介
@@ -23,6 +23,25 @@ width: 150px;
 | :--------------- | :----------------------------------------------------------- |
 | Agora Native SDK | 云端录制与全平台 Agora Native SDK 1.7.0 或更高版本兼容，如果频道内有任何人使用了 1.6 版本的 Agora Native SDK， 则整个频道无法录制。 |
 | Agora Web SDK    | 云端录制与 Agora Web SDK 1.12.0 或更高版本兼容。            |
+
+## 2020.06.12
+本次发布的新增特性和 API 变更如下：
+
+**新增特性**
+
+#### 灵活的 UID 订阅
+
+提供更为灵活的 UID 订阅，支持设置音频和视频的订阅白名单或黑名单，以及在录制过程中更新订阅名单。详见[设置订阅名单](https://docs.agora.io/cn/cloud-recording/cloud_recording_subscription)。
+
+#### 高可用的回调
+
+该版本增加了 [`session_failover`](../../cn/cloud-recording/cloud_recording_callback_rest.md) 回调，在启用高可用机制后触发，返回启用高可用机制后的新录制 UID。
+
+**API 变更**
+
+- [`start`](https://docs.agora.io/cn/cloud-recording/restfulapi/#/%E4%BA%91%E7%AB%AF%E5%BD%95%E5%88%B6/start) 方法中新增了 `unSubscribeVideoUids` 和 `unSubscribeAudioUids` 参数，用于指定订阅黑名单。
+- 新增 [`update` ](https://docs.agora.io/cn/cloud-recording/restfulapi/#/%E4%BA%91%E7%AB%AF%E5%BD%95%E5%88%B6/update)方法，用于在录制过程中更新订阅名单。
+- 新增 `session_failover` 回调。
 
 ## 2020.05.09
 

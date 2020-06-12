@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API 快速开始
 description: Quick start for rest api
 platform: All Platforms
-updatedAt: Thu Jun 11 2020 10:59:15 GMT+0800 (CST)
+updatedAt: Fri Jun 12 2020 04:59:49 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 快速开始
 Agora 云端录制 1.1.0 及以后版本支持 RESTful API，无需集成 SDK，直接通过网络请求开启和控制云录制，在自己的网页或应用中灵活使用。
@@ -55,9 +55,9 @@ Agora RESTful API 要求 Basic HTTP 认证。每次发送 HTTP 请求时，都�
 
 下图为实现云端录制需要调用的 API 时序图。
 
-> 查询状态和更新合流布局都是可选的，且可以多次调用，但是必须在录制过程中（开始录制后到结束录制前）调用。
+> 查询状态，更新订阅名单，和更新合流布局都是可选的，且可以多次调用，但是必须在录制过程中（开始录制后到结束录制前）调用。
 
-![](https://web-cdn.agora.io/docs-files/1565775542161)
+![](https://web-cdn.agora.io/docs-files/1591937909915)
 
 ### 开始录制
 
@@ -84,6 +84,9 @@ Agora RESTful API 要求 Basic HTTP 认证。每次发送 HTTP 请求时，都�
 
 调用该方法成功后，你可以从 HTTP 响应包体中获得录制生成的[索引文件](#m3u8)和当前录制的状态。
 
+
+### 更新订阅名单
+录制过程中， 你可以多次调用 [`update`](https://docs.agora.io/cn/cloud-recording/restfulapi/#/%E4%BA%91%E7%AB%AF%E5%BD%95%E5%88%B6/update) 方法更新订阅的 UID 名单。详见[设置订阅名单](https://docs.agora.io/cn/cloud-recording/cloud_recording_subscription)。
 
 ### 更新合流布局
 
@@ -135,7 +138,7 @@ Agora RESTful API 要求 Basic HTTP 认证。每次发送 HTTP 请求时，都�
 - 一个 resource ID 只可用于一次 `start` 请求。
 - 调用 `stop` 之后不要再调用 `query`。
 
-下面列出一些常见的调用错误：
+### 常见调用错误
 
 - `acquire` ➡ `start` ➡ `start`
 
@@ -157,10 +160,17 @@ Agora RESTful API 要求 Basic HTTP 认证。每次发送 HTTP 请求时，都�
 
   调用 `stop` 的过程中调用 `query`，会影响 `stop` 的响应内容：响应的 HTTP 状态码为 206，并且响应中没有 `fileList` 字段。
 
+### 调用 `query` 返回 404
+
+调用 `query` 方法返回 404，可能由多种原因造成。一个常见的原因为第三方云存储信息有误，如 `accessKey` 或 `secretKey` 错误，导致录制文件上传失败。如果你开通了 [Agora 消息通知服务](https://docs-preview.agoralab.co/cn/Agora%20Platform/ncs)，当你的云存储配置出错时，你会收到 [`cloud_recording_error`](https://docs.agora.io/cn/cloud-recording/cloud_recording_callback_rest?platform=All%20Platforms#a-name1a1-cloud_recording_error) 事件的通知。
+
+详见[为什么成功开启云端录制后调用 query 方法返回 404？](https://docs.agora.io/cn/faq/return-404)
+
+## 其他问题
+
 如果你在集成和使用中遇到其他问题，可以参考以下文档：
 
 - [常见错误](../../cn/cloud-recording/cloud_recording_api_rest.md)
-- [为什么成功开启云端录制后调用 query 方法返回 404？](https://docs.agora.io/cn/faq/return-404)
 - [为什么第三方云存储中没有录制文件？](https://docs.agora.io/cn/faq/fail_to_upload)
 - [云存储 bucket 区域选择及跨区解决方案](https://docs.agora.io/cn/faq/bucket_region)
 
