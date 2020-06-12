@@ -3,7 +3,7 @@
 title: Start an Audio Broadcast
 description: 
 platform: iOS
-updatedAt: Tue Apr 28 2020 10:11:15 GMT+0800 (CST)
+updatedAt: Fri Jun 12 2020 05:29:39 GMT+0800 (CST)
 ---
 # Start an Audio Broadcast
 Use this guide to quickly start an audio broadcast demo with the Agora Voice SDK for iOS.
@@ -12,13 +12,13 @@ The difference between a broadcast and a call is that users have roles in a broa
 
 ## Try the demo
 
-We provide an open-source [OpenLive-Voice-Only-iOS-Objective-C](https://github.com/AgoraIO/Basic-Audio-Broadcasting/tree/master/OpenLive-Voice-Only-iOS-Objective-C)/[OpenLive-Voice-Only-iOS](https://github.com/AgoraIO/Basic-Audio-Broadcasting/tree/master/OpenLive-Voice-Only-iOS) demo project that implements the basic audio broadcast on GitHub. You can try the demo and view the source code.
+We provide an open-source [OpenLive-Voice-Only-iOS-Objective-C](https://github.com/AgoraIO/Basic-Audio-Broadcasting/tree/master/OpenLive-Voice-Only-iOS-Objective-C) or [OpenLive-Voice-Only-iOS](https://github.com/AgoraIO/Basic-Audio-Broadcasting/tree/master/OpenLive-Voice-Only-iOS) demo project that implements the basic audio broadcast on GitHub. You can try the demo and view the source code.
 
 ## Prerequisites
 
 - Xcode 9.0 or later
 - An iOS device running iOS 8.0 or later
-- A valid Agora account. ([Sign up](https://sso.agora.io/en/signup) for free)
+- A valid [Agora account](https://docs.agora.io/en/Agora%20Platform/sign_in_and_sign_up) and an [App ID](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#get-an-app-id)
 
 <div class="alert note">Open the specified ports in <a href="https://docs.agora.io/en/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a > if your network has a firewall.</div>
 
@@ -148,12 +148,6 @@ import AgoraRtcEngineKit
 
 Create and initialize the `AgoraRtcEngineKit` object before calling any other Agora APIs.
 
-In this step, you need to use the App ID of your project. Follow these steps to [create an Agora project](https://docs.agora.io/en/Agora%20Platform/manage_projects?platform=All%20Platforms) in Console and get an [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id ).
-
-1. Go to [Console](https://dashboard.agora.io/) and click the **[Project Management](https://dashboard.agora.io/projects)** icon ![](https://web-cdn.agora.io/docs-files/1551254998344) on the left navigation panel. 
-2. Click **Create** and follow the on-screen instructions to set the project name, choose an authentication mechanism, and Click **Submit**. 
-3. On the **Project Management** page, find the **App ID** of your project. 
-
 Call the `sharedEngineWithAppId` method and pass in the App ID to initialize the `AgoraRtcEngineKit` object.
 
 You can also listen for callback events, such as when the broadcaster joins the channel and leaves the channel. 
@@ -282,7 +276,7 @@ func leaveChannel() {
 
 ### Sample code
 
-You can find the sample code logic in the [OpenLive-Voice-Only-iOS-Objective-C](https://github.com/AgoraIO/Basic-Audio-Broadcasting/tree/master/OpenLive-Voice-Only-iOS-Objective-C)/[OpenLive-Voice-Only-iOS](https://github.com/AgoraIO/Basic-Audio-Broadcasting/tree/master/OpenLive-Voice-Only-iOS) demo project.
+You can find the sample code logic in the [OpenLive-Voice-Only-iOS-Objective-C](https://github.com/AgoraIO/Basic-Audio-Broadcasting/tree/master/OpenLive-Voice-Only-iOS-Objective-C) or [OpenLive-Voice-Only-iOS](https://github.com/AgoraIO/Basic-Audio-Broadcasting/tree/master/OpenLive-Voice-Only-iOS) demo project.
 
 ## Run the project
 

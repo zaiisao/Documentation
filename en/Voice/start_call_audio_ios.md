@@ -3,7 +3,7 @@
 title: Start a Voice Call
 description: 
 platform: iOS
-updatedAt: Tue Apr 28 2020 13:24:27 GMT+0800 (CST)
+updatedAt: Fri Jun 12 2020 05:26:38 GMT+0800 (CST)
 ---
 # Start a Voice Call
 Use this guide to quickly start a basic voice call with the Agora Voice SDK for iOS.
@@ -16,7 +16,7 @@ We provide an open-source [Agora-iOS-Voice-Tutorial-Swift-1to1](https://github.c
 
 - Xcode 9.0 or later
 - An iOS device running iOS 8.0 or later
-- A valid Agora account. ([Sign up](https://sso.agora.io/en/signup) for free)
+- A valid [Agora account](https://docs.agora.io/en/Agora%20Platform/sign_in_and_sign_up) and an [App ID](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#get-an-app-id)
 
 <div class="alert note">Open the specified ports in <a href="https://docs.agora.io/en/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a > if your network has a firewall.</div>
 
@@ -146,12 +146,6 @@ import AgoraRtcEngineKit
 ### 3. Initialize AgoraRtcEngineKit
 
 Create and initialize the `AgoraRtcEngineKit` object before calling any other Agora APIs.
-
-In this step, you need to use the App ID of your project. Follow these steps to [create an Agora project](https://docs.agora.io/en/Agora%20Platform/manage_projects?platform=All%20Platforms) in Console and get an [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id ).
-
-1. Go to [Console](https://dashboard.agora.io/) and click the **[Project Management](https://dashboard.agora.io/projects)** icon ![](https://web-cdn.agora.io/docs-files/1551254998344) on the left navigation panel. 
-2. Click **Create** and follow the on-screen instructions to set the project name, choose an authentication mechanism, and Click **Submit**. 
-3. On the **Project Management** page, find the **App ID** of your project. 
 
 Call the `sharedEngineWithAppId` method and pass in the App ID to initialize the `AgoraRtcEngineKit` object.
 

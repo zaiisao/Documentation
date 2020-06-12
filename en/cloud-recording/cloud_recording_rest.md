@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API Quickstart
 description: Quick start for rest api
 platform: All Platforms
-updatedAt: Thu Jun 11 2020 10:55:01 GMT+0800 (CST)
+updatedAt: Fri Jun 12 2020 05:06:01 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API Quickstart
 Agora Cloud Recording provides RESTful APIs for you to control cloud recording through HTTP requests.
@@ -56,10 +56,9 @@ The RESTful APIs require the basic HTTP authentication. You need to set the `Aut
 ## Implement cloud recording
 
 The following figure shows the API call sequence of a cloud recording. 
-> The `query` and `updateLayout` methods are not mandatory, and can be called multiple times during the recording (after starting recording and before stopping recording).
+> The `query`, `update`, and `updateLayout` methods are not mandatory, and can be called multiple times during the recording (after starting recording and before stopping recording).
 
-![](https://web-cdn.agora.io/docs-files/1565777201501)
-
+![](https://web-cdn.agora.io/docs-files/1591938337536)
 
 ### Start recording
 
@@ -87,6 +86,9 @@ During the recording, you can call the [`query`](https://docs.agora.io/en/cloud-
 
 If this method call succeeds, you get the M3U8 filename and the current recording status from the HTTP response body.
 
+### Update subscription lists
+
+During the recording, you can call [`update`](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/update) to update the subscription lists multiple times. See [Set up subscription lists](https://docs.agora.io/en/cloud-recording/cloud_recording_subscription) for details.
 
 ### Update video layout
 

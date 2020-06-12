@@ -3,7 +3,7 @@
 title: Agora Cloud Recording Changelog
 description: 
 platform: All Platforms
-updatedAt: Thu Jun 11 2020 04:01:24 GMT+0800 (CST)
+updatedAt: Fri Jun 12 2020 05:03:58 GMT+0800 (CST)
 ---
 # Agora Cloud Recording Changelog
 ## Overview
@@ -16,6 +16,24 @@ Agora Cloud Recording is compatible with the following SDKs:
 
 - Agora Native SDK v1.7.0 or later.
 - Agora Web SDK v1.12 or later.
+
+## 2020.06.12
+
+**New features**
+
+#### Flexible UID subscription
+
+This release provides a more flexible UID subscription feature, enabling you to set up a whitelist or blacklist for audio and video subscriptions. You can also update the subscription lists during the cloud recording. For details, see [Set up subscription lists](https://docs.agora.io/en/cloud-recording/cloud_recording_subscription).
+
+#### Callback for high availability
+
+This release adds the [`session_failover`](../../en/cloud-recording/cloud_recording_callback_rest.md) event, which occurs when the high availability mechanism is enabled and reports the new recording UID.
+
+**API changes**
+
+- In [`start`](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/start) adds the `unSubscribeVideoUids` and `unSubscribeAudioUids` parameters for setting up subscription blacklists. 
+- Adds [`update`](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/update) for updating the subscription lists during the cloud recording.
+- Adds the `session_failover` event.
 
 ## 2020.05.09
 This release adds support for Kingsoft Cloud.

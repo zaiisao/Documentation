@@ -3,7 +3,7 @@
 title: Agora Cloud Recording Overview
 description: 
 platform: Linux
-updatedAt: Thu Jun 11 2020 02:20:12 GMT+0800 (CST)
+updatedAt: Fri Jun 12 2020 05:03:38 GMT+0800 (CST)
 ---
 # Agora Cloud Recording Overview
 Agora Cloud Recording is a component provided by Agora to record and save voice calls, video calls, and interactive broadcasts on your cloud storage. It is compatible with the Agora Native SDK v1.7.0+ and the Agora Web SDK v1.12.0+. 
@@ -20,8 +20,8 @@ The following table lists the main functions that Agora Cloud Recording provides
 | :------------------------------------------------ | :----------------------------------------------------------- |
 | Recording mode                                    | Supports two recording modes:<ul><li>[Composite recording mode](../../en/cloud-recording/cloud_recording_composite_mode.md): Generates a single mixed audio and video file for all UIDs in a channel.</li><li>[Individual recording mode](../../en/cloud-recording/cloud_recording_individual_mode.md): Records the audio and video as separate files for each UID in a channel.</li></ul> |
 | Capture screenshots                           | You can [take screenshots of each video stream](../../en/cloud-recording/cloud_recording_screen_capture.md) in individual recording mode.                |
-| Record specified UIDs                             | You can specify the UIDs to record.             |
-| Record specified media type                       | You can specify the type of media to record:<ul><li>Record audio only</li><li>Record video only</li><li>Record both audio and video</li></ul>|
+| Subscribe to specified UIDs                             | You can specify the UIDs to subscribe or unsubscribe. You can also update the subscription lists during the recording. For details, see [Set up subscription lists](https://docs.agora.io/en/cloud-recording/cloud_recording_subscription).              |
+| Subscribe to specified media types                       | You can specify the type of media to subscribe to:<ul><li>Audio only</li><li>Video only</li><li>Both audio and video</li></ul>|
 | Set audio and video profiles                      | In composite recording mode, you can set audio and video profiles, such as the bit rate and resolution. |
 | Set video layout                                  | In composite recording mode, you can [customize the video layout](https://docs.agora.io/en/cloud-recording/cloud_recording_layout?platform=Linux#a-namecustomacustomize-the-video-layout) or [use predefined layouts](https://docs.agora.io/en/cloud-recording/cloud_recording_layout?platform=Linux#a-namepredefinedaselect-from-the-predefined-layout-types), and set the background color of the canvas. You can update video layout or background color during recording. |
 | Store recorded files in third-party cloud storage | You can store recorded files in the following third-party cloud storage services. You can customize the directory of the recorded files in the cloud storage.<ul><li>Amazon S3</li><li>Alibaba Cloud</li><li>Tencent Cloud</li><li>Qiniu Cloud</li><li>Kingsoft Cloud</li>|

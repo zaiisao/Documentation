@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Fri Jun 12 2020 01:42:21 GMT+0800 (CST)
+updatedAt: Fri Jun 12 2020 05:07:30 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API
 This article contains detailed help for the Cloud Recording RESTful APIs.
@@ -187,13 +187,18 @@ The following parameters are required in the request body.
       - `0`: (Default) Cropped mode. Uniformly scales the video until it fills the visible boundaries (cropped). One dimension of the video may have clipped contents.
       - `1`: Fit mode. Uniformly scales the video until one of its dimension fits the boundary (zoomed to fit). Areas that are not filled due to the disparity in the aspect ratio will be filled with black.
 
-- `subscribeVideoUids`: (Optional) JSONArray. An array of the user IDs (UIDs) of the users whose video you want to subscribe to , such as `["123","456"]`. The length of the array should not exceed 32. Once you set the parameter, do not set `streamTypes` in `recordingConfig` as `0`. 
+- `subscribeAudioUids`: (Optional) JSONArray. An array of the user IDs (UIDs) of the users whose audio you want to subscribe. The length of the array should not exceed 32 UIDs. Agora recommends that you do not set the array as empty. Once you set the parameter, do not set `streamTypes` in `recordingConfig` as `1`. See [Set up subscription lists](https://docs.agora.io/en/cloud-recording/cloud_recording_subscription) for details.
+	
+- `unSubscribeAudioUids`: (Optional) JSONArray. An array of the user IDs (UIDs) of the users whose audio you do not want to subscribe. Once you set this parameter, the recording service subscribes to the audio of all UIDs except the specified ones. The length of the array should not exceed 32 UIDs. Agora recommends that you do not set the array as empty. Once you set the parameter, do not set `streamTypes` in `recordingConfig` as `1`. See for [Set up subscription lists](https://docs.agora.io/en/cloud-recording/cloud_recording_subscription) details.
+	
+- `subscribeVideoUids`: (Optional) JSONArray. An array of the user IDs (UIDs) of the users whose video you want to subscribe. The length of the array should not exceed 32 UIDs. Agora recommends that you do not set the array as empty. Once you set the parameter, do not set `streamTypes` in `recordingConfig` as `0`. See [Set up subscription lists](https://docs.agora.io/en/cloud-recording/cloud_recording_subscription) for details.
+	
+- `unSubscribeVideoUids`: (Optional) JSONArray. An array of the user IDs (UIDs) of the users whose video you do not want to subscribe. Once you set this parameter, the recording service subscribes to the video of all UIDs except the specified ones. The length of the array should not exceed 32 UIDs. Agora recommends that you do not set the array as empty. Once you set the parameter, do not set `streamTypes` in `recordingConfig` as `0`. See  [Set up subscription lists](https://docs.agora.io/en/cloud-recording/cloud_recording_subscription) for details.
+	
+<div class="alert note">
+If you set up a subscription list for audio, but not for video, then Agora Cloud Recording will not subscribe to any video streams. <br>If you set up a subscription list for video, but not for audio, then Agora Cloud Recording will not subscribe to any audio streams.</div>
 
-- `subscribeAudioUids`: (Optional) JSONArray. An array of the user IDs (UIDs) of the users whose audio you want to subscribe to, such as `["123","456"]`. The length of the array should not exceed 32. Once you set the parameter, do not set `streamTypes` in `recordingConfig` as `1`.
-
-> Once you set `subscribeVideoUids` or `subscribeAudioUids`, Agora Cloud Recording subscribes to the audio or video of the specified users only. For example, if `subscribeVideoUids` is set and `subscribeAudioUids` is not set or is an empty array, Agora Cloud Recording subscribes to only the video (no audio) of the specified users. If both parameters are empty or if neither is set, all the users' audio and video will be recorded.
-
-- `subscribeUidGroup`: (Optional) Number. The estimated maximum number of subscribed users. You must set this parameter in individual mode. For example, if `subscribeVideoUids` is `["100","101","102"]` and `subscribeAudioUids` is `["101","102","103"]`, the number of subscribed users is 4.
+- `subscribeUidGroup`: (Optional) Number. The estimated maximum number of subscribed users. **You must set this parameter in individual mode.** For example, if `subscribeVideoUids` is `["100","101","102"]` and `subscribeAudioUids` is `["101","102","103"]`, the number of subscribed users is 4.
 
   - `0`: 1 to 2 UIDs
   - `1`: 3 to 7 UIDs
@@ -238,7 +243,8 @@ The following parameters are required in the request body.
   - `0`: East China
   - `1`: North China 
   - `2`: South China
-  - `3`: North America  
+  - `3`: North America 
+  - `4`: Southeast Asia 	
 
   When the third-party cloud storage is [Amazon S3](https://aws.amazon.com/s3/?nc1=h_ls) (`vendor` = 1):
 
@@ -424,6 +430,115 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 
 - `code`: Number. [Status code](#status).
 - `resourceId`: String. The resource ID for cloud recording. The resource ID is valid for five minutes.
+- `sid`: String. The recording ID. The unique identification of the current recording.
+
+## <a name="updateUID"></a>Updates the subscription lists
+
+During a cloud recording, you can call this method to update the subscription lists multiple times. This method call overrides the existing subscription configuration.
+
+
+
+- Method: POST
+- Endpoint: /v1/apps/\<appid\>/cloud_recording/resourceid/\<resourceid\>/sid/\<sid\>/mode/\<mode\>/update
+
+
+
+> The request frequency limit is 10 requests per second for each App ID.
+
+
+
+### Parameters
+
+
+
+The following parameters are required in the URL:
+
+
+
+| Parameter    | Type   | Description                                                  |
+| :----------- | :----- | :----------------------------------------------------------- |
+| `appid`      | String | The App ID in the channel to be recorded.                    |
+| `resourceid` | String | The resource ID requested by [`acquire`](#acquire). |
+| `sid`        | String | The recording ID created by [`start`](#start). |
+| `mode`       | String | The recording mode. Supports individual mode (`individual`) and composite mode (`mix`). Composite mode is the default. |
+
+
+
+The following parameters are required in the request body:
+
+
+
+| Parameter       | Type   | Description                                                  |
+| :-------------- | :----- | :----------------------------------------------------------- |
+| `cname`         | String | The name of the channel to be recorded.                      |
+| `uid`           | String | A string that contains the UID of the recording client. Must be the same UID used in the [`acquire`](#acquire) method. |
+| `clientRequest` | JSON   | A specific client request which includes the `streamSubscribe` parameter. Use `streamSubscribe` to update the subscription list. |
+
+
+
+`streamSubscribe` requires the following parameters:
+
+- audioUidList: (Optional) JSON. The audio subscription list. If you set this parameter, do not set `streamTypes` in `recordingConfig` as `1` (video only).
+  - `subscribeAudioUids`: (Optional) JSONArray. An array of the user IDs (UIDs) of the users whose audio you want to subscribe. The length of the array should not exceed 32 UIDs, and the array should not be empty. See [Set up subscription lists](https://docs.agora.io/en/cloud-recording/cloud_recording_subscription) for details.
+  - `unsubscribeAudioUids`: (Optional) JSONArray. An array of the user IDs (UIDs) of the users whose audio you do not want to subscribe. Once you set this parameter, the recording service subscribes to the audio of all UIDs except the specified ones. The length of the array should not exceed 32 UIDs, and the array should not be empty. See [Set up subscription lists](https://docs.agora.io/en/cloud-recording/cloud_recording_subscription) for details.
+- videoUidList: (Optional) JSON. The video subscription list. If you set this parameter, do not set `streamTypes` in `recordingConfig` as `0` (audio only).
+  - `subscribeVideoUids`: (Optional) JSONArray. An array of the user IDs (UIDs) of the users whose video you want to subscribe. The length of the array should not exceed 32 UIDs, and the array should not be empty. See [Set up subscription lists](https://docs.agora.io/en/cloud-recording/cloud_recording_subscription) for details.
+  - `unsubscribeVideoUids`: (Optional) JSONArray. An array of the user IDs (UIDs) of the users whose video you do not want to subscribe. Once you set this parameter, the recording service subscribes to the video of all UIDs except the specified ones. The length of the array should not exceed 32 UIDs, and the array should not be empty. See [Set up subscription lists](https://docs.agora.io/en/cloud-recording/cloud_recording_subscription) for details.
+
+
+
+### A request example of `update`
+
+
+
+- The request URL is:
+
+
+
+```
+https://api.agora.io/v1/apps//cloud_recording/resourceid//sid//mode//update
+```
+
+- `Content-type` is `application/json;charset=utf-8`.
+- `Authorization` is the basic authorization. See [RESTful API authentication](https://docs.agora.io/en/faq/restful_authentication) for details.
+- The request body:
+
+
+
+```
+{
+ "uid": "527841",
+ "cname": "httpClient463224",
+ "clientRequest": {
+  "streamSubscribe": {
+   "audioUidList": {
+    "subscribeAudioUids": ["#allstream#"]
+   },
+   "videoUidList": {
+    "unSubscribeVideoUids": ["444", "555", "666"]
+   }
+  }
+ }
+}                                                         
+```
+
+### **A response example of** `update`
+
+
+
+```json
+"Code": 200,
+"Body":
+{
+  "sid": "38f8e3cfdc474cd56fc1ceba380d7e1a", 
+  "resourceId": "JyvK8nXHuV1BE64GDkAaBGEscvtHW7v8BrQoRPCHxmeVxwY22-x-kv4GdPcjZeMzoCBUCOr9q-k6wBWMC7SaAkZ_4nO3JLqYwM1bL1n6wKnnD9EC9waxJboci9KUz2WZ4YJrmcJmA7xWkzs_L3AnNwdtcI1kr_u1cWFmi9BWAWAlNd7S7gfoGuH0tGi6CNaOomvr7-ILjPXdCYwgty1hwT6tbAuaW1eqR0kOYTO0Z1SobpBxu1czSFh1GbzGvTZG"
+}
+```
+
+
+
+- `code`: Number. [Status code](#status).
+- `resourceId`: String. The resource ID for cloud recording.
 - `sid`: String. The recording ID. The unique identification of the current recording.
 
 ## <a name="update"></a>Updates the video mixing layout

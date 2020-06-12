@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API Callback Service
 description: Cloud recording restful api callback
 platform: All Platforms
-updatedAt: Tue Jun 09 2020 11:51:20 GMT+0800 (CST)
+updatedAt: Fri Jun 12 2020 05:07:36 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API Callback Service
 You can set up an HTTP/HTTPS server to receive the event notifications of Agora Cloud Recording. When an event occurs, the Agora Cloud Recording service notifies the Agora notification center, and then the notification center notifies your server through an HTTP/HTTPS request.
@@ -49,6 +49,7 @@ The event type and the corresponding service type of the Agora Cloud Recording c
 | [3](#3)   | 0 (cloud recording service)   | The status of the Agora Cloud Recording service changes.     |
 | [4](#4)   | 0 (cloud recording service)   | The M3U8 playlist file is generated.                         |
 | [11](#11)   | 0 (cloud recording service)   | The cloud recording service has ended its tasks and exited.                    |
+| [12](#12)   | 0 (cloud recording service)   | The cloud recording service has enabled the [high availability mechanism](https://docs.agora.io/en/faq/high-availability).                    |
 | [30](#30) | 2 (uploader module)           | The upload service starts.                                   |
 | [31](#31) | 2 (uploader module)           | All the recorded files are uploaded to the specified third-party cloud storage. |
 | [32](#32) | 2 (uploader module)           | All the recorded files are uploaded, but at least one file is uploaded to Agora Cloud Backup. |
@@ -124,6 +125,13 @@ The event type and the corresponding service type of the Agora Cloud Recording c
 - `leaveStatus`: Number. The exit status. 
   - `0`: A normal exit, indicating that the recording service exits after the recording ends and the recorded files are uploaded.
   - `1`: An abnormal exit. An abnormal exist occurs when, for example, a parameter is incorrectly set.
+
+### <a name="12"></a>12 session_failover
+
+`eventType` 12 indicates that the cloud recording service has enabled the high availability mechanism, where the fault processing center automatically switches to a new server within 90 seconds to resume the service. `details` includes the following fields:
+
+- `msgName`: String. The message name, `session_failover`.
+- `newUid`: Number. A randomly-generated recording UID. After the high availability mechanism is enabled and the service is switched to a new server, the service rejoins the channel with a randomly-generated recording UID, abandoning the old one.
 
 ###  <a name="30"></a>30 uploader_started
 
