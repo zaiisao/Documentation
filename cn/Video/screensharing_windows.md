@@ -3,7 +3,7 @@
 title: 屏幕共享
 description: 
 platform: Windows
-updatedAt: Tue Jan 14 2020 02:29:51 GMT+0800 (CST)
+updatedAt: Thu Jun 11 2020 09:39:09 GMT+0800 (CST)
 ---
 # 屏幕共享
 ## 功能简介
@@ -149,6 +149,9 @@ EnumWindows(&EnumProc, NULL);
 * [`updateScreenCaptureRegion`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ae2ab9c3ff28b64c601f938ab45644586)
 * [`stopScreenCapture`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a77412ab7c8653289a28212e60bd00673)
 
+## 同时共享屏幕和开启视频
+
+我们在 GitHub 提供一个实现同时发布屏幕共享流和用户视频流功能的开源示例项目。你可以前往 [Agora-Screen-Sharing-Windows](https://github.com/AgoraIO/Advanced-Video/tree/dev/win-screenshare/Screensharing/Agora-Screen-Sharing-Windows) 下载体验。
 
 ## 开发注意事项
 - SDK 在 v2.4.0 版本中废弃了原有的 `startScreenCapture` 接口。你可以继续使用，但 Agora 不再推荐。

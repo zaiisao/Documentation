@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Tue Jun 09 2020 15:08:24 GMT+0800 (CST)
+updatedAt: Thu Jun 11 2020 10:45:44 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 该文提供云端录制 RESTful API 的详细信息。
@@ -239,6 +239,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
   - `1`：Huabei
   - `2`：Huanan
   - `3`：Beimei
+  - `4`：Dongnanya
 
   当 `vendor` = 1，即第三方云存储为 Amazon S3 时：
 

@@ -3,7 +3,7 @@
 title: 限制条件
 description: 
 platform: iOS,macOS
-updatedAt: Wed May 20 2020 06:11:41 GMT+0800 (CST)
+updatedAt: Wed Jun 10 2020 09:56:11 GMT+0800 (CST)
 ---
 # 限制条件
 
@@ -37,25 +37,6 @@ updatedAt: Wed May 20 2020 06:11:41 GMT+0800 (CST)
 | 根据订阅内容获取用户列表   | [`queryPeersBySubscriptionOption`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/queryPeersBySubscriptionOption:completion:) | 每 5 秒 10 次 |
 
 	
-## 操作超时时间
-
-<style> table th:first-of-type {     width: 300px; } th:third-of-type {     width: 100px; }</style>
-
-| 操作 | 超时时间 | 
-| ---------------- | ---------------- | 
-| 登录 Agora RTM 系统   | 6 秒  | 
-| 发送点对点消息  | 10 秒    | 
-| 查询用户在线状态  | 10 秒    | 
-| 订阅或取消订阅指定用户状态  | 10 秒    | 
-| 根据订阅类型获取被订阅用户列表  | 5 秒    | 
-| 用户属性或频道属性相关操作  | 5 秒    | 
-| 查询单个或多个指定频道成员人数  | 5 秒    | 
-| 加入指定频道  | 5 秒    | 
-| 发送频道消息 | 10 秒    | 
-| 获取当前频道成员列表  | 5 秒    | 
-
-
-
 	
 ## 字符串大小限制
 

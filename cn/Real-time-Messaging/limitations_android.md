@@ -3,7 +3,7 @@
 title: 限制条件
 description: 
 platform: Android
-updatedAt: Fri May 22 2020 05:56:14 GMT+0800 (CST)
+updatedAt: Thu Jun 11 2020 08:59:56 GMT+0800 (CST)
 ---
 # 限制条件
 
@@ -35,26 +35,7 @@ updatedAt: Fri May 22 2020 05:56:14 GMT+0800 (CST)
 | 频道属性查询| <li>[`getChannelAttributes`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a81f14a747a4012815ab4ba8d9e480fb6)<li>[`getChannelAttributesByKeys`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a358b47f4b42d678fafa76f3f30290e5e) | 每 5 秒 10 次          |
 | 订阅指定单个或多个用户的在线状态   | [`subscribePeersOnlineStatus`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a7a9ec7398c013ed35e17bc5d93e71420) | 每 5 秒 10 次 |
 | 取消订阅指定单个或多个用户的在线状态    | [`unSubscribePeersOnlineStatus`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#acf3ab093be17a0752d8aff094e3aabc4) | 每 5 秒 10 次 |
-| 获取某特定内容被订阅的用户列表   | [`queryPeersBySubscriptionOption`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a971c357f7d0c27d122ff877389314ccc) | 每 5 秒 10 次 |
-
-
-## 操作超时时间
-
-<style> table th:first-of-type {     width: 300px; } th:third-of-type {     width: 100px; }</style>
-
-| 操作 | 超时时间 | 
-| ---------------- | ---------------- | 
-| 登录 Agora RTM 系统   | 6 秒  | 
-| 发送点对点消息  | 10 秒    | 
-| 查询用户在线状态  | 10 秒    | 
-| 订阅或取消订阅指定用户状态  | 10 秒    | 
-| 根据订阅类型获取被订阅用户列表  | 5 秒    | 
-| 用户属性或频道属性相关操作  | 5 秒    | 
-| 查询单个或多个指定频道成员人数  | 5 秒    | 
-| 加入指定频道  | 5 秒    | 
-| 发送频道消息 | 10 秒    | 
-| 获取当前频道成员列表  | 5 秒    | 
-
+| 根据订阅内容获取用户列表    | [`queryPeersBySubscriptionOption`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a971c357f7d0c27d122ff877389314ccc) | 每 5 秒 10 次 |
 
 
 
