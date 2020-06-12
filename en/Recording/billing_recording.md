@@ -3,7 +3,7 @@
 title: Billing for On-premise Recording
 description: 
 platform: All Platforms
-updatedAt: Fri Jun 12 2020 07:29:19 GMT+0800 (CST)
+updatedAt: Fri Jun 12 2020 08:36:51 GMT+0800 (CST)
 ---
 # Billing for On-premise Recording
 This article introduces the billing policy for the on-premise recording service provided by Agora.
@@ -163,7 +163,6 @@ When calculating the aggregate resolution, Agora counts the resolution of 225,28
 Your recording fee has nothing to do with the recording mode you choose. Regardless of whether you use the individual mode or composite mode, your recording fee relates only to the number of the streams recorded, the recording time, and the aggregate recording resolutions. The number of the streams recorded does not affect the recording duration, but affects the aggregate recording resolution.
 
 </details>
-
 
 
 
