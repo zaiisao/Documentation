@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: macOS
-updatedAt: Fri Jun 12 2020 05:03:07 GMT+0800 (CST)
+updatedAt: Fri Jun 12 2020 05:22:37 GMT+0800 (CST)
 ---
 # 实现语音通话
 本文介绍如何使用 Agora 语音通话 SDK 快速实现语音通话。
