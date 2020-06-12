@@ -21,7 +21,7 @@ updatedAt: Fri May 22 2020 03:05:17 GMT+0800 (CST)
   | macOS    | macOS 10.0 或以上     | Xcode 8.0 或以上          |
   | Windows  | Windows XP SP3 或以上 | Visual Studio 2013 或以上 |
 
-- 有效的 Agora 账户（免费[注册](https://dashboard.agora.io/)）
+- 有效的 [Agora 账户](https://docs.agora.io/cn/Agora%20Platform/sign_in_and_sign_up) 和 [App ID](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#%E8%8E%B7%E5%8F%96-app-id)
 
 <div class="alert note">如果你的网络环境部署了防火墙，请根据<a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms#agora-rtc-sdk">应用企业防火墙限制</a >打开相关端口。</div>
 

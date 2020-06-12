@@ -35,7 +35,7 @@ We provide an open-source [Hello-Video-Unity-Agora](https://github.com/AgoraIO/A
   | macOS           | macOS 10.0 or later      | Xcode 8.0 or later          |
   | Windows         | Windows XP SP3 or later  | Visual Studio 2013 or later |
 
-- A valid Agora account. ([Sign up](https://dashboard.agora.io/) for free)
+- A valid [Agora account](https://docs.agora.io/en/Agora%20Platform/sign_in_and_sign_up) and an [App ID](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#get-an-app-id)
 
 <div class="alert note">Open the specified ports in <a href="https://docs.agora.io/en/Agora%20Platform/firewall?platform=All%20Platforms#agora-rtc-sdk">Firewall Requirements</a > if your network has a firewall.</div>
 
