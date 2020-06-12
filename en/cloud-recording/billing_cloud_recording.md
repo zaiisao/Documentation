@@ -137,7 +137,7 @@ For example, let's say a recording server is in a channel for 30 minutes. It rec
 
 ### Video resolution in the dual-stream scenario
 
-When the user being recorded enables [dual-stream mode](https://docs.agora.io/en/Agora Platform/terms?platform=All Platforms#a-name-dualadual-stream-mode), the recording service can receive only one stream at a time:
+When the user being recorded enables [dual-stream mode](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-dualadual-stream-mode), the recording service can receive only one stream at a time:
 
 - If the recording server records the high-quality video stream, the aggregate video resolution is calculated based on the resolution of the high-quality video.
 - If the recording server records the low-quality video stream, the aggregate video resolution is calculated based on the resolution of the video received by the server.

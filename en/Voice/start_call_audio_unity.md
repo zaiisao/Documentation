@@ -3,7 +3,7 @@
 title: Start a Voice Call
 description: 
 platform: Unity
-updatedAt: Fri May 08 2020 10:48:31 GMT+0800 (CST)
+updatedAt: Fri Jun 12 2020 05:44:54 GMT+0800 (CST)
 ---
 # Start a Voice Call
 Use this guide to quickly start a basic one-to-one voice call with the Agora SDK for Unity.
@@ -142,11 +142,7 @@ CheckPermission();
 <a name="initialize"></a>
 ### 3. Initialize IRtcEngine
 
-In this step, you need to use the App ID of your project. Follow these steps to [create an Agora project](https://docs.agora.io/en/Agora%20Platform/manage_projects?platform=All%20Platforms) in Console and get an [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id ).
-
-1. Go to [Console](https://dashboard.agora.io/) and click the **[Project Management](https://dashboard.agora.io/projects)** icon ![](https://web-cdn.agora.io/docs-files/1551254998344) on the left navigation panel. 
-2. Click **Create** and follow the on-screen instructions to set the project name, choose an authentication mechanism, and Click **Submit**. 
-3. On the **Project Management** page, find the **App ID** of your project. 
+Initialize the `IRtcEngine` object before calling any other Agora APIs.
 
 Call the `GetEngine` method and pass in the App ID to initialize the `IRtcEngine` object.
 

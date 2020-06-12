@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Fri Jun 12 2020 05:07:30 GMT+0800 (CST)
+updatedAt: Fri Jun 12 2020 05:46:05 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API
 This article contains detailed help for the Cloud Recording RESTful APIs.
@@ -189,11 +189,11 @@ The following parameters are required in the request body.
 
 - `subscribeAudioUids`: (Optional) JSONArray. An array of the user IDs (UIDs) of the users whose audio you want to subscribe. The length of the array should not exceed 32 UIDs. Agora recommends that you do not set the array as empty. Once you set the parameter, do not set `streamTypes` in `recordingConfig` as `1`. See [Set up subscription lists](https://docs.agora.io/en/cloud-recording/cloud_recording_subscription) for details.
 	
-- `unSubscribeAudioUids`: (Optional) JSONArray. An array of the user IDs (UIDs) of the users whose audio you do not want to subscribe. Once you set this parameter, the recording service subscribes to the audio of all UIDs except the specified ones. The length of the array should not exceed 32 UIDs. Agora recommends that you do not set the array as empty. Once you set the parameter, do not set `streamTypes` in `recordingConfig` as `1`. See for [Set up subscription lists](https://docs.agora.io/en/cloud-recording/cloud_recording_subscription) details.
+- `unSubscribeAudioUids`: (Optional) JSONArray. An array of the user IDs (UIDs) of the users whose audio you do not want to subscribe. Once you set this parameter, the recording service subscribes to the audio of all UIDs except the specified ones. The length of the array should not exceed 32 UIDs. Agora recommends that you do not set the array as empty. Once you set the parameter, do not set `streamTypes` in `recordingConfig` as `1`. See [Set up subscription lists](https://docs.agora.io/en/cloud-recording/cloud_recording_subscription) for details.
 	
 - `subscribeVideoUids`: (Optional) JSONArray. An array of the user IDs (UIDs) of the users whose video you want to subscribe. The length of the array should not exceed 32 UIDs. Agora recommends that you do not set the array as empty. Once you set the parameter, do not set `streamTypes` in `recordingConfig` as `0`. See [Set up subscription lists](https://docs.agora.io/en/cloud-recording/cloud_recording_subscription) for details.
 	
-- `unSubscribeVideoUids`: (Optional) JSONArray. An array of the user IDs (UIDs) of the users whose video you do not want to subscribe. Once you set this parameter, the recording service subscribes to the video of all UIDs except the specified ones. The length of the array should not exceed 32 UIDs. Agora recommends that you do not set the array as empty. Once you set the parameter, do not set `streamTypes` in `recordingConfig` as `0`. See  [Set up subscription lists](https://docs.agora.io/en/cloud-recording/cloud_recording_subscription) for details.
+- `unSubscribeVideoUids`: (Optional) JSONArray. An array of the user IDs (UIDs) of the users whose video you do not want to subscribe. Once you set this parameter, the recording service subscribes to the video of all UIDs except the specified ones. The length of the array should not exceed 32 UIDs. Agora recommends that you do not set the array as empty. Once you set the parameter, do not set `streamTypes` in `recordingConfig` as `0`. See [Set up subscription lists](https://docs.agora.io/en/cloud-recording/cloud_recording_subscription) for details.
 	
 <div class="alert note">
 If you set up a subscription list for audio, but not for video, then Agora Cloud Recording will not subscribe to any video streams. <br>If you set up a subscription list for video, but not for audio, then Agora Cloud Recording will not subscribe to any audio streams.</div>
@@ -496,7 +496,7 @@ The following parameters are required in the request body:
 
 
 ```
-https://api.agora.io/v1/apps//cloud_recording/resourceid//sid//mode//update
+https://api.agora.io/v1/apps/<appid>/cloud_recording/resourceid/<resourceid>/sid/<sid>/mode/<mode>/update
 ```
 
 - `Content-type` is `application/json;charset=utf-8`.

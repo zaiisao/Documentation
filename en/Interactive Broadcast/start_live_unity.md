@@ -3,7 +3,7 @@
 title: Start a Video Broadcast
 description: 
 platform: Unity
-updatedAt: Fri May 08 2020 10:45:52 GMT+0800 (CST)
+updatedAt: Fri Jun 12 2020 05:43:46 GMT+0800 (CST)
 ---
 # Start a Video Broadcast
 Use this guide to quickly start a basic video broadcasting with the Agora SDK for Unity.
@@ -21,7 +21,7 @@ Use this guide to quickly start a basic video broadcasting with the Agora SDK fo
   | macOS           | macOS 10.0 or later      | Xcode 8.0 or later          |
   | Windows         | Windows XP SP3 or later  | Visual Studio 2013 or later |
 
-- A valid Agora account. ([Sign up](https://dashboard.agora.io/) for free)
+- A valid [Agora account](https://docs.agora.io/en/Agora%20Platform/sign_in_and_sign_up) and an [App ID](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#get-an-app-id)
 
 <div class="alert note">Open the specified ports in <a href="https://docs.agora.io/en/Agora%20Platform/firewall?platform=All%20Platforms#agora-rtc-sdk">Firewall Requirements</a > if your network has a firewall.</div>
 
@@ -141,11 +141,7 @@ CheckPermission();
 <a name="initialize"></a>
 ### 3. Initialize IRtcEngine
 
-In this step, you need to use the App ID of your project. Follow these steps to [create an Agora project](https://docs.agora.io/en/Agora%20Platform/manage_projects?platform=All%20Platforms) in Console and get an [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id ).
-
-1. Go to [Console](https://dashboard.agora.io/) and click the **[Project Management](https://dashboard.agora.io/projects)** icon ![](https://web-cdn.agora.io/docs-files/1551254998344) on the left navigation panel. 
-2. Click **Create** and follow the on-screen instructions to set the project name, choose an authentication mechanism, and Click **Submit**. 
-3. On the **Project Management** page, find the **App ID** of your project. 
+Initialize the `IRtcEngine` object before calling any other Agora APIs.
 
 Call the `GetEngine` method and pass in the App ID to initialize the IRtcEngine object.
 
