@@ -3,7 +3,7 @@
 title: 实现音频直播
 description: 
 platform: macOS
-updatedAt: Fri Jun 12 2020 05:20:30 GMT+0800 (CST)
+updatedAt: Fri Jun 12 2020 06:36:39 GMT+0800 (CST)
 ---
 # 实现音频直播
 本文介绍如何使用 Agora 音频互动直播 SDK 快速实现音频互动直播。
@@ -277,7 +277,7 @@ agoraKit.setClientRole(.broadcaster)
 agoraKit.joinChannel(byToken: KeyCenter.Token, channelId: channelId, info: nil, uid: 0, joinSuccess: nil)
 ```
 
-### 9. 离开频道
+### 7. 离开频道
 
 根据场景需要，如结束通话、关闭 App 或 App 切换至后台时，调用 `leaveChannel` 离开当前通话频道。
 
@@ -302,10 +302,6 @@ func leaveChannel() {
     navigationController?.popViewController(animated: true)
     }
 ```
-
-### 示例代码
-
-你可以在 [OpenLive-macOS-Objective-C](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS-Objective-C) 或 [OpenLive-macOS-Swift](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS) 示例项目中查看完整的源码和代码逻辑。
 
 ## 运行项目
 

@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: Android
-updatedAt: Mon May 11 2020 11:32:15 GMT+0800 (CST)
+updatedAt: Mon Jun 15 2020 10:56:46 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -51,6 +51,24 @@ updatedAt: Mon May 11 2020 11:32:15 GMT+0800 (CST)
 </details>
 
 ### 集成 MediaPlayer Kit
+
+选择如下任意一种方式将 MediaPlayer Kit 集成到你的项目中。
+
+**方法一：使用 JCenter 自动集成**
+
+> 该方法仅适用于 MediaPlayer Kit v1.1.2。
+
+在项目的 /app/build.gradle 文件中，添加如下行：
+
+```
+...
+dependencies {
+    ...
+    implementation 'io.agora:agoraplayer:1.1.2'
+}
+```
+
+**方法二：手动复制 MediaPlayer Kit 文件**
 
 1. 前往[下载](https://docs.agora.io/cn/AgoraPlatform/downloads)页面，下载最新版 MediaPlayer Kit，然后解压。
 

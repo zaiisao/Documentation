@@ -3,7 +3,7 @@
 title: 实现视频直播
 description: 
 platform: macOS
-updatedAt: Fri Jun 12 2020 05:21:13 GMT+0800 (CST)
+updatedAt: Fri Jun 12 2020 06:35:23 GMT+0800 (CST)
 ---
 # 实现视频直播
 本文介绍如何使用 Agora SDK 快速实现互动直播。
@@ -386,10 +386,6 @@ func leaveChannel() {
     navigationController?.popViewController(animated: true)
     }
 ```
-
-### 示例代码
-
-你可以在 [OpenLive-macOS-Objective-C](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS-Objective-C) 或 [OpenLive-macOS-Swift](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS) 示例项目中查看完整的源码和代码逻辑。
 
 ## 运行项目
 

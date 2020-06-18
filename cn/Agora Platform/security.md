@@ -3,7 +3,7 @@
 title: 信息安全说明
 description: 
 platform: All Platforms
-updatedAt: Fri Jun 12 2020 04:57:00 GMT+0800 (CST)
+updatedAt: Fri Jun 12 2020 06:07:53 GMT+0800 (CST)
 ---
 # 信息安全说明
 ## 简介
@@ -49,7 +49,7 @@ updatedAt: Fri Jun 12 2020 04:57:00 GMT+0800 (CST)
         <td>通话内容</td>
         <td>用户在通话过程中的音视频数据。</td>
     </tr>
-    <tr>
+    <a name="log"></a><tr>
         <td>日志</td>
         <td>访问声网 SD-RTN™ 时由声网服务器生成的用户媒体服务器日志数据。日志不包含文本聊天信息或用户个人信息。</td>
     </tr>

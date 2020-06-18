@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: iOS
-updatedAt: Mon May 25 2020 10:01:59 GMT+0800 (CST)
+updatedAt: Mon Jun 15 2020 10:56:23 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -45,6 +45,20 @@ updatedAt: Mon May 25 2020 10:01:59 GMT+0800 (CST)
 
 
 ### 集成 MediaPlayer Kit
+
+选择如下任意一种方式将 MediaPlayer Kit 集成到你的项目中。
+
+**方法一：使用 CocoaPods 自动集成**
+
+> 该方法仅适用于 MediaPlayer Kit v1.1.2。
+
+1. 开始前请确保你已安装 Cocoapods。参考 [Getting Started with CocoaPods](https://guides.cocoapods.org/using/getting-started.html#getting-started) 安装说明。
+2. 在 **Terminal** 里进入项目根目录，并运行 `pod init` 命令。项目文件夹下会生成一个 Podfile 文本文件。
+3. 在 **Terminal** 内运行 `pod update` 命令更新本地库版本。
+4. 运行 `pod install` 命令安装 MediaPlayer Kit。成功安装后，**Terminal** 中会显示 `Pod installation complete!`，此时项目文件夹下会生成一个 `xcworkspace` 文件。
+5. 打开新生成的 `xcworkspace` 文件。
+
+**方法二：手动复制 MediaPlayer Kit 文件**
 
 1. 前往 [SDK 下载页面](https://docs.agora.io/cn/AgoraPlatform/downloads)，获取最新版 MediaPlayer Kit，然后解压。
 

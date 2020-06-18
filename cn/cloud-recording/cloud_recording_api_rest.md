@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Fri Jun 12 2020 05:02:06 GMT+0800 (CST)
+updatedAt: Tue Jun 16 2020 06:18:55 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 该文提供云端录制 RESTful API 的详细信息。
@@ -118,7 +118,8 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
 - 方法：POST
 - 接入点：/v1/apps/\<appid\>/cloud_recording/resourceid/\<resourceid\>/mode/\<mode\>/start
 
-> 每个 App ID 每秒钟的请求数限制为 10 次。
+> 每个 App ID 每秒钟的请求数限制为 10 次。如需提高此限制，请[提交工单](https://agora-ticket.agora.io/)联系技术支持。
+
 
 ### 参数
 
@@ -163,7 +164,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
 - `videoStreamType`：（选填）Number 类型，设置订阅的视频流类型。如果频道中有用户开启了双流模式，你可以选择订阅视频大流或者小流。
   - `0`：视频大流（默认），即高分辨率高码率的视频流
   - `1`：视频小流，即低分辨率低码率的视频流
-- `maxIdleTime`：（选填）Number 类型，最长空闲频道时间。默认值为 30 秒，该值需大于等于 5，且小于等于 (2<sup>32</sup>-1)。如果频道内无用户的状态持续超过该时间，录制程序会自动退出。
+- `maxIdleTime`：（选填）Number 类型，最长空闲频道时间。默认值为 30 秒，该值需大于等于 5，且小于等于 (2<sup>32</sup>-1)。如果频道内无用户的状态持续超过该时间，录制程序会自动退出。退出后，再次调用 `start` 请求，会产生新的录制文件。
 
 <div class="alert note"><ul><li>通信场景下，如果频道内有用户，但用户没有发流，不算作无用户状态。</li><li>直播场景下，如果频道内有观众但无主播，一旦无主播的状态超过 <code>maxIdleTime</code>，录制程序会自动退出。</li></div>
 
@@ -433,7 +434,8 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 - 方法：POST
 - 接入点：/v1/apps/\<appid\>/cloud_recording/resourceid/\<resourceid\>/sid/\<sid\>/mode/\<mode\>/update
 
-> 每个 App ID 每秒钟的请求数限制为 10 次。
+> 每个 App ID 每秒钟的请求数限制为 10 次。如需提高此限制，请[提交工单](https://agora-ticket.agora.io/)联系技术支持。
+
 
 ## 参数
 
@@ -516,7 +518,8 @@ https://api.agora.io/v1/apps/<appid>/cloud_recording/resourceid/<resourceid>/sid
 - 方法：POST
 - 接入点：/v1/apps/\<appid\>/cloud_recording/resourceid/\<resourceid\>/sid/\<sid\>/mode/\<mode\>/updateLayout
 
-> 每个 App ID 每秒钟的请求数限制为 10 次。
+> 每个 App ID 每秒钟的请求数限制为 10 次。如需提高此限制，请[提交工单](https://agora-ticket.agora.io/)联系技术支持。
+
 
 ### 参数
 
@@ -625,7 +628,8 @@ https://api.agora.io/v1/apps/<appid>/cloud_recording/resourceid/<resourceid>/sid
 
 - 接入点：/v1/apps/\<appid\>/cloud_recording/resourceid/\<resourceid\>/sid/\<sid\>/mode/\<mode\>/query
 
-> 每个 App ID 每秒钟的请求数限制为 10 次。
+> 每个 App ID 每秒钟的请求数限制为 10 次。如需提高此限制，请[提交工单](https://agora-ticket.agora.io/)联系技术支持。
+
 
 ### 参数
 
@@ -726,7 +730,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 - 方法：POST
 - 接入点：/v1/apps/\<appid\>/cloud_recording/resourceid/\<resourceid\>/sid/\<sid\>/mode/\<mode\>/stop
 
-> - 每个 App ID 每秒钟的请求数限制为 10 次。
+> - 每个 App ID 每秒钟的请求数限制为 10 次。如需提高此限制，请[提交工单](https://agora-ticket.agora.io/)联系技术支持。
 > - 当频道空闲（无用户）超过预设时间（默认为 30 秒） 后，云端录制也会自动退出频道停止录制。
 
 ### 参数

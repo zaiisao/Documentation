@@ -3,7 +3,7 @@
 title: 实现音频直播
 description: 
 platform: iOS
-updatedAt: Fri Jun 12 2020 05:11:21 GMT+0800 (CST)
+updatedAt: Fri Jun 12 2020 06:35:47 GMT+0800 (CST)
 ---
 # 实现音频直播
 本文介绍如何使用 Agora 音频互动直播 SDK 快速实现音频互动直播。
@@ -282,10 +282,6 @@ func leaveChannel() {
     navigationController?.popViewController(animated: true)
     }
 ```
-
-### 示例代码
-
-你可以在 [OpenLive-Voice-Only-iOS-Objective-C](https://github.com/AgoraIO/Basic-Audio-Broadcasting/tree/master/OpenLive-Voice-Only-iOS-Objective-C)/[OpenLive-Voice-Only-iOS](https://github.com/AgoraIO/Basic-Audio-Broadcasting/tree/master/OpenLive-Voice-Only-iOS) 示例项目中查看完整的源码和代码逻辑。
 
 ## 运行项目
 

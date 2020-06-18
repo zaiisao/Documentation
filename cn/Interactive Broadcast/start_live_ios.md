@@ -3,7 +3,7 @@
 title: 实现视频直播
 description: 
 platform: iOS
-updatedAt: Fri Jun 12 2020 05:10:26 GMT+0800 (CST)
+updatedAt: Fri Jun 12 2020 06:35:01 GMT+0800 (CST)
 ---
 # 实现视频直播
 本文介绍如何使用 Agora SDK 快速实现互动直播。
@@ -12,7 +12,7 @@ updatedAt: Fri Jun 12 2020 05:10:26 GMT+0800 (CST)
 
 ## 示例项目
 
-Agora 在 GitHub 上提供开源的互动直播示例项目 [OpenLive-iOS-Objective-C](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-iOS-Objective-C)/[OpenLive-iOS-Swift](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-iOS)。在实现相关功能前，你可以下载并查看源代码。
+Agora 在 GitHub 上提供开源的互动直播示例项目 [OpenLive-iOS-Objective-C](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-iOS-Objective-C) 或 [OpenLive-iOS-Swift](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-iOS)。在实现相关功能前，你可以下载并查看源代码。
 
 ## 前提条件
 
@@ -359,10 +359,6 @@ func leaveChannel() {
     navigationController?.popViewController(animated: true)
     }
 ```
-
-### 示例代码
-
-你可以在 [OpenLive-iOS-Objective-C](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-iOS-Objective-C)/[OpenLive-iOS-Swift](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-iOS) 示例项目中查看完整的源码和代码逻辑。
 
 ## 运行项目
 
