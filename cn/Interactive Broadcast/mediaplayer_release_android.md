@@ -3,7 +3,7 @@
 title: 媒体播放器组件发版说明
 description: 
 platform: Android
-updatedAt: Mon May 11 2020 11:19:23 GMT+0800 (CST)
+updatedAt: Mon Jun 15 2020 08:31:22 GMT+0800 (CST)
 ---
 # 媒体播放器组件发版说明
 本文提供媒体播放器组件的发版说明。
@@ -18,6 +18,15 @@ updatedAt: Mon May 11 2020 11:19:23 GMT+0800 (CST)
 - 在线教育场景：网络授课时，老师给学生分享一个视频。
 - 赛事直播场景：主播直播时，给观众分享一个比赛的在线视频。
 - 伪直播场景：将主播提前录好的视频分享给观众，制造一个伪直播。
+
+## 1.1.2 版
+
+该版本于 2020 年 6 月 15 日发布。
+
+新增特性和改进如下：
+- 新增支持 X86_64 架构。
+- 新增支持使用 MediaPlayer Kit C++ API。
+- 优化 MediaPlayer Kit 包的结构。
 
 ## 1.1.1 版
 
@@ -49,9 +58,4 @@ updatedAt: Mon May 11 2020 11:19:23 GMT+0800 (CST)
 观测器中包含一系列事件，如播放进度、播放状态和定位状态。通过监听这些事件，你可以更好地掌握播放过程。当播放发生异常时，你可以通过这些事件来排查问题。
 
 此外，你还可以监听媒体附属信息、每帧音频帧和每帧视频帧的接收事件，实现更为复杂的功能满足多种场景需求，如使用自定义格式数据、录制音频、录制视频和截图。
-
-### 相关链接
-我们为媒体播放器组件提供了完整的文档，你可以参考如下链接进行使用：
-- [集成文档](https://docs.agora.io/cn/Interactive%20Broadcast/mediaplayer_android?platform=Android)
-- [API 文档](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/mediaplayer_java/1.1.0/index.html)
 

@@ -3,7 +3,7 @@
 title: Play Recorded Files Online
 description: 
 platform: All Platforms
-updatedAt: Fri Mar 20 2020 05:33:12 GMT+0800 (CST)
+updatedAt: Mon Jun 15 2020 02:28:01 GMT+0800 (CST)
 ---
 # Play Recorded Files Online
 ## Introduction
@@ -14,7 +14,7 @@ The Agora server automatically uploads the recorded files in TS format to the cl
 
 ## Implementation
 
-Before you start, ensure that all the recorded files are uploaded (the `uploadingStatus` in the response of [`stop`](https://docs.agora.io/cn/cloud-recording/restfulapi/#/%E4%BA%91%E7%AB%AF%E5%BD%95%E5%88%B6/stop) is `"uploaded"`).
+Before you start, ensure that all the recorded files are uploaded (the `uploadingStatus` in the response of [`stop`](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/stop) is `"uploaded"`).
 
 We use [Amazon S3](https://aws.amazon.com/s3/) as an example to show you how to play the recorded files online.
 

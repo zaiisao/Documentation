@@ -3,13 +3,81 @@
 title: 发版说明
 description: 
 platform: Linux CPP
-updatedAt: Fri Jun 12 2020 03:37:00 GMT+0800 (CST)
+updatedAt: Fri Jun 12 2020 11:14:52 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
 
 Agora 实时消息 SDK 提供了稳定可靠、低延时、高并发的全球消息云服务，帮助你快速构建实时通信场景,  可实现消息通道、呼叫、聊天、状态同步等功能。点击[实时消息产品概述](../../cn/Real-time-Messaging/product_rtm.md)了解更多详情。
 
+
+## 1.3.0 版
+
+该版本于 6 月 12 日发布。
+
+**升级必看**
+
+服务器端会屏蔽向 1.2.2 或更早版本的实时消息 SDK、信令 SDK 发送的图片或文件消息。
+
+**新增特性**
+
+#### 1. 发送和接收文件或图片消息
+
+你可以通过 `createFileMessageByUploading` 方法或 `createImageMessageByUploading` 方法上传不超过 30 MB 的非空文件或图片。每个上传成功的文件或图片会在 Agora 服务器保存七天，SDK 会返回一个 media ID 作为此文件或图片的唯一标识。你可以使用 `IFileMessage` 类或 `IImageMessage` 类保存 SDK 返回的 media ID。`IFileMessage` 和 `IImageMessage` 继承自 `IMessage` 类，所以你可以通过点对点消息或频道消息发送和接收文件消息或图片消息。你可以使用 `downloadMediaToMemory` 或 `downloadMediaToFile` 方法下载接收到的文件或图片。
+
+#### 2. 管理上传或下载任务
+
+你可以通过 `cancelMediaUpload` 方法或 `cancelMediaDownload` 方法取消上传或下载任务，通过 `onMediaUploadingProgress` 回调或 `onMediaDownloadingProgress` 回调报告上传或下载的进度。
+
+**改进**
+
+Agora RTM Linux C++ SDK 提高了以下操作的调用频率限制。详见[限制条件](../../cn/Real-time-Messaging/limitations_cpp_linux.md)。
+
+| 操作                | 调用频率变化                         |
+| :------------------ | :----------------------------------- |
+| 点对点/频道消息发送 | 由每 3 秒 180 次增加到每 3 秒 300 次 |
+| 用户在线状态查询    | 由每 5 秒 10 次增加到每 5 秒 20 次   |
+| 用户属性增删修改    | 由每 5 秒 10 次增加到每 5 秒 20 次   |
+| 用户属性查询        | 由每 5 秒 40 次增加到每 5 秒 80 次   |
+| 频道属性增删修改    | 由每 5 秒 10 次增加到每 5 秒 20 次   |
+| 频道属性查询        | 由每 5 秒 10 次增加到每 5 秒 80 次   |
+
+**问题修复**
+
+- 由于误判用户网络类型导致无法登录的问题。
+- 其它可能导致系统崩溃的问题。
+
+**API 变更**
+
+#### 新增方法
+
+- [`createFileMessageByUploading`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a99f2137ec43be135b369b7d6927b6138)
+- [`createImageMessageByUploading`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a7192d93f365c28e2d0b91547716fb5a9)
+- [`cancelMediaUpload`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a0090bbb72e250ffbaedc84d9041b64b1)
+- [`cancelMediaDownload`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#adc34b7acad8b845fe1242efd127d82b9)
+- [`createFileMessageByMediaId`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a6e4b13011388ec45e8a02377b240506f)
+- [`createImageMessageByMediaId`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a97bfb847ff876ab216cf219f4b4f856d)
+- [`downloadMediaToMemory`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#ade134da2be907a8078ce693849e0cc37)
+- [`downloadMediaToFile`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a70584eb57e97476b1da072f737d88c95)
+
+
+#### 新增回调
+
+- [`onMediaUploadingProgress`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a56d5464c3b5e53c44039190a3ac4dfe9)
+- [`onMediaDownloadingProgress`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a9c4dfbb224f69b73f64dc1bf34f28567)
+- [`onMediaCancelResult`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a64cac4d387e2bf6a419bb478358570f6)
+- [`onFileMediaUploadResult`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#aadaa8cd5309e4e70ab2cbdfc1ef21241)
+- [`onImageMediaUploadResult`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#abaeeaeb6d69b98510d6c3b012849251e)
+- [`onFileMessageReceivedFromPeer`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a4642bb3a8ddf026617fff47d1c9f3e3a)
+- [`onImageMessageReceivedFromPeer`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a2682e64be745cf7af816a12f9895ce07)
+- [`onFileMessageReceived`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_channel_event_handler.html#a416dd103c84387a5147e962398eff8d1)
+- [`onImageMessageReceived`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_channel_event_handler.html#a6d710170df9b3c1f0ef092012af2e317)
+- [`onMediaDownloadToMemoryResult`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#ad0de249a8f0b79973f34f295cabe4904)
+- [`onMediaDownloadToFileResult`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html#a0b6edc7b944eab02d545bb2d2d1bfe2f)
+
+#### 废弃方法
+
+[`sendMessage`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_channel.html#a4ae01f44d49f334f7c2950d95f327d30) 被重载方法 [`sendMessage`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_channel.html#a056dfe9e83c168c3c94e47a017a6ec3f) 替代。
 
 ## 1.2.2 版
 

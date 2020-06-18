@@ -1,9 +1,9 @@
 
 ---
 title: Release Notes
-description: draft 
+description: 
 platform: iOS
-updatedAt: Mon May 11 2020 10:53:59 GMT+0800 (CST)
+updatedAt: Wed Jun 17 2020 08:05:07 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides release notes for the Agora MediaPlayer Kit plugin.
@@ -17,6 +17,22 @@ To enrich the live broadcast playability and improve the real-time interactive e
 - Online education: The teacher shares a currently playing video with the students during an online class.
 - Live sports: The broadcaster shares the live sports with the audience during his/her live broadcast.
 - Pseudo live broadcast: Share or publish the video recorded by the broadcaster in advance to the audience.
+
+## v1.1.3
+
+v1.1.3 was released on Jun 17, 2020.
+
+This release fixed the occasional video stretching issue.
+
+## v1.1.2
+
+v1.1.2 was released on Jun 15, 2020.
+
+New features, improvements, and fixed issues are as follows:
+- Added support for using MediaPlayer Kit C++ APIs.
+- Added support for debugging on the iOS simulator.
+- Improved the video playback quality on low-end models.
+- Fixed a black screen issue caused by the change of view size when the playback is paused.
 
 ## v1.1.1
 
@@ -50,7 +66,3 @@ The `AgoraMediaPlayerDelegate` delegate method contains a series of events, such
 
 Besides, you can listen for events that report receiving the media metadata, each audio frame and each video frame. These events help you include more complex functions in multiple scenarios, such as using custom format data, recording audio, recording video, and screenshots.
 
-### Related Links
-We provide complete documentation for the mediaplayer kit. See the following links:
-- [Integration documentation](https://docs.agora.io/en/Interactive%20Broadcast/mediaplayer_ios?platform=iOS)
-- [API documentation](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/mediaplayer_oc/docs/headers/MediaPlayer-Kit-Objective-C-API-Overview.html)

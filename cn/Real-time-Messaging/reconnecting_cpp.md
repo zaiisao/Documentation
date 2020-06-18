@@ -2,7 +2,7 @@
 ---
 title: 连接状态管理
 description: 
-platform: Linux CPP
+platform: Windows CPP,Linux CPP
 updatedAt: Wed Sep 25 2019 06:56:41 GMT+0800 (CST)
 ---
 # 连接状态管理

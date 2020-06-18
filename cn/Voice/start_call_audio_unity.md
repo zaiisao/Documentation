@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: Unity
-updatedAt: Fri Jun 12 2020 05:05:52 GMT+0800 (CST)
+updatedAt: Fri Jun 12 2020 05:45:35 GMT+0800 (CST)
 ---
 # 实现语音通话
 本文介绍如何使用 Agora Unity SDK 快速实现语音通话。
@@ -158,7 +158,7 @@ CheckPermission();
 <a name="initialize"></a>
 ### 3. 初始化 IRtcEngine
 
-在调用其他 Agora API 前，需要创建并初始化 `IRtcEngine` 对象。
+在调用其他 Agora API 前，需要初始化 `IRtcEngine` 对象。
 
 调用 `GetEngine` 方法，传入获取到的 App ID，即可初始化 `IRtcEngine`。
 

@@ -3,7 +3,7 @@
 title: 实现视频通话
 description: 
 platform: macOS
-updatedAt: Fri Jun 12 2020 05:22:01 GMT+0800 (CST)
+updatedAt: Fri Jun 12 2020 06:34:00 GMT+0800 (CST)
 ---
 # 实现视频通话
 本文介绍如何使用 Agora 视频通话 SDK 快速实现视频通话。
@@ -347,10 +347,6 @@ func leaveChannel() {
  view.window!.close()
  }
 ```
-
-### 示例代码
-
-你可以在 Agora-macOS-Tutorial-Objective-C-1to1 或 Agora-macOS-Tutorial-Swift-1to1 示例项目的  [VideoChatViewController.m](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-macOS-Tutorial-Objective-C-1to1/Agora-Mac-Tutorial-Objective-C/VideoChatViewController.m) 或 [VideoChatViewController.swift](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-macOS-Tutorial-Swift-1to1/Agora-Mac-Tutorial-Swift/VideoChatViewController.swift)  文件中查看完整的源码和代码逻辑。
 
 ## 运行项目
 你可以在 macOS 设备中运行此项目。当成功开始视频通话时，你可以同时看到本地和远端的视图。

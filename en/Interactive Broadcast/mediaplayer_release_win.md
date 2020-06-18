@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Mon May 11 2020 10:54:20 GMT+0800 (CST)
+updatedAt: Mon Jun 15 2020 08:35:44 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides release notes for the Agora MediaPlayer Kit.
@@ -57,11 +57,6 @@ The observer class contains a series of events, such as playback progress, playb
 
 Besides, you can listen for events that report receiving the media metadata, each audio frame and each video frame. These events help you include more complex functions in multiple scenarios, such as using custom format data, recording audio, recording video, and screenshots.
 
-### Related Links
-We provide complete documentation for the mediaplayer kit. See the following links:
-- [Integration documentation](https://docs.agora.io/en/Interactive%20Broadcast/mediaplayer_win?platform=Windows)
-- [API documentation](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/mediaplayer_cpp/1.1.0/index.html)
-
 ## v1.0.0
 
 v1.0.0 was released on Sep 4, 2019.
@@ -89,10 +84,3 @@ The  `MediaPlayerKitEventHandler` and `MediaInfoCallback` class provide callback
 - The playback error.
 - The audio information.
 - The video information.
-
-### Related Links
-
-We provide complete documentation for the mediaplayer kit. See the following links:
-
-- [Integration documentation](https://docs-preview.agoralab.co/en/Interactive%20Broadcast/mediaplayer_win?platform=Windows&versionId=b7b4fb60-61f3-11ea-a366-4fbfd071e0af)
-- [API documentation](https://docs-preview.agoralab.co/en/Video/API%20Reference/mediaplayer_cpp/v1.0.0/index.html)

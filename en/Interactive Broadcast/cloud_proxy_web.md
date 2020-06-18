@@ -3,7 +3,7 @@
 title: Use Cloud Proxy
 description: How to enable cloud proxy on Web
 platform: Web
-updatedAt: Wed Jun 10 2020 06:49:48 GMT+0800 (CST)
+updatedAt: Fri Jun 12 2020 11:47:35 GMT+0800 (CST)
 ---
 # Use Cloud Proxy
 ## Introduction
@@ -40,11 +40,13 @@ Agora Web SDK v2.5.1 or later supports the cloud proxy.
 	| -------- | -------------- | --------------------- | --------------------- |
 	| TCP      | 23.236.115.138 | 443, 4000<br/>3433 - 3460 | Message data transmission<br/>Media data exchange |
 	| TCP      |148.153.66.218 | 443, 4000<br/>3433 - 3460 | Message data transmission<br/>Media data exchange |
+	| TCP | 164.52.87.25  | 443, 4000<br/>3433 - 3460 | Message data transmission<br/>Media data exchange  |
 	| TCP      | 47.74.211.17   | 443                   | Edge node communication |
 	| TCP      | 52.80.192.229  | 443                   | Edge node communication |
 	| TCP      | 52.52.84.170   | 443                   | Edge node communication |
 	| TCP      | 47.96.234.219  | 443                   | Edge node communication |
 	| UDP      | 23.236.115.138 | 3478 - 3500            | Media data exchange |
+	| UDP      | 164.52.87.25 | 3478 - 3500            | Media data exchange |
 	| UDP      | 148.153.66.218 | 3478 - 3500            | Media data exchange |
 
  <div class="alert note">These IPs are for testing only. You need to apply for exclusive IP resources for production environment.</div>

@@ -3,7 +3,7 @@
 title: 媒体播放器组件发版说明
 description: 
 platform: Windows
-updatedAt: Mon May 11 2020 10:53:54 GMT+0800 (CST)
+updatedAt: Mon Jun 15 2020 08:32:18 GMT+0800 (CST)
 ---
 # 媒体播放器组件发版说明
 本文提供媒体播放器组件的发版说明。
@@ -88,9 +88,3 @@ updatedAt: Mon May 11 2020 10:53:54 GMT+0800 (CST)
 - 音频信息
 - 视频信息
 
-### 相关链接
-
-我们为媒体播放器组件提供了完整的文档，你可以参考如下链接进行使用：
-
-- [集成文档](https://docs-preview.agoralab.co/cn/Interactive%20Broadcast/mediaplayer_win?platform=Windows&versionId=a73fb9a0-61f3-11ea-a366-4fbfd071e0af)
-- [API 文档](https://docs-preview.agoralab.co/cn/Video/API%20Reference/mediaplayer_cpp/v1.0.0/index.html)

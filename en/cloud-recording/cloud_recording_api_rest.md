@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Fri Jun 12 2020 05:46:05 GMT+0800 (CST)
+updatedAt: Tue Jun 16 2020 06:21:24 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API
 This article contains detailed help for the Cloud Recording RESTful APIs.
@@ -53,7 +53,7 @@ Before starting a cloud recording, you need to call this method to get a resourc
 - Method:POST
 - Endpoint: /v1/apps/\<appid\>/cloud_recording/acquire
 
-> The request frequency limit is 10 requests per second per App ID. Contact support@agora.io if you want to raise the limit.
+> The request frequency limit is 10 requests per second for each App ID. Contact support@agora.io if you want to raise the limit.
 
 If this method call succeeds, you get a resource ID (`resourceId`) from the HTTP response body. The resource ID is valid for five minutes, so you need to [start recording](#start) with this resource ID within five minutes.
 
@@ -116,7 +116,7 @@ The HTTP method and endpoint of `start`:
 - Method: POST
 - Endpoint: /v1/apps/\<appid\>/cloud_recording/resourceid/\<resourceid\>/mode/\<mode\>/start
 
-> The request frequency limit is 10 requests per second for each App ID.
+> The request frequency limit is 10 requests per second for each App ID. Contact support@agora.io if you want to raise the limit.
 
 ### Parameters
 
@@ -160,7 +160,7 @@ The following parameters are required in the request body.
 - `videoStreamType`: (Optional) Number. The type of the video stream to subscribe to.
   - `0`: (Default) Subscribes to the high-quality stream.
   - `1`: Subscribes to the low-quality stream.
-- `maxIdleTime`: (Optional) Number. Agora Cloud Recording automatically stops recording and leaves the channel when there is no user in the recording channel after a time period (30 seconds by default) set by this parameter. The value range is from 5 to 2<sup>32</sup>-1. 
+- `maxIdleTime`: (Optional) Number. Agora Cloud Recording automatically stops recording and leaves the channel when there is no user in the recording channel after a time period (30 seconds by default) set by this parameter. The value range is from 5 to 2<sup>32</sup>-1. Once the recording stops, the recording service generates new recorded files if you call `start` for the second time.
 
 <div class="alert note"><ul><li>In a communication channel, the recording service does not recognize a channel as an idle channel, so long as the channel has users, regardless of whether they send stream or not.</li><li>If a live broadcast channel has an audience without a host for a set time (<code>maxIdleTime</code>), the recording service automatically stops and leaves the channel.</li></div>
 
@@ -443,7 +443,7 @@ During a cloud recording, you can call this method to update the subscription li
 
 
 
-> The request frequency limit is 10 requests per second for each App ID.
+> The request frequency limit is 10 requests per second for each App ID. Contact support@agora.io if you want to raise the limit.
 
 
 
@@ -550,7 +550,7 @@ This method call overrides the existing layout configurations. For example, if y
 - Method: POST
 - Endpoint: /v1/apps/\<appid\>/cloud_recording/resourceid/\<resourceid\>/sid/\<sid\>/mode/\<mode\>/updateLayout
 
-> The request frequency limit is 10 requests per second for each App ID.
+> The request frequency limit is 10 requests per second for each App ID. Contact support@agora.io if you want to raise the limit.
 
 ### Parameters
 
@@ -658,7 +658,7 @@ After you start a recording, you can call query to check its status.
 - Method: GET
 - Endpoint: /v1/apps/\<appid\>/cloud_recording/resourceid/\<resourceid\>/sid/\<sid\>/mode/\<mode\>/query
 
-> The request frequency limit is 10 requests per second for each App ID.
+> The request frequency limit is 10 requests per second for each App ID. Contact support@agora.io if you want to raise the limit.
 
 ### Parameters
 
@@ -760,7 +760,7 @@ When a recording finishes, call this method to leave the channel and stop record
 - Method: POST
 - Endpoint: /v1/apps/\<appid\>/cloud_recording/resourceid/\<resourceid\>/sid/\<sid\>/mode/\<mode\>/stop
 
-> - The request frequency limit is 10 requests per second for each App ID.
+> - The request frequency limit is 10 requests per second for each App ID. Contact support@agora.io if you want to raise the limit.
 > - Agora Cloud Recording automatically leaves the channel and stops recording when no user is in the channel for more than 30 seconds by default.
 
 ### Parameters

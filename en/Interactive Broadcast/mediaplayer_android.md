@@ -3,7 +3,7 @@
 title: MediaPlayer Kit
 description: 
 platform: Android
-updatedAt: Mon May 11 2020 11:31:35 GMT+0800 (CST)
+updatedAt: Mon Jun 15 2020 10:55:59 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
 ## Function description
@@ -49,6 +49,25 @@ Click <b>Finish</b>. Follow the on-screen instructions, if any, to install the p
 </details>
 
 ### Integrate the MediaPlayer Kit
+
+Choose either of the following methods to integrate the MediaPlayer Kit into your project.
+
+**Method 1: Automatically integrate the MediaPlayer Kit with JCenter**
+
+> Only applies for MediaPlayer Kit v1.1.2.
+
+Add the following line in the **/app/build.gradle** file of your project:
+
+```
+...
+dependencies {
+    ...
+    implementation 'io.agora:agoraplayer:1.1.2'
+}
+```
+
+
+**Method 2: Manually copy the MediaPlayer Kit files**
 
 1. Go to [Downloads](https://docs.agora.io/en/Agora%20Platform/downloads), download the latest version of the MediaPlayer Kit, and unzip the download package.
 

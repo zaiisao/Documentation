@@ -3,7 +3,7 @@
 title: RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Tue Jun 09 2020 02:02:11 GMT+0800 (CST)
+updatedAt: Wed Jun 17 2020 07:40:33 GMT+0800 (CST)
 ---
 # RESTful API
 ## Authentication
@@ -629,11 +629,11 @@ The banning rule works based on the three fields: `cname`, `uid` and `ip`. See t
 ```json
 {
   "appid": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
-  "cname": "",
+  "cname": "channel1",
   "uid":"",
   "ip":"",
   "time":60,
-  "privilege":["join_channel"]
+  "privileges":["join_channel"]
 }
 ```
 

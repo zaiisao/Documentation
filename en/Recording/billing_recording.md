@@ -3,7 +3,7 @@
 title: Billing for On-premise Recording
 description: 
 platform: All Platforms
-updatedAt: Fri Jun 12 2020 08:36:51 GMT+0800 (CST)
+updatedAt: Fri Jun 12 2020 09:01:18 GMT+0800 (CST)
 ---
 # Billing for On-premise Recording
 This article introduces the billing policy for the on-premise recording service provided by Agora.
@@ -17,7 +17,7 @@ Agora calculates the billing of all projects under your [Agora account](https://
 Billing for the on-premise recording service begins once you use the Agora On-premise Recording SDK to record and save audio calls, group video calls, or video broadcasts made via the Agora RTC SDK on your server. On the first day of each month, Agora sends you the bill via email, and five days later deducts the payment from your account. For details, see [Billing, fee deduction, and account suspension](https://docs.agora.io/en/faq/billing_account).
 
 
-<div class="alert note">Agora gives each Agora account 10,000 charge-free minutes each month. For more information on the deduction sequence and applicable products, see<a href="https://docs.agora.io/cn/faq/billing_free"> Agora's free-of-charge policy for the first 10,000 minutes</a>.</div>
+<div class="alert note">Agora gives each Agora account 10,000 charge-free minutes each month. For more information on the deduction sequence and applicable products, see<a href="https://docs.agora.io/en/faq/billing_free"> Agora's free-of-charge policy for the first 10,000 minutes</a>.</div>
 
 ## Composition
 
@@ -87,12 +87,12 @@ Service minutes comprise the following:
 If you create a recording instance and record multiple audio and video streams at the same time in a channel, the total service minutes per streams are not additive. For example:
 
 - If a recording instance records the video streams of both user A and user B for the same 10 minutes, the billing for the recording service is for 10 minutes of video.
-- If a recording instance records the audio stream of user A and the video stream of user B for the same 10 minutes, the billing for the recording device is also for 10 minutes of video.
+- If a recording instance records the audio stream of user A and the video stream of user B for the same 10 minutes, the billing for the recording service is also for 10 minutes of video.
 
 If you create multiple recording instances and record multiple audio and video streams at the same time in a channel, the total service minutes multiply by the number of recording instances. For example:
 
 - If you create two recording instances to record the video streams of both user A and user B for the same 10 minutes, the billing for the recording service is for 10 minutes of video × 2.
-- If you create two recording instances to record the audio stream of user A and the video stream of user B for the same 10 minutes, the billing for the recording device is for 10 minutes of video × 2.
+- If you create two recording instances to record the audio stream of user A and the video stream of user B for the same 10 minutes, the billing for the recording service is for 10 minutes of video × 2.
 
 ## Examples
 

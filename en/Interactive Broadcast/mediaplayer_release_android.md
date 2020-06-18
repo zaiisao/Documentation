@@ -3,7 +3,7 @@
 title: Release Notes
 description: draft
 platform: Android
-updatedAt: Mon May 11 2020 11:19:12 GMT+0800 (CST)
+updatedAt: Mon Jun 15 2020 08:32:35 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides release notes for the Agora MediaPlayer Kit plugin.
@@ -17,6 +17,15 @@ To enrich the live broadcast playability and improve the real-time interactive e
 - Online education: The teacher shares a currently playing video with the students during an online class.
 - Live sports: The broadcaster shares the live sports with the audience during his/her live broadcast.
 - Pseudo live broadcast: Share or publish the video recorded by the broadcaster in advance to the audience.
+
+## v1.1.2
+
+v1.1.2 was released on Jun 15, 2020.
+
+New features and improvements are as follows:
+- Added support for the X86_64 architecture.
+- Added support for using MediaPlayer Kit C++ APIs.
+- Optimized the structure of the MediaPlayer Kit package.
 
 ## v1.1.1
 
@@ -49,8 +58,3 @@ The broadcaster can actively obtain various playback information, such as curren
 The observer class contains a series of events, such as playback progress, playback state, and the result of a seek operation to a new playback position. By listening for these events, you can have more control over the playback process. When an exception occurs, you can use these event callbacks for troubleshooting.
 
 Besides, you can listen for events that report receiving the media metadata, each audio frame and each video frame. These events help you include more complex functions in multiple scenarios, such as using custom format data, recording audio, recording video, and screenshots.
-
-### Related Links
-We provide complete documentation for the mediaplayer kit. See the following links:
-- [Integration documentation](https://docs.agora.io/en/Interactive%20Broadcast/mediaplayer_android?platform=Android)
-- [API documentation](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/mediaplayer_java/1.1.0/index.html)

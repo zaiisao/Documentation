@@ -3,7 +3,7 @@
 title: 实时消息 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Thu May 14 2020 03:15:51 GMT+0800 (CST)
+updatedAt: Mon Jun 15 2020 08:32:44 GMT+0800 (CST)
 ---
 # 实时消息 RESTful API
 > 除本文外，你也可以查看我们全新的交互式 API 文档交互式 API 文档
@@ -89,7 +89,7 @@ https://api.agora.io/dev/v2/project/<appid>/
 
 ## 用户与频道事件 API
 
-### <a name="get_user"></a>获取用户上线或下线事件 API
+### <a name="get_user"></a>获取用户上线或下线事件 API（GET）
 
 该方法从 Agora RTM 服务器指定的地址获取用户上线或下线事件。
 
@@ -138,7 +138,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/user_events
 | `ts`  | int    | 从1970 年 1 月 1 日（UTC）到服务器接受请求的时间（UTC）的毫秒数。     |
 
 
-### <a name="get_channel"></a>获取用户加入或离开频道事件 API
+### <a name="get_channel"></a>获取用户加入或离开频道事件 API（GET）
 
 该方法从 Agora RTM 服务器指定的地址获取用户加入或离开频道事件。
 
@@ -192,13 +192,13 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/channel_events
 
 ## 历史消息 API
 
-### <a name="create_history_res"></a>创建历史消息查询资源 API
+### <a name="create_history_res"></a>创建历史消息查询资源 API（POST）
 
 该方法向 Agora RTM 服务器申请历史消息查询资源。若请求成功，你可以通过 GET 方法从服务器返回的 `location` 获取查询到的历史消息。
 
 <div class="alert note">如果需要将某条点对点或频道消息存为历史消息，你必须在调用 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a6e16eb0e062953980a92e10b0baec235"><code>sendMessage</code></a> 或 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a729079805644b3307297fb2e902ab4c9"><code>sendMessageToPeer</code></a> 时将 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_send_message_options.html"><code>sendMessageOptions</code></a> 类中的 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_send_message_options.html#a924ef8c28e7a1d41a215a7331e284330"><code>enableHistoricalMessaging</code></a> 成员变量设为 <code>true</code>。否则你无法通过 RESTful API 查询到这条历史消息。</div>
 
-> - 历史消息默认保留七天，默认存储空间限制为 2 GB，一般足够支持数万日活应用的消息量。如果需要延长保留时间或提高存储空间，请[提交工单](https://agora-ticket.agora.io/?_ga=2.80217495.108219700.1587866859-1583961819.1580439641)联系技术支持。
+> - 历史消息默认保留七天，单个项目的默认存储空间限制为 2 GB，一般足够支持数万日活应用的消息量。如果需要延长保留时间或提高存储空间，请[提交工单](https://agora-ticket.agora.io/?_ga=2.80217495.108219700.1587866859-1583961819.1580439641)联系技术支持。
 > - 当前版本仅支持文本消息，不支持自定义二进制消息。
 > - 对于每个 App ID，每秒请求数不能超过 100 次。
 
@@ -209,21 +209,8 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/channel_events
 https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query
 ```
 
-#### 请求示例
+请求包体的参数如下：
 
-```json
-{
-    "filter": {
-        "source": "src_account",
-        "destination": "dst_account",
-        "start_time" : "2019-08-01T01:22:10Z",
-        "end_time" : "2019-08-01T01:32:10Z"
-    },
-    "offset" : 100,
-    "limit" : 20,
-    "order" : "asc"
-}
-```
 | 参数            | 类型   | 描述                          |
 | :------------- | :----- | :--------------------------- |
 | `filter`        | JSON | 筛选条件。                |
@@ -235,24 +222,103 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query
 
 | 参数            | 类型   | 描述                          |
 | :------------- | :----- | :--------------------------- |
-| `source`        | string | 消息发送方。 <sup>1</sup>       |
-| `destination`        | string | 消息接收方。<sup>1</sup> |
+| `source`        | string | （可选）消息发送方，必须是用户。 如果此参数不赋值，则 API 会筛选出消息接收方在指定时间段内收到的所有消息。     |
+| `destination`        | string | （可选）消息接收方，可以是用户或频道。如果此参数不赋值，则 API 会筛选出消息发送方在指定时间段内发送的所有消息。 |
 | `start_time`         | string   | 历史消息查询起始时间。时间为 UTC 时间，使用 ISO8601 标准。时间的格式为 `yyyy-mm-ddThh:mm:ssZ` ，例如 `2019-08-01T01:24:10Z`。`Z` 代表时间偏移量为 0，即为 UTC 时间。|
 |  `end_time`       | string | 历史消息查询结束时间。时间为 UTC 时间，使用 ISO8601 标准。时间的格式为 `yyyy-mm-ddThh:mm:ssZ` ，例如 `2019-08-01T01:24:10Z`。`Z` 代表时间偏移量为 0，即为 UTC 时间。|
 
+> 频道只能作为 `destination`。API 的筛选规则与 `source` 和 `destination` 的关系详见下表：
+
+| <a name="rule"></a>`source` | `destination` | 筛选规则                                |
+| -------- | ----------- | ------------------------------------- |
+| 不赋值     | userA       | API 会筛选出 userA 在指定时间段内收到的所有消息，包括点对点消息和频道消息。           |
+| 不赋值     | channelA    | API 会筛选出 channelA 在指定时间段内收到的所有频道消息。   |
+| userA    | 不赋值      | API 会筛选出 userA 在指定时间段内发送的所有消息，包括点对点消息和频道消息。         |
+| userA    | userB       | API 会筛选出 userA 在指定时间段内发送给 userB 的所有点对点消息。|
+| userA    | channelA    | API 会筛选出 userA 在指定时间段内发送到 channelA 的所有频道消息。|
+
 > `start_time` 和 `end_time` 仅支持 UTC 时间，不支持时区和夏令时。如果你的本地时间不是 UTC 时间，你需要先将本地时间转换为 UTC 时间。例如，如果你的本地时间是 `2019-08-01T09:24:10`，时区为东八区（UTC/GMT+08:00），则 UTC 时间应为 `2019-08-01T01:24:10Z`。
 
-> <sup>1</sup> `source` 和 `destination` 的匹配原则详见下表：
+#### 请求示例
 
-| <a name="rule"></a>`source` | `destination` | 说明                                |
-| -------- | ----------- | ------------------------------------- |
-| null     | null        | `source` 和 `destination` 不得同时为空。   |
-| null     | UserA       | UserA 在指定时间内收到的所有消息。           |
-| null     | ChannelA    | ChannelA 在指定时间段内收到的所有频道消息。   |
-| UserA    | null        | UserA 在指定时间段内发送的所有消息。         |
-| ChannelA | 任意字符串    | 无效的参数组合，返回空值。                               |
-| UserA    | UserB       | UserA 在指定时间段内发送给 UserB 的所有点对点消息。|
-| UserA    | ChannelA    | UserA 在指定时间段内发送到 ChannelA 的所有频道消息。|
+##### userA 在指定时间段内收到的所有消息
+
+```json
+{
+    "filter": {
+        "destination": "userA",
+        "start_time" : "2019-08-01T01:22:10Z",
+        "end_time" : "2019-08-01T01:32:10Z"
+    },
+    "offset" : 100,
+    "limit" : 20,
+    "order" : "asc"
+}
+```
+
+##### channelA 在指定时间段内收到的所有消息
+
+```json
+{
+    "filter": {
+        "destination": "channelA",
+        "start_time" : "2019-08-01T01:22:10Z",
+        "end_time" : "2019-08-01T01:32:10Z"
+    },
+    "offset" : 100,
+    "limit" : 20,
+    "order" : "asc"
+}
+```
+
+##### userA 在指定时间段内发送的所有消息
+
+```json
+{
+    "filter": {
+        "source": "userA",
+        "start_time" : "2019-08-01T01:22:10Z",
+        "end_time" : "2019-08-01T01:32:10Z"
+    },
+    "offset" : 100,
+    "limit" : 20,
+    "order" : "asc"
+}
+```
+
+##### userA 在指定时间段内发送给 userB 的所有点对点消息
+
+```json
+{
+    "filter": {
+        "source": "userA",
+        "destination": "userB",
+        "start_time" : "2019-08-01T01:22:10Z",
+        "end_time" : "2019-08-01T01:32:10Z"
+    },
+    "offset" : 100,
+    "limit" : 20,
+    "order" : "asc"
+}
+```
+
+##### userA 在指定时间段内发送到 channelA 的所有频道消息
+
+```json
+{
+    "filter": {
+        "source": "userA",
+        "destination": "channelA",
+        "start_time" : "2019-08-01T01:22:10Z",
+        "end_time" : "2019-08-01T01:32:10Z"
+    },
+    "offset" : 100,
+    "limit" : 20,
+    "order" : "asc"
+}
+```
+
+
 
 #### <a name="queryresponse"></a>响应示例
 
@@ -266,6 +332,8 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query
 }
 ```
 
+响应包体的参数如下：
+
 | 参数       | 类型   | 描述                                                         |
 | :--------- | :----- | :----------------------------------------------------------- |
 | `result`   | string | 请求结果。                                                     |
@@ -274,14 +342,14 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query
 | `location` | string | 历史消息资源地址。你可以从这个 URL 调用[获取历史消息 API](#get_history_message) 获取查询结果。 |
 
 
-### <a name="get_history_message"></a>获取历史消息 API
+### <a name="get_history_message"></a>获取历史消息 API（GET）
 
 该方法从 Agora RTM 服务器指定的地址获取历史消息。
 
 <div class="alert note">如果需要将某条点对点或频道消息存为历史消息，你必须在调用 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a6e16eb0e062953980a92e10b0baec235"><code>sendMessage</code></a> 或 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a729079805644b3307297fb2e902ab4c9"><code>sendMessageToPeer</code></a> 时将 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_send_message_options.html"><code>sendMessageOptions</code></a> 类中的 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_send_message_options.html#a924ef8c28e7a1d41a215a7331e284330"><code>enableHistoricalMessaging</code></a> 成员变量设为 <code>true</code>。否则你无法通过 RESTful API 查询到这条历史消息。</div>
 
 
-> - 历史消息默认保留七天，默认存储空间限制为 2 GB，一般足够支持数万日活应用的消息量。如果需要延长保留时间或提高存储空间，请[提交工单](https://agora-ticket.agora.io/?_ga=2.80217495.108219700.1587866859-1583961819.1580439641)联系技术支持。
+> - 历史消息默认保留七天，单个项目的默认存储空间限制为 2 GB，一般足够支持数万日活应用的消息量。如果需要延长保留时间或提高存储空间，请[提交工单](https://agora-ticket.agora.io/?_ga=2.80217495.108219700.1587866859-1583961819.1580439641)联系技术支持。
 > - 当前版本仅支持文本消息，不支持自定义二进制消息。
 > - 对于每个 App ID，每秒请求数不能超过 100 次。
 
@@ -314,6 +382,8 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query/$handle
 	"src": "src"
 ```
 
+响应包体的参数如下：
+
 | 参数            | 类型   | 描述                          |
 | :------------- | :----- | :--------------------------- |
 | `result`        | string | 本次请求结果。                |
@@ -332,14 +402,14 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query/$handle
 |  `ms`       | int |  从1970 年 1 月 1 日（UTC）到服务器接受请求的时间（UTC）的毫秒数。|
 
 
-### <a name="get_history_message_count"></a>获取历史消息数目 API
+### <a name="get_history_message_count"></a>获取历史消息数目 API（GET）
 
 该方法从 Agora RTM 服务器指定的地址获取历史消息数目。
 
 <div class="alert note">如果需要将某条点对点或频道消息存为历史消息，你必须在调用 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a6e16eb0e062953980a92e10b0baec235"><code>sendMessage</code></a> 或 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a729079805644b3307297fb2e902ab4c9"><code>sendMessageToPeer</code></a> 时将 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_send_message_options.html"><code>sendMessageOptions</code></a> 类中的 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_send_message_options.html#a924ef8c28e7a1d41a215a7331e284330"><code>enableHistoricalMessaging</code></a> 成员变量设为 <code>true</code>。否则你无法通过 RESTful API 查询到这条历史消息。</div>
 
 
-> - 历史消息默认保留七天，默认存储空间限制为 2 GB，一般足够支持数万日活应用的消息量。如果需要延长保留时间或提高存储空间，请[提交工单](https://agora-ticket.agora.io/?_ga=2.80217495.108219700.1587866859-1583961819.1580439641)联系技术支持。
+> - 历史消息默认保留七天，单个项目的默认存储空间限制为 2 GB，一般足够支持数万日活应用的消息量。如果需要延长保留时间或提高存储空间，请[提交工单](https://agora-ticket.agora.io/?_ga=2.80217495.108219700.1587866859-1583961819.1580439641)联系技术支持。
 > - 当前版本仅支持文本消息，不支持自定义二进制消息。
 > - 对于每个 App ID，每秒请求数不能超过 100 次。
 
@@ -350,26 +420,64 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query/$handle
 https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/count
 ```
 
-
-#### 请求示例
-
-```json
-https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/count?source="src"&destination="dst"&start_time=2019-08-01T01:22:10Z&end_time=2019-08-01T01:24:10Z
-```
-
+请求的查询参数如下：
 
 | 参数            | 类型   | 描述                          |
 | :------------- | :----- | :--------------------------- |
-| `source`        | string |  消息发送方 <sup>1</sup>       |
-| `destination`        | string | 消息接收方。<sup>1</sup> |
+| `source`        | string | （可选）消息发送方，必须是用户。 如果此参数不赋值，则 API 会筛选出消息接收方在指定时间段内收到的所有消息。     |
+| `destination`        | string | （可选）消息接收方，可以是用户或频道。如果此参数不赋值，则 API 会筛选出消息发送方在指定时间段内发送的所有消息。 |
 | `start_time`         | string   | 历史消息查询起始时间。时间为 UTC 时间，使用 ISO8601 标准。时间的格式为 `yyyy-mm-ddThh:mm:ssZ` ，例如 `2019-08-01T01:24:10Z`。`Z` 代表时间偏移量为 0，即为 UTC 时间。|
 |  `end_time`       | string | 历史消息查询结束时间。时间为 UTC 时间，使用 ISO8601 标准。时间的格式为 `yyyy-mm-ddThh:mm:ssZ` ，例如 `2019-08-01T01:24:10Z`。`Z` 代表时间偏移量为 0，即为 UTC 时间。|
 
+> 频道只能作为 `destination`。API 的筛选规则与 `source` 和 `destination` 的关系详见下表：
+
+| <a name="rule"></a>`source` | `destination` | 筛选规则                                |
+| -------- | ----------- | ------------------------------------- |
+| 不赋值     | userA       | API 会筛选出 userA 在指定时间段内收到的所有消息，包括点对点消息和频道消息。           |
+| 不赋值     | channelA    | API 会筛选出 channelA 在指定时间段内收到的所有频道消息。   |
+| userA    | 不赋值      | API 会筛选出 userA 在指定时间段内发送的所有消息，包括点对点消息和频道消息。         |
+| userA    | userB       | API 会筛选出 userA 在指定时间段内发送给 userB 的所有点对点消息。|
+| userA    | channelA    | API 会筛选出 userA 在指定时间段内发送到 channelA 的所有频道消息。|
+
 > `start_time` 和 `end_time` 仅支持 UTC 时间，不支持时区和夏令时。如果你的本地时间不是 UTC 时间，你需要先将本地时间转换为 UTC 时间。例如，如果你的本地时间是 `2019-08-01T09:24:10`，时区为东八区（UTC/GMT+08:00），则 UTC 时间应为 `2019-08-01T01:24:10Z`。
 
-> <sup>3</sup> `source` 和 `destination` 的匹配原则详见[匹配关系表](#rule)。
+
+#### 请求示例
+
+##### userA 在指定时间段内收到的所有消息
+
+```json
+https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/count?&destination="userA"&start_time=2019-08-01T01:22:10Z&end_time=2019-08-01T01:24:10Z
+```
+
+##### channelA 在指定时间段内收到的所有消息
+
+```json
+https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/count?&destination="channelA"&start_time=2019-08-01T01:22:10Z&end_time=2019-08-01T01:24:10Z
+```
+
+##### userA 在指定时间段内发送的所有消息
+
+```json
+https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/count?source="userA"&start_time=2019-08-01T01:22:10Z&end_time=2019-08-01T01:24:10Z
+```
+
+##### userA 在指定时间段内发送给 userB 的所有点对点消息
+
+```json
+https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/count?source="userA"&destination="userB"&start_time=2019-08-01T01:22:10Z&end_time=2019-08-01T01:24:10Z
+```
+
+##### userA 在指定时间段内发送到 channelA 的所有频道消息
+
+```json
+https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/count?source="userA"&destination="channelA"&start_time=2019-08-01T01:22:10Z&end_time=2019-08-01T01:24:10Z
+```
+
 
 #### 响应示例
+
+响应包体参数如下：
 
 ```json
 {

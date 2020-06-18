@@ -3,7 +3,7 @@
 title: 实现视频通话
 description: 
 platform: iOS
-updatedAt: Fri Jun 12 2020 05:09:43 GMT+0800 (CST)
+updatedAt: Fri Jun 12 2020 06:24:23 GMT+0800 (CST)
 ---
 # 实现视频通话
 本文介绍如何使用 Agora 视频通话 SDK 快速实现视频通话。
@@ -21,7 +21,7 @@ updatedAt: Fri Jun 12 2020 05:09:43 GMT+0800 (CST)
 
 ## 示例项目
 
-Agora 在 GitHub 上提供开源的实时视频通话示例项目 [Agora-iOS-Tutorial-Objective-C-1to1](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-iOS-Tutorial-Objective-C-1to1)/[Agora-iOS-Tutorial-Swift-1to1](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-iOS-Tutorial-Swift-1to1)。在实现相关功能前，你可以下载并查看源代码。
+Agora 在 GitHub 上提供开源的实时视频通话示例项目 [Agora-iOS-Tutorial-Objective-C-1to1](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-iOS-Tutorial-Objective-C-1to1) 或 [Agora-iOS-Tutorial-Swift-1to1](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-iOS-Tutorial-Swift-1to1)。在实现相关功能前，你可以下载并查看源代码。
 
 ## 前提条件
 
@@ -319,10 +319,6 @@ func leaveChannel() {
         self.logVC?.log(type: .info, content: "did leave channel")
     }
 ```
-
-### 示例代码
-
-你可以在 Agora-iOS-Tutorial-Objective-C-1to1/Agora-iOS-Tutorial-Swift-1to1 示例项目的  [VideoChatViewController.m](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-iOS-Tutorial-Objective-C-1to1/Agora-iOS-Tutorial-Objective-C/VideoChatViewController.m)/[VideoChatViewController.swift](https://github.com/AgoraIO/Basic-Video-Call/blob/master/One-to-One-Video/Agora-iOS-Tutorial-Swift-1to1/Agora-iOS-Tutorial/VideoChatViewController.swift)  文件中查看完整的源码和代码逻辑。
 
 ## 运行项目
 你可以在 iOS 设备中运行此项目。当成功开始视频通话时，你可以同时看到本地和远端的视图。

@@ -3,7 +3,7 @@
 title: 媒体播放器组件发版说明
 description: 
 platform: macOS
-updatedAt: Mon May 11 2020 10:53:49 GMT+0800 (CST)
+updatedAt: Mon Jun 15 2020 08:32:04 GMT+0800 (CST)
 ---
 # 媒体播放器组件发版说明
 本文提供媒体播放器组件的发版说明。
@@ -84,13 +84,6 @@ updatedAt: Mon May 11 2020 10:53:49 GMT+0800 (CST)
 - 音频流和视频流的详细信息
 
 通过监听这些事件，你可以更好地掌握播放过程。
-
-### 相关链接
-
-我们为媒体播放器组件提供了完整的文档，你可以参考如下链接进行使用：
-
-- [集成文档](https://docs-preview.agoralab.co/cn/Interactive%20Broadcast/mediaplayer_mac?platform=macOS&versionId=02f7bc20-6451-11ea-a366-4fbfd071e0af)
-- [API 文档](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/mediaplayer_oc/v1.0.0/docs/headers/MediaPlayer-Kit-Objective-C-API-Overview.html)
 
 
 

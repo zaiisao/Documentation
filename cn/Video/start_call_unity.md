@@ -3,7 +3,7 @@
 title: 实现视频通话
 description: 
 platform: Unity
-updatedAt: Fri May 08 2020 10:52:15 GMT+0800 (CST)
+updatedAt: Fri Jun 12 2020 05:46:35 GMT+0800 (CST)
 ---
 # 实现视频通话
 本文介绍如何使用 Agora Unity SDK 快速实现视频通话。
@@ -164,12 +164,7 @@ CheckPermission();
 <a name="initialize"></a>
 ### 3. 初始化 IRtcEngine
 
-
-你需要在该步骤中填入项目的 App ID。请参考如下步骤在控制台[创建 Agora 项目](https://docs.agora.io/cn/Agora%20Platform/manage_projects?platform=All%20Platforms)并获取 [App ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#a-nameappidaapp-id )。
-
-1. 登录[控制台](https://console.agora.io/)，点击左侧导航栏的**[项目管理](https://console.agora.io/projects)**图标 ![](https://web-cdn.agora.io/docs-files/1551254998344)。
-2. 点击**创建**，按照屏幕提示设置项目名，选择一种鉴权机制，然后点击**提交**。
-3. 在**项目管理**页面，你可以获取该项目的 **App ID**。
+在调用其他 Agora API 前，需要初始化 `IRtcEngine` 对象。
 
 调用 `GetEngine` 方法，传入获取到的 App ID，即可初始化 `IRtcEngine`。
 

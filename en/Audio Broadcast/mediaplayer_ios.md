@@ -3,7 +3,7 @@
 title: MediaPlayer Kit
 description: 
 platform: iOS
-updatedAt: Mon May 18 2020 04:21:06 GMT+0800 (CST)
+updatedAt: Mon Jun 15 2020 10:55:34 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
 ## Function description
@@ -44,6 +44,20 @@ Now, let's build an iOS project from scratch.
 </details>
 
 ### Integrate the MediaPlayer Kit
+
+Choose either of the following methods to integrate the MediaPlayer Kit into your project.
+
+**Method 1: Automatically integrate the MediaPlayer Kit with CocoaPods**
+
+> Only applies for MediaPlayer Kit v1.1.2.
+
+1. Ensure that you have installed **CocoaPods** before the following steps. See the installation guide in [Getting Started with CocoaPods](https://guides.cocoapods.org/using/getting-started.html#getting-started).
+2. In **Terminal**, go to the project path and run the `pod init` command to create a `Podfile` in the project folder.
+3. In **Terminal**, run the `pod update` command to update the local libraries.
+5. Run the `pod install` command to install the MediaPlayer Kit. Once you successfully install the Kit, it shows `Pod installation complete!` in Terminal, and you can see an `xcworkspace` file in the project folder.
+6. Open the generated `xcworkspace` file in **Xcode**.
+
+**Method 2: Manually add the MediaPlayer Kit files**
 
 1. Go to [Downloads](https://docs.agora.io/en/Agora%20Platform/downloads), download the latest version of the MediaPlayer Kit, and unzip the download package.
 

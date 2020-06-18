@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Mon May 11 2020 10:54:15 GMT+0800 (CST)
+updatedAt: Mon Jun 15 2020 08:36:00 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides release notes for the Agora MediaPlayer Kit plugin.
@@ -57,12 +57,6 @@ The broadcaster can actively obtain various playback information, such as curren
 The `AgoraMediaPlayerDelegate` delegate method contains a series of events, such as playback progress, playback state, and the result of a seek operation to a new playback position. By listening for these events, you can have more control over the playback process. When an exception occurs, you can use these event callbacks for troubleshooting.
 
 Besides, you can listen for events that report receiving the media metadata, each audio frame and each video frame. These events help you include more complex functions in multiple scenarios, such as using custom format data, recording audio, recording video, and screenshots.
-
-### Related Links
-
-We provide complete documentation for the mediaplayer kit. See the following links:
-- [Integration documentation](https://docs.agora.io/en/Interactive%20Broadcast/mediaplayer_mac?platform=macOS)
-- [API documentation](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/mediaplayer_oc/docs/headers/MediaPlayer-Kit-Objective-C-API-Overview.html)
                                 
 
 ## v1.0.0
@@ -92,11 +86,3 @@ The `MediaPlayerKitDelegate` delegate method contains a series of events:
 - The detailed information of audio and video streams
 
 By listening for these events, you can have more control over the playback process.
-
-### Related Links
-
-We provide complete documentation for the mediaplayer kit. See the following links:
-- [Integration documentation](https://docs-preview.agoralab.co/en/Interactive%20Broadcast/mediaplayer_mac?platform=macOS&versionId=147ee310-6451-11ea-a366-4fbfd071e0af)
-- [API documentation](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/mediaplayer_oc/v1.0.0/docs/headers/MediaPlayer-Kit-Objective-C-API-Overview.html)
-
-

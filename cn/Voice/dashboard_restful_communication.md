@@ -3,7 +3,7 @@
 title: RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Tue Jun 09 2020 02:02:22 GMT+0800 (CST)
+updatedAt: Wed Jun 17 2020 07:40:55 GMT+0800 (CST)
 ---
 # RESTful API
 ## 认证
@@ -634,11 +634,11 @@ BaseUrl: **https://api.agora.io/dev**
 ```json
 {
   "appid": "4855xxxxxxxxxxxxxxxxxxxxxxxxeae2",
-  "cname": "",
+  "cname": "channel1",
   "uid":"",
   "ip":"",
   "time":60,
-  "privilege":["join_channel"]
+  "privileges":["join_channel"]
 }
 ```
 
