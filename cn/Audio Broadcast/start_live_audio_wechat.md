@@ -3,7 +3,7 @@
 title: 实现音频直播
 description: wechat live
 platform: 微信小程序
-updatedAt: Tue Jun 09 2020 04:29:47 GMT+0800 (CST)
+updatedAt: Fri Jun 19 2020 14:32:26 GMT+0800 (CST)
 ---
 # 实现音频直播
 本文介绍如何使用 Agora 微信小程序 SDK 快速实现音频直播。
@@ -118,7 +118,7 @@ client.init(appId, onSuccess, onFailure);
 * token：传入能标识用户角色和权限的 Token。可设为如下一个值：
    * NULL
    * 临时 Token。临时 Token 服务有效期为 24 小时。你可以在控制台里生成一个临时 Token，详见[获取临时 Token](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#获取临时-token)。
-   * 在你的服务器端生成的 Token。在安全要求高的场景下，我们推荐你使用此种方式生成的 Token，详见[生成 Token](../../cn/Audio%20Broadcast/token_server.md)。
+   * 在你的服务器端生成的 Token。在安全要求高的场景下，我们推荐你使用此种方式生成的 Token，详见[生成 Token](../../cn/Audio%20Broadcast/token_server_cpp.md)。
 
 * channel：指明你想要加入的频道名。
 * uid：用户 ID。整数，且需保持唯一性。

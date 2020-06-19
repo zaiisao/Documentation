@@ -3,7 +3,7 @@
 title: 升级指南：从 v2.0.8 升级至 v2.3.2（Windows)
 description: 
 platform: Windows
-updatedAt: Mon Apr 13 2020 02:52:14 GMT+0800 (CST)
+updatedAt: Fri Jun 19 2020 14:29:46 GMT+0800 (CST)
 ---
 # 升级指南：从 v2.0.8 升级至 v2.3.2（Windows)
 本页包含 Agora SDK for Windows 从 v2.0.8 到 v2.3.2 升级后，用户需要注意的 API 用法变更。
@@ -33,7 +33,7 @@ updatedAt: Mon Apr 13 2020 02:52:14 GMT+0800 (CST)
 
 - [动态密钥升级说明](https://docs.agora.io/cn/Agora%20Platform/token_migration?platform=All%20Platforms)
 - [校验用户权限](../../cn/Audio%20Broadcast/token.md)
-- [在服务端生成密钥](../../cn/Audio%20Broadcast/token_server.md)
+- [在服务端生成密钥](../../cn/Audio%20Broadcast/token_server_cpp.md)
 
 #### 2. 设置视频编码属性
 
