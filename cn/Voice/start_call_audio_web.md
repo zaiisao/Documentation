@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: Web
-updatedAt: Wed Jun 10 2020 03:06:01 GMT+0800 (CST)
+updatedAt: Fri Jun 19 2020 14:32:31 GMT+0800 (CST)
 ---
 # 实现语音通话
 <div class="alert note">提示：<br/>
@@ -242,7 +242,7 @@ var option = {
 
 	- `token`: 该参数为可选。如果你的 Agora 项目开启了 App 证书，你需要在该参数中传入一个 Token，详见 [使用 Token](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#使用-token)。
 		- 在测试环境，我们推荐使用控制台生成临时 Token，详见[获取临时 Token](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms%23get-a-temporary-token#获取临时-token)。
-		- 在生产环境，我们推荐你在自己的服务端生成 Token，详见 [生成 Token](../../cn/Voice/token_server.md).
+		- 在生产环境，我们推荐你在自己的服务端生成 Token，详见 [生成 Token](../../cn/Voice/token_server_cpp.md).
 	- `channel`: 频道名，长度在 64 字节以内的字符串。
 	- `uid`: 用户 ID，频道内每个用户的 UID 必须是唯一的。如果你将 `uid` 设为 `null` 或 `0`，Agora 会自动分配一个 UID 并在 `onSuccess` 回调中返回。
 
