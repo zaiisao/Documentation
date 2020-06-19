@@ -1,11 +1,11 @@
 
 ---
-title: Set the Voice Changer and Reverberation Effects
+title: Set the Voice Enhancement and Effects
 description: How to adjust the voice effect on Android
 platform: Android
-updatedAt: Wed May 27 2020 11:13:19 GMT+0800 (CST)
+updatedAt: Fri Jun 19 2020 14:03:23 GMT+0800 (CST)
 ---
-# Set the Voice Changer and Reverberation Effects
+# Set the Voice Enhancement and Effects
 ## Introduction 
 In social and entertainment scenarios, users often need various voice effects to enhance an interactive experience. To accomplish this, Agora provides multiple preset voice changers and reverberation effects. You can also dynamically change the users' voice, such as adjusting the pitch and setting the equalization and reverberation modes.
 
@@ -62,7 +62,7 @@ mRtcEngine.setLocalVoiceChanger(VOICE_BEAUTY_VIGOROUS);
 mRtcEngine.setLocalVoiceChanger(VOICE_CHANGER_OFF);
 ```
 
-#### Voice reverberation
+#### Voice reverberation effects
 
 You can use one of the following preset voice reverberation options by calling `setLocalVoiceReverbPreset`:
 

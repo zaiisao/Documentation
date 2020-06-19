@@ -1,11 +1,11 @@
 
 ---
-title: 播放音效/音乐混音
+title: 播放音效与混音文件
 description: How to enable audio mixing, play audio effects and the related settings
 platform: Android
-updatedAt: Wed May 27 2020 11:37:34 GMT+0800 (CST)
+updatedAt: Fri Jun 19 2020 11:25:25 GMT+0800 (CST)
 ---
-# 播放音效/音乐混音
+# 播放音效与混音文件
 ## 功能描述
 
 在通话或直播过程中，除了用户自己说话的声音，有时候需要播放自定义的声音或者音乐文件并且让频道内的其他人也听到，比如需要给游戏添加音效，或者需要播放背景音乐等，Agora 提供以下两组方法可以满足播放音效和音乐文件的需求。
@@ -14,7 +14,7 @@ updatedAt: Wed May 27 2020 11:37:34 GMT+0800 (CST)
 
 ## 播放音效文件
 
-音效通常指持续很短的音频。播放音效文件方法主要用来播放短小的音效，比如鼓掌、游戏子弹撞击声音等，可以多个音效叠加播放，且音效文件可以预加载以提高性能。
+音效通常指持续很短的音频。播放音效文件方法主要用来播放短小的氛围音，比如鼓掌、游戏子弹撞击声音等，可以多个音效叠加播放，且音效文件可以预加载以提高性能。
 Agora SDK 提供 `IAudioEffectManager` 类统一管理音效，包含一些管理音效的常用方法。 音效由音频文件路径指定，但在 `IAudioEffectManager` 内部使用 sound id 来识别和处理音效。音效文件通常保存在 **assets** 文件夹下；SDK 并不强制如何定义 sound id，保证每个音效有唯一的识别即可。一般的做法有自增 id，使用音效文件名的 hashCode 等。
 
 ### 实现方法

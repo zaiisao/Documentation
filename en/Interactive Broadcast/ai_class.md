@@ -3,7 +3,7 @@
 title: AI Interactive Classroom
 description: 
 platform: All Platforms
-updatedAt: Thu May 07 2020 09:10:57 GMT+0800 (CST)
+updatedAt: Fri Jun 19 2020 02:55:26 GMT+0800 (CST)
 ---
 # AI Interactive Classroom
 ## Overview
@@ -62,13 +62,13 @@ AI teacher on the server:
 
 #### 1. High-speed and stable real-time data transmission
 
-Agora SD-RTNTM, a self-built real-time audio and video dedicated network, deploys nodes covering more than 200 countries and regions around the world. It particularly optimizes the last-mile transmission in areas such as North America, the Philippines, India, etc. to ensure high concurrency, high availability, high stability, and low latency.
+Agora SD-RTN<sup>TM</sup>, a self-built real-time audio and video dedicated network, deploys nodes covering more than 200 countries and regions around the world. It particularly optimizes the last-mile transmission in areas such as North America, the Philippines, India, etc. to ensure high concurrency, high availability, high stability, and low latency.
 
 #### 2. Excellent performance under poor network conditions
 
 Agora is dedicated to improving the performance under poor network conditions by intelligently adjusting the bit rate and frame rate, optimizing the end-to-end algorithm, and utilizing the jitter buffer mechanism.
 
-With an industry-leading algorithm designed to minimize the impact of packet loss, Agora guarantees smooth audio and video when the packet loss rate reaches 60%, and smooth audio when the packet loss rate is as high as 70%.
+With an industry-leading algorithm designed to minimize the impact of packet loss, Agora guarantees smooth audio and video when the packet loss rate reaches 70%, and smooth audio when the packet loss rate is as high as 80%.
 
 #### 3. AI frame interpolation
 

@@ -3,7 +3,7 @@
 title: 实现音频直播
 description: 
 platform: Electron
-updatedAt: Fri May 29 2020 06:39:24 GMT+0800 (CST)
+updatedAt: Thu Jun 18 2020 10:40:50 GMT+0800 (CST)
 ---
 # 实现音频直播
 本文介绍如何使用 Agora Electron SDK 快速实现音频直播。

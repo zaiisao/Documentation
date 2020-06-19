@@ -3,7 +3,7 @@
 title: Channel Key 密钥说明
 description: Guide on how to use channel keys
 platform: All Platform
-updatedAt: Mon Nov 18 2019 06:42:22 GMT+0800 (CST)
+updatedAt: Fri Jun 19 2020 05:34:20 GMT+0800 (CST)
 ---
 # Channel Key 密钥说明
 本文主要介绍在使用 Agora SDK 过程中使用 Channel Key 的方法。
@@ -38,42 +38,37 @@ updatedAt: Mon Nov 18 2019 06:42:22 GMT+0800 (CST)
 
 ### 步骤 1: 获取 App ID
 
-1. 进入[控制台](https://console.agora.io/)，并按照屏幕提示注册账号并登录控制台。详见[创建新账号](../../cn/Agora%20Platform/sign_in_and_sign_up.md)。
+1. 进入**控制台**，按照屏幕提示注册账号并登录控制台。详见[注册与登陆](https://docs.agora.io/cn/Agora%20Platform/sign_in_and_sign_up)。
 
-2. 点击左侧导航栏的 ![](https://web-cdn.agora.io/docs-files/1551254998344) 图标进入[项目管理](https://console.agora.io/projects)页面，点击**创建**按钮。
+2. 点击左侧导航栏的 ![](https://web-cdn.agora.io/docs-files/1551254998344) 图标进入[项目管理](https://console.agora.io/projects)页面。
 
-![](https://web-cdn.agora.io/docs-files/1574156100068)
+3. 点击**创建**按钮。
 
-3. 在弹出的对话框内输入**项目名称**，选择 App ID 作为**鉴权机制**，再点击“提交”。
+ ![](https://web-cdn.agora.io/docs-files/1574156100068)
 
-![](https://web-cdn.agora.io/docs-files/1574921599254)
+4. 在弹出的对话框内输入项目名称，选择 **APP ID** 为鉴权机制，并点击**提交**。
 
-4. 项目创建成功后，你会在**项目列表**下看到刚刚创建的项目，并找到对应的 App ID。
+5. 项目创建成功后，你会在项目列表中看到刚刚创建的项目。点击 ![](https://web-cdn.agora.io/docs-files/1592488399929) 查看并复制该项目对应的 App ID。
 
-![](https://web-cdn.agora.io/docs-files/1574921811175)
+ ![](https://web-cdn.agora.io/docs-files/1574921811175)
 
-
-
+6. 在调用 Agora 的 API 接口实现功能，如 SDK 初始化时，Agora 会需要你填入 App ID。将你获取到的 App ID 直接填入即可。
 
 ### 步骤 2: 获取 App 证书
 
-1. 在**项目管理**页面，点击目标项目的**编辑**按钮，进入**编辑项目**页面。
+App 证书是 Agora 控制台为开发项目生成的字符串。根据不同的安全需求，Agora 在项目中设置了两种 App 证书，区别如下：
 
-![](https://web-cdn.agora.io/docs-files/1574922261870)
+- 主要证书：用于生成临时 Token 和正式 Token。启用主要证书后，你不能直接删除主要证书。
+- 次要证书：只可用于生成正式 Token。启用次要证书后，你可以将次要证书与主要证书互换或删除次要证书。
 
-2. 找到 App 证书一栏，点击**启用**按钮。
+如果你是第一次启用 App 证书，你需要先启用主要证书。
 
-![](https://web-cdn.agora.io/docs-files/1574156526581)
+参考如下步骤启用主要证书：
 
-3. 仔细阅读关于 App 证书的提示后，点击“启用 App 证书”。
-
-![](https://web-cdn.agora.io/docs-files/1574159500507)
-
-4. 声网会给你发一封邮件，按照邮件中的提示进行确认，即可启用 App 证书。
-
-5. 成功启用后， App 证书会显示在**编辑项目**页面。
-
-> 若收件箱中没有确认邮件，请至订阅邮件或垃圾邮件中查找。
+- 如果你在创建项目时，选择 **APP ID + APP 证书 + Token** 为鉴权机制，Agora 会默认为你启用主要证书。主要证书会显示在**编辑项目**页面，你可以点击 ![](https://web-cdn.agora.io/docs-files/1592488399929) 查看并复制主要证书。
+  ![](https://web-cdn.agora.io/docs-files/1592488920717)
+- 如果你在创建项目时，选择 **APP ID** 为鉴权机制，那么你需要手动启用主要证书。在**编辑项目**页面，找到**主要证书**，点击**启用**。成功启用后，你可以点击 ![](https://web-cdn.agora.io/docs-files/1592488399929) 查看并复制主要证书。
+  ![](https://web-cdn.agora.io/docs-files/1592488560281)
 
 ### 步骤 3: 输入字段值以获取 Channel Key
 

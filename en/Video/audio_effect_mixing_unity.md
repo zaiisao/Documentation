@@ -1,11 +1,11 @@
 
 ---
-title: Play Audio Effects/Audio Mixing
+title: Play Audio Effects/Audio Mixing File
 description: 
 platform: Unity
-updatedAt: Tue Mar 24 2020 09:08:10 GMT+0800 (CST)
+updatedAt: Fri Jun 19 2020 11:42:35 GMT+0800 (CST)
 ---
-# Play Audio Effects/Audio Mixing
+# Play Audio Effects/Audio Mixing File
 ## Introduction
 
 In a call or live broadcast, you may need to play custom audio or music files to all the users in the channel. For example, adding sound effects in a game, or playing background music. We provide two groups of methods for playing audio effect files and audio mixing.
@@ -14,7 +14,7 @@ Before proceeding, ensure that you implement a basic call or live broadcast in y
 
 ## Play audio effect files
 
-The play audio effect methods can be used to play audio effects, such as clapping and gunshots. You can play multiple audio effects at the same time, and preload audio effect files for efficiency.
+The play audio effect methods can be used to play ambient sound, such as clapping and gunshots. You can play multiple audio effects at the same time, and preload audio effect files for efficiency.
 
 The Agora Unity SDK provides the `AudioEffectManagerImpl` class to manage audio effects, including a series of methods. The audio effect file is specified by the file path, but the `AudioEffectManagerImpl` class uses the sound ID to identify the audio effect file. The SDK does not follow any rule to define the sound ID. Each audio effect file must have a unique sound ID, and you can do that by incrementing the ID and using hashCode for the audio effect files.
 

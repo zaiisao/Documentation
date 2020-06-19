@@ -1,11 +1,11 @@
 
 ---
-title: Use Security Keys
+title: Set up Authentication
 description: 
 platform: All Platforms
-updatedAt: Fri Apr 03 2020 06:28:18 GMT+0800 (CST)
+updatedAt: Fri Jun 19 2020 04:57:29 GMT+0800 (CST)
 ---
-# Use Security Keys
+# Set up Authentication
 ## Introduction
 
 The Agora RTM SDK provides different security keys for authentication: 

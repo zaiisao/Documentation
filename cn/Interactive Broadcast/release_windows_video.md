@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Wed Jun 17 2020 03:42:06 GMT+0800 (CST)
+updatedAt: Thu Jun 18 2020 09:31:08 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -19,6 +19,13 @@ Windows 视频 SDK 支持两种主要场景:
 点击 [语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms)、[视频通话产品概述](https://docs.agora.io/cn/Video/product_video?platform=All%20Platforms) 、[音频互动直播产品概述](https://docs.agora.io/cn/Audio%20Broadcast/product_live_audio?platform=All%20Platforms)以及[视频互动直播产品概述](https://docs.agora.io/cn/Interactive%20Broadcast/product_live?platform=All%20Platforms)了解关键特性。
 
 Windows 视频 SDK 支持 X86 和 X64 架构。
+
+## **3.0.1.1 版**
+
+该版本于 2020 年 6 月 18 日发布。主要修复如下问题：
+
+- `registerVideoRenderFactory`（已废弃）方法导致的崩溃现象。
+- 美颜功能不生效。
 
 ## **3.0.1 版**
 

@@ -3,7 +3,7 @@
 title: RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Wed Jun 17 2020 07:40:33 GMT+0800 (CST)
+updatedAt: Fri Jun 19 2020 05:29:56 GMT+0800 (CST)
 ---
 # RESTful API
 ## Authentication
@@ -39,6 +39,8 @@ All requests should be sent to BaseUrl: **https://api.agora.io/dev**.
 
 BaseUrl: **https://api.agora.io/dev**.
 
+<div class="alert note">In this section, APIs about the App Certificate only apply to the primary certificate. </div>
+
 The following chart shows how you can use Project APIs.
 ![](https://web-cdn.agora.io/docs-files/1583833115362)
 
@@ -60,7 +62,7 @@ Creates an Agora project.
 | Parameter | Description |
 | ---------------- | ---------------- |
 | `name`      | The project name.      |
-| `enable_sign_key` | Determines whether to enable the App Certificate: <ul><li>true: Enable the App Certificate.</li><li>false: Do not enable the App Certificate.</li></ul> |
+| `enable_sign_key` | Determines whether to enable the primary App Certificate: <ul><li>true: Enable the primary App Certificate.</li><li>false: Do not enable the primary App Certificate.</li></ul> |
 
 **Request sample**
 
@@ -78,7 +80,7 @@ Creates an Agora project.
 | `id`      | The project ID.      |
 | `name` | The project name. |
 | `vendor_key` | The App ID of the project. |
-| `sign_key` | The App Certificate of the project. |
+| `sign_key` | The primary App Certificate of the project. |
 | `recording_server` | The IP of the recording server. Pay attention to this field if you use the On-premise Recording SDK earlier than v1.9.0. |
 | `status` | The status of the project: <ul><li>1: The project is enabled.</li><li>0: The project is disabled.</li></ul> |
 | `created` | The Unix timestamp (ms) for creating the project. |
@@ -123,7 +125,7 @@ None.
 | `id`      | The project ID.      |
 | `name` | The project name. |
 | `vendor_key` | The App ID of the project. |
-| `sign_key` | The App Certificate of the project. |
+| `sign_key` | The primary App Certificate of the project. |
 | `recording_server` | The IP of the recording server. Pay attention to this field if you use the On-premise Recording SDK earlier than v1.9.0. |
 | `status` | The status of the project: <ul><li>1: The project is enabled.</li><li>0: The project is disabled.</li></ul> |
 | `created` | The Unix timestamp (ms) for creating the project. |
@@ -179,7 +181,7 @@ https://api.agora.io/dev/v1/project?id=xxxx&name=project1
 | `id`      | The project ID.      |
 | `name` | The project name. |
 | `vendor_key` | The App ID of the project. |
-| `sign_key` | The App Certificate of the project. |
+| `sign_key` | The primary App Certificate of the project. |
 | `recording_server` | The IP of the recording server. Pay attention to this field if you use the On-premise Recording SDK eariler than v1.9.0. |
 | `status` | The status of the project: <ul><li>1: The project is enabled.</li><li>0: The project is disabled.</li></ul> |
 | `created` | The Unix timestamp (ms) for creating the project. |
@@ -240,7 +242,7 @@ Disables/Enables a specified Agora project.
 | `id`      | The project ID.      |
 | `name` | The project name. |
 | `vendor_key` | The App ID of the project. |
-| `sign_key` | The App Certificate of the project. |
+| `sign_key` | The primary App Certificate of the project. |
 | `recording_server` | The IP of the recording server. Pay attention to this field if you use the On-premise Recording SDK earlier than v1.9.0. |
 | `status` | The status of the project: <ul><li>1: The project is enabled.</li><li>0: The project is disabled.</li></ul> |
 | `created` | The Unix timestamp (ms) for creating the project. |
@@ -364,9 +366,9 @@ status 404
 }
 ```
 
-### Enables the App Certificate (POST)
+### Enables the primary App Certificate (POST)
 
-Enables the App Certificate for a specifed project.
+Enables the primary App Certificate for a specifed project.
 
 **Basic information**
 
@@ -382,7 +384,7 @@ Enables the App Certificate for a specifed project.
 | Parameter | Description |
 | ---------------- | ---------------- |
 | `id`      | The project ID.      |
-| `enable` | Determines whether to enable the App Certificate of the project: <ul><li>true: Enable the App Certificate.</li><li>false: Do not enable the App Certificate.</li></ul> |
+| `enable` | Determines whether to enable the primary App Certificate of the project: <ul><li>true: Enable the primary App Certificate.</li><li>false: Do not enable the primary App Certificate.</li></ul> |
 
 **Request sample**
 
@@ -395,7 +397,7 @@ Enables the App Certificate for a specifed project.
 
 **Response parameter**
 
-- If you successfully enable the App Certificate, the response is as follows:
+- If you successfully enable the primary App Certificate, the response is as follows:
 
 ```json
 {
@@ -412,11 +414,11 @@ status 404
 }
 ```
 
-### Resets the App Certificate (POST)
+### Resets the primary App Certificate (POST)
 
-Resets the App Certificate of a specified project. If the App Certificate is leaked, use this method to reset it.
+Resets the primary App Certificate of a specified project. If the primary App Certificate is leaked, use this method to reset it.
 
-If the App Certificate has not been enabled, calling this method automatically enables it.
+If the primary App Certificate has not been enabled, calling this method automatically enables it.
 
 **Basic information**
 
@@ -443,7 +445,7 @@ If the App Certificate has not been enabled, calling this method automatically e
 
 **Response parameter**
 
-- If you successfully enable the App Certificate, the response is as follows:
+- If you successfully enable the primary App Certificate, the response is as follows:
 
 ```json
 {

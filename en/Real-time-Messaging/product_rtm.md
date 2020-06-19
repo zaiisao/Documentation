@@ -3,31 +3,24 @@
 title: Agora Real-time Messaging Overview
 description: 
 platform: All Platforms
-updatedAt: Tue May 12 2020 10:36:33 GMT+0800 (CST)
+updatedAt: Fri Jun 19 2020 06:50:42 GMT+0800 (CST)
 ---
 # Agora Real-time Messaging Overview
 You can use the Agora RTM (Real-time Messaging) SDK to create a stable messaging mechanism for real-time messaging scenarios that require low latency and high concurrency for a global audience. 
 
 ## Functions
 
-
-
 The RTM SDK supports the following functions:
 
--   Send and receive (offline) peer-to-peer messages.
+-   Send and receive online or offline peer-to-peer messages.
 -   Send and receive channel messages.
--   Get the member list of the channel.
+-   Get the member list of a channel.
 -   Create, send, cancel, accept, or decline a call invitation. 
--   Set, update, or get a user's attributes. 
--   Set, update, or get attributes of a specified channel.
--   Get the latest member count of specified channel(s). 
--   Subscribe to or unsubscribe from the online status of the specified user(s).
--   Get a list of the peers, to whose specific status you have subscribed.
+-   Set, update, or get user attributes or channel attributes.
+-   Get the latest member count of specified channels. 
+-   Subscribe to or unsubscribe from the online status of the specified users.
+-   Get a list of the peers by subscription.
 -   Interconnect with the legacy Agora Signaling SDK.
-
-
-
-
 
 
 ## Applications
@@ -41,7 +34,7 @@ You can use the RTM SDK for the following scenarios:
   </tr>
   <tr>
     <td>Live Broadcast</td>
-    <td><li>Commentaries<br><li>Chatrooms<br><li>Send gifts<br><li>Likes<br><li>Maintenance of the chat room status, such as the number of the channel members<br><li>Privilege management, such as removing or muting a specific user<br></td>
+    <td><li>Commentaries<br><li>Chat rooms<br><li>Send gifts<br><li>Likes<br><li>Maintenance of the chat room status, such as the number of the channel members<br><li>Privilege management, such as removing or muting a specific user<br></td>
   </tr>
   <tr>
     <td>Social Network</td>
@@ -49,7 +42,7 @@ You can use the RTM SDK for the following scenarios:
   </tr>
   <tr>
     <td>Education</td>
-    <td><li>Class group messages<br><li>Private chat messages<br><li>Whiteboard<br><li>Privilege management, such as awards, presenting, hands up or likes)<br></td>
+    <td><li>Class group messages<br><li>Private chat messages<br><li>Whiteboard<br><li>Privilege management, such as awards, presenting, hands up or likes<br></td>
   </tr>
   <tr>
     <td>IoT</td>

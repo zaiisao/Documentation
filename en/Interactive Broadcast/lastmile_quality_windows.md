@@ -3,7 +3,7 @@
 title: Lastmile Tests
 description: 
 platform: Windows
-updatedAt: Mon Dec 30 2019 09:42:31 GMT+0800 (CST)
+updatedAt: Fri Feb 28 2020 03:04:07 GMT+0800 (CST)
 ---
 # Lastmile Tests
 ## Introduction
@@ -18,12 +18,11 @@ This function particularly applies to scenarios which have high requirements on 
 
 Before conducting the last-mile test, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Interactive%20Broadcast/start_call_windows.md) or [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_windows.md).
 
-Call the `startLastmileProbeTest` method before joining a channel to get the uplink and downlink last-mile network statistics, including the bandwidth, packet loss, jitter, and round-trip time (RTT).
-
-Once this method is enabled, the SDK triggers the following callbacks:
-
+1. Call the `startLastmileProbeTest` method before joining a channel to get the uplink and downlink last-mile network statistics, including the bandwidth, packet loss, jitter, and round-trip time (RTT).
+2. Once this method is enabled, the SDK triggers the following callbacks:
 - `onLastmileQuality`: Triggered two seconds after the `startLastmileProbeTest` method is called. This callback rates the network conditions with a score and is more closely linked to the user experience.
 - `onLastmileProbeResult`: Triggered 30 seconds after the `startLastmileProbeTest` method is called. This callback returns the real-time statistics of the network conditions and is more objective.
+3. Call the `stopLastmileProbeTest` method to stop the last-mile network probe test.
 
 ### API call sequence
 
@@ -53,14 +52,14 @@ LastmileProbeConfig config;
 config.probeUplink = true;
 // Probe the downlink network quality.
 config.probeDownlink = true;
-// The expected uplink bitrate (Kbps). The value range is [100, 5000].
-config.expectedUplinkBitrate = 1000;
-// The expected downlink bitrate (Kbps). The value range is [100, 5000].
-config.expectedDownlinkBitrate = 1000;
+// The expected uplink bitrate (bps). The value range is [100000, 5000000].
+config.expectedUplinkBitrate = 100000;
+// The expected downlink bitrate (bps). The value range is [100000, 5000000].
+config.expectedDownlinkBitrate = 100000;
 // Start the last-mile network test before joining the channel.
 lpAgoraEngine->startLastmileProbeTest(config);
 
-// (2) Stop the test. Agora recommends not calling any other API method before the test ends.
+// (2) Stop the test in an alternate place. Agora recommends not calling any other API method before the test ends.
 lpAgoraEngine->stopLastmileProbeTest();
 ```
 

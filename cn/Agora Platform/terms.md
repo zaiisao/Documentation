@@ -3,7 +3,7 @@
 title: 术语库
 description: 
 platform: All Platforms
-updatedAt: Fri May 29 2020 11:22:04 GMT+0800 (CST)
+updatedAt: Fri Jun 19 2020 14:28:40 GMT+0800 (CST)
 ---
 # 术语库
 ## A
@@ -59,22 +59,16 @@ Agora 以 App ID 识别开发项目，并根据 App ID 提供计费、数据统�
 
 <div class="alert warning">在安全性较高的场景下（比如生产环境下）开发者需要使用动态密钥鉴权<a href="https://docs.agora.io/cn/Agora%20Platform/token">校验用户权限</a>，否则任何人可以通过 App ID 直接入侵开发者的系统。</div>
 
-<div class="alert info">相关链接：<li><a href="#console">控制台</a></li><li><a href="https://docs.agora.io/cn/Agora%20Platform/token#%E8%8E%B7%E5%8F%96-app-id">获取 App ID</a></li><li><a href="https://docs.agora.io/cn/Agora%20Platform/token#%E5%90%AF%E7%94%A8-app-%E8%AF%81%E4%B9%A6">启用 App 证书</a></li><li><a href="https://docs.agora.io/cn/Agora%20Platform/token#%E8%8E%B7%E5%8F%96%E4%B8%B4%E6%97%B6-token">获取临时 Token</a></li><li><a href="https://docs.agora.io/cn/Agora%20Platform/token#%E8%8E%B7%E5%8F%96%E6%AD%A3%E5%BC%8F-token">获取正式 Token</a></li>
+<div class="alert info">相关链接：<li><a href="#console">控制台</a></li><li><a href="https://docs.agora.io/cn/Agora%20Platform/token#getappid">获取 App ID</a></li><li><a href="https://docs.agora.io/cn/Agora%20Platform/token#appcertificate">启用 App 证书</a></li><li><a href="https://docs.agora.io/cn/Agora%20Platform/token#get-a-temporary-token">获取临时 Token</a></li><li><a href="https://docs.agora.io/cn/Interactive%20Broadcast/token_server_cpp">获取正式 Token</a></li>
 </div>
 
 #### <a name="appcertificate"></a>**App 证书 (App Certificate)**
 
-App 证书是一串 Agora 提供的随机字符串，用于开启 Token 鉴权，并作为生成 Token 的参数之一。
+App 证书是 Agora 控制台为注册项目生成的字符串，用于开启 Token 鉴权，并作为生成 Token 的参数之一。
 
-开发者可以通过以下两种方式开启 App 证书：
+如果有人窃取了你的 App ID 和 App 证书，就可以在其自己的 app 中实现实时音视频功能，且由此产生的费用和相关数据都会进入你的账号。为避免因泄漏 App 证书造成的损失，请妥善保管好你的 App 证书。Agora 建议你将 App 证书存储在业务服务器上，而非客户端上。
 
-- 如果开发者在[控制台](https://console.agora.io/)创建新项目时选择的是 <b>App ID + App 证书 + Token</b> 的鉴权方式，App 证书会自动开启。启用 App 证书后，App 必须采用高安全性的动态密钥鉴权方式。
-- 如果开发者在创建项目时选择的是 <b>App ID 鉴权</b>，之后希望开启 Token 动态鉴权，就需要在[控制台](https://console.agora.io/)的项目管理页面找到对应项目，开启 App 证书。详见：[启用 App 证书](https://docs.agora.io/cn/Agora%20Platform/token#%E5%90%AF%E7%94%A8-app-%E8%AF%81%E4%B9%A6)。
-
-<div class="alert warning">请把生成的 App 证书妥善保存在业务服务器上，不要保存在客户端。App 证书一旦被窃取，App 的安全性将无法保证。</div>
-
-<div class="alert info">相关链接：<li><a href="#console">控制台</a></li><li><a href="https://docs.agora.io/cn/Agora%20Platform/token#%E8%8E%B7%E5%8F%96-app-id">获取 App ID</a></li><li><a href="https://docs.agora.io/cn/Agora%20Platform/token#%E5%90%AF%E7%94%A8-app-%E8%AF%81%E4%B9%A6">启用 App 证书</a></li><li><a href="#token">Token</a></li><li><a href="https://docs.agora.io/cn/Agora%20Platform/token#%E8%8E%B7%E5%8F%96%E4%B8%B4%E6%97%B6-token">获取临时 Token</a></li><li><a href="https://docs.agora.io/cn/Agora%20Platform/token#%E8%8E%B7%E5%8F%96%E6%AD%A3%E5%BC%8F-token">获取正式 Token</a></li>
-</div>
+<div class="alert info">相关链接：<a href="https://docs.agora.io/cn/Agora%20Platform/token#appcertificate">启用 App 证书</a></div>
 
 ## B
 
@@ -241,7 +235,7 @@ App ID 一致的前提下，Agora 使用频道名来标识频道。使用相同�
 为保证通信安全，用户在加入频道时，通常还需要提供一个动态密钥进行鉴权。动态密钥如果失效，用户会无法使用 Agora 的服务，可能的表现为：正在进行的通话被强制终止，或者被踢出频道。
 
 <div class="alert info">相关链接：
-<li><a href="https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms">校验用户权限</a></li>
+<li><a href="https://docs.agora.io/cn/Agora%20Platform/token">校验用户权限</a></li>
 <li><a href="#agora-rtc-sdk">Agora RTC SDK</a></li>
 <li><a href="#agora-rtm-sdk">Agora RTM SDK</a></li>	
 </div>
@@ -363,7 +357,7 @@ Token 也称为动态密钥，用于在生产环境等安全要求更高的环�
 
 RTC 产品、本地录制和云录制产品的用户的 Token 有效期（无论是授权有效期还是服务有效期）到期时用户会被立刻踢出所在频道；RTM 产品的用户 Token 有效期到期时，用户不会被立即踢出 RTM 系统，但是在下次连接服务器时无法成功登录。所有用户在 Token 即将到期或到期时应尽快重新生成 Token 用于下次加入 RTC 频道或登录 RTM 系统。
 
-<div class="alert info">相关链接：<li><a href="https://docs.agora.io/cn/Agora%20Platform/token#%E5%90%AF%E7%94%A8-app-%E8%AF%81%E4%B9%A6">启用 App 证书</a></li><li><a href="https://docs.agora.io/cn/Agora%20Platform/token#%E8%8E%B7%E5%8F%96%E4%B8%B4%E6%97%B6-token">获取临时 Token</a></li><li><a href="https://docs.agora.io/cn/Interactive%20Broadcast/token_server_cpp?platform=CPP">生成 RTC 产品的 Token</a></li><li><a href="https://docs.agora.io/cn/Real-time-Messaging/rtm_token?platform=All%20Platforms">生成 RTM 产品的 Token</a></li>
+<div class="alert info">相关链接：<li><a href="https://docs.agora.io/cn/Agora%20Platform/token#appcertificate">启用 App 证书</a></li><li><a href="https://docs.agora.io/cn/Agora%20Platform/token#get-a-temporary-token">获取临时 Token</a></li><li><a href="https://docs.agora.io/cn/Interactive%20Broadcast/token_server_cpp">生成 RTC 产品的 Token</a></li><li><a href="https://docs.agora.io/cn/Real-time-Messaging/rtm_token">生成 RTM 产品的 Token</a></li>
 </div>
 
 ## X

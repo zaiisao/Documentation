@@ -1,11 +1,11 @@
 
 ---
-title: Play Audio Effects/Audio Mixing
+title: Play Audio Effects/Audio Mixing File
 description: How to play audio effects and enable audio mixing for iOS
 platform: iOS,macOS
-updatedAt: Wed May 27 2020 11:37:21 GMT+0800 (CST)
+updatedAt: Fri Jun 19 2020 11:41:24 GMT+0800 (CST)
 ---
-# Play Audio Effects/Audio Mixing
+# Play Audio Effects/Audio Mixing File
 ## Introduction
 In a call or live broadcast, you may need to play custom audio or music files to all the users in the channel. For example, adding sound effects in a game, or playing background music. We provide two groups of methods for playing audio effect files and audio mixing.
 
@@ -16,7 +16,7 @@ Before proceeding, ensure that you implement a basic call or live broadcast in y
 
 ## Play audio effect files
 
-The play audio effect methods can be used to play audio effects, such as clapping and gunshots. You can play multiple audio effects at the same time, and preload the audio effect file for efficiency.
+The play audio effect methods can be used to play ambient sound, such as clapping and gunshots. You can play multiple audio effects at the same time, and preload the audio effect file for efficiency.
 
 The audio effect file is specified by the file path, but the SDK uses the sound ID to identify the audio effect file. The SDK does not have any rule to define the sound ID. You need to ensure that each audio effect file has a unique sound ID. You may increment the ID and use the hashCode of the audio effect file.
 
