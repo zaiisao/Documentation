@@ -3,89 +3,111 @@
 title: Manage Projects
 description: 
 platform: All Platforms
-updatedAt: Thu Nov 28 2019 07:22:47 GMT+0800 (CST)
+updatedAt: Fri Jun 19 2020 14:28:26 GMT+0800 (CST)
 ---
 # Manage Projects
-This page shows how to create and manage projects in Console.
+This article shows how to create and manage projects in Agora Console.
 
-> The administrator and engineers have access to the **Project Management** page.
+
+ <div class="alert info">Project members with the role of <b>Admin</b> or <b>Engineer</b> have access to the <b>Project Management</b> page.</div>
 
 ## Create a new project
 
-> You can create up to 10 projects with the deleted ones included. If you need to use more projects, please contact us by submitting a ticket.
+ <div class="alert info">You can create up to 10 projects, including the deleted ones. If you need to create more projects, please contact us by <a href="https://agora-ticket.agora.io/">submitting a ticket</a >.
+</div>
 
-Follow these steps to create a new project:
+To create a new project, follow these steps:
 
-1. Log in Console, click ![](https://web-cdn.agora.io/docs-files/1551254998344) in the left navigation menu to enter the [**Project Management**](https://dashboard.agora.io/projects) page.
+1. Log in to Agora Console, and click ![img](https://web-cdn.agora.io/docs-files/1551254998344) in the left navigation menu to enter the [Project Management](https://dashboard.agora.io/projects) page.
 
-2. Click **Create**. 
+2. Click **Create**.
+   ![img](https://web-cdn.agora.io/docs-files/1574662791845)
 
-![](https://web-cdn.agora.io/docs-files/1574662791845)
+3. Enter your project name and select your authentication mechanism in the dialog box.
 
-3. Enter your project name and select your authentication mechanism ("App ID" or "App ID + App Certificate + Token") in the dialog box.
+   <div class="alert info">We provide two authentication mechanisms: <ul><li>APP ID + APP Certificate + Token (Recommended)</li><li>APP ID</li></ul>
+We recommend that you use the <b>APP ID + APP Certificate + Token</b> authentication mechanism which is more secure:<ul><li>In the testing stage, you can generate a temporary token in Agora Console after <a href="#primary">enabling the primary certificate</a >. See <a href="https://docs.agora.io/en/Agora%20Platform/token#get-a-temporary-token">Get a temporary token</a >.</li><li>In the production stage, you need to deploy a token generator on your server. See <a href="https://docs.agora.io/en/Interactive%20Broadcast/token_server_cpp?platform=CPP">Generate a Token</a >.</li></ul></div>
 
-![](https://web-cdn.agora.io/docs-files/1574662907483)
-
-> We provide two authentication mechanisms: "App ID" and "App ID + App Certificate + Token". For details, see [User Security Keys](https://docs.agora.io/en/Interactive%20Broadcast/token#agoras-authentication-mechanisms). 
->
-> We recommend that you use a token for more security:
->
-> - In the testing stage, you can generate a temporary token in Console after enabling the App Certificate.
-> - In the production stage, you need to deploy a Token Generator on your server. See [Generate a Token](https://docs.agora.io/en/Interactive&20Broadcast/token_server?platform=C++).
-
-4. Click **Submit** and you can see the project on the **Project Management** page. 
+  ![](https://web-cdn.agora.io/docs-files/1592467781248)
+4. Click **Submit**, and you can see the project on the **Project Management** page. Agora automatically assigns each project an App ID as a unique identifier.
 
 ## Manage your projects
 
-![](https://web-cdn.agora.io/docs-files/1574663170053)
+For created projects, you can also do the following on the **Project Management** page:
 
-On the **Project Management** page, you can also do the following:
+![img](https://web-cdn.agora.io/docs-files/1574663170053)
 
-- Enter a project name or App ID in the input box and click ![img](https://web-cdn.agora.io/docs-files/1551255111208) to search for the project.
-- Click ![img](https://web-cdn.agora.io/docs-files/1551255135678) to edit the project information and get the App ID.
-- Click ![](https://web-cdn.agora.io/docs-files/1564048876293) to view the project usage.
-- Click ![](https://web-cdn.agora.io/docs-files/1564048991389) to generate a temporary token.
-- Check the project states according to the ![img](https://web-cdn.agora.io/docs-files/1551255188685) and ![img](https://web-cdn.agora.io/docs-files/1551255166718) icons.
+- Search: Enter a project name or App ID, and click ![](https://web-cdn.agora.io/docs-files/1592466538637) to search for a project.
 
-- Check the basic information of projects, including: 
+- View basic project information, including:
 
-  - Stage: Testing, Live, and Not Specified
-  - Project Name
-  - Creation Date
+  - Stage: **Testing**, **Live**, and **Not Specified**
+  - Project name
+  - Creation date
   - App ID
 
-- Click ![](https://web-cdn.agora.io/docs-files/1574156449172) to try real-time communication on the webpage.
+- Click ![img](https://web-cdn.agora.io/docs-files/1574156449172) to enable real-time communication on the web page.
 
-- Click ![](https://web-cdn.agora.io/docs-files/1564048991389) to generate a **temporary token** for testing. 
+- Click ![img](https://web-cdn.agora.io/docs-files/1564048991389) to generate a temporary token for authentication during the project testing stage.
+   <div class="alert note">You can only use the primary app certificate to generate a temporary token. See <a href="#primary">Enable the primary certificate</a >.</div>
 
-- View the project usage.
+- Click **Usage** to view the amount of Agora services the project uses.
 
-- Edit the project information, including: 
+- Click **Edit** to view the **Edit Project** page. You can edit your project information, including the following:
 
-![](https://web-cdn.agora.io/docs-files/1574664691375)
+  - Project stage
 
-### Enable the App Certificate
+  - Project name
 
-If you use the App ID for authentication when creating the project and want to switch to the "App ID + App Certificate + Token" mechanism, you need to enable the App Certificate first. 
+  - App certificate
 
-Follow these steps to enable the App Certificate:
+  - Temporary token
 
-1. Click the **edit** button of the targeted project.
+  - Project status
 
-![](https://web-cdn.agora.io/docs-files/1574925402348)
+### Manage your app certificates
 
-2. Click **Enable** in the "Basic Info" page. 
+An app certificate is a string generated from Agora Console, and it enables token authentication. For different security requirements, Agora provides two types of app certificates. The differences are as follows:
 
-![](https://web-cdn.agora.io/docs-files/1574664820135)
+- Primary certificate: You can use a primary certificate to generate tokens, including temporary tokens. You cannot delete a primary certificate.
+- Secondary certificate: You can use a secondary certificate to generate tokens, except for temporary tokens. After enabling a secondary certificate, you can switch it and the primary certificate, or delete it.
+<div class="alert note"><ul><li><b>No certificate</b> means that your project uses only the App ID for authentication. <b>No certificate</b> appears only if you choose the <b>APP ID</b> authentication mechanism when creating a project.</li><li>The secondary certificate does not applies to Agora RESTful API.</li></ul></div>
 
-3. Read **About App Certificate**.
 
-![](https://web-cdn.agora.io/docs-files/1574664881593)
+#### Enable a primary certificate<a name="primary"></a>
 
-4. We will send you an email. Follow the steps in the email to confirm about enabling the App Certificate. 
+For scenarios requiring high security, you can enable a primary certificate as follows:
 
-5. Go back to the **Edit project** page to check the enabled App Certificate.
+- If you choose the **APP ID + APP Certificate + Token** authentication mechanism when creating a project, Agora enables the primary certificate for you by default. On the **Edit Project** page, you can click ![](https://web-cdn.agora.io/docs-files/1592469028908) to view and copy the primary certificate.
+![](https://web-cdn.agora.io/docs-files/1592469047303)
 
->Note: If you do not find the confirmation email in your inbox, check your spam or junk email folder.
+- If you choose the **APP ID** authentication mechanism when creating a project, you need to enable the primary certificate manually. On the **Edit Project** page, find **Primary certificate** and click **Enable**. Once the primary certificate is enabled, you can click ![](https://web-cdn.agora.io/docs-files/1592469070485) to view and copy the primary certificate, and use either an App ID or the token generated by the primary certificate for authentication. 
+![](https://web-cdn.agora.io/docs-files/1592469088556)
 
+#### Enable a secondary certificate<a name="secondary"></a>
+
+After successfully enabling the primary certificate, you can enable the secondary certificate when you need to change app certificates.
+
+On the **Edit Project** page, find **Secondary certificate**, and click **Enable**. Once the secondary certificate is enabled, you can click ![](https://web-cdn.agora.io/docs-files/1592469104861) to view and copy the secondary certificate, and use either the primary certificate or the secondary certificate to generate tokens for authentication. 
+
+![](https://web-cdn.agora.io/docs-files/1592469125002)
+
+#### Switch and delete the primary certificate
+
+After enabling both the primary certificate and the secondary certificate, if the primary certificate is exposed to security risks, you can switch it to **Secondary certificate** and delete it.
+
+To switch and delete the primary app certificate, do the following:
+
+1. Find **Secondary certificate**, click **Set as primary** to switch the secondary certificate and the primary certificate. Once you switch the primary certificate to the secondary certificate, all temporary tokens become invalid.
+![](https://web-cdn.agora.io/docs-files/1592469150352)
+2. Click **Delete** to delete the original primary certificate. You cannot restore the deleted certificate, and all tokens generated by the original primary certificate become invalid. You need to use a new primary certificate to generate tokens for authentication.
+3. After deletion, the status of the secondary certificate becomes **Disabled**. A new secondary certificate is generated when you click **Enable** next time.
+
+#### Delete No certificate
+
+**No certificate** is enabled only if you choose the **APP ID** authentication mechanism when creating a project. **No certificate** means that your project uses only the App ID for authentication, which is less secure.
+![](https://web-cdn.agora.io/docs-files/1592469181051)
+
+If you need to raise the security level, you can click **Enable** to enable the primary certificate, and generate a token for authentication. After enabling the primary certificate, you can delete **No certificate**. 
+<div class="alert warning">Once you delete <b>No certificate</b>, you can no longer use only the App ID for authentication, and the project cannot enable <b>No certificate</b> again.</div>
 

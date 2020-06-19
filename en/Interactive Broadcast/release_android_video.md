@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Wed May 27 2020 11:24:07 GMT+0800 (CST)
+updatedAt: Thu Jun 18 2020 09:36:18 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for Android.
@@ -32,6 +32,14 @@ If your app needs to access a device's hardware serial number, you should instea
 Apps targeting Android 9 should honor the private DNS APIs. In particular, apps should ensure that, if the system resolver is doing DNS-over-TLS, any built-in DNS client either uses encrypted DNS to the same hostname as the system, or is disabled in favor of the system resolver.
 
 For more information about privacy changes, see [Android Privacy Changes](https://developer.android.com/about/versions/pie/android-9.0-changes-28#privacy-changes-p).
+
+## v3.0.1.1
+v3.0.1.1 was released on Jun 18, 2020. This release fixed the following issues:
+
+- Crashes on x86 phones running on Android 6 and later.
+- Crashes after calling `registerVideoRenderFactory` (deprecated).
+- The image enhancement feature does not work.
+- Occasional failures to capture the external video source.
 
 ## v3.0.1
 

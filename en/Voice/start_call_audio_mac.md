@@ -3,7 +3,7 @@
 title: Start a Voice Call
 description: 
 platform: macOS
-updatedAt: Fri Jun 12 2020 05:34:19 GMT+0800 (CST)
+updatedAt: Fri Jun 19 2020 14:43:06 GMT+0800 (CST)
 ---
 # Start a Voice Call
 Use this guide to quickly start a basic voice call demo with the Agora Voice SDK for macOS.
@@ -193,7 +193,7 @@ After initializing the `AgoraRtcEngineKit` object, you can call the `joinChannel
 - `token`: Pass a token that identifies the role and privilege of the user. You can set it as one of the following values:
   - `nil`.
   - A temporary token generated in Console. A temporary token is valid for 24 hours. For details, see [Get a Temporary Token](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#get-a-temporary-token).
-  - A token generated at the server. This applies to scenarios with high-security requirements. For details, see [Generate a token from Your Server](../../en/Voice/token_server.md).
+  - A token generated at the server. This applies to scenarios with high-security requirements. For details, see [Generate a token from Your Server](../../en/Voice/token_server_cpp.md).
 
   <div class="alert note">If your project has enabled the app certificate, ensure that you provide a token.</div>
 

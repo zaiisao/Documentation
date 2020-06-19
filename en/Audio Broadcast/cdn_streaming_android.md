@@ -3,7 +3,7 @@
 title: Push Streams to CDN
 description: 
 platform: Android
-updatedAt: Fri May 08 2020 09:40:25 GMT+0800 (CST)
+updatedAt: Fri Jun 19 2020 07:31:21 GMT+0800 (CST)
 ---
 # Push Streams to CDN
 ## Introduction
@@ -45,7 +45,7 @@ Refer to the following steps to push streams to the CDN:
 
    > Use `transcodingEnabled` to set whether transcoding is enabled or not.
 
-3. The host in a channel cans the `removePublishStreamUrl` method to remove a media stream from the CDN live broadcast.
+3. The host in a channel calls the `removePublishStreamUrl` method to remove a media stream from the CDN live broadcast.
 
 
 When the state of media streams pushed to the CDN changes, SDK triggers the `onRtmpStreamingStateChanged` callback to report current state of pushing streams to the local host. The local host can troubleshoot with the error code when exceptions occur.

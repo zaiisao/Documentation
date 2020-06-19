@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Wed Jun 17 2020 15:33:50 GMT+0800 (CST)
+updatedAt: Thu Jun 18 2020 09:42:10 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for macOS.
@@ -20,6 +20,10 @@ For the key features included in each scenario, see [Voice Overview](https://doc
 #### Known Issues and Limitations
 
 A USB device driver issue occurs when you do not hear any audio or the audio is corrupted with a USB headset. USB is not user-friendly on macOS, and we recommend using higher quality headsets.
+
+## v3.0.1.1
+
+v3.0.1.1 was released on Jun 18, 2020. This release fixed the crashes after calling `registerVideoRenderFactory` (deprecated).
 
 ## v3.0.1
 

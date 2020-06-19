@@ -3,7 +3,7 @@
 title: Start an Audio Broadcast
 description: 
 platform: Web
-updatedAt: Wed Jun 10 2020 03:13:44 GMT+0800 (CST)
+updatedAt: Fri Jun 19 2020 14:43:00 GMT+0800 (CST)
 ---
 # Start an Audio Broadcast
 <div class="alert note">Agora will soon release the Agora Web SDK NG, the next generation of the Agora Web SDK. The internal architecture of the Agora Web SDK NG is fully optimized, and the usability of its APIs greatly improved. Click <a href="https://agoraio-community.github.io/AgoraWebSDK-NG/en/">here</a> to learn more about the Agora Web SDK NG.</div>
@@ -255,7 +255,7 @@ Pay attention to the following settings when joining the channel.
 
 - `token`: This is optional. Pass a token that identifies the role and privilege of the user if your project enables an app certificate. See [Use a token for authentication](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#use-a-token-for-authentication) for details.
   - For testing, we recommend using a Temp Token generated in Console. See [Get a Temp Token](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#get-a-temporary-token).
-  - For production, we recommend using a Token generated at your server. For how to generate a token, see [Token Security](https://docs.agora.io/en/Video/token_server).
+  - For production, we recommend using a Token generated at your server. For how to generate a token, see [Token Security](https://docs.agora.io/en/Video/token_server_cpp).
 - `channel`: Channel name. A string within 64 bytes.
 - `uid`: The user ID should be unique in a channel. If you set the user ID as `null` or `0`, the Agora server assigns a user ID and returns it in the `onSuccess` callback.
 

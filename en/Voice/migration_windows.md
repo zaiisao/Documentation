@@ -3,7 +3,7 @@
 title: Migration Guide from v2.0.8 to v2.3.2 (Windows)
 description: 
 platform: Windows
-updatedAt: Mon Apr 13 2020 02:53:18 GMT+0800 (CST)
+updatedAt: Fri Jun 19 2020 14:36:14 GMT+0800 (CST)
 ---
 # Migration Guide from v2.0.8 to v2.3.2 (Windows)
 This page contains information on major API changes during release v2.0.8 and v2.3.2 for Agora SDK for Windows.
@@ -33,7 +33,7 @@ For more information on Token migration and use guide, see:
 
 - [Token Migration Guide](https://docs.agora.io/en/Agora%20Platform/token_migration)
 - [Use Security Keys](../../en/Voice/token.md)
-- [Generate a Token](../../en/Voice/token_server.md)
+- [Generate a Token](../../en/Voice/token_server_cpp.md)
 
 #### 2. New Video Encoder Configuration
 

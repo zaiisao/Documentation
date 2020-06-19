@@ -3,158 +3,180 @@
 title: Set up Authentication
 description: token authentication
 platform: All Platforms
-updatedAt: Mon Apr 13 2020 08:07:30 GMT+0800 (CST)
+updatedAt: Fri Jun 19 2020 14:28:24 GMT+0800 (CST)
 ---
 # Set up Authentication
-We understand that security is a vital consideration when you integrate real-time communications into your application. To help you build an application that meets your security requirements, the Agora SDK provides two authentication mechanisms:
+To ensure communication security, when users join an RTC channel or you start recording on the server, Agora needs to check their authentication information. Agora provides three authentication mechanisms. According to your scenarios, you can choose one of the following mechanisms:
 
-* For low-security requirements, use an App ID for authentication.
-* For high-security requirements, use a dynamic key for authentication (recommended).
+| Authentication mechanisms                          | Scenarios                                                    |
+| :------------------------------------------------- | :----------------------------------------------------------- |
+| Use an App ID for authentication                   | Scenarios with low security requirements                     |
+| Use a token for authentication                     | Scenarios with high security requirements                    |
+| Use either an App ID or a token for authentication | Scenarios in which you need to upgrade your projects to use token authentication |
 
-This page introduces Agora's two authentication mechanisms in details.
+<div class="alert warning">To raise the security level, Agora is phasing out the support for the App ID authentication mechanism. Agora recommends upgrading all your projects to use tokens for authentication.</div>
 
+<a name = "appid"></a>
+##  Use an App ID for authentication
 
-## Scope of application
-We have two types of dynamic keys: Channel Key and Token. Different versions of our SDK use different dynamic keys for authentication. This page mainly deals with the Token. So before you start, see the following table to check which type of dynamic key that your SDK version supports:
+After signing up for a developer account in [Agora Console](https://console.agora.io/), you can create multiple projects. Each project has an App ID, which is the unique identity of the project. If others steal your App ID, they can use it in their own projects. Therefore, using an App ID for authentication is less secure. Agora recommends using an App ID for authentication only in a test environment, or if your project has low security requirements.
 
-| Agora SDK | Versions supporting Token | Versions supporting Channel Key | How to check SDK version |
-| --------- | -------------------- | ------------------------- | ------------------------ |
-| Native SDK   | 2.1.0 or later               | Earlier than 2.1.0        | `getSdkVersion`          |
-| Web SDK      | 2.4.0 or later              | Earlier than 2.4.0        | `AgoraRTC.VERSION`       |
-| Gaming SDK   | 2.2.0 or later               | Earlier than 2.2.0        | `getSdkVersion`          |
+<div class="alert warning">To raise the security level, Agora is phasing out the support for the App ID authentication mechanism. Agora recommends upgrading all your projects to use tokens for authentication. To avoid the impact on your projects, you can upgrade your project to <a href="#appid_token">use either an App ID or a token for authentication</a >.</div>
 
->-   If you use an Agora SDK that supports the Channel Key, see [Channel Keys](../../en/null/channel_key.md).
->-   If you wish to upgrade your SDK to a version that supports Token, see [Token Migration Guide](../../en/Agora%20Platform/token_migration.md).
->-   For the Agora Signaling SDK, see [Signaling Security Keys](../../en/Agora%20Platform/key_signaling.md).
->-   For the Agora RTM SDK, see [Use Security Keys](https://docs.agora.io/en/Real-time-Messaging/rtm_token?platform=All%20Platforms).
+<a name = "getappid"></a>
+To get an App ID, do the following:
 
+1. Sign up for a developer account at Agora Console. See [Sign up for an Agora account](https://docs.agora.io/en/Agora%20Platform/sign_in_and_sign_up).
 
-## Use an App ID only for authentication
+2. Click ![](https://web-cdn.agora.io/docs-files/1551254998344) in the left navigation menu to enter the [Project Management](https://console.agora.io/projects) page.
 
-Each project you create in [Agora Console](http://dashboard.agora.io) has a unique App ID.
+3. Click **Create**.
+   
+	 ![](https://web-cdn.agora.io/docs-files/1574924327108)
 
-### Get an App ID
+4. Enter your project name, choose the **App ID** authentication mechanism in the dialog box, and click **Submit**.
 
-1. Sign up for a developer account at [Agora Console](https://dashboard.agora.io/). See [Sign in and Sign up](../../en/Agora%20Platform/sign_in_and_sign_up.md).
+5. When the project is created successfully, you can see the newly created project in the project list. Click ![](https://web-cdn.agora.io/docs-files/1592488399929) to view and copy the App ID.
 
-2. Click ![](https://web-cdn.agora.io/docs-files/1551254998344) in the left navigation menu to enter the [**Project Management**](https://dashboard.agora.io/projects) page.
+  ![](https://web-cdn.agora.io/docs-files/1574924570426)
 
-3. Click **Create**. 
+6. You may need to enter the App ID when you call an API of an Agora project, such as initializing the SDK.
 
-![](https://web-cdn.agora.io/docs-files/1574924327108)
+7. If you need to use a token for authentication, click **Edit** and enter the **Edit Project** page to enable an app certificate.
 
-4.  Enter your project name and select your authentication mechanism ("App ID") in the dialog box.
+   <div class="alert note"><b>No certificate</b> means that your project uses only the App ID for authentication. <b>No certificate</b> appears only if you choose the <b>APP ID</b> authentication mechanism when creating a project.</div>
 
-![](https://web-cdn.agora.io/docs-files/1574924446798)
-	
-5. Click **Submit** and you can find the **App ID** of your newly created project.
+   ![](https://web-cdn.agora.io/docs-files/1592535218973)
 
-![](https://web-cdn.agora.io/docs-files/1574924570426)
-
-### Apply your App ID
-
-When initializing the client, set the `appId` parameter as the App ID that you get to authenticate your application.
-
->  When joining a channel, set the `token` parameter as NULL.
-
+<a name = "Token"></a>
 ## Use a token for authentication
 
-The Token is a more secure and sophisticated authentication mechanism than the App ID.  You need to use an App ID and an App Certificate to generate a token for authentication. 
+Token is a dynamic key generated by App ID, App Certificate, user ID, channel name, token expiration timestamp, and other information. For scenarios requiring high-security, such as the production environment, Agora recommends using a token for authentication.
 
-<a id="appcertificate"></a>
+### Scope of application
 
-### Enable the App Certificate
+The following table lists Agora products which support tokens for authentication:
 
-If you choose **APP ID + APP certificate + Token (recommended)** when you create a project in the Console,  the App Certificate is enabled by default.
+| Products                      | Versions of products which support tokens | Methods for getting SDK version |
+| :---------------------------- | :---------------------------------------- | :------------------------------ |
+| Voice or Video SDK (Native)   | v2.1.0 or later                           | `getSdkVersion`                 |
+| Voice or Video SDK (Web)      | v2.4.0 or later                           | `AgoraRTC.VERSION`              |
+| Voice or Video SDK (Electron) | All versions                              | `getVersion`                    |
+| Voice or Video SDK (Unity)    | All versions                              | `GetSdkVersion`                 |
+| On-premise Recording SDK      | v2.1.0 or later                           | /                               |
+| Cloud Recording               | All versions                              | /                               |
+| Interactive Gaming SDK        | v2.2.0 or later                           | `getVersion`                    |
 
-![](https://web-cdn.agora.io/docs-files/1574928196241)
+If you use an Agora product of a version earlier than mentioned above, you can upgrade your product version or use [Channel Keys](https://docs.agora.io/en/Agora%20Platform/channel_key) for authentication. If you upgrade your product from a version that supports channel keys to a version that supports tokens, please refer to [Token Migration Guide](https://docs.agora.io/en/Agora%20Platform/token_migration).
 
-If you choose **App ID** for authentication when creating the project and want to switch to the "App ID + App Certificate + Token" mechanism, you need to enable the App Certificate first. 
+### Generate a token
 
-Follow these steps to enable the App Certificate:
+You need to generate a token on your server. Follow the steps below to get the App ID, enable App Certificate, and call an API to generate a token.
 
-1. Click the **edit** button of the targeted project.
+**1. [Get an App ID](#getappid)**
 
-![](https://web-cdn.agora.io/docs-files/1574925402348)
+<a name = "appcertificate"></a>
+**2. Enable an App Certificate**
 
-2. Click **Enable** in the "Basic Info" page. 
+An App Certificate is a string generated from Agora Console, and it enables token authentication. For different security requirements, Agora provides two types of app certificates. The differences are as follows:
 
-![](https://web-cdn.agora.io/docs-files/1574664820135)
+- Primary certificate: You can use a primary certificate to generate tokens, including temporary tokens. You cannot delete a primary certificate.
+- Secondary certificate: You can use a secondary certificate to generate tokens, except for temporary tokens. After enabling a secondary certificate, you can swap it for a primary certificate, or delete it.
 
-3. Read **About App Certificate**.
+If you enable an app certificate for the first time, you need to enable a primary certificate first.
 
-![](https://web-cdn.agora.io/docs-files/1574664881593)
+To enable a primary certificate, do the following:
 
-4. We will send you an email. Follow the steps in the email to confirm about enabling the App Certificate. 
+- If you choose the **APP ID + APP Certificate + Token** authentication mechanism when creating a project, Agora enables the primary certificate for you by default. On the **Edit Project** page, you can click ![](https://web-cdn.agora.io/docs-files/1592488399929) to view and copy the primary certificate.
 
-5. Go back to the **Edit project** page to check the enabled App Certificate.
+ ![](https://web-cdn.agora.io/docs-files/1592535534341)
 
->Note: If you do not find the confirmation email in your inbox, check your spam or junk email folder.
+- If you choose the **APP ID** authentication mechanism when creating a project, you need to enable the primary certificate manually. On the **Edit Project** page, find **Primary certificate** and click **Enable**. Once the primary certificate is enabled, you can click ![](https://web-cdn.agora.io/docs-files/1592488399929) to view and copy the primary certificate, and use either an App ID or the token generated by the primary certificate for authentication. 
 
-<a id = "temptoken"></a>
-### Get a temporary token
+  ![](https://web-cdn.agora.io/docs-files/1592535218973)
 
-When working on a test version of your application, you can generate a temporary token at the [Agora Console](https://dashboard.agora.io/) to join a channel. 
+**3.** **Generate a token**
 
-1. On the **Project Management** page, click ![](https://web-cdn.agora.io/docs-files/1574923151660). 
+<a name = "get-a-temporary-token"></a>
+- To facilitate authentication at the test stage, Agora Console provides temporary tokens. Click **Generate a temporary token** to see how to generate a temporary token:
 
-![](https://web-cdn.agora.io/docs-files/1574927794840)
+ <details>
+	<summary><font color="#3ab7f8">Generate a temporary token</font></summary>
+	
+	<div class="alert note"><li>Ensure that you have enabled a primary certificate before generating a temporary token. See <a href="#appcertificate">Enable a primary app certificate</a >.<li>A temporary token applies to scenarios requiring low security. Agora recommends using a token generated on your server for production environment.<li>A temporary token does not apply to the Agora RTM SDK.</li></div>
+	
+	On the <b>Project Management</b> page, find the project for which you want to generate a temporary token, and click ![](https://web-cdn.agora.io/docs-files/1574923151660).
 
-2. On the **Token** page, enter the name of the channel that you want to join. You will get a temporary token.
+ ![](https://web-cdn.agora.io/docs-files/1574927794840)
 
-![](https://web-cdn.agora.io/docs-files/1574928048948)
+ On the <b>Token</b> page, enter the name of the channel that you want to join, and click <b>Generate Temp Token</b> to get a temporary token.
 
-<div class="alert warning">Note:  <li>Ensure that you have enabled the App Certificate of the project before generating a Temp Token. See <a href="#appcertificate">Enable the App Certificate</a>.</li><li>A temp token applies to scenarios with low security requirements. For the production environment, we recommend using a token generated at your server.</li><li>A temp token does not apply to the Agora RTM SDK. </li></div>
+ ![](https://web-cdn.agora.io/docs-files/1574928048948)
 
-<a id = "generatetoken"></a>
-### Get a token
+</details>
+  
+<a name = "generatetoken"></a>
+- For production environment, Agora recommends generating a token at your server by calling `buildTokenWithUid`. See [Generate a token](https://docs.agora.io/en/Audio%20Broadcast/token_server_cpp).
 
-When building the final production version of your application, you should generate a token on your server. See [Generate a Token on Your Server](../../en/Agora%20Platform/token_server.md).
+<div class="alert note"><li>Agora supports C++, Java, Python, PHP and other languages for generating tokens on your server. In this section, take the C++ language as an example.<li>The token encoding uses the standard HMAC/SHA1 approach and the libraries are available on common server-side development platforms, such as Node.js, Java, PHP, Python, and C++. For more information, see <a href="http://en.wikipedia.org/wiki/Hash-based_message_authentication_code">Authentication code</a >.</li></div>
 
-### Apply your token or temporary token
+  Sample code
 
-When calling the `join` method to join a channel, you pass in your token (or temporary token).
+ ```c++
+	static std::string buildTokenWithUid(
+        const std::string& appId,
+        const std::string& appCertificate,
+        const std::string& channelName,
+        uint32_t uid,
+        UserRole role,
+        uint32_t privilegeExpiredTs = 0);
+```
 
-> - Ensure that the channel ID and user name that you use to join a channel are the same as the channel ID and user name that you use to create a token (or a temporary token).
-> - After a token (or a temporary token) is generated, the client should use the token to join a channel within 24 hours. Otherwise, you need to generate a new token (or temporary token).
-> - A token (or a temporary token) expires after a certain period of time. When the SDK notifies the client that the token is about to expire or has expired by the `onTokenPrivilegeWillExpire` or `onTokenExpired` callbacks, you need to generate a new token and call the `renewToken` method.
-> - The token encoding uses the standard HMAC/SHA1 approach and the libraries are available on common server-side development platforms, such as Node.js, Java, PHP, Python, and C++. For more information, see  [Authentication code](http://en.wikipedia.org/wiki/Hash-based\_message\_authentication\_code).
+  | Parameters         | Descriptions                                                 |
+  | :----------------- | :----------------------------------------------------------- |
+  | appId              | The App ID of your project.                                  |
+  | appCertificate     | The app certificate of your project.                         |
+  | channelName        | Unique channel name for the Agora RTC session in the string format. The string length must be less than 64 bytes. Supported character scopes are:<li>The 26 lowercase English letters: a to z.<li>The 26 uppercase English letters: A to Z.<li>The 10 digits: 0 to 9.<li>The space.<li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "\|", "~", ",".</li> |
+  | uid                | The user ID, a 32-bit unsigned integer.                      |
+  | role               | The user role. Agora supports only one user role. Set the value as the default value `Role_Publisher = 1`. |
+  | privilegeExpiredTs | Expiration time of the token. A Unix timestamp, represented by the number of seconds elapsed since 1/1/1970. For example, if you set this parameter as the current timestamp + 600 seconds, the token expires 10 minutes after it is generated. A token is valid for 24 hours at most. If you set this parameter as 0 or a period longer than 24 hours, the token is valid for 24 hours. |
 
-## References
+  We provide an open source [Agora Dynamic Key](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey) repository on GitHub, which covers developer languages such as C++, C#, Go, Java, Node.js, Perl, PHP, Python and Ruby. You can choose a language according to your development environment, and view the source code in the `src` folder or the sample code in the `sample` folder.
 
-The following table lists the API methods that require a token as a parameter:
+**4. Switch and delete the primary certificate**
 
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-<thead>
-<tr><th>Platform</th>
-<th>Join a Channel</th>
-<th>Renew the Token</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>Android</td>
-<td><a href="https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a8b308c9102c08cb8dafb4672af1a3b4c"><span>Join a Channel (joinChannel)</span></a></td>
-<td><a href="https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af1428905e5778a9ca209f64592b5bf80"><span>Renew the Token (renewToken)</span></a></td>
-</tr>
-<tr><td>iOS/macOS</td>
-<td><a href="https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByToken:channelId:info:uid:joinSuccess:"><span>Join a Channel (joinChannelByToken)</span></a></td>
-<td><a href="https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/renewToken:"><span>Renew the Token (renewToken)</span></a></td>
-</tr>
-<tr><td>Windows</td>
-<td><a href="https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#adc937172e59bd2695ea171553a88188c"><span>Join a Channel (joinChannel)</span></a></td>
-<td><a href="https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a8f25b5ff97e2a070a69102e379295739"><span>Renew the Token (renewtoken)</span></a></td>
-</tr>
-<tr><td>Web</td>
-<td><a href="https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#join"><span>Join an AgoraRTC Channel (join)</span></a></td>
-<td><a href="https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#renewtoken"><span>Renew the Token (renewToken)</span></a></td>
-</tr>
-</tbody>
-</table>
+After enabling a primary certificate, you can enable a secondary certificate. if the primary certificate is exposed to security risks, you can swap the secondary certificate for the primary certificate and delete the original primary certificate.
 
+To switch and delete the primary app certificate, do the following:
 
+1. On the **Edit Project** page, find **Secondary certificate**, and click **Enable**. After successfully enabling a secondary certificate, users can use either the primary certificate or the secondary certificate to generate tokens for authentication.
+  ![](https://web-cdn.agora.io/docs-files/1592536905533)
+2.  Click **Set as primary** to switch the secondary certificate and the primary certificate. Once you switch the primary certificate to the secondary certificate, all temporary tokens generated by the original primary certificate become invalid.
+   ![](https://web-cdn.agora.io/docs-files/1592536920087)
+3. Click **Delete** to delete the original primary certificate. You cannot restore the deleted certificate, and all tokens generated by the original primary certificate become invalid. You need to use the new primary certificate to generate tokens for authentication.
+4. After deletion, the status of the secondary certificate becomes **Disabled**. A new secondary certificate is generated when you click **Enable** next time.
 
+### Use the token
+
+After generating a token, see the following steps to use the token:
+
+1. When a client app calls an Agora API for certain functions, such as joining a channel, the client app needs to fill in the generated token, the user name, the channel name, and other information.
+2. After the Agora server receives the token and other information, it authenticates the user's identity and decides if the user have the permission to join the channel. If the authentication is passed, the user can successfully join the channel and use the Agora services.
+3. Token has expiration time. Once the token expires, it becomes invalid, and you need to generate a new token on your app server. Use the new token for joining a channel or using the Agora services.
+
+<a name="appid_token"></a>
+## Use either an App ID or a token for authentication
+
+To raise the security level, Agora is phasing out the support for the App ID authentication mechanism. Agora recommends upgrading all your projects to use tokens for authentication. 
+
+To avoid the impact on your project, you can upgrade your project to use either an App ID or a token for authentication. Follow the steps below for a grayscale release:
+
+1. [Enable a primary app certificate](#appcertificate). 
+
+2. After successfully enabling a primary app certificate, use the primary app certificate to [generate a token](https://docs.agora.io/en/Audio%20Broadcast/token_server_cpp).
+
+3. Use either an App ID or a token for authentication. For example, when existing users are using App ID for authentication, new users can use a token for authentication, and thus both new and old users can join the same channel. You can gradually phase out the use of App ID for authentication.
+
+4. After all users switch to using a token for authentication, Agora recommends deleting **No certificate**.
+
+	<div class="alert warning">Once you delete <b>No certificate</b>, you can no longer use the App ID for authentication, and the project cannot enable <b>No certificate</b> again.</div>
