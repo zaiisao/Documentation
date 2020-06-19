@@ -1,11 +1,11 @@
 
 ---
-title: 变声与混响
+title: 美声与音效
 description: How to adjust the voice effect on Windows
 platform: Windows
-updatedAt: Wed May 27 2020 11:13:49 GMT+0800 (CST)
+updatedAt: Fri Jun 19 2020 13:44:50 GMT+0800 (CST)
 ---
-# 变声与混响
+# 美声与音效
 ## 功能描述
 
 在社交娱乐应用中，为增加产品的趣味性和互动性，用户常常需要变声和混响效果。Agora 提供多种预置的变声和混响效果，你也可以灵活定制自己想要的声音，比如设置音调、均衡和混响等。
@@ -18,9 +18,9 @@ Agora 提供[在线 Demo](https://www.agora.io/cn/audio-demo)，你可以体验�
 
 ### 预设声音效果
 
-#### 变声
+#### 变声音效
 
-通常在语聊场景中，通过 `setLocalVoiceChanger` 中以下枚举值，你可以实现变声效果：
+通常在语聊场景中，通过 `setLocalVoiceChanger` 中以下枚举值，你可以实现变声音效：
 
 | 枚举值                 | 变声效果 |
 | :--------------------- | :------- |
@@ -31,11 +31,11 @@ Agora 提供[在线 Demo](https://www.agora.io/cn/audio-demo)，你可以体验�
 | VOICE_CHANGER_ETHEREAL | 空灵     |
 | VOICE_CHANGER_HULK     | 绿巨人   |
 
-<div class="alert note">同一时间，只能实现变声、美音、语聊美声、混响效果中的一种。</div>
+<div class="alert note">同一时间，只能实现变声音效、美音、语聊美声、混响音效中的一种。</div>
 
 ```c++
 VOICE_CHANGER_PRESET voiceChanger;
-// 预设变声效果为老男孩。
+// 预设变声音效为老男孩。
 voiceChanger = VOICE_CHANGER_OLDMAN;
 rtcEngine.setLocalVoiceChanger(voiceChanger);
 // 关闭变声效果。
@@ -59,7 +59,7 @@ rtcEngine.setLocalVoiceChanger(voiceChanger);
 | VOICE_BEAUTY_RINGING    | 嘹亮     |
 | VOICE_BEAUTY_SPACIAL    | 空旷     |
 
-<div class="alert note">同一时间，只能实现变声、美音、语聊美声、混响效果中的一种。</div>
+<div class="alert note">同一时间，只能实现变声音效、美音、语聊美声、混响音效中的一种。</div>
 
 ```c++
 VOICE_CHANGER_PRESET voiceChanger;
@@ -83,7 +83,7 @@ rtcEngine.setLocalVoiceChanger(voiceChanger);
 
 <div class="alert warning">该功能主要细化了男声和女声各自的特点，请确保使用 <tt>GENERAL_BEAUTY_VOICE_MALE_MAGNETIC</tt> 处理男声，使用 <tt>GENERAL_BEAUTY_VOICE_FEMALE_FRESH</tt> 或 <tt>GENERAL_BEAUTY_VOICE_FEMALE_VITALITY</tt> 处理女声，否则音频可能会产生失真。</div>
 
-<div class="alert note">同一时间，只能实现变声、美音、语聊美声、混响效果中的一种。</div>
+<div class="alert note">同一时间，只能实现变声音效、美音、语聊美声、混响音效中的一种。</div>
 
 ```c++
 VOICE_CHANGER_PRESET voiceChanger;
@@ -95,9 +95,9 @@ voiceChanger = VOICE_CHANGER_OFF;
 rtcEngine.setLocalVoiceChanger(voiceChanger);
 ```
 
-#### 混响
+#### 混响音效
 
-通过 `setLocalVoiceReverbPreset`，你可以实现以下混响效果：
+通过 `setLocalVoiceReverbPreset`，你可以实现以下混响音效：
 
 | 枚举值                        | 描述                                                         |
 | :---------------------------- | :----------------------------------------------------------- |
@@ -120,11 +120,11 @@ rtcEngine.setLocalVoiceChanger(voiceChanger);
 
 <div class="alert warning">当使用以 <tt>AUDIO_REVERB_FX</tt> 为前缀的枚举值时，请确保在调用该方法前将 <tt>setAudioProfile</tt> 的 <tt>profile</tt> 参数设置为 <tt>AUDIO_PROFILE_MUSIC_HIGH_QUALITY(4)</tt> 或 <tt>AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO(5)</tt>，否则该方法设置无效。</div>
 
-<div class="alert note"><li>同一时间，只能实现变声、美音、语聊美声、混响效果中的一种。<li>为达到更好的混响效果，Agora 推荐使用以 <tt>AUDIO_REVERB_FX</tt> 为前缀的枚举值。<li>当使用 <tt>AUDIO_VIRTUAL_STEREO</tt> 设置虚拟立体声时，Agora 推荐在调用该方法前将 <tt>setAudioProfile</tt> 的 <tt>profile</tt> 参数设置为 <tt>AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO(5)</tt>。</div>
+<div class="alert note"><li>同一时间，只能实现变声音效、美音、语聊美声、混响音效中的一种。<li>为达到更好的混响音效，Agora 推荐使用以 <tt>AUDIO_REVERB_FX</tt> 为前缀的枚举值。<li>当使用 <tt>AUDIO_VIRTUAL_STEREO</tt> 设置虚拟立体声时，Agora 推荐在调用该方法前将 <tt>setAudioProfile</tt> 的 <tt>profile</tt> 参数设置为 <tt>AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO(5)</tt>。</div>
 
 ```c++
 AUDIO_REVERB_PRESET reverbPreset;
-// 预设混响效果为演唱会（增强版 ）。
+// 预设混响音效为演唱会（增强版 ）。
 reverbPreset = AUDIO_REVERB_FX_VOCAL_CONCERT;
 rtcEngine.setLocalVoiceReverbPreset(reverbPreset);
 // 关闭混响效果。
