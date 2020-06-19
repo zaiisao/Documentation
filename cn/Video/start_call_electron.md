@@ -3,7 +3,7 @@
 title: 实现视频通话
 description: 
 platform: Electron
-updatedAt: Fri May 29 2020 06:38:46 GMT+0800 (CST)
+updatedAt: Thu Jun 18 2020 10:42:38 GMT+0800 (CST)
 ---
 # 实现视频通话
 本文介绍如何使用 Agora Electron SDK 快速实现视频通话。

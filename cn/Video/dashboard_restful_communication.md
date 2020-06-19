@@ -3,7 +3,7 @@
 title: RESTful API
 description: 
 platform: All Platforms
-updatedAt: Thu Jun 18 2020 04:17:47 GMT+0800 (CST)
+updatedAt: Fri Jun 19 2020 05:14:42 GMT+0800 (CST)
 ---
 # RESTful API
 ## 认证
@@ -41,6 +41,8 @@ updatedAt: Thu Jun 18 2020 04:17:47 GMT+0800 (CST)
 
 BaseUrl：**https://api.agora.io/dev**
 
+<div class="alert note">本节 App 证书相关功能仅对主要证书有效。</div>
+
 下图展示了项目相关 API 的使用逻辑。
 
 ![](https://web-cdn.agora.io/docs-files/1583829129191)
@@ -63,7 +65,7 @@ BaseUrl：**https://api.agora.io/dev**
 | 参数名 | 描述 |
 | ---------------- | ---------------- |
 | `name`      | 项目名称      |
-| `enable_sign_key` | 是否启用 App 证书：<ul><li>true：启用</li><li>false：不启用</li></ul> |
+| `enable_sign_key` | 是否启用主要 App 证书：<ul><li>true：启用</li><li>false：不启用</li></ul> |
 
 **请求示例**
 
@@ -81,7 +83,7 @@ BaseUrl：**https://api.agora.io/dev**
 | `id`      | 项目 ID      |
 | `name` | 项目名称 |
 | `vendor_key` | 项目的 App ID |
-| `sign_key` | 项目的 App 证书 |
+| `sign_key` | 项目的主要 App 证书 |
 | `recording_server` | 录制项目服务器 IP。<ul><li>如果你使用的是本地服务端录制 SDK v1.9.0 及之前版本，请关注此字段；</li><li>如果你使用的是本地服务端录制 SDK v1.11.0 及之后版本，请忽略此字段。</li></ul> |
 | `status` | 项目状态：<ul><li>1：启用</li><li>0：禁用</li></ul> |
 | `created` | 项目创建时间，Unix 时间戳，单位为毫秒 |
@@ -127,7 +129,7 @@ BaseUrl：**https://api.agora.io/dev**
 | `id`      | 项目 ID      |
 | `name` | 项目名称 |
 | `vendor_key` | 项目的 App ID |
-| `sign_key` | 项目的 App 证书 |
+| `sign_key` | 项目的主要 App 证书 |
 | `recording_server` | 录制项目服务器 IP。<ul><li>如果你使用的是本地服务端录制 SDK v1.9.0 及之前版本，请关注此字段；</li><li>如果你使用的是本地服务端录制 SDK v1.11.0 及之后版本，请忽略此字段。</li></ul> |
 | `status` | 项目状态：<ul><li>1：启用</li><li>0：禁用</li></ul> |
 | `created` | 项目创建时间，Unix 时间戳，单位为毫秒 |
@@ -183,7 +185,7 @@ https://api.agora.io/dev/v1/project?id=xxxx&name=project1
 | `id`      | 项目 ID      |
 | `name` | 项目名称 |
 | `vendor_key` | 项目的 App ID |
-| `sign_key` | 项目的 App 证书 |
+| `sign_key` | 项目的主要 App 证书 |
 | `recording_server` | 录制项目服务器 IP。<ul><li>如果你使用的是本地服务端录制 SDK v1.9.0 及之前版本，请关注此字段；</li><li>如果你使用的是本地服务端录制 SDK v1.11.0 及之后版本，请忽略此字段。</li></ul> |
 | `status` | 项目状态：<ul><li>1：启用</li><li>0：禁用</li></ul> |
 | `created` | 项目创建时间，Unix 时间戳，单位为毫秒 |
@@ -244,7 +246,7 @@ https://api.agora.io/dev/v1/project?id=xxxx&name=project1
 | `id`      | 项目 ID      |
 | `name` | 项目名称 |
 | `vendor_key` | 项目的 App ID |
-| `sign_key` | 项目的 App 证书 |
+| `sign_key` | 项目的主要 App 证书 |
 | `recording_server` | 录制项目服务器 IP。<ul><li>如果你使用的是本地服务端录制 SDK v1.9.0 及之前版本，请关注此字段；</li><li>如果你使用的是本地服务端录制 SDK v1.11.0 及之后版本，请忽略此字段。</li></ul> |
 | `status` | 项目状态：<ul><li>1：启用</li><li>0：禁用</li></ul> |
 | `created` | 项目创建时间，Unix 时间戳，单位为毫秒 |
@@ -368,9 +370,9 @@ status 404
 }
 ```
 
-### 启用 App 证书 (POST)
+### 启用主要 App 证书 (POST)
 
-启用指定项目的 App 证书。
+启用指定项目的主要 App 证书。
 
 **基本信息**
 
@@ -386,7 +388,7 @@ status 404
 | 参数名 | 描述 |
 | ---------------- | ---------------- |
 | `id`      | 项目 ID      |
-| `enable` | 是否启用项目的 App 证书：<ul><li>true：启用</li><li>false：不启用</li></ul> | 
+| `enable` | 是否启用项目的主要 App 证书：<ul><li>true：启用</li><li>false：不启用</li></ul> | 
 
 **请求示例**
 
@@ -399,7 +401,7 @@ status 404
 
 **响应参数**
 
-- 成功启用项目的 App 证书：
+- 成功启用项目的主要 App 证书：
 
 ```json
 {
@@ -416,11 +418,11 @@ status 404
 }
 ```
 
-### 重置 App 证书 (POST)
+### 重置主要 App 证书 (POST)
 
-重置指定项目的 App 证书。如果原来的 App 证书泄漏了，你可以使用该方法对 App 证书进行重置。
+重置指定项目的主要 App 证书。如果原来的主要 App 证书泄漏了，你可以使用该方法对主要 App 证书进行重置。
 
-如果该项目的 App 证书尚未启用，调用该方法会启用 App 证书。
+如果该项目的主要 App 证书尚未启用，调用该方法会启用主要 App 证书。
 
 **基本信息**
 
@@ -445,7 +447,7 @@ status 404
 
 **响应参数**
 
-- 成功重置指定项目的 App 证书：
+- 成功重置指定项目的主要 App 证书：
 
 ```json
 {
