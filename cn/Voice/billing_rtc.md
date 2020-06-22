@@ -3,7 +3,7 @@
 title: 实时音视频计费
 description: 
 platform: All Platforms
-updatedAt: Tue Jun 09 2020 02:49:26 GMT+0800 (CST)
+updatedAt: Mon Jun 22 2020 07:39:25 GMT+0800 (CST)
 ---
 # 实时音视频计费
 本文展示 Agora 实时音视频服务的计费方式。
@@ -187,10 +187,19 @@ Agora 视频单价分两档：
 
 ## 常见问题
 
-- [如何实现业务层的通话计费？](https://docs.agora.io/cn/faq/business_billing)
-- [声网针对预付费是否有响应的优惠策略？](https://docs.agora.io/cn/faq/pricing_package_minute)
+<details><summary><font color="#3ab7f8">为什么只订阅了视频，却在账单中看到了音频分钟数？</font></summary>
+<ul>
+	<li>如果频道中有用户只发布，却没有订阅任何视频流，那么该用户的集合分辨率为 0，其产生的分钟数就是音频分钟数。</li>
+	<li>如果因网络等原因导致某用户没有收到视频，则此刻该用户的集合分辨率计为 0，其对应的分钟数也是音频分钟数。</li>
+</ul>
+</details>
+<details><summary><font color="#3ab7f8">为什么所有用户订阅的都是 360 × 640 的视频流，我的单价却被定在超高清档？</font></summary>
+视频档位基于集合分辨率而定，即对你订阅的流的分辨率进行求和。所以，你订阅的视频流越多，你的集合分辨率越有可能超过 1280 x 720 的超清档。
+</details>
 
 ## 相关文档
 
 - [每月一万分钟免费声明](https://docs.agora.io/cn/faq/billing_free)
 - [账单、扣费与账户冻结](https://docs.agora.io/cn/faq/billing_account)
+- [如何实现业务层的通话计费？](https://docs.agora.io/cn/faq/business_billing)
+- [声网针对预付费是否有响应的优惠策略？](https://docs.agora.io/cn/faq/pricing_package_minute)
