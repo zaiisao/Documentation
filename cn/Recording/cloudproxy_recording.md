@@ -3,7 +3,7 @@
 title: 使用云代理服务
 description: How to enable cloud proxy for recording
 platform: Linux
-updatedAt: Thu May 21 2020 09:18:06 GMT+0800 (CST)
+updatedAt: Mon Jun 22 2020 08:37:38 GMT+0800 (CST)
 ---
 # 使用云代理服务
 ## 功能简介
@@ -25,7 +25,7 @@ updatedAt: Thu May 21 2020 09:18:06 GMT+0800 (CST)
    - 网络运营商。
 
 2. 将以下测试 IP 及端口添加到企业防火墙的白名单。
-
+     源地址为集成了 Agora 本地服务端录制 SDK 的客户端。
    | 协议 | 目标地址      | 端口                    | 端口用途     |
 | ---- | ------------- | ----------------------- | ------------ |
 | TCP  | 120.92.118.34 | 4000                    | 消息数据传输 |
