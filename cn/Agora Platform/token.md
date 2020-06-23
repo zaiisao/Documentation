@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Fri Jun 19 2020 14:28:39 GMT+0800 (CST)
+updatedAt: Tue Jun 23 2020 04:14:04 GMT+0800 (CST)
 ---
 # 校验用户权限
 为保证通信安全，当用户加入 RTC 频道或服务端开始录制时，Agora 需要对其鉴权。Agora 提供如下鉴权方案，你可以根据自己的实际使用场景，选择合适的鉴权方式：
@@ -16,15 +16,14 @@ updatedAt: Fri Jun 19 2020 14:28:39 GMT+0800 (CST)
 
 <div class="alert warning">为提高项目的安全性，Agora 会逐步取消对 App ID 鉴权方案的支持，建议你将所有项目升级至使用 Token 鉴权。</div>
 
-<a name = "appid"></a>
-##  使用 App ID 鉴权
+
+## <a name = "appid"></a>使用 App ID 鉴权
 
 开发者在 [Agora 控制台](https://console.agora.io/)注册账号后，可以创建多个项目，每一个项目的唯一标识就是 App ID。如果有人非法窃取了你的 App ID，他就可以在自己的项目中使用你的 App ID。因此，只使用 App ID 鉴权，安全性较低，我们推荐只在测试环境，或对安全要求不高的场景里使用 App ID 鉴权。
 
 <div class="alert warning">为提高项目的安全性，Agora 会逐步取消对 App ID 鉴权方案的支持，建议你将所有项目升级至使用 Token 鉴权。为保证不影响项目的运行，你可以<a href="#appid_token">同时使用 App ID 和 Token 鉴权</a >进行灰度升级。</div>
 
-<a name = "getappid"></a>
-参考如下步骤，获取并使用 App ID：
+<a name = "getappid"></a>参考如下步骤，获取并使用 App ID：
 
 1. 进入**控制台**，按照屏幕提示注册账号并登录控制台。详见[注册与登陆](https://docs.agora.io/cn/Agora%20Platform/sign_in_and_sign_up)。
 
@@ -48,8 +47,7 @@ updatedAt: Fri Jun 19 2020 14:28:39 GMT+0800 (CST)
 
   ![](https://web-cdn.agora.io/docs-files/1592488560281)
 
-<a name = "Token"></a>
-## 使用 Token 鉴权
+## <a name = "Token"></a>使用 Token 鉴权
 
 Token 是一种动态密钥，通过 App ID、App 证书、用户名、频道名和 Token 有效时间戳等参数生成，安全性较高。在正式生产环境等对安全要求较高的场景中，我们推荐使用 Token 鉴权。
 
@@ -78,8 +76,7 @@ Token 需要在你的服务端生成。参考如下步骤，在 Agora 控制台�
 
 参考上文步骤[获取 App ID](#getappid)。
 
-<a name = "appcertificate"></a>
-**2. 启用 App 证书**
+**<a name = "appcertificate"></a>2. 启用 App 证书**
 
 App 证书是 Agora 控制台为开发项目生成的字符串。根据不同的安全需求，Agora 在项目中设置了两种 App 证书，区别如下：
 
@@ -97,8 +94,7 @@ App 证书是 Agora 控制台为开发项目生成的字符串。根据不同的
 
 **3. 生成 Token**
 
-<a name = "get-a-temporary-token"></a>
-- 为方便在测试阶段中鉴权，Agora 控制台提供临时 Token。点击**生成临时 Token** 展开生成步骤：
+- <a name = "get-a-temporary-token"></a>为方便在测试阶段中鉴权，Agora 控制台提供临时 Token。点击**生成临时 Token** 展开生成步骤：
 
  <details>
 	<summary><font color="#3ab7f8">生成临时 Token</font></summary>
@@ -115,8 +111,7 @@ App 证书是 Agora 控制台为开发项目生成的字符串。根据不同的
 
 </details>
   
-<a name = "generatetoken"></a>
-- 在正式生产环境中，Agora 建议你在服务端调用 `buildTokenWithUid` 生成正式 Token。详见[生成 Token](https://docs.agora.io/cn/Audio%20Broadcast/token_server_cpp)。
+- <a name = "generatetoken"></a>在正式生产环境中，Agora 建议你在服务端调用 `buildTokenWithUid` 生成正式 Token。详见[生成 Token](https://docs.agora.io/cn/Audio%20Broadcast/token_server_cpp)。
 
 <div class="alert note"><li>Agora 支持使用 C++、Java、Python、PHP 等语言在你的服务端生成正式 Token。本节 API 注释以 C++ 示例代码为例。<li>Token 采用业界标准化的 HMAC/SHA1 加密方案，在 Node.js、Java、Python、C++ 等绝大多数通用的服务端开发平台上均可获得所需加密库。具体加密方案可参看 <a href="http://en.wikipedia.org/wiki/Hash-based_message_authentication_code">Authentication code</a >。</li></div>
    
@@ -164,8 +159,7 @@ App 证书是 Agora 控制台为开发项目生成的字符串。根据不同的
 2. Agora 服务端接收到填入的 Token 等信息后，会验证用户是否有权限访问频道。如果验证通过，用户可以加入频道并使用相应的 Agora 服务。
 3. Token 具有有效期。在 Token 失效后，你需要在 app 服务端重新生成 Token，并使用新的 Token 加入频道或使用相应的 Agora 服务。
 
-<a name="appid_token"></a>
-## 同时使用 App ID 和 Token 鉴权
+## <a name="appid_token"></a>同时使用 App ID 和 Token 鉴权
 
 <div class="alert warning">为提高项目的安全性，Agora 会逐步取消对 App ID 鉴权方案的支持，建议你将所有项目升级至使用 Token 鉴权。</div>
 
