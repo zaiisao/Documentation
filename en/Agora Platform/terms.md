@@ -3,7 +3,7 @@
 title: Glossary
 description: 
 platform: All Platforms
-updatedAt: Fri Jun 19 2020 14:28:25 GMT+0800 (CST)
+updatedAt: Mon Jun 22 2020 10:29:53 GMT+0800 (CST)
 ---
 # Glossary
 ## A
