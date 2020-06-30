@@ -29,7 +29,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
   </tr>
   <tr>
     <td>Android 4.1+</td>
-    <td><font color="green">✔</td>
+		<td><font color="green">✔<sup>[1]</sup></td>
     <td><font color="red">✘</td>
 		<td><b>N/A</b></td>
     <td><font color="red">✘</td>
@@ -41,7 +41,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
     <td>iOS 11+</td>
     <td><font color="red">✘</td>
     <td><font color="red">✘</td>
-    <td><font color="green">✔</td>
+		<td><font color="green">✔<sup>[2]</sup></td>
     <td><font color="red">✘</td>
     <td><font color="red">✘</td>
     <td><font color="red">✘</td>
@@ -69,15 +69,19 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
   </tr>
 </table>
 
-<div class="alert info">除上表浏览器外，还有以下支持：
-	<li>Agora Web SDK 2.5 及以上版本支持 Windows XP 平台的 Chrome 49 版本浏览器（仅支持 VP8 编解码，不能与 Native SDK 互通）。</li>
+<div class="alert warning">[1] Android Chrome 对 H.264 的支持依赖硬件，部分 Android 设备不支持 H.264 编解码。<br>
+	[2] iOS Safari 上存在较多<a href="../../cn/faq/browser_support.md">已知问题</a>，Agora 不推荐使用。</div>
+
+<div class="alert warning">以下场景中请务必将 Agora Web SDK 升级至 2.6 或更高版本:
+	<li>iOS 12.1.4 及以上版本使用 Safari 浏览器。</li>
+	<li>macOS 上使用 Safari 12.1 及以上版本。</li>
+	</div>
+	
+除上表浏览器外，还有以下支持：
+
+- Agora Web SDK 2.5 及以上版本支持 Windows XP 平台的 Chrome 49 版本浏览器（仅支持 VP8 编解码，不能与 Native SDK 互通）。
 	<li>Agora Web SDK 2.7 及以上版本支持 Windows 10 平台的 Edge 浏览器，详见 <a href="https://docs.agora.io/cn/faq/browser_support#a-nameedgeaedge">Edge 浏览器支持</a>。</li>
 	<li>Agora Web SDK 理论上还支持 360 极速浏览器，但未经过验证，不保证全部功能正常工作。</li>
-</div>
-<div class="alert note">以下场景中请务必将 Agora Web SDK 升级至 2.6 或更高版本:
-	<li>iOS 12.1.4 及以上版本使用 Safari 浏览器</li>
-	<li>macOS 上使用 Safari 12.1 及以上版本</li>
-	</div>
 
 > 如需实现 Agora Native SDK 与 Agora Web SDK 的互通，必须将 Agora Native SDK 升级至 1.12 及以上版本。
 

@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Tue Jun 16 2020 06:18:55 GMT+0800 (CST)
+updatedAt: Mon Jun 29 2020 10:12:51 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 该文提供云端录制 RESTful API 的详细信息。
@@ -66,7 +66,7 @@ updatedAt: Tue Jun 16 2020 06:18:55 GMT+0800 (CST)
 | 参数            | 类型   | 描述                                                         |
 | :-------------- | :----- | :----------------------------------------------------------- |
 | `cname`         | String | 待录制的频道名。                                             |
-| `uid`           | String | 字符串内容为云端录制在频道内使用的用户 ID，32 位无符号整数，例如`"527841"`。需满足以下条件：<li>取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0。</li><li><b><em>不能与当前频道内的任何 UID 重复。</em></b></li><li>云端录制不支持 String 用户 ID（User Account），请确保该字段引号内为整型 UID，且频道内所有用户均使用整型 UID。</li> |
+| `uid`           | String | 字符串内容为云端录制服务在频道内使用的 UID，用于标识该录制服务，例如`"527841"`。需满足以下条件：<li>取值范围 1 到 (2<sup>32</sup>-1)，不可设置为 0。</li><li><b><em>不能与当前频道内的任何 UID 重复。</em></b></li><li>云端录制不支持 String 用户 ID（User Account），请确保该字段引号内为整型 UID，且频道内所有用户均使用整型 UID。</li> |
 | `clientRequest` | JSON   | 客户请求参数，包含 `resourceExpiredHour` 字段。`resourceExpiredHour` 为 Number 类型，单位为小时，用于设置云端录制 RESTful API 的调用时效，从成功开启云端录制并获得 `sid` （录制 ID）后开始计算。超时后，你将无法调用 `query`，`updateLayout`，和 `stop` 方法。`resourceExpiredHour` 需大于等于 `1`， 且小于等于 `720`，默认值为 `72`。 |
 
 ### `acquire` 请求示例
@@ -136,7 +136,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
 | 参数            | 类型   | 描述                                                         |
 | :-------------- | :----- | :----------------------------------------------------------- |
 | `cname`         | String | 待录制的频道名。                                             |
-| `uid`           | String | 字符串内容为云端录制在频道内使用的用户 ID，需要和你在 [`acquire`](#acquire) 请求中输入的 uid 相同。 |
+| `uid`           | String | 字符串内容为云端录制服务在频道内使用的 UID，用于标识该录制服务，需要和你在 [`acquire`](#acquire) 请求中输入的 UID 相同。 |
 | `clientRequest` | JSON   | 特定的客户请求参数，对于该请求包含以下参数：<li>`token`：（选填） String 类型，用于鉴权的[动态密钥](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#token)。如果你的项目已启用 App 证书，则务必在该参数中传入你项目的动态秘钥。详见[校验用户权限](https://docs.agora.io/cn/cloud-recording/token?platform=All%20Platforms)。</li><li>[`recordingConfig`](#recordingConfig)：JSON 类型，订阅的详细设置。</li><li>[`recordingFileConfig`](#recordingFileConfig)：（选填）JSON 类型，录制文件的详细设置。</li><li>[`snapshotConfig`](#snapshotConfig)：（选填）JSON 类型，截图的详细设置。</li><li>[`storageConfig`](#storageConfig)：JSON 类型，第三方云存储的设置。</li> |
 
 
@@ -437,7 +437,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 > 每个 App ID 每秒钟的请求数限制为 10 次。如需提高此限制，请[提交工单](https://agora-ticket.agora.io/)联系技术支持。
 
 
-## 参数
+### 参数
 
 该 API 需要在 URL 中传入以下参数。
 
@@ -453,7 +453,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 | 参数            | 类型   | 描述                                                         |
 | :-------------- | :----- | :----------------------------------------------------------- |
 | `cname`         | String | 待录制的频道名。                                             |
-| `uid`           | String | 字符串内容为云端录制在频道内使用的用户 ID，需要和你在 [`acquire`](#acquire) 请求中输入的 UID 相同。 |
+| `uid`           | String | 字符串内容为云端录制服务在频道内使用的 UID，用于标识该录制服务，需要和你在 [`acquire`](#acquire) 请求中输入的 UID 相同。 |
 | `clientRequest`  | JSON   | 客户请求参数，包含 `streamSubscribe` 字段。`streamSubscribe` 为 JSON 类型，用于更新订阅名单。 |
 
 `streamSubscribe` 包含以下参数：
@@ -537,7 +537,7 @@ https://api.agora.io/v1/apps/<appid>/cloud_recording/resourceid/<resourceid>/sid
 | 参数            | 类型   | 描述                                                         |
 | :-------------- | :----- | :----------------------------------------------------------- |
 | `cname`         | String | 待录制的频道名。                                             |
-| `uid`           | String | 字符串内容为云端录制在频道内使用的用户 ID，需要和你在 [`acquire`](#acquire) 请求中输入的 uid 相同。 |
+| `uid`           | String | 字符串内容为云端录制服务在频道内使用的 UID，用于标识该录制服务，需要和你在 [`acquire`](#acquire) 请求中输入的 UID 相同。 |
 | `clientRequest` | JSON   | 特定的客户请求参数，对于该请求请参考下面的列表设置。         |
 
 clientRequest 中需要填写的内容如下：
@@ -749,7 +749,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 | 参数            | 类型   | 描述                                                         |
 | :-------------- | :----- | :----------------------------------------------------------- |
 | `cname`         | String | 待录制的频道名。                                             |
-| `uid`           | String | 字符串内容为云端录制在频道内使用的用户 ID，需要和你在 [`acquire`](#acquire) 请求中输入的 uid 相同。 |
+| `uid`           | String | 字符串内容为云端录制服务在频道内使用的 UID，用于标识该录制服务，需要和你在 [`acquire`](#acquire) 请求中输入的 UID 相同。 |
 | `clientRequest` | JSON   | 特定的客户请求参数，对于该方法无需填入任何内容，为一个空的 JSON。 |
 
 ### `stop` 请求示例
@@ -840,7 +840,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 | 200    | 请求成功。                                                   |
 | 201    | 成功请求并创建了新的资源。                                   |
 | 206    | 整个录制过程中没有用户发流，或部分录制文件没有上传到第三方云存储。 |
-| 400    | 请求的语法错误（如参数错误），服务器无法理解。               |
+| 400    | 请求的语法错误（如参数错误），服务器无法理解。如果你填入的 App ID 没有开通云端录制权限，也会返回 400。           |
 | 401    | 未经授权的（App ID/Customer Certificate匹配错误）。          |
 | 404    | 服务器无法根据请求找到资源（网页）。                         |
 | 500    | 服务器内部错误，无法完成请求。                               |
@@ -850,7 +850,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 
 下面仅列出使用云端录制 RESTful API 过程中常见的错误码或错误信息，如果遇到其他错误，请联系 Agora 技术支持。
 
-- `2`：参数不合法，请确保参数类型正确、大小写正确、必填的参数均已填写。
+- `2`：参数不合法，请确保参数类型、大小写和取值范围正确，且必填的参数均已填写。
 - `7`：录制已经在进行中 ，请勿用同一个 resource ID 重复 `start` 请求。
 - `8`：HTTP 请求头部字段错误，有以下几种情况：
   - `Content-type` 错误，请确保 `Content-type` 为 `application/json;charset=utf-8`。

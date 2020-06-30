@@ -3,7 +3,7 @@
 title: 应用企业防火墙限制
 description: 
 platform: All Platforms
-updatedAt: Mon May 25 2020 13:42:53 GMT+0800 (CST)
+updatedAt: Wed Jun 24 2020 09:56:42 GMT+0800 (CST)
 ---
 # 应用企业防火墙限制
 对于有外网访问限制的公司，在使用 Agora 相关服务之前，需要添加防火墙白名单。
@@ -120,7 +120,7 @@ logservice-rtm.agoraio.cn
 
 | 目标端口 | 协议 | 操作 |
 | --------------- | ------------ | ------------ |
-| 443；9591；9593 | TCP | 允许 |
+| 443；9591；9593；9601 | TCP | 允许 |
 
 
 ## Agora 本地服务端录制 SDK

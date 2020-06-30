@@ -3,7 +3,7 @@
 title: 实现音频直播
 description: 
 platform: Web
-updatedAt: Fri Jun 19 2020 14:32:37 GMT+0800 (CST)
+updatedAt: Tue Jun 23 2020 10:20:21 GMT+0800 (CST)
 ---
 # 实现音频直播
 <div class="alert note">提示：<br/>
@@ -178,7 +178,7 @@ updatedAt: Fri Jun 19 2020 14:32:37 GMT+0800 (CST)
 
 下图展示了基础互动直播的 API 调用。注意图中的方法是对不同的对象调用的。
 
-![](https://web-cdn.agora.io/docs-files/1586418473081)
+![](https://web-cdn.agora.io/docs-files/1592907494417)
 
 > 本文只介绍 Agora Web SDK 最基础的方法和回调。完整的 API 方法和回调详见 [Web API 参考](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/index.html)。
 
@@ -209,7 +209,7 @@ var option = {
 
  ```javascript
  // Create a client
- rtc.client = AgoraRTC.createClient({mode: "rtc", codec: "h264"});
+ rtc.client = AgoraRTC.createClient({mode: "live", codec: "h264"});
 
  // Initialize the client
  rtc.client.init(option.appID, function () {
@@ -285,8 +285,6 @@ rtc.client.setClientRole(role);
    // Initialize the local stream
    rtc.localStream.init(function () {
      console.log("init local stream success");
-	 // play stream with html element id "local_stream"
-     rtc.localStream.play("local_stream");
    }, function (err) {
      console.error("init local stream failed ", err);
    });

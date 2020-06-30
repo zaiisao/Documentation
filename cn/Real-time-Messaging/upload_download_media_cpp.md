@@ -2,7 +2,7 @@
 ---
 title: 发送和接收图片或文件消息
 description: 
-platform: Windows CPP
+platform: Windows CPP,Linux CPP
 updatedAt: Mon May 11 2020 04:07:43 GMT+0800 (CST)
 ---
 # 发送和接收图片或文件消息

@@ -3,12 +3,12 @@
 title: 云端录制常见错误
 description: 
 platform: All Platforms
-updatedAt: Wed May 13 2020 10:18:10 GMT+0800 (CST)
+updatedAt: Mon Jun 29 2020 10:12:19 GMT+0800 (CST)
 ---
 # 云端录制常见错误
 本文仅列出使用云端录制 RESTful API 过程中常见的错误码或错误信息，如果遇到其他错误，请联系 Agora 技术支持。
 
-- `2`：参数不合法，请确保参数类型正确、大小写正确、必填的参数均已填写。
+- `2`：参数不合法，请确保参数类型、大小写和取值范围正确，且必填的参数均已填写。
 - `7`：录制已经在进行中 ，请勿用同一个 resource ID 重复 `start` 请求。
 - `8`：HTTP 请求头部字段错误，有以下几种情况：
 	- `Content-type` 错误，请确保 `Content-type` 为 `application/json;charset=utf-8`。

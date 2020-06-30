@@ -3,7 +3,7 @@
 title: 实现视频直播
 description: 
 platform: Web
-updatedAt: Fri Jun 19 2020 14:31:38 GMT+0800 (CST)
+updatedAt: Tue Jun 23 2020 10:13:10 GMT+0800 (CST)
 ---
 # 实现视频直播
 <div class="alert note">提示：<br/>
@@ -188,7 +188,7 @@ updatedAt: Fri Jun 19 2020 14:31:38 GMT+0800 (CST)
 
 下图展示了基础互动直播的 API 调用。注意图中的方法是对不同的对象调用的。
 
-![](https://web-cdn.agora.io/docs-files/1586418407828)
+![](https://web-cdn.agora.io/docs-files/1592907146444)
 
 > 本文只介绍 Agora Web SDK 最基础的方法和回调。完整的 API 方法和回调详见 [Web API 参考](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/index.html)。
 

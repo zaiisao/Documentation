@@ -3,7 +3,7 @@
 title: 在服务端生成 Token
 description: Guide on how to generate tokens on the server side
 platform: CPP
-updatedAt: Thu Jun 11 2020 07:43:13 GMT+0800 (CST)
+updatedAt: Mon Jun 29 2020 09:31:06 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
 本页为 Agora Native SDK v2.1+、Agora Web SDK v2.4+、Agora Recording SDK v2.1+ 以及 Agora RTSA SDK 的用户演示如何使用我们提供的 Demo 快速生成一个正式的 RTC token，并提供 Token 生成相关的 C++ API 参考。
@@ -59,7 +59,7 @@ updatedAt: Thu Jun 11 2020 07:43:13 GMT+0800 (CST)
 ```
 5. 打开你的本地终端，cd 进入到 **RtcTokenBuilderSample.cpp** 所在文件夹。
 6. 运行指令： 
-    `g++ -std=c++0x -O0 -I../../ RtcTokenBuilderSample.cpp -lz -lcrypto -o RtcTokenBuilderSample` 
+    `g++ -std=c++0x -O0 -I../../ -L. RtcTokenBuilderSample.cpp -lz -lcrypto -o RtcTokenBuilderSample` 
     *相同文件夹下会生成一个可执行文件 <b>RtcTokenBuilderSample</b>* 。
 7. 在你的本地终端运行 `./RtcTokenBuilderSample` 生成 Token。
      *新生成的 RTC token 会在你的本地终端显示。*

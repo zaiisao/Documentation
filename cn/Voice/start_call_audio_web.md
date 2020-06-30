@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: Web
-updatedAt: Fri Jun 19 2020 14:32:31 GMT+0800 (CST)
+updatedAt: Tue Jun 23 2020 09:15:18 GMT+0800 (CST)
 ---
 # 实现语音通话
 <div class="alert note">提示：<br/>
@@ -164,7 +164,7 @@ updatedAt: Fri Jun 19 2020 14:32:31 GMT+0800 (CST)
 
 现在，我们已经将 Agora Web SDK 集成到项目中了。接下来我们要通过调用 Agora Web SDK 提供的核心 API 实现基础的音频通话功能。
 
-## 实现音视频通话
+## 实现音频通话
 
 本节介绍如何使用 Agora Web SDK 实现音频通话。
 
@@ -175,7 +175,7 @@ updatedAt: Fri Jun 19 2020 14:32:31 GMT+0800 (CST)
 
 下图展示了基础的一对一音频通话的 API 调用。注意图中的方法是对不同的对象调用的。
 
-![](https://web-cdn.agora.io/docs-files/1586418164752)
+![](https://web-cdn.agora.io/docs-files/1592902110501)
 
 > 本文只介绍 Agora Web SDK 最基础的方法和回调。完整的 API 方法和回调详见 [Web API 参考](https://docs.agora.io/cn/Voice/API%20Reference/web/index.html)。
 
@@ -270,8 +270,6 @@ var option = {
    // Initialize the local stream
    rtc.localStream.init(function () {
      console.log("init local stream success");
-	 // play stream with html element id "local_stream"
-     rtc.localStream.play("local_stream");
    }, function (err) {
      console.error("init local stream failed ", err);
    });

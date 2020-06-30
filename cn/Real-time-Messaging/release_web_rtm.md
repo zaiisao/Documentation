@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Fri Jun 12 2020 10:05:31 GMT+0800 (CST)
+updatedAt: Wed Jun 24 2020 10:04:24 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -11,6 +11,40 @@ updatedAt: Fri Jun 12 2020 10:05:31 GMT+0800 (CST)
 Agora 实时消息 SDK 提供了稳定可靠、低延时、高并发的全球消息云服务，帮助你快速构建实时通信场景,  可实现消息通道、呼叫、聊天、状态同步等功能。点击[实时消息产品概述](../../cn/Real-time-Messaging/product_rtm.md)了解更多详情。
 
 
+## 1.3.0 版
+
+该版本于 6 月 24 日发布。
+
+**升级必看**
+
+- 服务器端会屏蔽向 1.2.2 或更早版本的实时消息 SDK、信令 SDK 发送的图片或文件消息。
+- 异步调用方法的通用超时时间由 5 秒更新为 10 秒。
+
+**新增特性**
+
+#### 1. 发送和接收文件或图片消息
+
+你可以通过 `createMediaMessageByUploading` 方法上传不超过 30 MB 的非空文件或图片。每个上传成功的文件或图片会在 Agora 服务器保存七天，SDK 会返回一个 media ID 作为此文件或图片的唯一标识。你可以使用 `RtmFileMessage` 接口或 `RtmImageMessage` 接口保存 SDK 返回的 media ID。`RtmFileMessage` 接口和 `RtmImageMessage` 接口都是 `RtmMessage` 接口的类型别名，所以你可以通过点对点消息或频道消息发送和接收文件消息或图片消息。你可以使用 `downloadMedia` 方法下载接收到的文件或图片。
+
+#### 2. 管理上传和下载任务
+
+你可以通过 `mediaTransferHandler` 接口取消上传或下载任务，或者报告上传或下载的进度。
+
+**问题修复**
+
+解决了部分地区用户无法登录的问题。
+
+**API 变更**
+
+#### 新增
+
+- [`createMediaMessageByUploading`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/v1.3.0/classes/rtmclient.html#createmediamessagebyuploading) 方法
+- [`downloadMedia`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/v1.3.0/classes/rtmclient.html#downloadmedia) 方法
+- [`createMessage`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/v1.3.0/classes/rtmclient.html#createmessage) 方法
+- [`RtmImageMessage`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/v1.3.0/interfaces/rtmimagemessage.html) 接口
+- [`RtmFileMessage`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/v1.3.0/interfaces/rtmfilemessage.html) 接口
+- [`mediaTransferHandler`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/v1.3.0/interfaces/mediatransferhandler.html) 接口
+- [`mediaOperationProgress`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/v1.3.0/interfaces/mediaoperationprogress.html) 接口
 
 ## 1.2.2 版
 

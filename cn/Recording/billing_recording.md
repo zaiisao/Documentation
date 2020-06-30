@@ -3,7 +3,7 @@
 title: 计费说明
 description: 
 platform: All Platforms
-updatedAt: Fri Jun 05 2020 08:28:48 GMT+0800 (CST)
+updatedAt: Sun Jun 28 2020 03:19:07 GMT+0800 (CST)
 ---
 # 计费说明
 本文展示 Agora 本地服务端录制产品的计费方式。

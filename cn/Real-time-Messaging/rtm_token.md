@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Tue Jun 23 2020 04:15:34 GMT+0800 (CST)
+updatedAt: Sun Jun 28 2020 05:38:36 GMT+0800 (CST)
 ---
 # 校验用户权限
 ## 简介
@@ -57,23 +57,21 @@ Agora RTM SDK 提供两种鉴权机制：App ID 和 Token 。这两种鉴权机�
 > -   当项目的 App 证书被启用后，你必须使用 Token 作为鉴权方式。
 > -   **信令 Token 调试开关**暂不影响 RTM 项目，无需设置。
 
-### 部署 RTM Token Generator 
+### 部署 RTM Token 生成器 
 
 Agora 的 Token 方案基于请求—响应机制，流程如下：
 
-1. 在 Server 端部署一个 Token Generator。
-2. Client 端需要 Token 相关服务时，向 Server 端发送获取 Token 的请求。
-3. Server 端收到请求后 Token Generator 生成一个 Token，然后将生成的 Token 发送给 Client 端。
+1. 在服务端部署一个 Token 生成器。
+2. 客户端需要 Token 相关服务时，向服务端发送获取 Token 的请求。
+3. 服务端收到请求后 Token 生成器生成一个 Token，然后将生成的 Token 发送给客户端。
 
-因此，在使用 Token 之前，你需要先在你的 Server 端部署一个 Token Generator 用来生成 Token。Agora 提供以下平台 Token Generator 的示例代码。
+因此，在使用 Token 之前，你需要先在你的服务端部署一个 Token 生成器用来生成 Token。Agora 提供以下平台 Token 生成器的示例代码。
 
 -   [RTM Token Builder for C++](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/cpp/sample/RtmTokenBuilderSample.cpp)
 -   [RTM Token Builder for Java](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/java/src/main/java/io/agora/sample/RtmTokenBuilderSample.java)
 -   [RTM Token Builder for Python](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/python/sample/RtmTokenBuilderSample.py)
 -   [RTM Token Builder for PHP](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/php/sample/RtmTokenBuilderSample.php )
 -   [RTM Token Builder for Node.js](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/nodejs/sample/RtmTokenBuilderSample.js)
-
-
 
 
 ### 发送获取 RTM Token 的请求
@@ -89,9 +87,9 @@ Agora 的 Token 方案基于请求—响应机制，流程如下：
 
 设置 RTM Client 角色时，需要传入下列参数：
 
-- `privilege` ：RTM Client 暂时只支持一种角色，将该值设为 1000。
-- `expireTimeStamp`：该功能目前仍在开发中，将该值设为 0。
+- `privilege` ：用户角色。RTM Client 暂时只支持一种角色，请将该值设为 1000。
+- `expireTimeStamp`：Token 有效时间戳。该功能目前仍在开发中，请将该值设为 0。
 
-Server 端收到请求后 Token Generator 会生成一个 RTM Token，然后将生成的 RTM Token 发送给 Client 端。
+Server 端收到请求后 Token 生成器会生成一个 RTM Token，然后将生成的 RTM Token 发送给 Client 端。
 
-<div class="alert note"><li>每个 Token 都内置了时长为 24 小时的签发有效期。你可以在 Token 生成后 24 小时内反复登录 Agora RTM 系统。超过 24 小时则需要重新生成 Token。</li><li>Token 的 24 小时签发有效期独立于权限有效期。即使 Token 的权限永不过期，签发有效期始终存在，不可更改。</li></div>
+<div class="alert note">每个 Token 都内置了时长为 24 小时的有效期。你可以在 Token 生成后 24 小时内反复登录 Agora RTM 系统。超过 24 小时则需要重新生成 Token 并使用 <a href="https://docs-preview.agoralab.co/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a2c33be67bfec02d69041f1e8978f4559"><code>renewToken</code></a> 方法更新 Token。</div>

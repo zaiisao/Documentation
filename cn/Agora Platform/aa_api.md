@@ -3,7 +3,7 @@
 title: 水晶球 RESTful API (Beta)
 description: AA rest api reference 
 platform: All Platforms
-updatedAt: Thu Apr 02 2020 06:02:14 GMT+0800 (CST)
+updatedAt: Sun Jun 28 2020 08:33:42 GMT+0800 (CST)
 ---
 # 水晶球 RESTful API (Beta)
 水晶球现在提供 RESTful API，可以让你直接通过网络请求获取水晶球里的数据，在自己的网页或应用中灵活使用。
@@ -620,7 +620,7 @@ Cache-Control: no-cache
 
 | `mid` | 描述                                     |
 | ----- | ---------------------------------------- |
-| 20001 | SDK 的 CPU 使用率                        |
+| 20001 | App 的 CPU 使用率                        |
 | 20002 | 系统 CPU 使用率                          |
 | 20003 | 音频发送码率，单位 Kbps                  |
 | 20004 | 音频接收码率，单位 Kbps                  |
