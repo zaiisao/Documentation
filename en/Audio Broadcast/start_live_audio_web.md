@@ -3,7 +3,7 @@
 title: Start an Audio Broadcast
 description: 
 platform: Web
-updatedAt: Fri Jun 19 2020 14:43:00 GMT+0800 (CST)
+updatedAt: Tue Jun 23 2020 10:17:30 GMT+0800 (CST)
 ---
 # Start an Audio Broadcast
 <div class="alert note">Agora will soon release the Agora Web SDK NG, the next generation of the Agora Web SDK. The internal architecture of the Agora Web SDK NG is fully optimized, and the usability of its APIs greatly improved. Click <a href="https://agoraio-community.github.io/AgoraWebSDK-NG/en/">here</a> to learn more about the Agora Web SDK NG.</div>
@@ -176,7 +176,7 @@ You need to work with two types of objects when using the Agora Web SDK:
 
 The following figure shows the API call sequence of a basic broadcast. Note that these methods apply to different objects. 
 
-![](https://web-cdn.agora.io/docs-files/1586418816839)
+![](https://web-cdn.agora.io/docs-files/1592907363809)
 
 > We only focus on the basic API methods and callbacks in this guide. For a full list of the methods and callbacks, see [Web API Reference](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/web/index.html).
 
@@ -284,8 +284,6 @@ If the client role is set as `"host"`, we need to create and publish the local s
    // Initialize the local stream
    rtc.localStream.init(function () {
      console.log("init local stream success");
-	 // play stream with html element id "local_stream"
-     rtc.localStream.play("local_stream");
    }, function (err) {
      console.error("init local stream failed ", err);
    });

@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: iOS
-updatedAt: Wed Jun 17 2020 08:05:07 GMT+0800 (CST)
+updatedAt: Sun Jun 28 2020 08:38:40 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides release notes for the Agora MediaPlayer Kit plugin.
@@ -18,11 +18,11 @@ To enrich the live broadcast playability and improve the real-time interactive e
 - Live sports: The broadcaster shares the live sports with the audience during his/her live broadcast.
 - Pseudo live broadcast: Share or publish the video recorded by the broadcaster in advance to the audience.
 
-## v1.1.3
+## v1.1.3.1
 
-v1.1.3 was released on Jun 17, 2020.
+v1.1.3.1 was released on Jun 28, 2020.
 
-This release fixed the occasional video stretching issue.
+This release fixed issues of bundle identifier collision and occasional blurs during video playback.
 
 ## v1.1.2
 

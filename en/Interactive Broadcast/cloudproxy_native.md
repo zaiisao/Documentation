@@ -3,7 +3,7 @@
 title: Use Cloud Proxy
 description: 
 platform: Android,iOS,macOS,Windows
-updatedAt: Wed May 06 2020 09:53:17 GMT+0800 (CST)
+updatedAt: Tue Jun 30 2020 02:05:03 GMT+0800 (CST)
 ---
 # Use Cloud Proxy
 ## Introduction
@@ -21,9 +21,7 @@ Compared with setting a single proxy server, the cloud proxy is more flexible an
 3. Contact support@agora.io and provide your App ID, and the information on the regions using the cloud proxy, the concurrent scale, and network operators.
 4. Add the following test IP addresses and ports to your whitelist.
 
-	The sources are the clients that integrate the Agora RTC SDK and Agora On-Premise Recording SDK.
-
- | Protocol | Destination IP address  | Port                   | Port function      |
+	 | Protocol | Destination IP address  | Port                   | Port function      |
  | ---- | ------------- | ---------------------- | ---------------------- |
  | TCP  | 120.92.118.34 | 4000                   | Message data transmission |
  | TCP  | 120.92.18.162 | 4000                   | Message data transmission |

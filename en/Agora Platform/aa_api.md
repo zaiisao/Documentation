@@ -3,7 +3,7 @@
 title: Agora Analytics RESTful API (Beta)
 description: AA rest api reference
 platform: All Platforms
-updatedAt: Wed May 06 2020 09:50:45 GMT+0800 (CST)
+updatedAt: Sun Jun 28 2020 08:33:13 GMT+0800 (CST)
 ---
 # Agora Analytics RESTful API (Beta)
 Agora Analytics provides RESTful APIs for you to retrieve the statistics of your calls and use them in your own application.
@@ -564,7 +564,7 @@ Authorization: Basic ZGJhZDMyNmFkMzQ0NDk2NGEzYzAwNjZiZmYwNTZmNjo2ZjIyMmZhMTkzNWE
 
 | `mid` | Name                                                         |
 | ----- | ------------------------------------------------------------ |
-| 20001 | SDK CPU usage.                                               |
+| 20001 | App CPU usage.                                               |
 | 20002 | System CPU usage.                                            |
 | 20003 | The upstream bitrate of the sent audio (Kbps).               |
 | 20004 | The downstream bitrate of the received audio (Kbps).         |

@@ -3,7 +3,7 @@
 title: Generate a Token from Your Server
 description: Guide on how to generate tokens on the server side
 platform: CPP
-updatedAt: Thu Jun 11 2020 08:05:01 GMT+0800 (CST)
+updatedAt: Mon Jun 29 2020 09:32:48 GMT+0800 (CST)
 ---
 # Generate a Token from Your Server
 This page provides Agora RTC SDK v2.1+, Agora Web SDK v2.4+, Agora Recording SDK v2.1+, and Agora RTSA SDK users with  a quick guide on generating a sample token using the **RtcTokenBuilderSample** demos we provide, as well as token-generating API references in C++. 
@@ -58,7 +58,7 @@ We take **RtcTokenBuilderSample.cpp** as an example:
 > Skip this step if you just want to take a quick look at how a token is generated.
 5. Open your terminal and navigate to the local folder holding **RtcTokenBuilderSample.cpp**.
 6. Run the following command:
-    `g++ -std=c++0x -O0 -I../../ RtcTokenBuilderSample.cpp -lz -lcrypto -o RtcTokenBuilderSample`
+    `g++ -std=c++0x -O0 -I../../ -L. RtcTokenBuilderSample.cpp -lz -lcrypto -o RtcTokenBuilderSample`
  *An executable file <b>RtcTokenBuilderSample</b> appears in the folder.*
 7. In your terminal, run `./RtcTokenBuilderSample` to generate a Token. 
  *Your token is printed in your terminal window.*

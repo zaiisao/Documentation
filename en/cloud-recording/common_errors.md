@@ -3,15 +3,16 @@
 title: Common Errors
 description: 
 platform: All Platforms
-updatedAt: Tue May 19 2020 03:52:46 GMT+0800 (CST)
+updatedAt: Mon Jun 29 2020 10:13:46 GMT+0800 (CST)
 ---
 # Common Errors
 This article lists the common errors you may encounter when using the Cloud Recording RESTful APIs. If you encounter other errors, contact support@agora.io.
 
 - `2`: Invalid parameter. Possible reasons:
-  - The parameter type is wrong.
-  - The parameter is spelt wrong. All the parameters are case sensitive.
-  - The mandatory parameters are missing.
+  - A parameter's data type is wrong.
+  - A parameter is spelt wrong. All the parameters are case sensitive.
+  - A parameter value is out of range.
+  - A mandatory parameter is missing.
 - `7`: The recording is already running. Do not repeat the [`start`](#start) request with the same resource ID.
 - `8`: Errors in the HTTP request header fields. Possible reasons:
   - Content-type is wrong. Ensure that the `Content-type` field is `application/json;charset=utf-8`.

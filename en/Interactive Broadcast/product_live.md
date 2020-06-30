@@ -3,7 +3,7 @@
 title: Agora Video Broadcasting Overview
 description: 
 platform: All Platforms
-updatedAt: Thu May 28 2020 08:56:54 GMT+0800 (CST)
+updatedAt: Tue Jun 30 2020 02:14:47 GMT+0800 (CST)
 ---
 # Agora Video Broadcasting Overview
 The Agora Native SDK for Video Broadcasting enables one-to-many and many-to-many audio or video live streaming. 
@@ -48,7 +48,7 @@ See the following sample code for application scenarios:
 
 | Property                                          | Agora Live Broadcast Specifications                          |
 | ------------------------------------------------- | ------------------------------------------------------------ |
-| SDK Package Size                                  | 3.69 MB to 7.75 MB                                              |
+| SDK Package Size                                  | 4.61 MB to 10.41 MB                                              |
 | Host Capacity                                     | 17 users                                                  |
 | Audience Capacity                                 | One million users                                       |
 | Video Profile                                     | <li>SDK video source: Up to 1080p @ 60fps.<li>Custom video source: Up to 4K |

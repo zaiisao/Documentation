@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: Windows
-updatedAt: Thu Jun 11 2020 09:45:28 GMT+0800 (CST)
+updatedAt: Mon Jun 29 2020 02:56:42 GMT+0800 (CST)
 ---
 # Share the Screen
 ## Introduction
@@ -159,7 +159,7 @@ Windows assigns a unique window identifier (windowId) for each window with a dat
 
 ## Enable both screen sharing and video
 
-We provide an open-source [Agora-Screen-Sharing-Windows](https://github.com/AgoraIO/Advanced-Video/tree/dev/win-screenshare/Screensharing/Agora-Screen-Sharing-Windows) demo project on GitHub that implements screen sharing and publishing the local video stream. You can download it and refer to the source code.
+We provide an open-source [Agora-Screen-Sharing-Windows](https://github.com/AgoraIO/Advanced-Video/tree/master/Windows/Agora-Screen-Sharing-Windows) demo project on GitHub that implements screen sharing and publishing the local video stream. You can download it and refer to the source code.
 
 ## Considerations
 - v2.4.0 deprecates the `startScreenCapture` method. You can still use it, but we no longer recommend it.

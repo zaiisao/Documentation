@@ -3,7 +3,7 @@
 title: Video Stream Fallback
 description: 
 platform: iOS,macOS
-updatedAt: Mon Mar 02 2020 08:39:58 GMT+0800 (CST)
+updatedAt: Tue Jun 30 2020 08:04:54 GMT+0800 (CST)
 ---
 # Video Stream Fallback
 ## Introduction
@@ -36,7 +36,7 @@ Refer to the following steps to set the stream fallback under poor network condi
 // Enable the dual-stream mode (Configuration for the local).
 agoraKit.enableDualStreamMode(true)
 
-// Configurations for the publisher. When the network condition is poor, send video stream only. 
+// Configurations for the publisher. When the network condition is poor, send audio stream only. 
 agoraKit.setLocalPublishFallbackOption(.audioOnly)
 
 // Configurations for the subscriber. Try to receive low stream under poor network conditions. When the current network conditions are not sufficient for video streams, receive audio stream only. 
@@ -48,7 +48,7 @@ agoraKit.setRemoteSubscribeFallbackOption(.audioOnly)
 // Enable the dual-stream mode (Configuration for the local).
 agoraKit.enableDualStreamMode(true);
 
-// Configuration for the publisher. When the network condition is poor, send audio only. 
+// Configuration for the publisher. When the network condition is poor, send audio stream only. 
 [agoraKit setLocalPublishFallbackOption: AgoraStreamFallbackOptionAudioOnly];
 
 // Configuration for the subscriber. Try to receive low stream under poor network conditions. When the current network conditions are not sufficient for video streams, receive audio stream only. 

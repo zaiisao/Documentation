@@ -3,7 +3,7 @@
 title: Agora Platform Overview
 description: 
 platform: All Platforms
-updatedAt: Tue May 12 2020 02:07:45 GMT+0800 (CST)
+updatedAt: Sun Jun 28 2020 02:18:21 GMT+0800 (CST)
 ---
 # Agora Platform Overview
 Agora.io provides building blocks for you to add real-time voice and video communications through a simple and powerful SDK. You can integrate the Agora SDK to enable real-time communications in your own application quickly.
@@ -46,7 +46,7 @@ Agora is the only RTC service provider in the world using self-developed audio a
 ### Audio
 
 - High-fidelity, 3D surround sound experience
-- 48 kHz full-band acquisition: Highly restored acoustic sound
+- A maximum audio sampling rate of 48 kHz for full band frequency: Highly restored acoustic sound
 - 3A algorithm based on machine learning: Echo cancellation, automatic gain, and noise suppression
 - Audio enhancement: Stereo sound, 3D surround sound, sound localization, audio mixing, reverberation effects, in-ear monitoring, and voice changes
 

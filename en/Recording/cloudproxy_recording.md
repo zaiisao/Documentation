@@ -3,7 +3,7 @@
 title: Use Cloud Proxy
 description: How to enable cloud proxy for recording
 platform: All Platforms
-updatedAt: Wed May 06 2020 09:53:11 GMT+0800 (CST)
+updatedAt: Mon Jun 22 2020 08:36:47 GMT+0800 (CST)
 ---
 # Use Cloud Proxy
 ## Introduction
@@ -27,10 +27,9 @@ Follow these steps to use the cloud proxy service.
   - Your Internet service provider.
 
 2. Add the following test IP addresses and ports to your whitelist.
+    The sources are the clients that integrate the Agora On-Premise Recording SDK.
 
-  The sources are the clients that integrate the Agora RTC SDK and Agora On-Premise Recording SDK.
-
- | Protocol | Destination IP address  | Port                   | Port function      |
+   | Protocol | Destination IP address  | Port                   | Port function      |
  | ---- | ------------- | ---------------------- | ---------------------- |
  | TCP  | 120.92.118.34 | 4000                   | Message data transmission |
  | TCP  | 120.92.18.162 | 4000                   | Message data transmission |

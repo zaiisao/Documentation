@@ -3,7 +3,7 @@
 title: Set up Authentication
 description: 
 platform: All Platforms
-updatedAt: Fri Jun 19 2020 04:57:29 GMT+0800 (CST)
+updatedAt: Sun Jun 28 2020 05:46:49 GMT+0800 (CST)
 ---
 # Set up Authentication
 ## Introduction
@@ -99,7 +99,7 @@ To set the RTM privilege, you need the following parameters:
 
 When the app server processes the request, it sends a new RTM token to the client.
 
-> You must use the RTM within 24 hours after it is generated. Otherwise, you need to regenerate the RTM token. 
+> You must use the RTM within 24 hours after it is generated. Otherwise, you need to regenerate the RTM token and call [`renewToken`](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a2c33be67bfec02d69041f1e8978f4559) to update your RTM token. 
 
 
 

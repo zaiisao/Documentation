@@ -29,7 +29,7 @@ See the table below for the web browser support of the Agora Web SDK:
   </tr>
    <tr>
     <td>Android 4.1 or later</td>
-    <td><font color="green">✔</td>
+		 <td><font color="green">✔<sup>[1]</sup></td>
     <td><font color="red">✘</td>
 		<td><b>N/A</b></td>
     <td><font color="red">✘</td>
@@ -41,7 +41,7 @@ See the table below for the web browser support of the Agora Web SDK:
     <td>iOS 11 or later</td>
     <td><font color="red">✘</td>
     <td><font color="red">✘</td>
-    <td><font color="green">✔</td>
+		<td><font color="green">✔<sup>[2]</sup></td>
     <td><font color="red">✘</td>
     <td><font color="red">✘</td>
     <td><font color="red">✘</td>
@@ -69,15 +69,17 @@ See the table below for the web browser support of the Agora Web SDK:
   </tr>
 </table>
 
-<div class="alert info">Other browser support:
-	<li>The Agora Web SDK v2.5 or later supports Chrome 49 on Windows XP (supports the VP8 codec only, and cannot interop with the Native SDK).</li>
-	<li>The Agora Web SDK v2.7 or later supports Edge on Windows 10, see <a href="https://docs.agora.io/en/faq/browser_support#edge">Edge support</a> for details.</li>
-	<li>The Agora Web SDK theoretically supports 360 Extreme Browser, but we do not guarantee full support.</li>
-</div>
-<div class="alert note"> Upgrade to Agora Web SDK v2.6 or later in the following scenarios:
+<div class="alert warning">[1] Support for H.264 relies on hardware, and some Android devices do not support the H.264 codec.<br>[2] Agora does not recommend using Safari on iOS. See <a href="../../en/faq/browser_support.md">iOS Safari</a> for known issues and limitations.</div>
+<div class="alert warning"> Upgrade to Agora Web SDK v2.6 or later in the following scenarios:
 	<li>Safari on iOS 12.1.4 or later.</li>
 	<li>Safari 12.1 or later on macOS.</li>
 </div>
+
+Other browser support:
+
+- The Agora Web SDK v2.5 or later supports Chrome 49 on Windows XP (supports the VP8 codec only, and cannot interop with the Native SDK).
+- The Agora Web SDK v2.7 or later supports Edge on Windows 10, see <a href="https://docs.agora.io/en/faq/browser_support#edge">Edge support</a> for details.
+- The Agora Web SDK theoretically supports 360 Extreme Browser, but we do not guarantee full support.
 
 > To enable interoperability between the Agora Native SDK and Agora Web SDK, use the Agora Native SDK v1.12 or later.
 

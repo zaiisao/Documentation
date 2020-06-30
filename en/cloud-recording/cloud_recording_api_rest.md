@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Tue Jun 16 2020 06:21:24 GMT+0800 (CST)
+updatedAt: Mon Jun 29 2020 10:13:19 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API
 This article contains detailed help for the Cloud Recording RESTful APIs.
@@ -874,7 +874,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 | 200  | The request is successful.                                   |
 | 201  | The request has been fulfilled, resulting in the creation of a new resource. |
 | 206  | No user in the channel sent a stream during the recording process, or some of the recorded files are uploaded to the Agora Cloud Backup instead of the third-party cloud storage. |
-| 400  | The server cannot process the request due to malformed request syntax. |
+| 400  | The server cannot process the request due to malformed request syntax, or the cloud recording service is not enabled. |
 | 401  | Unauthorized (incorrect App ID/Customer Certificate).        |
 | 404  | The requested resource could not be found.                   |
 | 500  | Internal server error.                                       |
@@ -885,9 +885,11 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 This section lists the common errors you may encounter when using the Agora Cloud Recording RESTful APIs. If you encounter other errors, contact support@agora.io.
 
 - `2`: Invalid parameter. Possible reasons:
-  - The parameter type is wrong.
-  - The parameter is spelt wrong. All the parameters are case sensitive.
-  - The mandatory parameters are missing.
+	- A parameter's data type is wrong.
+	- A parameter is spelt wrong. All the parameters are case sensitive.
+	- A parameter value is out of range.
+	- A mandatory parameter is missing.
+  
 - `7`: The recording is already running. Do not repeat the [`start`](#start) request with the same resource ID.
 - `8`: Errors in the HTTP request header fields. Possible reasons:
   - Content-type is wrong. Ensure that the `Content-type` field is `application/json;charset=utf-8`.

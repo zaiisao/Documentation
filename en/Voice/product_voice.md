@@ -3,7 +3,7 @@
 title: Agora Voice Overview
 description: 
 platform: All Platforms
-updatedAt: Thu May 28 2020 08:56:56 GMT+0800 (CST)
+updatedAt: Tue Jun 30 2020 02:08:31 GMT+0800 (CST)
 ---
 # Agora Voice Overview
 The Agora Native SDK for Voice Call enables easy and convenient one-to-one or one-to-many **voice-only** calls. With a small SDK package size, the Agora Native SDK for Voice Call is applicable to a variety of recreational and business activities.
@@ -31,7 +31,7 @@ The Agora Native SDK for Voice Call boasts a flexible combination of functions f
 
 | Property                                          | Agora Voice Call Specifications                          |
 | ------------ | ------------------------------------------------------------ |
-| SDK Package Size                                  | 3.69 MB to 7.75 MB                                              |
+| SDK Package Size                                  | 3.14 MB to 5.88 MB                                              |
 | Audio Profile                                     | <li>Sample rate: 16 kHz to 48 kHz<li>Support for mono and stereo sound |
 | Audio Anti-packet-loss Rate                       | 70% (uplink and downlink)                               |
 

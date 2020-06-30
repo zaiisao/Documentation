@@ -3,7 +3,7 @@
 title: Set up Authentication
 description: token authentication
 platform: All Platforms
-updatedAt: Tue Jun 23 2020 04:12:11 GMT+0800 (CST)
+updatedAt: Tue Jun 30 2020 06:59:46 GMT+0800 (CST)
 ---
 # Set up Authentication
 To ensure communication security, when users join an RTC channel or you start recording on the server, Agora needs to check their authentication information. Agora provides three authentication mechanisms. According to your scenarios, you can choose one of the following mechanisms:
@@ -174,7 +174,7 @@ To avoid the impact on your project, you can upgrade your project to use either 
 2. After successfully enabling a primary app certificate, use the primary app certificate to [generate a token](https://docs.agora.io/en/Audio%20Broadcast/token_server_cpp).
 
 3. Use either an App ID or a token for authentication. For example, when existing users are using App ID for authentication, new users can use a token for authentication, and thus both new and old users can join the same channel. You can gradually phase out the use of App ID for authentication.
-
+ ![](https://web-cdn.agora.io/docs-files/1593500372631)
 4. After all users switch to using a token for authentication, Agora recommends deleting **No certificate**.
 
 	<div class="alert warning">Once you delete <b>No certificate</b>, you can no longer use the App ID for authentication, and the project cannot enable <b>No certificate</b> again.</div>

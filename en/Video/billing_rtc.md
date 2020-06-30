@@ -3,7 +3,7 @@
 title: Billing for Real-time Communication
 description: 
 platform: All Platforms
-updatedAt: Tue Jun 09 2020 02:38:26 GMT+0800 (CST)
+updatedAt: Mon Jun 29 2020 10:23:40 GMT+0800 (CST)
 ---
 # Billing for Real-time Communication
 This article introduces the billing policy for the real-time communication (RTC) service provided by Agora.
@@ -56,8 +56,8 @@ The pricing for audio and video are as follows:
 
 Agora adds up the resolution of all the video streams a user subscribes to at the same time to determine the user's **aggregate resolution**, which categorizes video as either HD or HD+:
 
-- HD: The aggregate resolution is smaller than or equal to 921,600 (1280 × 720).
-- HD+: The aggregate resolution is greater than 921,600 (1280 × 720).
+- HD: The aggregate resolution is smaller than or equal to 921600 (1280 × 720).
+- HD+: The aggregate resolution is greater than 921600 (1280 × 720).
 
 Suppose users A, B, C, and D are in the same channel, and A subscribes to the video of B, C, and D.
 
@@ -69,9 +69,9 @@ Suppose the resolution of the videos A subscribes to are as follows:
 - Video from C: 640 × 360
 - Video from D: 640 × 360
 
-The aggregate resolution: (640 × 360) + (640 × 360) + (640 × 360) = 691,200.
+The aggregate resolution: (640 × 360) + (640 × 360) + (640 × 360) = 691200.
 
-Since 691,200 is smaller than 921,600, the aggregate resolution of A falls into the category of HD, and is charged $3.99/1 ,000 minutes.
+Since 691,200 is smaller than 921,600, the aggregate resolution of A falls into the category of HD, and is charged $3.99/1,000 minutes.
 
 **Example 2**
 
@@ -94,8 +94,8 @@ The aggregate resolution of A is calculated as follows:
 
 As shown in the table:
 
-- In the initial 10 minutes, the aggregate resolution that A subscribes to is 691,200 (< 921,600), and should be charged as HD, at the rate of $3.99/1,000 minutes.
-- In the subsequent 10 minutes, the aggregate resolution that A subscribes to is 1,195,200 (> 921,600), and should be charged as HD+, at the rate of $14.99/1,000 minutes.
+- In the initial 10 minutes, the aggregate resolution that A subscribes to is 691200 (< 921600), and should be charged as HD, at the rate of $3.99/1,000 minutes.
+- In the subsequent 10 minutes, the aggregate resolution that A subscribes to is 1195200 (> 921600), and should be charged as HD+, at the rate of $14.99/1,000 minutes.
 
 ## Service minutes
 
@@ -177,13 +177,24 @@ In dual-stream mode, the aggregate video resolution is calculated as follows:
 
 ### Resolution calibration
 
-When calculating the aggregate resolution, Agora counts the resolution of 225,280 (640 × 352) as 640 × 360.
+When calculating the aggregate resolution, Agora counts the resolution of 225280 (640 × 352) as 640 × 360.
 
 ## FAQ
 
-- [How can I bill individual?](https://docs.agora.io/en/faq/business_billing)
+<details><summary><font color="#3ab7f8">Why do I see audio minutes in my bill even though all users subscribe only to video streams?</font></summary>
+Chances are:
+	<ul>
+	<li>The user being subscribed to has not subscribed to any video stream.</li>
+	<li>After subscribing to a video stream, a user has not received any video stream due to poor network conditions.</li>
+</ul>
+If either of these conditions occurs, the corresponding user's aggregate resolution is 0 and the user's service time counts as audio minutes.
+</details>
+<details><summary><font color="#3ab7f8">Why am I charged for HD+ video, even though all users subscribe only to video streams with the resolution of 360 × 640?</font></summary>
+	Video streams are categorized as HD or HD+ by <b>aggregate resolution</b>, which is the sum of all the resolutions of the video streams a user subscribes to. That said, the more video streams a user subscirbes to, the more likely that user's aggregate resolution falls into HD+ (1280 × 720).
+</details>
 
 ## Reference
 
 - [Agora's free-of-charge policy for the first 10,000 minutes](https://docs.agora.io/en/faq/billing_free)
 - [Billing, free deduction, and account suspension](https://docs.agora.io/en/faq/billing_account)
+- [How can I bill individual?](https://docs.agora.io/en/faq/business_billing)

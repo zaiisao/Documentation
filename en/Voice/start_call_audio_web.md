@@ -3,7 +3,7 @@
 title: Start a Voice Call
 description: 
 platform: Web
-updatedAt: Fri Jun 19 2020 14:42:55 GMT+0800 (CST)
+updatedAt: Tue Jun 23 2020 10:01:42 GMT+0800 (CST)
 ---
 # Start a Voice Call
 <div class="alert note">Agora will soon release the Agora Web SDK NG, the next generation of the Agora Web SDK. The internal architecture of the Agora Web SDK NG is fully optimized, and the usability of its APIs greatly improved. Click <a href="https://agoraio-community.github.io/AgoraWebSDK-NG/en/">here</a> to learn more about the Agora Web SDK NG.</div>
@@ -179,7 +179,7 @@ You need to work with two types of objects when using the Agora Web SDK:
 
 The following figure shows the API call sequence of a basic one-to-one video call. Note that these methods apply to different objects. 
 
-![](https://web-cdn.agora.io/docs-files/1586418570051)
+![](https://web-cdn.agora.io/docs-files/1592906455910)
 
 > We only focus on the basic API methods and callbacks in this guide. For a full list of the methods and callbacks, see [Web API Reference](https://docs.agora.io/en/Voice/API%20Reference/web/index.html).
 
@@ -272,8 +272,6 @@ For more details on the parameter settings, see [`Client.join`](https://docs.ago
    // Initialize the local stream
    rtc.localStream.init(function () {
      console.log("init local stream success");
-	 // play stream with html element id "local_stream"
-     rtc.localStream.play("local_stream");
    }, function (err) {
      console.error("init local stream failed ", err);
    });
