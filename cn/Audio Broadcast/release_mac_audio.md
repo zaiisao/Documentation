@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: macOS
-updatedAt: Wed May 27 2020 11:40:45 GMT+0800 (CST)
+updatedAt: Thu Jul 02 2020 06:28:54 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -416,5 +416,6 @@ macOS 语音 SDK 支持两种主要场景:
 - 变声与混响
 - 推流到 CDN
 - 音频设备测试与切换
+- [云代理服务](../../cn/Audio%20Broadcast/cloudproxy_native.md)
 
 如果你是由之前版本的 macOS 完整包升级到当前的纯音频包，可参考 [macOS 完整包发版说明](../../cn/Audio%20Broadcast/release_mac_video.md)了解音频的相关改进。

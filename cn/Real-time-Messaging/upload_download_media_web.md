@@ -3,7 +3,7 @@
 title: 发送和接收图片或文件消息
 description: 
 platform: Web
-updatedAt: Wed Jun 24 2020 11:30:31 GMT+0800 (CST)
+updatedAt: Wed Jul 01 2020 09:29:54 GMT+0800 (CST)
 ---
 # 发送和接收图片或文件消息
 ## 功能描述
@@ -36,7 +36,7 @@ updatedAt: Wed Jun 24 2020 11:30:31 GMT+0800 (CST)
    将网络图片转换为 Blob 对象：
 
    ```JavaScript
-   //将图片 URL 转换为 Blob 对象
+   //将图片 URL 转换为 Blob 对象，此示例代码暂不支持在 Internet Explorer 上运行
 
     function canvasToDataURL (canvas, format, quality) {
     return canvas.toDataURL(format||'image/jpeg', quality||1.0)

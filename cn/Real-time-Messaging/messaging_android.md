@@ -18,11 +18,7 @@ updatedAt: Thu Mar 05 2020 03:28:42 GMT+0800 (CST)
 ## Demo 体验
 
 
-你可以到 GitHub 下载最新版的 [Agora-RTM-Tutorial-Android](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-Android) 查看完整的源码和代码逻辑：
-
-- [LoginActivity.java](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-Android/app/src/main/java/io/agora/activity/LoginActivity.java)
-- [MessageActivity.java](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-Android/app/src/main/java/io/agora/activity/MessageActivity.java)
-- [SelectionActivity.java](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-Android/app/src/main/java/io/agora/activity/SelectionActivity.java)
+Agora 在 GitHub 上提供一个开源的实时消息示例项目 [Agora-RTM-Tutorial-Android](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-Android) 供你参考。
 
 ## 开发环境要求
 

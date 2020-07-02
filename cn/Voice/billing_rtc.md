@@ -3,7 +3,7 @@
 title: 实时音视频计费
 description: 
 platform: All Platforms
-updatedAt: Mon Jun 22 2020 07:39:25 GMT+0800 (CST)
+updatedAt: Wed Jul 01 2020 07:59:51 GMT+0800 (CST)
 ---
 # 实时音视频计费
 本文展示 Agora 实时音视频服务的计费方式。

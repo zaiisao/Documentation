@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Wed May 27 2020 11:10:27 GMT+0800 (CST)
+updatedAt: Thu Jul 02 2020 07:09:40 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -360,6 +360,7 @@ IAgoraRtcEngine.h 头文件中的拼写错误。
 - [播放音效/音乐混音](../../cn/Voice/audio_effect_mixing_windows.md)
 - [变声与混响](../../cn/Voice/voice_changer_windows.md)
 - [音频设备测试与切换](../../cn/Voice/test_switch_device_windows.md)
+- [使用云代理服务](../../cn/Voice/cloudproxy_native.md)
 
 如果你是由之前版本的 Windows 完整包升级到当前的纯音频包，可参考 [Windows 完整包发版说明](../../cn/Voice/release_windows_video.md)了解音频相关改进。
 
