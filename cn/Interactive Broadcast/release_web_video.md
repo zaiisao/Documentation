@@ -70,9 +70,9 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 </table>
 
 <div class="alert warning">[1] Android Chrome 对 H.264 的支持依赖硬件，部分 Android 设备不支持 H.264 编解码。<br>
-	[2] iOS Safari 上存在较多<a href="../../cn/faq/browser_support.md">已知问题</a>，Agora 不推荐使用。</div>
+	[2] iOS Safari 上存在较多<a href="../../cn/faq/browser_support.md">已知问题</a>，Agora 不推荐使用。你可以使用 <a href="https://docs.agora.io/cn/Interactive%20Broadcast/downloads">Agora iOS SDK</a> 在 iOS 上实现实时音视频功能。</div>
 
-<div class="alert warning">以下场景中请务必将 Agora Web SDK 升级至 2.6 或更高版本:
+<div class="alert warning">以下场景中请务必将 Agora Web SDK 升级至最新版本:
 	<li>iOS 12.1.4 及以上版本使用 Safari 浏览器。</li>
 	<li>macOS 上使用 Safari 12.1 及以上版本。</li>
 	</div>

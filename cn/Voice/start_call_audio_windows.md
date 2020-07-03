@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: Windows
-updatedAt: Tue Apr 28 2020 13:29:15 GMT+0800 (CST)
+updatedAt: Fri Jul 03 2020 01:55:51 GMT+0800 (CST)
 ---
 # 实现语音通话
 本文介绍如何使用 Agora SDK 快速实现语音通话。
@@ -43,7 +43,7 @@ Agora 在 GitHub 上提供开源的实时音视频通话示例项目 [Agora-Wind
 
 * 根据应用场景，从 [SDK 下载](https://docs.agora.io/cn/Agora%20Platform/downloads)获取最新 SDK，解压并打开。
 
-* 将下载包中的 **sdk** 文件夹复制到你的项目文件夹下。
+* 根据你的开发环境将下载包中的 **x86** 或 **x86_64** 文件夹复制到你的项目文件夹下。
 
 **2. 配置项目属性**
 

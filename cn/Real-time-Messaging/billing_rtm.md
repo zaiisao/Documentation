@@ -3,7 +3,7 @@
 title: 计费说明
 description: 
 platform: All Platforms
-updatedAt: Mon May 25 2020 08:19:08 GMT+0800 (CST)
+updatedAt: Thu Jul 02 2020 09:56:07 GMT+0800 (CST)
 ---
 # 计费说明
 本文展示 Agora 实时消息的计费方式。
@@ -13,8 +13,6 @@ updatedAt: Mon May 25 2020 08:19:08 GMT+0800 (CST)
 ## 概述
 
 当你使用 Agora RTM SDK 在你的项目中实现了实时消息功能，Agora 会收取实时消息费用，并按月发布账单、进行扣款。详见[账单、扣费与账户冻结](../../cn/faq/billing_account.md)。
-
-<p><div class="alert note">为进一步推广 RTM 用量，Agora 决定自 2020 年 4 月 1 日至 2020 年 6 月 30 日对每月的最高日活跃用户数减免 20,000，根据减免后的当月最高日活跃用户数计费。如果减免后每月的最高日活跃用户数量小于或等于 0，则当月费用为零。如果减免后每月的最高日活跃用户数量大于 0，则按照本文的计费规则计算费用。</div></p>
 
 ## 费用组成
 

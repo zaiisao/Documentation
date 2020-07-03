@@ -3,12 +3,22 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: iOS
-updatedAt: Wed Oct 23 2019 12:47:26 GMT+0800 (CST)
+updatedAt: Fri Jul 03 2020 02:13:42 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
 本页介绍在正式使用 [Agora RTM iOS SDK](https://docs.agora.io/cn/Real-time-Messaging/downloads) 进行实时消息通讯前，需要准备的开发环境要求及 SDK 集成方法等内容。
 
+
+## 快速跑通 Demo
+
+如果你是第一次使用声网的服务，我们推荐观看下面的视频，了解关于声网服务的基本信息以及如何快速跑通 demo。
+
+<div class="alert info">点击参与<a href="https://www.wenjuan.com/s/7FbeEz6/" target="_blank">视频教程问卷调查</a>，帮助我们改进体验。</div>
+
+<video src="https://web-cdn.agora.io/docs-files/1593742355289" poster="https://web-cdn.agora.io/docs-files/1584610484891"   controls width = 100% height = auto>你的浏览器不支持 <code>video</code> 标签。</video>
+
+<div class="alert note">视频中展示的 UI 可能有部分调整更新，请以当前最新版为准。</div>
 ## Demo 体验
 
 你可以在 GitHub 下载最新版的示例项目查看相关功能的具体实现。

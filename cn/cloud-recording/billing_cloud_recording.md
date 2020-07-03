@@ -3,7 +3,7 @@
 title: 计费说明
 description: initial publication. Do not publish. 
 platform: All Platforms
-updatedAt: Fri Jun 05 2020 08:27:31 GMT+0800 (CST)
+updatedAt: Fri Jul 03 2020 02:56:07 GMT+0800 (CST)
 ---
 # 计费说明
 本文展示 Agora 云端录制产品的计费方式。
