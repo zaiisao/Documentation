@@ -66,14 +66,16 @@ Agora 在 GitHub 上提供开源的实时视频通话示例项目 [Agora-iOS-Tut
 1. 开始前确保你已安装 **Cocoapods**。参考 [Getting Started with CocoaPods](https://guides.cocoapods.org/using/getting-started.html#getting-started) 安装说明。
 2. 在 **Terminal** 里进入项目根目录，并运行 `pod init` 命令。项目文件夹下会生成一个 `Podfile` 文本文件。
 3. 打开 `Podfile` 文件，修改文件为如下内容。注意将 `Your App` 替换为你的 Target 名称。
+
+
 ```
 # platform :ios, '9.0' use_frameworks!
 target 'Your App' do
     pod 'AgoraRtcEngine_iOS'
 end
 ```
-
  <div class="alert note">若需使用媒体流加密功能，将  <tt>pod 'AgoraRtcEngine_iOS'</tt> 替换为 <tt>pod 'AgoraRtcEngine_iOS_Crypto'</tt>。添加加密库后 app 体积会增大。</div>
+
 
 4. 在 **Terminal** 内运行 `pod update` 命令更新本地库版本。
 5. 运行 `pod install` 命令安装 Agora SDK。成功安装后，**Terminal** 中会显示 `Pod installation complete!`，此时项目文件夹下会生成一个 `xcworkspace` 文件。
