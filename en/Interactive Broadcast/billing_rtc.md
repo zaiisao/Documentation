@@ -3,7 +3,7 @@
 title: Billing for Real-time Communication
 description: 
 platform: All Platforms
-updatedAt: Mon Jun 29 2020 10:23:40 GMT+0800 (CST)
+updatedAt: Fri Jul 03 2020 04:27:44 GMT+0800 (CST)
 ---
 # Billing for Real-time Communication
 This article introduces the billing policy for the real-time communication (RTC) service provided by Agora.
@@ -190,7 +190,10 @@ Chances are:
 If either of these conditions occurs, the corresponding user's aggregate resolution is 0 and the user's service time counts as audio minutes.
 </details>
 <details><summary><font color="#3ab7f8">Why am I charged for HD+ video, even though all users subscribe only to video streams with the resolution of 360 × 640?</font></summary>
-	Video streams are categorized as HD or HD+ by <b>aggregate resolution</b>, which is the sum of all the resolutions of the video streams a user subscribes to. That said, the more video streams a user subscirbes to, the more likely that user's aggregate resolution falls into HD+ (1280 × 720).
+Video streams are categorized as HD or HD+ by <b>aggregate resolution</b>, which is the sum of all the resolutions of the video streams a user subscribes to. That said, the more video streams a user subscirbes to, the more likely that user's aggregate resolution falls into HD+ (1280 × 720).
+</details>
+<details><summary><font color="#3ab7f8">Are the audio minutes on my bill for a specific user?</font></summary>
+No. The audio minutes that you see on your bill are the sum of the audio minutes used by all users under your Agora account.
 </details>
 
 ## Reference
