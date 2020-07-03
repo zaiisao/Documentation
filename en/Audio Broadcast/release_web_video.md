@@ -69,7 +69,7 @@ See the table below for the web browser support of the Agora Web SDK:
   </tr>
 </table>
 
-<div class="alert warning">[1] Support for H.264 relies on hardware, and some Android devices do not support the H.264 codec.<br>[2] Agora does not recommend using Safari on iOS. See <a href="../../en/faq/browser_support.md">iOS Safari</a> for known issues and limitations. You can use the <a href="https://docs.agora.io/en/Interactive%20Broadcast/downloads">iOS SDK</a> for real-time communciation on iOS.</div>
+<div class="alert warning">[1] Support for H.264 relies on hardware, and some Android devices do not support the H.264 codec.<br>[2] Agora does not recommend using Safari on iOS. See <a href="../../en/faq/browser_support.md">iOS Safari</a> for known issues and limitations. You can use the <a href="https://docs.agora.io/en/Interactive%20Broadcast/downloads">Agora iOS SDK</a> for real-time functions on iOS.</div>
 <div class="alert warning"> Upgrade to the latest Agora Web SDK in the following scenarios:
 	<li>Safari on iOS 12.1.4 or later.</li>
 	<li>Safari 12.1 or later on macOS.</li>
