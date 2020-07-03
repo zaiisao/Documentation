@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Wed May 27 2020 11:18:39 GMT+0800 (CST)
+updatedAt: Thu Jul 02 2020 06:31:26 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Voice SDK for Android.
@@ -587,8 +587,6 @@ v2.4.1 unifies the behavior of the C++ interfaces across different platforms so 
 - The `ERR_TOKEN_EXPIRED(109)` error code. Use CONNECTION_CHANGED_TOKEN_EXPIRED(9) in the [onConnectionStateChanged](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a31b2974a574ec45e62bb768e17d1f49e) callback instead.
 - The `ERR_INVALID_TOKEN(110)` error code. Use CONNECTION_CHANGED_INVALID_TOKEN(8) in the [onConnectionStateChanged](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a31b2974a574ec45e62bb768e17d1f49e) callback instead.
 
-
-
 ## v2.4.0 and Earlier
 
 **v2.4.0**
@@ -616,6 +614,10 @@ v2.4.0 adds the [`onAudioMixingStateChanged`](https://docs.agora.io/en/Voice/API
 ##### 5. Setting the log file size
 
 The SDK has two log files, each with a default size of 512 KB. In case some customers require more than the default size, v2.4.0 adds the [`setLogFileSize`](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a50fd37c6f5b8fc144b18ed4620aee6fc) method for setting the log file size (KB).
+
+##### 6. Cloud proxy
+
+Supports the cloud proxy service. See [Use Cloud Proxy](../../en/Voice/cloudproxy_native.md) for details.
 
 #### Improvements
 

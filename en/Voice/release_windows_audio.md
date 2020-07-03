@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Wed May 27 2020 11:09:20 GMT+0800 (CST)
+updatedAt: Thu Jul 02 2020 07:05:57 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -357,5 +357,6 @@ This is the first release of the Agora Voice SDK for Windows. Refer to the follo
 - [Play audio effects/audio mixing](../../en/Voice/audio_effect_mixing_windows.md)
 - [Set the voice changer and reverberation effects](../../en/Voice/voice_changer_windows.md)
 - [Test or select a media device](../../en/Voice/test_switch_device_windows.md)
+- [Use Cloud Proxy](../../en/Voice/cloudproxy_native.md)
 
 If you migrate to this SDK from the Windows Video SDK, refer to the [Release notes for the Windows video SDK](../../en/Voice/release_windows_video.md) for audio improvements.

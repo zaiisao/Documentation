@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Thu Jun 18 2020 09:36:18 GMT+0800 (CST)
+updatedAt: Thu Jul 02 2020 06:32:02 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for Android.
@@ -805,6 +805,10 @@ v2.4.0 adds the [`onAudioMixingStateChanged`](https://docs.agora.io/en/Video/API
 ##### 7. Setting the log file size
 
 The SDK has two log files, each with a default size of 512 KB. In case some customers require more than the default size, v2.4.0 adds the [`setLogFileSize`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a50fd37c6f5b8fc144b18ed4620aee6fc) method for setting the log file size (KB).
+
+##### 8. Cloud proxy
+
+Supports the cloud proxy service. See [Use Cloud Proxy](../../en/Video/cloudproxy_native.md) for details.
 
 #### Improvements
 

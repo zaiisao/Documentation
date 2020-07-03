@@ -3,7 +3,7 @@
 title: Video for Multiple Users
 description: How to minimize bandwidth consumption and ensure smooth communication in a video scenario with multiple users.
 platform: All Platforms
-updatedAt: Thu May 21 2020 10:41:34 GMT+0800 (CST)
+updatedAt: Wed Jul 01 2020 06:42:38 GMT+0800 (CST)
 ---
 # Video for Multiple Users
 ## Introduction
@@ -31,7 +31,7 @@ For the Agora RTC Native SDK v2.3.2 or earlier, you also need to call <code>setP
 
 #### 1. Enable dual-stream mode
 
-After joining a channel, call `enableDualStreamMode` to enable dual-stream mode on the publishers' clients. In dual-stream mode, the SDK transmits a high-quality video stream and a low-quality video stream from the publisher. The high-quality video stream has a higher resolution and bitrate than the low-quality video stream.
+Before or after joining a channel, call `enableDualStreamMode` to enable dual-stream mode on the publishers' clients. In dual-stream mode, the SDK transmits a high-quality video stream and a low-quality video stream from the publisher. The high-quality video stream has a higher resolution and bitrate than the low-quality video stream.
 
 The SDK sets the default video profile of the low-quality video stream based on that of the high-quality video stream.
 

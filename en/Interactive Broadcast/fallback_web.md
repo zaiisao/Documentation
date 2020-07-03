@@ -3,68 +3,53 @@
 title: Video Stream Fallback
 description: 
 platform: Web
-updatedAt: Mon Mar 02 2020 09:24:33 GMT+0800 (CST)
+updatedAt: Thu Jul 02 2020 07:38:37 GMT+0800 (CST)
 ---
 # Video Stream Fallback
 ## Introduction
 
-The audio and video quality of a live broadcast or a video call deteriorates under poor network conditions. To improve the efficiency of a live broadcast or video call, the `setStreamFallbackOption` method is used for the SDK to automatically switch the high-video stream to low-video stream and disable the video stream under these conditions.
+Unstable network affects the audio and video quality in a video call or a live broadcast. To ensure smooth communication under poor network conditions, Agora supports video stream fallback. When the network condition deteriorates, the SDK automatically switches from the high-quality video stream to the low-quality video stream, or disables the video to ensure the audio quality under extremely poor network conditions.
 
 
 ## Implementation
 
-Before proceeding, ensure that you implement a basic live broadcast or call in your project. See [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_web.md) or [Start a Call](../../en/Interactive%20Broadcast/start_call_web.md)for details.
+Before proceeding, ensure that you have implemented a basic live broadcast or call in your project. See [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_web.md) or [Start a Call](../../en/Interactive%20Broadcast/start_call_web.md) for details.
 
-Refer to the following steps to set the stream fallback under poor network conditions:
+Follow these steps to enable video stream fallback:
 
-1. After calling the `Stream.init` method successfully, the publisher calls the `enableDualStreamMode` method to enable [dual stream mode](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-dualadual-stream-mode).
-	> We do not recommend using the track methods ([addTrack](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#addtrack)/[removeTrack](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#removetrack)/[replaceTrack](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#replacetrack)) on dual streams, which might cause different performance in the high-video and low-video streams.
-
-2. The subscriber in the channel calls the `Client.setStreamFallbackOption` method to set the subscribed stream fallback under poor network conditions.
-	- Set `fallbackType (1)` to only subscribe to the low-video stream from the publisher under poor network conditions.
-	- Set `fallbackType (2)` to subscribe to the low-video stream or even audio stream from the publisher under poor network conditions.
-
-3. (Optional) The subscriber in the channel call the `Client.setRemoteVideoStreamType` method and set `streamType (1)` to only subscribe to the low-video stream under any conditions.
+1. Call `enableDualStreamMode` to enable [dual-stream mode](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#dual-steram) for the senders.
 	
-Once the remote media stream switches to the low stream due to poor network conditions, you can monitor the stream switch between a high and low stream in the `Client.on("stream-type-changed")` callback. When the remotely subscribed video stream falls back to `audio only` or when the audio-only stream switches back to the video stream, the SDK triggers the `Client.on("stream-fallback")` callback. 
+2. Call `Client.setStreamFallbackOption` to set the stream fallback option for the receivers.
+	- Set `fallbackType` as `1` : Automatically subscribe to the low-quality video stream under poor network conditions.
+	- Set `fallbackType` as `2` : Subscribe to the low-quality video stream when the network conditions worsen, and subscribe to audio only when the conditions become too poor to support video transmission.
 
 
+You can monitor the switch between the audio-and-video stream and the audio-only stream by the `Client.on("stream-fallback")` callback; monitor the switch between the low-quality video stream and high-quality video stream by the `Client.on("stream-type-changed")` callback.
 
 ### Sample code
 
 ```javascript
-//Javascript
-// Enable the dual-stream mode (local configuration).
-client.enableDualStream(function() {
-console.log("Enable dual stream success!")
-}, function(err) {
-console,log(err)
-})
+// Enable dual-stream mode for the sender.
+client.enableDualStream(function () {
+  console.log("Enable dual stream success!");
+}, function (err) {
+  console.log(err);
+});
 
-// Configuration for the publisher. When the network condition is poor, send audio only. 
-client.setStreamFallbackOption(remoteStream, 2)
-
-// Configuration for the subscriber. Try to receive low stream under poor network conditions. When the current network conditions are not sufficient for video streams, receive audio only. 
-client.setRemoteVideoStreamType(remoteStream, 1);
+// Configuration for the receiver. When the network condition is poor, receive audio only. 
+client.setStreamFallbackOption(remoteStream, 2);
 ```
 
 ### API reference
 
 - [`enableDualStream`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#enabledualstream)
 - [`setStreamFallbackOption`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#setstreamfallbackoption)
-- [`setRemoteVideoStreamType`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.client.html#setremotevideostreamtype)
 
 ## Considerations
 
-- The `enableDualStream` method does not apply to the following scenarios:
-  - The stream is created by defining the [`audioSource`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.streamspec.html#audiosource) and [`videoSource`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.streamspec.html#videosource) properties.
-  - Audio-only mode (audio: true, video: false)
-  - Safari browser on iOS
-  - Screen-sharing
+- We do not recommend using the track methods ([addTrack](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#addtrack)/[removeTrack](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#removetrack)/[replaceTrack](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.stream.html#replacetrack)) on dual streams, which may cause different performance in the high-quality and low-quality video streams.
 
-- Some web browsers may not be fully compatible with dual streams when calling the `setRemoteVideoStreamType` method:
-  - Safari on macOS: A high-video stream and a low-video stream share the same frame rate and resolution.
-  - Firefox: A low-video stream has a fixed frame rate of 30 fps.
-  - Safari on iOS: Safari 11 does not support switching between the two video streams.
-
-
+- The following scenarios do not support dual-stream mode:
+  - Audio-only streams.
+  - The Safari browser.
+  - Screen-sharing.

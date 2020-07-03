@@ -3,7 +3,7 @@
 title: Generate a Token from Your Server
 description: 
 platform: PHP
-updatedAt: Thu Jun 11 2020 08:06:34 GMT+0800 (CST)
+updatedAt: Thu Jul 02 2020 10:57:24 GMT+0800 (CST)
 ---
 # Generate a Token from Your Server
 This page provides Agora RTC SDK v2.1+, Agora Web SDK v2.4+, Agora Recording SDK v2.1+, and Agora RTSA SDK users with  a quick guide on generating a sample token using the **RtcTokenBuilderSample** demos we provide, as well as token-generating API references in PHP. 
@@ -32,6 +32,8 @@ However, we recommend using **RtcTokenBuilder** instead of **AccessToken**.  **A
 The **./\<language\>/sample** folder of each language holds token generator demos we create for demonstration purposes. **RtcTokenBuilderSample** is  a demo for generating a token for the Agora RTC SDK, Agora Web SDK, Agora Recording SDK or Agora RTSA SDK. You can customize it based on your real business needs. 
 
 ## Generate a token using **RtcTokenBuilderSample**
+
+<div class="alert note">To quickly test generating a token on the server, you can follow the steps in <a href="https://www.agora.io/en/blog/2-click-setup-testing-token-server/">Click Setup: Testing Token Server</a>.</div>
 
 We take **RtcTokenBuilderSample.php** as an example:
 

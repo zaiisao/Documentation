@@ -3,7 +3,7 @@
 title: Generate a Token from Your Server
 description: 
 platform: Ruby
-updatedAt: Sun Jun 28 2020 02:30:33 GMT+0800 (CST)
+updatedAt: Thu Jul 02 2020 10:58:36 GMT+0800 (CST)
 ---
 # Generate a Token from Your Server
 This page provides Agora RTC SDK v2.1+, Agora Web SDK v2.4+, Agora Recording SDK v2.1+, and Agora RTSA SDK users with  a quick guide on generating a sample token using the **RtcTokenBuilderSample** demos we provide, as well as token-generating API references in Ruby. 
@@ -34,6 +34,8 @@ The **./\<language\>/sample** folder of each language holds token generator demo
 
 ## Generate a token using **rtc_token_builder_sample**
 
+<div class="alert note">To quickly test generating a token on the server, you can follow the steps in <a href="https://www.agora.io/en/blog/2-click-setup-testing-token-server/">Click Setup: Testing Token Server</a>.</div>
+
 We take **rtc_token_builder_sample.rb** as an example:
 
 1. Ensure that you have installed **Ruby** and that its version is later than v1.9.
@@ -41,7 +43,7 @@ We take **rtc_token_builder_sample.rb** as an example:
 2. Synchronize the GitHub repository to your local drive.
 3. Navigate to the **/ruby/sample/** folder and open **rtc_token_builder_sample.rb**. 
 > Our demo provides sample-App ID, appCertificate, channelName, uid, and userAccount for demonstration purposes.
-4. Replace the sample-App ID, appCertificate, and channelName with your own. For information about getting an App ID and an App certificate, see [Token Security](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#app-id).
+4. Replace the sample-App ID, appCertificate, uid, and channelName with your own. For information about getting an App ID and an App certificate, see [Token Security](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#app-id).
     - If you use an int uid to join a channel, comment out the following code block:
 ```Ruby
    result = AgoraDynamicKey::RtcTokenBuilder.build_token_with_account params_with_account

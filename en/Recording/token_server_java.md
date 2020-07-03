@@ -3,7 +3,7 @@
 title: Generate a Token from Your Server
 description: 
 platform: Java
-updatedAt: Thu Jun 11 2020 08:05:35 GMT+0800 (CST)
+updatedAt: Thu Jul 02 2020 10:53:50 GMT+0800 (CST)
 ---
 # Generate a Token from Your Server
 This page provides Agora RTC SDK v2.1+, Agora Web SDK v2.4+, Agora Recording SDK v2.1+, and Agora RTSA SDK users with  a quick guide on generating an RTC token using the **RtcTokenBuilderSample** demos we provide, as well as token-generating API reference in Java. 
@@ -35,13 +35,15 @@ The **./\<language\>/sample** folder of each language holds token generator demo
 
 ## Generate a token using **RtcTokenBuilderSample**
 
+<div class="alert note">To quickly test generating a token on the server, you can follow the steps in <a href="https://www.agora.io/en/blog/2-click-setup-testing-token-server/">Click Setup: Testing Token Server</a>.</div>
+
 We take **RtcTokenBuilderSample.java** as an example:
 
 1. Synchronize the GitHub repository to your local drive.
 2. Import **/DynamicKey/AgoraDynamicKey/java** to your Eclipse IDE as a project.
 3. In your IDE, navigate to the **/java/src/io/agora/sample/** folder and open **RtcTokenBuilderSample.java**. 
 > Our demo provides sample-App ID, appCertificate, channelName, uid, and userAccount for demonstration purposes.
-4. Replace the sample-App ID, appCertificate, and channelName with your own. For information about getting an App ID and an App certificate, see [Token Security](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#app-id).
+4. Replace the sample-App ID, appCertificate, uid, and channelName with your own. For information about getting an App ID and an App certificate, see [Token Security](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#app-id).
     - If you use an int uid to join a channel, comment out the following code block:
 ```Java
         String result = token.buildTokenWithUserAccount(appId, appCertificate,  

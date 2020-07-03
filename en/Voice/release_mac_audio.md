@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Wed May 27 2020 11:43:26 GMT+0800 (CST)
+updatedAt: Thu Jul 02 2020 06:29:38 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -437,5 +437,6 @@ This is the first release of the Agora Voice SDK for macOS. Refer to the followi
 - Set the voice changer and reverberation effects
 - Push Streams to the CDN
 - Test or select a media device
+-  [Use Cloud Proxy](../../en/Voice/cloudproxy_native.md)
 
 If you migrate to this SDK from the macOS Video SDK, refer to the [Release notes for the macOS video SDK](../../en/Voice/release_mac_video.md) for audio improvements.

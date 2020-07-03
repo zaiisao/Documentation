@@ -3,48 +3,36 @@
 title: Set up Authentication
 description: 
 platform: All Platforms
-updatedAt: Sun Jun 28 2020 05:46:49 GMT+0800 (CST)
+updatedAt: Thu Jul 02 2020 06:03:57 GMT+0800 (CST)
 ---
 # Set up Authentication
 ## Introduction
 
-The Agora RTM SDK provides different security keys for authentication: 
+The Agora RTM SDK provides two authentication methods:
 
 - App ID
 - RTM token
 
-The following figure shows the environment where the security keys are used:
+The following figure shows scenarios for using security keys:
 
 ![](https://web-cdn.agora.io/docs-files/1555490456944)
 
-Where:
-
--   An App ID is easily obtained and is used in environments with low-security requirements, such as in a testing environment.
-
--   An RTM token adds security and is used in environments with high-security requirements, such as in a production environment.
-
--   An App Certificate is enabled for the sole purpose of generating an RTM token and cannot be used alone. Once an App Certificate is enabled, you can only use the RTM token for authentication.
-
 <a name = "Get-an-App-ID"></a>
 
-## Get and Use an App ID
+## Use an App ID for authentication
 
-Each Agora account can create multiple projects, and each project has a unique App ID. Anyone with your App ID can use it on any Agora SDK. Hence, please keep your App IDs safe.
+After signing up for a developer account in [Agora Console](https://console.agora.io/?_ga=2.18229183.782459552.1593311578-73063204.1585890674), you can create multiple projects. Each project has an App ID, which is the unique identity of the project. If others steal your App ID, they can use it in their own projects. Therefore, using an App ID for authentication is less secure. Agora recommends using an App ID for authentication only in a test environment, or if your project has low security requirements.
 
 1.  Sign up for a new account at [https://sso.agora.io/en/login](https://sso.agora.io/en/login).
-2.  Click the **Create** button on the **Overview** page in Console.
-3.  Fill in the **Project Name** and click **Submit**.
+2.  Click **Create** on the **Overview** page in Console.
+3.  Enter the project name in **Project Name** and click **Submit**.
 4.  Find the App ID under the created project.
 
-You may need an App ID in the following situations: 
+You must set the `appId` parameter as the App ID when initializing the client.
 
--   Setting the `appId` parameter as the App ID when initializing the client.
--   You are required to use an RTM token when calling the `login` method to log in the Agora RTM system, but under low-security requirements, you can pass your App ID as `token`.
+## Use an RTM token for authentication
 
-
-## Get and Use an RTM Token
-
-You need an RTM token to log in the Agora RTM system. Take the following steps to get and use an RTM token. 
+Complete the following steps to get and use an RTM token. 
 
 ### Step 1: Get an App ID
 
@@ -53,53 +41,47 @@ See [Get an App ID](#Get-an-App-ID).
 ### Step 2: Get an App Certificate
 
 1.  Log in [Agora Console](https://dashboard.agora.io).
-2.  Click **Project** in the left navigation menu to go to the **Projects** page in Console.
+2.  Click **Overview** in the left navigation menu to go to the Projects page in Console.
 3.  Enable the App Certificate for the project.
-	-   Click **Edit** under the created project.
-	-   Click **Enable** to the right of the App Certificate. Read **About App Certificate** before confirming the operation.
+	-  Click ![](https://web-cdn.agora.io/docs-files/1593666964813) to the right of the created project.
+	-  Click **Enable** to the right of the App Certificate. Read **About App Certificate** before confirming the operation.
 	-  Click ![](https://web-cdn.agora.io/docs-files/1551778086037) to view the App Certificate. You can re-click this icon to hide the App Certificate.
 
-> -   An App Certificate is enabled for the sole purpose of generating a token and cannot be used alone.
-> 
-> -   Keep the App Certificate on the server, never on any client.
-> 
-> -   The App Certificate takes about an hour to take effect after it is enabled.
-> 
-> -   Once the App Certificate is enabled for a project, an RTM token must be used. 
-> 
-> -   You do not need to toggle the **Signaling Token Debugging Switch**, because it does not affect your RTM project.
-> 
+<div class="alert note"><ul><li>The App Certificate takes about an hour to take effect after it is enabled. Once the App Certificate is enabled for a project, you can use only a token for authentication.</li><li>You do not have to set <b>Signaling token debugging switch</b> because it does not affect RTM projects.</li></ul></div>
 
-### Step 3: Deploy an RTM Token Generator 
+### Step 3: Create an RTM token generator 
 
-Agora's token scheme is based on a request-response model. Whenever a client needs token-specific services, it sends a request to the app server before the server processes the request and sends a new or updated token back to the client. Therefore, you first must deploy an RTM token generator on your app server. See the following sample code for generating an RTM token:
+Agora provides an open source [Agora Dynamic Key](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey) repository on GitHub. The `./<language>/src` folder of each language holds source codes for generating different types of dynamic keys and tokens. You can use `RtmTokenBuilder` to generate an RTM Token. The `./<language>/sample` folder of each language holds token generator examples that Agora creates for demonstration purposes. `RtmTokenBuilderSample` is a demo for generating an RTM token.
 
--   [RTM Token Builder for C++](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/cpp/sample/RtmTokenBuilderSample.cpp)
--   [RTM Token Builder for Java](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/java/src/main/java/io/agora/sample/RtmTokenBuilderSample.java)
--   [RTM Token Builder for Python](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/python/sample/RtmTokenBuilderSample.py)
--   [RTM Token Builder for PHP](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/php/sample/RtmTokenBuilderSample.php )
--   [RTM Token Builder for Node.js](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/nodejs/sample/RtmTokenBuilderSample.js)
+<div class="alert note">The token encoding uses the standard HMAC/SHA1 approach, and the libraries are available on common server-side development platforms, such as Node.js, Java, PHP, Python, and C++. For more information, see <a href="http://en.wikipedia.org/wiki/Hash-based_message_authentication_code">Authentication code</a>.</div>
 
+`RtmTokenBuilder` parameter description (C++)
 
-### Step 4: Send an RTM Token Request
+```c++
+static std::string buildToken(const std::string& appId,
+                                const std::string& appCertificate,
+                                const std::string& userAccount,
+                                RtmUserRole userRole,
+                                uint32_t privilegeExpiredTs = 0);
+```
 
-Whenever you need an RTM token, send an RTM token request from your client to your app server.
+| Parameter             | Description                                                       |
+| :----------------- | :----------------------------------------------------------- |
+| appId              | The App ID of your project.|
+| appCertificate     | The App Certificate of your project.                                          |
+| userAccount        | The user ID of the RTM system.                                   |
+| userRole           | The user role. Agora supports only one user role. Set the value as the default value  `Rtm_User`. |
+| privilegeExpiredTs | This parameter is currently invalid. You can ignore this parameter. |
 
-To build an RTM token, you need the following parameters:
+<div class="alert note">An RTM token is valid for 24 hours.</div>
 
-- `appID`: the unique App ID of your project. See <a href="#getting-an-app-id">Getting an App ID</a>.
-- `userId`: the ID of the user logging in the Agora RTM system.
+### Step 4: Deploy an RTM token generator to production
 
-> Your App Certificate is kept on your app server, not on your client. 
-
-To set the RTM privilege, you need the following parameters:
-
-- `privilege`: all Agora RTM clients have only one role. Set the value as 1000.
-- `expireTimeStamp`: set the value as 0. This feature is still under development. 
-
-When the app server processes the request, it sends a new RTM token to the client.
-
-> You must use the RTM within 24 hours after it is generated. Otherwise, you need to regenerate the RTM token and call [`renewToken`](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a2c33be67bfec02d69041f1e8978f4559) to update your RTM token. 
+Complete the following steps to deploy an RTM token generator to production:
+1. Implement an RTM generator on the server.
+2. The client sends a request to get an RTM token from the server whenever a token is required.
+3. The server receives the request, generates an RTM token, and sends the token to the client.
+4. The client calls <a href="https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a2c33be67bfec02d69041f1e8978f4559">`renewToken`</a> to update the RTM token.
 
 
 

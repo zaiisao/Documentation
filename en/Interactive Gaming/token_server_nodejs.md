@@ -3,7 +3,7 @@
 title: Generate a Token from Your Server
 description: 
 platform: Node.js
-updatedAt: Thu Jun 11 2020 08:07:04 GMT+0800 (CST)
+updatedAt: Thu Jul 02 2020 10:57:43 GMT+0800 (CST)
 ---
 # Generate a Token from Your Server
 This page provides Agora RTC SDK v2.1+, Agora Web SDK v2.4+, Agora Recording SDK v2.1+, and Agora RTSA SDK users with  a quick guide on generating a sample token using the **RtcTokenBuilderSample** demos we provide, as well as token-generating API references in Node.js. 
@@ -33,6 +33,8 @@ The **./\<language\>/sample** folder of each language holds token generator demo
 
 ## Generate a token using **RtcTokenBuilderSample**
 
+<div class="alert note">To quickly test generating a token on the server, you can follow the steps in <a href="https://www.agora.io/en/blog/2-click-setup-testing-token-server/">Click Setup: Testing Token Server</a>.</div>
+
 We take **RtcTokenBuilderSample.js** as an example:
 
 1. Log onto [Node.js Official Site](https://nodejs.org/en/) and download the LTS version of Node.js. 
@@ -41,7 +43,7 @@ We take **RtcTokenBuilderSample.js** as an example:
 2. Synchronize the GitHub repository to your local drive.
 3. Navigate to the **/nodejs/sample/** folder and open **RtcTokenBuilderSample.js**. 
 > Our demo provides sample-App ID, appCertificate, channelName, uid, and userAccount for demonstration purposes.
-4. Replace the sample-App ID, appCertificate, and channelName with your own. For information about getting an App ID and an App certificate, see [Token Security](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#app-id).
+4. Replace the sample-App ID, appCertificate, uid, and channelName with your own. For information about getting an App ID and an App certificate, see [Token Security](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#app-id).
     - If you use an int uid to join a channel, comment out the following code block:
 ```JavaScript
    const tokenB = RtcTokenBuilder.buildTokenWithAccount(appID, appCertificate, channelName, account, role, privilegeExpiredTs);
