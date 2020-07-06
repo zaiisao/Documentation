@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume on macOS
 platform: macOS
-updatedAt: Tue Apr 28 2020 13:43:56 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 09:20:52 GMT+0800 (CST)
 ---
 # Adjust the Volume
 ## Introduction
@@ -15,7 +15,7 @@ This article provides the APIs and additional information relating to audio reco
 ![](https://web-cdn.agora.io/docs-files/1578896931369)
 
 ## Implementation
-Before adjusting the audio volume, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Interactive%20Broadcast/start_call_mac.md) or [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_mac.md).
+Before adjusting the audio volume, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Interactive%20Broadcast/start_call_mac.md) or [Start Live Interactive Streaming](../../en/Interactive%20Broadcast/start_live_mac.md).
 
 ### Adjust the recording volume
 

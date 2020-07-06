@@ -7,7 +7,7 @@ updatedAt: Mon Jul 06 2020 02:44:57 GMT+0800 (CST)
 ---
 # Play Audio Effects/Audio Mixing File
 ## Introduction
-In a call or live broadcast, you may need to play custom audio or music files to all the users in the channel. For example, adding sound effects in a game, or playing background music. We provide two groups of methods for playing audio effect files and audio mixing.
+In a call or interactive live streaming, you may need to play custom audio or music files to all the users in the channel. For example, adding sound effects in a game, or playing background music. We provide two groups of methods for playing audio effect files and audio mixing.
 
 Before proceeding, ensure that you implement a basic call or live broadcast in your project. See the Quickstart Guides for details:
 

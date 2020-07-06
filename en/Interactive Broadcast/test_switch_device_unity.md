@@ -3,7 +3,7 @@
 title: Test a Media Device
 description: 
 platform: Unity
-updatedAt: Mon Jul 06 2020 08:12:47 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 08:17:26 GMT+0800 (CST)
 ---
 # Test a Media Device
 ## Introduction
@@ -12,10 +12,10 @@ To ensure smooth communications, we recommend conducting a media device test bef
 
 ## Implementation
 
-Ensure that you understand how to start a call or start an interactive broadcast. See details in the following quickstarts:
+Ensure that you understand how to start a call or start live interactive streaming. See details in the following quickstarts:
 
-- [Start a Voice Call](../../en/Interactive%20Broadcast/start_call_audio_unity.md) or [Start a Audio Broadcasting](../../en/Interactive%20Broadcast/start_live_audio_unity.md)
-- [Start a Video Call](../../en/Interactive%20Broadcast/start_call_unity.md) or [Start a Video Broadcasting](../../en/Interactive%20Broadcast/start_live_unity.md)
+- [Start a Voice Call](../../en/Interactive%20Broadcast/start_call_audio_unity.md) or [Start Live Interactive Audio Streaming](../../en/Interactive%20Broadcast/start_live_audio_unity.md)
+- [Start a Video Call](../../en/Interactive%20Broadcast/start_call_unity.md) or [Start Live Interactive Video Streaming](../../en/Interactive%20Broadcast/start_live_unity.md)
 
 Choose either of the following ways to test the audio or video devices:
 

@@ -3,7 +3,7 @@
 title: Set the Audio Profile
 description: How to set the high-quality audio for iOS and macOS
 platform: iOS,macOS
-updatedAt: Tue Apr 28 2020 13:55:48 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 09:23:37 GMT+0800 (CST)
 ---
 # Set the Audio Profile
 ## Introduction 
@@ -16,8 +16,8 @@ To obtain high-fidelity audio during real-time communications, you can choose th
 
 Before setting the audio profile, ensure that you have implemented the basic real-time communication functions in your project. See the Quickstart Guides for details:
 
-- iOS: [Start a Call](../../en/Voice/start_call_ios.md)/[Start a Live Broadcast](../../en/Voice/start_live_ios.md)
-- macOS: [Start a call](../../en/Voice/start_call_mac.md)/[Start a Live Broadcast](../../en/Voice/start_live_mac.md)
+- iOS: [Start a Call](../../en/Voice/start_call_ios.md)/[Start Live Interactive Streaming](../../en/Voice/start_live_ios.md)
+- macOS: [Start a call](../../en/Voice/start_call_mac.md)/[Start Live Interactive Streaming](../../en/Voice/start_live_mac.md)
 
 The Agora SDK provides the `setAudioProfile` method to set the appropriate audio profile according to the scenario. This method has two parameters:
 <table>
@@ -205,4 +205,4 @@ Given the system restrictions, the media volume can be set as 0, but not the in-
 
 When setting the audio profile, you can also refer to the following articles:
 
-- [How can I prevent volume changes when the users switch their roles in a live broadcast?](https://docs.agora.io/en/faq/audio_role)
+- [How can I prevent volume changes when the users switch their roles in a live interactive streaming channel?](https://docs.agora.io/en/faq/audio_role)

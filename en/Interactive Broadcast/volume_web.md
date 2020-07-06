@@ -3,13 +3,13 @@
 title: Adjust the Volume
 description: How to adjust volume on Web
 platform: Web
-updatedAt: Tue Apr 28 2020 13:44:16 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 09:21:16 GMT+0800 (CST)
 ---
 # Adjust the Volume
 ## Introduction
 The Agora RTC SDK enables you to manage the volume of the recorded audio or of the audio playback according to your actual scenario. For example, to mute a remote user in a one-to-one call, you can set the audio playback volume as 0.
 ## Implementation
-Before adjusting the audio volume, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Interactive%20Broadcast/start_call_web.md) or [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_web.md).
+Before adjusting the audio volume, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Interactive%20Broadcast/start_call_web.md) or [Start Live Interactive Streaming](../../en/Interactive%20Broadcast/start_live_web.md).
 
 ### Sample code
 

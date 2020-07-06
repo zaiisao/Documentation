@@ -3,7 +3,7 @@
 title: Set the Audio Profile
 description: How to set high-quality audio on Web
 platform: Web
-updatedAt: Tue Dec 17 2019 10:37:02 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 09:24:04 GMT+0800 (CST)
 ---
 # Set the Audio Profile
 ## Introduction 
@@ -13,7 +13,7 @@ High-fidelity audio is essential for professional audio scenarios, such as for p
 
 ## Implementation
 
-Before adjusting the audio volume, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Audio%20Broadcast/start_call_web.md) or [Start a Live Broadcast](../../en/Audio%20Broadcast/start_live_web.md).
+Before adjusting the audio volume, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Audio%20Broadcast/start_call_web.md) or [Start Live Interactive Streaming](../../en/Audio%20Broadcast/start_live_web.md).
 
 The Agora Web SDK provides the `setAudioProfile` method for developers to set appropriate audio profiles according to the scenarios. The `profile` parameter sets the sampling rate, bitrate, and encoding mode.
 

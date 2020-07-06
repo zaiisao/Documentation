@@ -3,7 +3,7 @@
 title: Camera Exposure and Focus
 description: 
 platform: iOS
-updatedAt: Thu Apr 16 2020 07:11:38 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 08:19:41 GMT+0800 (CST)
 ---
 # Camera Exposure and Focus
 ## Introduction
@@ -15,7 +15,7 @@ Camera exposure and focus are commonly used in video calls to enable high-qualit
 
 ## Implementation
 
-Before proceeding, ensure that you implement a basic video call or live broadcast in your project. See [Start a Call](../../en/Interactive%20Broadcast/start_call_ios.md)/[Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_ios.md) for details.
+Before proceeding, ensure that you have implemented basic real-time functions in your project. See [Start a  Call](../../en/Interactive%20Broadcast/start_call_ios.md) or [Start Live Interactive Streaming](../../en/Interactive%20Broadcast/start_live_ios.md) for details.
 
 Refer to the following steps to set the camera exposure and focus:
 

@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume
 platform: Unity
-updatedAt: Tue Apr 28 2020 13:45:01 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 09:22:17 GMT+0800 (CST)
 ---
 # Adjust the Volume
 ## Introduction
@@ -15,7 +15,7 @@ This article provides the APIs and additional information relating to audio reco
 ![](https://web-cdn.agora.io/docs-files/1586770252932)
 
 ## Implementation
-Before adjusting the audio volume, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Voice Call](../../en/Audio%20Broadcast/start_call_audio_unity.md) or [Start an Audio Broadcast](../../en/Audio%20Broadcast/start_live_audio_unity.md).
+Before adjusting the audio volume, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Voice Call](../../en/Audio%20Broadcast/start_call_audio_unity.md) or [Start Live Interactive Streaming](../../en/Audio%20Broadcast/start_live_audio_unity.md).
 
 ### Adjust the recording volume
 

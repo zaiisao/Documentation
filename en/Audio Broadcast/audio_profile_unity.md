@@ -3,7 +3,7 @@
 title: Set the Audio Profile
 description: How to set high-quality audio on Windows
 platform: Unity
-updatedAt: Mon Mar 30 2020 08:32:14 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 09:25:10 GMT+0800 (CST)
 ---
 # Set the Audio Profile
 ## Introduction 
@@ -15,7 +15,7 @@ To obtain high-fidelity audio during real-time communications, you can choose th
 
 ## Implementation
 
-Before setting the audio profile, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Voice Call](../../en/Audio%20Broadcast/start_call_audio_unity.md) or [Start a Voice Broadcast](../../en/Audio%20Broadcast/start_live_audio_unity.md).
+Before setting the audio profile, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Voice Call](../../en/Audio%20Broadcast/start_call_audio_unity.md) or [Start Live Interactive Streaming](../../en/Audio%20Broadcast/start_live_audio_unity.md).
 
 The Agora SDK provides the `SetAudioProfile` method to set the appropriate audio profile according to the scenario. This method has two parameters:
 <table>

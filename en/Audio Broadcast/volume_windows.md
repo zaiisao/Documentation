@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume
 platform: Windows
-updatedAt: Tue Apr 28 2020 13:44:40 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 09:21:38 GMT+0800 (CST)
 ---
 # Adjust the Volume
 ## Introduction
@@ -15,7 +15,7 @@ This article provides the APIs and additional information relating to audio reco
 ![](https://web-cdn.agora.io/docs-files/1578902005463)
 
 ## Implementation
-Before adjusting the audio volume, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Audio%20Broadcast/start_call_windows.md) or [Start a Live Broadcast](../../en/Audio%20Broadcast/start_live_windows.md).
+Before adjusting the audio volume, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Audio%20Broadcast/start_call_windows.md) or [Start Live Interactive Streaming](../../en/Audio%20Broadcast/start_live_windows.md).
 
 ### Adjust the recording volume
 

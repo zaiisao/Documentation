@@ -3,7 +3,7 @@
 title: Set the Audio Profile
 description: How to set high-quality audio on Windows
 platform: Windows
-updatedAt: Wed Sep 25 2019 10:08:56 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 09:24:42 GMT+0800 (CST)
 ---
 # Set the Audio Profile
 ## Introduction 
@@ -14,7 +14,7 @@ To obtain high-fidelity audio during real-time communications, you can choose th
 
 ## Implementation
 
-Before setting the audio profile, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Audio%20Broadcast/start_call_windows.md) or [Start a Live Broadcast](../../en/Audio%20Broadcast/start_live_windows.md).
+Before setting the audio profile, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Audio%20Broadcast/start_call_windows.md) or [Start Live Interactive Streaming](../../en/Audio%20Broadcast/start_live_windows.md).
 
 The Agora SDK provides the `setAudioProfile` method to set the appropriate audio profile according to the scenario. This method has two parameters:
 <table>
