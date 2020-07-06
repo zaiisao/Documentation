@@ -3,7 +3,7 @@
 title: Rate Call
 description: 
 platform: Unity
-updatedAt: Sun Mar 22 2020 08:42:02 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 06:09:10 GMT+0800 (CST)
 ---
 # Rate Call
 ## Introduction
@@ -18,7 +18,7 @@ After the rating function is implemented, you can see your users' ratings in [Ag
 
 ## Implementation 
 
-Before proceeding, ensure that you implement a basic video call or live broadcast in your project. See [Start a Call](../../en/Voice/start_call_unity.md)/[Start a Live Broadcast](../../en/Voice/start_live_unity.md) for details.
+Before proceeding, ensure that you implement a basic video call or live interactive streaming in your project. See [Start a Call](../../en/Voice/start_call_unity.md)/[Start Live Interactive Video Streaming](../../en/Voice/start_live_unity.md) for details.
 
 To rate a call:
 

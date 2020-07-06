@@ -1,18 +1,16 @@
 
 ---
-title: Start an Audio Broadcast
+title: Start Live Interactive Audio Streaming
 description: 
 platform: Android
-updatedAt: Tue Jun 09 2020 04:15:32 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 06:38:31 GMT+0800 (CST)
 ---
-# Start an Audio Broadcast
-Use this guide to quickly start an audio broadcast with the Agora Voice SDK for Android.
-
-The difference between a broadcast and a call is that users have roles in a broadcast. You can set your role as either BROADCASTER or AUDIENCE. The broadcaster sends and receives streams while the audience receives streams only.
+# Start Live Interactive Audio Streaming
+Use this guide to quickly start the live interactive audio streaming with the Agora Voice SDK for Android.
 
 ## Sample project
 
-We provide an open-source [OpenLive-Voice-Only-Android](https://github.com/AgoraIO/Basic-Audio-Broadcasting/tree/master/OpenLive-Voice-Only-Android) demo project that implements the basic audio broadcast on GitHub. 
+We provide an open-source [OpenLive-Voice-Only-Android](https://github.com/AgoraIO/Basic-Audio-Broadcasting/tree/master/OpenLive-Voice-Only-Android) demo project that implements the basic live interactive audio streaming on GitHub. 
 
 ## Prerequisites
 
@@ -130,15 +128,15 @@ Add the following line in the **app/proguard-rules.pro** file to prevent obfusca
 -keep class io.agora.**{*;}
 ```
 
-## Implement an audio broadcast
+## Implement the basic live interactive streaming
 
-This section introduces how to use the Agora Voice SDK to start an audio broadcast. The following figure shows the API call sequence of a basic audio broadcast.
+This section introduces how to use the Agora Voice SDK to start the live interactive audio streaming. The following figure shows the API call sequence of the live interactive audio streaming.
 
 ![](https://web-cdn.agora.io/docs-files/1583134611348)
 
 ### 1. Create the UI
 
-Create the user interface (UI) for the audio broadcast in the layout file of your project. Skip to [Import Classes](#import_class) if you already have a UI in your project.
+Create the user interface (UI) for the audio streaming in the layout file of your project. Skip to [Import Classes](#import_class) if you already have a UI in your project.
 
 You can also refer to the xml files under the [layout](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Android/app/src/main/res/layout) path in the OpenLive-Voice-Only-Android demo project.
 
@@ -301,9 +299,9 @@ public boolean checkSelfPermission(String permission, int requestCode) {
 
 ### 4. Initialize RtcEngine
 
-Create and initialize the RtcEngine object before calling any other Agora APIs.
+Create and initialize the `RtcEngine` object before calling any other Agora APIs.
 
-In the `string.xml` file, replace `agora_app_id` with your App ID. Call the `create` method and pass in the App ID to initialize the RtcEngine object.
+In the `string.xml` file, replace `agora_app_id` with your App ID. Call the `create` method and pass in the App ID to initialize the `RtcEngine` object.
 
 You can also listen for callback events, such as when the local user joins the channel. Do not implement UI operations in these callbacks.
 
@@ -326,7 +324,7 @@ private final IRtcEngineEventHandler mRtcEventHandler = new IRtcEngineEventHandl
  
     @Override
     // Listen for the onUserOffline callback.
-    // This callback occurs when the broadcaster leaves the channel or drops offline.
+    // This callback occurs when the host leaves the channel or drops offline.
     public void onUserOffline(final int uid, int reason) {
         runOnUiThread(new Runnable() {
             @Override
@@ -353,9 +351,9 @@ private void initializeEngine() {
 
 ### 5. Set the channel profile
 
-After initializing the RtcEngine object, call the `setChannelProfile` method to set the channel profile as Live Broadcast. 
+After initializing the `RtcEngine` object, call the `setChannelProfile` method to set the channel profile as `LIVE_BROADCASTING`. 
 
-One RtcEngine object uses one profile only. If you want to switch to another profile, release the current RtcEngine object with the `destroy` method and create a new one before calling the `setChannelProfile` method.
+One RtcEngine object uses one profile only. If you want to switch to another profile, release the current `RtcEngine` object with the `destroy` method and create a new one before calling the `setChannelProfile` method.
 
 ```java
 private void setChannelProfile() {
@@ -365,12 +363,12 @@ private void setChannelProfile() {
 
 ### 6. Set the user role
 
-A broadcast channel has two user roles: BROADCASTER and AUDIENCE, and the default role is AUDIENCE. After setting the channel profile to Live Broadcast, your app may use the following steps to set the client role:
+A live-streaming channel has two user roles: `BROADCASTER` and `AUDIENCE`, and the default role is `AUDIENCE`. After setting the channel profile to `LIVE_BROADCASTING`, your app may use the following steps to set the client role:
 
-1. Allow the user to set the role as BROADCASTER or AUDIENCE. 
+1. Allow the user to set the role as `BROADCASTER` or `AUDIENCE`. 
 2. Call the `setClientRole` method and pass in the user role set by the user.
 
-Note that in a live broadcast, only the broadcaster can be heard. If you want to switch the user role after joining the channel, call the setClientRole method.
+Note that in the live streaming, only the host can be heard. If you want to switch the user role after joining the channel, call the `setClientRole` method.
 
 ```java
 public void onClickJoin(View view) {
@@ -428,11 +426,10 @@ After setting the user role, you can call the `joinChannel` method to join a cha
   
  <div class="alert note">If your project has enabled the app certificate, ensure that you provide a token.</div>
 
-* channelName: Specify the channel name that you want to join.
-* uid: ID of the local user that is an integer and should be unique. If you set uid as 0,  the SDK assigns a user ID for the local user and returns it in the `onJoinChannelSuccess` callback.
+* `channelName`: Specify the channel name that you want to join.
+* `uid`: ID of the local user that is an integer and should be unique. If you set `uid` as 0,  the SDK assigns a user ID for the local user and returns it in the `onJoinChannelSuccess` callback.
 
 For more details on the parameter settings, see [`joinChannel`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a8b308c9102c08cb8dafb4672af1a3b4c).
-
 
 ```java
 private void joinChannel() {
@@ -449,7 +446,7 @@ private void joinChannel() {
 
 ### 8. Leave the channel
 
-Call the `leaveChannel` method to leave the current broadcast according to your scenario, for example, when the broadcast ends, when you need to close the app, or when your app runs in the background.
+Call the `leaveChannel` method to leave the current channel according to your scenario, for example, when the streaming ends, when you need to close the app, or when your app runs in the background.
 
 ```java
 @Override
@@ -473,7 +470,7 @@ You can find the complete code logic in the [OpenLive-Voice-Only-Android](https:
 
 ## Run the project
 
-Run the project on your Android device. When the audio broadcast starts, all the audience can hear the broadcaster in the app.
+Run the project on your Android device. When the audio streaming starts, all the audience can hear the host in the app.
 
 ## Reference
 

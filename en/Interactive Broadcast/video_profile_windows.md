@@ -3,19 +3,19 @@
 title: Set the Video Profile
 description: 
 platform: Windows
-updatedAt: Tue Jan 14 2020 02:37:52 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 06:58:49 GMT+0800 (CST)
 ---
 # Set the Video Profile
 ## Introduction
 
-You can set the video profile, either before or after a user joins a channel, for the user to enjoy better video quality during a video call or live broadcast.
+You can set the video profile, either before or after a user joins a channel, for the user to enjoy better video quality during a video call or live interactive streaming.
 
 The Agora SDK uses the `setVideoEncoderConfiguration` method to set the video profile. Each video profile corresponds to a set of video parameters, including the resolution, frame rate, bitrate, and video orientation.
 
 
 ## Implementation
 
-Before setting the video profile, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Interactive%20Broadcast/start_call_windows.md) or [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_windows.md).
+Before setting the video profile, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Video Call](../../en/Interactive%20Broadcast/start_call_windows.md) or [Start a Live Interactive Video Streaming](../../en/Interactive%20Broadcast/start_live_windows.md).
 
 After initializing `IRtcEngine`, you can call the `setVideoEncoderConfiguration` method to set the video resolution, frame rate, birtate and orientation mode.
 
@@ -63,9 +63,9 @@ lpAgoraEngine->setVideoEncoderConfiguration(lpVideoConfig);
  Do not set the `minFrameRate` parameter to a value greater than `frameRate`. The default value of `minFrameRate` is experiment verified and can satisfy most use scenarios. We do not recommend changing it.
 - If you do not need to set the video profile after joining the channel, you can call the `setVideoEncoderConfiguration` method before the `enableVideo` method to reduce the render time of the first video frame.
 - The Agora SDK may adjust the parameters under poor network conditions. 
--  A live broadcast channel generally requires a higher bitrate for better video quality. Therefore, Agora recommends setting the bitrate in the live broadcast profile to twice of that in the communication profile. See [Set the bitrate](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_video_encoder_configuration.html#af10ca07d888e2f33b34feb431300da69).
-- For better video quality during a live broadcast, a stable network connection is recommended.
-- Setting parameters in the `setVideoEncoderConfiguration` method may affect your bill. For more information, see [Pricing and Billing](https://docs.agora.io/en/faq/video_billing).
+- A live interactive streaming channel generally requires a higher bitrate for better video quality. Therefore, Agora recommends setting the bitrate in the `LIVE_BROADCASTING` profile to twice of that in the `COMMUNICATION` profile. See [Set the bitrate](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_video_encoder_configuration.html#af10ca07d888e2f33b34feb431300da69).
+- For better video quality during a live interactive streaming, a stable network connection is recommended.
+- Setting parameters in the `setVideoEncoderConfiguration` method may affect your bill. For more information, see [Billing](../../en/Interactive%20Broadcast/billing_rtc.md).
 
 ## Recommended video profiles
 
@@ -83,7 +83,7 @@ Video profiles vary from case to case. For example, in a one-to-one online class
 
 You can also customize the video parameters with the `setVideoEncoderConfiguration` method, such as increasing the bitrate to ensure the video quality according to the table below.
 
-| Resolution<br>(width x height) | Frame rate<br>(fps) | Base bitrate<br>(Kbps, for Communication) | Live Bitrate<br>(Kbps, for Live-Broadcast) |
+| Resolution<br>(width x height) | Frame rate<br>(fps) | Base bitrate<br>(Kbps, for `COMMUNICATION`) | Live Bitrate<br>(Kbps, for `LIVE_BROADCASTING`) |
 | ------------------------------ | ------------------- | ----------------------------------------- | ------------------------------------------ |
 | 160 x 120                      | 15                  | 65                                        | 130                                        |
 | 120 x 120                      | 15                  | 50                                        | 100                                        |

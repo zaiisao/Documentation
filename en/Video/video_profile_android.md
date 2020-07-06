@@ -3,7 +3,7 @@
 title: Set the Video Profile
 description: 
 platform: Android
-updatedAt: Mon Jul 06 2020 05:37:05 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 06:50:56 GMT+0800 (CST)
 ---
 # Set the Video Profile
 ## Introduction
@@ -65,7 +65,7 @@ We provide an open-source Agora-Android-Tutorial-1to1 demo project on GitHub. Yo
  Do not set the `minFrameRate` parameter to a value greater than `frameRate`. The default value of `minFrameRate` is experiment verified and can satisfy most use scenarios. We do not recommend changing it.
 - If you do not need to set the video profile after joining the channel, you can call the `setVideoEncoderConfiguration` method before the `enableVideo` method to reduce the render time of the first video frame.
 - The Agora SDK may adjust the parameters under poor network conditions. 
--  A live interactive streaming channel generally requires a higher bitrate for better video quality. Therefore, Agora recommends setting the bitrate in the live interactive streaming profile to twice of that in the communication profile. See [Set the bitrate](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html#a4b090cd0e9f6d98bcf89cb1c4c2066e8).
+- A live interactive streaming channel generally requires a higher bitrate for better video quality. Therefore, Agora recommends setting the bitrate in the `LIVE_BROADCASTING` profile to twice of that in the `COMMUNICATION` profile. See [Set the bitrate](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html#a4b090cd0e9f6d98bcf89cb1c4c2066e8).
 - For better video quality during the live interactive streaming, a stable network connection is recommended.
 - Setting parameters in the `setVideoEncoderConfiguration` method may affect your bill. For more information, see [Billing](../../en/Video/billing_rtc.md).
 
@@ -86,7 +86,7 @@ The following profiles for different scenarios are recommended:
 
 You can also customize the video parameters with the `setVideoEncoderConfiguration` method, such as increasing the bitrate to ensure the video quality according to the table below.
 
-| Resolution<br>(width x height) | Frame rate<br>(fps) | Base bitrate<br>(Kbps, for COMMUNICATION) | Live bitrate<br>(Kbps, for LIVE_BROADCASTING) |
+| Resolution<br>(width x height) | Frame rate<br>(fps) | Base bitrate<br>(Kbps, for `COMMUNICATION`) | Live bitrate<br>(Kbps, for `LIVE_BROADCASTING`) |
 | ------------------------------ | ------------------- | ----------------------------------------- | ------------------------------------------ |
 | 160 x 120                      | 15                  | 65                                        | 130                                        |
 | 120 x 120                      | 15                  | 50                                        | 100                                        |

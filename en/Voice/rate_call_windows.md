@@ -3,7 +3,7 @@
 title: Rate Call
 description: 
 platform: Windows
-updatedAt: Sun Sep 29 2019 09:37:39 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 06:08:23 GMT+0800 (CST)
 ---
 # Rate Call
 ## Introduction
@@ -18,7 +18,7 @@ After the rating function is implemented, you can see your users' ratings in [Ag
 
 ## Implementation 
 
-Before proceeding, ensure that you implement a basic video call or live broadcast in your project. See [Start a Call](../../en/Voice/start_call_windows.md)/[Start a Live Broadcast](../../en/Voice/start_live_windows.md) for details.
+Before proceeding, ensure that you implement a basic video call or live interactive streaming in your project. See [Start a Call](../../en/Voice/start_call_windows.md)/[Start Live Interactive Video Streaming](../../en/Voice/start_live_windows.md) for details.
 
 To rate a call:
 

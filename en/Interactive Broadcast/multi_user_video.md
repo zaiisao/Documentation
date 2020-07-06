@@ -3,7 +3,7 @@
 title: Video for Multiple Users
 description: How to minimize bandwidth consumption and ensure smooth communication in a video scenario with multiple users.
 platform: All Platforms
-updatedAt: Mon Jul 06 2020 05:00:50 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 06:28:27 GMT+0800 (CST)
 ---
 # Video for Multiple Users
 ## Introduction
@@ -115,7 +115,7 @@ The following table shows the default resolution, bitrate, and frame rate of the
 
 The following table shows the default resolution, frame rate, and bitrate of the low-quality video stream, given different mainstream video profiles of the high-quality video stream. For the high-quality stream, this table only lists the video profiles in the communication profile. In the live-broadcast profile, the bitrate of the high-quality stream doubles that in the communication profile, and does not exceed 6500.
 
-| High-quality stream<br>(px, fps, Kbps) | Low-quality stream (Communication)<br>(px, fps, Kbps) | Low-quality stream (Live-broadcast)<br>(px, fps, Kbps) |
+| High-quality stream<br>(px, fps, Kbps) | Low-quality stream (`COMMUNICATION`)<br>(px, fps, Kbps) | Low-quality stream (`LIVE_BROADCASTING`)<br>(px, fps, Kbps) |
 | ---------------------------------- | ------------------------------------------------- | -------------------------------------------------- |
 | 320 × 240, 15, 200                 | 144 × 108, 5, 20                                  | 160 × 120, 5, 45                                   |
 | 640 × 360, 15, 400                 | 288 × 162, 5, 40                                  | 192 × 108, 5, 50                                   |

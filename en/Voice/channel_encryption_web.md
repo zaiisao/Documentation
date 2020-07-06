@@ -16,7 +16,7 @@ The following diagram describes the encrypted data transmission process:
 
 ## Implementation
 
-Before proceeding, ensure that you implement a basic call or live broadcast in your project. See [Start a Call](../../en/Voice/start_call_web.md) or [Start a Live Broadcast](../../en/Voice/start_live_web.md) for details.
+Before proceeding, ensure that you implement a basic call or live interactive streaming in your project. See [Start a Video Call](../../en/Voice/start_call_web.md) or [Start a Live Interactive Video Streaming](../../en/Voice/start_live_web.md) for details.
 
 ```
 //javascript

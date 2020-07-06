@@ -3,7 +3,7 @@
 title: Billing for Cloud Recording
 description: 
 platform: All Platforms
-updatedAt: Fri Jun 12 2020 09:14:07 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 06:15:58 GMT+0800 (CST)
 ---
 # Billing for Cloud Recording
 This article introduces the billing policy for the cloud recording service provided by Agora.
@@ -14,7 +14,7 @@ This article introduces the billing policy for the cloud recording service provi
 
 Agora calculates the billing of all projects under your [Agora account](https://console.agora.io/) monthly.
 
-Billing for the cloud recording service begins once you use Agora Cloud Recording to record and save audio calls, group video calls, or video broadcasts made via the Agora RTC SDK on your cloud storage. On the first day of each month, Agora sends you the bill via email, and five days later deducts the payment from your account. For details, see [Billing, fee deduction, and account suspension](https://docs.agora.io/en/faq/billing_account).
+Billing for the cloud recording service begins once you use Agora Cloud Recording to record and save audio calls, group video calls, or interactive video streaming made via the Agora RTC SDK on your cloud storage. On the first day of each month, Agora sends you the bill via email, and five days later deducts the payment from your account. For details, see [Billing, fee deduction, and account suspension](https://docs.agora.io/en/faq/billing_account).
 
 <div class="alert note">Agora gives each Agora account 10,000 charge-free minutes each month. For more information on the deduction sequence and applicable products, see<a href="https://docs.agora.io/en/faq/billing_free"> Agora's free-of-charge policy for the first 10,000 minutes</a>.</div>
 

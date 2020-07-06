@@ -3,18 +3,18 @@
 title: Image Enhancement
 description: 
 platform: Android
-updatedAt: Mon Mar 09 2020 05:06:48 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 07:05:59 GMT+0800 (CST)
 ---
 # Image Enhancement
 ## Introduction
 
-Agora provides an image enhancement API for users in social and entertainment scenarios to improve their appearance in video calls or live broadcasts. With this API, users can adjust settings such as the image contrast, brightness, sharpness, and red saturation, as shown in the following figure:
+Agora provides an image enhancement API for users in social and entertainment scenarios to improve their appearance in a video call or live interactive video streaming. With this API, users can adjust settings such as the image contrast, brightness, sharpness, and red saturation, as shown in the following figure:
 
 ![](https://web-cdn.agora.io/docs-files/1553753660177)
 
 ## Implementation
 
-Before proceeding, ensure that you implement a basic call or live broadcast in your project. See [Start a Call](../../en/Interactive%20Broadcast/start_call_android.md) or [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_android.md) for details.
+Before proceeding, ensure that you implement a basic call or live interactive streaming in your project. See [Start a Video Call](../../en/Interactive%20Broadcast/start_call_android.md) or [Start a Live Interactive Video Streaming](../../en/Interactive%20Broadcast/start_live_android.md) for details.
 
 Call the [`setBeautyEffectOptions`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aa9327de4fb0c29f840b1e68ca2e83fc6) method to flexibly add image enhancement features.
 

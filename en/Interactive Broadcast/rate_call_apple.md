@@ -3,7 +3,7 @@
 title: Rate Call
 description: 
 platform: iOS,macOS
-updatedAt: Sun Sep 29 2019 09:37:52 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 06:05:54 GMT+0800 (CST)
 ---
 # Rate Call
 ## Introduction
@@ -18,7 +18,7 @@ After the rating function is implemented, you can see your users' ratings in [Ag
 
 ## Implementation 
 
-Before proceeding, ensure that you implement a basic video call or live broadcast in your project. See [Start a Call](../../en/Interactive%20Broadcast/start_call_ios.md)/[Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_ios.md) for details.
+Before proceeding, ensure that you implement a basic video call or live interactive streaming in your project. See [Start a Call](../../en/Interactive%20Broadcast/start_call_ios.md)/[Start Live Interactive Video Streaming](../../en/Interactive%20Broadcast/start_live_ios.md) for details.
 
 To rate the call:
 

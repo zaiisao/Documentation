@@ -3,12 +3,12 @@
 title: Set the Video Profile
 description: 
 platform: Web
-updatedAt: Wed Dec 25 2019 08:17:49 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 06:43:27 GMT+0800 (CST)
 ---
 # Set the Video Profile
 ## Introduction
 
-You can set the video profile, either before or after a user joins a channel, for the user to enjoy better video quality during a video call or live broadcast.
+You can set the video profile, either before or after a user joins a channel, for the user to enjoy better video quality during a video call or live interactive streaming.
 
 The Agora Web SDK provides two interfaces to set the video profile: `setVideoProfile` and `setVideoEncoderConfiguration`. You can choose either one according to your video scenario. The difference between these two interfaces is as follows:
 
@@ -17,7 +17,7 @@ The Agora Web SDK provides two interfaces to set the video profile: `setVideoPro
 
 ## Implementation
 
-Before setting the video profile, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Video/start_call_web.md) or [Start a Live Broadcast](../../en/Video/start_live_web.md).
+Before setting the video profile, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Video Call](../../en/Video/start_call_web.md) or [Start a Live Interactive Video Streaming](../../en/Video/start_live_web.md).
 
 After creating a stream object, you can call the `setVideoProfile` or `setVideoEncoderConfiguration` method to set the video resolution, frame rate, birtate and orientation mode.
 

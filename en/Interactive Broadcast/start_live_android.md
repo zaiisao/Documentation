@@ -3,10 +3,10 @@
 title: Start Live Interactive Video Streaming
 description: 
 platform: Android
-updatedAt: Mon Jul 06 2020 05:48:45 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 06:35:09 GMT+0800 (CST)
 ---
 # Start Live Interactive Video Streaming
-Use this guide to quickly start the live interactive video streaming with the Agora RTC SDK for Android.
+Use this guide to quickly start the live interactive video streaming with the Agora Video SDK for Android.
 
 ## Sample project
 
@@ -132,7 +132,7 @@ Add the following line in the **app/proguard-rules.pro** file to prevent obfusca
 
 ## Implement the basic live interactive streaming
 
-This section introduces how to use the Agora RTC SDK to start the live interactive video streaming. The following figure shows the API call sequence of the live interactive video streaming.
+This section introduces how to use the Agora Video SDK to start the live interactive video streaming. The following figure shows the API call sequence of the live interactive video streaming.
 
 ![](https://web-cdn.agora.io/docs-files/1568255623199)
 
@@ -363,9 +363,9 @@ private void initializeEngine() {
 
 ### 5. Set the channel profile
 
-After initializing the RtcEngine object, call the `setChannelProfile` method to set the channel profile as LIVE BROADCASTING.
+After initializing the `RtcEngine` object, call the `setChannelProfile` method to set the channel profile as `LIVE_BROADCASTING`.
 
-One RtcEngine object uses one profile only. If you want to switch to another profile, release the current RtcEngine object with the `destroy` method and create a new one before calling the `setChannelProfile` method.
+One RtcEngine object uses one profile only. If you want to switch to another profile, release the current `RtcEngine` object with the `destroy` method and create a new one before calling the `setChannelProfile` method.
 
 ```java
 private void setChannelProfile() {
@@ -375,9 +375,9 @@ private void setChannelProfile() {
 
 ### 6. Set the user role
 
-A live-streaming channel has two user roles: BROADCASTER and AUDIENCE, and the default role is AUDIENCE. After setting the channel profile to LIVE BROADCASTING, your app may use the following steps to set the client role:
+A live-streaming channel has two user roles: `BROADCASTER` and `AUDIENCE`, and the default role is `AUDIENCE`. After setting the channel profile to `LIVE_BROADCASTING`, your app may use the following steps to set the client role:
 
-1. Allow the user to set the role as BROADCASTER or AUDIENCE. 
+1. Allow the user to set the role as `BROADCASTER` or `AUDIENCE`. 
 2. Call the `setClientRole` method and pass in the client role set by the user.
 
 Note that in the live interactive streaming, only the host can be heard and seen. If you want to switch the user role after joining the channel, call the `setClientRole` method.

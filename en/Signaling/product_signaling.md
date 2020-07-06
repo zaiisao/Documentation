@@ -3,7 +3,7 @@
 title: Agora Signaling Overview
 description: 
 platform: All Platforms
-updatedAt: Mon Apr 20 2020 04:38:43 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 06:42:55 GMT+0800 (CST)
 ---
 # Agora Signaling Overview
 The Agora Signaling SDK is based on the TCP protocol and provides a stable messaging channel for you to implement real-time communication scenarios.
@@ -33,11 +33,11 @@ The Agora Signaling SDK can be used in the following scenarios:
     <th>Application</th>
   </tr>
   <tr>
-    <td>Live Broadcast</td>
+    <td>Live interactive streaming</td>
     <td><li>Comment streams<br><li>Chatroom<br><li>Send gifts<br><li>Likes<br><li>Maintenance of the live room status<br><li>Channel lists<br><li>Access control</td>
   </tr>
   <tr>
-    <td>Social Network</td>
+    <td>Social network</td>
     <td><li>Private chat messages<br><li>Group messages<br><li>Voice/Video call invitation instructions</td>
   </tr>
   <tr>

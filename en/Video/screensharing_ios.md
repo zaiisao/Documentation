@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: iOS
-updatedAt: Mon Jul 06 2020 04:28:23 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 07:04:08 GMT+0800 (CST)
 ---
 # Share the Screen
 ## Introduction
@@ -65,3 +65,7 @@ override func processSampleBuffer(_ sampleBuffer: CMSampleBuffer, with sampleBuf
 ```
 
 We also provide an open-source demo project that implements [Agora-Screen-Sharing-iOS](https://github.com/AgoraIO/Advanced-Video/tree/master/iOS%26macOS/Agora-Screen-Sharing/Agora-Screen-Sharing-iOS) on GitHub. You can try the demo and view the source code.
+
+## Considerations
+
+The memory limit of Broadcast Upload Extension is 50 M. Ensure that your memory usage does not exceed 50 M.
