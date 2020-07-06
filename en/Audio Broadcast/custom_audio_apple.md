@@ -3,7 +3,7 @@
 title: Custom Audio Source and Renderer
 description: 
 platform: iOS,macOS
-updatedAt: Mon Mar 09 2020 06:54:53 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 10:35:12 GMT+0800 (CST)
 ---
 # Custom Audio Source and Renderer
 ## Introduction
@@ -24,8 +24,8 @@ This article tells you how to use the Agora Native SDK to customize the audio so
 ## Implementation
 
 Before customizing the audio source or sink, ensure that you implement the basic real-time communication functions in your project. For details, see the following documents:
-- iOS: [Start a Call](../../en/Audio%20Broadcast/start_call_ios.md) or [Start a Live Broadcast](../../en/Audio%20Broadcast/start_live_ios.md)
-- macOS: [Start a Call](../../en/Audio%20Broadcast/start_call_mac.md) or [Start a Live Broadcast](../../en/Audio%20Broadcast/start_live_mac.md)
+- iOS: [Start a Call](../../en/Audio%20Broadcast/start_call_ios.md) or [Start Live Interactive Streaming](../../en/Audio%20Broadcast/start_live_ios.md)
+- macOS: [Start a Call](../../en/Audio%20Broadcast/start_call_mac.md) or [Start Live Interactive Streaming](../../en/Audio%20Broadcast/start_live_mac.md)
 
 ### Custom audio source
 

@@ -3,14 +3,14 @@
 title: In-ear Monitoring
 description: How to enable in-ear monitoring and adjust the volume
 platform: Android
-updatedAt: Wed Sep 25 2019 10:09:04 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 10:35:02 GMT+0800 (CST)
 ---
 # In-ear Monitoring
 In-ear monitoring provides a mix of the audio sources (for example, a mix of the vocals and music) to the host with low latency, commonly used in professional scenarios, such as in concerts.
 The Agora SDK supports the in-ear monitoring function and volume adjustment of the in-ear monitor.
 
 ## Implementation
-Before using the in-ear monitoring function, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Audio%20Broadcast/start_call_android.md) or [Start a Live Broadcast](../../en/Audio%20Broadcast/start_live_android.md).
+Before using the in-ear monitoring function, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Audio%20Broadcast/start_call_android.md) or [Start Live Interactive Streaming](../../en/Audio%20Broadcast/start_live_android.md).
 
 The Agora SDK provides the `enableInEarMonitoring` and `setInEarMonitoringVolume` methods to set the in-ear monitoring according to the scenario, you can use these methods no matter before or after `joinChannel`.
 

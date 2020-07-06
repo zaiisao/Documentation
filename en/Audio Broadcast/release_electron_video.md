@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Electron
-updatedAt: Fri May 22 2020 04:14:34 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 10:35:07 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora SDK for Electron.
@@ -249,7 +249,7 @@ v2.8.0 is released on Jul 8, 2019.
  
 This is the first release of the Agora SDK for Electron. Refer to the following documentation to quickly integrate the SDK and enable real-time voice and video communication in your project.
  
-- Integrate the SDK: [Start a Call](../../en/Audio%20Broadcast/start_call_electron.md) or [Start a Live Broadcast](../../en/Audio%20Broadcast/start_live_electron.md)
+- Integrate the SDK: [Start a Call](../../en/Audio%20Broadcast/start_call_electron.md) or [Start Live Interactive Streaming](../../en/Audio%20Broadcast/start_live_electron.md)
 - [API Reference](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/electron/index.html)
  
 Agora also provides the open-source [Electron GitHub Demo](https://github.com/AgoraIO-Community/Agora-Electron-Quickstart) for you to download.

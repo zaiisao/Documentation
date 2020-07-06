@@ -3,7 +3,7 @@
 title: Raw Audio Data
 description: 
 platform: Windows
-updatedAt: Tue Mar 10 2020 00:12:12 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 10:35:12 GMT+0800 (CST)
 ---
 # Raw Audio Data
 ## Introduction
@@ -16,7 +16,7 @@ This article tells how to use raw audio data with the `IAudioFrameObserver` clas
 
 ## Implementation
 
-Before using the raw data functions, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Interactive%20Broadcast/start_call_windows.md) or [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_windows.md).
+Before using the raw data functions, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Interactive%20Broadcast/start_call_windows.md) or [Start Live Interactive Streaming](../../en/Interactive%20Broadcast/start_live_windows.md).
 
 Follow these steps to implement the raw data functions in your project:
 

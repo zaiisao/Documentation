@@ -3,7 +3,7 @@
 title: In-ear Monitoring
 description: How to enable in-ear monitoring and adjust the volume
 platform: iOS
-updatedAt: Wed Sep 25 2019 10:09:07 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 10:35:02 GMT+0800 (CST)
 ---
 # In-ear Monitoring
 In-ear monitoring provides a mix of the audio sources (for example, a mix of the vocals and music) to the host with low latency, commonly used in professional scenarios, such as in concerts.
@@ -11,7 +11,7 @@ The Agora SDK supports the in-ear monitoring function and volume adjustment of t
 
 ## Implementation
 
-Before using the in-ear monitoring function, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Voice/start_call_ios.md) or [Start a Live Broadcast](../../en/Voice/start_live_ios.md).
+Before using the in-ear monitoring function, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Voice/start_call_ios.md) or [Start Live Interactive Streaming](../../en/Voice/start_live_ios.md).
 
 The Agora SDK provides the `enableInEarMonitoring` and `setInEarMonitoringVolume` methods to set the in-ear monitoring according to the scenario, you can use these methods no matter before or after `joinChannelByToken`.
 

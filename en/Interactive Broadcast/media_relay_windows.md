@@ -3,7 +3,7 @@
 title: Co-host across Channels
 description: 
 platform: Windows
-updatedAt: Wed May 06 2020 09:39:09 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 10:35:09 GMT+0800 (CST)
 ---
 # Co-host across Channels
 ## Introduction
@@ -18,7 +18,7 @@ Co-hosting across channels applies to scenarios such as an online singing contes
 
 <div class="alert note">To enable channel media relay, contact <a href="mailto:support@agora.io">support@agora.io</a>.</div>
 
-Before relaying media streams across channels, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_windows.md).
+Before relaying media streams across channels, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start Live Interactive Streaming](../../en/Interactive%20Broadcast/start_live_windows.md).
 
 As of v2.9.0, the Agora Native SDK supports co-hosting across channels with the following methods:
 

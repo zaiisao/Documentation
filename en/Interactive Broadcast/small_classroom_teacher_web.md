@@ -31,7 +31,7 @@ Refer to the following table to download the SDKs, and integrate the SDKs into y
 
 | Product | SDK download | Integration guide |
 | ---------------- | ---------------- | ---------------- | 
-| [RTC (Real-time Communication) SDK](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms)      | [ Agora SDK for Web](https://docs.agora.io/en/Interactive%20Broadcast/downloads)      | [Start a Live Broadcast](https://docs.agora.io/en/Interactive%20Broadcast/start_live_web?platform=Web) |
+| [RTC (Real-time Communication) SDK](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms)      | [ Agora SDK for Web](https://docs.agora.io/en/Interactive%20Broadcast/downloads)      | [Start Live Interactive Streaming](https://docs.agora.io/en/Interactive%20Broadcast/start_live_web?platform=Web) |
 | [RTM (Real-time Messaging) SDK](https://docs.agora.io/en/Real-time-Messaging/product_rtm?platform=All%20Platforms) | [Real-time Messaging SDK](https://docs.agora.io/en/Real-time-Messaging/downloads) | [Peer-to-peer or Channel Messaging](https://docs.agora.io/en/Real-time-Messaging/messaging_web?platform=Web) |
 | [Cloud Recording](https://docs.agora.io/en/cloud-recording/product_cloud_recording?platform=All%20Platforms) | / | [Record by RESTful API](https://docs.agora.io/en/cloud-recording/cloud_recording_rest?platform=All%20Platforms) |
 | Agora Edu Cloud Service | / | [Agora Edu Cloud Service quickstart](https://github.com/AgoraIO-Usecase/eEducation/wiki/Agora-Edu-Cloud-Service) |

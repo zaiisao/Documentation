@@ -3,23 +3,23 @@
 title: Switch Channels
 description: 
 platform: Unity
-updatedAt: Mon Mar 30 2020 08:16:02 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 10:34:56 GMT+0800 (CST)
 ---
 # Switch Channels
 ## Introduction
 
-If the audience of a live broadcast wants to leave for another channel, usually you need to call the following methods:
+If the audience of live interactive video streaming wants to leave for another channel, usually you need to call the following methods:
 
 - The `LeaveChannel` method to leave the current channel.
 - The `JoinChannelByKey` method to join the new channel.
 
-Starting with v2.9.0, the Agora Unity SDK provides the `SwitchChannel` method for the audience to quickly switch between live broadcast channels while staying connected to Agora. With this method, you can achieve a much faster channel switch than with the `LeaveChannel` and `JoinChannelByKey` methods. 
+Starting with v2.9.0, the Agora Unity SDK provides the `SwitchChannel` method for the audience to quickly switch between live interactive video streaming channels while staying connected to Agora. With this method, you can achieve a much faster channel switch than with the `LeaveChannel` and `JoinChannelByKey` methods. 
 
 ## Implementation
 
-Before implementing the quick switch function in your project, ensure that you have implemented the basic live broadcast in your project. For details, see [Start a Video Broadcast](../../en/Audio%20Broadcast/start_live_unity.md) or [Start an Audio Broadcast](../../en/Audio%20Broadcast/start_live_audio_unity.md).
+Before implementing the quick switch function in your project, ensure that you have implemented the basic live interactive video streaming in your project. For details, see [Start Live Interactive Video Streaming](../../en/Audio%20Broadcast/start_live_unity.md) or [Start Live Interactive Audio Streaming](../../en/Audio%20Broadcast/start_live_audio_unity.md).
 
-After the audience joins a live broadcast channel, call the `SwitchChannel` method to enable the audience to switch to another live broadcast channel. Pass in the token and channel name of the new channel in this method.
+After the audience joins a live interactive video streaming channel, call the `SwitchChannel` method to enable the audience to switch to another live interactive video streaming channel. Pass in the token and channel name of the new channel in this method.
 
 A successful channel switch with this method triggers the `OnLeaveChannelHandler` and `OnJoinChannelSuccessHandler` callbacks.
 

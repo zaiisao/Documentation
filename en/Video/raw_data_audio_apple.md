@@ -3,7 +3,7 @@
 title: Raw Audio Data
 description: 
 platform: iOS,macOS
-updatedAt: Tue Mar 10 2020 00:11:40 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 10:35:11 GMT+0800 (CST)
 ---
 # Raw Audio Data
 ## Introduction
@@ -17,8 +17,8 @@ This article tells how to use raw audio data with the `IAudioFrameObserver` clas
 ## Implementation
 
 Before using the raw data functions, ensure that you have implemented the basic real-time communication functions in your project. For details, see the following documents:
-- iOS: [Start a Call](../../en/Video/start_call_ios.md) or [Start a Live Broadcast](../../en/Video/start_live_ios.md).
-- macOS: [Start a Call](../../en/Video/start_call_mac.md) or [Start a Live Broadcast](../../en/Video/start_live_mac.md)
+- iOS: [Start a Call](../../en/Video/start_call_ios.md) or [Start Live Interactive Streaming](../../en/Video/start_live_ios.md).
+- macOS: [Start a Call](../../en/Video/start_call_mac.md) or [Start Live Interactive Streaming](../../en/Video/start_live_mac.md)
 
 Follow these steps to implement the raw data functions in your project:
 

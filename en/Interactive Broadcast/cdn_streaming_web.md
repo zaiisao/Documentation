@@ -3,7 +3,7 @@
 title: Push Streams to CDN
 description: 
 platform: Web
-updatedAt: Fri May 08 2020 09:40:45 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 10:35:15 GMT+0800 (CST)
 ---
 # Push Streams to CDN
 ## Introduction
@@ -34,7 +34,7 @@ Now, you can use the function and see the usage statistics.
 
 ## Implementation 
 
-Before proceeding, ensure that you implement a basic live broadcast in your project. See [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_web.md) for details.
+Before proceeding, ensure that you implement a basic live broadcast in your project. See [Start Live Interactive Streaming](../../en/Interactive%20Broadcast/start_live_web.md) for details.
 
 
 Refer to the following steps to push streams to the CDN:

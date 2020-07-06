@@ -3,7 +3,7 @@
 title: Push Streams to CDN
 description: 
 platform: Android
-updatedAt: Fri Jun 19 2020 07:31:21 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 10:35:13 GMT+0800 (CST)
 ---
 # Push Streams to CDN
 ## Introduction
@@ -32,7 +32,7 @@ Now, you can use the function and see the usage statistics.
 
 ## Implementation 
 
-Before proceeding, ensure that you implement a basic live broadcast in your project. See [Start a Live Broadcast](../../en/Audio%20Broadcast/start_live_android.md) for details.
+Before proceeding, ensure that you implement a basic live broadcast in your project. See [Start Live Interactive Streaming](../../en/Audio%20Broadcast/start_live_android.md) for details.
 
 Refer to the following steps to push streams to the CDN:
 

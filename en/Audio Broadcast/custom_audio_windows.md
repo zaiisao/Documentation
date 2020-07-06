@@ -3,7 +3,7 @@
 title: Custom Audio Source and Renderer
 description: 
 platform: Windows
-updatedAt: Tue Mar 10 2020 02:51:38 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 10:35:05 GMT+0800 (CST)
 ---
 # Custom Audio Source and Renderer
 ## Introduction
@@ -23,7 +23,7 @@ This article tells you how to use the Agora Native SDK to customize the audio so
 
 ## Implementation
 
-Before customizing the audio source or sink, ensure that you implement the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Audio%20Broadcast/start_call_windows.md) or [Start a Live Broadcast](../../en/Audio%20Broadcast/start_live_windows.md).
+Before customizing the audio source or sink, ensure that you implement the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Audio%20Broadcast/start_call_windows.md) or [Start Live Interactive Streaming](../../en/Audio%20Broadcast/start_live_windows.md).
 
 ### Custom audio source
 

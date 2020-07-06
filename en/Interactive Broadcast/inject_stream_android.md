@@ -3,7 +3,7 @@
 title: Inject Online Media Stream
 description: 
 platform: Android
-updatedAt: Mon Jun 08 2020 02:56:13 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 10:35:01 GMT+0800 (CST)
 ---
 # Inject Online Media Stream
 ## Introduction
@@ -33,7 +33,7 @@ The host in a live-broadcast channel pulls an online media stream and pushes it 
 
 ## Implementation
 
-Before proceeding, ensure that you implement a basic live broadcast in your project. See [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_android.md) for details.
+Before proceeding, ensure that you implement a basic live broadcast in your project. See [Start Live Interactive Streaming](../../en/Interactive%20Broadcast/start_live_android.md) for details.
 
 > Ensure that you enable the RTMP Converter service before using this function. See [Prerequisites](../../en/Interactive%20Broadcast/cdn_streaming_android.md).
 
