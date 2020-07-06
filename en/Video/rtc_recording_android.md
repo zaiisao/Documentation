@@ -17,7 +17,7 @@ The Agora Native SDK supports recording the audio of all the users in a channel 
 
 ## Implementation
 
-Before proceeding, ensure that you implement a basic call or live interactive streaming in your project. See [Start a Video Call](../../en/Video/start_call_android.md) or [Start a Live Interactive Video Streaming](../../en/Video/start_live_android.md) for details.
+Before proceeding, ensure that you implement a basic call or live interactive streaming in your project. See [Start a Video Call](../../en/Video/start_call_android.md) or [Start Live Interactive Video Streaming](../../en/Video/start_live_android.md) for details.
 
 To start audio recording, call the `startAudioRecording` method after joining a channel.
 

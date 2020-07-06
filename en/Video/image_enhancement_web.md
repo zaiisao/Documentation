@@ -14,7 +14,7 @@ Agora provides an image enhancement API for users in social and entertainment sc
 
 ## Implementation
 
-Before proceeding, ensure that you implement a basic call or live interactive streaming in your project. See [Start a Video Call](../../en/Video/start_call_web.md) or [Start a Live Interactive Video Streaming](../../en/Video/start_live_web.md) for details.
+Before proceeding, ensure that you implement a basic call or live interactive streaming in your project. See [Start a Video Call](../../en/Video/start_call_web.md) or [Start Live Interactive Video Streaming](../../en/Video/start_live_web.md) for details.
 
 Call [`setBeautyEffectOptions`](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.stream.html#setbeautyeffectoptions) to flexibly add image enhancement features. This method is asynchronous, and must be called with `Promise` or `async`/`await` keywords.
 

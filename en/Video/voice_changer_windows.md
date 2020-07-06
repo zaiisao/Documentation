@@ -14,7 +14,7 @@ Agora provides an [online demo](https://www.agora.io/en/audio-demo) to try out t
 
 ## Implementation
 
-Before proceeding, ensure that you implement a basic call or live interactive streaming in your project. See [Start a Video Call](../../en/Video/start_call_windows.md) or [Start a Live Interactive Video Streaming](../../en/Video/start_live_windows.md) for details.
+Before proceeding, ensure that you implement a basic call or live interactive streaming in your project. See [Start a Video Call](../../en/Video/start_call_windows.md) or [Start Live Interactive Video Streaming](../../en/Video/start_live_windows.md) for details.
 
 ### Preset voice effects
 

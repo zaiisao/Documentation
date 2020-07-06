@@ -9,7 +9,7 @@ updatedAt: Fri Jun 19 2020 11:38:04 GMT+0800 (CST)
 ## Introduction
 In a call or live broadcast, you may need to play custom audio or music files to all the users in the channel. For example, adding sound effects in a game, or playing background music. We provide two groups of methods for playing audio effect files and audio mixing.
 
-Before proceeding, ensure that you implement a basic call or live interactive streaming in your project. See [Start a Video Call](../../en/Audio%20Broadcast/start_call_android.md) or [Start a Live Interactive Video Streaming](../../en/Audio%20Broadcast/start_live_android.md) for details.
+Before proceeding, ensure that you implement a basic call or live interactive streaming in your project. See [Start a Video Call](../../en/Audio%20Broadcast/start_call_android.md) or [Start Live Interactive Video Streaming](../../en/Audio%20Broadcast/start_live_android.md) for details.
 
 ## Play audio effect files
 

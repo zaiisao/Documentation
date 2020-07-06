@@ -10,7 +10,7 @@ updatedAt: Fri Jun 19 2020 11:39:51 GMT+0800 (CST)
 
 In a call or live broadcast, you may need to play custom audio or music files to all users in the channel. For example, adding sound effects in a game, or playing background music. Agora provides two groups of methods for playing audio effect files and audio mixing.
 
-Before proceeding, ensure that you implement a basic call or live interactive streaming in your project. See [Start a Video Call](../../en/Video/start_call_web.md) or [Start a Live Interactive Video Streaming](../../en/Video/start_live_web.md) for details.
+Before proceeding, ensure that you implement a basic call or live interactive streaming in your project. See [Start a Video Call](../../en/Video/start_call_web.md) or [Start Live Interactive Video Streaming](../../en/Video/start_live_web.md) for details.
 
 
 <div class="alert info">Click the <a href="https://webdemo.agora.io/agora-web-showcase/examples/AgoraAudioIO-Web/">online demo</a> to try this feature out.</div>

@@ -3,7 +3,7 @@
 title: Test a Media Device
 description: 
 platform: macOS
-updatedAt: Fri Mar 06 2020 08:54:01 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 07:55:27 GMT+0800 (CST)
 ---
 # Test a Media Device
 ## Introduction
@@ -12,7 +12,7 @@ To ensure smooth communications, we recommend conducting a media device test bef
 
 ## Implementation
 
-Ensure that you understand how to [Start a Call](../../en/Voice/start_call_mac.md) or [Start an Interactive Broadcast](../../en/Voice/start_live_mac.md).
+Ensure that you understand how to [Start a Call](../../en/Voice/start_call_mac.md) or [Start Live Interactive Video Streaming](../../en/Voice/start_live_mac.md).
 
 - Choose either of the following ways to test the audio devices:
 	- Call the `startEchoTestWithInterval` method to test if the audio devices and network connection are working properly.

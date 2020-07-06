@@ -3,7 +3,7 @@
 title: Test a Media Device
 description: 
 platform: iOS
-updatedAt: Fri Mar 06 2020 08:54:14 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 08:01:03 GMT+0800 (CST)
 ---
 # Test a Media Device
 ## Introduction
@@ -14,7 +14,7 @@ Before joining a channel, you can use the `startEchoTestWithInterval` method to 
 
 ## Implementation
 
-Ensure that you understand how to [Start a Call](../../en/Audio%20Broadcast/start_call_ios.md) or [Start an Interactive Broadcast](../../en/Audio%20Broadcast/start_live_ios.md).
+Before proceeding, ensure that you implement a basic call or live interactive streaming in your project. See [Start a Video Call](../../en/Audio%20Broadcast/start_call_ios.md) or [Start Live Interactive Video Streaming](../../en/Audio%20Broadcast/start_live_ios.md) for details.
 
 1. Call `startEchoTestWithIntercal` before joining a channel. You need to set the `interval` parameter in this method to notify the SDK when to report the result of this test. The value range is [2, 10], and the default value is 10 (in seconds).
 
