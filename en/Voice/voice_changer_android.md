@@ -13,7 +13,7 @@ Agora provides an [online demo](https://www.agora.io/en/audio-demo) to try out t
 
 ## Implementation
 
-Before proceeding, ensure that you have implemented basic real-time functions in your project. See [Start a Video Call](../../en/Voice/start_call_android.md) or [Start Live Interactive Video Streaming](../../en/Voice/start_live_android.md) for details.
+Before proceeding, ensure that you have implemented basic real-time functions in your project. See [Start a  Call](../../en/Voice/start_call_android.md) or [Start Live Interactive Streaming](../../en/Voice/start_live_android.md) for details.
 
 ### Preset voice effects
 

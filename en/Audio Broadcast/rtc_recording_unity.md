@@ -17,7 +17,7 @@ The Agora Unity SDK supports recording the audio of all the users in a channel a
 
 ## Implementation
 
-Before proceeding, ensure that you implement a basic call or live interactive streaming in your project. See [Start a Video Call](../../en/Audio%20Broadcast/start_call_audio_unity.md) or [Start Live Interactive Video Streaming](../../en/Audio%20Broadcast/start_live_audio_unity.md) for details.
+Before proceeding, ensure that you have implemented basic real-time functions in your project. See [Start a  Call](../../en/Audio%20Broadcast/start_call_audio_unity.md) or [Start Live Interactive Streaming](../../en/Audio%20Broadcast/start_live_audio_unity.md) for details.
 
 To start audio recording, call the `StartAudioRecording` method after joining a channel.
 

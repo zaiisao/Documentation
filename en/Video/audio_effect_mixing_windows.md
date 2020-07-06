@@ -9,7 +9,7 @@ updatedAt: Fri Jun 19 2020 11:42:05 GMT+0800 (CST)
 ## Introduction
 In a call or live broadcast, you may need to play custom audio or music files to all the users in the channel. For example, adding sound effects in a game, or playing background music. We provide two groups of methods for playing audio effect files and audio mixing.
 
-Before proceeding, ensure that you implement a basic call or live interactive streaming in your project. See [Start a Video Call](../../en/Video/start_call_windows.md) or [Start Live Interactive Video Streaming](../../en/Video/start_live_windows.md) for details.
+Before proceeding, ensure that you have implemented basic real-time functions in your project. See [Start a  Call](../../en/Video/start_call_windows.md) or [Start Live Interactive Streaming](../../en/Video/start_live_windows.md) for details.
 ## Play audio effect files
 
 The play audio effect methods can be used to play ambient sound, such as clapping and gunshots. You can play multiple audio effects at the same time, and preload the audio effect file for efficiency.

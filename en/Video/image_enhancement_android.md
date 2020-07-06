@@ -14,7 +14,7 @@ Agora provides an image enhancement API for users in social and entertainment sc
 
 ## Implementation
 
-Before proceeding, ensure that you implement a basic call or live interactive streaming in your project. See [Start a Video Call](../../en/Video/start_call_android.md) or [Start Live Interactive Video Streaming](../../en/Video/start_live_android.md) for details.
+Before proceeding, ensure that you have implemented basic real-time functions in your project. See [Start a  Call](../../en/Video/start_call_android.md) or [Start Live Interactive Streaming](../../en/Video/start_live_android.md) for details.
 
 Call the [`setBeautyEffectOptions`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aa9327de4fb0c29f840b1e68ca2e83fc6) method to flexibly add image enhancement features.
 

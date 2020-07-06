@@ -3,7 +3,7 @@
 title: Video Stream Fallback
 description: 
 platform: iOS,macOS
-updatedAt: Mon Jul 06 2020 05:43:28 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 08:14:45 GMT+0800 (CST)
 ---
 # Video Stream Fallback
 ## Introduction
@@ -46,7 +46,7 @@ agoraKit.setRemoteSubscribeFallbackOption(.audioOnly)
 ```objective-c
 //Objective-C
 // Enable the dual-stream mode (Configuration for the local).
-agoraKit.enableDualStreamMode(true);
+[agoraKit.enableDualStreamMode: YES];
 
 // Configuration for the publisher. When the network condition is poor, send audio stream only. 
 [agoraKit setLocalPublishFallbackOption: AgoraStreamFallbackOptionAudioOnly];

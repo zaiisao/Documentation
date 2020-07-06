@@ -17,7 +17,7 @@ You can use the media device test and selection feature in the following scenari
 
 ## Implementation
 
-Before proceeding, ensure that you have implemented basic real-time functions in your project. See [Start a Video Call](../../en/Voice/start_call_web.md) or [Start Live Interactive Video Streaming](../../en/Voice/start_live_web.md) for details.
+Before proceeding, ensure that you have implemented basic real-time functions in your project. See [Start a  Call](../../en/Voice/start_call_web.md) or [Start Live Interactive Streaming](../../en/Voice/start_live_web.md) for details.
 
 ### Microphone/Camera test
 

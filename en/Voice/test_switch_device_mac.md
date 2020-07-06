@@ -12,7 +12,7 @@ To ensure smooth communications, we recommend conducting a media device test bef
 
 ## Implementation
 
-Before proceeding, ensure that you have implemented basic real-time functions in your project. See [Start a Video Call](../../en/Voice/start_call_mac.md) or [Start Live Interactive Video Streaming](../../en/Voice/start_live_mac.md) for details.
+Before proceeding, ensure that you have implemented basic real-time functions in your project. See [Start a  Call](../../en/Voice/start_call_mac.md) or [Start Live Interactive Streaming](../../en/Voice/start_live_mac.md) for details.
 
 - Choose either of the following ways to test the audio devices:
 	- Call the `startEchoTestWithInterval` method to test if the audio devices and network connection are working properly.
