@@ -3,22 +3,22 @@
 title: Inject Online Media Stream
 description: 
 platform: Unity
-updatedAt: Mon Jul 06 2020 10:35:19 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 10:45:09 GMT+0800 (CST)
 ---
 # Inject Online Media Stream
 ## Introduction
 
-**Injecting an online media stream** is the action of adding an external audio or video stream to an ongoing live-broadcast channel. It enables the hosts and audience in the channel to hear and see the additional stream while interacting with each other.
+**Injecting an online media stream** is the action of adding an external audio or video stream to an ongoing live interactive streaming channel. It enables the hosts and audience in the channel to hear and see the additional stream while interacting with each other.
 
 ### Applicable scenarios
 
 - Live sports: The host and audience can watch and simultaneously comment on events.
-- Music concerts, movies, and other entertainments: The hosts and audience can participate in real-time discussions while watching them.
-- Additional perspectives: The host can inject video streams captured by drones or network cameras into a live broadcast.
+- Music concerts, movies, and other entertainments: The hosts and audience can participate in real‑time discussions while watching them.
+- Additional perspectives: The host can inject video streams captured by drones or network cameras into a live streaming channel.
 
 ### Working principles
 
-The host in a live-broadcast channel pulls an online media stream and pushes it through the Video Inject Server to the Agora Software-Defined Real-time Network (SD-RTN™) and the channel.
+The host in a live interactive streaming channel pulls an online media stream and pushes it through the Video Inject Server to the Agora Software‑Defined Real‑time Network (SD‑RTN™) and the channel.
 
 ![](https://web-cdn.agora.io/docs-files/1576059890625)
 
@@ -28,7 +28,7 @@ The host in a live-broadcast channel pulls an online media stream and pushes it 
 >- Only one online media stream can be injected into the same channel at the same time.
 >- Supported codec type: AAC for audio, H.264 for video.
 >- Audio-only streams are also supported.
->- Only the host (broadcaster) can inject and remove an injected media stream. Neither the delegated host nor the audience can do that.
+>- Only the host can inject and remove an injected media stream. Neither the delegated host nor the audience can do that.
 
 
 ## Implementation
@@ -39,7 +39,7 @@ Before proceeding, ensure that you implement a basic live broadcast in your proj
 
 Refer to the following steps to inject an online media stream:
 
-1. The host in a channel calls the `AddInjectStreamUrl` method to inject an online media stream to the live broadcast channel. You can modify the parameter values of `streamConfig` to set the resolution, bitrate and frame rate of the injected stream. See [`InjectStreamConfig`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/unity/structagora__gaming__rtc_1_1_inject_stream_config.html).
+1. The host in a channel calls the `AddInjectStreamUrl` method to inject an online media stream to the live interactive streaming channel. You can modify the parameter values of `streamConfig` to set the resolution, bitrate and frame rate of the injected stream. See [`InjectStreamConfig`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/unity/structagora__gaming__rtc_1_1_inject_stream_config.html).
 	
 	<div class="alert note">Only one online media stream can be injected into the same channel at the same time.</div>
 

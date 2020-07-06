@@ -3,7 +3,7 @@
 title: Inject Online Media Stream
 description: 
 platform: Web
-updatedAt: Mon Jul 06 2020 10:35:06 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 10:45:08 GMT+0800 (CST)
 ---
 # Inject Online Media Stream
 ## Introduction
@@ -38,13 +38,13 @@ The host in a live-broadcast channel pulls an online media stream and pushes it 
 
 ## Implementation
 
-Before proceeding, ensure that you implement a basic live broadcast in your project. See [Start Live Interactive Streaming](../../en/Interactive%20Broadcast/start_live_web.md) for details.
+Before proceeding, ensure that you implement the basic live interactive streaming in your project. See [Start Live Interactive Streaming](../../en/Interactive%20Broadcast/start_live_web.md) for details.
 
 > Ensure that you enable the RTMP Converter service before using this function. See [Prerequisites](../../en/Interactive%20Broadcast/cdn_streaming_web.md).
 
 Refer to the following steps to inject an online media stream:
 
-1. The host in a channel calls the `Client.addInjectStreamUrl` method to inject an online media stream to the live broadcast channel. You can modify the parameter values of `config` to set the resolution, bitrate and frame rate of the injected stream. See [InjectStreamConfig](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.injectstreamconfig.html).
+1. The host in a channel calls the `Client.addInjectStreamUrl` method to inject an online media stream to the live interactive streaming channel. You can modify the parameter values of `config` to set the resolution, bitrate and frame rate of the injected stream. See [InjectStreamConfig](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.injectstreamconfig.html).
 	> Only one online media stream can be injected into the same channel at the same time.
 
 	If the method call is successful, SDK triggers the `Client.on("stream-added"` and `Client.on("peer-online")` callbacks to all the users in the channel, and triggers the **`Client.on("streamInjectedStatus")`** callback to the local host.

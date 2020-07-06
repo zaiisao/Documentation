@@ -3,7 +3,7 @@
 title: Join Multiple Channels
 description: 3.0 feature multi-channel
 platform: Android
-updatedAt: Thu Jun 04 2020 08:47:16 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 10:49:09 GMT+0800 (CST)
 ---
 # Join Multiple Channels
 ## Introduction

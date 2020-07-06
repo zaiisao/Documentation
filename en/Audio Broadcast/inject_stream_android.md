@@ -3,22 +3,22 @@
 title: Inject Online Media Stream
 description: 
 platform: Android
-updatedAt: Mon Jul 06 2020 10:35:01 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 10:45:07 GMT+0800 (CST)
 ---
 # Inject Online Media Stream
 ## Introduction
 
-**Injecting an online media stream** is the action of adding an external audio or video stream to an ongoing live-broadcast channel. It enables the hosts and audience in the channel to hear and see the additional stream while interacting with each other.
+**Injecting an online media stream** is the action of adding an external audio or video stream to an ongoing live interactive streaming channel. It enables the hosts and audience in the channel to hear and see the additional stream while interacting with each other.
 
 ### Applicable scenarios
 
 - Live sports: The host and audience can watch and simultaneously comment on events.
-- Music concerts, movies, and other entertainments: The hosts and audience can participate in real-time discussions while watching them.
-- Additional perspectives: The host can inject video streams captured by drones or network cameras into a live broadcast.
+- Music concerts, movies, and other entertainments: The hosts and audience can participate in real‑time discussions while watching them.
+- Additional perspectives: The host can inject video streams captured by drones or network cameras into a live streaming channel.
 
 ### Working principles
 
-The host in a live-broadcast channel pulls an online media stream and pushes it through the Video Inject Server to the Agora Software-Defined Real-time Network (SD-RTN™) and the channel.
+The host in a live interactive streaming channel pulls an online media stream and pushes it through the Video Inject Server to the Agora Software‑Defined Real‑time Network (SD‑RTN™) and the channel.
 
 ![](https://web-cdn.agora.io/docs-files/1576059890625)
 
@@ -28,18 +28,18 @@ The host in a live-broadcast channel pulls an online media stream and pushes it 
 >- Only one online media stream can be injected into the same channel at the same time.
 >- Supported codec type: AAC for audio, H.264 for video.
 >- Audio-only streams are also supported.
->- Only the host (broadcaster) can inject and remove an injected media stream. Neither the delegated host nor the audience can do that.
+>- Only the host can inject and remove an injected media stream. Neither the delegated host nor the audience can do that.
 
 
 ## Implementation
 
-Before proceeding, ensure that you implement a basic live broadcast in your project. See [Start Live Interactive Streaming](../../en/Audio%20Broadcast/start_live_android.md) for details.
+Before proceeding, ensure that you implement the basic live interactive streaming in your project. See [Start Live Interactive Streaming](../../en/Audio%20Broadcast/start_live_android.md) for details.
 
 > Ensure that you enable the RTMP Converter service before using this function. See [Prerequisites](../../en/Audio%20Broadcast/cdn_streaming_android.md).
 
 Refer to the following steps to inject an online media stream:
 
-1. The host in a channel calls the `addInjectStreamUrl` method to inject an online media stream to the live broadcast channel. You can modify the parameter values of `config` to set the resolution, bitrate and frame rate of the injected stream. See [InjectStreamConfig](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1live_1_1_live_inject_stream_config.html).
+1. The host in a channel calls the `addInjectStreamUrl` method to inject an online media stream to the live interactive streaming channel. You can modify the parameter values of `config` to set the resolution, bitrate and frame rate of the injected stream. See [InjectStreamConfig](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1live_1_1_live_inject_stream_config.html).
 	> Only one online media stream can be injected into the same channel at the same time.
 
 	If the method call is successful, SDK triggers the `onUserJoined (uid:666)` callback to all the users in the channel, and triggers the `onStreamInjectedStatus` callback to the local host.

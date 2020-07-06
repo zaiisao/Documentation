@@ -3,7 +3,7 @@
 title: Push Streams to CDN
 description: 
 platform: Android
-updatedAt: Mon Jul 06 2020 10:35:13 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 10:42:05 GMT+0800 (CST)
 ---
 # Push Streams to CDN
 ## Introduction
@@ -32,7 +32,7 @@ Now, you can use the function and see the usage statistics.
 
 ## Implementation 
 
-Before proceeding, ensure that you implement a basic live broadcast in your project. See [Start Live Interactive Streaming](../../en/Audio%20Broadcast/start_live_android.md) for details.
+Before proceeding, ensure that you implement the basic live interactive streaming in your project. See [Start Live Interactive Streaming](../../en/Audio%20Broadcast/start_live_android.md) for details.
 
 Refer to the following steps to push streams to the CDN:
 
@@ -215,7 +215,7 @@ We also provide an open-source [Live-Streaming](https://github.com/AgoraIO/Advan
 
 ## Considerations
 
-- Up to 17 hosts can be supported in the same live broadcast channel.
+- Up to 17 hosts can be supported in the same live streaming channel.
 
 - In the case of a single host, we do not recommend transcoding . You can skip [Step1](#single), and call the `addPublishStreamUrl` method directly with `transcodingEnabled (false)`.
 

@@ -3,7 +3,7 @@
 title: Video for 7+ Users
 description: 
 platform: iOS,macOS
-updatedAt: Mon Jul 06 2020 10:35:16 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 10:41:33 GMT+0800 (CST)
 ---
 # Video for 7+ Users
 ## Introduction
@@ -15,7 +15,7 @@ If we set the subscribing stream to the 1-N Mode (set one stream as high and the
 
 ## Implementation
 
-Before proceeding, ensure that you implement a basic live broadcast in your project. See [Start Live Interactive Streaming](../../en/Interactive%20Broadcast/start_live_ios.md) for details.
+Before proceeding, ensure that you implement the basic live interactive streaming in your project. See [Start Live Interactive Streaming](../../en/Interactive%20Broadcast/start_live_ios.md) for details.
 
 Refer to the following steps to enable the video conference of 7+ users:
 

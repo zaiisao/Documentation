@@ -3,7 +3,7 @@
 title: Push Streams to CDN
 description: 
 platform: Unity
-updatedAt: Mon Jul 06 2020 10:35:19 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 10:42:08 GMT+0800 (CST)
 ---
 # Push Streams to CDN
 ## Introduction
@@ -207,7 +207,7 @@ User2:
 
 ## Considerations
 
-- Up to 17 hosts can be supported in the same live broadcast channel.
+- Up to 17 hosts can be supported in the same live streaming channel.
 
 - In the case of a single host, we do not recommend transcoding . You can skip [Step1](#single), and call the `AddPublishStreamUrl` method directly with `transcodingEnabled (false)`.
 
