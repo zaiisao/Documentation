@@ -3,12 +3,12 @@
 title: Rate Call
 description: 
 platform: Android
-updatedAt: Sun Sep 29 2019 09:38:06 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 06:04:03 GMT+0800 (CST)
 ---
 # Rate Call
 ## Introduction
 
-When a call or live broadcast ends, you can gather feedback on the quality of experience to improve your product by asking your users to rate the call or live broadcast.
+When a call or live interactive streaming ends, you can gather feedback on the quality of experience to improve your product by asking your users to rate the call or live interactive streaming.
 
 The Agora SDK provides methods for you to collect your users' ratings and comments on the calls.
 
@@ -18,7 +18,7 @@ After the rating function is implemented, you can see your users' ratings in [Ag
 
 ## Implementation 
 
-Before proceeding, ensure that you implement a basic video call or live broadcast in your project. See [Start a Call](../../en/Video/start_call_android.md)/[Start a Live Broadcast](../../en/Video/start_live_android.md) for details.
+Before proceeding, ensure that you implement a basic video call or live interactive video streaming in your project. See [Start a Call](../../en/Video/start_call_android.md)/[Start Live Interactive Video Streaming](../../en/Video/start_live_android.md) for details.
 
 To rate a call:
 

@@ -3,17 +3,17 @@
 title: Video Stream Fallback
 description: 
 platform: Unity
-updatedAt: Thu Mar 19 2020 14:16:54 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 05:45:46 GMT+0800 (CST)
 ---
 # Video Stream Fallback
 ## Introduction
 
-The audio and video quality of a live broadcast or a video call deteriorates under poor network conditions. To improve the efficiency of a live broadcast or a video call, the `SetLocalPublishFallbackOption` and `SetRemoteSubscribeFallbackOption` methods are used for the SDK to automatically switch the high-video stream to low-video stream and disable the video stream under these conditions.
+The audio and video quality of live interactive video streaming or a video call deteriorates under poor network conditions. To improve the efficiency of live interactive video streaming or a video call, the `SetLocalPublishFallbackOption` and `SetRemoteSubscribeFallbackOption` methods are used for the SDK to automatically switch the high-video stream to low-video stream and disable the video stream under these conditions.
 
 
 ## Implementation
 
-Before proceeding, ensure that you implement a basic live broadcast or call in your project. See [Start a Video Call](../../en/Interactive%20Broadcast/start_call_unity.md) or [Start a Video Broadcast](../../en/Interactive%20Broadcast/start_live_unity.md) for details.
+Before proceeding, ensure that you implement live interactive video streaming or call in your project. See [Start a Video Call](../../en/Interactive%20Broadcast/start_call_unity.md) or [Start Live Interactive Video Streaming](../../en/Interactive%20Broadcast/start_live_unity.md) for details.
 
 Refer to the following steps to set the stream fallback under poor network conditions:
 

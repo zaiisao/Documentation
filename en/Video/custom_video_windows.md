@@ -3,7 +3,7 @@
 title: Custom Video Source and Renderer
 description: 
 platform: Windows
-updatedAt: Wed May 27 2020 02:45:00 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 04:51:18 GMT+0800 (CST)
 ---
 # Custom Video Source and Renderer
 ## Introduction
@@ -21,7 +21,7 @@ This article tells you how to use the Agora Native SDK to customize the video so
 
 ## Implementation
 
-Before customizing the video source or renderer, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Video/start_call_windows.md) or [Start a Live Broadcast](../../en/Video/start_live_windows.md).
+Before customizing the video source or renderer, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Video Call](../../en/Video/start_call_windows.md) or [Start Interactive Video Streaming](../../en/Video/start_live_windows.md).
 
 Refer to the following steps to customize the video source:
 

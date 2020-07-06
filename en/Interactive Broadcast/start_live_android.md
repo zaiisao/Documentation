@@ -1,18 +1,16 @@
 
 ---
-title: Start a Video Broadcast
+title: Start Live Interactive Video Streaming
 description: 
 platform: Android
-updatedAt: Tue Jun 09 2020 04:46:55 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 05:48:45 GMT+0800 (CST)
 ---
-# Start a Video Broadcast
-Use this guide to quickly start a video broadcast with the Agora Video SDK for Android.
-
-The difference between a broadcast and a call is that users have roles in a broadcast. You can set your role as either BROADCASTER or AUDIENCE. The broadcaster sends and receives streams while the audience receives streams only.
+# Start Live Interactive Video Streaming
+Use this guide to quickly start the live interactive video streaming with the Agora RTC SDK for Android.
 
 ## Sample project
 
-We provide an open-source [OpenLive-Android](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Android) demo project that implements the basic video broadcast on GitHub. 
+We provide an open-source [OpenLive-Android](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Android) demo project that implements the basic live interactive video streaming on GitHub. 
 
 ## Prerequisites
 
@@ -132,19 +130,19 @@ Add the following line in the **app/proguard-rules.pro** file to prevent obfusca
 -keep class io.agora.**{*;}
 ```
 
-## Implement the basic broadcast
+## Implement the basic live interactive streaming
 
-This section introduces how to use the Agora video SDK to start a video broadcast. The following figure shows the API call sequence of a basic video broadcast.
+This section introduces how to use the Agora RTC SDK to start the live interactive video streaming. The following figure shows the API call sequence of the live interactive video streaming.
 
 ![](https://web-cdn.agora.io/docs-files/1568255623199)
 
 ### 1. Create the UI
 
-Create the user interface (UI) for the interactive broadcast in the layout file of your project. Skip to [Import Classes](#import_class) if you already have a UI in your project.
+Create the user interface (UI) for the interactive streaming in the layout file of your project. Skip to [Import Classes](#import_class) if you already have a UI in your project.
 
-If you are implementing a video broadcast, we recommend adding the following elements into the UI:
+If you are implementing the video streaming, we recommend adding the following elements into the UI:
 
-* The view of the broadcaster
+* The view of the host
 * The exit button
 
 You can also refer to the xml files under the [layout](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Android/app/src/main/res/layout) path in the [OpenLive-Android](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Android) demo project.
@@ -301,11 +299,11 @@ private boolean checkSelfPermission(String permission, int requestCode) {
 
 ### 4. Initialize RtcEngine
 
-Create and initialize the RtcEngine object before calling any other Agora APIs.
+Create and initialize the `RtcEngine` object before calling any other Agora APIs.
 
-In the `string.xml` file, replace `agora_app_id` with your App ID. Call the `create` method and pass in the App ID to initialize the RtcEngine object.
+In the `string.xml` file, replace `agora_app_id` with your App ID. Call the `create` method and pass in the App ID to initialize the `RtcEngine` object.
 
-You can also listen for callback events, such as when the local user joins the channel, and when the first video frame of a broadcaster is decoded. Do not implement UI operations in these callbacks.
+You can also listen for callback events, such as when the local user joins the channel, and when the first video frame of a host is decoded. Do not implement UI operations in these callbacks.
 
 ```java
 private RtcEngine mRtcEngine;
@@ -324,7 +322,7 @@ private final IRtcEngineEventHandler mRtcEventHandler = new IRtcEngineEventHandl
  
     @Override
     // Listen for the onFirstRemoteVideoDecoded callback.
-    // This callback occurs when the first video frame of the broadcaster is received and decoded after the broadcaster successfully joins the channel.
+    // This callback occurs when the first video frame of the host is received and decoded after the host successfully joins the channel.
     // You can call the setupRemoteVideo method in this callback to set up the remote video view.
     public void onFirstRemoteVideoDecoded(final int uid, int width, int height, int elapsed) {
         runOnUiThread(new Runnable() {
@@ -338,7 +336,7 @@ private final IRtcEngineEventHandler mRtcEventHandler = new IRtcEngineEventHandl
  
     @Override
     // Listen for the onUserOffline callback.
-    // This callback occurs when the broadcaster leaves the channel or drops offline.
+    // This callback occurs when the host leaves the channel or drops offline.
     public void onUserOffline(final int uid, int reason) {
         runOnUiThread(new Runnable() {
             @Override
@@ -365,7 +363,7 @@ private void initializeEngine() {
 
 ### 5. Set the channel profile
 
-After initializing the RtcEngine object, call the `setChannelProfile` method to set the channel profile as Live Broadcast. 
+After initializing the RtcEngine object, call the `setChannelProfile` method to set the channel profile as LIVE BROADCASTING.
 
 One RtcEngine object uses one profile only. If you want to switch to another profile, release the current RtcEngine object with the `destroy` method and create a new one before calling the `setChannelProfile` method.
 
@@ -377,12 +375,12 @@ private void setChannelProfile() {
 
 ### 6. Set the user role
 
-A broadcast channel has two user roles: BROADCASTER and AUDIENCE, and the default role is AUDIENCE. After setting the channel profile to Live Broadcast, your app may use the following steps to set the client role:
+A live-streaming channel has two user roles: BROADCASTER and AUDIENCE, and the default role is AUDIENCE. After setting the channel profile to LIVE BROADCASTING, your app may use the following steps to set the client role:
 
 1. Allow the user to set the role as BROADCASTER or AUDIENCE. 
 2. Call the `setClientRole` method and pass in the client role set by the user.
 
-Note that in a live broadcast, only the broadcaster can be heard and seen. If you want to switch the client role after joining the channel, call the setClientRole method.
+Note that in the live interactive streaming, only the host can be heard and seen. If you want to switch the user role after joining the channel, call the `setClientRole` method.
 
 ```java
 public void onClickJoin(View view) {
@@ -430,7 +428,7 @@ private void setClientRole() {
 
 ### 7. Set the local video view
 
-After setting the channel profile and user role, set the local video view before joining the channel so that the broadcaster can see the local video in the broadcast. Follow these steps to configure the local video view: 
+After setting the channel profile and user role, set the local video view before joining the channel so that the host can see the local video in the live streaming. Follow these steps to configure the local video view: 
 
 1. Call the `enableVideo` method to enable the video module. 
 2. Call the `createRendererView` method to create a SurfaceView object.
@@ -458,7 +456,7 @@ private void setupLocalVideo() {
 <a name="join_channel"></a>
 ### 8. Join a channel
 
-After setting the user role and the local video view (for a video broadcast), you can call the `joinChannel` method to join a channel. In this method, set the following parameters:
+After setting the user role and the local video view (for the video live streaming), you can call the `joinChannel` method to join a channel. In this method, set the following parameters:
 
 * `token`: Pass a token that identifies the role and privilege of the user.  You can set it as one of the following values:
   * `NULL`.
@@ -467,12 +465,12 @@ After setting the user role and the local video view (for a video broadcast), yo
   
  <div class="alert note">If your project has enabled the app certificate, ensure that you provide a token.</div>
 
-* channelName: Specify the channel name that you want to join.
-* uid: ID of the local user that is an integer and should be unique. If you set uid as 0,  the SDK assigns a user ID for the local user and returns it in the `onJoinChannelSuccess` callback.
+* `channelName`: Specify the channel name that you want to join.
+* `uid`: ID of the local user that is an integer and should be unique. If you set `uid` as 0, the SDK assigns a user ID for the local user and returns it in the `onJoinChannelSuccess` callback.
 
 For more details on the parameter settings, see [`joinChannel`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a8b308c9102c08cb8dafb4672af1a3b4c).
 
-If a live broadcast channel uses both the Native SDK and the Web SDK, ensure that you call the `enableWebSdkInteroperability` method before joining the channel.
+If a live-streaming channel uses both the RTC Native SDK and the RTC Web SDK, ensure that you call the `enableWebSdkInteroperability` method before joining the channel.
 
 ```java
 private void joinChannel() {
@@ -489,14 +487,14 @@ private void joinChannel() {
 
 ### 9. Set the remote video view
 
-In a video broadcast you should also be able to see all the broadcasters, regardless of your role. This is achieved by calling the `setupRemoteVideo` method after joining the channel. The difference between setting the local and remote view is that you need to specify the ID of the remote user when setting up the remote view.
+In the video streaming you should also be able to see all the hosts, regardless of your role. This is achieved by calling the `setupRemoteVideo` method after joining the channel. The difference between setting the local and remote view is that you need to specify the ID of the remote user when setting up the remote view.
 
-Shortly after a remote broadcaster joins the channel, the SDK gets the broadcaster's user ID in the `onFirstRemoteVideoDecoded` callback. Call the `setupRemoteVideo` method in the callback and pass in the uid to set the video view of the broadcaster.
+Shortly after a remote host joins the channel, the SDK gets the host's user ID in the `onFirstRemoteVideoDecoded` callback. Call the `setupRemoteVideo` method in the callback and pass in the uid to set the video view of the host.
 
 ```java
     @Override
     // Listen for the onFirstRemoteVideoDecoded callback.
-    // This callback occurs when the first video frame of the broadcaster is received and decoded after the broadcaster successfully joins the channel.
+    // This callback occurs when the first video frame of the host is received and decoded after the host successfully joins the channel.
     public void onFirstRemoteVideoDecoded(final int uid, int width, int height, int elapsed) {
         runOnUiThread(new Runnable() {
             @Override
@@ -523,7 +521,7 @@ private void setupRemoteVideo(int uid) {
 
 ### 10. Additional steps
 
-You can implement more advanced features and functionalities in a broadcast. 
+You can implement more advanced features and functionalities in the live interactive streaming. 
 
 <details>
 	<summary><font color="#3ab7f8">Mute the local audio</font></summary>
@@ -541,7 +539,7 @@ public void onLocalAudioMuteClicked(View view) {
 <details>
 	<summary><font color="#3ab7f8">Switch the camera direction</font></summary>
 	
-Call the `switchCamera` method to switch the direction  of the camera.
+Call the `switchCamera` method to switch the direction of the camera.
 	
 ```java
 public void onSwitchCameraClicked(View view) {
@@ -552,7 +550,7 @@ public void onSwitchCameraClicked(View view) {
 
 ### 11. Leave the channel
 
-Call the `leaveChannel` method to leave the current broadcast according to your scenario, for example, when the broadcast ends, when you need to close the app, or when your app runs in the background.
+Call the `leaveChannel` method to leave the current channel according to your scenario, for example, when the live interactive streaming ends, when you need to close the app, or when your app runs in the background.
 
 ```java
 @Override
@@ -576,14 +574,11 @@ You can find the complete code logic in the [OpenLive-Android](https://github.co
 
 ## Run the project
 
-Run the project on your Android device. When you set the role as the broadcaster and successfully join a video broadcast, you can see the video view of yourself in the app. When you set the role as the audience and successfully join a video broadcast, you can see the video view of the broadcaster in the app.
+Run the project on your Android device. When you set the role as the host and successfully start the live interactive streaming, you can see the video view of yourself in the app. When you set the role as the audience and successfully join the live interactive streaming, you can see the video view of the host in the app.
 
 ## Reference
 
-- FAQ: [How can I listen for an audience joining or leaving a live broadcast channel?](https://docs.agora.io/en/faq/audience_event)
-- FAQ: [How can I set the log file?](https://docs.agora.io/en/faq/logfile)
-- FAQ: [How can I solve black screen issues?](https://docs.agora.io/en/faq/video_blank)
-- FAQ: [Why is no audio or video captured on Android 9 devices?](https://docs.agora.io/en/faq/android_background)
-
-
-
+- [How can I listen for an audience joining or leaving a live streaming channel?](https://docs.agora.io/en/faq/audience_event)
+- [How can I set the log file?](https://docs.agora.io/en/faq/logfile)
+- [How can I solve black screen issues?](https://docs.agora.io/en/faq/video_blank)
+- [Why is no audio or video captured on Android 9 devices?](https://docs.agora.io/en/faq/android_background)

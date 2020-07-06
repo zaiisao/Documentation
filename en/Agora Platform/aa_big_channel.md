@@ -3,7 +3,7 @@
 title: Big Channel (Beta)
 description: 
 platform: All Platforms
-updatedAt: Wed May 06 2020 09:52:00 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 05:03:29 GMT+0800 (CST)
 ---
 # Big Channel (Beta)
 The **[Big Channel](#BigChannel)** function of Agora Analytics enables you to view and analyze the real-time usage and quality of Big Channels, to help you improve the efficiency of activities in Big Channels.
@@ -158,7 +158,7 @@ This section describes the key terms used in Call Search. See [Agora Key Terms](
 <a name="BigChannel"></a>
 ### Big Channel
 
-Every call or live broadcast must occur in a channel. If we imagine an app being a building, a channel is a room in the building. Agora calls a channel with many online users as a Big Channel, you need to define your own Big Channel in the **Big Channel Config** page. You can enable Big Channel for specified channels or projects, to better understand the behavior and to optimize users' experience.
+Every call or interactive streaming must occur in a channel. If we imagine an app being a building, a channel is a room in the building. Agora calls a channel with many online users as a Big Channel, you need to define your own Big Channel in the **Big Channel Config** page. You can enable Big Channel for specified channels or projects, to better understand the behavior and to optimize users' experience.
 
 <a name="User"></a>
 ### User

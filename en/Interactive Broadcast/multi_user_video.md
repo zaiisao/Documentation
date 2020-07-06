@@ -3,12 +3,12 @@
 title: Video for Multiple Users
 description: How to minimize bandwidth consumption and ensure smooth communication in a video scenario with multiple users.
 platform: All Platforms
-updatedAt: Wed Jul 01 2020 06:42:38 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 05:00:50 GMT+0800 (CST)
 ---
 # Video for Multiple Users
 ## Introduction
 
-In a video call or video broadcast, if multiple users publish video streams at the same time, user experience may be affected by limited device performance and excessive bandwidth consumption.
+In a video call or interactive video streaming scenario, if multiple users publish video streams at the same time, user experience may be affected by limited device performance and excessive bandwidth consumption.
 
 Use this article as a best practice for implementing a video scenario that enables multiple users to publish video streams simultaneously.
 
@@ -19,7 +19,7 @@ To minimize bandwidth consumption and ensure smooth communication in a video sce
 
 ## Implementation
 
-Before proceeding, ensure that you have implemented the basic real-time audio and video functions in your project. For details, see [Start a Video Call](https://docs.agora.io/en/Video/start_call_android?platform=Android) or [Start a Video Broadcast](https://docs.agora.io/en/Interactive%20Broadcast/start_live_android?platform=Android).
+Before proceeding, ensure that you have implemented the basic real-time audio and video functions in your project. For details, see [Start a Video Call](https://docs.agora.io/en/Video/start_call_android?platform=Android) or [Start Interactive Video Streaming](https://docs.agora.io/en/Interactive%20Broadcast/start_live_android?platform=Android).
 
 <div class="alert note">In this article, Native SDK refers to the Agora RTC SDK supported on Android, iOS, macOS, Windows, Electron, and Unity; Web SDK refers to the Agora RTC SDK for Web.</div>
 

@@ -3,7 +3,7 @@
 title: Image Enhancement
 description: 
 platform: Web
-updatedAt: Fri May 08 2020 08:16:48 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 03:19:03 GMT+0800 (CST)
 ---
 # Image Enhancement
 ## Introduction
@@ -44,8 +44,6 @@ var streamPublishedHandler = async function() {
 }
 client.on("stream-published", streamPublishedHandler);
 ```
-
-We also provide an open-source [OpenLive-Web](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Web) sample project that implements image enhancement on GitHub. You can try it [online](https://webdemo.agora.io/agora-web-showcase/examples/OpenLive-Web/#/) and refer to the source code in the [`rtc-client.js`](https://github.com/AgoraIO/Basic-Video-Broadcasting/blob/master/OpenLive-Web/src/rtc-client.js#L82) file.
 
 ## Considerations
 

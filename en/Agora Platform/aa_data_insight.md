@@ -3,7 +3,7 @@
 title: Data Insight (Beta)
 description: Introduction to Data Insight in AA
 platform: All Platforms
-updatedAt: Wed May 06 2020 09:51:52 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 05:05:01 GMT+0800 (CST)
 ---
 # Data Insight (Beta)
 The **Data Insight** function of Agora Analytics provides periodic call usage and call quality statistics. It is designed to help you understand the trend of the usage and quality of your calls, their distribution in various dimensions, and daily data breakdown.
@@ -164,7 +164,7 @@ This section describes the key terms used in **Data Insight**. See [Agora Key Te
 
 ### Channel
 
-Every call or live broadcast happens in a channel. If we imagine an app being a building, a channel will be a room in the building.
+Every call or ineractive streaming happens in a channel. If we imagine an app being a building, a channel will be a room in the building.
 
 **Data Insight** does not count a channel by name, but by lifecycle. It counts each time from when the first users joins the channel to when the last user leaves it.
 

@@ -3,7 +3,7 @@
 title: Lastmile Tests
 description: 
 platform: Web
-updatedAt: Thu Apr 09 2020 09:33:12 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 03:38:21 GMT+0800 (CST)
 ---
 # Lastmile Tests
 ## Introduction
@@ -14,7 +14,7 @@ This function particularly applies to scenarios which have high requirements on 
 
 ## Implementation 
 
-Before conducting the last-mile test, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Voice/start_call_web.md) or [Start a Live Broadcast](../../en/Voice/start_live_web.md).
+Before conducting the last-mile test, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Voice/start_call_web.md) or [Start Live Interactive Streaming](../../en/Voice/start_live_web.md).
 
 Before joining the channel, create two Client objects and two streams to join a test channel, where one stream tests the uplink network conditions, and the other tests the downlink.
 

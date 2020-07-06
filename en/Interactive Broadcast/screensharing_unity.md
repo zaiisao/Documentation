@@ -3,12 +3,12 @@
 title: Share the Screen
 description: 
 platform: Unity
-updatedAt: Wed Jun 10 2020 04:20:51 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 04:33:15 GMT+0800 (CST)
 ---
 # Share the Screen
 ## Introduction
 
-During a video call or live broadcast, **sharing the screen** enhances communication by displaying the speaker's screen on the display of other speakers or audience members in the channel.
+During a video call or interactive streaming, **sharing the screen** enhances communication by displaying the speaker's screen on the display of other speakers or audience members in the channel.
 
 Screen sharing is applied in the following scenarios:
 
@@ -17,7 +17,7 @@ Screen sharing is applied in the following scenarios:
 
 ## Implementation
 
-Before sharing the screen, ensure that you have implemented the basic real-time communication functions in your project. See [Start a Video Call](https://docs.agora.io/en/Video/start_call_unity?platform=Unity) or [Start a Video Broadcast](https://docs.agora.io/en/Interactive%20Broadcast/start_live_unity?platform=Unity) for details.
+Before sharing the screen, ensure that you have implemented the basic real-time communication functions in your project. See [Start a Video Call](https://docs.agora.io/en/Video/start_call_unity?platform=Unity) or [Start Interactive Video Streaming](https://docs.agora.io/en/Interactive%20Broadcast/start_live_unity?platform=Unity) for details.
 
 Refer to the following steps to share the screen in your project:
 

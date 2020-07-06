@@ -3,7 +3,7 @@
 title: Report In-call Statistics
 description: Call quality for Windows
 platform: Windows
-updatedAt: Fri Apr 17 2020 11:04:11 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 04:00:11 GMT+0800 (CST)
 ---
 # Report In-call Statistics
 ## Introduction
@@ -12,7 +12,7 @@ updatedAt: Fri Apr 17 2020 11:04:11 GMT+0800 (CST)
 
 We provide an open-source [OpenLive-Windows](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Windows) demo project. 
 
-<div class="alert note">Ensure that you implement a video call or an interactive broadcast in your project. For details, see <a href="../../en/Voice/start_call_windows.md">Start a Call</a> or <a href="../../en/Voice/start_live_windows.md">Start an Interactive Broadcast</a>.</div>
+<div class="alert note">Ensure that you implement a video call or interactive video streaming in your project. For details, see <a href="../../en/Voice/start_call_windows.md">Start a Call</a> or <a href="../../en/Voice/start_live_windows.md">Start Live Interactive Streaming</a>.</div>
 
 ## Network quality report
 
@@ -129,7 +129,7 @@ The `onRemoteVideoStats` callback reports the video statistics of each remote us
 | `packetLossRate`          | The packet loss rate of the video received in the reported interval. | <li>Stages 2 + 3 + 4 in the figure above<li>The packet loss rate after using the **anti-packet-loss** method, which is lower than before. |
 | `decoderOutputFrameRate`  | The output frame rate of the remote video decoder.           |                                                              |
 | `rendererOutputFrameRate` | The output frame rate of the remote video renderer.          |                                                              |
-| `totalFrozenTime`         | The total **freeze** time (ms) of the remote video stream after the remote user joins the channel. | In a video call or video broadcasting session where the frame rate is set to no less than 5 fps, video **freeze** occurs when the time interval between two adjacent renderable video frames is more than 500 ms. |
+| `totalFrozenTime`         | The total **freeze** time (ms) of the remote video stream after the remote user joins the channel. | In a video call or interactive video streaming session where the frame rate is set to no less than 5 fps, video **freeze** occurs when the time interval between two adjacent renderable video frames is more than 500 ms. |
 | `frozenRate`              | The total video freeze time as a percentage of the total time when the video is available. | When the remote user/host neither stops sending the video stream nor disables the video module after joining the channel, the video is **available**. |
 
 **Note**:

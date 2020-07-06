@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API Callback Service
 description: Cloud recording restful api callback
 platform: All Platforms
-updatedAt: Fri Jun 12 2020 05:07:36 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 03:21:40 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API Callback Service
 You can set up an HTTP/HTTPS server to receive the event notifications of Agora Cloud Recording. When an event occurs, the Agora Cloud Recording service notifies the Agora notification center, and then the notification center notifies your server through an HTTP/HTTPS request.
@@ -122,7 +122,7 @@ The event type and the corresponding service type of the Agora Cloud Recording c
 `eventType` 11 indicates that the cloud recording service has ended its tasks and exited. `details` includes the following fields:
 
 - `msgName`: String. The message name, `session_exit`.
-- `leaveStatus`: Number. The exit status. 
+- `exitStatus`: Number. The exit status. 
   - `0`: A normal exit, indicating that the recording service exits after the recording ends and the recorded files are uploaded.
   - `1`: An abnormal exit. An abnormal exist occurs when, for example, a parameter is incorrectly set.
 

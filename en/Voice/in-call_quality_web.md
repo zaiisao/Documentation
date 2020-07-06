@@ -3,7 +3,7 @@
 title: Report Call Statistics
 description: In-call quality for web
 platform: Web
-updatedAt: Tue Jun 02 2020 03:07:11 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 03:58:24 GMT+0800 (CST)
 ---
 # Report Call Statistics
 ## Introduction
@@ -22,7 +22,7 @@ The statistics include:
 
 ## Implementation
 
-Ensure that you implement a video call or an interactive broadcast in your project. For details, see [Start a Call](../../en/Voice/start_call_web.md) or [Start an Interactive Broadcast](../../en/Voice/start_live_web.md).
+Ensure that you implement a video call or interactive video streaming in your project. For details, see [Start a Call](../../en/Voice/start_call_web.md) or [Start Live Interactive Streaming](../../en/Voice/start_live_web.md).
 
 <a name ="system_statistics"></a>
 
@@ -77,7 +77,7 @@ Call the [`Client.getSessionStats`](https://docs.agora.io/en/Voice/API%20Referen
 - `SendBytes`: Total number of bytes sent, represented by an aggregate value.
 - `UserCount`: Number of users in the channel.
   - In rtc mode, the number of all users in the channel.
-  - In live broadcast mode, 
+  - In live mode, 
     - If the local user is an audience: The number of hosts in the channel + 1.
     - If the local user is a host: The number of hosts in the channel.
 

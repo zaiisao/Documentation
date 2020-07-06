@@ -3,7 +3,7 @@
 title: Rotate the Video
 description: 
 platform: iOS,macOS
-updatedAt: Fri Sep 20 2019 04:07:20 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 04:21:13 GMT+0800 (CST)
 ---
 # Rotate the Video
 ## Introduction
@@ -23,8 +23,8 @@ To avoid issues such as video scaling and scropping caused by video rotation, th
 
 Before setting the video orientation mode, ensure that you have implemented basic real-time communication functions in your project. For details, see the following documents:
 
-- iOS: [Start a Call](../../en/Interactive%20Broadcast/start_call_ios.md) or [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_ios.md)
-- macOS: [Start a Call](../../en/Interactive%20Broadcast/start_call_mac.md) or [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_mac.md)
+- iOS: [Start a Video Call](../../en/Interactive%20Broadcast/start_call_ios.md) or [Start Interactive Video Streaming](../../en/Interactive%20Broadcast/start_live_ios.md)
+- macOS: [Start a Video Call](../../en/Interactive%20Broadcast/start_call_mac.md) or [Start Interactive Video Streaming](../../en/Interactive%20Broadcast/start_live_mac.md)
 
 The `orientationMode` parameter provides three modes, `ADAPTIVE`, `FIXED_LANDSCAPE`, and `FIXED_PORTRAIT` for different user needs. 
 

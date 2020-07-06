@@ -3,7 +3,7 @@
 title: Raw Video Data
 description: 
 platform: Android
-updatedAt: Tue Apr 28 2020 05:39:35 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 04:55:14 GMT+0800 (CST)
 ---
 # Raw Video Data
 ## Introduction
@@ -16,7 +16,7 @@ This article tells how to use raw video data with the `IVideoFrameObserver` clas
 
 ## Implementation
 
-Before using the raw data functions, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Interactive%20Broadcast/start_call_android.md) or [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_android.md).
+Before using the raw data functions, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Video Call](../../en/Interactive%20Broadcast/start_call_android.md) or [Start Interactive Video Streaming](../../en/Interactive%20Broadcast/start_live_android.md).
 
 Follow these steps to implement the raw data functions in your project:
 

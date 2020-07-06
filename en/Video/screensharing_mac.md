@@ -3,12 +3,12 @@
 title: Share the screen
 description: 
 platform: macOS
-updatedAt: Mon Apr 20 2020 02:20:34 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 04:29:34 GMT+0800 (CST)
 ---
 # Share the screen
 ## Introduction
 
-During a video call or live broadcast, **sharing the screen** enhances communication by displaying the speaker's screen on the display of other speakers or audience members in the channel.
+During a video call or interactive streaming, **sharing the screen** enhances communication by displaying the speaker's screen on the display of other speakers or audience members in the channel.
 
 Screen sharing is applied in the following scenarios:
 
@@ -17,7 +17,7 @@ Screen sharing is applied in the following scenarios:
 
 ## Implementation
 
-Ensure that you implement a video call or an interactive broadcast in your project. For details, see [Start a Call](../../en/Video/start_call_mac.md) or [Start an Interactive Broadcast](../../en/Video/start_live_mac.md).
+Ensure that you implement a video call or interactive streaming in your project. For details, see [Start a Video Call](../../en/Video/start_call_mac.md) or [Start Interactive Video Streaming](../../en/Video/start_live_mac.md).
 
 From v2.4.0, Agora supports the following screen sharing functions on macOS:
 

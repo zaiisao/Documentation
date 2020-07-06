@@ -3,14 +3,14 @@
 title: Report In-call Statistics
 description: Call quality for Unity
 platform: Unity
-updatedAt: Thu Mar 19 2020 13:33:46 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 04:02:27 GMT+0800 (CST)
 ---
 # Report In-call Statistics
 ## Introduction
 
 **After joining the channel**, the SDK triggers the following callbacks related to the call quality **once every two seconds**. You can see the last mile network quality, local statistics, audio quality, and video quality of the current call.
 
-<div class="alert note">Ensure that you implement a video call or an interactive broadcast in your project. For details, see <a href="https://docs.agora.io/en/Video/start_call_unity?platform=Unity">Start a Video Call</a> or <a href="https://docs.agora.io/en/Interactive%20Broadcast/start_live_unity?platform=Unity">Start a Video Broadcast</a>.</div>
+<div class="alert note">Ensure that you implement a video call or interactive video streaming in your project. For details, see <a href="https://docs.agora.io/en/Video/start_call_unity?platform=Unity">Start a Video Call</a> or <a href="https://docs.agora.io/en/Interactive%20Broadcast/start_live_unity?platform=Unity">Start Live Interactive Video Streaming</a>.</div>
 
 ## Network quality report
 
@@ -111,7 +111,7 @@ The `OnRemoteVideoStatsHandler` callback reports the video statistics of each re
 | `packetLossRate`          | The packet loss rate of the video received in the reported interval. | <li>Stages 2 + 3 + 4 in the figure above<li>The packet loss rate after using the <b>anti-packet-loss</b> method, which is lower than before.</li> |
 | `decoderOutputFrameRate`  | The output frame rate of the remote video decoder.           |                                                              |
 | `rendererOutputFrameRate` | The output frame rate of the remote video renderer.          |                                                              |
-| `totalFrozenTime`         | The total **freeze** time (ms) of the remote video stream after the remote user joins the channel. | In a video call or video broadcasting session where the frame rate is set to no less than 5 fps, video **freeze** occurs when the time interval between two adjacent renderable video frames is more than 500 ms. |
+| `totalFrozenTime`         | The total **freeze** time (ms) of the remote video stream after the remote user joins the channel. | In a video call or live interactive video streaming session where the frame rate is set to no less than 5 fps, video **freeze** occurs when the time interval between two adjacent renderable video frames is more than 500 ms. |
 | `frozenRate`              | The total video freeze time as a percentage of the total time when the video is available. | When the remote user/host neither stops sending the video stream nor disables the video module after joining the channel, the video is **available**. |
 
 <div class="alert note"><li>In the communication profile, you receive video stream statistics of all the remote users (excluding yours) in the channel once every two seconds.<li>In the live broadcast profile, if you are the host, you receive video stream statistics of all the remote hosts (excluding yours) in the channel once every two seconds; if you are the audience, you receive the statistics for all the hosts in the channel once every two seconds.<li>Agora’s <b>video module</b> refers to the video processing process, and not the actual module in the SDK. When sending video streams, the video module refers to the processes of video capturing, pre-processing, and encoding; when receiving video streams, the video module refers to the processes of video decoding, post-processing, and rendering/playing.<li>Users can only turn on/off their own video modules.</div>

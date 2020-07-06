@@ -3,7 +3,7 @@
 title: Call Search
 description: Introduction to call research
 platform: All Platforms
-updatedAt: Thu Apr 02 2020 06:00:03 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 05:04:01 GMT+0800 (CST)
 ---
 # Call Search
 The [**Call Search**](https://dashboard.agora.io/analytics/call/search) function of Agora Analytics allows you to see the quality of your calls in diagrams displaying data during the call process. The information includes:
@@ -147,7 +147,7 @@ This section describes the key terms used in **Call Search**. See [Agora Key Ter
 
 ### Channel
 
-Every call or live broadcast must occur in a channel. If we imagine an app being a building, a channel will be a room in the building.
+Every call or interactive streaming must occur in a channel. If we imagine an app being a building, a channel will be a room in the building.
 
 ### Call
 

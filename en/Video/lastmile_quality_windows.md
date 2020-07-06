@@ -3,7 +3,7 @@
 title: Lastmile Tests
 description: 
 platform: Windows
-updatedAt: Fri Feb 28 2020 03:04:07 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 03:39:25 GMT+0800 (CST)
 ---
 # Lastmile Tests
 ## Introduction
@@ -16,7 +16,7 @@ This function particularly applies to scenarios which have high requirements on 
 
 ## Implementation 
 
-Before conducting the last-mile test, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Video/start_call_windows.md) or [Start a Live Broadcast](../../en/Video/start_live_windows.md).
+Before conducting the last-mile test, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Video/start_call_windows.md) or [Start Live Interactive Streaming](../../en/Video/start_live_windows.md).
 
 1. Call the `startLastmileProbeTest` method before joining a channel to get the uplink and downlink last-mile network statistics, including the bandwidth, packet loss, jitter, and round-trip time (RTT).
 2. Once this method is enabled, the SDK triggers the following callbacks:

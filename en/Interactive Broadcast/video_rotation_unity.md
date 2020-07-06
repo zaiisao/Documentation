@@ -3,7 +3,7 @@
 title: Rotate the Video
 description: 
 platform: Unity
-updatedAt: Wed Mar 18 2020 10:02:36 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 04:23:37 GMT+0800 (CST)
 ---
 # Rotate the Video
 ## Introduction
@@ -21,7 +21,7 @@ To avoid issues such as video scaling and scropping caused by video rotation, th
 
 ## Implementation
 
-Before setting the video orientation mode, ensure that you have implemented basic real-time communication functions in your project. For details, see [Start a Video Call](../../en/Interactive%20Broadcast/start_call_unity.md) or [Start a Video Broadcast](../../en/Interactive%20Broadcast/start_live_unity.md).
+Before setting the video orientation mode, ensure that you have implemented basic real-time communication functions in your project. For details, see [Start a Video Call](../../en/Interactive%20Broadcast/start_call_unity.md) or [Start Interactive Video Streaming](../../en/Interactive%20Broadcast/start_live_unity.md).
 
 The `orientationMode` parameter provides three modes, `ORIENTATION_MODE_ADAPTIVE`, `ORIENTATION_MODE_FIXED_LANDSCAPE`, and `ORIENTATION_MODE_FIXED_PORTRAIT` for different user needs. 
 

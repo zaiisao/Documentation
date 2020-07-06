@@ -3,18 +3,18 @@
 title: Set the Video Profile
 description: 
 platform: Android
-updatedAt: Tue Jan 14 2020 02:37:21 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 05:37:05 GMT+0800 (CST)
 ---
 # Set the Video Profile
 ## Introduction
 
-You can set the video profile, either before or after a user joins a channel, for the user to enjoy better video quality during a video call or live broadcast.
+You can set the video profile, either before or after a user joins a channel, for the user to enjoy better video quality during a video call or live interactive streaming.
 
 The Agora SDK uses the `setVideoEncoderConfiguration` method to set the video profile. Each video profile corresponds to a set of video parameters, including the resolution, frame rate, bitrate, and video orientation.
 
 ## Implementation
 
-Before setting the video profile, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Video/start_call_android.md) or [Start a Live Broadcast](../../en/Video/start_live_android.md).
+Before setting the video profile, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Video Call](../../en/Video/start_call_android.md) or [Start Live Interactive Video Streaming](../../en/Video/start_live_android.md).
 
 After initializing RtcEngine, you can call the `setVideoEncoderConfiguration` method to set the video profile and set the video resolution, frame rate, birtate and orientation mode.
 
@@ -65,9 +65,9 @@ We provide an open-source Agora-Android-Tutorial-1to1 demo project on GitHub. Yo
  Do not set the `minFrameRate` parameter to a value greater than `frameRate`. The default value of `minFrameRate` is experiment verified and can satisfy most use scenarios. We do not recommend changing it.
 - If you do not need to set the video profile after joining the channel, you can call the `setVideoEncoderConfiguration` method before the `enableVideo` method to reduce the render time of the first video frame.
 - The Agora SDK may adjust the parameters under poor network conditions. 
--  A live broadcast channel generally requires a higher bitrate for better video quality. Therefore, Agora recommends setting the bitrate in the live broadcast profile to twice of that in the communication profile. See [Set the bitrate](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html#a4b090cd0e9f6d98bcf89cb1c4c2066e8).
-- For better video quality during a live broadcast, a stable network connection is recommended.
-- Setting parameters in the `setVideoEncoderConfiguration` method may affect your bill. For more information, see [Pricing and Billing](https://docs.agora.io/en/faq/video_billing).
+-  A live interactive streaming channel generally requires a higher bitrate for better video quality. Therefore, Agora recommends setting the bitrate in the live interactive streaming profile to twice of that in the communication profile. See [Set the bitrate](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html#a4b090cd0e9f6d98bcf89cb1c4c2066e8).
+- For better video quality during the live interactive streaming, a stable network connection is recommended.
+- Setting parameters in the `setVideoEncoderConfiguration` method may affect your bill. For more information, see [Billing](../../en/Video/billing_rtc.md).
 
 
 ## Recommended video profiles
@@ -86,7 +86,7 @@ The following profiles for different scenarios are recommended:
 
 You can also customize the video parameters with the `setVideoEncoderConfiguration` method, such as increasing the bitrate to ensure the video quality according to the table below.
 
-| Resolution<br>(width x height) | Frame rate<br>(fps) | Base bitrate<br>(Kbps, for Communication) | Live bitrate<br>(Kbps, for Live Broadcast) |
+| Resolution<br>(width x height) | Frame rate<br>(fps) | Base bitrate<br>(Kbps, for COMMUNICATION) | Live bitrate<br>(Kbps, for LIVE_BROADCASTING) |
 | ------------------------------ | ------------------- | ----------------------------------------- | ------------------------------------------ |
 | 160 x 120                      | 15                  | 65                                        | 130                                        |
 | 120 x 120                      | 15                  | 50                                        | 100                                        |

@@ -3,11 +3,11 @@
 title: Share the Screen
 description: 
 platform: Android
-updatedAt: Thu Jun 11 2020 09:45:48 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 04:26:04 GMT+0800 (CST)
 ---
 # Share the Screen
 ## Introduction
-During a video call or live broadcast, **sharing the screen** enhances communication by displaying the speaker's screen on the display of other speakers or audience members in the channel.
+During a video call or interactive streaming, **sharing the screen** enhances communication by displaying the speaker's screen on the display of other speakers or audience members in the channel.
 
 Screen sharing is applied in the following scenarios:
 
@@ -16,7 +16,7 @@ Screen sharing is applied in the following scenarios:
 
 ## Implementation
 
-Before proceeding, ensure that you implement a basic call or live broadcast in your project. See [Start a Call](../../en/Video/start_call_android.md) or [Start a Live Broadcast](../../en/Video/start_live_android.md) for details.
+Before proceeding, ensure that you implement a basic call or interactive streaming in your project. See [Start a Video Call](../../en/Video/start_call_android.md) or [Start Interactive Video Streaming](../../en/Video/start_live_android.md) for details.
 
 The Agora SDK does not provide specific methods for screen sharing on Android. With system methods provided by Android, you can enable screen sharing with the following steps:
 - Use MediaProjection/VirtualDisplay to get the screen image data.

@@ -3,17 +3,17 @@
 title: Video Stream Fallback
 description: 
 platform: Android
-updatedAt: Fri Mar 06 2020 10:28:46 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 05:44:14 GMT+0800 (CST)
 ---
 # Video Stream Fallback
 ## Introduction
 
-The audio and video quality of a live broadcast or a video call deteriorates under poor network conditions. To improve the efficiency of a live broadcast or a video call, the `setLocalPublishFallbackOption` and `setRemoteSubscribeFallbackOption` methods are used for the SDK to automatically switch the high-video stream to low-video stream and disable the video stream under these conditions.
+The audio and video quality of live interactive video streaming or a video call deteriorates under poor network conditions. To improve the efficiency of live interactive video streaming or a video call, the `setLocalPublishFallbackOption` and `setRemoteSubscribeFallbackOption` methods are used for the SDK to automatically switch the high-video stream to low-video stream and disable the video stream under these conditions.
 
 
 ## Implementation
 
-Before proceeding, ensure that you implement a basic live broadcast or call in your project. See [Start a Live Broadcast](../../en/Video/start_live_android.md) or [Start a Call](../../en/Video/start_call_android.md) for details.
+Before proceeding, ensure that you implement live interactive video streaming or a video call in your project. See [Start Live Interactive Video Streaming](../../en/Video/start_live_android.md) or [Start a Call](../../en/Video/start_call_android.md) for details.
 
 Refer to the following steps to set the stream fallback under poor network conditions:
 

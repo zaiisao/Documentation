@@ -3,7 +3,7 @@
 title: Custom Video Source and Renderer
 description: 
 platform: Android
-updatedAt: Fri Mar 27 2020 05:00:11 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 04:34:16 GMT+0800 (CST)
 ---
 # Custom Video Source and Renderer
 ## Introduction
@@ -21,7 +21,7 @@ This article tells you how to use the Agora Native SDK to customize the video so
 
 ## Implementation
 
-Before customizing the video source or renderer, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Interactive%20Broadcast/start_call_android.md) or [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_android.md).
+Before customizing the video source or renderer, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Video Call](../../en/Interactive%20Broadcast/start_call_android.md) or [Start Interactive Video Streaming](../../en/Interactive%20Broadcast/start_live_android.md).
 
 ### Customize video source
 

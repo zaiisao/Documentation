@@ -3,11 +3,11 @@
 title: Share the Screen
 description: 
 platform: iOS
-updatedAt: Mon Mar 09 2020 07:05:13 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 04:28:23 GMT+0800 (CST)
 ---
 # Share the Screen
 ## Introduction
-During a video call or live broadcast, **sharing the screen** enhances communication by displaying the speaker's screen on the display of other speakers or audience members in the channel.
+During a video call or interactive streaming, **sharing the screen** enhances communication by displaying the speaker's screen on the display of other speakers or audience members in the channel.
 
 Screen sharing is applied in the following scenarios:
 
@@ -16,7 +16,7 @@ Screen sharing is applied in the following scenarios:
 
 ## Implementation
 
-Ensure that you implement a video call or an interactive broadcast in your project. For details, see [Start a Call](../../en/Interactive%20Broadcast/start_call_ios.md) or [Start an Interactive Broadcast](../../en/Interactive%20Broadcast/start_live_ios.md).
+Ensure that you implement a video call or interactive streaming in your project. For details, see [Start a Video Call](../../en/Interactive%20Broadcast/start_call_ios.md) or [Start Interactive Video Streaming](../../en/Interactive%20Broadcast/start_live_ios.md).
 
 Screen sharing on iOS is implemented with the following steps:
 

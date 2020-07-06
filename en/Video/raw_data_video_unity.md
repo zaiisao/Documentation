@@ -3,7 +3,7 @@
 title: Raw Video Data
 description: 
 platform: Unity
-updatedAt: Thu Dec 26 2019 10:55:58 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 04:57:34 GMT+0800 (CST)
 ---
 # Raw Video Data
 ## Introduction
@@ -16,7 +16,7 @@ Agora Unity SDK provides the `VideoRawDataManager` class for capturing and proce
 
 ## Implementation
 
-Before using the raw data function, ensure that you have implemented the basic real-time communication functions in your project. See [Start a Video Call](https://docs.agora.io/en/Video/start_call_unity?platform=Unity) or [Start a Video Broadcast](https://docs.agora.io/en/Interactive%20Broadcast/start_live_unity?platform=Unity) for details.
+Before using the raw data function, ensure that you have implemented the basic real-time communication functions in your project. See [Start a Video Call](https://docs.agora.io/en/Video/start_call_unity?platform=Unity) or [Start Interactive Video Streaming](https://docs.agora.io/en/Interactive%20Broadcast/start_live_unity?platform=Unity) for details.
 
 Follow these steps to implement the raw video data functions in your project:
 

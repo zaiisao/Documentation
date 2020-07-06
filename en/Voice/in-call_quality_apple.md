@@ -3,16 +3,16 @@
 title: Report In-call Statistics
 description: In-call quality for iOS/macOS
 platform: iOS,macOS
-updatedAt: Tue Jan 14 2020 02:45:06 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 03:52:19 GMT+0800 (CST)
 ---
 # Report In-call Statistics
 ## Introduction
 
 **After joining the channel**, the SDK triggers the following callbacks related to the call quality **once every two seconds**. You can see the last mile network quality, local statistics, audio quality, and video quality of the current call.
 
-<div class="alert note">Ensure that you implement a video call or an interactive broadcast in your project. For details, see the following documents:
-  <li>iOS: <a href="../../en/Voice/start_call_ios.md">Start a Call</a> or <a href="../../en/Voice/start_live_ios.md">Start an Interactive Broadcast</a></li>
-  <li>macOS: <a href="../../en/Voice/start_call_mac.md">Start a Call</a> or <a href="../../en/Voice/start_live_mac.md">Start an Interactive Broadcast</a></li>
+<div class="alert note">Ensure that you implement a video call or interactive video streaming in your project. For details, see the following documents:
+  <li>iOS: <a href="../../en/Voice/start_call_ios.md">Start a Call</a> or <a href="../../en/Voice/start_live_ios.md">Start Live Interactive Streaming</a></li>
+  <li>macOS: <a href="../../en/Voice/start_call_mac.md">Start a Call</a> or <a href="../../en/Voice/start_live_mac.md">Start Live Interactive Streaming</a></li>
 </div>
 
 ## Network quality report
@@ -125,7 +125,7 @@ The `remoteVideoStats` callback reports the video statistics of each remote user
 | `packetLossRate`          | The packet loss rate of the video received in the reported interval. | <li>Stages 2 + 3 + 4 in the figure above<li>The packet loss rate after using the **anti-packet-loss** method, which is lower than before. |
 | `decoderOutputFrameRate`  | The output frame rate of the remote video decoder.           |                                                              |
 | `rendererOutputFrameRate` | The output frame rate of the remote video renderer.          |                                                              |
-| `totalFrozenTime`         | The total **freeze** time (ms) of the remote video stream after the remote user joins the channel. | In a video call or video broadcasting session where the frame rate is set to no less than 5 fps, video **freeze** occurs when the time interval between two adjacent renderable video frames is more than 500 ms. |
+| `totalFrozenTime`         | The total **freeze** time (ms) of the remote video stream after the remote user joins the channel. | In a video call or interactive video streaming session where the frame rate is set to no less than 5 fps, video **freeze** occurs when the time interval between two adjacent renderable video frames is more than 500 ms. |
 | `frozenRate`              | The total video freeze time as a percentage of the total time when the video is available. | When the remote user/host neither stops sending the video stream nor disables the video module after joining the channel, the video is **available**. |
 
 > - In the communication profile, you receive video stream statistics of all the remote users (excluding yours) in the channel once every two seconds.

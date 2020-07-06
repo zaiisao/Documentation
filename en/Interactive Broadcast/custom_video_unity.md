@@ -3,7 +3,7 @@
 title: Custom Video Source and Renderer
 description: 
 platform: Unity
-updatedAt: Fri May 22 2020 03:37:44 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 04:53:31 GMT+0800 (CST)
 ---
 # Custom Video Source and Renderer
 ## Introduction
@@ -21,7 +21,7 @@ This article describes how to use the Agora Unity SDK to customize the video sou
 
 ## Implementation
 
-Before customizing the video source or renderer, ensure that you have implemented the basic real-time communication functions in your project. See [Start a Video Call](https://docs.agora.io/en/Video/start_call_unity?platform=Unity) or [Start a Video Broadcast](https://docs.agora.io/en/Interactive%20Broadcast/start_live_unity?platform=Unity) for details.
+Before customizing the video source or renderer, ensure that you have implemented the basic real-time communication functions in your project. See [Start a Video Call](https://docs.agora.io/en/Video/start_call_unity?platform=Unity) or [Start Interactive Video Streaming](https://docs.agora.io/en/Interactive%20Broadcast/start_live_unity?platform=Unity) for details.
 
 Refer to the following steps to customize the video source and renderer in your project:
 

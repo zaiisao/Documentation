@@ -3,7 +3,7 @@
 title: Custom Video Source and Renderer
 description: How to use external audio/video sources for Web SDK
 platform: Web
-updatedAt: Fri Mar 27 2020 06:18:40 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 04:41:31 GMT+0800 (CST)
 ---
 # Custom Video Source and Renderer
 ## Introduction
@@ -24,7 +24,7 @@ This article explains how to customize the video source and renderer with the Ag
 
 ## Implementation
 
-Before customizing the video source and renderer, ensure that you have implemented the basic real-time communication functions. For details, see [Start a call](../../en/Video/start_call_web.md) or [Start a Live Broadcast](../../en/Video/start_live_web.md).
+Before customizing the video source and renderer, ensure that you have implemented the basic real-time communication functions. For details, see [Start a Video Call](../../en/Video/start_call_web.md) or [Start Interactive Video Streaming](../../en/Video/start_live_web.md).
 
 ### Customize the audio/video source
 

@@ -3,7 +3,7 @@
 title: Lastmile Tests
 description: 
 platform: Unity
-updatedAt: Fri Feb 28 2020 02:52:51 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 03:40:28 GMT+0800 (CST)
 ---
 # Lastmile Tests
 ## Introduction
@@ -18,8 +18,8 @@ This function particularly applies to scenarios which have high requirements on 
 
 Before conducting the last-mile test, ensure that you have implemented the basic real-time communication functions in your project. For details, see the following documents:
 
-- [Start a Voice Call](../../en/Audio%20Broadcast/start_call_audio_unity.md) or [Start an Audio Broadcasting](../../en/Audio%20Broadcast/start_live_audio_unity.md)
-- [Start a Video Call](../../en/Audio%20Broadcast/start_call_unity.md) or [Start a Video Broadcasting](../../en/Audio%20Broadcast/start_live_unity.md)
+- [Start a Voice Call](../../en/Audio%20Broadcast/start_call_audio_unity.md) or [Start Live Interactive Audio Streaming](../../en/Audio%20Broadcast/start_live_audio_unity.md)
+- [Start a Video Call](../../en/Audio%20Broadcast/start_call_unity.md) or [Start Live Interactive Video Streaming](../../en/Audio%20Broadcast/start_live_unity.md)
 
 
 1. Call the `StartLastmileProbeTest` method before joining a channel to get the uplink and downlink last-mile network statistics, including the bandwidth, packet loss, jitter, and round-trip time (RTT).

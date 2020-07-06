@@ -3,7 +3,7 @@
 title: Start a Video Broadcast
 description: 
 platform: Windows
-updatedAt: Wed Apr 29 2020 09:16:31 GMT+0800 (CST)
+updatedAt: Fri Jul 03 2020 09:16:01 GMT+0800 (CST)
 ---
 # Start a Video Broadcast
 Use this guide to quickly start a video interactive broadcast with the Agora Video SDK for Windows. 
@@ -44,7 +44,7 @@ Follow these steps to integrate the Agora Video SDK into your project.
 
 - Go to [SDK Downloads](https://docs.agora.io/en/Agora%20Platform/downloads), download the latest version of the Agora SDK for Windows, and unzip the downloaded SDK package.
 
-- Copy the **sdk** folder of the downloaded SDK package to your project files.
+- Copy the **x86** or **x86_64** folder of the downloaded SDK package to your project files according to your development environment.
 
 **2. Configure the project properties**
 

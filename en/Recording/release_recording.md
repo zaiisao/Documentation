@@ -3,12 +3,13 @@
 title: Release Notes for the Recording SDK
 description: 
 platform: Linux
-updatedAt: Mon May 25 2020 07:39:08 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 03:13:13 GMT+0800 (CST)
 ---
 # Release Notes for the Recording SDK
 ## Overview
 
-The Agora On-premise Recording SDK records communication and live broadcast contents based on the Agora Native SDK.
+The Agora On-premise Recording SDK records communication and live interactive streaming
+contents based on the Agora Native SDK.
 
 ### Compatibility
 
@@ -182,7 +183,7 @@ v2.3.3 adds the `onAudioVolumeIndication` callback to get the list of users who 
 
 v2.3.0 was released on January 14, 2019. 
 
-> The calculation of the usage of the On-premise Recording SDK v2.3.0 or later is separated from that of the Agora Voice Call/Voice Interactive Broadcast SDK and the Agora Video Call/Video Interactive Broadcast SDK. Contact [support@agora.io](mailto:support@agora.io) for details.
+> The calculation of the usage of the On-premise Recording SDK v2.3.0 or later is separated from that of the Agora Voice Call/Interactive Audio Streaming SDK and the Agora Video Call/Interactive Video Streaming SDK. Contact [support@agora.io](mailto:support@agora.io) for details.
 
 **New features**
 
@@ -473,7 +474,7 @@ v1.0.0 was released on June 15, 2017.
 
 This is the first release of the On-premise Recording SDK with the following functions:
 
-- Communication and live broadcast scenarios.
+- Communication and live interactive streaming scenarios.
 - Recording the voice and video of all users in a channel.
 - Recording the voice and video of all users in multiple channels simultaneously.
 - Recording the voice of all users in a channel or in multiple channels simultaneously.

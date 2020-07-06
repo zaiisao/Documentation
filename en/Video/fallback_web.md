@@ -3,17 +3,17 @@
 title: Video Stream Fallback
 description: 
 platform: Web
-updatedAt: Thu Jul 02 2020 07:38:37 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 05:47:17 GMT+0800 (CST)
 ---
 # Video Stream Fallback
 ## Introduction
 
-Unstable network affects the audio and video quality in a video call or a live broadcast. To ensure smooth communication under poor network conditions, Agora supports video stream fallback. When the network condition deteriorates, the SDK automatically switches from the high-quality video stream to the low-quality video stream, or disables the video to ensure the audio quality under extremely poor network conditions.
+Unstable network affects the audio and video quality in a video call or live interactive video streaming. To ensure smooth communication under poor network conditions, Agora supports video stream fallback. When the network condition deteriorates, the SDK automatically switches from the high-quality video stream to the low-quality video stream, or disables the video to ensure the audio quality under extremely poor network conditions.
 
 
 ## Implementation
 
-Before proceeding, ensure that you have implemented a basic live broadcast or call in your project. See [Start a Live Broadcast](../../en/Video/start_live_web.md) or [Start a Call](../../en/Video/start_call_web.md) for details.
+Before proceeding, ensure that you have implemented live interactive video streaming or a video call in your project. See [Start Live Interactive Video Streaming](../../en/Video/start_live_web.md) or [Start a Call](../../en/Video/start_call_web.md) for details.
 
 Follow these steps to enable video stream fallback:
 

@@ -3,7 +3,7 @@
 title: Realtime (Beta)
 description: 
 platform: All Platforms
-updatedAt: Wed May 20 2020 07:27:17 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 05:53:42 GMT+0800 (CST)
 ---
 # Realtime (Beta)
 Use the Realtime function of Agora Analytics to monitor the live status of your project. It also informs you of any abnormalities that occur along with their root cause. 
@@ -188,13 +188,13 @@ This section describes the key terms used in Realtime. See [Agora Key Terms](htt
 
 ### Channel
 
-Every call or live broadcast happens in a channel. If we imagine an app being a building, a channel will be a room in the building.
+Every call or interactive streaming happens in a channel. If we imagine an app being a building, a channel will be a room in the building.
 
 **Realtime** does not count a channel by name, but by lifecycle. It counts each time from when the first users joins the channel to when the last user leaves it.
 
 ### User
 
-Each user in the channel has a unique [user ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%%20Platforms#a-nameusernameausername).
+Each user in the channel has a unique [user ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%%20Platforms#username).
 
 **Realtime** counts a unique username in a unique channel as one user. If a real-life user joins one channel with multiple, different usernames, or joins different channels with one username, **Realtime** counts users in both situations as multiple users.
 

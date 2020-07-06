@@ -3,7 +3,7 @@
 title: Real-time Alarm (Beta)
 description: 
 platform: All Platforms
-updatedAt: Fri May 22 2020 05:05:48 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 05:54:16 GMT+0800 (CST)
 ---
 # Real-time Alarm (Beta)
 The **Real-time Alarm** function of Agora Analytics enables you to view [users](#User) who have [poor communication experiences](#Abnormal), recognize abnormal categories and quality factors.
@@ -93,7 +93,7 @@ This section describes the key terms used in Real-time Alarm. See [Glossary](htt
 <a name="Channel"></a>
 ### Channel
 
-Every call or live broadcast occurs in a channel. If you imagine an app as a building, a channel is a room in the building.
+Every call or interactive streaming occurs in a channel. If you imagine an app as a building, a channel is a room in the building.
 
 Real-time Alarm does not count a channel by name, but by lifecycle. It counts a channel each time from the first user joining it to the last user leaving it.
 

@@ -3,7 +3,7 @@
 title: Start an Audio Broadcast
 description: 
 platform: Windows
-updatedAt: Tue Apr 28 2020 10:11:56 GMT+0800 (CST)
+updatedAt: Fri Jul 03 2020 09:16:32 GMT+0800 (CST)
 ---
 # Start an Audio Broadcast
 Use this guide to quickly start an audio interactive broadcast with the Agora Voice SDK for Windows. 
@@ -44,7 +44,7 @@ Follow these steps to integrate the Agora SDK into your project.
 
 - Go to [SDK Downloads](https://docs.agora.io/en/Agora%20Platform/downloads), download the latest version of the Agora SDK for Windows, and unzip the downloaded SDK package.
 
-- Copy the **sdk** folder of the downloaded SDK package to your project files.
+- Copy the **x86** or **x86_64** folder of the downloaded SDK package to your project files according to your development environment.
 
 **2. Configure the project properties**
 

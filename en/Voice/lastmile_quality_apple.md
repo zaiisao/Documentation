@@ -3,7 +3,7 @@
 title: Lastmile Tests
 description: Conduct a Pre-call Lastmile Test
 platform: iOS,macOS
-updatedAt: Fri Feb 28 2020 03:04:40 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 03:37:55 GMT+0800 (CST)
 ---
 # Lastmile Tests
 ## Introduction
@@ -17,8 +17,8 @@ This function particularly applies to scenarios which have high requirements on 
 ## Implementation
 
 Before conducting the last-mile test, ensure that you have implemented the basic real-time communication functions in your project. For details, see the following documents:
-- iOS: [Start a Call](../../en/Voice/start_call_ios.md) or [Start a Live Broadcast](../../en/Voice/start_live_ios.md)
-- macOS: [Start a Call](../../en/Voice/start_call_mac.md) or [Start a Live Broadcast](../../en/Voice/start_live_mac.md)
+- iOS: [Start a Call](../../en/Voice/start_call_ios.md) or [Start Live Interactive Streaming](../../en/Voice/start_live_ios.md)
+- macOS: [Start a Call](../../en/Voice/start_call_mac.md) or [Start Live Interactive Streaming](../../en/Voice/start_live_mac.md)
 
 1. Call the `startLastmileProbeTest` method before joining a channel to get the uplink and downlink last-mile network statistics, including the bandwidth, packet loss, jitter, and round-trip time (RTT).
 2. Once this method is enabled, the SDK triggers the following callbacks:

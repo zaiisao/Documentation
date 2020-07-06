@@ -3,12 +3,12 @@
 title: Agora Cloud Recording Changelog
 description: 
 platform: All Platforms
-updatedAt: Fri Jun 12 2020 05:03:58 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 03:18:26 GMT+0800 (CST)
 ---
 # Agora Cloud Recording Changelog
 ## Overview
 
-Agora Cloud Recording is an add-on service to record and save voice calls, video calls, and interactive broadcasts on your cloud storage. Compared with Agora On-premise Recording, Agora Cloud Recording is more efficient and convenient as it does not require deploying Linux servers.
+Agora Cloud Recording is an add-on service to record and save voice calls, video calls, and interactive streaming on your cloud storage. Compared with Agora On-premise Recording, Agora Cloud Recording is more efficient and convenient as it does not require deploying Linux servers.
 
 ### Compatibility
 
