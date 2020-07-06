@@ -3,7 +3,7 @@
 title: Co-host across Channels
 description: 
 platform: Windows
-updatedAt: Mon Jul 06 2020 10:35:09 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 10:38:22 GMT+0800 (CST)
 ---
 # Co-host across Channels
 ## Introduction
@@ -37,7 +37,7 @@ During the relay, the SDK reports the states and events of the channel media rel
 | RELAY_STATE_IDLE(0) and RELAY_OK(0)      | /     | The channel media relay stops.      |
 
 **Note**:
-- Any host in a Live Broadcast channel can call the `startChannelMediaRelay` method to enable channel media stream relay. The SDK relays the media streams of the host who calls the method.
+- Any host in a live interactive streaming channel can call the `startChannelMediaRelay` method to enable channel media stream relay. The SDK relays the media streams of the host who calls the method.
 - During the media stream relay, if the host of the destination channel drops offline or leaves the channel, the host of the source channel receives the `onUserOffline` callback.
 
 ### API call sequence

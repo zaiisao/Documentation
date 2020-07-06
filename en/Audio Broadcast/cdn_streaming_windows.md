@@ -8,7 +8,7 @@ updatedAt: Mon Jul 06 2020 10:35:15 GMT+0800 (CST)
 # Push Streams to CDN
 ## Introduction
 
-The process of publishing streams into the CDN (Content Delivery Network) is called CDN live streaming, where users can view the live broadcast through a web browser.
+The process of publishing streams into the CDN (Content Delivery Network) is called CDN live streaming, where users can view the live streaming through a web browser.
 
 When multiple hosts are in a channel in CDN live streaming, [transcoding](https://docs.agora.io/en/AgoraPlatform/terms?platform=AllPlatforms#transcoding) is used to combine the streams of all the hosts into a single stream. Transcoding sets the audio and/or video profiles and the picture-in-picture layout for the stream to be pushed to the CDN.
 

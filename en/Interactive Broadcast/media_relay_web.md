@@ -3,7 +3,7 @@
 title: Co-host across Channels
 description: 
 platform: Web
-updatedAt: Mon Jul 06 2020 10:35:18 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 10:37:24 GMT+0800 (CST)
 ---
 # Co-host across Channels
 ## Introduction
@@ -41,7 +41,7 @@ Refer to the following table when implementing your code:
 
 **Note**:
 
-- Any host in a live-broadcast channel can call `startChannelMediaRelay` to enable the media stream relay. The SDK relays the media stream of the host who calls the method.
+- Any host in a live interactive streaming channel can call `startChannelMediaRelay` to enable the media stream relay. The SDK relays the media stream of the host who calls the method.
 - After a relay starts, users in the destination channels receive the `Client.on("stream-added")` callback.
 - If the host of a destination channel drops offline or leaves the channel during the media relay, the host of the source channel receives the `Client.on("peer-leave")` callback.
 
