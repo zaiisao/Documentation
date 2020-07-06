@@ -3,7 +3,7 @@
 title: 屏幕共享
 description: 
 platform: iOS
-updatedAt: Mon Mar 09 2020 07:04:49 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 07:01:13 GMT+0800 (CST)
 ---
 # 屏幕共享
 ## 功能描述
@@ -19,6 +19,7 @@ updatedAt: Mon Mar 09 2020 07:04:49 GMT+0800 (CST)
 
 屏幕共享在 iOS 平台上的实现，主要通过如下步骤：
 * 使用 Broadcast Upload Extension 开启一个新的进程
+  <div class="alert note">Broadcast Upload Extension 的内存使用限制为 50 M，请确保你的内存使用不超过 50 M。</div>
 * 使用 Apple ReplayKit 框架进行屏幕录制
 * 使用 Agora SDK 进行视频流的传输
 
@@ -65,3 +66,7 @@ override func processSampleBuffer(_ sampleBuffer: CMSampleBuffer, with sampleBuf
 ```
 
 同时，我们在 GitHub 提供一个开源的 [Agora-Screen-Sharing-iOS](https://github.com/AgoraIO/Advanced-Video/tree/master/iOS%26macOS/Agora-Screen-Sharing/Agora-Screen-Sharing-iOS) 示例项目。你可以前往下载，参考源代码。
+
+## 开发注意事项
+
+Broadcast Upload Extension 的内存使用限制为 50 M，请确保你的内存使用不超过 50 M。

@@ -3,7 +3,7 @@
 title: 美颜
 description: 
 platform: Web
-updatedAt: Fri May 08 2020 08:12:54 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 03:20:04 GMT+0800 (CST)
 ---
 # 美颜
 ## 功能描述
@@ -46,8 +46,6 @@ var streamPublishedHandler = async function() {
 }
 client.on("stream-published", streamPublishedHandler);
 ```
-
-同时，我们在 GitHub 提供已实现美颜功能的开源示例项目。你可以[在线体验](https://webdemo.agora.io/agora-web-showcase/examples/OpenLive-Web/#/)并参考 [`rtc-client.js`](https://github.com/AgoraIO/Basic-Video-Broadcasting/blob/master/OpenLive-Web/src/rtc-client.js#L82) 文件中的代码。
 
 ## 开发注意事项
 

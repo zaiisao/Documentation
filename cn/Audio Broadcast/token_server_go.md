@@ -10,15 +10,7 @@ updatedAt: Thu Jun 11 2020 07:53:03 GMT+0800 (CST)
 
 ## Token 代码仓库说明
 
-你需要在业务服务器自行部署 Token 生成器生成 Token。我们的 [GitHub 开源仓库](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey) 为你提供了 Token 生成源码以及使用这些源码生成 Token 的简单示例。我们目前支持以下几种语言：
-
-- CPP
-- Java
-- Python
-- PHP
-- Ruby
-- Node.js
-- Go
+你需要在业务服务器自行部署 Token 生成器生成 Token。我们的 [GitHub 开源仓库](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey) 为你提供了 Token 生成源码以及使用这些源码生成 Token 的简单示例。我们目前支持 C++、Java、Python、PHP、Ruby、Node.js、Go、C# 等语言。
 
 [GitHub 开源仓库](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey) 的 <b>./\<language\>/src</b> 文件夹下包含生成各种版本的 Dynamic key 和 Token 的源码。其中：**AccessToken** 和 **RtcTokenBuilder** 用于为以下 SDK 生成 Token：
 
@@ -26,8 +18,6 @@ updatedAt: Thu Jun 11 2020 07:53:03 GMT+0800 (CST)
 - Agora Web SDK v2.4+
 - Agora Recording SDK v2.1+ 
 - Agora RTSA SDK
-
-
 
 我们推荐使用 **RtcTokenBuilder** 而不是 **AccessToken** 生成 Token。**AccessToken** 实现了底层的核心算法，**RtcTokenBuilder** 实际上对 **AccessToken** 又进行了一层封装，提供了更为简化易懂的 Token 生成接口。
 

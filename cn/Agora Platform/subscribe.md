@@ -3,7 +3,7 @@
 title: 订阅 (subscribe)
 description: 
 platform: All Platforms
-updatedAt: Fri Jul 03 2020 10:22:43 GMT+0800 (CST)
+updatedAt: Fri Jul 03 2020 11:30:08 GMT+0800 (CST)
 ---
 # 订阅 (subscribe)
 #### <a name="sub"></a>
@@ -13,7 +13,7 @@ updatedAt: Fri Jul 03 2020 10:22:43 GMT+0800 (CST)
 在 Agora RTM SDK 中，订阅是指对一个或多个用户的在线状态进行监控。当被订阅用户在线状态发生变化时，Agora RTM SDK 会使用回调通知订阅用户。参考<a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/index.html#subscribe">订阅或取消订阅单个或多个用户的状态</a>。
 
 <div class="alert info">相关链接：
- <li><a href="#channel">频道</a></li>
- <li><a href="#pub">发布</a></li></div>
+ <li><a href="../../cn/Agora%20Platform/terms.md">频道</a></li>
+ <li><a href="../../cn/Agora%20Platform/terms.md">发布</a></li></div>
  
  <a href="../../cn/Agora%20Platform/terms.md"><button>返回术语库</button></a>

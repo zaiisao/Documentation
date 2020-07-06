@@ -3,7 +3,7 @@
 title: 术语库
 description: 
 platform: All Platforms
-updatedAt: Fri Jul 03 2020 11:25:24 GMT+0800 (CST)
+updatedAt: Fri Jul 03 2020 11:57:49 GMT+0800 (CST)
 ---
 # 术语库
 ## A
@@ -74,9 +74,9 @@ App 证书是 Agora 控制台为开发项目生成的字符串，用于开启 To
 
 ## G
 
-#### <a name="audience"></a>[**<u>观众 (audience)</u>**](../../cn/Agora%20Platform/term_audience.md)
+#### <a name="audience"></a>**观众 (audience)**
 
-观众指频道内没有发流权限的用户。
+观众指频道内没有发流权限的用户。观众只能订阅远端音视频流，不能发布音视频流。详见[用户角色](../../cn/Agora%20Platform/terms.md)。
 
 ## H
 

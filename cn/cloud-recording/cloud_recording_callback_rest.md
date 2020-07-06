@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API 回调服务
 description: Cloud recording restful api callback
 platform: All Platforms
-updatedAt: Fri Jun 12 2020 05:02:54 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 03:21:10 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 回调服务
 Agora 提供消息通知服务，你可以配置一个接收回调的 HTTP/HTTPS 服务器地址来接收云端录制的事件通知。当事件发生时，Agora 云端录制服务会将事件消息发送给 Agora 消息通知服务器，然后 Agroa 消息通知服务器会通过 HTTP/HTTPS 请求将事件投递给你的服务器。
@@ -114,7 +114,7 @@ Agora 提供消息通知服务，你可以配置一个接收回调的 HTTP/HTTPS
 `eventType` 为 11 表示云端录制服务结束任务并退出，`details` 中包含以下字段：
 
 - `msgName`：String 类型，消息名称，即 `session_exit`。
-- `leaveStatus`：Number 类型，退出状态。
+- `exitStatus`：Number 类型，退出状态。
   - `0`：正常退出，即录制结束、录制文件成功上传后，录制服务退出。
   - `1`：异常退出，例如参数设置错误，导致录制停止。
 

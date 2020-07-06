@@ -3,7 +3,7 @@
 title: 播放音效与混音文件
 description: How to play audio effect files and enable audio mixing
 platform: iOS,macOS
-updatedAt: Fri Jun 19 2020 11:25:39 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 03:46:47 GMT+0800 (CST)
 ---
 # 播放音效与混音文件
 ## 功能描述
@@ -45,7 +45,7 @@ let filePath = "your filepath"  // 播放文件的路径
 let loopCount = 1               // 播放次数，-1 代表无限循环
 let pitch = 1                   // 音效的音调
 let pan = 1                     // 音效的空间位置，0表示正前方
-let gain = 0                    // 音量，取值 0 ~ 100， 100 代表原始音量
+let gain = 100                    // 音量，取值 0 ~ 100， 100 代表原始音量
 let publish = true              // 是否令远端也能听到音效的声音
 agoraKit.playEffect(Int32(soundId), filePath: filePath, loopCount: Int32(loopCount), pitch: pitch, pan: pan, gain: gain, publish: publish)
 
@@ -83,7 +83,7 @@ NSString *filePath = "your filepath";
 int loopCount = 1;
 double pitch = 1;
 double pan = 1;
-double gain = 0;
+double gain = 100;
 BOOL publish = true;
 
 [agoraKit playEffect: soundId filePath: filePath loopCount: loopCount pitch: pitch pan: pan gain: gain publish: publish];
