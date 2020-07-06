@@ -3,12 +3,12 @@
 title: Image Enhancement
 description: 
 platform: iOS
-updatedAt: Tue Jan 14 2020 02:37:58 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 07:12:59 GMT+0800 (CST)
 ---
 # Image Enhancement
 ## Introduction
 
-Agora provides an image enhancement API for users in social and entertainment scenarios to improve their appearance in video calls or live broadcasts. With this API, users can adjust settings such as the image contrast, brightness, sharpness, and red saturation, as shown in the following figure.
+Agora provides an image enhancement API for users in social and entertainment scenarios to improve their appearance in a video call or live interactive video streaming. With this API, users can adjust settings such as the image contrast, brightness, sharpness, and red saturation, as shown in the following figure.
 
 ![](https://web-cdn.agora.io/docs-files/1553754533580)
 

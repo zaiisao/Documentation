@@ -10,15 +10,7 @@ This page provides Agora RTC SDK v2.1+, Agora Web SDK v2.4+, Agora Recording SDK
 
 ## An introduction to Agora's token repository
 
-Your token needs to be generated on your own server, hence you are required to first deploy a token generator on the server. In our [GitHub Repository](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey), we provide source codes and token generator demos in the following programming languages:
-
-- CPP
-- Java
-- Python
-- PHP
-- Node.js
-- Go
-- Ruby
+Your token needs to be generated on your own server, hence you are required to first deploy a token generator on the server. In our [GitHub Repository](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey), we provide source codes and token generator demos in C++, Java, Python, PHP, Ruby, Node.js, Go, C# and other programming languages.
 
 The <b>./ruby/lib</b> folder of each language holds source codes for generating different types of dynamic keys and tokens. Note that both **AccessToken** and **SimpleTokenBuilder** can generate a token for the following SDKs:
 

@@ -3,7 +3,7 @@
 title: Test a Media Device
 description: 
 platform: Android
-updatedAt: Fri Mar 06 2020 08:54:07 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 07:52:19 GMT+0800 (CST)
 ---
 # Test a Media Device
 ## Introduction
@@ -14,7 +14,7 @@ Before joining a channel, you can use the `startEchoTest` method to test if the 
 
 ## Implementation
 
-Ensure that you understand how to [Start a Call](../../en/Video/start_call_android.md) or [Start an Interactive Broadcast](../../en/Video/start_live_android.md).
+Ensure that you understand how to [Start a Call](../../en/Video/start_call_android.md) or [Start Live Interactive Video Streaming](../../en/Video/start_live_android.md).
 
 1. Call `startEchoTest` before joining a channel. You need to set the `intervalInSeconds` parameter in this method to notify the SDK when to report the result of this test. The value range is [2, 10], and the default value is 10 (in seconds).
 

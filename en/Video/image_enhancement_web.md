@@ -3,18 +3,18 @@
 title: Image Enhancement
 description: 
 platform: Web
-updatedAt: Mon Jul 06 2020 03:19:03 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 07:46:00 GMT+0800 (CST)
 ---
 # Image Enhancement
 ## Introduction
 
-Agora provides an image enhancement API for users in social and entertainment scenarios to improve their appearance in video calls or live broadcasts. With this API, users can adjust settings such as the image contrast, brightness, sharpness, and red saturation, as shown in the following figure:
+Agora provides an image enhancement API for users in social and entertainment scenarios to improve their appearance in a video call or live interactive video streaming. With this API, users can adjust settings such as the image contrast, brightness, sharpness, and red saturation, as shown in the following figure:
 
 ![img](https://web-cdn.agora.io/docs-files/1553753660177)
 
 ## Implementation
 
-Before proceeding, ensure that you implement a basic call or live broadcast in your project. See [Start a Call](../../en/Video/start_call_web.md) or [Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_web.md) for details.
+Before proceeding, ensure that you implement a basic call or live interactive streaming in your project. See [Start a Video Call](../../en/Video/start_call_web.md) or [Start a Live Interactive Video Streaming](../../en/Video/start_live_web.md) for details.
 
 Call [`setBeautyEffectOptions`](https://docs.agora.io/en/Video/API%20Reference/web/interfaces/agorartc.stream.html#setbeautyeffectoptions) to flexibly add image enhancement features. This method is asynchronous, and must be called with `Promise` or `async`/`await` keywords.
 
