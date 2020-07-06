@@ -3,7 +3,7 @@
 title: Test a Media Device
 description: 
 platform: Web
-updatedAt: Thu May 07 2020 09:52:36 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 08:07:16 GMT+0800 (CST)
 ---
 # Test a Media Device
 ## Introduction
@@ -17,7 +17,7 @@ You can use the media device test and selection feature in the following scenari
 
 ## Implementation
 
-Before proceeding, ensure that you understand how to [start a call](../../en/Voice/start_call_web.md) or [live broadcast](../../en/Voice/start_live_web.md).
+Before proceeding, ensure that you have implemented basic real-time functions in your project. See [Start a Video Call](../../en/Voice/start_call_web.md) or [Start Live Interactive Video Streaming](../../en/Voice/start_live_web.md) for details.
 
 ### Microphone/Camera test
 

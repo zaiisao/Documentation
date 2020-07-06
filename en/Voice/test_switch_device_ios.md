@@ -14,7 +14,7 @@ Before joining a channel, you can use the `startEchoTestWithInterval` method to 
 
 ## Implementation
 
-Before proceeding, ensure that you implement a basic call or live interactive streaming in your project. See [Start a Video Call](../../en/Voice/start_call_ios.md) or [Start Live Interactive Video Streaming](../../en/Voice/start_live_ios.md) for details.
+Before proceeding, ensure that you have implemented basic real-time functions in your project. See [Start a Video Call](../../en/Voice/start_call_ios.md) or [Start Live Interactive Video Streaming](../../en/Voice/start_live_ios.md) for details.
 
 1. Call `startEchoTestWithIntercal` before joining a channel. You need to set the `interval` parameter in this method to notify the SDK when to report the result of this test. The value range is [2, 10], and the default value is 10 (in seconds).
 

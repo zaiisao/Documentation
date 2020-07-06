@@ -3,7 +3,7 @@
 title: Test a Media Device
 description: 
 platform: Windows
-updatedAt: Fri Mar 06 2020 10:48:25 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 08:07:53 GMT+0800 (CST)
 ---
 # Test a Media Device
 ## Introduction
@@ -12,7 +12,7 @@ To ensure smooth communications, we recommend conducting a media device test bef
 
 ## Implementation
 
-Ensure that you understand how to [Start a Call](../../en/Voice/start_call_windows.md) or [Start an Interactive Broadcast](../../en/Voice/start_live_windows.md).
+Before proceeding, ensure that you have implemented basic real-time functions in your project. See [Start a Video Call](../../en/Voice/start_call_windows.md) or [Start Live Interactive Video Streaming](../../en/Voice/start_live_windows.md) for details.
 
 - Choose either of the following ways to test the audio devices:
 	- Call the `startEchoTest` method to test if the audio devices and network connection are working properly.
