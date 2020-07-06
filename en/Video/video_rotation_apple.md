@@ -3,7 +3,7 @@
 title: Rotate the Video
 description: 
 platform: iOS,macOS
-updatedAt: Mon Jul 06 2020 04:21:13 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 09:58:25 GMT+0800 (CST)
 ---
 # Rotate the Video
 ## Introduction
@@ -35,6 +35,8 @@ The `orientationMode` parameter provides three modes, `ADAPTIVE`, `FIXED_LANDSCA
 In the ADAPTIVE mode, the output video always follows the orientation of the captured video, because the receiver takes the rotational information passed on from the video encoder. This mode is mainly used between Agora’s SDKs.
 
 The following figures show the video orientations at the video capturer and player when a rear camera is used as the video capturer. Note that the video orientation differs according to the UI lock of your app.
+
+<div class="alert note">On macOS, the status bar of the app remains horizontal, regardless of the orientation of the screen. <b>UI lock</b> applies to iOS only.</div>
 
 **UI lock (or UI unlock with the app disabling the screen auto-rotation)**
 

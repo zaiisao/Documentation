@@ -3,7 +3,7 @@
 title: Play Audio Effects/Audio Mixing File
 description: How to play audio effects and audio mixing
 platform: Windows
-updatedAt: Fri Jun 19 2020 11:42:05 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 09:37:37 GMT+0800 (CST)
 ---
 # Play Audio Effects/Audio Mixing File
 ## Introduction
@@ -84,7 +84,7 @@ int nRet = rtcEngine.unloadEffect(nSoundID);
 
 ## Audio mixing
 
-Audio mixing is playing a local or online music file while speaking, so that other users in the channel can hear the music. The audio mixing methods can be used to play background music. For example, playing music in a live broadcast. Only one music file can be played at one time. If you start playing a second music file during audio mixing, the first music file stops playing.
+Audio mixing is playing a local or online music file while speaking, so that other users in the channel can hear the music. The audio mixing methods can be used to play background music. For example, playing music in a live interactive streaming. Only one music file can be played at one time. If you start playing a second music file during audio mixing, the first music file stops playing.
 Agora audio mixing supports the following options:
 
 - Mix or replace the audio: 

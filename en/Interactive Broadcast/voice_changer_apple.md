@@ -3,7 +3,7 @@
 title: Set the Voice Enhancement and Effects
 description: How to set voice effects on iOS and macOS
 platform: iOS,macOS
-updatedAt: Fri Jun 19 2020 14:03:40 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 09:46:37 GMT+0800 (CST)
 ---
 # Set the Voice Enhancement and Effects
 ## Introduction 
@@ -14,10 +14,10 @@ Agora provides an [online demo](https://www.agora.io/en/audio-demo) to try out t
 
 ## Implementation
 
-Before proceeding, ensure that you implement a basic call or live broadcast in your project. See the Quickstart Guides for details:
+Before proceeding, ensure that you implement a basic call or live interactive streaming in your project. See the Quickstart Guides for details:
 
-- iOS: [Start a Call](../../en/Interactive%20Broadcast/start_call_ios.md)/[Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_ios.md)
-- macOS: [Start a Call](../../en/Interactive%20Broadcast/start_call_mac.md)/[Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_mac.md)
+- iOS: [Start a Call](../../en/Interactive%20Broadcast/start_call_ios.md)/[Start Live Interactive Streaming](../../en/Interactive%20Broadcast/start_live_ios.md)
+- macOS: [Start a Call](../../en/Interactive%20Broadcast/start_call_mac.md)/[Start Live Interactive Streaming](../../en/Interactive%20Broadcast/start_live_mac.md)
 
 ### Preset voice effects
 

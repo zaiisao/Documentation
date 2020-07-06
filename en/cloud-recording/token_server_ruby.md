@@ -3,7 +3,7 @@
 title: Generate a Token from Your Server
 description: 
 platform: Ruby
-updatedAt: Thu Jul 02 2020 10:58:36 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 09:49:03 GMT+0800 (CST)
 ---
 # Generate a Token from Your Server
 This page provides Agora RTC SDK v2.1+, Agora Web SDK v2.4+, Agora Recording SDK v2.1+, and Agora RTSA SDK users with  a quick guide on generating a sample token using the **RtcTokenBuilderSample** demos we provide, as well as token-generating API references in Ruby. 
@@ -79,7 +79,7 @@ This method builds a token with your int uid.
 | `app_certificate` | Certificate of the application that you registered in the Agora Console. See [Get an App Certificate](https://docs.agora.io/en/Agora%20Platform/token/#app-certificate). |
 | `channel_name`    | Unique channel name for the AgoraRTC session in the string format. The string length must be less than 64 bytes. Supported character scopes are: <li>The 26 lowercase English letters: a to z.<li>The 26 uppercase English letters: A to Z.<li>The 10 digits: 0 to 9.<li>The space.<li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "\|", "~", ",". |
 | `uid`            | User ID. A 32-bit unsigned integer with a value ranging from 1 to (2<sup>32</sup>-1). Must be unique. |
-| `role`          | The user role. Both roles enjoy the same privilege. <li> `Role_Publisher = 1`: (Recommended) A broadcaster.<li>`Role_Subscriber = 2`: An audience. |
+| `role`          | The user role. Both roles enjoy the same privilege. <li> `Role_Publisher = 1`: (Recommended) A host.<li>`Role_Subscriber = 2`: An audience. |
 | `privilege_expired_ts`      | Expiration time of the token. A Unix timestamp, represented by the number of seconds elapsed since 1/1/1970. For example, if you set this parameter as the current timestamp + 600 (seconds), the token expires 10 minutes after it is generated. A token is valid for 24 hours at most. If you set this parameter as 0 or a period longer than 24 hours, the token is valid for 24 hours. |
 
 
@@ -103,7 +103,7 @@ This method builds a token with your string userAccount.
 | `app_certificate` | Certificate of the application that you registered in the Agora Console. See [Get an App Certificate](https://docs.agora.io/en/Agora%20Platform/token/#app-certificate). |
 | `channel_name`    | Unique channel name for the AgoraRTC session in the string format. The string length must be less than 64 bytes. Supported character scopes are: <li>The 26 lowercase English letters: a to z.<li>The 26 uppercase English letters: A to Z.<li>The 10 digits: 0 to 9.<li>The space.<li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "\|", "~", ",". |
 | `account`    | The user account. The maximum length of this parameter is 255 bytes. Ensure that you set this parameter and do not set it as null. Supported character scopes are: <li>The 26 lowercase English letters: a to z.<li>The 26 uppercase English letters: A to Z.<li>The 10 digits: 0 to 9.<li>The space.<li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "\|", "~", ",". |
-| `role`          | The user role. Both roles enjoy the same privilege. <li> `Role_Publisher = 1`: (Recommended) A broadcaster.<li>`Role_Subscriber = 2`: An audience. |
+| `role`          | The user role. Both roles enjoy the same privilege. <li> `Role_Publisher = 1`: (Recommended) A host.<li>`Role_Subscriber = 2`: An audience. |
 | `privilege_expired_ts`      | Expiration time of the token. A Unix timestamp, represented by the number of seconds elapsed since 1/1/1970. For example, if you set this parameter as the current timestamp + 600 (seconds), the token expires 10 minutes after it is generated. A token is valid for 24 hours at most. If you set this parameter as 0 or a period longer than 24 hours, the token is valid for 24 hours. |
 
 ## Reference

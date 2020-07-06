@@ -1,24 +1,22 @@
 
 ---
-title: Start an Audio Broadcast
+title: Start Live Interactive Audio Streaming
 description: 
 platform: Web
-updatedAt: Tue Jun 23 2020 10:17:30 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 10:20:25 GMT+0800 (CST)
 ---
-# Start an Audio Broadcast
+# Start Live Interactive Audio Streaming
 <div class="alert note">Agora will soon release the Agora Web SDK NG, the next generation of the Agora Web SDK. The internal architecture of the Agora Web SDK NG is fully optimized, and the usability of its APIs greatly improved. Click <a href="https://agoraio-community.github.io/AgoraWebSDK-NG/en/">here</a> to learn more about the Agora Web SDK NG.</div>
 
-Use this guide to quickly set up the Agora Web SDK and enable interactive audio broadcast functions in your app. 
-
-The difference between a broadcast and a call is that users have roles in a broadcast. You can set your role as either host or audience. The host sends and receives streams while the audience receives streams only.
+Use this guide to quickly set up the Agora Web SDK and enable interactive audio streaming  functions in your app. 
 
 <div class="alert warning">Due to security limits on HTTP addresses except 127.0.0.1, Agora Web SDK only supports HTTPS or http://localhost (http://127.0.0.1). Do not deploy your project over HTTP.</div>
 
 ## Sample project
 
-We provide an open-source [sample project](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Web) that implements the basic video broadcast on GitHub. 
+We provide an open-source [sample project](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Web) that implements the basic interactive video streaming on GitHub. 
 
-You can also use this [online demo](https://webdemo.agora.io/agora-web-showcase/examples/OpenLive-Web/#/) and try the broadcasts implemented by the Agora SDK.
+You can also use this [online demo](https://webdemo.agora.io/agora-web-showcase/examples/OpenLive-Web/#/) and try the video streaming implemented by the Agora SDK.
 
 ## Prerequisites
 
@@ -50,7 +48,7 @@ If you already have a project, skip this section and go to **Integrate the SDK**
 
 <details>
 	<summary><font color="#3ab7f8">Expand this section to use our sample code.</font></summary>
- 
+
 You need to create an HTML file for this project.
 
 1. Create an HTML file. Here, we name it as `index.html`.
@@ -60,20 +58,22 @@ You need to create an HTML file for this project.
    This step creates the front-end user interface for this web app. You can also define your UI.
 
 	```html
+	
+	```
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Basic Live Broadcast</title>
+  <title>Basic Live Streaming</title>
   <link rel="stylesheet" href="https://docs.agora.io/en/Audio%20Broadcast/assets/common.css" />
 </head>
 <body class="agora-theme">
   <div class="navbar-fixed">
     <nav class="agora-navbar">
       <div class="nav-wrapper agora-primary-bg valign-wrapper">
-        <h5 class="left-align">Basic Live Broadcast</h5>
+        <h5 class="left-align">Basic Live Streaming</h5>
       </div>
     </nav>
   </div>
@@ -163,18 +163,18 @@ Add the following code to the line after `<head>` in your project.
 
 For simplicity, let's include the Agora Web SDK from a CDN source and copy `<script src="https://cdn.agora.io/sdk/release/AgoraRTCSDK-3.1.0.js"></script>` to the project file.
 
-Now, the project is set up. Next, we'll add the JavaScript code to implement the basic interactive broadcast functions.
+Now, the project is set up. Next, we'll add the JavaScript code to implement the basic interactive streaming functions.
 
-## Implement the basic broadcast
+## Implement the basic interactive streaming
 
-This section introduces how to use the Agora Web SDK to start an interactive broadcast.
+This section introduces how to use the Agora Web SDK to start the interactive streaming.
 
 You need to work with two types of objects when using the Agora Web SDK:
 
 - Client object that represents the local client. The Client methods provide major functions for a voice/video call, such as joining a channel and publishing a stream.
 - Stream objects that represent the local and remote streams. The Stream methods define the behaviors of a stream object, such as the playback control and video encoder configurations.  When you call a Stream method, you need to distinguish between the local and the remote streams. 
 
-The following figure shows the API call sequence of a basic broadcast. Note that these methods apply to different objects. 
+The following figure shows the API call sequence of the basic interactive streaming. Note that these methods apply to different objects. 
 
 ![](https://web-cdn.agora.io/docs-files/1592907363809)
 
@@ -220,12 +220,12 @@ rtc.client.init(option.appID, function () {
 
 Pay attention to the settings of `mode` and `codec` when creating the client:
 
-- `mode` determines the [channel profile](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#channel-profile). We use the `rtc` mode for one-to-one or group calls and the `live` mode for [live broadcasts](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#live-broadcast-core-concepts).
+- `mode` determines the [channel profile](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#channel-profile). We use the `rtc` mode for one-to-one or group calls and the `live` mode for live interactive streaming.
 - `codec` sets the codec that the web browser uses for encoding and decoding. Set it as `h264` as long as Safari 12.1 or earlier is involved in the call. If you need to use the web app on mobile phones, see [Use Web SDK on Mobile Devices](https://docs.agora.io/en/faq/web_on_mobile) for details.
 
 ### Set the client role
 
-A Live Broadcast channel has two client roles: host and audience, and the default role is audience. After setting the channel profile to `"live"`, your app may use the following steps to set the client role:
+A live streaming channel has two client roles: host and audience, and the default role is audience. After setting the channel profile to `"live"`, your app may use the following steps to set the client role:
 
 1. Ask the user to choose a role. 
 2. Call the `Client.setClientRole` method and pass in the client role set by the user.
@@ -235,7 +235,7 @@ A Live Broadcast channel has two client roles: host and audience, and the defaul
 rtc.client.setClientRole(role); 
 ```
 
-Note that in a live broadcast, only the host can be heard and seen. You can also call `setClientRole` to change the user role after joining a channel.
+Note that in a live streaming channel, only the host can be heard and seen. You can also call `setClientRole` to change the user role after joining a channel.
 
 ### Join a channel
 
@@ -418,13 +418,13 @@ We recommend running your web app through a local web server. Here, we use the n
 1. Install live-server.
    ```bash
 npm i live-server -g
-	 ```
+	```
 
 2. Change the directory to your project by the cd command. 
 3. Run the app.
    ```bash
 live-server .
-	 ```
+	```
    This should automatically load the web app in your browser.
 
 4. Enter a channel name, choose the user role, and click **JOIN** to start a call.
@@ -442,7 +442,7 @@ If the web app is not working properly, open the console in your browser and che
 
 ## Reference
 
-- [How can I listen for an audience joining or leaving a live broadcast channel?](https://docs.agora.io/en/faq/audience_event)
+- [How can I listen for an audience joining or leaving a live streaming channel?](https://docs.agora.io/en/faq/audience_event)
 - [How can I set the log file?](https://docs.agora.io/en/faq/logfile)
 - [What are the common errors in Web browsers' console log?](https://docs.agora.io/en/faq/console_error_web)
 - [Why do errors occur when calling the Stream.init method?](https://docs.agora.io/en/faq/streaminit_error)

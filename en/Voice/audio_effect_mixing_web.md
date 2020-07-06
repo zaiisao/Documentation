@@ -3,12 +3,12 @@
 title: Play Audio Effects/Audio Mixing File
 description: How to enable audio mixing for Web
 platform: Web
-updatedAt: Fri Jun 19 2020 11:39:51 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 09:34:52 GMT+0800 (CST)
 ---
 # Play Audio Effects/Audio Mixing File
 ## Introduction
 
-In a call or live broadcast, you may need to play custom audio or music files to all users in the channel. For example, adding sound effects in a game, or playing background music. Agora provides two groups of methods for playing audio effect files and audio mixing.
+In a call or live interactive streaming, you may need to play custom audio or music files to all users in the channel. For example, adding sound effects in a game, or playing background music. Agora provides two groups of methods for playing audio effect files and audio mixing.
 
 Before proceeding, ensure that you have implemented basic real-time functions in your project. See [Start a  Call](../../en/Voice/start_call_web.md) or [Start Live Interactive Streaming](../../en/Voice/start_live_web.md) for details.
 
@@ -112,7 +112,7 @@ stream.unloadEffect(1, function(err){
 
 ## Audio mixing
 
-Audio mixing is playing a local or online music file while speaking, so that other users in the channel can hear the music. The audio mixing methods can be used to play background music. For example, playing music in a live broadcast. Only one music file can be played at one time. 
+Audio mixing is playing a local or online music file while speaking, so that other users in the channel can hear the music. The audio mixing methods can be used to play background music. For example, playing music in a live interactive streaming. Only one music file can be played at one time. 
 Agora audio mixing supports the following options:
 
 - Mix or replace the audio: 

@@ -3,16 +3,16 @@
 title: Play Audio Effects/Audio Mixing File
 description: How to play audio effects and enable audio mixing for iOS
 platform: iOS,macOS
-updatedAt: Mon Jul 06 2020 02:44:57 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 09:31:12 GMT+0800 (CST)
 ---
 # Play Audio Effects/Audio Mixing File
 ## Introduction
 In a call or interactive live streaming, you may need to play custom audio or music files to all the users in the channel. For example, adding sound effects in a game, or playing background music. We provide two groups of methods for playing audio effect files and audio mixing.
 
-Before proceeding, ensure that you implement a basic call or live broadcast in your project. See the Quickstart Guides for details:
+Before proceeding, ensure that you implement a basic call or live interactive streaming in your project. See the Quickstart Guides for details:
 
-- iOS: [Start a Call](../../en/Interactive%20Broadcast/start_call_ios.md)/[Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_ios.md)
-- macOS: [Start a call](../../en/Interactive%20Broadcast/start_call_mac.md)/[Start a Live Broadcast](../../en/Interactive%20Broadcast/start_live_mac.md)
+- iOS: [Start a Call](../../en/Interactive%20Broadcast/start_call_ios.md)/[Start Live Interactive Streaming](../../en/Interactive%20Broadcast/start_live_ios.md)
+- macOS: [Start a call](../../en/Interactive%20Broadcast/start_call_mac.md)/[Start Live Interactive Streaming](../../en/Interactive%20Broadcast/start_live_mac.md)
 
 ## Play audio effect files
 
@@ -115,7 +115,7 @@ volume = volume < 80 ? 80 : volume;
 
 ## Audio mixing
 
-Audio mixing is playing a local or online music file while speaking, so that other users in the channel can hear the music. The audio mixing methods can be used to play background music. For example, playing music in a live broadcast. Only one music file can be played at one time. If you start playing a second music file during audio mixing, the first music file stops playing.
+Audio mixing is playing a local or online music file while speaking, so that other users in the channel can hear the music. The audio mixing methods can be used to play background music. For example, playing music in a live interactive streaming. Only one music file can be played at one time. If you start playing a second music file during audio mixing, the first music file stops playing.
 Agora audio mixing supports the following options:
 
 - Mix or replace the audio: 

@@ -3,7 +3,7 @@
 title: Rotate the Video
 description: 
 platform: Windows
-updatedAt: Mon Jul 06 2020 04:22:13 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 09:48:00 GMT+0800 (CST)
 ---
 # Rotate the Video
 ## Introduction
@@ -31,23 +31,7 @@ The `orientationMode` parameter provides three modes, `ADAPTIVE`, `FIXED_LANDSCA
 
 In the ADAPTIVE mode, the output video always follows the orientation of the captured video, because the receiver takes the rotational information passed on from the video encoder. This mode is mainly used between Agora’s SDKs.
 
-The following figures show the video orientations at the video capturer and player when a rear camera is used as the video capturer. Note that the video orientation differs according to the UI lock of your app.
-
-**UI lock (or UI unlock with the app disabling the screen auto-rotation)**
-
-The relative position of the status bar remains the same as the screen and not according to the phone tilt \(for example in WeChat\). Therefore, the relative position of the video and the screen remains the same for the video capturer and the player.
-		
-- For a landscape capturer:
-
-  <img alt="../_images/rotation_adaptive_uilock_landscape.jpg" src="https://web-cdn.agora.io/docs-files/en/rotation_adaptive_uilock_landscape.jpg" />
-
-- For a portrait capturer:
-   
-   <img alt="../_images/rotation_adaptive_uilock_portrait.jpg" src="https://web-cdn.agora.io/docs-files/en/rotation_adaptive_uilock_portrait.jpg" />
-
-**UI unlock with the app enabling the screen auto-rotation**
-
-The status bar of the app remains horizontal, regardless of the orientation of the screen \(for example in Facetime\). Therefore, the relative position of the video and the phone tilt remains the same for the video capturer and the player.
+On Windows, the status bar of the app remains horizontal, regardless of the orientation of the screen (for example in Facetime\). Therefore, the relative position of the video and the phone tilt remains the same for the video capturer and the player.
 
 - For a landscape capturer:
 

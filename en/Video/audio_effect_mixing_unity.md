@@ -3,14 +3,14 @@
 title: Play Audio Effects/Audio Mixing File
 description: 
 platform: Unity
-updatedAt: Fri Jun 19 2020 11:42:35 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 09:40:50 GMT+0800 (CST)
 ---
 # Play Audio Effects/Audio Mixing File
 ## Introduction
 
-In a call or live broadcast, you may need to play custom audio or music files to all the users in the channel. For example, adding sound effects in a game, or playing background music. We provide two groups of methods for playing audio effect files and audio mixing.
+In a call or live interactive streaming, you may need to play custom audio or music files to all the users in the channel. For example, adding sound effects in a game, or playing background music. We provide two groups of methods for playing audio effect files and audio mixing.
 
-Before proceeding, ensure that you implement a basic call or live broadcast in your project. See [Start a Voice Call](../../en/Video/start_call_audio_unity.md) and [Start a Voice Broadcast](../../en/Video/start_live_audio_unity.md) for details.
+Before proceeding, ensure that you implement a basic call or live interactive streaming in your project. See [Start a Voice Call](../../en/Video/start_call_audio_unity.md) and [Start live interactive streaming](../../en/Video/start_live_audio_unity.md) for details.
 
 ## Play audio effect files
 
@@ -76,7 +76,7 @@ Preloading audio effects is not mandatory. However, we recommend preloading audi
 
 ## Audio mixing
 
-Audio mixing is playing a local or online music file while speaking, so that other users in the channel can hear the music. The audio mixing methods can be used to play background music, for example playing music in a live broadcast. Only one music file can be played at one time. If you start playing a second music file during audio mixing, the first music file stops playing.
+Audio mixing is playing a local or online music file while speaking, so that other users in the channel can hear the music. The audio mixing methods can be used to play background music, for example playing music in live interactive streaming. Only one music file can be played at one time. If you start playing a second music file during audio mixing, the first music file stops playing.
 Agora audio mixing supports the following options:
 
 - Mix or replace the audio:

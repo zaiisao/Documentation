@@ -3,7 +3,7 @@
 title: Record the Audio on the Client
 description: 
 platform: iOS,macOS
-updatedAt: Sun Sep 29 2019 08:24:52 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 10:27:45 GMT+0800 (CST)
 ---
 # Record the Audio on the Client
 ## Introduction
@@ -17,10 +17,10 @@ The Agora Native SDK supports recording the audio of all the users in a channel 
 
 ## Implementation
 
-Before proceeding, ensure that you implement a basic call or live broadcast in your project. See the Quickstart Guides for details:
+Before proceeding, ensure that you implement a basic call or live interactive streaming in your project. See the Quickstart Guides for details:
 
-- iOS: [Start a Call](../../en/Audio%20Broadcast/start_call_ios.md)/[Start a Live Broadcast](../../en/Audio%20Broadcast/start_live_ios.md)
-- macOS: [Start a Call](../../en/Audio%20Broadcast/start_call_mac.md)/[Start a Live Broadcast](../../en/Audio%20Broadcast/start_live_mac.md)
+- iOS: [Start a Call](../../en/Audio%20Broadcast/start_call_ios.md)/[Start Live Interactive Streaming](../../en/Audio%20Broadcast/start_live_ios.md)
+- macOS: [Start a Call](../../en/Audio%20Broadcast/start_call_mac.md)/[Start Live Interactive Streaming](../../en/Audio%20Broadcast/start_live_mac.md)
 
 To start audio recording, call the `startAudioRecording` method after joining a channel.
 

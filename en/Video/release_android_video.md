@@ -3,19 +3,19 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Thu Jul 02 2020 06:32:02 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 09:31:14 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for Android.
 
 ## Overview
 
-The Video SDK supports the following scenarios:
+The Agora Video SDK supports the following scenarios:
 
--   Voice/Video Communication
--   Live Voice/Video Broadcast
+-   Voice and Video Call
+-   Live Interactive Video and Audio Streaming
 
-For the key features included in each scenario, see [Voice Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms), [Video Overview](https://docs.agora.io/en/Video/product_video?platform=All%20Platforms), [Audio Broadcast Overview](https://docs.agora.io/en/Audio%20Broadcast/product_live_audio?platform=All_Platforms) and [Video Broadcast Overview](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms).
+For the key features included in each scenario, see [Agora Voice Call Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms), [Agora Video Call Overview](https://docs.agora.io/en/Video/product_video?platform=All%20Platforms), [Agora Live Interactive Audio Streaming Overview](https://docs.agora.io/en/Audio%20Broadcast/product_live_audio?platform=All_Platforms), and [Agora Live Interactive Video Streaming Overview](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms).
 
 #### Known Issues and Limitations
 
@@ -158,10 +158,10 @@ v3.0.0 was released on Mar 4, 2020.
 
 On Mar 24, 2020, we fixed occasional issues relating to no audio, audio mixing, multiple `onClientRoleChanged` callbacks, and SDK crashes.
 
-In this release, Agora improves the user experience under poor network conditions for both the Communication and Live-broadcast profiles through the following measures:
+In this release, Agora improves the user experience under poor network conditions for both the `COMMUNICATION` and `LIVE_BROADCASTING` profiles through the following measures:
 
-- Adopting a new architecture for the Communication profile.
-- Upgrading the last-mile network strategy for both the Communication and Live-broadcast profiles,  which enhances the SDK's anti-packet-loss capacity by maximizing the net bitrate when the uplink and downlink bandwidth are insufficient.
+- Adopting a new architecture for the `COMMUNICATION` profile.
+- Upgrading the last-mile network strategy for both the `COMMUNICATION` and `LIVE_BROADCASTING` profiles,  which enhances the SDK's anti-packet-loss capacity by maximizing the net bitrate when the uplink and downlink bandwidth are insufficient.
 
 To deal with any incompatibility issues caused by the architecture change, Agora uses the fallback mechanism to ensure that users of different versions of the SDKs can communicate with each other: if a user joins the channel from a client using a previous version, all clients using v3.0.0 automatically fall back to the older version. This has the effect that none of the users in the channel can enjoy the improved experience. Therefore we strongly recommend upgrading all your clients to v3.0.0.
 
@@ -169,9 +169,9 @@ We also upgrade the On-premise Recording SDK to v3.0.0. Ensure that you upgrade 
 
 **Compatibility changes**
 
-#### 1. Dual-stream mode not enabled in the Communication profile
+#### 1. Dual-stream mode not enabled in the `COMMUNICATION` profile
 
-As of v3.0.0, the native SDK does not enable the [dual-stream mode](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-dualadual-stream-mode) by default in the Communication profile. Call the [`enableDualStreamMode (true)`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a645cb7d0f3a59dda27b157cf130c8c9a) method after joining the channel to enable it. In video scenarios with multiple users, we recommend enabling the dual-stream mode.
+As of v3.0.0, the native SDK does not enable the [dual-stream mode](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-dualadual-stream-mode) by default in the `COMMUNICATION` profile. Call the [`enableDualStreamMode (true)`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a645cb7d0f3a59dda27b157cf130c8c9a) method after joining the channel to enable it. In video scenarios with multiple users, we recommend enabling the dual-stream mode.
 
 #### 2. Default log file path change
 
@@ -193,17 +193,17 @@ Adds the following C++ callbacks to the [`IVideoFrameObserver`](https://docs.ago
 
 #### 3. Adjusting the playback volume of the specified remote user
 
-Adds [`adjustUserPlaybackSignalVolume`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aac9c5135996428d9a238fe8e66858268) for adjusting the playback volume of a specified remote user. You can call this method as many times as necessary in a call or a live broadcast to adjust the playback volume of different remote users, or to repeatedly adjust the playback volume of the same remote user.
+Adds [`adjustUserPlaybackSignalVolume`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aac9c5135996428d9a238fe8e66858268) for adjusting the playback volume of a specified remote user. You can call this method as many times as necessary in a call or the live interactive streaming to adjust the playback volume of different remote users, or to repeatedly adjust the playback volume of the same remote user.
 
 #### 4. Agora Mediaplayer Kit
 
-To enrich the playability of a live broadcast, Agora releases the Mediaplayer Kit plug-in, which supports the broadcaster playing local or online media resources and sharing them with all users in the channel during a live broadcast. See [Mediaplayer Kit release notes](https://docs.agora.io/en/Interactive%20Broadcast/mediaplayer_release_android?platform=Android) for details.
+To enrich the playability of the live interactive streaming, Agora releases the Mediaplayer Kit plug-in, which supports the host playing local or online media resources and sharing them with all users in the channel during the live interactive streaming. See [Mediaplayer Kit release notes](https://docs.agora.io/en/Interactive%20Broadcast/mediaplayer_release_android?platform=Android) for details.
 
 **Improvements**
 
 #### 1. Audio profiles
 
-To meet the need for higher audio quality, this release adjusts the corresponding audio profile of `AUDIO_PROFILE_DEFAULT (0)` in the Live-Broadcast profile.
+To meet the need for higher audio quality, this release adjusts the corresponding audio profile of `AUDIO_PROFILE_DEFAULT (0)` in the `LIVE_BROADCASTING` profiles.
 
 | SDK | AUDIO_PROFILE_DEFAULT (0) | 
 | ---------------- | ---------------- | 
@@ -279,7 +279,7 @@ This release fixed some abnormal behaviors on Android devices.
 v2.9.3 was released on Feb 10, 2020.
 
 This release fixed the following issues:
-- The `setRemoteSubscribeFallbackOption` method, which should work in the Live-broadcast profile only, also works in the Communication profile.
+- The `setRemoteSubscribeFallbackOption` method, which should work in the `LIVE_BROADCASTING` profiles only, also works in the `COMMUNICATION` profile.
 - In some one-to-one communication, the downlink media stream falls back to audio-only under poor network conditions.
 - On some devices, the camera fails to capture the video after a system upgrade. 
 
@@ -311,7 +311,7 @@ This release adds the [removeHandler](https://docs.agora.io/en/Video/API%20Refer
 
 **Improvements**
 
-#### 1. Improving the watermark function in Live Broadcasts
+#### 1. Improving the watermark function in the live interactive streaming
 This release adds a new [addVideoWatermark](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a63d94cda85b76e77b9016bbdac04a32d) method with the following settings:
 
 - The `visiblePreview` member sets whether the watermark is visible in the local preview.
@@ -344,13 +344,13 @@ For detailed descriptions for each error, see [Error Codes](https://docs.agora.i
 
 #### Audio
 - A user makes a call after connecting to a Bluetooth device. After the call ends, the user watches YouTube and cannot hear any sound.
-- The audio route is different from the settings in the `setEnableSpeakerphone` method when Bluetooth is connected in the Communication profile.
+- The audio route is different from the settings in the `setEnableSpeakerphone` method when Bluetooth is connected in the `COMMUNICATION` profile.
 - Exceptions occur in the audio route when a user is in the channel.
 - The app crashes when using external audio sources in the push mode. 
 - Audio freezes.
 - After turning off the Bluetooth headset, the audio route becomes the earpiece instead of the loudspeaker.
 - Echos occur when a user is in the channel.
-- Occasional noise occurs in the Live Broadcast profile.
+- Occasional noise occurs in the `LIVE_BROADCASTING` profile.
 - The app fails to play online music files using the `startAudioMixing` method on devices running Android 10.
 
 #### Miscellaneous
@@ -414,17 +414,17 @@ The new callback reports most of the remote video states, and therefore deprecat
 
 #### 3. Disabling/enabling the local audio
 
-To improve the audio quality in the Communication profile, this release sets the system volume to the media volume after you call the `enableLocalAudio`(true) method. Calling `enableLocalAudio`(false) switches the system volume back to the in-call volume.
+To improve the audio quality in the `COMMUNICATION` profile, this release sets the system volume to the media volume after you call the `enableLocalAudio`(true) method. Calling `enableLocalAudio`(false) switches the system volume back to the in-call volume.
 
 **New features**
 
 #### 1. Faster switching to another channel
 
-This release adds the  [`switchChannel`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a72f13225defc1b14dfb29820a0495da2) method to enable the audience in a Live Broadcast channel to quickly switch to another channel. With this method, you can achieve a much faster switch than with the `leaveChannel` and `joinChannel` methods. After the audience successfully switches to another channel by calling the `switchChannel` method, the SDK triggers the `onLeaveChannel` and `onJoinChannelSuccess` callbacks to indicate that the audience has left the original channel and joined a new one. 
+This release adds the  [`switchChannel`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a72f13225defc1b14dfb29820a0495da2) method to enable the audience in a live-streaming channel to quickly switch to another channel. With this method, you can achieve a much faster switch than with the `leaveChannel` and `joinChannel` methods. After the audience successfully switches to another channel by calling the `switchChannel` method, the SDK triggers the `onLeaveChannel` and `onJoinChannelSuccess` callbacks to indicate that the audience has left the original channel and joined a new one. 
 
 #### 2. Channel media stream relay
 
-This release adds the following methods to relay the media streams of a host from a source channel to a destination channel. This feature applies to scenarios such as online singing contests, where hosts of different Live Broadcast channels interact with each other.
+This release adds the following methods to relay the media streams of a host from a source channel to a destination channel. This feature applies to scenarios such as online singing contests, where hosts of different live-streaming channels interact with each other.
 
 - [`startChannelMediaRelay`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a6f09ba685f8ab01d7dc06173286950f6)
 - [`updateChannelMediaRelay`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#abd40d706379d27cf617376a504f394bd)
@@ -467,7 +467,7 @@ This release adds the following statistics in the `RtcStats`, `LocalVideoStats`,
 - [`LocalVideoStats`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_local_video_stats.html): The encoding bitrate, the width and height of the encoding frame, the number of frames, and the codec type of the local video.
 - [`RemoteVideoStats`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_video_stats.html): The packet loss rate of the remote video.
 
-#### 2. Improving the live broadcast video quality
+#### 2. Improving the video quality of the live streaming
 
 This release minimizes the video freeze rate under poor network conditions, improves the video sharpness, and optimizes the video smoothness when the packet loss rate is high.
 
@@ -475,7 +475,7 @@ This release minimizes the video freeze rate under poor network conditions, impr
 
 - Reduces the earpiece delay.
 - Improves the audio quality when the audio scenario is set to Game Streaming.
-- Improves the audio quality after the user disables the microphone in the Communication profile.
+- Improves the audio quality after the user disables the microphone in the `COMMUNICATION` profile.
 
 **Issues fixed**
 
@@ -586,7 +586,7 @@ To ensure smooth communication, use the same parameter type to identify all user
 
 #### 2. Adding remote audio and video statistics
 
-To monitor the audio and video transmission quality during a call or live broadcast, this release adds the `totalFrozenTime` and `frozenRate` members in the [RemoteAudioStats](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_audio_stats.html) and [RemoteVideoStats](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_video_stats.html) classes, to report the audio and video freeze time and freeze rate of the remote user.
+To monitor the audio and video transmission quality during a call or the live interactive streaming , this release adds the `totalFrozenTime` and `frozenRate` members in the [RemoteAudioStats](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_audio_stats.html) and [RemoteVideoStats](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_video_stats.html) classes, to report the audio and video freeze time and freeze rate of the remote user.
 
 This release also adds the `numChannels`, `receivedSampleRate`, and `receivedBitrate` members in the [RemoteAudioStats](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_audio_stats.html) class.
 
@@ -659,7 +659,7 @@ v2.4.1 renames the `receivedFrameRate` parameter to [rendererOutputFrameRate](ht
 
 #### 1. Adding media metadata
 
-In live broadcast scenarios, the host can send shopping links, digital coupons, and online quizzes to the audience for more diversified live broadcast interactions. v2.4.1 adds the  [registerMediaMetadataObserver](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aeb1a5691094a10cb047d106d6c6c32b7) interface and the [IMediaMetadataObserver](https://docs.agora.io/en/Video/API%20Reference/java/interfaceio_1_1agora_1_1rtc_1_1_i_metadata_observer.html) class, allowing the host to add metadata to the output video and to send media attached information.
+In live streaming scenarios, the host can send shopping links, digital coupons, and online quizzes to the audience for more diversified live interactions. v2.4.1 adds the  [registerMediaMetadataObserver](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aeb1a5691094a10cb047d106d6c6c32b7) interface and the [IMediaMetadataObserver](https://docs.agora.io/en/Video/API%20Reference/java/interfaceio_1_1agora_1_1rtc_1_1_i_metadata_observer.html) class, allowing the host to add metadata to the output video and to send media attached information.
 
 #### 2. State of the local video
 
@@ -723,12 +723,12 @@ v2.4.1 assigns default values to various parameters in the [BeautyOptions](https
 #### Audio
 
 - The audio stream is played through the loudspeaker even after the user plugs in the earphone. 
-- The user cannot hear the audio mixing file through Bluetooth in the single-broadcaster scenario.
-- Exceptions occur when playing the audio mixing file in the Live Broadcast profile.
+- The user cannot hear the audio mixing file through Bluetooth in the single-host scenario.
+- Exceptions occur when playing the audio mixing file in the `LIVE_BROADCASTING` profile.
 
 #### Video
 
-- In the Live Broadcast profile, the view of the broadcaster is a black screen.
+- In the `LIVE_BROADCASTING` profile, the view of the host is a black screen.
 
 #### Miscellaneous
 
@@ -780,7 +780,7 @@ v2.4.0 is released on April 1, 2019.
 
 ##### 1. Image enhancement
 
-In scenarios such as the video chat, interactive broadcast, and online education, basic beautification is a popular feature. v2.4.0 adds the [`setBeautyEffectOptions`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aa9327de4fb0c29f840b1e68ca2e83fc6) method, allowing you to adjust the contrast, brightness, smoothness and red saturation of an image. For more information, see [Image Enhancement](../../en/Video/image_enhancement_android.md).
+In scenarios such as the video chat, interactive streaming, and online education, basic beautification is a popular feature. v2.4.0 adds the [`setBeautyEffectOptions`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aa9327de4fb0c29f840b1e68ca2e83fc6) method, allowing you to adjust the contrast, brightness, smoothness and red saturation of an image. For more information, see [Image Enhancement](../../en/Video/image_enhancement_android.md).
 
 ##### 2. Voice changer and voice reverberation
 
@@ -902,7 +902,7 @@ Besides the new features and improvements mentioned below, it is worth noting th
 
 - Improves the SDK's ability to counter packet loss under unreliable network conditions.
 - Improves the communication smoothness.
-- Reduces video freezes in the Live Broadcast profile. 
+- Reduces video freezes in the `LIVE_BROADCASTING` profile. 
 
 Before upgrading your SDK, ensure that the version is:
 
@@ -921,7 +921,7 @@ v2.3.2 adds the following methods and callback to support camera exposure and im
 
 You can send the touch point coordinates in the view to the SDK for automatic exposure.
 
-##### 2. Video quality in a live broadcast
+##### 2. Video quality in the live interactive streaming
 
 v2.3.2 adds the [`minBitrate`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1video_1_1_video_encoder_configuration.html#a9cd44566bc19eca4006fda264ea96dc7) parameter (minimum encoding bitrate) in the [`setVideoEncoderConfiguration`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af5f4de754e2c1f493096641c5c5c1d8f) method. The SDK automatically adjusts the encoding bitrate to adapt to the network conditions. Using a value greater than the default value forces the video encoder to output high-quality images but may cause more packet loss and hence sacrifice the smoothness of the video transmission. Agora does not recommend changing this value unless you have special requirements for image quality.
 
@@ -961,11 +961,11 @@ In the new API method, the network connection states are "disconnected", "connec
 
 ##### 3. Improves the call rating system
 
-v2.3.2 changes the rating parameter in the [`rate`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ab7083355af531cc43d455024bd1f7662) method to "1 to 5" to encourage more feedback from end-users on the quality of a call or live broadcast. You can use this feedback for future product improvement. We strongly recommend integrating this method in your app.
+v2.3.2 changes the rating parameter in the [`rate`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#ab7083355af531cc43d455024bd1f7662) method to "1 to 5" to encourage more feedback from end-users on the quality of a call or the live interactive streaming. You can use this feedback for future product improvement. We strongly recommend integrating this method in your app.
 
 ##### 4. Other improvements
 
-- Minimizes packet loss under unreliable network conditions in the Live Broadcast profile.
+- Minimizes packet loss under unreliable network conditions in the `LIVE_BROADCASTING` profile.
 - Accelerates the video quality recovery under network congestion.
 - Improves the stability in pushing streams.
 - Improves the performance of the SDK on Android 6.0 or later.
@@ -985,7 +985,7 @@ The following issues are fixed in v2.3.2:
 
 ##### Audio
 
-- A user joins a live broadcast with a Bluetooth headset. The audio is not played through the Bluetooth headset when the user leaves the channel and opens another app.
+- A user joins a live-streaming channel with a Bluetooth headset. The audio is not played through the Bluetooth headset when the user leaves the channel and opens another app.
 - Crashes when calling the `startAudioMixing` method to play music files.
 - A previously disabled microphone becomes enabled when the device connects to a headset.
 - On Huawei Mate 20 X, a remote user cannot hear any voice when the app switches to the background and the user opens another app.
@@ -1046,8 +1046,8 @@ The difference between this method and the `muteLocalAudioStream` method is that
 - Occasional image freezes on some Android devices.
 - Occasionally on some Android devices, a user hears a popping sound if the user leaves the channel at the same time another user is speaking.
 - Communication profile: If a user disables the video and re-enables it during a one-to-one call, it takes a long time for the other user to see the image.
-- Live-broadcast profile: Delay at the client due to incorrect statistics.
-- Live-broadcast profile: Occasional crashes on some Android devices after a user repeats the process of switching roles between BROADCASTER and AUDIENCE.
+- `LIVE_BROADCASTING` profiles: Delay at the client due to incorrect statistics.
+- `LIVE_BROADCASTING` profiles: Occasional crashes on some Android devices after a user repeats the process of switching roles between `BROADCASTER` and `AUDIENCE`.
 - The timestamp in the captured raw video frames does not refresh with the frame.
 
 **v2.3.0**
@@ -1057,7 +1057,7 @@ v2.3.0 is released on August 31, 2018.
 #### Compatibility changes
 
 -   To support video rotation and enable better quality for the custom video source, this version deprecates the `setVideoProfile` method and uses the `setVideoEncoderConfiguration` method instead to set the video encoding configurations. You can still use the `setVideoProfile` method, but Agora recommends using the `setVideoEncoderConfiguration` method to set the video profile because:
-    -   During a live broadcast, users can set the video orientation mode as adaptive, under which the SDK can transfer rotated video frames without cropping them, thus avoiding the “big headshot” or blurry images at the player.
+    -   During the live interactive streaming, users can set the video orientation mode as adaptive, under which the SDK can transfer rotated video frames without cropping them, thus avoiding the “big headshot” or blurry images at the player.
     -   In scenarios involving external video sources, the SDK adjusts the width and height of the output video frames based on the inputting video frames, avoiding unnecessary cropping and thereby rendering more image frames at the player.
 -   From v2.3.0, the `LiveTranscoding` class is moved from the *io.agora.live* package to the `io.agora.rtc.live` package.
 -   Fixed a typo in the constants.java API in v2.3.0.
@@ -1077,9 +1077,9 @@ v2.3.0 is released on August 31, 2018.
 
 #### New Features
 
-##### 1. Fallback options for a live broadcast under unreliable network conditions
+##### 1. Fallback options for the live interactive streaming under unreliable network conditions
 
-The audio and video quality of a live broadcast deteriorate under unreliable network conditions. To improve the efficiency of a live broadcast, the `setLocalPublishFallbackOption` and `setRemoteSubscribeFallbackOption` methods are added. These interfaces allow the SDK to automatically disable the video stream when the network conditions cannot support both audio and video, and enable the video when the network conditions improve. The SDK triggers the `onLocalPublishFallbackToAudioOnly` or `onRemoteSubscribeFallbackToAudioOnly` callback when the stream falls back to audio-only or when the stream switches back to the video.
+The audio and video quality of the live interactive streaming deteriorate under unreliable network conditions. To improve the efficiency of the live interactive streaming, the `setLocalPublishFallbackOption` and `setRemoteSubscribeFallbackOption` methods are added. These interfaces allow the SDK to automatically disable the video stream when the network conditions cannot support both audio and video, and enable the video when the network conditions improve. The SDK triggers the `onLocalPublishFallbackToAudioOnly` or `onRemoteSubscribeFallbackToAudioOnly` callback when the stream falls back to audio-only or when the stream switches back to the video.
 
 ##### 2. Notifies the user that the token expires in 30 seconds
 
@@ -1087,13 +1087,13 @@ The SDK returns the `onTokenPrivilegeWillExpire` callback 30 seconds before a to
 
 ##### 3. Returns user-specific upstream and downstream statistics, including the bitrate, frame rate, packet loss rate, and time delay
 
-The `onRemoteAudioTransportStats` and `onRemoteVideoTransportStats` callbacks are added to provide user-specific upstream and downstream statistics, including the bitrate, frame rate, and packet loss rate. During a call or a live broadcast, the SDK triggers these callbacks once every two seconds after the user receives audio/video packets from a remote user. The callbacks include the user ID, audio bitrate at the receiver, packet loss rate, and time delay (ms).
+The `onRemoteAudioTransportStats` and `onRemoteVideoTransportStats` callbacks are added to provide user-specific upstream and downstream statistics, including the bitrate, frame rate, and packet loss rate. During a call or the live interactive streaming, the SDK triggers these callbacks once every two seconds after the user receives audio/video packets from a remote user. The callbacks include the user ID, audio bitrate at the receiver, packet loss rate, and time delay (ms).
 
 ##### 4. Sets the video encoder configurations
 
 To support scenarios with video rotation and enable better quality for the custom video source, this version deprecates the `setVideoProfile` method and uses the `setVideoEncoderConfiguration` method instead to set the video encoding configurations. You can still use the `setVideoProfile` method, but Agora recommends using the `setVideoEncoderConfiguration` method to set the video profile because:
 
--   During a live broadcast, users can set the video orientation mode as adaptive, under which the SDK can transfer rotated video frames without cropping them, thus avoiding the “big headshot” or blurry images at the player.
+-   During the live interactive streaming, users can set the video orientation mode as adaptive, under which the SDK can transfer rotated video frames without cropping them, thus avoiding the “big headshot” or blurry images at the player.
 
 -   In scenarios involving external video sources, the SDK adjusts the width and height of the output video frames based on the inputting video frames, avoiding unnecessary cropping and thereby rendering more image frames at the player.
 
@@ -1102,56 +1102,56 @@ The <code>VideoEncoderConfiguration</code> class provides a set of configurable 
 
 ##### 5. Adds support for background image settings in setLiveTranscoding
 
-The `backgroundImage` parameter is added to the `setLiveTranscoding` method allowing you to set the background image in the combined video of a live broadcast.
+The `backgroundImage` parameter is added to the `setLiveTranscoding` method allowing you to set the background image in the combined video of the live interactive streaming.
 
 #### Improvements
 
 -   Improves the quality for one-on-one voice/video scenarios with optimized latency and smoothness, especially for areas like Southeast Asia, South America, Africa, and the Middle East.
--   Improves the audio encoder efficiency in a live broadcast to reduce user traffic while ensuring the call quality.
--   Improves the audio quality during a call or a live broadcast using the deep-learning algorithm.
+-   Improves the audio encoder efficiency in the live interactive streaming to reduce user traffic while ensuring the call quality.
+-   Improves the audio quality during a call or the live interactive streaming using the deep-learning algorithm.
 
 #### Issues Fixed
 
 - The users on the Web client cannot see the video sent from the Native client due to codec bugs.
-- Excessive increase in memory usage when multiple delegated hosts broadcast in the channel.
+- Excessive increase in memory usage when multiple delegated hosts start streaming in the channel.
 - Occasional crashes on some Android devices.
 - The remote view does not display on some devices.
 - The local video cannot be enabled on some Android devices.
 - Occasional ghost images.
-- Occasional green lines at the bottom of the video when a user switches from a low stream to a high stream video in the Communication profile.
+- Occasional green lines at the bottom of the video when a user switches from a low stream to a high stream video in the `COMMUNICATION` profile.
 - Occasional crashes after interoperating with devices of other platforms for some Android devices.
 - Excessive increase in the memory usage for the host when the host frequently joins and leaves a channel that has multiple delegated hosts.
 - Occasional black screens on some Android devices.
-- Occasionally, the remote user cannot hear the host when the host switches between AUDIENCE and BROADCASTER.
+- Occasionally, the remote user cannot hear the host when the host switches between `AUDIENCE` and `BROADCASTER`.
 - Occasionally, the settings applied to the background image in live transcoding do not take effect.
-- Occasionally on some devices, the video height and width are swapped in the Communication profile.
+- Occasionally on some devices, the video height and width are swapped in the `COMMUNICATION` profile.
 - Occasionally, the `destroy` method does not respond after a user enables the video and joins a channel.
 - Occasional crashes on Android devices when remote users frequently join and leave the channel.
 - Black screen due to failure to render the remote video on some Android devices.
 - Occasionally, the audience cannot adjust the channel volume.
 - Occasionally, apps do not respond on some Android devices.
-- Occasional crashes on some Android devices when switching video resolutions in a live broadcast.
+- Occasional crashes on some Android devices when switching video resolutions in the live interactive streaming.
 - A delegated host cannot see the video of the other hosts in the channel on some Android devices.
 - The bitrates cannot reach the target values on some Android devices when a user frequently joins and leaves the communication channel with different video profiles.
 - Occasional failures to capture the video of the delegated host when the hosts and the audience members frequently change roles.
 - Occasional failures to capture video or publish streams on some Android devices when a user frequently joins and leaves a communication channel with different video profiles.
 - Occasional crashes when calling the <code>setCameraFocusPositionInPreview</code> method on some devices.
 - Occasional failures to enable the camera during communication on some Android devices.
-- Occasional video freezes and stream publishing hangs on some Android devices after a user joins a communication or live broadcast channel.
-- Occasional crashes when one of the two broadcasters mutes or disables the local audio while playing the background music.
+- Occasional video freezes and stream publishing hangs on some Android devices after a user joins a communication or live-streaming channel.
+- Occasional crashes when one of the two hosts mutes or disables the local audio while playing the background music.
 - A user cannot join a communication channel after frequently changing the video encoder profiles.
 - Occasional crashes on some devices when preloading the sound effects.
 - Failure to render videos of lower resolutions on some Android devices.
 - Occasionally, an Android client still interoperates in a communication channel when removed from Console.
-- Video resolution inconsistencies between the encoder and the decoder in the Live-broadcast profile.
+- Video resolution inconsistencies between the encoder and the decoder in the `LIVE_BROADCASTING` profiles.
 - Failure to enable the hardware encoder on some Android devices.
-- Occasional video freezes in the Communication or Live-broadcast profile.
+- Occasional video freezes in the Communication or `LIVE_BROADCASTING` profiles.
 - Occasional crashes when calling the <code>muteRemoteVideoStream</code> method after joining the channel.
-- Occasional video freezes on some Android devices when switching from the Communication profile to the Live-broadcast profile.
-- Occasional crashes on some Android devices when frequently turning on and off the camera flash during a live broadcast.
+- Occasional video freezes on some Android devices when switching from the `COMMUNICATION` profile to the `LIVE_BROADCASTING` profiles.
+- Occasional crashes on some Android devices when frequently turning on and off the camera flash during the live interactive streaming.
 - The host cannot receive the audio/video stream of the delegated host on some Android devices.
-- Occasional crashes on some Android devices when setting the video encoder profile of an external video source during a live broadcast.
-- Incorrect video orientation on some Android devices when setting the video profile of an external video source during a live broadcast.
+- Occasional crashes on some Android devices when setting the video encoder profile of an external video source during the live interactive streaming.
+- Incorrect video orientation on some Android devices when setting the video profile of an external video source during the live interactive streaming.
 - Occasionally on some Android devices, the video fallback option does not take effect under poor network conditions.
 - Occasional crashes on some Android devices when a user frequently changes the token.
 - Occasional failures to split the screen on some Android devices.
@@ -1200,13 +1200,13 @@ The security keys are improved and updated in v2.1.0. If you are using an Agora 
 #### Issues Fixed
 
 - Occasional online statistics crashes.
-- The broadcaster’s voice distorts occasionally on some Android devices.
-- Occasional crashes during a live broadcast.
-- Excessive increase in the memory usage when multiple delegated hosts broadcast in the channel.
+- The host’s voice distorts occasionally on some Android devices.
+- Occasional crashes during the live interactive streaming.
+- Excessive increase in the memory usage when multiple delegated hosts start streaming in the channel.
 - Receiving the <code>onLeaveChannel</code> callback long after a user has left the channel on some Android devices.
 - Failing to report the uid and volume of the speaker in a channel.
-- Unsteady voice volume of the broadcaster in a live broadcast.
-- Occasional video freezes during a live broadcast.
+- Unsteady voice volume of the host in the live interactive streaming.
+- Occasional video freezes during the live interactive streaming.
 - Occasional ANR (application no response) problem on some Android devices after a user turns off the camera to end a video session.
 - Occasional video freeze after a view size change.
 
@@ -1218,7 +1218,7 @@ v2.2.2 is released on June 21, 2018.
 
 - Fixed occasional online statistics crashes.
 - Fixed occasional audio crashes on some Android devices.
-- Fixed the issue that the broadcaster’s voice distorts occasionally on some Android devices.
+- Fixed the issue that the host’s voice distorts occasionally on some Android devices.
 - Fixed the issue of failing to report the uid and volume of the speaker in a channel.
 - Fixed the issue of receiving the onLeaveChannel callback long after a user has left the channel on some Android devices.
 - Fixed the issue of occasional video freeze after a view size change.
@@ -1256,9 +1256,9 @@ We provide a proxy package for enterprise users with corporate firewalls to depl
 
 Adds the <code>remoteVideoStateChangedOfUid</code> method to get the state of the remote video stream. 
 
-##### 4. Add watermarks on the broadcasting video
+##### 4. Add watermarks on the streaming video
 
-Adds the watermark function for users to add a PNG file to the local or CDN broadcast as a watermark. Adds the <code>addVideoWatermark</code> and <code>clearVideoWatermarks</code> methods to add and delete watermarks in a local live-broadcast. Adds the <code>watermark</code> parameter in the <code>LiveTranscording</code> interface to add watermarks in CDN broadcasts.
+Adds the watermark function for users to add a PNG file to the local or CDN streaming as a watermark. Adds the <code>addVideoWatermark</code> and <code>clearVideoWatermarks</code> methods to add and delete watermarks in the local live streaming. Adds the <code>watermark</code> parameter in the <code>LiveTranscording</code> interface to add watermarks in CDN streaming.
 
 #### Improvements
 
@@ -1280,15 +1280,15 @@ Improves the audio quality in scenarios that involve music playback.
 
 #### Issues Fixed
 
-- Occasional screen display abnormalities when a large number of audience members join as the host in a live-broadcast channel.
-- Fixes occasional CDN streaming abnormalities when some app switches to run in the background during a live broadcast.
+- Occasional screen display abnormalities when a large number of audience members join as the host in a live-streaming channel.
+- Fixes occasional CDN streaming abnormalities when some app switches to run in the background during the live interactive streaming.
 
 
 **v2.1.3**
 
 v2.1.3 is released on April 19, 2018. 
 
-In v2.1.3, Agora updates the bitrate values of the <code>setVideoProfile</code> method in the Live-broadcast profile. The bitrate values in v2.1.3 stay consistent with those in v2.0. 
+In v2.1.3, Agora updates the bitrate values of the <code>setVideoProfile</code> method in the `LIVE_BROADCASTING` profiles. The bitrate values in v2.1.3 stay consistent with those in v2.0. 
 
 #### Issues Fixed
 
@@ -1296,13 +1296,13 @@ Occasional recording failures on some phones when a user leaves a channel and tu
 
 #### Improvements
 
-Improves the performance of screen sharing by shortening the time interval between which users switch from screen sharing to the normal Communication or Live-broadcast profile.
+Improves the performance of screen sharing by shortening the time interval between which users switch from screen sharing to the normal Communication or `LIVE_BROADCASTING` profiles.
 
 **v2.1.2**
 
 v2.1.2 is released on April 2, 2018. 
 
->  If you upgrade the SDK to v2.1.2 from a previous version, the live-broadcast video quality is better than the communication video quality in the same resolutions, resulting in the live broadcasts using more bandwidth.
+>  If you upgrade the SDK to v2.1.2 from a previous version, the live-streaming video quality is better than the communication video quality in the same resolutions, resulting in the live streaming using more bandwidth.
 
 #### New Features
 
@@ -1330,7 +1330,7 @@ Adds a scenario for the game chat room to reduce the bandwidth and cancel the no
 
 ##### 2. Enhance the audio effect input from the built-in microphone
 
-In an interactive broadcast scenario, the host can enhance the local audio effects from the built-in microphone with the <code>setLocalVoiceEqualization</code> and <code>setLocalVoiceReverb</code> methods by implementing the voice equalization and reverberation effects.
+In an interactive streaming scenario, the host can enhance the local audio effects from the built-in microphone with the <code>setLocalVoiceEqualization</code> and <code>setLocalVoiceReverb</code> methods by implementing the voice equalization and reverberation effects.
 
 ##### 3. Online statistics query
 
@@ -1338,7 +1338,7 @@ Adds RESTful APIs to check the status of the users in the channel, the channel l
 
 ##### 4. 17-way video
 
-Adds the support of 17-way video in interactive broadcasts, see [Video for 7+ Users](../../en/Video/multi_user_video_android.md).
+Adds the support of 17-way video in the live interactive streaming, see [Video for 7+ Users](../../en/Video/multi_user_video_android.md).
 
 ##### 5. Video source customization
 
@@ -1350,7 +1350,7 @@ Supports the default functions provided by the renderers to display the local an
 
 ##### 7. Injecting an external video stream
 
-Adds the function of injecting an external video stream to an ongoing live broadcast.
+Adds the function of injecting an external video stream to the ongoing live streaming.
 
 ##### 8. Camera focus change
 
@@ -1403,8 +1403,8 @@ v2.0 is released on December 6, 2017.
 
 #### New Features
 
--   Adds the <code>setRemoteVideoStreamType</code> and <code>enableDualStreamMode</code> methods in the Communication profile to support dual streams.
--   Adds the camera management function in the Communication and Live-broadcast profiles by adding the following API methods:
+-   Adds the <code>setRemoteVideoStreamType</code> and <code>enableDualStreamMode</code> methods in the `COMMUNICATION` profile to support dual streams.
+-   Adds the camera management function in the `COMMUNICATION` and `LIVE_BROADCASTING` profiles by adding the following API methods:
 
     <table>
 <colgroup>
@@ -1449,7 +1449,7 @@ v2.0 is released on December 6, 2017.
 
 
 
--   Supports external audio sources in the Communication and Live-broadcast profiles by adding the following API methods:
+-   Supports external audio sources in the `COMMUNICATION` and `LIVE_BROADCASTING` profiles by adding the following API methods:
 
     <table>
 <colgroup>
@@ -1473,7 +1473,7 @@ v2.0 is released on December 6, 2017.
 
 
 
--   Provides a set of RESTful APIs to ban a peer user from the server in the Communication and Live-broadcast profiles. Contact [support@agora.io](mailto:support@agora.io) to enable this function, if required.
+-   Provides a set of RESTful APIs to ban a peer user from the server in the `COMMUNICATION` and `LIVE_BROADCASTING` profiles. Contact [support@agora.io](mailto:support@agora.io) to enable this function, if required.
 -   Supports the following Android emulators: NOX, Lightning, and Xiaoyao.
 
 
@@ -1495,13 +1495,13 @@ v1.14 is released on October 20, 2017.
 
 -   Adds the <code>setAudioProfile</code> method to set the audio parameters and scenarios
 -   Adds the <code>setLocalVoicePitch</code> method to set the local voice pitch
--   Live Broadcast: Adds the <code>setInEarMonitoringVolume</code> method to adjust the volume of the in-ear monitor
+-   `LIVE_BROADCASTING`: Adds the <code>setInEarMonitoringVolume</code> method to adjust the volume of the in-ear monitor
 
 
 #### Improvements
 
 -   Optimizes the audio at high bitrates.
--   Live Broadcast: The audience can view the host within one second in a single-stream mode (226 ms on average, and 204 ms under good network conditions).
+-   `LIVE_BROADCASTING`: The audience can view the host within one second in a single-stream mode (226 ms on average, and 204 ms under good network conditions).
 -   Adds the ability to reduce the bandwidth.
     -   Before v1.14: If you muted the audio of a specific user, the network still sent the stream.
     -   Starting from v1.14: If you mute the audio of a specific user, the network will not send the stream of the user to reduce the bandwidth.
@@ -1524,10 +1524,10 @@ v1.13 is released on September 4, 2017.
 
 #### New Features
 
--   Adds the function to dynamically enable and disable acquiring the sound card in a live broadcast.
+-   Adds the function to dynamically enable and disable acquiring the sound card in the live interactive streaming.
 -   Adds the function to disable the audio playback.
 -   Supports the profile configuration for stream-pushing on the client side.
--   Adds the <code>onClientRoleChanged</code> callback to report to the app on a user role switch between the host and the audience in a live broadcast.
+-   Adds the <code>onClientRoleChanged</code> callback to report to the app on a user role switch between the host and the audience in the live interactive streaming.
 -   Supports the push-stream failure callback on the server side.
 
 
@@ -1548,13 +1548,7 @@ v1.12 is released on July 25, 2017.
 -   Adds the <code>aes-128-ecb</code> encryption mode in the <code>setEncryptionMode</code> method.
 -   Adds the <code>quality</code> parameter in the <code>startAudioRecording</code> method to set the recording audio quality.
 
-
 #### Issues Fixed:
 
 -   Android: Bluetooth issues related to audio routing.
 -   Android/iOS/Mac/Windows: Occasional crashes.
-
-
-
-
-

@@ -3,7 +3,7 @@
 title: Set the Audio Profile
 description: How to set the high-quality audio for iOS and macOS
 platform: iOS,macOS
-updatedAt: Mon Jul 06 2020 09:23:37 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 10:19:25 GMT+0800 (CST)
 ---
 # Set the Audio Profile
 ## Introduction 
@@ -42,7 +42,7 @@ The Agora SDK provides the `setAudioProfile` method to set the appropriate audio
  <li>AgoraAudioScenarioDefault(0): The default scenario.</li>
  <li>AgoraAudioScenarioChatRoomEntertainment(1): The entertainment scenario, supporting voice during gameplay.</li>
  <li>AgoraAudioScenarioEducation(2): The education scenario, prioritizing smoothness and stability.</li>
- <li>AgoraAudioScenarioGameStreaming(3): The live gaming scenario, enabling the gaming audio effects in the speaker mode in a live broadcast scenario. Choose this scenario for high-fidelity music playback.</li>
+ <li>AgoraAudioScenarioGameStreaming(3): The live gaming scenario, enabling the gaming audio effects in the speaker mode in a live interactive streaming scenario. Choose this scenario for high-fidelity music playback.</li>
  <li>AgoraAudioScenarioShowRoom(4): The showroom scenario, optimizing the audio quality with external professional equipment.</li>
  <li>AgoraAudioScenarioChatRoomGaming(5): The gaming scenario.</li>
 	</td>

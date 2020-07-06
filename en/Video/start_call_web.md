@@ -3,7 +3,7 @@
 title: Start a Video Call
 description: 
 platform: Web
-updatedAt: Tue Jun 23 2020 10:10:42 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 10:09:33 GMT+0800 (CST)
 ---
 # Start a Video Call
 <div class="alert note">Agora will soon release the Agora Web SDK NG, the next generation of the Agora Web SDK. The internal architecture of the Agora Web SDK NG is fully optimized, and the usability of its APIs greatly improved. Click <a href="https://agoraio-community.github.io/AgoraWebSDK-NG/en/">here</a> to learn more about the Agora Web SDK NG.</div>
@@ -229,7 +229,7 @@ var option = {
 
    Pay attention to the settings of `mode` and `codec` when creating the client:
 
-   - `mode` determines the [channel profile](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#channel-profile). We use the `rtc` mode for one-to-one or group calls and the `live` mode for [live broadcasts](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#live-broadcast-core-concepts).
+   - `mode` determines the [channel profile](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#channel-profile). We use the `rtc` mode for one-to-one or group calls and the `live` mode for live interactive streaming.
    - `codec` sets the codec that the web browser uses for encoding and decoding. Set it as `h264` as long as Safari 12.1 or earlier is involved in the call. If you need to use the web app on mobile phones, see [Use Web SDK on Mobile Devices](https://docs.agora.io/en/faq/web_on_mobile) for details.
 
    > Our tutorial creates a text input field for the user to enter the App ID on the webpage for demonstration purposes. For production, the App ID should be directly written into the code.

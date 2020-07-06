@@ -3,7 +3,7 @@
 title: Set the Audio Profile
 description: How to set high-quality audio on Windows
 platform: Unity
-updatedAt: Mon Jul 06 2020 09:25:10 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 10:22:16 GMT+0800 (CST)
 ---
 # Set the Audio Profile
 ## Introduction 
@@ -40,7 +40,7 @@ The Agora SDK provides the `SetAudioProfile` method to set the appropriate audio
  <li>AUDIO_SCENARIO_DEFAULT(0): The default scenario.</li>
  <li>AUDIO_SCENARIO_CHATROOM_ENTERTAINMENT(1): The entertainment scenario, supporting voice during gameplay.</li>
  <li>AUDIO_SCENARIO_EDUCATION(2): The education scenario, prioritizing smoothness and stability.</li>
- <li>AUDIO_SCENARIO_GAME_STREAMING(3): The live gaming scenario, enabling the gaming audio effects in the speaker mode in a live broadcast scenario. Choose this scenario for high-fidelity music playback.</li>
+ <li>AUDIO_SCENARIO_GAME_STREAMING(3): The live gaming scenario, enabling the gaming audio effects in the speaker mode in a live interactive streaming scenario. Choose this scenario for high-fidelity music playback.</li>
  <li>AUDIO_SCENARIO_SHOWROOM(4): The showroom scenario, optimizing the audio quality with external professional equipment.</li>
  <li>AUDIO_SCENARIO_CHATROOM_GAMING(5): The gaming scenario.</li>
 	</td>
