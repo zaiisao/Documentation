@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Tue Jun 30 2020 02:20:19 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 08:26:41 GMT+0800 (CST)
 ---
 # 产品概述
 Agora 音频互动直播（Audio Broadcasting）可以实现一对多，多对多的纯音频互动直播。
@@ -49,7 +49,7 @@ Agora 音频互动直播提供丰富的功能，你可以根据自己的场景�
 | 最多观众人数              | 100 万                                                       |
 | 跨频道主播连麦            | 支持                                                         |
 | 音频属性                  | <li>音频采样率：16 kHz - 48 kHz <li>支持单、双声道           |
-| 音频抗丢包率              | 上下行抗丢包率 70%                                           |
+| 音频抗丢包率              | 上下行抗丢包率 80%                                           |
 
 ### 平台兼容
 

@@ -3,10 +3,10 @@
 title: 在服务端生成 Token
 description: 
 platform: Java
-updatedAt: Thu Jun 11 2020 07:44:36 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 07:36:32 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
-本页为 Agora Native SDK v2.1+、Agora Web SDK v2.4+、Agora Recording SDK v2.1+ 以及 Agora RTSA SDK  的用户演示如何使用我们提供的 Demo 快速生成一个 RTC token，并提供 Token 生成相关的 Java API 参考。
+本页为 Agora Native SDK v2.1+、Agora Web SDK v2.4+、Agora Recording SDK v2.1+ 以及 Agora RTSA SDK  的用户演示如何使用我们提供的 Demo 快速生成一个 RTC Token，并提供 Token 生成相关的 Java API 参考。
 
 ## Token 代码仓库说明
 
@@ -23,16 +23,16 @@ updatedAt: Thu Jun 11 2020 07:44:36 GMT+0800 (CST)
 
 开源仓库的 **./\<language\>/sample** 文件夹下包含用于演示 Token 生成的示例代码。其中， **RtcTokenBuilderSample** 是我们基于 **RtcTokenBuilder** 编写的一个简单的 Token 生成器示例程序。你可以根据自己的业务逻辑对我们的示例程序做相应调整。
 
-<div class="alert note">体验该示例项目需要 JDK 1.8 或以上环境。</div>
-
 ## 快速生成 RTC Token
+
+<div class="alert note">体验该示例项目需要 JDK 1.8 或以上环境。</div>
 
 下面我们以 **RtcTokenBuilderSample.java** 为例演示 Token 生成的过程：
 
 1. 将 GitHub 仓库同步到本地。
 2.  将 **/DynamicKey/AgoraDynamicKey/java** 作为项目导入到你的 Eclipse IDE 中。
 3. 打开 **/java/src/io/agora/sample/RtcTokenBuilderSample.java** 。
-4. 用你自己的 App ID、App 证书以及 Channel Name 替换实例代码中的伪码。关于如何获取 App ID 和 App 证书，详见 [校验用户权限](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#app-id)
+4. 用你自己的 App ID、App 证书、用户 ID 以及 Channel Name 替换示例代码中的伪码。关于如何获取 App ID 和 App 证书，详见[校验用户权限](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#app-id)。
     - 如果你使用 int 型 uid 加入频道，请注释掉以下代码段：
 ```Java
         String result = token.buildTokenWithUserAccount(appId, appCertificate,  
@@ -45,9 +45,7 @@ updatedAt: Thu Jun 11 2020 07:44:36 GMT+0800 (CST)
        		 channelName, uid, Role.Role_Publisher, timestamp);
         System.out.println(result);
 ```
-5. 　鼠标右击 **/java/src/io/agora/sample/RtcTokenBuilderSample.java** 并选择 **Run as a Java application**。
-
-     *新生成的 RTC token 会在你的本地终端显示。*
+5. 　鼠标右击 **/java/src/io/agora/sample/RtcTokenBuilderSample.java** 并选择 **Run as a Java application**。新生成的 RTC Token 会在你的本地终端显示。
 
 
 ## API 参考
@@ -66,12 +64,12 @@ updatedAt: Thu Jun 11 2020 07:44:36 GMT+0800 (CST)
 
 | **参数**    | **描述**                                              |
 | ---------------- | ------------------------------------------------------------ |
-| `appID`          | Agora 为应用程序开发者签发的 App ID。详见 [获取 App ID](https://docs.agora.io/cn/Agora%20Platform/token/#app-id). | 
-| `appCertificate` | Agora 为应用程序开发者签发的 App 证书。启用 App 证书后你必须使用 Token 才能加入频道，详见 [开启 App 证书](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#app-certificate). |
-| `channelName`    | 标识通话的频道名称，长度在64字节以内的字符串。以下为支持的字符集范围（共89个字符）: <li>a-z,<li>A-Z,<li>0-9,<li>空格,<li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "*_", " {", "}", "\|", "~", ","。 |
-| `uid`            | 用户ID，32位无符号整数。建议设置范围：1到 (2<sup>32</sup>-1)，并保证唯一性。 |
-| `role`          | 用户角色。不论设置何种角色， 用户的权限都相同。<li> `Role_Publisher = 1` ：（推荐）主播</li><li>`Role_Subscriber = 2`：观众</li> |
-| `privilegeExpiredTs`     | Token 过期时间戳，格式为自 1970 年 1 月 1 日零时起经过的秒数。比如，如果你将 `privilegeExpiredTs` 设为当前时间戳再加 600（秒），那么 Token 会在生成 10 分钟后过期。Token 的最大有效期为 24 小时。如果你设为 0，或超过 24 小时，Token 有效期依然是 24 小时。 |
+| `appId`          | 你的项目 ID。详见[获取 App ID](https://docs.agora.io/cn/Agora%20Platform/token/#app-id)。| 
+| `appCertificate` | 你的项目 App 证书。详见[开启 App 证书](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#app-certificate)。|
+| `channelName`    | 标识通话的频道名称，长度在64字节以内的字符串。以下为支持的字符集范围（共89个字符）: <li>26 个小写英文字母 a-z<li>26 个大写英文字母 A-Z<li>10 个数字 0-9<li>空格<li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "*_", " {", "}", "\|", "~", "," |
+| `uid`            | 用户 ID，32 位无符号整数。建议设置范围：1 到 (2<sup>32</sup>-1)，并保证唯一性。 |
+| `role`          | 用户角色。暂时只支持一种角色，请使用默认值 `Role_Publisher = 1`。 |
+| `privilegeTs`     | Token 有效时间戳，格式为自 1970 年 1 月 1 日零时起经过的秒数。比如，如果你将 `privilegeExpiredTs` 设为当前时间戳再加 600 秒，那么 Token 会在生成 10 分钟后过期。Token 的最大有效期为 24 小时。如果你设为 0，或超过 24 小时，则 Token 有效期依然是 24 小时。 |
 
 ### buildTokenWithUserAccount
 
@@ -84,12 +82,12 @@ updatedAt: Thu Jun 11 2020 07:44:36 GMT+0800 (CST)
 
 | **参数**    | **描述**                                             |
 | ---------------- | ------------------------------------------------------------ |
-| `appID`          | Agora 为应用程序开发者签发的 App ID。详见 [获取 App ID](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#app-id). |
-| `appCertificate` | Agora 为应用程序开发者签发的 App 证书。启用 App 证书后你必须使用 Token 才能加入频道，详见 [开启 App 证书](https://docs.agora.io/cn/Agora%20Platform/token/#app-certificate). |
-| `channelName`    | 标识通话的频道名称，长度在64字节以内的字符串。以下为支持的字符集范围（共89个字符）: <li>a-z,<li>A-Z,<li>0-9,<li>空格,<li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "*_", " {", "}", "\|", "~", ","。 |
-|`userAccount` | 用户 User Account。该参数为必需，最大不超过 255 字节，不可为 null。请确保加入频道的 User Account 的唯一性。 以下为支持的字符集范围（共 89 个字符）：<li>26 个小写英文字母 a-z；<li>26 个大写英文字母 A-Z；<li>10 个数字 0-9；<li>空格；<li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "*_", " {", "}", "\|", "~", ","。 |
-| `role`          | 用户角色。不论设置何种角色， 用户的权限都相同。<li> `Role_Publisher = 1` ：（推荐）主播</li><li>`Role_Subscriber = 2`：观众</li> |
-| `privilegeExpiredTs`     | Token 过期时间戳，格式为自 1970 年 1 月 1 日零时起经过的秒数。比如，如果你将 `privilegeExpiredTs` 设为当前时间戳再加 600（秒），那么 Token 会在生成 10 分钟后过期。Token 的最大有效期为 24 小时。如果你设为 0，或超过 24 小时，Token 有效期依然是 24 小时。 |
+| `appId`          | 你的项目 ID。详见[获取 App ID](https://docs.agora.io/cn/Agora%20Platform/token/#app-id)。| 
+| `appCertificate` | 你的项目 App 证书。详见[开启 App 证书](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#app-certificate)。|
+| `channelName`    | 标识通话的频道名称，长度在64字节以内的字符串。以下为支持的字符集范围（共89个字符）: <li>26 个小写英文字母 a-z<li>26 个大写英文字母 A-Z<li>10 个数字 0-9<li>空格<li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "*_", " {", "}", "\|", "~", "," |
+|`userAccount` | 用户 User Account。该参数为必需，最大不超过 255 字节，不可为 null。请确保加入频道的 User Account 的唯一性。 以下为支持的字符集范围（共 89 个字符）：<li>26 个小写英文字母 a-z<li>26 个大写英文字母 A-Z<li>10 个数字 0-9<li>空格<li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "*_", " {", "}", "\|", "~", "," |
+| `role`          | 用户角色。暂时只支持一种角色，请使用默认值 `Role_Publisher = 1`。 |
+| `privilegeTs`     | Token 有效时间戳，格式为自 1970 年 1 月 1 日零时起经过的秒数。比如，如果你将 `privilegeExpiredTs` 设为当前时间戳再加 600 秒，那么 Token 会在生成 10 分钟后过期。Token 的最大有效期为 24 小时。如果你设为 0，或超过 24 小时，则 Token 有效期依然是 24 小时。 |
 	
 	
 ## 相关链接

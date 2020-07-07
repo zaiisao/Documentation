@@ -3,7 +3,7 @@
 title: 实时消息 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Mon Jun 15 2020 08:32:44 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 10:04:01 GMT+0800 (CST)
 ---
 # 实时消息 RESTful API
 > 除本文外，你也可以查看我们全新的交互式 API 文档交互式 API 文档
@@ -145,7 +145,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/user_events
 >  - 每个 App ID 每秒钟的请求数不能超过 10 次。
 >  - RTM 后台最多存储 2000 条事件。
 >  - 单次返回最多 1000 条事件。
->  - Agora 对事件按地理区域缓存，因此不保证来自不同地理区域（跨国或者跨洲）的事件顺序的正确性。
+>  - Agora 对事件按地理区域缓存，因此不保证来自不同地理区域的事件顺序的正确性。
 >  - Agora 只在同一地理区域内同步事件，不在地理区域间同步。所以，你从某地理区域拉取了事件后，如果你从另一个区域再次拉取可能会得到相同的事件。
 
 - 方法：GET

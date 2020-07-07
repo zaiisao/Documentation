@@ -3,7 +3,7 @@
 title: 在服务端生成 Token
 description: Guide on how to generate tokens on the server side
 platform: CPP
-updatedAt: Mon Jul 06 2020 07:12:29 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 07:49:44 GMT+0800 (CST)
 ---
 # 在服务端生成 Token
 本页为 Agora Native SDK v2.1+、Agora Web SDK v2.4+、Agora Recording SDK v2.1+ 以及 Agora RTSA SDK 的用户演示如何使用我们提供的 Demo 快速生成一个正式的 RTC token，并提供 Token 生成相关的 C++ API 参考。
@@ -32,7 +32,7 @@ updatedAt: Mon Jul 06 2020 07:12:29 GMT+0800 (CST)
      `brew install openssl` 
 2. 将 GitHub 仓库同步到本地。
 3. 打开 **/cpp/sample/RtcTokenBuilderSample.cpp** 。
-4. 用你自己的 App ID、App 证书以及 Channel Name 替换实例代码中的伪码。关于如何获取 App ID 和 App 证书，详见[校验用户权限](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#app-id)。
+4. 用你自己的 App ID、App 证书、用户 ID 以及 Channel Name 替换示例代码中的伪码。关于如何获取 App ID 和 App 证书，详见[校验用户权限](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#app-id)。
     - 如果你使用 int 型 uid 加入频道，请注释掉以下代码段：
 ```C++
   result = SimpleTokenBuilder::buildTokenWithUserAccount(
@@ -109,7 +109,7 @@ updatedAt: Mon Jul 06 2020 07:12:29 GMT+0800 (CST)
 | `appId`          | 你的项目 ID。详见[获取 App ID](https://docs.agora.io/cn/Agora%20Platform/token/#app-id)。| 
 | `appCertificate` | 你的项目 App 证书。详见[开启 App 证书](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#app-certificate)。|
 | `channelName`    | 标识通话的频道名称，长度在64字节以内的字符串。以下为支持的字符集范围（共89个字符）: <li>26 个小写英文字母 a-z<li>26 个大写英文字母 A-Z<li>10 个数字 0-9<li>空格<li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "*_", " {", "}", "\|", "~", "," |
-|`userAccount` | 用户 User Account。该参数为必需，最大不超过 255 字节，不可为 null。请确保加入频道的 User Account 的唯一性。 以下为支持的字符集范围（共 89 个字符）：<li>26 个小写英文字母 a-z；<li>26 个大写英文字母 A-Z；<li>10 个数字 0-9；<li>空格；<li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "*_", " {", "}", "\|", "~", ","。 |
+|`userAccount` | 用户 User Account。该参数为必需，最大不超过 255 字节，不可为 null。请确保加入频道的 User Account 的唯一性。 以下为支持的字符集范围（共 89 个字符）：<li>26 个小写英文字母 a-z<li>26 个大写英文字母 A-Z<li>10 个数字 0-9；<li>空格<li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "*_", " {", "}", "\|", "~", "," |
 | `role`          | 用户角色。暂时只支持一种角色，请使用默认值 `Role_Publisher = 1`。 |
 | `privilegeExpiredTs`     | Token 有效时间戳，格式为自 1970 年 1 月 1 日零时起经过的秒数。比如，如果你将 `privilegeExpiredTs` 设为当前时间戳再加 600 秒，那么 Token 会在生成 10 分钟后过期。Token 的最大有效期为 24 小时。如果你设为 0，或超过 24 小时，则 Token 有效期依然是 24 小时。 |
 	

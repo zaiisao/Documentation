@@ -3,7 +3,7 @@
 title: 视频采集旋转
 description: 
 platform: Windows
-updatedAt: Fri Sep 20 2019 04:07:48 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 09:43:58 GMT+0800 (CST)
 ---
 # 视频采集旋转
 ## 功能描述
@@ -30,23 +30,7 @@ Agora 在 `orientaionMode` 参数中，提供了 `ADAPTIVE`、`FIXED_LANDSCAPE` 
 
 该模式下， SDK 输出的视频方向与采集到的视频方向一致。接收端会根据收到的视频旋转信息对视频进行旋转。该模式适用于接收端可以调整视频方向的场景。
 
-下图演示了后置摄像头采集下，ADAPTIVE 模式分别在 UI 锁定和 UI 不锁定情况下的行为：
-
-**UI 锁定时（或 UI 不锁定但客户端关闭了屏幕自动旋转功能时）**
-
-Status Bar 与屏幕的相对方向保持不变，和手机的重力感应无关（比如微信）。此时，视频和屏幕的相对方向在采集端和播放端始终一致：
-
-- 采集端横屏时：
-
-    <img alt="../_images/rotation_adaptive_uilock_landscape.jpg" src="https://web-cdn.agora.io/docs-files/cn/rotation_adaptive_uilock_landscape.jpg" />
-
-- 采集端竖屏时：
-
-    <img alt="../_images/rotation_adaptive_uilock_portrait.jpg" src="https://web-cdn.agora.io/docs-files/cn/rotation_adaptive_uilock_portrait.jpg" />
-
-**UI 不锁定且客户端开启屏幕自动旋转时**
-
-Status Bar 总是处于垂直地面方向的正上方，和屏幕的朝向无关（比如 Facetime）。此时，视频和重力的相对方向在采集端和播放端始终一致：
+由于在 Windows 上，Status Bar 总是处于垂直地面方向的正上方，和屏幕的朝向无关（比如 Facetime）。因此只存在 **UI 锁定**的情况。此时，视频和重力的相对方向在采集端和播放端始终一致：
 
 - 采集端横屏时：
 

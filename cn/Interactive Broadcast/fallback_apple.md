@@ -3,7 +3,7 @@
 title: 视频流回退
 description: 
 platform: iOS,macOS
-updatedAt: Mon Mar 02 2020 08:10:57 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 08:14:41 GMT+0800 (CST)
 ---
 # 视频流回退
 ## 功能描述
@@ -47,7 +47,7 @@ agoraKit.setRemoteSubscribeFallbackOption(.audioOnly)
 ```objective-c
 //Objective-C
 // 开启视频双流模式。
-agoraKit.enableDualStreamMode(true);
+[agoraKit.enableDualStreamMode: YES];
 
 // 发送端的配置。网络较差时，只发送音频流。
 [agoraKit setLocalPublishFallbackOption: AgoraStreamFallbackOptionAudioOnly];

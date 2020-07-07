@@ -3,7 +3,7 @@
 title: 视频采集旋转
 description: 
 platform: iOS,macOS
-updatedAt: Fri Sep 20 2019 06:23:56 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 10:04:07 GMT+0800 (CST)
 ---
 # 视频采集旋转
 ## 功能描述
@@ -33,6 +33,8 @@ Agora 在 `orientaionMode` 参数中，提供了 `Adaptive`、`FixedLandscape` �
 该模式下， SDK 输出的视频方向与采集到的视频方向一致。接收端会根据收到的视频旋转信息对视频进行旋转。该模式适用于接收端可以调整视频方向的场景。
 
 下图演示了后置摄像头采集下，Adaptive 模式分别在 UI 锁定和 UI 不锁定情况下的行为：
+
+<div class="alert note">在 macOS 上，Status Bar 总是处于垂直地面方向的正上方，因此不存在 UI 锁定的情况。下文 <b>UI 锁定</b>仅适用于 iOS 平台。</div>
 
 **UI 锁定时（或 UI 不锁定但客户端关闭了屏幕自动旋转功能时）**
 
