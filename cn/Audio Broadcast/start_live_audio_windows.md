@@ -3,15 +3,15 @@
 title: 实现音频直播
 description: 
 platform: Windows
-updatedAt: Fri Jul 03 2020 01:57:01 GMT+0800 (CST)
+updatedAt: Tue Jul 07 2020 07:52:44 GMT+0800 (CST)
 ---
 # 实现音频直播
 本文介绍如何通过 Agora 音频互动直播 SDK 快速实现音频互动直播。
 
 互动直播和实时通话的区别就在于，直播频道的用户有角色之分。你可以将角色设置为主播或者观众，其中主播可以收、发流，观众只能收流。
 
-## Demo 体验
-Agora 在 GitHub 上提供一个开源的视频直播示例项目 [OpenLive-Windows](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Windows)。在实现音频直播前，你可以下载并参考源代码。
+## 示例项目
+Agora 在 GitHub 上提供开源的直播示例项目 [OpenLive-Windows](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Windows) 和 [OpenLive-Windows-MFC](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Windows-MFC)。在实现相关功能前，你可以下载并查看源代码。
 
 ## 前提条件
 - Microsoft Visual Studio 2017 或以上版本
@@ -232,8 +232,6 @@ void CAgoraObject::CloseAgoraObject()
 }
 ```
 
-### 示例代码
-你可以在 [OpenLive-Windows](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Windows) 示例代码中查看完整的源码和代码逻辑。
 
 ## 运行项目
 在 Windows 设备中运行该项目。当成功开始音频直播时，主播可以听到自己的声音；观众可以听到主播的声音。

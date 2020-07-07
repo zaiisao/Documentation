@@ -3,7 +3,7 @@
 title: 实现视频直播
 description: 
 platform: Windows
-updatedAt: Mon Jul 06 2020 09:40:38 GMT+0800 (CST)
+updatedAt: Tue Jul 07 2020 07:52:40 GMT+0800 (CST)
 ---
 # 实现视频直播
 本文介绍如何通过 Agora SDK 快速实现视频互动直播。
@@ -12,7 +12,7 @@ updatedAt: Mon Jul 06 2020 09:40:38 GMT+0800 (CST)
 
 
 ## 示例项目
-Agora 在 GitHub 上提供一个开源的视频直播示例项目 [OpenLive-Windows](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Windows)。在实现相关功能前，你可以下载并查看源代码。
+Agora 在 GitHub 上提供开源的视频直播示例项目 [OpenLive-Windows](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Windows) 和 [OpenLive-Windows-MFC](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Windows-MFC)。在实现相关功能前，你可以下载并查看源代码。
 
 ## 前提条件
 - Microsoft Visual Studio 2017 或以上版本
