@@ -3,7 +3,7 @@
 title: 视频流回退
 description: 
 platform: iOS,macOS
-updatedAt: Mon Jul 06 2020 08:14:41 GMT+0800 (CST)
+updatedAt: Tue Jul 07 2020 09:03:45 GMT+0800 (CST)
 ---
 # 视频流回退
 ## 功能描述

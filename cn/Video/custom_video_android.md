@@ -3,7 +3,7 @@
 title: 自定义视频采集和渲染
 description: 
 platform: Android
-updatedAt: Tue May 19 2020 10:47:19 GMT+0800 (CST)
+updatedAt: Wed Jul 08 2020 04:47:06 GMT+0800 (CST)
 ---
 # 自定义视频采集和渲染
 ## 功能介绍
@@ -12,7 +12,7 @@ updatedAt: Tue May 19 2020 10:47:19 GMT+0800 (CST)
 
 - app 中已有自己的音频或视频模块
 - 希望使用非 Camera 采集的视频源，如录屏数据
-- 需要使用自定义的美颜库有或前处理库
+- 需要使用自定义的美颜库或有前处理库
 - 某些视频采集设备被系统独占。为避免与其它业务产生冲突，需要灵活的设备管理策略
 
 基于此，Agora Native SDK 支持使用自定义的音视频源或渲染器，实现相关场景。本文介绍如何实现自定义视频采集和渲染。
@@ -274,7 +274,7 @@ rtcEngine.setLocalVideoRenderer(sink);
 - 自定义视频采集和渲染场景中，需要开发者具有采集或渲染视频的能力：
 
   - 自定义视频采集场景中，你需要自行管理视频数据的采集和处理。
-  - 自定义视频渲染场景中，你需要自定管理视频数据的处理和显示。
+  - 自定义视频渲染场景中，你需要自行管理视频数据的处理和显示。
 
 
 - 自定义视频渲染场景中，当 `consumeByteArrayFrame` 或 `consumeByteBufferFrame` 或 `consumeTextureFrame` 回调报告 `rotation` 不为 0 时，自渲染的视频会呈一定角度。该角度可能由 SDK 采集或自采集的设置引起，你需要能根据实际使用需求处理自渲染的视频角度。

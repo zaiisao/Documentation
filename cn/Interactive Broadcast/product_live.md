@@ -3,10 +3,10 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Tue Jun 30 2020 02:18:28 GMT+0800 (CST)
+updatedAt: Wed Jul 08 2020 02:22:23 GMT+0800 (CST)
 ---
 # 产品概述
-Agora 视频互动直播（Video Broadcasting）可以实现一对多，多对多的音视频互动直播。
+Agora 视频互动直播（Live Interactive Video Streaming）可以实现一对多，多对多的音视频互动直播。
 
 Agora 视频互动直播和视频通话的区别是：
 - 视频通话，不分主播和观众，所有用户都可自由发言，默认流畅和低延时优先，画质稍低，典型场景如多人视频会议。

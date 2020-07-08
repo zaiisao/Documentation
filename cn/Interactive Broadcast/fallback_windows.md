@@ -3,7 +3,7 @@
 title: 视频流回退
 description: 
 platform: Windows
-updatedAt: Tue Mar 03 2020 07:45:52 GMT+0800 (CST)
+updatedAt: Tue Jul 07 2020 09:04:31 GMT+0800 (CST)
 ---
 # 视频流回退
 ## 功能描述

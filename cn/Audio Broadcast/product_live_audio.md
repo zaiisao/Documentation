@@ -3,10 +3,10 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 06 2020 08:26:41 GMT+0800 (CST)
+updatedAt: Wed Jul 08 2020 02:22:53 GMT+0800 (CST)
 ---
 # 产品概述
-Agora 音频互动直播（Audio Broadcasting）可以实现一对多，多对多的纯音频互动直播。
+Agora 音频互动直播（Live Interactive Audio Streaming）可以实现一对多，多对多的纯音频互动直播。
 
 Agora 音频互动直播和 [Agora 语音通话](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms)的区别是：
 - 语音通话，不区分主播和观众，所有用户都可发言，默认流畅和低延时优先，典型场景如多人语音会议。

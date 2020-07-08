@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: 微信小程序
-updatedAt: Tue Jul 07 2020 07:51:35 GMT+0800 (CST)
+updatedAt: Tue Jul 07 2020 09:23:30 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供声网 Agora 小程序 SDK 的发版说明。
@@ -40,6 +40,10 @@ updatedAt: Tue Jul 07 2020 07:51:35 GMT+0800 (CST)
 
 点击 [声网小程序 Demo 体验](../../cn/Voice/start_call_wechat.md) 了解小程序通话、互通等功能。
 下载小程序可供集成的示例代码，请前往 [https://github.com/AgoraIO/Agora-Miniapp-Tutorial](https://github.com/AgoraIO/Agora-Miniapp-Tutorial) 。
+
+## **2.4.4 版**
+
+该版本于 2020 年 7 月 7 日发布。增加了对 QQ 小程序的兼容。
 
 ## **2.4.3 版**
 
