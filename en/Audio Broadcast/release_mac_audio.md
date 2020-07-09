@@ -3,17 +3,17 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Thu Jul 02 2020 06:29:38 GMT+0800 (CST)
+updatedAt: Wed Jul 08 2020 14:46:41 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
 
 The Voice SDK supports the following scenarios:
 
-- Voice communication
-- Live voice broadcast
+- Voice call
+- Live interactive audio streaming
 
-For the key features included in each scenario, see [Voice Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms) and [Audio Broadcast Overview](https://docs.agora.io/en/Audio%20Broadcast/product_live_audio?platform=All_Platforms).
+For the key features included in each scenario, see [Voice Call Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms) and [Live interactive audio streaming Overview](https://docs.agora.io/en/Audio%20Broadcast/product_live_audio?platform=All_Platforms).
 
 ## v3.0.1
 
@@ -95,10 +95,10 @@ This release fixed issues relating to no audio, disconnecting from a Bluetooth d
 
 v3.0.0 was released on Mar 4, 2020.
 
-In this release, Agora improves the user experience under poor network conditions for both the Communication and Live-broadcast profiles through the following measures:
+In this release, Agora improves the user experience under poor network conditions for both the `Communication` and `LiveBroadcasting` profiles through the following measures:
 
-- Adopting a new architecture for the Communication profile.
-- Upgrading the last-mile network strategy for both the Communication and Live-broadcast profiles,  which enhances the SDK's anti-packet-loss capacity by maximizing the net bitrate when the uplink and downlink bandwidth are insufficient.
+- Adopting a new architecture for the `Communication` profile.
+- Upgrading the last-mile network strategy for both the `Communication` and `LiveBroadcasting` profiles,  which enhances the SDK's anti-packet-loss capacity by maximizing the net bitrate when the uplink and downlink bandwidth are insufficient.
 
 To deal with any incompatibility issues caused by the architecture change, Agora uses the fallback mechanism to ensure that users of different versions of the SDKs can communicate with each other: if a user joins the channel from a client using a previous version, all clients using v3.0.0 automatically fall back to the older version. This has the effect that none of the users in the channel can enjoy the improved experience. Therefore we strongly recommend upgrading all your clients to v3.0.0.
 
@@ -161,13 +161,13 @@ After joining multiple channels, users can receive the audio streams of all the 
 
 #### 2. Adjusting the playback volume of the specified remote user
 
-Adds [`adjustUserPlaybackSignalVolume`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustUserPlaybackSignalVolume:volume:) for adjusting the playback volume of a specified remote user. You can call this method as many times as necessary in a call or a live broadcast to adjust the playback volume of different remote users, or to repeatedly adjust the playback volume of the same remote user.
+Adds [`adjustUserPlaybackSignalVolume`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustUserPlaybackSignalVolume:volume:) for adjusting the playback volume of a specified remote user. You can call this method as many times as necessary in a call or live interactive streaming to adjust the playback volume of different remote users, or to repeatedly adjust the playback volume of the same remote user.
 
 **Improvements**
 
 #### 1. Audio profiles
 
-To meet the need for higher audio quality, this release adjusts the corresponding audio profile of `AgoraAudioProfileDefault(0)` in the Live-Broadcast profile.
+To meet the need for higher audio quality, this release adjusts the corresponding audio profile of `AgoraAudioProfileDefault(0)` in the `LiveBroadcasting` profile.
 
 | SDK   | `AgoraAudioProfileDefault(0)`                                  |
 | :--------- | :---------------------------------------------------------- |
@@ -265,17 +265,17 @@ For how to implement the new methods, see [Push Streams to the CDN](../../en/Aud
 
 #### 2. Disabling/enabling the local audio
 
-To improve the audio quality in the Communication profile, this release sets the system volume to the media volume after you call the `enableLocalAudio`(true) method. Calling `enableLocalAudio`(false) switches the system volume back to the in-call volume.
+To improve the audio quality in the `Communication` profile, this release sets the system volume to the media volume after you call the `enableLocalAudio`(true) method. Calling `enableLocalAudio`(false) switches the system volume back to the in-call volume.
 
 **New features**
 
 #### 1. Faster switching to another channel
 
-This release adds the [`switchChannelByToken`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/switchChannelByToken:channelId:joinSuccess:) method to enable the audience in a Live Broadcast channel to quickly switch to another channel. With this method, you can achieve a much faster switch than with the [`leaveChannel`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/leaveChannel:) and [`joinChannelByToken`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByToken:channelId:info:uid:joinSuccess:) methods. After the audience successfully switches to another channel by calling the [`switchChannelByToken`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/switchChannelByToken:channelId:joinSuccess:) method, the SDK triggers the [`didLeaveChannelWithStats`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didLeaveChannelWithStats:) and [`didJoinChannel`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didJoinChannel:withUid:elapsed:) callbacks to indicate that the audience has left the original channel and joined a new one. 
+This release adds the [`switchChannelByToken`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/switchChannelByToken:channelId:joinSuccess:) method to enable the audience in an interactive streaming channel to quickly switch to another channel. With this method, you can achieve a much faster switch than with the [`leaveChannel`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/leaveChannel:) and [`joinChannelByToken`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByToken:channelId:info:uid:joinSuccess:) methods. After the audience successfully switches to another channel by calling the [`switchChannelByToken`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/switchChannelByToken:channelId:joinSuccess:) method, the SDK triggers the [`didLeaveChannelWithStats`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didLeaveChannelWithStats:) and [`didJoinChannel`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didJoinChannel:withUid:elapsed:) callbacks to indicate that the audience has left the original channel and joined a new one. 
 
 #### 2. Channel media stream relay
 
-This release adds the following methods to relay the media streams of a host from a source channel to a destination channel. This feature applies to scenarios such as online singing contests, where hosts of different Live Broadcast channels interact with each other.
+This release adds the following methods to relay the media streams of a host from a source channel to a destination channel. This feature applies to scenarios such as online singing contests, where hosts of different interactive streaming channels interact with each other.
 
 - [`startChannelMediaRelay`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startChannelMediaRelay:)
 - [`updateChannelMediaRelay`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/updateChannelMediaRelay:)
@@ -321,7 +321,7 @@ This release adds the following statistics in the [`AgoraChannelStats`](https://
 #### 2. Other Improvements
 
 - Improves the audio quality when the audio scenario is set to `GameStreaming`.
-- Improves the audio quality after the user disables the microphone in the Communication profile.
+- Improves the audio quality after the user disables the microphone in the `Communication` profile.
 
 **Issues fixed**
 
@@ -391,7 +391,7 @@ To ensure smooth communication, use the same parameter type to identify all user
 
 #### 2. Adding remote statistics
 
-To monitor the audio transmission quality during a call or live broadcast, this release adds the `totalFrozenTime` and `frozenRate` members in the [AgoraRtcRemoteAudioStats](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcRemoteAudioStats.html) class, to report the audio freeze time and freeze rate of the remote user.
+To monitor the audio transmission quality during a call or live interactive streaming, this release adds the `totalFrozenTime` and `frozenRate` members in the [AgoraRtcRemoteAudioStats](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcRemoteAudioStats.html) class, to report the audio freeze time and freeze rate of the remote user.
 
 This release also adds the `numChannels`, `receivedSampleRate`, and `receivedBitrate` members in the [AgoraRtcRemoteAudioStats](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcRemoteAudioStats.html) class.
 

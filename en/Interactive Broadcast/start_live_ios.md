@@ -1,18 +1,16 @@
 
 ---
-title: Start a Video Broadcast
+title: Start Live Interactive Video Streaming
 description: 
 platform: iOS
-updatedAt: Fri Jun 19 2020 14:41:08 GMT+0800 (CST)
+updatedAt: Tue Jul 07 2020 14:48:08 GMT+0800 (CST)
 ---
-# Start a Video Broadcast
-Use this guide to quickly start an interactive broadcast demo with the Agora Video SDK for iOS.
-
-The difference between a broadcast and a call is that users have roles in a broadcast. You can set your role as either Broadcaster or Audience. The broadcaster sends and receives streams while the audience receives streams only.
+# Start Live Interactive Video Streaming
+Use this guide to quickly start the live interactive video streaming demo with the Agora Video SDK for iOS.
 
 ## Sample project
 
-We provide an open-source [OpenLive-iOS-Objective-C](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-iOS-Objective-C) or [OpenLive-iOS-Swift](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-iOS) demo project that implements the basic video broadcast on GitHub. You can try the demo and view the source code.
+We provide an open-source [OpenLive-iOS-Objective-C](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-iOS-Objective-C) or [OpenLive-iOS-Swift](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-iOS) demo project that implements the basic live interactive video streaming on GitHub. You can try the demo and view the source code.
 
 ## Prerequisites
 
@@ -107,18 +105,18 @@ Add the following permissions in the **info.plist** file for device access accor
 
  ![](https://web-cdn.agora.io/docs-files/1584604886884) 
 
-## Implement the basic broadcast
+## Implement the basic live interactive streaming
 
-This section introduces how to use the Agora SDK to make an interactive broadcast. The following figure shows the API call sequence of a basic video broadcast.
+This section introduces how to use the Agora Video SDK to start the live interactive video streaming. The following figure shows the API call sequence of the live interactive video streaming.
 ![](https://web-cdn.agora.io/docs-files/1570604527013)
 
 ### 1. Create the UI
 
-Create the user interface (UI) for the interactive broadcast your project. Skip to [Import the class](#ImportClass) if you already have a UI in your project.
+Create the user interface (UI) for the interactive video streaming in your project. Skip to [Import the class](#ImportClass) if you already have a UI in your project.
 
-If you are implementing a video broadcast, we recommend adding the following elements into the UI:
+If you are implementing the interactive video streaming, we recommend adding the following elements into the UI:
 
-- The view of the broadcaster
+- The view of the host
 - The exit button
 	
 When you use the UI setting of the demo project, you can see the following interface:
@@ -145,7 +143,7 @@ import AgoraRtcKit
 import AgoraRtcEngineKit
 ```
 
-<div class="alert note"> The Agora Native SDK uses libc++ (LLVM) by default. Contact Agora support If you want to use libstdc++ (GNU). The SDK provides FAT image libraries with multi-architecture support for both 32/64-bit audio emulators and 32/64-bit audio/video real devices.</div>
+<div class="alert note"> The RTC Native SDK uses libc++ (LLVM) by default. Contact <a href="mailto:support@agora.io">support@agora.io</a > If you want to use libstdc++ (GNU). The SDK provides FAT image libraries with multi-architecture support for both 32/64-bit audio emulators and 32/64-bit audio/video real devices.</div>
 
 ### 3. Initialize AgoraRtcEngineKit
 
@@ -153,7 +151,7 @@ Create and initialize the `AgoraRtcEngineKit` object before calling any other Ag
 
 Call the `sharedEngineWithAppId` method and pass in the App ID to initialize the `AgoraRtcEngineKit` object.
 
-You can also listen for callback events, such as when the local user joins the channel, and when the first video frame of a remote user is decoded. 
+You can also listen for callback events, such as when the local user joins the channel, and when the first video frame of a host is decoded. 
 
 ```objective-c
 // Objective-C
@@ -173,7 +171,7 @@ func initializeAgoraEngine() {
 
 ### 4. Set the channel profile
 
-After initializing the `AgoraRtcEngineKit` object, call the `setChannelProfile` method to set the channel profile as Live Broadcast. 
+After initializing the `AgoraRtcEngineKit` object, call the `setChannelProfile` method to set the channel profile as `LiveBroadcasting`. 
 
 One `AgoraRtcEngineKit` object uses one profile only. If you want to switch to another profile, destroy the current `AgoraRtcEngineKit` object with the `destroy` method and create a new one before calling the `setChannelProfile` method.
 
@@ -191,12 +189,12 @@ agoraKit.setChannelProfile(.liveBroadcasting)
 
 ### 5. Set the client role
 
-A Live Broadcast channel has two client roles: `Broadcaster` and `Audience`, and the default role is `Audience`. After setting the channel profile to `Live Broadcast`, your app may use the following steps to set the client role:
+An interactive streaming channel has two client roles: `Broadcaster` and `Audience`, and the default role is `Audience`. After setting the channel profile to `Live Broadcast`, your app may use the following steps to set the client role:
 
 1. Allow the user to set the role as `Broadcaster` or `Audience`. 
 2. Call the `setClientRole` method and pass in the client role set by the user.
 
-Note that in a live broadcast, only the broadcaster can be heard and seen. If you want to switch the client role after joining the channel, call the `setClientRole` method.
+Note that in a live interactive streaming, only the host can be heard and seen. If you want to switch the client role after joining the channel, call the `setClientRole` method.
 
 ```objective-c
 // Objective-C
@@ -221,9 +219,7 @@ agoraKit.setClientRole(.broadcaster)
 
 ### 6. Set the local video view
 
-If you are implementing an audio broadcast, skip to [Join a channel](#JoinChannel).
-
-After setting the channel profile and client role, set the local video view before joining the channel so that the broadcaster can see the local video in the broadcast. Follow these steps to configure the local video view:
+After setting the channel profile and client role, set the local video view before joining the channel so that the host can see the local video in the interactive streaming. Follow these steps to configure the local video view:
 
 1. Call the `enableVideo` method to enable the video module.
 2. Call the `setupLocalVideo` method to configure the local video display settings. 
@@ -259,20 +255,20 @@ func addLocalSession() {
 
 ### <a name="JoinChannel"></a>7. Join a channel
 
-After initializing the `AgoraRtcEngineKit` object and setting the local video view (for a video call), you can call the `joinChannelByToken` method to join a channel. In this method, set the following parameters:
+After initializing the `AgoraRtcEngineKit` object and setting the local video view (for the interactive video streaming), you can call the `joinChannelByToken` method to join a channel. In this method, set the following parameters:
 
-- channelId: Specify the channel name that you want to join. Input your `channelId` before running the sample code.
-- token: Pass a token that identifies the role and privilege of the user.  You can set it as one of the following values:
+- `channelId`: Specify the channel name that you want to join. Input your `channelId` before running the sample code.
+- `token`: Pass a token that identifies the role and privilege of the user.  You can set it as one of the following values:
 	- `nil`.
 	- A temporary token generated in Console. A temporary token is valid for 24 hours. For details, see [Get a Temporary Token](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#get-a-temporary-token).
 	- A token generated at the server. This applies to scenarios with high-security requirements. For details, see [Generate a token from Your Server](../../en/Interactive%20Broadcast/token_server_cpp.md).
 	<div class="alert note">If your project has enabled the app certificate, ensure that you provide a token.</div>
-- uid: ID of the local user that is an integer and should be unique. If you set `uid` as 0,  the SDK assigns a user ID for the local user and returns it in the `joinSuccessBlock` callback.
+- `uid`: ID of the local user that is an integer and should be unique. If you set `uid` as `0`,  the SDK assigns a user ID for the local user and returns it in the `joinSuccessBlock` callback.
 - joinSuccessBlock: Returns that the user joins the specified channel. It is same as `didJoinChannel`. We recommend setting `joinSuccessBlock` as `nil`, so that the SDK can trigger the `didJoinChannel` callback.
 
 For more details on the parameter settings, see [joinChannelByToken](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByToken:channelId:info:uid:joinSuccess:).
 
-<div class="alert note">For Native SDKs prior to v3.0.0, you need to call <code>enableWebSdkInteroperability</code> to enable the interoperability with the Web SDK if there is a Web users in the channel. As of v3.0.0, the Native SDK enables its interoperability with the Web SDK by default.</div>
+<div class="alert note">For RTC Native SDKs prior to v3.0.0, you need to call <code>enableWebSdkInteroperability</code> to enable the interoperability with the RTC Web SDK if there is a Web users in the channel. As of v3.0.0, the RTC Native SDK enables its interoperability with the RTC Web SDK by default.</div>
 
 ```objective-c
 // Objective-C
@@ -291,14 +287,14 @@ agoraKit.joinChannel(byToken: KeyCenter.Token, channelId: channelId, info: nil, 
 
 ### 8. Set the remote video view
 
-In a video call, you should be able to see other users too. This is achieved by calling the `setupRemoteVideo` method after joining the channel.
+In the live interactive video streaming, you should be able to see other users too. This is achieved by calling the `setupRemoteVideo` method after joining the channel.
 
-Shortly after a remote user joins the channel, the SDK gets the remote user's ID in the `firstRemoteVideoDecodedOfUid` callback. Call the `setupRemoteVideo` method in the callback, and pass in the `uid` to set the video view of the remote user.
+Shortly after a remote host joins the channel, the SDK gets the remote host's ID in the `firstRemoteVideoDecodedOfUid` callback. Call the `setupRemoteVideo` method in the callback, and pass in the `uid` to set the video view of the remote host.
 
 ```objective-c
 // Objective-C
 // Listen for the firstRemoteVideoDecodedOfUid callback.
-// This callback occurs when the first video frame of a remote user is received and decoded after the remote user successfully joins the channel.
+// This callback occurs when the first video frame of a remote host is received and decoded after the remote host successfully joins the channel.
 // You can call the setupRemoteVideo method in this callback to set up the remote video view.
 - (void)rtcEngine:(AgoraRtcEngineKit *)engine firstRemoteVideoDecodedOfUid:(NSUInteger)uid size: (CGSize)size elapsed:(NSInteger)elapsed {
     if (self.remoteVideo.hidden) {
@@ -316,7 +312,7 @@ Shortly after a remote user joins the channel, the SDK gets the remote user's ID
 ```swift
 // Swift
 // Listen for the firstRemoteVideoDecodedOfUid callback.
-// This callback occurs when the first video frame of a remote user is received and decoded after the remote user successfully joins the channel.
+// This callback occurs when the first video frame of a remote host is received and decoded after the remote host successfully joins the channel.
 // You can call the setupRemoteVideo method in this callback to set up the remote video view.
 func rtcEngine(_ engine: AgoraRtcEngineKit, firstRemoteVideoDecodedOfUid uid: UInt, size: CGSize, elapsed: Int) {
     let userSession = videoSession(of: uid)
@@ -327,7 +323,7 @@ func rtcEngine(_ engine: AgoraRtcEngineKit, firstRemoteVideoDecodedOfUid uid: UI
 
 ### 9. Leave the channel
 
-Call the `leaveChannel` method to leave the current call according to your scenario, for example, when the call ends, when you need to close the app, or when your app runs in the background.
+Call the `leaveChannel` method to leave the current channel according to your scenario, for example, when the live interactive streaming ends, when you need to close the app, or when your app runs in the background.
 
 ```objective-c
 // Objective-C
@@ -355,10 +351,10 @@ func leaveChannel() {
 
 ## Run the project
 
-Run the project on your iOS device. When you set the role as the broadcaster and successfully join a video broadcast, you can see the video view of yourself in the app. When you set the role as the audience and successfully join a video broadcast, you can see the video view of the broadcaster in the app.
+Run the project on your iOS device. When you set the role as the host and successfully start the live interactive video streaming, you can see the video view of yourself in the app. When you set the role as the audience and successfully join the live interactive video streaming, you can see the video view of the host in the app.
 
 ## Reference
 
-- [How can I listen for an audience joining or leaving a live broadcast channel?](https://docs.agora.io/en/faq/audience_event)
+- [How can I listen for an audience joining or leaving a live interactive streaming channel?](https://docs.agora.io/en/faq/audience_event)
 - [How can I set the log file?](https://docs.agora.io/en/faq/logfile)
 - [How can I solve black screen issues?](https://docs.agora.io/en/faq/video_blank)

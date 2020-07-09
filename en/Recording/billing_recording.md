@@ -3,7 +3,7 @@
 title: Billing for On-premise Recording
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 06 2020 06:17:10 GMT+0800 (CST)
+updatedAt: Thu Jul 09 2020 03:16:50 GMT+0800 (CST)
 ---
 # Billing for On-premise Recording
 This article introduces the billing policy for the on-premise recording service provided by Agora.

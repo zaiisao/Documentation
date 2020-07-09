@@ -3,7 +3,7 @@
 title: Deal with Autoplay Blocking
 description: autoplay policy best practice 
 platform: Web
-updatedAt: Tue Apr 14 2020 01:49:44 GMT+0800 (CST)
+updatedAt: Tue Jul 07 2020 08:40:15 GMT+0800 (CST)
 ---
 # Deal with Autoplay Blocking
 ## Overview
@@ -55,7 +55,7 @@ If you prefer dealing with the autoplay block in advance, choose one of the foll
 
 If your app requires autoplay without any user interaction, we recommend the first method.
 
-If your app allows user interaction before playing the stream, for example a user needs to click a button to view the broadcaster, we recommend the second method.
+If your app allows user interaction before playing the stream, for example a user needs to click a button to view the host, we recommend the second method.
 
 <div class="alert note">Regardless of which method you choose, autoplay with sound is impossible before user interaction. Although the browser maintains a whitelist to allow autoplay for some websites, this information is not accessible by JavaScript.</div>
 

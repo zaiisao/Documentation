@@ -3,7 +3,7 @@
 title: Set Video Layout
 description: v1
 platform: All Platforms
-updatedAt: Thu Apr 02 2020 09:03:34 GMT+0800 (CST)
+updatedAt: Thu Jul 09 2020 03:00:40 GMT+0800 (CST)
 ---
 # Set Video Layout
 ## Overview
@@ -174,7 +174,7 @@ The configuration of a user region is a JSON object with the following parameter
 	
 As shown in the figure above, we set the upper left corner of the video canvas as the origin. The `x_axis` and `y_axis` parameters define the relative position of a user's region on the canvas, representing the horizontal and vertical distance between the upper left corner of the region and the origin respectively. The `width` and `height` parameters define the relative width and relative height of the region. The `x_axis`, `y_axis`, `width`, and `height` parameters are floats between 0.0 and 1.0. Ensure that x_axis + width &lt;= 1, and y_axis + height &lt;= 1.
 
-For example, in a live broadcast, a host can invite the audience to become guest hosts. When you start the recording, you know the UID of the host but the UIDs of the guest hosts change. The following sample code is for the layout of three hosts: one large region for the main host and two small regions for the guest hosts. The guest hosts occupy the small regions in the order of joining the channel.
+For example, in a live interactive streaming, a host can invite the audience to become guest hosts. When you start the recording, you know the UID of the host but the UIDs of the guest hosts change. The following sample code is for the layout of three hosts: one large region for the main host and two small regions for the guest hosts. The guest hosts occupy the small regions in the order of joining the channel.
 
 Sample code:
 

@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Unity
-updatedAt: Mon May 25 2020 07:55:12 GMT+0800 (CST)
+updatedAt: Wed Jul 08 2020 16:02:23 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Unity SDK.
@@ -12,10 +12,10 @@ This page provides the release notes for the Agora Unity SDK.
 
 The Agora Unity SDK supports the following scenarios:
 
--   Voice Communication
--   Live Voice Broadcast
+-   Voice call
+-   Live interactive audio streaming
 
-For the key features included in each scenario, see [Voice Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms) and [Audio Broadcast Overview](https://docs.agora.io/en/Audio%20Broadcast/product_live_audio?platform=All_Platforms).
+For the key features included in each scenario, see [Agora Voice Call Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms) and [Agora Live Interactive Audio Streaming Overview](https://docs.agora.io/en/Audio%20Broadcast/product_live_audio?platform=All_Platforms).
 
 ## v2.9.2
 
@@ -36,7 +36,7 @@ v2.9.1 was released on December 23, 2019.
 Supports iOS, Android, macOS and Windows (x86/x86_64) platforms.
 
 #### 2. Interoperability with the Agora Web SDK
-Provides the `EnableWebSdkInteroperability` method for enabling interoperability with the Agora Web SDK in a live broadcast. 
+Provides the `EnableWebSdkInteroperability` method for enabling interoperability with the Agora Web SDK in `LIVE_BROADCASTING` profile. 
 
 #### 3. Raw data
 Supports raw audio data. You can capture and process the raw data according to your needs.
@@ -60,7 +60,7 @@ Supports the cloud proxy service. See [Use Cloud Proxy](../../en/Voice/cloudprox
 
 See the following documentation to quickly integrate the SDK and implement real-time voice and video communication in your project.
 
-- [Start a Voice Call](../../en/Voice/start_call_audio_unity.md) or [Start a Voice Broadcast](../../en/Voice/start_live_audio_unity.md)
+- [Start a Voice Call](../../en/Voice/start_call_audio_unity.md) or [Start Live Interactive Audio Streaming](../../en/Voice/start_live_audio_unity.md)
 - [API Reference](https://docs.agora.io/en/Voice/API%20Reference/unity/index.html) 
 
 Agora also provides an open-source [Unity Sample](https://github.com/AgoraIO/Agora-Unity-Quickstart/tree/master/audio/Hello-Unity3D-Agora) on GitHub.

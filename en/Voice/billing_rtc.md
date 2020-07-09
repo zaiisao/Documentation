@@ -3,7 +3,7 @@
 title: Billing for Real-time Communication
 description: 
 platform: All Platforms
-updatedAt: Fri Jul 03 2020 04:27:44 GMT+0800 (CST)
+updatedAt: Tue Jul 07 2020 06:45:25 GMT+0800 (CST)
 ---
 # Billing for Real-time Communication
 This article introduces the billing policy for the real-time communication (RTC) service provided by Agora.
@@ -25,14 +25,14 @@ Billing for RTC begins once you implement an RTC function, such as audio call, g
 
 ## Composition
 
-Agora calculates your billing based on the sessions under each project. The billing for each session equals the total sum of charges for all users in the session.
+Agora calculates your billing based on the sessions under each project. The billing for each session equals the total sum of charges for all users in the session. At the end of each month, Agora adds up the service minutes and multiplies it by the pricing to get the cost of this month.
 
-For each user, Agora charges for the service according to their subscribing behavior in the session. Therefore, the charges for each user comprise the following:
+For each user, Agora calculates the service minutes according to their subscribing behavior in the session. Therefore, the service minutes for each user comprise the following:
 
-- Video charges: Apply when the user successfully subscribes to video.
-- Audio charges: Apply when the user does not subscribe to video, regardless of whether the user subscribes to audio.
+- Video service minutes: Apply when the user successfully subscribes to video.
+- Audio service minutes: Apply when the user does not subscribe to video, regardless of whether the user subscribes to audio.
 
-**Cost for each user = Video charges + Audio charges = Video pricing × video service minutes + Audio pricing × audio service minutes**.
+**Cost = Video pricing × video service minutes (video charges) + Audio pricing × audio service minutes (audio charges)**.
 
 <div class="alert note">
 	<ul>
@@ -106,67 +106,72 @@ Depending on the subscribing behavior of the user, service minutes comprises the
 - Video minutes: The total duration of the user receiving video.
 - Audio minutes: If you deduct the video minutes from the total duration when the user is in the channel, you get the audio minutes of that user, regardless of whether that user subscribes to any audio.
 
-<div class="alert note">If the user subscribes to multiple audio and video streams at the same time, the total service minutes do not add up by streams. For example:
+<div class="alert note">If the user subscribes to multiple audio and video streams at the same time, the total service minutes per stream are not additive. For example:
 <ul>
-	<li>If User A subscribes to the video streams of both B and C for the same 10 minutes, the billing for A is the billing for 10 minutes of video.</li>
-	<li>If User A subscribes to the audio stream of B, and video stream of C, both for the same 10 minutes, the billing for A is also the billing for 10 minutes of video.</li>
+	<li>If User A subscribes to the video streams of both B and C for the same 10 minutes, A uses 10 minutes of video service.</li>
+	<li>If User A subscribes to the audio stream of B, and video stream of C, both for the same 10 minutes, A also uses 10 minutes of video service.</li>
 </ul>
 </div>
 
 ## Examples
 
-<div class="alert note">Use the following examples to better understand Agora's RTC billing policy:</div>
+<div class="alert note">Use the following examples to better understand Agora's policy in calculating RTC service minutes:</div>
 
 ### Video call with two users
 
 **Scenario**: Users A and B join the channel at the same time and have a video call for 20 minutes.
 
-**Cost**: In this session, both A and B use the video service. 
-- Billing for A: Charges for subscribing to the video of B = Video pricing × 20 minutes/1000 minutes.
-- Billing for B: Charges for subscribing to the video of A = Video pricing × 20 minutes/1000 minutes.
+In this session, both A and B use the video service. Service minutes = 20 minutes of video service × 2 = 40 minutes of video service. 
 
 ### Voice call with three users
 
 **Scenario**: Users A, B, and C join the channel at the same time and have a voice call for 20 minutes.
 
-**Cost**: In this session, A, B, and C use the audio service. Billing = (Audio pricing × 20 minutes/1000 minutes) + (Audio pricing × 20 minutes/1000 minutes) + (Audio pricing × 20 minutes /1000 minutes).
+In this session, A, B, and C use the audio service for 30 seconds respectively. Service minutes = 30 minutes of audio service × 3 = 90 minutes of audio service. 
 
 ### Video call with four users
 
 **Scenario**: Users A, B, and C join the channel at the same time and have a voice call. 10 minutes later, user D joins the channel, and has a video call with A, B, and C for 10 minutes.
 
-**Cost**: In this session, A, B, C, and D use either the audio or video service.
-- Billing for A:
-  - The initial 10 minutes: Charges for subscribing to the audio of B and C = Audio pricing × 10 minutes /1000 minutes.
-  - The subsequent 10 minutes: Charges for subscribing to the video of B, C, and D = Video pricing × 10 minutes/1000 minutes.
-- Billings for B and C are the same as the billing for A.
-- Billing for D:
-  - The initial 10 minutes: No charges occur since D is not in the channel.
-  - The subsequent 10 minutes: Charges for subscribing to the video of A, B, and C = Video pricing × 10 minutes/1000 minutes.
+In this session, A, B, C, and D use either the audio or video service.
+- A:
+  - The initial 10 minutes: 10 minutes of audio service, for subscribing to the audio of B and C.
+  - The subsequent 10 minutes: 10 minutes of video service, for subscribing to the video of B, C, and D.
+- The service minutes of B and C are the same as that of A.
+- D:
+  - The initial 10 minutes: No service minutes since D is not in the channel.
+  - The subsequent 10 minutes: 10 minutes of video service, for subscribing to the video of A, B, and C.
 
-### Single-hosted video broadcast
+### Single-hosted video streaming
 
-**Scenario**: User A joins a video broadcast channel and hosts for 20 minutes. Six people watch the broadcast, three subscribing to audio, and three subscribing to video.
+**Scenario**: User A joins a video broadcast channel and hosts for 20 minutes. Six people watch the live streaming, three subscribing to audio, and three subscribing to video.
 
-**Cost**: Since user A does not subscribe to any stream in the channel, A is charged for the audio service only. For the audience, three people are charged for the video service, and three for the audio service.
-- Billing for A: Audio billing = Audio pricing × 20 minutes/1000 minutes.
-- Billing for the 3 audience members subscribing to the video: 3 × Video pricing × 20 minutes/1000 minutes.
-- Billing for the 3 audience members subscribing to the audio: 3 × Audio pricing × 20 minutes/1000 minutes.
+Since user A does not subscribe to any stream in the channel, A is charged for the audio service only. For the audience, three people are charged for the video service, and three for the audio service.
+- A: 20 minutes of audio service.
+- The three audience members subscribing to the video: 20 minutes of video service × 3.
+- The three audience members subscribing to the audio: 20 minutes of audio service × 3.
 
-### Co-hosted video broadcast
+Service minutes = 20 minutes of audio service + 20 minutes of video service × 3 + 20 minutes of audio service × 3 = 80 minutes of audio service + 20 minutes of video service. 
 
-**Scenario**: User A hosts in a video broadcast channel, with six audience members. 10 minutes later, user B changes the user role and co-hosts with A for 10 minutes. The remaining audience continues watching the video broadcast.
+### Co-hosted video streaming
 
-**Cost**: 
-- Billing for A:
-  - The initial 10 minutes: Since A does not subscribe to any stream in the channel, billing = Audio charges = Audio pricing × 10 minutes/1000 minutes.
-  - The subsequent 10 minutes: Video charges for subscribing to the video of B = Video pricing × 10 minutes/1000 minutes.
-- Billing for B: Billing for subscribing to the video of A for 20 minutes = Video pricing × 20 minutes/1000 minutes.
+**Scenario**: User A hosts in an interactive streaming channel, with six audience members. 10 minutes later, user B changes the user role and co-hosts with A for 10 minutes. The remaining audience continues watching the live streaming.
+
+- A:
+  - The initial 10 minutes: 10 minutes of audio service, since A does not subscribe to any stream in the channel.
+  - The subsequent 10 minutes: 10 minutes of video service, for subscribing to the video of B.
+- B: 20 minutes of video service, for subscribing to the video of A.
 - The remaining five audience members:
-  - The initial 10 minutes: Billing for subscribing to the video of A = 5 × Video pricing × 10 minutes/1000 minutes.
-  - The initial 10 minutes: Billing for subscribing to the video of both A and B = 5 × Video pricing × 10 minutes/1000 minutes.
+  - The initial 10 minutes: 10 minutes of video service × 5, for subscribing to the video of A.
+  - The initial 10 minutes: 10 minutes of video service × 5, for subscribing to the video of both A and B.
+
+Service minutes = (10 minutes of audio service + 10 minutes of video service) + 20 minutes of video service + (50 minutes of video service + 50 minutes of video service) = 10 minutes of audio service + 130 minutes of video service. 
 
 ## Considerations
+
+### Accuracy of service minutes
+
+At the end of each month, Agora adds up the usage duration (in seconds) of audio, HD video, and HD+ video, and divides them by 60 to get the respective service minutes (rounded up to the next integer). For example, if the duration of audio service of the month is 59 seconds, then the audio service minutes is calculated as 1 minute; if the duration of video service is 61 seconds, then the video service minutes is calculated as 2 minutes. The error of service minutes for each month is within 1 minute. 
 
 ### Video resolution in the dual-stream scenario
 

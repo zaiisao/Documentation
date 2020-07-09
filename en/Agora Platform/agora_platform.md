@@ -3,7 +3,7 @@
 title: Agora Platform Overview
 description: 
 platform: All Platforms
-updatedAt: Sun Jun 28 2020 02:18:21 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 11:16:19 GMT+0800 (CST)
 ---
 # Agora Platform Overview
 Agora.io provides building blocks for you to add real-time voice and video communications through a simple and powerful SDK. You can integrate the Agora SDK to enable real-time communications in your own application quickly.
@@ -14,11 +14,11 @@ After integrating the Agora SDK, you can call different sets of APIs to implemen
 
 | Agora SDK        | Functions                                                    | Description                                                  |
 | ---------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Voice SDK        | [Voice Call](../../en/Voice/product_voice.md) <br>[Audio Broadcasting](../../en/Audio%20Broadcast/product_live_audio.md) | The Voice SDK package size is smaller than the Video SDK package size and applies to voice-only calls and voice-only live broadcasts. |
-| Video SDK        | [Video Call](../../en/Video/product_video.md) <br>[Video Broadcasting](../../en/Interactive%20Broadcast/product_live.md) | Provides both voice and video functions.                     |
+| Voice SDK        | [Voice Call](../../en/Voice/product_voice.md) <br>[Live Interactive Audio Streaming](../../en/Audio%20Broadcast/product_live_audio.md) | The Voice SDK package size is smaller than the Video SDK package size and applies to voice-only calls and voice-only live interactive streaming. |
+| Video SDK        | [Video Call](../../en/Video/product_video.md) <br>[Live Interactive Video Streaming](../../en/Interactive%20Broadcast/product_live.md) | Provides both voice and video functions.                     |
 | Gaming SDK       | [Interactive Gaming](../../en/Interactive%20Gaming/product_gaming.md) | Optimized for gaming applications. The package size is about 1 MB. |
 | RTM SDK          | [Real-time Messaging](../../en/Real-time-Messaging/product_rtm.md)   | Provides a stable messaging mechanism for real-time messaging scenarios that require low latency and high concurrency for a global audience. |
-| Recording Add-on | [On-premise Recording](../../en/Recording/product_recording.md)<br/>[Cloud Recording](../../en/cloud-recording/product_cloud_recording.md) | Records and saves voice/video calls and live broadcasts on your server. |
+| Recording Add-on | [On-premise Recording](../../en/Recording/product_recording.md)<br/>[Cloud Recording](../../en/cloud-recording/product_cloud_recording.md) | Records and saves voice/video calls and live interactive streaming on your server. |
 
 ## Self-built infrastructure
 
@@ -121,7 +121,7 @@ The SDK applies different optimization methods according to the channel profile.
 | Channel Profile | Description |
 | ---------------- | ---------------- |
 | Communication     | One-on-one or group calls, where all users in the channel can talk freely.    |
-| Live Broadcast     | In a live broadcast channel, users have two client roles: [Host](#host) and [audience](#audience). The host sends and receives audio/video, and the audience receives audio/video with the sending function disabled.   |
+| Live Interactive Streaming     | In a live interactive streaming channel, users have two client roles: [Host](#host) and [audience](#audience). The host sends and receives audio/video, and the audience receives audio/video with the sending function disabled.   |
 | Gaming    | Any user in the channel can talk freely. This profile uses the codec with low-power consumption and low bitrate by default.   |
 
 <div class="alert note">The gaming profile applies to the Agora Gaming SDK only.</div>

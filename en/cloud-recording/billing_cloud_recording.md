@@ -3,7 +3,7 @@
 title: Billing for Cloud Recording
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 06 2020 06:15:58 GMT+0800 (CST)
+updatedAt: Thu Jul 09 2020 03:21:58 GMT+0800 (CST)
 ---
 # Billing for Cloud Recording
 This article introduces the billing policy for the cloud recording service provided by Agora.
@@ -20,15 +20,19 @@ Billing for the cloud recording service begins once you use Agora Cloud Recordin
 
 ## Composition
 
-Agora calculates the recording minutes of video and audio used by your projects on a monthly basis and makes the following charges:
+At the end of each month, Agora calculates the service minutes of video and audio used by your projects on a monthly basis and makes the following charges:
 
 - Video charges: Apply when the recording server successfully records video in an RTC channel.
 - Audio charges: Apply when the recording server does not record video in an RTC channel, regardless of whether the server records any audio.
 
 **Cost = video charges + audio charges = (video pricing × video service minutes) + (audio pricing × audio service minutes)**.
 
-- If the recording server successfully records both audio and video at the same time, then Agora only charges for the video minutes.
-- During a recording, the idle minutes are charged based on the audio pricing. The cost is the audio pricing × idle minutes.
+<div class="alert note">
+	<ul>
+		<li>If the recording server successfully records both audio and video at the same time, then Agora only charges for the video minutes.</li>
+		<li>During a recording, the idle minutes are charged based on the audio pricing. The cost is the audio pricing × idle minutes.</li>
+	</ul>
+</div>
 
 ## Pricing
 
@@ -126,6 +130,10 @@ Cost: The recording service generates charges for the video minutes. The aggrega
 Billing = Video pricing × video minutes/1,000 × the number of recording sessions= $22.49 × 1,000/1,000 × 1= $22.49
 
 ## Considerations
+
+### Accuracy of service minutes
+
+At the end of each month, Agora adds up the usage duration (in seconds) of audio, HD video, and HD+ video, and divides them by 60 to get the respective service minutes (rounded up to the next integer). For example, if the duration of audio service of the month is 59 seconds, then the audio service minutes is calculated as 1 minute; if the duration of video service is 61 seconds, then the video service minutes is calculated as 2 minutes. The error of service minutes for each month is within 1 minute. 
 
 
 

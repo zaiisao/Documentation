@@ -3,7 +3,7 @@
 title: Composite Recording
 description: 
 platform: All Platforms
-updatedAt: Sat May 09 2020 02:16:56 GMT+0800 (CST)
+updatedAt: Thu Jul 09 2020 02:55:16 GMT+0800 (CST)
 ---
 # Composite Recording
 ## Overview
@@ -19,7 +19,7 @@ Before proceeding, ensure that you know how to use Agora Cloud Recording by usin
 
 See [Differences between individual recording mode and composite recording mode](https://docs.agora.io/en/faq/recording_mode) to decide which mode you should use.
 
-> We assume that each UID in the channel sends audio and video streams. If a UID does not send any audio or video stream, such as the audience in a live broadcast, no file is generated, except for Web users.
+> We assume that each UID in the channel sends audio and video streams. If a UID does not send any audio or video stream, such as the audience in a live interactive streaming, no file is generated, except for Web users.
 
 ## Implementation
 

@@ -3,9 +3,11 @@
 title: RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Fri Jun 19 2020 05:29:56 GMT+0800 (CST)
+updatedAt: Thu Jul 09 2020 02:17:28 GMT+0800 (CST)
 ---
 # RESTful API
+<div class="alert note">This article has been moved to <a href="https://docs.agora.io/en/rtc/restfulapi/">Server RESTful API</a >. This article will no longer be updated.</div>
+
 ## Authentication
 
 <div class="alert info">Before using the RESTful APIs, ensure that your account has enabled the relevant privilege of a specified project in Agora Console. Agora supports customizing different user roles and privileges. For more information, see <a href="../../en/Video/manage_member.md">Management members</a >.</div>

@@ -3,7 +3,7 @@
 title: Report In-call Statistics
 description: In-call quality for Android
 platform: Android
-updatedAt: Mon Jul 06 2020 03:49:26 GMT+0800 (CST)
+updatedAt: Thu Jul 09 2020 02:24:16 GMT+0800 (CST)
 ---
 # Report In-call Statistics
 ## Introduction

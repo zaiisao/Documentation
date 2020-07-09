@@ -3,15 +3,15 @@
 title: Start a Video Broadcast
 description: 
 platform: Windows
-updatedAt: Fri Jul 03 2020 09:16:01 GMT+0800 (CST)
+updatedAt: Tue Jul 07 2020 07:58:48 GMT+0800 (CST)
 ---
 # Start a Video Broadcast
 Use this guide to quickly start a video interactive broadcast with the Agora Video SDK for Windows. 
 
 The difference between a broadcast and a call is that users have roles in a broadcast. You can set your role as either BROADCASTER or AUDIENCE. The broadcaster sends and receives streams while the audience receives streams only.
 
-## Sample project
-We provide an open-source [OpenLive-Windows](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Windows) sample project that implements the basic video broadcast on GitHub. You can download it and view the source code.
+## Sample projects
+We provide open-source [OpenLive-Windows](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Windows) and [OpenLive-Windows-MFC](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Windows-MFC) sample projects that implements the basic video broadcast on GitHub. You can download it and view the source code.
 
 ## Prerequisites
 - Microsoft Visual Studio 2017 or later

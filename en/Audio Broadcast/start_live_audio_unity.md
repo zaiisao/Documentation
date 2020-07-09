@@ -1,12 +1,12 @@
 
 ---
-title: Start an Audio Broadcast
+title: Start Live Interactive Audio Streaming
 description: 
 platform: Unity
-updatedAt: Fri Jun 19 2020 14:42:39 GMT+0800 (CST)
+updatedAt: Tue Jul 07 2020 15:12:58 GMT+0800 (CST)
 ---
-# Start an Audio Broadcast
-Use this guide to quickly start a basic audio broadcasting with the Agora SDK for Unity.
+# Start Live Interactive Audio Streaming
+Use this guide to quickly start the live interactive audio streaming with the Agora Voice SDK for Unity.
 
 ## Prerequisites
 
@@ -79,15 +79,15 @@ Choose either of the following approaches to integrate the Agora Unity SDK into 
 
    <div class="alert note"><ul><li>Android or iOS developers using Unity Editor for macOS or Windows must also copy the SDK file for macOS or the subfolder for Windows X86_64 to the specified directory.<li>Android developers also need to copy the AndroidManifest.xml and project.properties  from the directory of the sample project (./Assets/Plugins/Android/AgoraRtcEngineKit.plugin) to the directory of the Unity project (./Assets/Plugins/Android). The former is for adding project permissions; the latter is for setting project properties.<li>iOS developers also need to do the following steps: (You can find the sample code logic in <a href="https://github.com/AgoraIO/Agora-Unity-Quickstart/blob/master/audio/Hello-Unity3D-Agora/Assets/Editor/BL_BuildPostProcess.cs">BL_BuildPostProcess.cs</a>, or copy  this file to directory of your Unity project)<ul><li>Link the following libraries: <ul><li>CoreTelephony.framework<li>libresolv.tbd<li>libiPhone-lib.a<li>CoreText.framework<li>CoreML.framework<li>Accelerate.framework</li></ul><li>Ask for the following permissios: NSMicrophoneUsageDescription</div>
 
-## Implement a basic audio broadcasting
+## Implement a basic live interactive streaming
 
-This section provides instructions on using the Agora Voice SDK for Unity to implement a basic audio broadcasting, as well as an API call sequence diagram.
+This section provides instructions on using the Agora Voice SDK for Unity to implement the live interactive streaming, as well as an API call sequence diagram.
 
 ![](https://web-cdn.agora.io/docs-files/1576224606319)
 
 ### 1. Create the UI
 
-Create the user interface (UI) for an audio broadcasting in your project. If you already have one UI in your project, skip to [Get the device permission (Android only)](#permission) or [Initialize IRtcEngine](#initialize).
+Create the user interface (UI) for the live interactive audio streaming in your project. If you already have one UI in your project, skip to [Get the device permission (Android only)](#permission) or [Initialize IRtcEngine](#initialize).
 
 We recommend adding the following elements to the UI:
 
@@ -163,26 +163,26 @@ mRtcEngine.OnUserOfflineHandler = OnUserOfflineHandler;
 
 ### 4. Set the channnel profile
 
-After initializing the `IRtcEngine` object, call the `SetChannelProfile` method to set the channel profile as `CHANNEL_PROFILE_LIVE_BROADCASTING`.
+After initializing the `IRtcEngine` object, call the `SetChannelProfile` method to set the channel profile as `LIVE_BROADCASTING`.
 
 One `IRtcEngine` object uses one profile only. If you want to switch to another profile, destroy the current `IRtcEngine` object with the `Destroy` method and create a new one before calling the `SetChannelProfile` method.
 
 ```C#
-// Set the channel profile as the live broadcast.
+// Set the channel profile as LIVE_BROADCASTING.
 mRtcEngine.SetChannelProfile(CHANNEL_PROFILE.CHANNEL_PROFILE_LIVE_BROADCASTING);
 ```
 
 ### 5. Set the client role
 
-A Live Broadcast channel has two client roles: `BROADCASTER` and `AUDIENCE`, and the default role is `AUDIENCE`. After setting the channel profile to live broadcast, your app may use the following steps to set the client role:
+An interactive streaming channel has two client roles: `BROADCASTER` and `AUDIENCE`, and the default role is `AUDIENCE`. After setting the channel profile to `LIVE_BROADCASTING`, your app may use the following steps to set the client role:
 
 1. Allow the user to set the role as BROADCASTER or AUDIENCE.
 2. Call the `SetClientRole` method and pass in the client role set by the user.
 
-Note that in a live broadcast, only the broadcaster can be heard. If you want to switch the client role after joining the channel, call the `SetClientRole` method.
+Note that in an live interactive streaming, only the host can be heard. If you want to switch the client role after joining the channel, call the `SetClientRole` method.
 
 ```C#
-// Set the client role as the broadcaster.
+// Set the client role as the host.
 mRtcEngine.SetClientRole(CLIENT_ROLE.BROADCASTER);
 ```
 
@@ -200,12 +200,12 @@ After setting the client role, you can call `JoinChannelByKey` to join a channel
 
 - ·`channelName`: The unique name of the channel to join. Users that input the same channel name join the same channel.
 
-- `uid`: Integer. The unique ID of the local user. If you set `uid` as 0, the SDK automatically assigns one user ID and returns it in the `OnJoinChannelSuccessHandler` callback.
+- `uid`: Integer. The unique ID of the local user. If you set `uid` as `0`, the SDK automatically assigns one user ID and returns it in the `OnJoinChannelSuccessHandler` callback.
 
-If a live broadcast channel uses both the Native SDK and the Web SDK, ensure that you call the `EnableWebSdkInteroperability` method before joining the channel.
+If an interactive streaming channel uses both the RTC Native SDK and the RTC Web SDK, ensure that you call the `EnableWebSdkInteroperability` method before joining the channel.
 
 ```C#
-// Call this method to enable interoperability between the Native SDK and the Web SDK if the Web SDK is in the channel.
+// Call this method to enable interoperability between the RTC Native SDK and the RTC Web SDK if the RTC Web SDK is in the channel.
 mRtcEngine.EnableWebSdkInteroperability(true);
 // Join a channel. 
 mRtcEngine.JoinChannelByKey(null, channel, null, 0);
@@ -213,7 +213,7 @@ mRtcEngine.JoinChannelByKey(null, channel, null, 0);
 
 ### 7. Leave the channel
 
-According to your scenario, such as when the broadcast ends and when you need to close the app, call `LeaveChannel` to leave the current broadcast, and call `DisableVideoObserver` to disable the video.
+According to your scenario, such as when the live interactive streaming ends and when you need to close the app, call `LeaveChannel` to leave the current channel.
 
 ```C#
 public void leave()
@@ -223,8 +223,6 @@ public void leave()
 			return;
 		// Leave the channel.
 		mRtcEngine.LeaveChannel();
-		// Disable the video.
-		mRtcEngine.DisableVideoObserver();
 	}
 ```
 
@@ -247,8 +245,8 @@ void OnApplicationQuit()
 
 ## Run the project
 
-Run the project in Unity. When you set the role as the broadcaster and successfully join an audio broadcasting, you can hear the voice of yourself in the app. When you set the role as the audience and successfully join an audio broadcasting, you can hear the voice of the broadcaster in the app.
+Run the project in Unity. When you set the role as the host and successfully start the live interactive audio streaming, you can hear the voice of yourself in the app. When you set the role as the audience and successfully join the live interactive audio streaming, you can hear the voice of the host in the app.
 
 ## Reference
 
-[How can I listen for an audience joining or leaving a live broadcast channel?](https://docs.agora.io/en/faq/audience_event)
+[How can I listen for an audience joining or leaving a live interactive streaming channel?](https://docs.agora.io/en/faq/audience_event)

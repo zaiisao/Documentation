@@ -3,7 +3,7 @@
 title: Glossary
 description: 
 platform: All Platforms
-updatedAt: Fri Jul 03 2020 12:48:28 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 11:44:36 GMT+0800 (CST)
 ---
 # Glossary
 ## A
@@ -41,7 +41,7 @@ The audience are users who do not have streaming permissions in the channel. The
 
 #### <a name="becoming-audience"></a>[**<u>audience (becoming)</u>**](../../en/Agora%20Platform/becoming_an_audience.md)
 
-Becoming an audience describes a scenario within a live-broadcast channel (the channel profile is live broadcast) when a host switches the user role and becomes an audience.
+Becoming an audience describes a scenario within a live interactive streaming channel (the channel profile is Live-Broadcast) when a host switches the user role and becomes an audience.
 
 #### <a name="audio-mixing"></a>[**<u>audio mixing</u>**](../../en/Agora%20Platform/audio_mixing.md)
 
@@ -91,7 +91,7 @@ Cloud Proxy is a proxy service that enables users to connect to Agora services t
 
 #### <a name="cloud-recording"></a>[**<u>Cloud Recording</u>**](../../en/Agora%20Platform/cloud_recording.md)
 
-Cloud Recording is a component provided by Agora for recording and saving voice and video calls and interactive broadcasts on a third-party cloud storage through RESTful APIs.
+Cloud Recording is a component provided by Agora for recording and saving voice and video calls and interactive streaming on a third-party cloud storage through RESTful APIs.
 
 #### <a name="co-hosting"></a>[**<u>co-hosting</u>**](../../en/Agora%20Platform/co_hosting.md)
 
@@ -137,7 +137,7 @@ The host refers to a user who has streaming permissions in the channel.
 
 #### <a name="becoming-host"></a>[**<u>host (becoming)</u>**](../../en/Agora%20Platform/becoming_a_host.md)
 
-Becoming a host describes a scenario within a live-broadcast channel (the channel profile is live broadcast) when an audience switches the user role and becomes a host (broadcaster).
+Becoming a host describes a scenario within a live interactive streaming channel (the channel profile is Live-Broadcast) when an audience switches the user role and becomes a host.
 
 ## I
 
@@ -147,7 +147,7 @@ Individual recording mode records audio and video of each UID as separate files.
 
 #### <a name="inject-stream"></a>**Inject Online Media Stream**
 
-"Inject Online Media Stream" refers to injecting an online media stream in a live-broadcast channel to share the stream with all users in the channel. The Agora RTC SDK provides a method for developers to inject an online mixed audio and video stream or an audio only stream to a channel. For details, see [*Inject Online Media Stream*](https://docs.agora.io/en/Interactive%20Broadcast/inject_stream_android).
+"Inject Online Media Stream" refers to injecting an online media stream in a live interactive streaming channel to share the stream with all users in the channel. The Agora RTC SDK provides a method for developers to inject an online mixed audio and video stream or an audio only stream to a channel. For details, see [*Inject Online Media Stream*](https://docs.agora.io/en/Interactive%20Broadcast/inject_stream_android).
 
 ## J
 #### <a name="jitter"></a>[**<u>jitter</u>**](../../en/Agora%20Platform/jitter.md)
@@ -171,7 +171,7 @@ In dual-stream mode, the SDK transmits two video streams of differing quality at
 ## M
 #### <a name="media-player"></a>[**<u>MediaPlayer Kit</u>**](../../en/Agora%20Platform/mediaplayer_kit.md)
 
-The MediaPlayer Kit is a plug-in of the Agora RTC SDK to play local and online media resources and publish the media streams to other users in a live-broadcast channel. 
+The MediaPlayer Kit is a plug-in of the Agora RTC SDK to play local and online media resources and publish the media streams to other users in a live interactive streaming channel. 
 
 #### <a name="media-stream"></a>[**<u>media stream</u>**](../../en/Agora%20Platform/media_stream.md)
 
@@ -197,7 +197,7 @@ Online describes the status of a user who has successfully logged in to the Agor
 
 #### <a name="on-premise-recording"></a>[**<u>On-premise Recording</u>**](../../en/Agora%20Platform/on_premise_recording.md)
 
-On-premise Recording is a component provided by Agora for recording and saving voice and video calls and interactive broadcasts on a Linux server.
+On-premise Recording is a component provided by Agora for recording and saving voice and video calls and interactive streaming on a Linux server.
 
 ## P
 #### <a name="packet-loss"></a>[**<u>packet loss</u>**](../../en/Agora%20Platform/packet_loss.md)

@@ -3,7 +3,7 @@
 title: Lastmile Tests
 description: 
 platform: Android
-updatedAt: Mon Jul 06 2020 03:37:27 GMT+0800 (CST)
+updatedAt: Thu Jul 09 2020 02:24:09 GMT+0800 (CST)
 ---
 # Lastmile Tests
 ## Introduction

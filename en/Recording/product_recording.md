@@ -3,12 +3,12 @@
 title: Agora On-premise Recording Overview
 description: 
 platform: Linux
-updatedAt: Wed Apr 29 2020 08:44:52 GMT+0800 (CST)
+updatedAt: Thu Jul 09 2020 02:31:38 GMT+0800 (CST)
 ---
 # Agora On-premise Recording Overview
-<div class="alert note">Note: <br>If you do not want to prepare server resources, Agora recommends using <a href="https://docs.agora.io/en/cloud-recording/product_cloud_recording?platform=Linux">Agora Cloud Recording</a>, which enables you to record voice/video calls and interactive broadcasts on your cloud storage through RESTful APIs.  </div>
+<div class="alert note">Note: <br>If you do not want to prepare server resources, Agora recommends using <a href="https://docs.agora.io/en/cloud-recording/product_cloud_recording?platform=Linux">Agora Cloud Recording</a>, which enables you to record voice/video calls and interactive streaming on your cloud storage through RESTful APIs.  </div>
 
-The Agora On-premise Recording SDK is a component provided by Agora to record and save voice calls, video calls, and interactive broadcasts on your server. The Agora On-premise Recording SDK is compatible with the Agora Native SDK v1.7.0+ and the Agora Web SDK v1.12.0+.
+The Agora On-premise Recording SDK is a component provided by Agora to record and save voice calls, video calls, and live interactive streaming on your server. The Agora On-premise Recording SDK is compatible with the Agora Native SDK v1.7.0+ and the Agora Web SDK v1.12.0+.
 
 For example, a user can either attend an online course at the time of the course or watch the recorded course later; made possible by the Agora On-premise Recording SDK being deployed at the server by the online course provider.
 
@@ -36,7 +36,7 @@ The Agora On-premise Recording SDK can be used in the following scenarios:
 | Industry                      | Applications                                                 |
 | ----------------------------- | ------------------------------------------------------------ |
 | Online Education              | One-to-one and one-to-many online courses. The Agora On-premise Recording SDK provides high-quality voice and video recordings. <li>Students can replay recordings for review.<li>Students can make up for missed courses at their convenience. |
-| Live Broadcasts               | <li>The replay of live-broadcast highlights.<li>Captures screenshots.<li>Detects sexually explicit content. |
+| Live Streaming               | <li>The replay of live interactive streaming highlights.<li>Captures screenshots.<li>Detects sexually explicit content. |
 | Financial Industry            | When conducting financial management, account registration, and face-to-face businesses, the financial industry can use audio and video recordings for record keeping and archival purposes. |
 | Customer Service/Call Centers | The recordings can be used for customer research and service quality evaluations. |
 | Remote Health Care            | <li>Recordings of remote diagnoses and online medical consultations enable patients to acquire medical resources in remote or inaccessible areas. <li> Can be used as references for subsequent treatments. |

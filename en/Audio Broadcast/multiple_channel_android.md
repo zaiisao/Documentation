@@ -3,7 +3,7 @@
 title: Join Multiple Channels
 description: 3.0 feature multi-channel
 platform: Android
-updatedAt: Thu Jun 04 2020 08:47:16 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 10:49:44 GMT+0800 (CST)
 ---
 # Join Multiple Channels
 ## Introduction
@@ -129,7 +129,7 @@ You must meet the following requirements to implementing the multi-channel funct
 - When joining multiple channels using the `joinChannel` method in the `RtcChannel` class:
   - After calling the `publish` method in Channel 1, you need to call the `unpublish` method in Channel 1 before calling the publish method in Channel 2.
 - When joining multiple channels using both the `RtcEngine` and `RtcChannel` classes:
-  - In the Communication profile, if you join Channel 1 using the `RtcEngine` class, and Channel 2 using the `RtcChannel` class, you cannot call `publish` in the `RtcChannel` class.
-  - In the Live-Broadcast profile, if you join Channel 1 using the `RtcEgine` class, and Channel 2 through the `RtcChannel` class, you cannot call `publish` in the `RtcChannel` class.
-  - In the Live-Broadcast profile, after joining multiple channels, you cannot call the `publish` method in the `RtcChannel` class as an AUDIENCE.
+  - In the `COMMUNICATION` profile, if you join Channel 1 using the `RtcEngine` class, and Channel 2 using the `RtcChannel` class, you cannot call `publish` in the `RtcChannel` class.
+  - In the `LIVE_BROADCASTING` profile, if you join Channel 1 using the `RtcEgine` class, and Channel 2 through the `RtcChannel` class, you cannot call `publish` in the `RtcChannel` class.
+  - In the `LIVE_BROADCASTING` profile, after joining multiple channels, you cannot call the `publish` method in the `RtcChannel` class as an AUDIENCE.
   - After calling `publish` in the `RtcChannel` class, you need to call `unpublish` in the `RtcChannel` class. Otherwise, you cannot call `joinChannel` in the `RtcEngine` class.

@@ -184,7 +184,7 @@ Use either of the following parameters to set the path of the recorded files.
 
   - 0: Disable the keyframe request. All senders in the channel send the keyframe at an interval of 2 seconds. After the keyframe request is disabled, you can play a video file, which is recorded in individual recording mode, from a specified position.
 
-  > If the sender uses Agora RTC SDK v2.9.2 or earlier, this parameter is valid only in the live-broadcast scenario.
+  > If the sender uses Agora RTC SDK v2.9.2 or earlier, this parameter is valid only in the interactive streaming scenario.
   
 - `enableH265Support`: Sets whether to enable recording video stream in H.265 format:
 

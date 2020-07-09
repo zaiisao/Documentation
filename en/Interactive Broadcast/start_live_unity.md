@@ -1,12 +1,12 @@
 
 ---
-title: Start a Video Broadcast
+title: Start Live Interactive Video Streaming
 description: 
 platform: Unity
-updatedAt: Fri Jun 19 2020 14:42:36 GMT+0800 (CST)
+updatedAt: Tue Jul 07 2020 15:12:15 GMT+0800 (CST)
 ---
-# Start a Video Broadcast
-Use this guide to quickly start a basic video broadcasting with the Agora SDK for Unity.
+# Start Live Interactive Video Streaming
+Use this guide to quickly start the live interactive video streaming with the Agora Video SDK for Unity.
 
 ## Prerequisites
 
@@ -79,19 +79,19 @@ Choose either of the following approaches to integrate the Agora Unity SDK into 
 
    <div class="alert note"><ul><li>Android or iOS developers using Unity Editor for macOS or Windows must also copy the SDK file for macOS or the subfolder for Windows X86_64 to the specified directory.<li>Android developers also need to copy the AndroidManifest.xml and project.properties  from the directory of the sample project (./Assets/Plugins/Android/AgoraRtcEngineKit.plugin) to the directory of the Unity project (./Assets/Plugins/Android). The former is for adding project permissions; the latter is for setting project properties.<li>iOS developers also need to do the following steps: (You can find the sample code logic in <a href="https://github.com/AgoraIO/Agora-Unity-Quickstart/blob/master/video/Hello-Video-Unity-Agora/Assets/Editor/BL_BuildPostProcess.cs">BL_BuildPostProcess.cs</a>, or copy  this file to directory of your Unity project)<ul><li>Link the following libraries: <ul><li>CoreTelephony.framework<li>VideoToolbox.framework<li>libresolv.tbd<li>libiPhone-lib.a<li>CoreText.framework<li>Metal.framework<li>CoreML.framework<li>Accelerate.framework</li></ul><li>Ask for the following permissios: <ul><li>NSCameraUsageDescription<li>NSMicrophoneUsageDescription</div>
 
-## Implement a basic video broadcasting
+## Implement a basic live interactive streaming
 
-This section provides instructions on using the Agora Video SDK for Unity to implement a basic video broadcasting, as well as an API call sequence diagram.
+This section provides instructions on using the Agora Video SDK to start the live interactive video streaming, as well as an API call sequence diagram.
 
 ![](https://web-cdn.agora.io/docs-files/1576220788626)
 
 ### 1. Create the UI
 
-Create the user interface (UI) for a video broadcasting in your project. If you already have one UI in your project, skip to [Get the device permission (Android only)](#permission) or [Initialize IRtcEngine](#initialize).
+Create the user interface (UI) for the interactive video streaming in your project. If you already have one UI in your project, skip to [Get the device permission (Android only)](#permission) or [Initialize IRtcEngine](#initialize).
 
 We recommend adding the following elements to the UI:
 
-- The view of the broadcaster
+- The view of the host
 - An exit button
 
 If you use the **Unity Editor** to build your UI, ensure that you bind **VideoSurface.cs** to the **GameObjects** designated for local and remote videos.
@@ -167,32 +167,32 @@ mRtcEngine.OnUserOfflineHandler = OnUserOfflineHandler;
 
 ### 4. Set the channnel profile
 
-After initializing the `IRtcEngine` object, call the `SetChannelProfile` method to set the channel profile as `CHANNEL_PROFILE_LIVE_BROADCASTING`.
+After initializing the `IRtcEngine` object, call the `SetChannelProfile` method to set the channel profile as `LIVE_BROADCASTING`.
 
 One `IRtcEngine` object uses one profile only. If you want to switch to another profile, destroy the current `IRtcEngine` object with the `Destroy` method and create a new one before calling the `SetChannelProfile` method.
 
 ```C#
-// Set the channel profile as the live broadcast.
+// Set the channel profile as LIVE_BROADCASTING.
 mRtcEngine.SetChannelProfile(CHANNEL_PROFILE.CHANNEL_PROFILE_LIVE_BROADCASTING);
 ```
 
 ### 5. Set the client role
 
-A Live Broadcast channel has two client roles: `BROADCASTER` and `AUDIENCE`, and the default role is `AUDIENCE`. After setting the channel profile to live broadcast, your app may use the following steps to set the client role:
+An interactive streaming channel has two client roles: `BROADCASTER` and `AUDIENCE`, and the default role is `AUDIENCE`. After setting the channel profile to `LIVE_BROADCASTING`, your app may use the following steps to set the client role:
 
 1. Allow the user to set the role as BROADCASTER or AUDIENCE.
 2. Call the `SetClientRole` method and pass in the client role set by the user.
 
-Note that in a live broadcast, only the broadcaster can be heard and seen. If you want to switch the client role after joining the channel, call the `SetClientRole` method.
+Note that in an live interactive streaming, only the host can be heard and seen. If you want to switch the client role after joining the channel, call the `SetClientRole` method.
 
 ```C#
-// Set the client role as the broadcaster.
+// Set the client role as the host.
 mRtcEngine.SetClientRole(CLIENT_ROLE.BROADCASTER);
 ```
 
 ### 6. Set the local video
 
-After setting the channel profile and client role, set the local video view before joining the channel so that the broadcaster can see the local video in the broadcast. Follow these steps to configure the local video:
+After setting the channel profile and client role, set the local video view before joining the channel so that the host can see the local video in the interactive streaming. Follow these steps to configure the local video:
 
 - Call `EnableVideo` to enable the video module.
 
@@ -220,7 +220,7 @@ After setting the channel profile and client role, set the local video view befo
 
 ### 7. Join a channel
 
-After setting the client role and the local video view (for a video broadcasting), you can call `JoinChannelByKey` to join a channel. Set the following parameters when calling this method::
+After setting the client role and the local video view (for the interactive video streaming), you can call `JoinChannelByKey` to join a channel. Set the following parameters when calling this method::
 
 - `channelKey`: The token for identifying the role and privileges of a user. Set it as one of the following values:
 
@@ -232,12 +232,12 @@ After setting the client role and the local video view (for a video broadcasting
 
 - `channelName`: The unique name of the channel to join. Users that input the same channel name join the same channel.
 
-- `uid`: Integer. The unique ID of the local user. If you set `uid` as 0, the SDK automatically assigns one user ID and returns it in the `OnJoinChannelSuccessHandler` callback.
+- `uid`: Integer. The unique ID of the local user. If you set `uid` as `0`, the SDK automatically assigns one user ID and returns it in the `OnJoinChannelSuccessHandler` callback.
 
-If a live broadcast channel uses both the Native SDK and the Web SDK, ensure that you call the `EnableWebSdkInteroperability` method before joining the channel.
+If an interactive streaming channel uses both the RTC Native SDK and the RTC Web SDK, ensure that you call the `EnableWebSdkInteroperability` method before joining the channel.
 
 ```C#
-// Call this method to enable interoperability between the Native SDK and the Web SDK if the Web SDK is in the channel.
+// Call this method to enable interoperability between the RTC Native SDK and the RTC Web SDK if the RTC Web SDK is in the channel.
 mRtcEngine.EnableWebSdkInteroperability(true);
 // Join a channel. 
 mRtcEngine.JoinChannelByKey(null, channel, null, 0);
@@ -245,9 +245,9 @@ mRtcEngine.JoinChannelByKey(null, channel, null, 0);
 
 ### 8. Set the remote video
 
-In a video broadcasting you should also be able to see all the broadcasters, regardless of your role. This is achieved by calling `SetForUser` in **VideoSurface.cs** after joining a channel.
+In the live interactive video streaming you should also be able to see all the hosts, regardless of your role. This is achieved by calling `SetForUser` in **VideoSurface.cs** after joining a channel.
 
-Shortly after a remote broadcaster joins the channel, the SDK gets the broadcaster's user ID in the `OnUserJoinedHandler` callback, and you can get the user’s uid.
+Shortly after a remote host joins the channel, the SDK gets the host's user ID in the `OnUserJoinedHandler` callback, and you can get the host’s `uid`.
 
 - In the **VideoSurface.cs** file, call the `SetForUser` method in the callback, and pass in the `uid` to set the video of the remote user.
 
@@ -255,10 +255,10 @@ Shortly after a remote broadcaster joins the channel, the SDK gets the broadcast
 
 - The video capture and render frame rate of Agora Unity SDK is 15 fps by default. Call `SetGameFps` in the **VideoSurface.cs** file to adjust the video refresh rate based on your scenario.
 
-  <div class="alert note">The default value of uid in the SetForUser method is 0. To see the remote user, ensure that you input the uid of the remote user in SetForUser. Otherwise, the SDK uses the default value and you can only see the local video.</div>
+  <div class="alert note">The default value of <tt>uid</tt> in the <tt>SetForUser</tt> method is <tt>0</tt>. To see the remote host, ensure that you input the <tt>uid</tt> of the remote host in <tt>SetForUser</tt>. Otherwise, the SDK uses the default value and you can only see the local video.</div>
 
 ```C#
-// This callback occurs when the first video frame of a remote user is received and decoded after the remote user successfully joins the channel.
+// This callback occurs when the first video frame of a remote host is received and decoded after the remote host successfully joins the channel.
 // You can call the SetForUser method in this callback to set up the remote video view.
 private void OnUserJoinedHandler(uint uid, int elapsed)
 	{
@@ -299,7 +299,7 @@ private void OnUserOfflineHandler(uint uid, USER_OFFLINE_REASON reason)
 
 ### 9. Leave the channel
 
-According to your scenario, such as when the broadcast ends and when you need to close the app, call `LeaveChannel` to leave the current broadcast, and call `DisableVideoObserver` to disable the video.
+According to your scenario, such as when the live interactive streaming ends and when you need to close the app, call `LeaveChannel` to leave the current channel, and call `DisableVideoObserver` to disable the video.
 
 ```C#
 public void leave()
@@ -333,4 +333,8 @@ void OnApplicationQuit()
 
 ## Run the project
 
-Run the project in Unity. When you set the role as the broadcaster and successfully join a video broadcasting, you can see the video view of yourself in the app. When you set the role as the audience and successfully join a video broadcasting, you can see the video view of the broadcaster in the app.
+Run the project in Unity. When you set the role as the host and successfully start the live interactive video streaming, you can see the video view of yourself in the app. When you set the role as the audience and successfully join the live interactive video streaming, you can see the video view of the host in the app.
+
+## Reference
+
+[How can I listen for an audience joining or leaving a live interactive streaming channel?](https://docs.agora.io/en/faq/audience_event)

@@ -3,14 +3,14 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Mon Jun 01 2020 05:39:10 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 10:55:01 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
 
 ## Overview
 
-The Agora Web SDK is a JavaScript library loaded by an HTML web page. The Agora Web SDK library uses APIs in the web browser to establish connections and control the communication and live broadcast services. For the key features included in each scenario, see [Voice Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms), [Video Overview](https://docs.agora.io/en/Video/product_video?platform=All%20Platforms), and [Interactive Broadcast Overview](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms).
+The Agora Web SDK is a JavaScript library loaded by an HTML web page. The Agora Web SDK library uses APIs in the web browser to establish connections and control the communication and live interactive streaming services. For the key features included in each scenario, see [Voice Call Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms), [Video Call Overview](https://docs.agora.io/en/Video/product_video?platform=All%20Platforms),  [Live Interactive Audio Streaming Overview](https://docs.agora.io/en/Interactive%20Broadcast/product_live_audio?platform=All%20Platforms), and [Live Interactive Video Streaming Overview](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms).
 
 ### Compatibility
 
@@ -121,7 +121,7 @@ v3.1.0 optimizes [dual-stream mode](https://docs.agora.io/en/Agora%20Platform/te
 
 <!--#### 1. Media metadata
 
-Adds `Client.sendMetadata` to support attaching media metadata to a published stream. You can use this feature to broaden the types of interactions in a live broadcast, such as sharing digital coupons and online quizzes.
+Adds `Client.sendMetadata` to support attaching media metadata to a published stream. You can use this feature to broaden the types of interactions in a live streaming channel, such as sharing digital coupons and online quizzes.
 
 Adds the `Client.on("receive-metadata")` callback to notify the app when the SDK receives metadata from a remote user.
 
@@ -189,7 +189,7 @@ This release optimizes the SDK's performance in terms of transmission quality an
 
 #### Channel media stream relay
 
-Adds the following methods for relaying the media stream of a host from a source channel to a destination channel. This feature applies to scenarios where hosts from different live-broadcast channels interact with each other.
+Adds the following methods for relaying the media stream of a host from a source channel to a destination channel. This feature applies to scenarios where hosts from different live streaming channels interact with each other.
 
 - `startChannelMediaRelay`
 - `updateChannelMediaRelay`
@@ -352,7 +352,7 @@ Adds the `"audioTrackEnded"` and `"videoTrackEnded"` callbacks in `Stream.on` to
 
 #### 5. Supporting Microsoft Edge
 
-Supports audio/video calls and live broadcasts on the Microsoft Edge browser. For details, see [Agora Web SDK FAQ](https://docs.agora.io/en/faq/browser_support#edge).
+Supports audio calls, video calls, and live interactive streaming on the Microsoft Edge browser. For details, see [Agora Web SDK FAQ](https://docs.agora.io/en/faq/browser_support#edge).
 
 **Improvement**
 
@@ -507,15 +507,15 @@ Adds the `options` parameter to the `Client.subscribe` method to set whether or 
 
 This method can be called multiple times and enables users to switch between receiving and not receiving the audio and/or video data flexibly.
 
-#### 3. Support for injecting online media streams to live broadcasts
+#### 3. Support for injecting online media streams to live streaming
 
-Adds the `Client.addInjectStreamUrl` method to pull a voice or video stream and inject it into a live channel. This is applicable to scenarios where all of the audience members in the channel can watch a live show and interact with each other.
+Adds the `Client.addInjectStreamUrl` method to pull a voice or video stream and inject it into a live streaming channel. This is applicable to scenarios where all of the audience members in the channel can watch a live show and interact with each other.
 
 Adds the `streamInjectedStatus` callback to inform the app of changes to the injection status.
 
 #### 4. Support for setting the user role
 
-Adds the `Client.setClientRole` method to set the user role as a host or an audience in a live broadcast. A host can both send and receive streams while an audience can only receive streams.
+Adds the `Client.setClientRole` method to set the user role as a host or an audience in a live streaming channel. A host can both send and receive streams while an audience can only receive streams.
 
 Adds the `client-role-changed` callback to inform the app of changes to the user role.
 
@@ -775,7 +775,7 @@ To increase the application scenarios and improve interoperability with the Agor
 
 #### 2. Support for Audio Gain Control
 
-To meet customers’ needs for audio control during a communication or live broadcast session, the `audioProcessing` property is added in the `createStream` method.
+To meet customers’ needs for audio control during a communication or live interactive streaming session, the `audioProcessing` property is added in the `createStream` method.
 
 #### 3. Support for Proxy on the Web Side
 
@@ -783,7 +783,7 @@ To enable enterprises with a company firewall to access Agora’s services, the 
 
 #### 4. Support for Encryption
 
-Encryption is supported to enhance security for communications or live broadcasts. Users need to set the encryption mode and password before joining a channel to use this function. 
+Encryption is supported to enhance security for communications or live streaming. Users need to set the encryption mode and password before joining a channel to use this function. 
 
 **Issues fixed**
 
@@ -854,10 +854,11 @@ v2.1.0 is released on March 7, 2018.
 <td>Adds a method to set the log output level.</td>
 </tr>
 <tr><td>Mute/Unmute</td>
-<td>Adds a method to mute or unmute users in a call or an interactive broadcast.</td>
+<td>Adds a method to mute or unmute users in a call or interactive streaming.</td>
 </tr>
 </tbody>
 </table>
+
 
 
 
@@ -988,4 +989,4 @@ Fixes the incompatibility issue on Chrome v57.
 
 v1.8 is released on December 26, 2016. 
 
-The Agora Web SDK supports both communication and live broadcast scenarios starting from v1.8. This release is a beta version.
+The Agora Web SDK supports both communication and live streaming scenarios starting from v1.8. This release is a beta version.

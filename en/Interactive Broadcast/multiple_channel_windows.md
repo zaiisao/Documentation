@@ -3,7 +3,7 @@
 title: Join Multiple Channels
 description: 3.0 feature multi-channel
 platform: Windows
-updatedAt: Thu Jun 04 2020 08:49:38 GMT+0800 (CST)
+updatedAt: Mon Jul 06 2020 11:00:44 GMT+0800 (CST)
 ---
 # Join Multiple Channels
 ## Introduction
@@ -120,7 +120,7 @@ You must meet the following requirements to implementing the multi-channel funct
 - When joining multiple channels using the `joinChannel` method in the `IChannel` class:
   - After calling the `publish` method in Channel 1, you need to call the `unpublish` method in Channel 1 before calling the publish method in Channel 2.
 - When joining multiple channels using both the `IRtcEngine` and `IChannel` classes:
-  - In the Communication profile, if you join Channel 1 using the `IRtcEngine` class, and Channel 2 using the `IChannel` class, you cannot call `publish` in the `IChannel` class.
-  - In the Live-Broadcast profile, if you join Channel 1 using the `IRtcEgine` class, and Channel 2 through the `IChannel` class, you cannot call `publish` in the `IChannel` class.
-  - In the Live-Broadcast profile, after joining multiple channels, you cannot call the `publish` method in the `IChannel` class as an AUDIENCE.
+  - In the `COMMUNICATION` profile, if you join Channel 1 using the `IRtcEngine` class, and Channel 2 using the `IChannel` class, you cannot call `publish` in the `IChannel` class.
+  - In the `LIVE_BROADCASTING` profile, if you join Channel 1 using the `IRtcEgine` class, and Channel 2 through the `IChannel` class, you cannot call `publish` in the `IChannel` class.
+  - In the `LIVE_BROADCASTING` profile, after joining multiple channels, you cannot call the `publish` method in the `IChannel` class as an AUDIENCE.
   - After calling `publish` in the IChannel class, you need to call `unpublish` in the `IChannel` class. Otherwise, you cannot call `joinChannel` in the `IRtcEngine` class.

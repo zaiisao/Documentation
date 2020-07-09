@@ -3,15 +3,15 @@
 title: Start an Audio Broadcast
 description: 
 platform: Windows
-updatedAt: Fri Jul 03 2020 09:16:32 GMT+0800 (CST)
+updatedAt: Tue Jul 07 2020 07:59:21 GMT+0800 (CST)
 ---
 # Start an Audio Broadcast
 Use this guide to quickly start an audio interactive broadcast with the Agora Voice SDK for Windows. 
 
 The difference between a broadcast and a call is that users have roles in a broadcast. You can set your role as either BROADCASTER or AUDIENCE. The broadcaster sends and receives streams while the audience receives streams only.
 
-## Try the demo
-We provide an open-source [OpenLive-Windows](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Windows) sample project that implements the basic video broadcast on GitHub. Before implementing the audio broadcast, you can download it and view the source code.
+## Sample projects
+We provide open-source [OpenLive-Windows](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Windows) and [OpenLive-Windows-MFC](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Windows-MFC) sample projects that implements the basic broadcast on GitHub. Before implementing the audio broadcast, you can download it and view the source code.
 
 ## Prerequisites
 - Microsoft Visual Studio 2017 or later
@@ -231,8 +231,7 @@ void CAgoraObject::CloseAgoraObject()
 }
 ```
 
-### Sample code
-You can find the sample code logic in the [OpenLive-Windows](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Windows) demo project.
+
 ## Run the project
 Run the project on your Windows device. When you set the role as the broadcaster and successfully join an audio broadcast, you can hear yourself in the app. When you set the role as the audience and successfully join an audio broadcast, you can hear the broadcaster in the app.
 

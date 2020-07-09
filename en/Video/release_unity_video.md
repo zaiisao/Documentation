@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Unity
-updatedAt: Mon May 25 2020 07:55:50 GMT+0800 (CST)
+updatedAt: Wed Jul 08 2020 16:02:00 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Unity SDK.
@@ -12,10 +12,10 @@ This page provides the release notes for the Agora Unity SDK.
 
 The Agora Unity SDK supports the following scenarios:
 
--   Voice/Video Communication
--   Live Voice/Video Broadcast
+-   Voice or video call
+-   Live interactive audio or video streaming
 
-For the key features included in each scenario, see [Voice Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms), [Video Overview](https://docs.agora.io/en/Video/product_video?platform=All%20Platforms), [Audio Broadcast Overview](https://docs.agora.io/en/Audio%20Broadcast/product_live_audio?platform=All_Platforms) and [Video Broadcast Overview](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms).
+For the key features included in each scenario, see [Agora Voice Call Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms), [Agora Video Call Overview](https://docs.agora.io/en/Video/product_video?platform=All%20Platforms), [Agora Live Interactive Audio Streaming Overview](https://docs.agora.io/en/Audio%20Broadcast/product_live_audio?platform=All_Platforms) and [Agora Live Interactive Video Streaming Overview](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms).
 
 ## v2.9.2
 
@@ -36,7 +36,7 @@ v2.9.1 was released on December 23, 2019.
 Supports iOS, Android, macOS and Windows (x86/x86_64) platforms.
 
 #### 2. Interoperability with the Agora Web SDK
-Provides the `EnableWebSdkInteroperability` method for enabling interoperability with the Agora Web SDK in a live broadcast. 
+Provides the `EnableWebSdkInteroperability` method for enabling interoperability with the Agora Web SDK in `LIVE_BROADCASTING` profile. 
 
 #### 3. Video rendering method
 Supports multiple video rendering methods. You can choose any method in  **Auto Graphics API**.
@@ -67,7 +67,7 @@ Supports the cloud proxy service. See [Use Cloud Proxy](../../en/Video/cloudprox
 
 See the following documentation to quickly integrate the SDK and implement real-time voice and video communication in your project.
 
-- [Start a Video Call](https://docs.agora.io/en/Video/start_call_unity?platform=Unity) or [Start a Video Broadcast](https://docs.agora.io/en/Interactive%20Broadcast/start_live_unity?platform=Unity)
+- [Start a Video Call](https://docs.agora.io/en/Video/start_call_unity?platform=Unity) or [Start Live Interactive Video Streaming](https://docs.agora.io/en/Interactive%20Broadcast/start_live_unity?platform=Unity)
 - [API Reference](https://docs.agora.io/en/Video/API%20Reference/unity/index.html) 
 
 Agora also provides an open-source [Unity Sample](https://github.com/AgoraIO/Agora-Unity-Quickstart/tree/master/video/Hello-Video-Unity-Agora) on GitHub.
