@@ -3,13 +3,13 @@
 title: 实现视频通话
 description: 
 platform: Windows
-updatedAt: Fri Jul 03 2020 01:56:12 GMT+0800 (CST)
+updatedAt: Thu Jul 09 2020 06:23:07 GMT+0800 (CST)
 ---
 # 实现视频通话
 本文介绍如何使用 Agora 视频 SDK 快速实现视频通话。
 
 ## 示例项目
-Agora 在 GitHub 上提供开源的实时视频通话示例项目 [Agora-Windows-Tutorial-1to1](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-Windows-Tutorial-1to1) 和 [Agora-Windows-GroupVideoCall](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-Windows)。在实现相关功能前，你可以下载并查看源代码。
+Agora 在 GitHub 上提供开源的实时视频通话示例项目 [Agora-Windows-Tutorial-1to1](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-Windows-Tutorial-1to1) 和 [GroupVideoCall-Windows-MFC](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-Windows-MFC)。在实现相关功能前，你可以下载并查看源代码。
 
 ## 前提条件
 - Microsoft Visual Studio 2017 或以上版本

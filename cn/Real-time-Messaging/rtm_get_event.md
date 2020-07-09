@@ -1,71 +1,48 @@
 
 ---
-title: 实时消息 RESTful API
+title: 事件与历史消息查询 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 06 2020 10:04:01 GMT+0800 (CST)
+updatedAt: Thu Jul 09 2020 08:09:39 GMT+0800 (CST)
 ---
-# 实时消息 RESTful API
-> 除本文外，你也可以查看我们全新的交互式 API 文档交互式 API 文档
-[实时消息 RESTful API](https://docs.agora.io/cn/Real-time-Messaging/restfulapi/)![](https://web-cdn.agora.io/docs-files/1583736328279)。你可以通过切换 **Example Value** 和 **Schema** 标签页查看各 API 请求和响应包体的示例代码和参数说明。目前，交互式 API 文档只包括查询用户事件和频道事件 RESTful API。
-
-实时消息 RESTful API 目前支持以下功能：
+# 事件与历史消息查询 RESTful API
+事件与历史消息查询 RESTful API 目前支持以下功能：
 - 查询用户事件和频道事件。
 - 查询历史消息。
 
-## <a name="auth"></a>认证
+## 认证
 
-实时消息 RESTful API 仅支持 HTTPS 协议。你可以使用以下任意一种认证方式：
+### Basic HTTP 认证
 
-- [Basic HTTP 认证](#basicauth)
-- [Token 认证](#tokenauth)
+离线推送 RESTful API 仅支持 HTTPS 协议。发送请求时，你需要提供 `api_key:api_secret` 通过 Basic HTTP 认证并填入 HTTP 请求头部的 Authorization 字段：
 
-### <a name="basicauth"></a>Basic HTTP 认证
+- `api_key`: Customer ID （客户 ID）
+- `api_secret`: Customer Certificate （客户证书）
 
-发送请求时，你需要提供 `api_key:api_secret` 通过 Basic HTTP 认证并填入 HTTP 请求头部的 Authorization 字段：
+你可以在控制台的 [RESTful API](https://console.agora.io/restfulApi) 页面找到你的 Customer ID 和 Customer Certificate。具体生成 `Authorization` 字段的方法请参考 [RESTful API 认证](https://docs.agora.io/cn/faq/restful_authentication)。
 
-- `api_key`: Customer ID
-- `api_secret`: Customer Certificate
-
-你可以在控制台的 [RESTful API](https://console.agora.io/restful) 页面找到你的 Customer ID 和 Customer Certificate。具体生成 `Authorization` 字段的方法请参考 [RESTful API 认证](https://docs.agora.io/cn/faq/restful_authentication)。
-
-### <a name="tokenauth"></a>Token 认证
+### Token 认证
 
 如果你已经在服务端生成了 RTM Token，你也可以选用 token 认证。你需要在发送 HTTP 请求时在 HTTP 请求头部的 `x-agora-token` 字段和 `x-agora-uid` 字段分别填入：
 
 - 服务端生成的 RTM Token。
 - 生成 RTM Token 时使用的 uid。
 
-**示例代码**
+#### 示例代码
 
 下面的 Java 示例代码展示了如何实现 token 认证。
 
 ```java
-  Request request = new Request.Builder()
-  ...
-  // 在 HTTP 请求头部的 x-agora-token 字段填入获取的 RTM Token
-  .addHeader("x-agora-token", "<Your RTM Token>")
-  // 在 HTTP 请求头部的 x-agora-uid 字段填入用于生成该 RTM Token 的 uid
-  .addHeader("x-agora-uid", "<Your uid used to generate the RTM Token>")
-  ...
+Request request = new Request.Builder()
+...
+// 在 HTTP 请求头部的 x-agora-token 字段填入获取的 RTM Token
+.addHeader("x-agora-token", "<Your RTM Token>")
+// 在 HTTP 请求头部的 x-agora-uid 字段填入用于生成该 RTM Token 的 uid
+.addHeader("x-agora-uid", "<Your uid used to generate the RTM Token>")
+...
 ```
 
-> 关于如何生成 RTM Token，详见[校验用户权限](https://docs.agora.io/cn/Real-time-Messaging/rtm_token?platform=All%20Platforms)。
-
-## 数据格式
-
-所有的请求都发送给域名：`api.agora.io`。
-
-- Base URL: 
-```
-https://api.agora.io/dev/v2/project/<appid>/
-```
-- Content-type： `application/json;charset=utf-8`
-- Authorization： 详见[认证](#auth)。
-- 请求：请求的格式详见下面各个 API 中的示例。
-- 响应：响应内容的格式为 JSON。
-
-> 所有的请求 URL 和请求包体内容均区分大小写。
+<div class="alert note">关于如何生成 RTM Token，详见<a href="https://docs.agora.io/cn/Real-time-Messaging/rtm_token?platform=All20%Platforms">校验用户权限</a>。</div>
 
 ## API 调用步骤
 
@@ -79,13 +56,6 @@ https://api.agora.io/dev/v2/project/<appid>/
 - 查询历史消息：先调用[创建历史消息查询资源 API](#create_history_res)，再调用[获取历史消息 API](#get_history_message)。
 - 查询历史消息数目：直接调用[获取历史消息数目 API](#get_history_message_count)。
 
-## 响应状态码
-
-| 错误码 | 描述                                                         |
-| :----- | :----------------------------------------------------------- |
-|200	|请求成功。|
-|400	|请求的语法错误。|
-|408	|服务器请求超时或服务器无响应。|
 
 ## 用户与频道事件 API
 
@@ -96,11 +66,11 @@ https://api.agora.io/dev/v2/project/<appid>/
 >  - 每个 App ID 每秒钟的请求数不能超过 10 次。
 >  - RTM 后台最多存储 2000 条事件。
 >  - 单次返回最多 1000 条事件。
->  - Agora 对事件按地理区域缓存，因此不保证来自不同地理区域（跨国或者跨洲）的事件顺序的正确性。
+>  - Agora 对事件按地理区域缓存，因此不保证来自不同地理区域的事件顺序的正确性。
 >  - Agora 只在同一地理区域内同步事件，不在地理区域间同步。所以，你从某地理区域拉取了事件后，如果你从另一个区域再次拉取可能会得到相同的事件。
 
 - 方法：GET
-- 接入点：/rtm/vendor/user_events
+- 接入点：`/rtm/vendor/user_events`
 - 请求 URL：
 ```
 https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/user_events
@@ -149,7 +119,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/user_events
 >  - Agora 只在同一地理区域内同步事件，不在地理区域间同步。所以，你从某地理区域拉取了事件后，如果你从另一个区域再次拉取可能会得到相同的事件。
 
 - 方法：GET
-- 接入点：/rtm/vendor/channel_events
+- 接入点：`/rtm/vendor/channel_events`
 - 请求 URL：
 ```
 https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/channel_events
@@ -189,6 +159,13 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/channel_events
 | `type`   | string | 事件类型：<li>`Join`: 用户加入频道事件。</li><li>`Leave`: 用户离开频道事件。</li> |
 | `ts`  | int    | 从1970 年 1 月 1 日（UTC）到服务器接受请求的时间（UTC）的毫秒数。 |
 
+### 响应状态码
+
+| 错误码 | 描述                                                         |
+| :----- | :----------------------------------------------------------- |
+|200	|请求成功。|
+|400	|请求的语法错误。|
+|408	|服务器请求超时或服务器无响应。|
 
 ## 历史消息 API
 
@@ -203,7 +180,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/channel_events
 > - 对于每个 App ID，每秒请求数不能超过 100 次。
 
 - 方法：POST
-- 接入点：/rtm/message/history/query
+- 接入点：`/rtm/message/history/query`
 - 请求 URL：
 ```
 https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query
@@ -354,7 +331,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query
 > - 对于每个 App ID，每秒请求数不能超过 100 次。
 
 - 方法：GET
-- 接入点：/rtm/message/history/query/$handle
+- 接入点：`/rtm/message/history/query/$handle`
 - 请求 URL：
 ```
 https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query/$handle
@@ -414,7 +391,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query/$handle
 > - 对于每个 App ID，每秒请求数不能超过 100 次。
 
 - 方法：GET
-- 接入点：/rtm/message/history/count
+- 接入点：`/rtm/message/history/count`
 - 请求 URL：
 ```
 https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/count
@@ -492,3 +469,10 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/count?source="us
 | `code`        | string | 资源准备情况：<ul><li> `ok`：资源准备完成。</li><li>`in progress`：资源还未准备完成，请稍后重试。当服务器返回 `in progress` 时，请等待 2 秒再发起请求。</li></ul> |
 | `count`         | int   | 历史消息数目。 |
 
+### 响应状态码
+
+| 错误码 | 描述                                                         |
+| :----- | :----------------------------------------------------------- |
+|200	|请求成功。|
+|400	|请求的语法错误。|
+|408	|服务器请求超时或服务器无响应。|

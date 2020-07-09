@@ -3,7 +3,7 @@
 title: 控制台概览
 description: 
 platform: All Platforms
-updatedAt: Wed Nov 27 2019 07:55:04 GMT+0800 (CST)
+updatedAt: Thu Jul 09 2020 06:37:52 GMT+0800 (CST)
 ---
 # 控制台概览
 <div class="alert note">Dashboard 已更名为控制台。</div>
