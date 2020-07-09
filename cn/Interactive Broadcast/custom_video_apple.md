@@ -3,7 +3,7 @@
 title: 自定义视频采集和渲染
 description: 
 platform: iOS,macOS
-updatedAt: Tue May 19 2020 10:47:28 GMT+0800 (CST)
+updatedAt: Wed Jul 08 2020 04:49:57 GMT+0800 (CST)
 ---
 # 自定义视频采集和渲染
 ## 功能介绍
@@ -362,7 +362,7 @@ Agora 通过 MediaIO 提供 `AgoraVideoSourceProtocol` 协议和 `AgoraVideoFram
 - 自定义视频采集和渲染场景中，需要开发者具有采集或渲染视频的能力：
 
   - 自定义视频采集场景中，你需要自行管理视频数据的采集和处理。
-  - 自定义视频渲染场景中，你需要自定管理视频数据的处理和显示。
+  - 自定义视频渲染场景中，你需要自行管理视频数据的处理和显示。
   
 - 自定义视频渲染场景中，当 `renderPixelBuffer` 或 `renderRawData` 报告 `rotation` 不为 0 时，自渲染视频会呈一定角度。该角度可能由 SDK 采集或自采集的设置引起，你需要能根据实际使用需求处理自渲染的视频角度。
 

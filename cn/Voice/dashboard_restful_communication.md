@@ -3,9 +3,11 @@
 title: RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Fri Jun 19 2020 05:14:42 GMT+0800 (CST)
+updatedAt: Thu Jul 09 2020 02:06:11 GMT+0800 (CST)
 ---
 # RESTful API
+<div class="alert note">本文内容已转至<a href="https://docs.agora.io/cn/rtc/restfulapi/">服务端 RESTful API</a>。本文将不再维护。</div>
+
 ## 认证
 
 <div class="alert info">在使用本文 RESTful API 提供的功能前，请确认你的账号已在控制台开通指定项目的相关权限。Agora 支持自定义用户角色和相应的项目权限，详见<a href="../../cn/Voice/manage_member.md">控制台角色权限说明</a >。</div>

@@ -3,7 +3,7 @@
 title: 自定义视频采集和渲染
 description: 
 platform: Windows
-updatedAt: Wed May 27 2020 02:44:00 GMT+0800 (CST)
+updatedAt: Wed Jul 08 2020 04:50:23 GMT+0800 (CST)
 ---
 # 自定义视频采集和渲染
 ## 功能介绍
@@ -197,7 +197,7 @@ mediaEngine->registerVideoFrameObserver(NULL);
 * 自定义视频采集和渲染场景中，需要开发者具有采集或渲染视频的能力：
 
 	- 自定义视频采集场景中，你需要自行管理视频数据的采集和处理。
-	- 自定义视频渲染场景中，你需要自定管理视频数据的处理和显示。
+	- 自定义视频渲染场景中，你需要自行管理视频数据的处理和显示。
 
 ## 相关文档
 
