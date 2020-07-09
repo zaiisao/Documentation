@@ -3,7 +3,7 @@
 title: Start a Video Call
 description: 
 platform: Windows
-updatedAt: Fri Jul 03 2020 09:15:39 GMT+0800 (CST)
+updatedAt: Thu Jul 09 2020 06:24:09 GMT+0800 (CST)
 ---
 # Start a Video Call
 Use this guide to quickly start a basic video call with the Agora Video SDK for Windows.
@@ -12,7 +12,7 @@ Use this guide to quickly start a basic video call with the Agora Video SDK for 
 We provide the open-source sample projects that implement the video call on GitHub:
 
 - [Agora-Windows-Tutorial-1to1](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-Windows-Tutorial-1to1) 
-- [Agora-Windows-GroupVideoCall](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-Windows) 
+- [GroupVideoCall-Windows-MFC](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-Windows-MFC) 
 
 Before implementing a video call, you can download the sample projects and refer to the source code.
 

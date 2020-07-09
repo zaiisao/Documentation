@@ -1,11 +1,11 @@
 
 ---
-title: Real-time Messaging RESTful API
+title: User and Channel Events RESTful API
 description: 
-platform: RESTful
-updatedAt: Fri May 08 2020 02:11:46 GMT+0800 (CST)
+platform: All Platforms
+updatedAt: Thu Jul 09 2020 08:34:20 GMT+0800 (CST)
 ---
-# Real-time Messaging RESTful API
+# User and Channel Events RESTful API
 > Besides this document, you can also read our interactive document [RTM RESTful API](https://docs.agora.io/en/Real-time-Messaging/restfulapi/)![](https://web-cdn.agora.io/docs-files/1583736328279). By clicking the **Example Value** or **Schema** tab, you can view example codes or parameter definitions for request/response bodies.
 
 The Real-time Messaging RESTful API currently supports user events and channel events.

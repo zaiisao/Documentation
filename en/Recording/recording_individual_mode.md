@@ -3,7 +3,7 @@
 title: Individual Recording
 description: 
 platform: Linux
-updatedAt: Thu Mar 26 2020 08:09:30 GMT+0800 (CST)
+updatedAt: Thu Jul 09 2020 04:08:21 GMT+0800 (CST)
 ---
 # Individual Recording
 ## Overview
@@ -19,7 +19,7 @@ Before proceeding, ensure that you have compiled the Agora Recorder Demo and kno
 
 See [Differences between individual recording mode and composite recording mode](https://docs.agora.io/en/faq/recording_mode) to decide which mode you should use.
 
-> For simplicity, we assume that every UID in the channel sends both audio and video streams. If a UID neither sends audio nor video, such as the audience in a live broadcast, there will be no file for this UID.
+> For simplicity, we assume that every UID in the channel sends both audio and video streams. If a UID neither sends audio nor video, such as the audience in interactive streaming, there will be no file for this UID.
 
 ## Implementation
 
