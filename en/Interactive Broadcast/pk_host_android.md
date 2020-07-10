@@ -27,7 +27,7 @@ Refer to the following table to integrate the SDKs into your project:
 
 | Product | SDK downloads | Integration guide |
 | ---------------- | ---------------- | ---------------- |
-| [Agora RTC (Real-time Communication) SDK](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms)      | [Agora SDK for Android](https://docs.agora.io/en/Agora%20Platform/downloads)      | [Start a Video Broadcast](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_android?platform=Android) |
+| [Agora RTC (Real-time Communication) SDK](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms)      | [Agora SDK for Android](https://docs.agora.io/en/Agora%20Platform/downloads)      | [Start a Video Broadcast](https://docs.agora.io/en/Interactive%20Broadcast/start_live_android?platform=Android) |
 | [Agora RTM (Real-time Messaging) SDK](https://docs.agora.io/en/Real-time-Messaging/product_rtm?platform=All%20Platforms) | [Real-time messaging SDK](https://docs.agora.io/en/Real-time-Messaging/downloads) | [Peer-to-peer or Channel Messaging](https://docs.agora.io/en/Real-time-Messaging/messaging_android?platform=Android) |
 | [Third-party Image Enhancement SDK](https://www.faceunity.com/#/developindex)	 | N/A | [Android SDK Integration Guide](https://www.faceunity.com/docs_develop_en/#/nama_api_docs/Android/docs/Android_Nama_SDK_Integration_Guide) |
 
