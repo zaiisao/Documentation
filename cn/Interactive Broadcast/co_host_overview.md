@@ -3,7 +3,7 @@
 title: 多人连麦直播
 description: 多人连麦直播场景方案
 platform: Android
-updatedAt: Thu Jul 09 2020 10:30:06 GMT+0800 (CST)
+updatedAt: Thu Jul 09 2020 10:41:43 GMT+0800 (CST)
 ---
 # 多人连麦直播
 ## 场景描述
@@ -13,7 +13,7 @@ updatedAt: Thu Jul 09 2020 10:30:06 GMT+0800 (CST)
 ## 功能列表
 
 多人连麦直播场景通常需要实现如下功能：
-
+<style> table th:first-of-type {     width: 150px; } th:third-of-type {     width: 170px; }</style>
 | 功能             | 描述                                                         |
 | :--------------- | :----------------------------------------------------------- |
 | 实时音视频       | 超低延时下，观众实时接收房主的音视频流，保证直播间互动的流畅性。 |

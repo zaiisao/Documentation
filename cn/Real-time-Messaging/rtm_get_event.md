@@ -3,7 +3,7 @@
 title: 事件与历史消息查询 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 09 2020 08:09:39 GMT+0800 (CST)
+updatedAt: Thu Jul 09 2020 11:49:32 GMT+0800 (CST)
 ---
 # 事件与历史消息查询 RESTful API
 事件与历史消息查询 RESTful API 目前支持以下功能：
@@ -44,6 +44,7 @@ Request request = new Request.Builder()
 
 <div class="alert note">关于如何生成 RTM Token，详见<a href="https://docs.agora.io/cn/Real-time-Messaging/rtm_token?platform=All20%Platforms">校验用户权限</a>。</div>
 
+
 ## API 调用步骤
 
 ### 查询用户事件和频道事件
@@ -56,6 +57,15 @@ Request request = new Request.Builder()
 - 查询历史消息：先调用[创建历史消息查询资源 API](#create_history_res)，再调用[获取历史消息 API](#get_history_message)。
 - 查询历史消息数目：直接调用[获取历史消息数目 API](#get_history_message_count)。
 
+## 数据格式
+
+所有的请求都发送给域名：`api.agora.io`。
+
+- 请求：请求的格式详见下面各个 API 中的示例
+- 响应：响应内容的格式为 JSON
+- 基本 URL：`https://api.agora.io/dev/v2/project/<appid>`
+
+<div class="alert note"><code>&lt;appid&gt;</code> 是你的 RTM 项目使用的 <a href="https://docs.agora.io/cn/Agora20%Platform/terms?platform=All20%Platforms#appid">App ID</a>。所有的请求 URL 和请求包体内容都是区分大小写的。</div>
 
 ## 用户与频道事件 API
 

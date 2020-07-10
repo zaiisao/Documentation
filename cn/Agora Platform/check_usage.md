@@ -3,7 +3,7 @@
 title: 查看用量
 description: 
 platform: All Platforms
-updatedAt: Tue Oct 29 2019 03:02:08 GMT+0800 (CST)
+updatedAt: Thu Jul 09 2020 14:13:51 GMT+0800 (CST)
 ---
 # 查看用量
 本页介绍如何在 Agora 控制台查看项目用量。

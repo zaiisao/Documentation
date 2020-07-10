@@ -36,7 +36,7 @@ java RecordingSample --appId <你的 App ID> --channel <频道名> --uid 0 --cha
 ### 必填参数
 
 - `appId`：App ID，必须和 Agora Native/Web SDK 的 App ID 一致，详见[获取 App ID](../../cn/Recording/token.md)。
-- `uid`：标识录制实例的用户 ID，32 位无符号整数。建议设置范围：1 到（232-1），并保证唯一性。有两种设置方式：
+- `uid`：标识录制实例的用户 ID，32 位无符号整数。建议设置范围：1 到（2<sup>32</sup>-1），并保证唯一性。有两种设置方式：
   - 设置为 0，系统将自动分配一个用户 ID。
   - 设置一个唯一的用户 ID（不能与频道内的任何 UID 重复）。
 - `channel`：希望录制的通话或直播的频道名。
