@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: 
 platform: Linux Java
-updatedAt: Thu Oct 24 2019 10:08:55 GMT+0800 (CST)
+updatedAt: Fri Jul 10 2020 06:31:23 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 

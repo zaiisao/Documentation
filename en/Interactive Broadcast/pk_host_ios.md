@@ -14,7 +14,7 @@ Refer to the flowcharts for the following functions:
 
 - Joins and leaves the room.
 
-![](https://web-cdn.agora.io/docs-files/1592898268725)
+![](https://web-cdn.agora.io/docs-files/1594367603607)
 
 - Co-host across channels.
 

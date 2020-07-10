@@ -3,7 +3,7 @@
 title: Merge Audio and Video Files
 description: 
 platform: All Platforms
-updatedAt: Tue Jun 02 2020 10:46:12 GMT+0800 (CST)
+updatedAt: Fri Jul 10 2020 03:32:56 GMT+0800 (CST)
 ---
 # Merge Audio and Video Files
 ## Overview
@@ -87,7 +87,7 @@ Suppose that two users, with UIDs 100 and 125, stay in the channel, and you star
 To merge the audio and video files of the same UID into one file, use the following command:
 
 ```
-convert.py -f <directory of the files to be transcoded> -m 1 -s -p 30 -r 640 360
+python convert.py -f <directory of the files to be transcoded> -m 1 -s -p 30 -r 640 360
 ```
 
 Two files are generated after transcoding: `100_0_merge_av.mp4` and `123_0_merge_av.mp4`. The 30 seconds when UID 100 is absent is not included in the merged file. To include the time interval, do not set `-s`.
@@ -95,7 +95,7 @@ Two files are generated after transcoding: `100_0_merge_av.mp4` and `123_0_merge
 To merge the audio and video files of the same UID based on the recording segment, use the following command:
 
 ```
-convert.py -f <directory of the files to be transcoded> -m 0 -p 30 -r 640 360
+python convert.py -f <directory of the files to be transcoded> -m 0 -p 30 -r 640 360
 ```
 
 Three files are generated after transcoding: `100_timestamp1_av.mp4`, `100_timestamp2_av.mp4`, and `123_timestamp1_av.mp4`.

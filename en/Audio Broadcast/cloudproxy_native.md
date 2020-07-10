@@ -3,7 +3,7 @@
 title: Use Cloud Proxy
 description: 
 platform: Android,iOS,macOS,Windows
-updatedAt: Tue Jun 30 2020 02:05:03 GMT+0800 (CST)
+updatedAt: Fri Jul 10 2020 07:33:00 GMT+0800 (CST)
 ---
 # Use Cloud Proxy
 ## Introduction
@@ -55,13 +55,6 @@ Compared with setting a single proxy server, the cloud proxy is more flexible an
 ```java
 // Enables the cloud proxy server, and uses the default configuration.
 setParameters("{\"rtc.enable_proxy\":true}");
-```
-
-```java
-// Enables the cloud proxy server.
-setParameters("{\"rtc.enable_proxy\":true}");
-// Uses the Socks5 proxy server.
-setParameters("{\"rtc.proxy_server\":[0, \"127.0.0.1\", 1080]}");
 ```
 
 ```java

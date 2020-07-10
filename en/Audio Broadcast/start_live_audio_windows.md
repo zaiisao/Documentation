@@ -1,17 +1,16 @@
 
 ---
-title: Start an Audio Broadcast
+title: Start Live Interactive Audio Streaming
 description: 
 platform: Windows
-updatedAt: Tue Jul 07 2020 07:59:21 GMT+0800 (CST)
+updatedAt: Fri Jul 10 2020 06:56:07 GMT+0800 (CST)
 ---
-# Start an Audio Broadcast
-Use this guide to quickly start an audio interactive broadcast with the Agora Voice SDK for Windows. 
+# Start Live Interactive Audio Streaming
+Use this guide to quickly start the live interactive audio streaming with the Agora Voice SDK for Windows.
 
-The difference between a broadcast and a call is that users have roles in a broadcast. You can set your role as either BROADCASTER or AUDIENCE. The broadcaster sends and receives streams while the audience receives streams only.
 
 ## Sample projects
-We provide open-source [OpenLive-Windows](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Windows) and [OpenLive-Windows-MFC](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Windows-MFC) sample projects that implements the basic broadcast on GitHub. Before implementing the audio broadcast, you can download it and view the source code.
+We provide open-source [OpenLive-Windows](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Windows) and [OpenLive-Windows-MFC](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Windows-MFC) sample projects that implements the basic live interactive audio streaming on GitHub. Before implementing the interactive audio streaming, you can download it and view the source code.
 
 ## Prerequisites
 - Microsoft Visual Studio 2017 or later
@@ -32,7 +31,7 @@ Now, let's build a Windows project from scratch. Skip to [Integrate the SDK](#in
 1. Open <b>Microsoft Visual Studio</b> and click <b>Create new project</b>.
 2. On the <b>New Project</b> panel, choose <b>MFC Application</b> as the project type, input the project name, choose the project location, and click <b>OK</b>.
 3. On the <b>MFC Application</b> panel, choose <b>Application type > Dialog based</b>, and click <b>Finish</b>.
-	
+
 
 </details>
 
@@ -56,16 +55,16 @@ Right-click the project name in the **Solution Explorer** window, click **Proper
 
 - Go to the **Linker > Input > Additional Dependencies** menu, click **Edit**, and input **agora_rtc_sdk.lib** in the pop-up window.
 
-## Implement the basic audio call
-This section introduces how to use the Agora SDK to start an interactive broadcast. The following figure shows the API call sequence of a basic audio broadcast.
+## Implement the basic interactive audio streaming
+This section introduces how to use the Agora SDK to start the interactive audio streaming. The following figure shows the API call sequence of the basic interactive audio streaming.
 
 ![](https://web-cdn.agora.io/docs-files/1584693520586)
 
 ### 1. Create the UI
-Create the user interface (UI) for the interactive broadcast in your project. Skip to [Initialize IRtcEngine](#ini) if you already have a UI in your project.
+Create the user interface (UI) for the interactive audio streaming in your project. Skip to [Initialize IRtcEngine](#ini) if you already have a UI in your project.
 
-If you are implementing a audio broadcast, we recommend adding the following elements into the UI:
-- The view of the broadcaster
+If you are implementing the interactive audio streaming, we recommend adding the following elements into the UI:
+- The view of the host
 - The exit button
 
 When you use the UI setting of the demo project, you can see the following interface:
@@ -90,13 +89,13 @@ You can also listen for callback events, such as when the local user joins the c
 // Create the instance.
 m_lpRtcEngine = createAgoraRtcEngine();
 RtcEngineContext ctx;
-         
+
 // Add the register events and callbacks.
 ctx.eventHandler = &m_engineEventHandler;
- 
+
 // Input your App ID.
 ctx.appId = "YourAppID";
- 
+
 // Initialize the IRtcEngine object.
 m_lpRtcEngine->initialize(ctx);
 ```
@@ -111,15 +110,15 @@ public:
     ~CAGEngineEventHandler();
     void setMainWnd(HWND wnd);
     HWND GetMsgReceiver() {return m_hMainWnd;};
- 
+
     // Listen for the onJoinChannelSuccess callback.
     // This callback occurs when the local user successfully joins the channel.
     virtual void onJoinChannelSuccess(const char* channel, uid_t uid, int elapsed);
- 
+
     // Listen for the onLeaveChannel callback.
     // This callback occurs when the local user successfully leaves the channel.
     virtual void onLeaveChannel(const RtcStats& stat);
- 
+
     // Listen for the onUserOffline callback.
     // This callback occurs when the remote user leaves the channel or drops offline.
     virtual void onUserOffline(uid_t uid, USER_OFFLINE_REASON_TYPE reason);
@@ -129,21 +128,20 @@ private:
 ```
 
 ### 3. Set the channel profile
-After initializing the IRtcEngine object, call the `setChannelProfile` method to set the channel profile as Live Broadcast. 
+After initializing the `IRtcEngine` object, call the `setChannelProfile` method to set the channel profile as `LIVE_BROADCASTING`.
 
-One IRtcEngine object uses one profile only. If you want to switch to another profile, release the current IRtcEngine object with the `release` method and create a new one before calling the `setChannelProfile` method.
+One `IRtcEngine` object uses one profile only. If you want to switch to another profile, release the current `IRtcEngine` object with the `release` method and create a new one before calling the `setChannelProfile` method.
 
 ```C++
-// Set the channel profile as Live Broadcast.
 m_lpRtcEngine->setChannelProfile(CHANNEL_PROFILE_LIVE_BROADCASTING);
 ```
 
 ### 4. Set the client role
-A Live Broadcast channel has two client roles: BROADCASTER and AUDIENCE, and the default role is AUDIENCE. After setting the channel profile to Live Broadcast, your app may use the following steps to set the client role:
-- 1. Allow the user to set the role as BROADCASTER or AUDIENCE. 
+A `LIVE_BROADCASTING` channel has two client roles: `BROADCASTER` and `AUDIENCE`, and the default role is `AUDIENCE`. After setting the channel profile to `LIVE_BROADCASTING`, your app may use the following steps to set the client role:
+- 1. Allow the user to set the role as `BROADCASTER` or `AUDIENCE`.
 - 2. Call the `setClientRole` method and pass in the client role set by the user.
 
-Note that in an audio live broadcast, only the broadcaster can be heard. If you want to switch the client role after joining the channel, call the `setClientRole` method.
+Note that in the interactive audio streaming, only the host can be heard. If you want to switch the client role after joining the channel, call the `setClientRole` method.
 
 ```C++
 // Set the client role.
@@ -186,7 +184,7 @@ For more details on the parameter settings, see [joinChannel](https://docs.agora
 ```C++
 // For SDKs earlier than v3.0.0, call this method to enable interoperability between the Native SDK and the Web SDK if the Web SDK is in the channel. As of v3.0.0, the Native SDK enables the interoperability with the Web SDK by default.
 m_lpRtcEngine->enableWebSdkInteroperability(true);
- 
+
 // Join a channel with a token.
 BOOL CAgoraObject::JoinChannel(LPCTSTR lpChannelName, UINT nUID, LPCSTR lpDynamicKey)
 {
@@ -206,7 +204,7 @@ BOOL CAgoraObject::JoinChannel(LPCTSTR lpChannelName, UINT nUID, LPCSTR lpDynami
 ```
 
 ### 6. Leave the channel
-Call the `leaveChannel` method to leave the current broadcast according to your scenario, for example, when the broadcast ends, when you need to close the app, or when your app runs in the background.
+Call the `leaveChannel` method to leave the current channel according to your scenario, for example, when the interactive audio streaming ends, when you need to close the app, or when your app runs in the background.
 
 ```C++
 BOOL CAgoraObject::LeaveChannel()
@@ -217,8 +215,8 @@ BOOL CAgoraObject::LeaveChannel()
     m_nSelfUID = 0;
     return nRet == 0 ? TRUE : FALSE;
 }
- 
- 
+
+
 void CAgoraObject::CloseAgoraObject()
 {
     if(m_lpAgoraEngine != NULL)
@@ -233,9 +231,10 @@ void CAgoraObject::CloseAgoraObject()
 
 
 ## Run the project
-Run the project on your Windows device. When you set the role as the broadcaster and successfully join an audio broadcast, you can hear yourself in the app. When you set the role as the audience and successfully join an audio broadcast, you can hear the broadcaster in the app.
+Run the project on your Windows device. When you set the role as the host and successfully start the live interactive audio streaming, you can hear yourself in the app. When you set the role as the audience and successfully join the live interactive audio streaming, you can hear the host in the app.
 
 ## Reference
 
 - [How can I set the log file?](https://docs.agora.io/en/faq/logfile)
-- [How can I listen for an audience joining or leaving a live broadcast channel?](https://docs.agora.io/en/faq/audience_event)
+- [How can I listen for an audience joining or leaving a live interactive streaming channel?](https://docs.agora.io/en/faq/audience_event)
+

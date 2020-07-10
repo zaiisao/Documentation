@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: 
 platform: Android
-updatedAt: Thu Oct 24 2019 07:31:26 GMT+0800 (CST)
+updatedAt: Fri Jul 10 2020 06:29:29 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 
@@ -72,13 +72,13 @@ Choose either of the following methods to integrate the Agora RTM Android SDK in
 
 **Method 1: Automatically integrate the SDK using JCenter**
 
-Add the following line in the **/app/build.gradle** file of your project (1.1.0 is the version number):
+Add the following line in the **/app/build.gradle** file of your project (1.2.2 is the version number):
 
 ```java
 ...
 dependencies {
     ...
-    implementation 'io.agora.rtm:rtm-sdk:1.1.0'
+    implementation 'io.agora.rtm:rtm-sdk:1.2.2'
 }
 ```
 

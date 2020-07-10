@@ -1,12 +1,12 @@
 
 ---
-title: Start an Audio Broadcast
+title: Start Live Interactive Audio Streaming
 description: 
 platform: Electron
-updatedAt: Wed May 20 2020 08:26:50 GMT+0800 (CST)
+updatedAt: Fri Jul 10 2020 07:07:54 GMT+0800 (CST)
 ---
-# Start an Audio Broadcast
-Use this guide to quickly start a basic audio broadcast with the Agora SDK for Electron.
+# Start Live Interactive Audio Streaming
+Use this guide to quickly start the live interactive audio streaming with the Agora SDK for Electron.
 
 ## Sample project
 
@@ -40,13 +40,13 @@ Choose either of the following methods to integrate the Agora SDK into your proj
 	```javascript
     npm install agora-electron-sdk
     ```
-	
+
 2. Import the SDK into your project with the following code:
 
 	```javascript
     import AgoraRtcEngine from 'agora-electron-sdk'
     ```
-	
+
 
 **Method 2: Download the SDK from the Developer Portal**
 
@@ -85,9 +85,9 @@ If you want to debug with Xcode or Visual Studio, run `npm run debug` to generat
 
 You have now integrated the Agora SDK for Electron into your project.
 
-## Implement the basic broadcast
+## Implement the basic live interactive audio streaming
 
-Refer to the [Agora Electron Quickstart](https://github.com/AgoraIO-Community/Agora-Electron-Quickstart) sample project to implement various real-time live broadcast functions in your project.
+Refer to the [Agora Electron Quickstart](https://github.com/AgoraIO-Community/Agora-Electron-Quickstart) sample project to implement various live interactive streaming functions in your project.
 
 ## Open-source SDK
 
@@ -95,4 +95,4 @@ The [Agora SDK for Electron](https://www.npmjs.com/package/agora-electron-sdk) i
 
 ## Reference
 
-[How can I listen for an audience joining or leaving a live broadcast channel?](https://docs.agora.io/en/faq/audience_event)
+[How can I listen for an audience joining or leaving a live interactive streaming channel?](https://docs.agora.io/en/faq/audience_event)

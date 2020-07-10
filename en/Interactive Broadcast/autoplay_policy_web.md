@@ -3,7 +3,7 @@
 title: Deal with Autoplay Blocking
 description: autoplay policy best practice 
 platform: Web
-updatedAt: Tue Jul 07 2020 08:40:15 GMT+0800 (CST)
+updatedAt: Fri Jul 10 2020 07:39:12 GMT+0800 (CST)
 ---
 # Deal with Autoplay Blocking
 ## Overview
@@ -107,5 +107,3 @@ If your app works on iOS Safari or WebView, we recommend handling autoplay in th
   Stream.stop()
   Stream.play("ID", { muted: true })
   ```
-
-Given the stricter autoplay policy on iOS Safari, Agora RTC SDK for Web sets `<video controls>` to display the `<video>` element of the Safari browser by default. Even if you do nothing to the autoplay block, users can play a stream with sound by clicking the default playback button that the `<video>` element provides.

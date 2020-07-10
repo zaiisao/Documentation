@@ -3,7 +3,7 @@
 title: User and Channel Events RESTful API
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 09 2020 08:34:20 GMT+0800 (CST)
+updatedAt: Thu Jul 09 2020 11:51:46 GMT+0800 (CST)
 ---
 # User and Channel Events RESTful API
 > Besides this document, you can also read our interactive document [RTM RESTful API](https://docs.agora.io/en/Real-time-Messaging/restfulapi/)![](https://web-cdn.agora.io/docs-files/1583736328279). By clicking the **Example Value** or **Schema** tab, you can view example codes or parameter definitions for request/response bodies.
