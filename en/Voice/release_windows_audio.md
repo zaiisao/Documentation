@@ -3,17 +3,17 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Thu Jul 02 2020 07:05:57 GMT+0800 (CST)
+updatedAt: Fri Jul 10 2020 08:30:55 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
 
 The Voice SDK supports the following scenarios:
 
-- Voice communication
-- Live voice broadcast
+- Voice and Video Call
+- Live Interactive Audio and Video Streaming
 
-For the key features included in each scenario, see [Voice Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms) and [Audio Broadcast Overview](https://docs.agora.io/en/Audio%20Broadcast/product_live_audio?platform=All_Platforms).
+For the key features included in each scenario, see [Agora Voice Call Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms) and [Agora Live Interactive Audio Streaming Overview](https://docs.agora.io/en/Audio%20Broadcast/product_live_audio?platform=All_Platforms).
 
 The Windows Voice SDK supports the X86 and  X64 architecture.
 
@@ -84,9 +84,9 @@ After specifying the area of connection:
 
 v3.0.0 was released on Mar 5, 2020.
 
-In this release, Agora improves the user experience under poor network conditions for both the Communication and Live-broadcast profiles through the following measures:
-- Adopting a new architecture for the Communication profile.
-- Upgrading the last-mile network strategy for both the Communication and Live-broadcast profiles,  which enhances the SDK's anti-packet-loss capacity by maximizing the net bitrate when the uplink and downlink bandwidth are insufficient.
+In this release, Agora improves the user experience under poor network conditions for both the `COMMUNICATION`and `LIVE_BROADCASTING` profiles through the following measures:
+- Adopting a new architecture for the `COMMUNICATION` profile.
+- Upgrading the last-mile network strategy for both the `COMMUNICATION`and `LIVE_BROADCASTING` profiles,  which enhances the SDK's anti-packet-loss capacity by maximizing the net bitrate when the uplink and downlink bandwidth are insufficient.
 
 To deal with any incompatibility issues caused by the architecture change, Agora uses the fallback mechanism to ensure that users of different versions of the SDKs can communicate with each other: if a user joins the channel from a client using a previous version, all clients using v3.0.0 automatically fall back to the older version. This has the effect that none of the users in the channel can enjoy the improved experience. Therefore we strongly recommend upgrading all your clients to v3.0.0.
 
@@ -101,13 +101,13 @@ After joining multiple channels, users can receive the audio and video streams o
 
 #### 2. Adjusting the playback volume of the specified remote user
 
-Adds `adjustUserPlaybackSignalVolume` for adjusting the playback volume of a specified remote user. You can call this method as many times as necessary in a call or a live broadcast to adjust the playback volume of different remote users, or to repeatedly adjust the playback volume of the same remote user.
+Adds `adjustUserPlaybackSignalVolume` for adjusting the playback volume of a specified remote user. You can call this method as many times as necessary in a call or live interactive streaming to adjust the playback volume of different remote users, or to repeatedly adjust the playback volume of the same remote user.
 
 **Improvements**
 
 #### 1. Audio profiles
 
-To meet the need for higher audio quality, this release adjusts the corresponding audio profile of `AUDIO_PROFILE_DEFAULT (0)` in the Live-Broadcast profile.
+To meet the need for higher audio quality, this release adjusts the corresponding audio profile of `AUDIO_PROFILE_DEFAULT (0)` in the `LIVE_BROADCASTING` profile.
 
 | SDK   | AUDIO_PROFILE_DEFAULT (0)                                   |
 | :--------- | :---------------------------------------------------------- |
@@ -121,7 +121,7 @@ Adds the following members in the `RtcStats` class for providing more in-call st
 - `gatewayRtt`
 - `memoryAppUsageRatio`
 - `memoryTotalUsageRatio`
-- `memoryAppUsageInKbytes`  
+- `memoryAppUsageInKbytes`
 
 #### 3. Others
 
@@ -206,17 +206,17 @@ If your app implements RTMP streaming with the methods above, ensure that you up
 
 #### 2. Disabling/enabling the local audio
 
-To improve the audio quality in the Communication profile, this release sets the system volume to the media volume after you call the `enableLocalAudio`(true) method. Calling `enableLocalAudio`(false) switches the system volume back to the in-call volume.
+To improve the audio quality in the `COMMUNICATION` profile, this release sets the system volume to the media volume after you call the `enableLocalAudio`(true) method. Calling `enableLocalAudio`(false) switches the system volume back to the in-call volume.
 
 **New features**
 
 #### 1. Faster switching to another channel
 
-This release adds the [`switchChannel`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a3eb5ee494ce124b34609c593719c89ab) method to enable the audience in a Live Broadcast channel to quickly switch to another channel. With this method, you can achieve a much faster switch than with the `leaveChannel` and `joinChannel` methods. After the audience successfully switches to another channel by calling the `switchChannel` method, the SDK triggers the `onLeaveChannel` and `onJoinChannelSuccess` callbacks to indicate that the audience has left the original channel and joined a new one. 
+This release adds the [`switchChannel`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a3eb5ee494ce124b34609c593719c89ab) method to enable the audience in a `LIVE_BROADCASTING` channel to quickly switch to another channel. With this method, you can achieve a much faster switch than with the `leaveChannel` and `joinChannel` methods. After the audience successfully switches to another channel by calling the `switchChannel` method, the SDK triggers the `onLeaveChannel` and `onJoinChannelSuccess` callbacks to indicate that the audience has left the original channel and joined a new one.
 
 #### 2. Channel media stream relay
 
-This release adds the following methods to relay the media streams of a host from a source channel to a destination channel. This feature applies to scenarios such as online singing contests, where hosts of different Live Broadcast channels interact with each other.
+This release adds the following methods to relay the media streams of a host from a source channel to a destination channel. This feature applies to scenarios such as online singing contests, where hosts of different `LIVE_BROADCASTING` channels interact with each other.
 
 - [`startChannelMediaRelay`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#acb72f911830a6fdb77e0816d7b41dd5c)
 - [`updateChannelMediaRelay`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#afad0d3f3861c770200a884b855276663)
@@ -246,7 +246,7 @@ This release adds the following statistics in the `RtcStats` class:
 #### 2. Other Improvements
 
 - Improves the audio quality when the audio scenario is set to Game Streaming.
-- Improves the audio quality after the user disables the microphone in the Communication profile.
+- Improves the audio quality after the user disables the microphone in the `COMMUNICATION` profile.
 
 **Issues fixed**
 
@@ -254,11 +254,11 @@ This release adds the following statistics in the `RtcStats` class:
 
 - When interoperating with a Web app, voice distortion occurs after the native app enables the remote sound position indication.
 - Invalid call of the `muteRemoteAudioStream` method.
-- Occasionally no audio. 
+- Occasionally no audio.
 
 #### Miscellaneous
 
-- Occasionally mixed streams in RTMP streaming. 
+- Occasionally mixed streams in RTMP streaming.
 - Occasional crashes occur.
 - Failure to join the channel.
 
@@ -281,7 +281,7 @@ To improve the user experience, we made the following changes in v2.9.0:
 
 #### Deprecated
 
-- `onMicrophoneEnabled`. Use LOCAL_AUDIO_STREAM_STATE_CHANGED(0) or LOCAL_AUDIO_STREAM_STATE_RECORDING(1) in the [`onLocalAudioStateChanged`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a9296c329331eb83b3af1315c52e7f91a) callback instead. 
+- `onMicrophoneEnabled`. Use LOCAL_AUDIO_STREAM_STATE_CHANGED(0) or LOCAL_AUDIO_STREAM_STATE_RECORDING(1) in the [`onLocalAudioStateChanged`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a9296c329331eb83b3af1315c52e7f91a) callback instead.
 - `onRemoteAudioTransportStats`. Use the [`onRemoteAudioStats`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af8a59626a9265264fb4638e048091d3a) callback instead.
 
 
@@ -305,7 +305,7 @@ Many apps use string user IDs. This release adds the following methods to enable
 
 For other methods, Agora uses the integer uid parameter. The Agora Engine maintains a mapping table that contains the user ID and string user account, and you can get the corresponding user account or ID by calling the getUserInfoByUid or getUserInfoByUserAccount method.
 
-To ensure smooth communication, use the same parameter type to identify all users within a channel, that is, all users should use either the integer user ID or the string user account to join a channel.
+To ensure smooth call, use the same parameter type to identify all users within a channel, that is, all users should use either the integer user ID or the string user account to join a channel.
 
 **Note**:
 - Do not mix parameter types within the same channel. The following Agora SDKs support string user accounts:
@@ -318,7 +318,7 @@ To ensure smooth communication, use the same parameter type to identify all user
 
 #### 2. Adding remote audio statistics
 
-To monitor the audio transmission quality during a call or live broadcast, this release adds the `totalFrozenTime` and `frozenRate` members in the [RemoteAudioStats](https://docs.agora.io/en/Voice/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_audio_stats.html) class, to report the audio freeze time and freeze rate of the remote user.
+To monitor the audio transmission quality during a call live interactive streaming, this release adds the `totalFrozenTime` and `frozenRate` members in the [RemoteAudioStats](https://docs.agora.io/en/Voice/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_audio_stats.html) class, to report the audio freeze time and freeze rate of the remote user.
 
 This release also adds the `numChannels`, `receivedSampleRate`, and `receivedBitrate` members in the [RemoteAudioStats](https://docs.agora.io/en/Voice/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_audio_stats.html) class.
 
@@ -348,7 +348,7 @@ To improve your experience, we made the following changes to the APIs:
 
 V2.4.1 is released on Jun 12th, 2019.
 
-This is the first release of the Agora Voice SDK for Windows. Refer to the following guides to quickly integrate the SDK and enable real-time voice communication in your project.
+This is the first release of the Agora Voice SDK for Windows. Refer to the following guides to quickly integrate the SDK and enable real-time communication in your project.
 
 - [Quick start](../../en/Voice/start_call_windows.md)
 - [Use security keys](../../en/Voice/token.md)

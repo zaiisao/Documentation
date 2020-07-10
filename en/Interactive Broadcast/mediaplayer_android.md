@@ -3,17 +3,17 @@
 title: MediaPlayer Kit
 description: 
 platform: Android
-updatedAt: Mon Jun 15 2020 10:55:59 GMT+0800 (CST)
+updatedAt: Fri Jul 10 2020 08:56:05 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
 ## Function description
 
-The MediaPlayer Kit is a powerful player that supports playing local and online media resources. With this player, you can either locally play media resources or synchronously share currently playing media resources with remote users in the Agora channel. 
+The MediaPlayer Kit is a powerful player that supports playing local and online media resources. With this player, you can either locally play media resources or synchronously share currently playing media resources with remote users in the Agora channel.
 
 ## Usage notice
 
 - Currently supported media formats: Local files in AVI, MP4, MP3, MKV, and FLV formats; Online media streams using RTMP and RTSP protocols.
-- When locally playing media resources, you only need the separate MediaPlayer Kit. When synchronously sharing media resources with remote users, you need to use the MediaPlayer Kit, Agora Native SDK, and RtcChannelPublishHelper at the same time. The MediaPlayer Kit supports the local user to use the player function, the Native SDK supports real-time live broadcast scenarios, and the RtcChannelPublishHelper supports publishing media streams to remote users in Agora channel.
+- When locally playing media resources, you only need the separate MediaPlayer Kit. When synchronously sharing media resources with remote users, you need to use the MediaPlayer Kit, Agora Native SDK, and RtcChannelPublishHelper at the same time. The MediaPlayer Kit supports the local user to use the player function, the Native SDK supports live interactive streaming scenarios, and the RtcChannelPublishHelper supports publishing media streams to remote users in Agora channel.
 - When sharing media resources with remote users, the playback window occupies the local user's video as captured by the camera. Therefore, if you want remote users to see both the local user's and the player's window, you need to start another process to capture the local user's video.
 
 ## Set up the development environment
@@ -34,9 +34,9 @@ Follow these steps to create an Android project:
 
 <details>
 	<summary><font color="#3ab7f8">Create an Android project</font></summary>
-	
-1. Open <b>Android Studio</b> and click <b>Start a new Android Studio project</b>. 
-2. On the <b>Choose your project</b> panel, choose <b>Phone and Tablet</b> > <b>Empty Activity</b>, and click <b>Next</b>. 
+
+1. Open <b>Android Studio</b> and click <b>Start a new Android Studio project</b>.
+2. On the <b>Choose your project</b> panel, choose <b>Phone and Tablet</b> > <b>Empty Activity</b>, and click <b>Next</b>.
 3. On the <b>Configure your project</b> panel, fill in the following contents:
 
 	* <b>Name</b>: The name of your project, for example, MediaPlayer
@@ -45,7 +45,7 @@ Follow these steps to create an Android project:
 	* <b>Language</b>: The programming language of the project, for example, Java
 	* <b>Minimum API level</b>: The minimum API level of the project
 
-Click <b>Finish</b>. Follow the on-screen instructions, if any, to install the plug-ins. 
+Click <b>Finish</b>. Follow the on-screen instructions, if any, to install the plug-ins.
 </details>
 
 ### Integrate the MediaPlayer Kit
@@ -84,7 +84,7 @@ dependencies {
 3. In the **/app/src/main/AndroidManifest.xml** file, add the following permissions for device access according to your needs:
 
    ```java
-   <uses-permission android:name="android.permission.INTERNET" /> 
+   <uses-permission android:name="android.permission.INTERNET" />
      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
    ```
 
@@ -97,9 +97,9 @@ dependencies {
    </application>
    ```
 
-### Integrate the Native SDK 
+### Integrate the Native SDK
 
-Version requirements: 2.4.0 or later 
+Version requirements: 2.4.0 or later
 
 Integration steps: See [Integrate the Native SDK](https://docs.agora.io/en/Interactive%20Broadcast/start_live_android?platform=Android#integrate-the-sdk)
 
@@ -176,7 +176,7 @@ By listening for these events, you can have more control over the playback proce
 
 4. Call the `play` method in the `AgoraMediaPlayerKit` interface to play the media resource locally.
 
-**Adjust playback settings** 
+**Adjust playback settings**
 
 You can call several other methods in the `AgoraMediaPlayerKit` interface to implement various playback settings:
 
@@ -193,43 +193,43 @@ You can call several other methods in the `AgoraMediaPlayerKit` interface to imp
 
 ```java
 AgoraMediaPlayerKit agoraMediaPlayerKit1 = new AgoraMediaPlayerKit(this.getActivity());
- 
+
 agoraMediaPlayerKit1.registerPlayerObserver(new MediaPlayerObserver() {
     @Override
  public void onPlayerStateChanged(MediaPlayerState state, MediaPlayerError error) {
         LogUtil.i("agoraMediaPlayerKit1 onPlayerStateChanged:"+state+" "+error);
  }
- 
+
     @Override
  public void onPositionChanged(final long position) {
         LogUtil.i("agoraMediaPlayerKit1 onPositionChanged:"+position+" duration:"+player1Duration);
    }
- 
+
     @Override
  public void onPlayerEvent(MediaPlayerEvent eventCode) {
         LogUtil.i("agoraMediaPlayerKit1 onEvent:"+eventCode);
  }
- 
+
     @Override
  public void onMetaData(final byte[] data) {
         LogUtil.i("agoraMediaPlayerKit1 onMetaData "+ new String(data));
  }
 });
- 
+
  agoraMediaPlayerKit1.registerVideoFrameObserver(new VideoFrameObserver() {
      @Override
  public void onFrame(VideoFrame videoFrame) {
         LogUtil.i("agoraMediaPlayerKit1 video onFrame :"+videoFrame);
  }
 });
- 
+
  agoraMediaPlayerKit1.registerAudioFrameObserver(new AudioFrameObserver() {
      @Override
  public void onFrame(AudioFrame audioFrame) {
         LogUtil.i("agoraMediaPlayerKit1 audio onFrame :"+audioFrame);
  }
  });
- 
+
 agoraMediaPlayerKit1.open("/sdcard/test.mp4",0);
 agoraMediaPlayerKit1.play();
 agoraMediaPlayerKit1.stop();
@@ -250,13 +250,13 @@ Register the player, audio, and video observer objects, and complete the prepara
 
 > Do not proceed until you receive the `onPlayerStateChanged` callback reporting `PLAYER_STATE_PLAYING (3)`.
 
-**Enable the local user to join the channel by using the SDK** 
+**Enable the local user to join the channel by using the SDK**
 
-Refer to [the RTC quickstart guide](https://docs.agora.io/en/Interactive%20Broadcast/start_live_android?platform=Android#5-set-the-channel-profile) for details about how to enable the local user to join the live broadcast channel in the role of `BROADCASTER`:
+Refer to [the RTC quickstart guide](https://docs.agora.io/en/Interactive%20Broadcast/start_live_android?platform=Android#5-set-the-channel-profile) for details about how to enable the local user to join the `LIVE_BROADCASTING` channel in the role of `BROADCASTER`:
 
-1. Call the `setChannelProfile` method to set the channel mode to live broadcast.
+1. Call the `setChannelProfile` method to set the channel profile to `LIVE_BROADCASTING`.
 
-2. Call the `setClientRole` method to set the local user role as the broadcaster.
+2. Call the `setClientRole` method to set the local user role as the host.
 
 3. Call the `enableVideo` method to enable the video module.
 
@@ -291,17 +291,17 @@ Refer to [the RTC quickstart guide](https://docs.agora.io/en/Interactive%20Broad
 RtcEngine mRtcEngine = RtcEngine.create（context,appid,null);
 RtcEngine agoraMediaPlayerKit = new AgoraMediaPlayerKit(context)；
 RtcChannelPublishHelper rtcChannelPublishHelper = RtcChannelPublishHelper.getInstance();
- 
+
 rtcChannelPublishHelper.attachPlayerToRtc(agoraMediaPlayerKit,mRtcEngine);
- 
- 
+
+
 rtcChannelPublishHelper.publishVideo()
 rtcChannelPublishHelper.publishAudio()
 rtcChannelPublishHelper.unpublishVideo()
 rtcChannelPublishHelper.unpublishAudio()
-   
+
 rtcChannelPublishHelper.detachPlayerFromRtc();
-rtcChannelPublishHelper.release(); 
+rtcChannelPublishHelper.release();
 ```
 
 ## Get the log file
@@ -309,5 +309,3 @@ The log file contains all the log events generated by the mediaplayer kit during
 
 ## API documentation
 See the [API documentation](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/mediaplayer_java/index.html).
-
-

@@ -3,17 +3,17 @@
 title: MediaPlayer Kit
 description: 
 platform: iOS
-updatedAt: Mon Jun 15 2020 10:55:34 GMT+0800 (CST)
+updatedAt: Fri Jul 10 2020 08:58:25 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
 ## Function description
 
-The MediaPlayer Kit is a powerful player that supports playing local and online media resources. With this player, you can either locally play media resources or synchronously share currently playing media resources with remote users in the Agora channel. 
+The MediaPlayer Kit is a powerful player that supports playing local and online media resources. With this player, you can either locally play media resources or synchronously share currently playing media resources with remote users in the Agora channel.
 
 ## Usage notice
 
 - Currently supported media formats: Local files in AVI, MP4, MP3, MKV, and FLV formats; Online media streams using RTMP and RTSP protocols.
-- When locally playing media resources, you only need the separate MediaPlayer Kit. When synchronously sharing media resources with remote users, you need to use the MediaPlayer Kit, Agora Native SDK, and RtcChannelPublishPlugin at the same time. The MediaPlayer Kit supports the local user to use the player function, the Native SDK supports real-time live broadcast scenarios, and the RtcChannelPublishPlugin supports publishing media streams to remote users in Agora channel.
+- When locally playing media resources, you only need the separate MediaPlayer Kit. When synchronously sharing media resources with remote users, you need to use the MediaPlayer Kit, Agora Native SDK, and RtcChannelPublishPlugin at the same time. The MediaPlayer Kit supports the local user to use the player function, the Native SDK supports live interactive streaming scenarios, and the RtcChannelPublishPlugin supports publishing media streams to remote users in Agora channel.
 
 ## Set up the development environment
 
@@ -28,7 +28,7 @@ The MediaPlayer Kit is a powerful player that supports playing local and online 
 
 ### Create an iOS project
 
-Now, let's build an iOS project from scratch. 
+Now, let's build an iOS project from scratch.
 
 <details>
 	<summary><font color="#3ab7f8">Create an iOS project</font></summary>
@@ -36,7 +36,7 @@ Now, let's build an iOS project from scratch.
 1. Open **Xcode** and click **Create a new Xcode project**.
 2. Choose **Single View App** as the template and click **Next**.
 3. Input the project information, such as the project name, team, organization name, and language, and click **Next**.
-	
+
   **Note**: If you haven't added any team information, you will see an **Add account...** button. Click it, input your Apple ID, and click **Next** to add your team.
 4. Choose the storage path of the project and click **Create**.
 5. Connect your iOS device to your computer.
@@ -62,7 +62,7 @@ Choose either of the following methods to integrate the MediaPlayer Kit into you
 1. Go to [Downloads](https://docs.agora.io/en/Agora%20Platform/downloads), download the latest version of the MediaPlayer Kit, and unzip the download package.
 
 2. Add the AgoraMediaPlayer.framework file in the **libs** folder to the project folder.
-3. In **Xcode**, click **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content** to change the status of AgoraMediaPlayer.framework to **Embed & Sign**. 
+3. In **Xcode**, click **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content** to change the status of AgoraMediaPlayer.framework to **Embed & Sign**.
 4.  Go to the **TARGETS > Project Name > Build Phases > Link Binary with Libraries** menu, and click `+` to add the following frameworks and libraries. To add the AgoraMediaPlayer.framework file, remember to click **Add Other...** after clicking `+`.
 	- AgoraMediaPlayer.framework
 	- Accelerate.framework
@@ -86,9 +86,9 @@ Choose either of the following methods to integrate the MediaPlayer Kit into you
 | Privacy - Microphone Usage Description      | String      | To access the microphone, such as for a video call.      |
 | Privacy - Camera Usage Description      | String      | To access the camera, such as for a video call.      |
 
-### Integrate the Native SDK 
+### Integrate the Native SDK
 
-Version requirements: 2.4.0 or later 
+Version requirements: 2.4.0 or later
 
 Integration steps: See [Integrate the Native SDK](https://docs.agora.io/en/Interactive%20Broadcast/start_live_ios?platform=iOS#a-nameintegratesdkaintegrate-the-sdk).
 
@@ -134,7 +134,7 @@ By listening for these events, you can have more control over the playback proce
 
 4. Call the `play` method in the ` AgoraMediaPlayer` interface to play the media resource locally.
 
-**Adjust playback settings** 
+**Adjust playback settings**
 
 You can call several other methods in the ` AgoraMediaPlayer` interface to implement various playback settings:
 
@@ -157,7 +157,7 @@ _mediaPlayerKit = [[AgoraMediaPlayer alloc] initWithDelegate:self];
 [_mediaPlayerKit stop];
 [_mediaPlayerKit seekToPosition:value];
 [_mediaPlayerKitadjustVolume:volume];
-  
+
  // Receives event callbacks.
 - (void)AgoraMediaPlayer:(AgoraMediaPlayer *_Nonnull)playerKit
        didChangedToState:(AgoraMediaPlayerState)state
@@ -165,36 +165,36 @@ _mediaPlayerKit = [[AgoraMediaPlayer alloc] initWithDelegate:self];
 {
      //todo
 }
- 
- 
+
+
 - (void)AgoraMediaPlayer:(AgoraMediaPlayer *_Nonnull)playerKit
     didChangedToPosition:(NSInteger)position;
 {
 }
- 
- 
+
+
 - (void)AgoraMediaPlayer:(AgoraMediaPlayer *_Nonnull)playerKit
           didOccurEvent:(AgoraMediaPlayerEvent)event;
 {
      //todo
 }
- 
- 
+
+
 - (void)AgoraMediaPlayer:(AgoraMediaPlayer *_Nonnull)playerKit
           didReceiveData:(NSString *)data
                   length:(NSInteger)length;
 {
      //todo
 }
- 
- 
+
+
 - (void)AgoraMediaPlayer:(AgoraMediaPlayer *_Nonnull)playerKit
     didReceiveVideoFrame:(CVPixelBufferRef
 {
     //todo
 }
- 
- 
+
+
 - (void)AgoraMediaPlayer:(AgoraMediaPlayer *_Nonnull)playerKit
     didReceiveAudioFrame:(CMSampleBufferRef)
 {
@@ -217,13 +217,13 @@ Register the player, audio, and video observer objects, and complete the prepara
 
 > Do not proceed until you receive the `didChangedToState` callback reporting `AgoraMediaPlayerStatePlaying(3)`.
 
-**Enable the local user to join the channel by using the SDK** 
+**Enable the local user to join the channel by using the SDK**
 
-Refer to [the RTC quickstart guide](https://docs.agora.io/en/Interactive%20Broadcast/start_live_ios?platform=iOS#4-set-the-channel-profile) for details about how to enable the local user to join the live broadcast channel in the role of `BROADCASTER`:
+Refer to [the RTC quickstart guide](https://docs.agora.io/en/Interactive%20Broadcast/start_live_ios?platform=iOS#4-set-the-channel-profile) for details about how to enable the local user to join the `LIVE_BROADCASTING` channel in the role of `BROADCASTER`:
 
-1. Call the `setChannelProfile` method to set the channel mode to live broadcast.
+1. Call the `setChannelProfile` method to set the channel profile to `LIVE_BROADCASTING`.
 
-2. Call the `setClientRole` method to set the local user role as the broadcaster.
+2. Call the `setClientRole` method to set the local user role as the host.
 
 3. Call the `enableVideo` method to enable the video module.
 
@@ -243,7 +243,7 @@ Refer to [the RTC quickstart guide](https://docs.agora.io/en/Interactive%20Broad
 
 1. Call the `unpublishVideo`/`unpublishAudio` method to unshare or unpublish the video/audio stream in the media resource.
 
-2. Call the `detachPlayerFromRtc` method to unbind the player from the Agora channel. 
+2. Call the `detachPlayerFromRtc` method to unbind the player from the Agora channel.
 
 3. (Optional) Call the [`setVideoSource`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVideoSource:) method to switch the player's window back to the local user's view and enable the remote users to see the local user again.
 
@@ -277,4 +277,5 @@ The log file contains all the log events generated by the mediaplayer kit during
 
 ## API documentation
 See the [API documentation](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/mediaplayer_oc/docs/headers/MediaPlayer-Kit-Objective-C-API-Overview.html).
+
 

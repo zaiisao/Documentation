@@ -3,7 +3,7 @@
 title: In-ear Monitoring
 description: How to enable in-ear monitoring and adjust the volume
 platform: Unity
-updatedAt: Thu Apr 16 2020 10:18:52 GMT+0800 (CST)
+updatedAt: Fri Jul 10 2020 08:44:50 GMT+0800 (CST)
 ---
 # In-ear Monitoring
 In-ear monitoring provides a mix of the audio sources (for example, a mix of the vocals and music) to the host with low latency, commonly used in professional scenarios, such as in concerts.
@@ -11,7 +11,7 @@ The Agora SDK supports the in-ear monitoring function and volume adjustment of t
 
 ## Implementation
 
-Before using the in-ear monitoring function, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Voice Call](../../en/Interactive%20Broadcast/start_call_audio_unity.md) or [Start a Voice Broadcast](../../en/Interactive%20Broadcast/start_live_audio_unity.md) for details.
+Before using the in-ear monitoring function, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Interactive%20Broadcast/start_call_audio_unity.md) or [Start Live Interactive Streaming](../../en/Interactive%20Broadcast/start_live_audio_unity.md) for details.
 
 The Agora SDK provides the `EnableInEarMonitoring` and `SetInEarMonitoringVolume` to set the in-ear monitoring according to the scenario, you can use these methods no matter before or after `JoinChannelByKey`.
 

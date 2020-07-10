@@ -3,7 +3,7 @@
 title: Raw Audio Data
 description: 
 platform: Unity
-updatedAt: Tue Feb 18 2020 14:12:17 GMT+0800 (CST)
+updatedAt: Fri Jul 10 2020 08:50:36 GMT+0800 (CST)
 ---
 # Raw Audio Data
 ## Introduction
@@ -14,7 +14,7 @@ Agora Unity SDK provides the `AudioRawDataManager` class for capturing the raw a
 
 ## Implementation
 
-Before using the raw audio data function, ensure that you have implemented the basic real-time communication functions in your project. See [Start a Voice Call](../../en/Voice/start_call_audio_unity.md) and [Start a Voice Broadcast](../../en/Voice/start_live_audio_unity.md) for details.
+Before using the raw audio data function, ensure that you have implemented the basic real-time communication functions in your project. See [Start a Call](../../en/Voice/start_call_audio_unity.md) and [Start Live Interactive Streaming](../../en/Voice/start_live_audio_unity.md) for details.
 
 Follow these steps to implement the raw audio data functions in your project:
 

@@ -3,7 +3,7 @@
 title: Custom Audio Source and Renderer
 description: 
 platform: Unity
-updatedAt: Thu Apr 23 2020 03:30:01 GMT+0800 (CST)
+updatedAt: Fri Jul 10 2020 08:49:24 GMT+0800 (CST)
 ---
 # Custom Audio Source and Renderer
 ## Introduction
@@ -23,7 +23,7 @@ This article tells you how to use the Agora Unity SDK to customize the audio sou
 
 ## Implementation
 
-Before customizing the audio source or sink, ensure that you implement the basic real-time communication functions in your project. For details, see [Start a Voice Call](../../en/Audio%20Broadcast/start_call_audio_unity.md) or [Start an Audio Broadcast](../../en/Audio%20Broadcast/start_live_audio_unity.md).
+Before customizing the audio source or sink, ensure that you implement the basic real-time communication functions in your project. For details, see [Start a Call](../../en/Audio%20Broadcast/start_call_audio_unity.md) or [Start Live Interactive Streaming](../../en/Audio%20Broadcast/start_live_audio_unity.md).
 
 ### Custom audio source
 

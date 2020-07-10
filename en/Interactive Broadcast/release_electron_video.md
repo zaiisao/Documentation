@@ -3,27 +3,27 @@
 title: Release Notes
 description: 
 platform: Electron
-updatedAt: Mon Jul 06 2020 10:35:07 GMT+0800 (CST)
+updatedAt: Fri Jul 10 2020 08:29:03 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora SDK for Electron.
 
 ## Introduction
- 
+
 The Agora SDK for Electron is developed upon Agora SDK for macOS and Agora SDK for Windows, with the Node.js C++ plug-in units. The Electron SDK supports the following scenarios:
- 
-- Voice and video communication
-- Voice and video live broadcast
- 
-For key features included in each scenario, see [Voice Overview](../../en/Interactive%20Broadcast/product_voice.md), [Video Overview](../../en/Interactive%20Broadcast/product_video.md), [Audio Broadcast Overview](../../en/Interactive%20Broadcast/product_live_audio.md) and [Video Broadcast Overview](../../en/Interactive%20Broadcast/product_live.md).
+
+- Voice and Video Call
+- Live Interactive Audio and Video Streaming
+
+For key features included in each scenario, see [Agora Voice Call Overview](../../en/Interactive%20Broadcast/product_voice.md), [Agora Video Call Overview](../../en/Interactive%20Broadcast/product_video.md), [Agora Interactive Audio Streaming Overview](../../en/Interactive%20Broadcast/product_live_audio.md) and [Agora Interactive Video Streaming Overview](../../en/Interactive%20Broadcast/product_live.md).
 
 ## v3.0.0
 
 v3.0.0 was released on April 7th, 2020.
 
-In this release, Agora improves the user experience under poor network conditions for both the Communication and Live-broadcast profiles through the following measures:
-- Adopting a new architecture for the Communication profile.
-- Upgrading the last-mile network strategy for both the Communication and Live-broadcast profiles,  which enhances the SDK's anti-packet-loss capacity by maximizing the net bitrate when the uplink and downlink bandwidth are insufficient.
+In this release, Agora improves the user experience under poor network conditions for both the `COMMUNICATION` and `LIVE_BROADCASTING` profiles through the following measures:
+- Adopting a new architecture for the `COMMUNICATION` profile.
+- Upgrading the last-mile network strategy for both the `COMMUNICATION` and `LIVE_BROADCASTING` profiles,  which enhances the SDK's anti-packet-loss capacity by maximizing the net bitrate when the uplink and downlink bandwidth are insufficient.
 
 To deal with any incompatibility issues caused by the architecture change, Agora uses the fallback mechanism to ensure that users of different versions of the SDKs can communicate with each other: if a user joins the channel from a client using a previous version, all clients using v3.0.0 automatically fall back to the older version. This has the effect that none of the users in the channel can enjoy the improved experience. Therefore we strongly recommend upgrading all your clients to v3.0.0.
 
@@ -31,9 +31,9 @@ We also upgrade the On-premise Recording SDK to v3.0.0. Ensure that you upgrade 
 
 **Compatibility changes**
 
-#### 1. Dual-stream mode not enabled in the Communication profile
+#### 1. Dual-stream mode not enabled in the `COMMUNICATION` profile
 
-As of v3.0.0, the native SDK does not enable the [dual-stream mode](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-dualadual-stream-mode) by default in the Communication profile. Call the [`enableDualStreamMode (true)`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#enabledualstreammode) method after joining the channel to enable it. In video scenarios with multiple users, we recommend enabling the dual-stream mode.
+As of v3.0.0, the native SDK does not enable the [dual-stream mode](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-dualadual-stream-mode) by default in the `COMMUNICATION` profile. Call the [`enableDualStreamMode (true)`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#enabledualstreammode) method after joining the channel to enable it. In video scenarios with multiple users, we recommend enabling the dual-stream mode.
 
 **New features**
 
@@ -45,7 +45,7 @@ After joining multiple channels, users can receive the audio and video streams o
 
 #### 2. Adjusting the playback volume of the specified remote user
 
-Adds [`adjustUserPlaybackSignalVolume`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#adjustuserplaybacksignalvolume) for adjusting the playback volume of a specified remote user. You can call this method as many times as necessary in a call or a live broadcast to adjust the playback volume of different remote users, or to repeatedly adjust the playback volume of the same remote user.
+Adds [`adjustUserPlaybackSignalVolume`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#adjustuserplaybacksignalvolume) for adjusting the playback volume of a specified remote user. You can call this method as many times as necessary in a call or live interactive streaming to adjust the playback volume of different remote users, or to repeatedly adjust the playback volume of the same remote user.
 
 #### 3. Detecting local voice activity
 
@@ -55,7 +55,7 @@ This release adds the `report_vad(boolean)` parameter to the [`enableAudioVolume
 
 #### 1. Audio profiles
 
-To meet the need for higher audio quality, this release adjusts the corresponding audio profile (`profile(0)`) of [`setAudioProfile`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#setaudioprofile) in the Live-Broadcast profile.
+To meet the need for higher audio quality, this release adjusts the corresponding audio profile (`profile(0)`) of [`setAudioProfile`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#setaudioprofile) in the `LIVE_BROADCASTING` profile.
 
 | SDK                 | profile(0)                                                  |
 | :------------------ | :----------------------------------------------------------- |
@@ -81,13 +81,13 @@ Adds the following properties in the [`RtcStats`](https://docs.agora.io/en/Inter
 
 This release enables window sharing of [UWP (Universal Windows Platform)](https://docs.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guide) applications when you sharing a screen by the windows ID.
 
-#### 5. Watermark in Live Broadcasts
+#### 5. Watermark in Live Streaming
 
-This release enables the watermark function for users to add a PNG file to the local broadcast as a watermark. The [`addVideoWatermark`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#addvideowatermark) and [`clearVideoWatermark`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#clearvideowatermarks) methods can add and delete watermarks in a local live-broadcast.
+This release enables the watermark function for users to add a PNG file to the local live streaming as a watermark. The [`addVideoWatermark`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#addvideowatermark) and [`clearVideoWatermark`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#clearvideowatermarks) methods can add and delete watermarks in live interactive streaming.
 
 #### 6. Supporting more audio sample rates for recording
 
-To enable more audio sample rate options for recording, this release adds a new [`startAudioRecording`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#startaudiorecording) method with a `sampleRate` parameter. In the new method, you can set the sample rate as 16, 32, 44.1 or 48 kHz. 
+To enable more audio sample rate options for recording, this release adds a new [`startAudioRecording`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#startaudiorecording) method with a `sampleRate` parameter. In the new method, you can set the sample rate as 16, 32, 44.1 or 48 kHz.
 
 #### 7. Others
 
@@ -98,8 +98,8 @@ This release enables interoperability between the Electron SDK and the Web SDK b
 - Audio issues relating to audio mixing, audio encoding, and echoing.
 - Video issues relating to the watermark, aspect ratio, video sharpness, black outline appearing while screen sharing and toggling to full-screen.
 - Other issues relating to app crashes, log file, and unstable service during CDN live streaming.
-- The [`setRemoteSubscribeFallbackOption`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#setremotesubscribefallbackoption) method, which should work in the Live-broadcast profile only, also works in the Communication profile.
-- In some one-to-one communication, the downlink media stream falls back to audio-only under poor network conditions.
+- The [`setRemoteSubscribeFallbackOption`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#setremotesubscribefallbackoption) method, which should work in the `LIVE_BROADCASTING` profile only, also works in the `COMMUNICATION` profile.
+- In some one-to-one call, the downlink media stream falls back to audio-only under poor network conditions.
 - Occasionally, the UI of the system window is abnormal on macOS 10.15.
 
 **API changes**
@@ -114,9 +114,9 @@ When connected to a headset or Bluetooth, the macOS device changes its audio rou
 - [`createChannel`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#createchannel)
 - [`AgoraRtcChannel`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/electron/classes/agorartcchannel.html) class
 - The `gatewayRtt`, `memoryAppUsageRatio`, `memoryTotalUsageRatio` and `memoryAppUsageInKbytes` properties in the [`RtcStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/electron/interfaces/rtcstats.html) interface
-- [`startAudioRecording`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#startaudiorecording) 
-- [`addVideoWatermark`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#addvideowatermark) 
-- [`clearVideoWatermark`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#clearvideowatermarks) 
+- [`startAudioRecording`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#startaudiorecording)
+- [`addVideoWatermark`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#addvideowatermark)
+- [`clearVideoWatermark`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#clearvideowatermarks)
 - The `report_vad` parameter in the [`enableAudioVolumeIndication`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#enableaudiovolumeindication) method
 
 #### Deprecated
@@ -148,11 +148,11 @@ The new callback reports most of the remote video states, and therefore deprecat
 
 #### 1. Faster switching to another channel
 
-This release adds the [`switchChannel`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#switchchannel) method to enable the audience in a Live Broadcast channel to quickly switch to another channel. With this method, you can achieve a much faster switch than with the `leaveChannel` and `joinChannel` methods. After the audience successfully switches to another channel by calling the `switchChannel` method, the SDK triggers the `leaveChannel` and `joinedChannel` callbacks to indicate that the audience has left the original channel and joined a new one. 
+This release adds the [`switchChannel`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#switchchannel) method to enable the audience in a `LIVE_BROADCASTING` channel to quickly switch to another channel. With this method, you can achieve a much faster switch than with the `leaveChannel` and `joinChannel` methods. After the audience successfully switches to another channel by calling the `switchChannel` method, the SDK triggers the `leaveChannel` and `joinedChannel` callbacks to indicate that the audience has left the original channel and joined a new one.
 
 #### 2. Channel media stream relay
 
-This release adds the following methods to relay the media streams of a host from a source channel to a destination channel. This feature applies to scenarios such as online singing contests, where hosts of different Live Broadcast channels interact with each other.
+This release adds the following methods to relay the media streams of a host from a source channel to a destination channel. This feature applies to scenarios such as online singing contests, where hosts of different `LIVE_BROADCASTING` channels interact with each other.
 
 - [`startChannelMediaRelay`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#startchannelmediarelay)
 - [`updateChannelMediaRelay`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#updatechannelmediarelay)
@@ -181,18 +181,18 @@ This release adds the following statistics in the [`RtcStats`](https://docs.agor
 - `LocalVideoStats`: The encoding bitrate, the width and height of the encoding frame, the number of frames, and the codec type of the local video.
 - `RemoteVideoStats`: The packet loss rate of the remote video.
 
-#### 2. Improving the live broadcast video quality
+#### 2. Improving the video quality of live interactive streaming
 
 This release minimizes the video freeze rate under poor network conditions, improves the video sharpness, and optimizes the video smoothness when the packet loss rate is high.
 
 #### 3. Improving the screen sharing quality
 
-This release improves the sharpness of text during screen sharing in the Communication profile, particularly when the network condition is poor. Note that this improvement takes effect only when you set `ContentHint` as `Details(2)`.
+This release improves the sharpness of text during screen sharing in the `COMMUNICATION` profile, particularly when the network condition is poor. Note that this improvement takes effect only when you set `ContentHint` as `Details(2)`.
 
 #### 4. Other Improvements
 
 - Improves the audio quality when the audio scenario is set to Game Streaming.
-- Improves the audio quality after the user disables the microphone in the Communication profile.
+- Improves the audio quality after the user disables the microphone in the `COMMUNICATION` profile.
 
 **Issues fixed**
 
@@ -200,17 +200,17 @@ This release improves the sharpness of text during screen sharing in the Communi
 
 - When interoperating with a Web app, voice distortion occurs after the native app enables the remote sound position indication.
 - Invalid call of the [`muteRemoteAudioStream`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#muteremoteaudiostream) method.
-- Occasionally no audio. 
+- Occasionally no audio.
 - Crashes occur when testing the microphone.
 
 #### Video
 
 - Video freezes.
-- The `remoteVideoStateChanged` callback behaves unexpectedly. 
+- The `remoteVideoStateChanged` callback behaves unexpectedly.
 
 #### Miscellaneous
 
-- Occasionally mixed streams in RTMP streaming. 
+- Occasionally mixed streams in RTMP streaming.
 - Occasional crashes occur.
 - Failure to join the channel.
 
@@ -242,14 +242,14 @@ To improve the user experience, we made the following changes in v2.9.0:
 - `userEnableVideo`. Use the `remoteVideoStateChanged` callback instead.
 - `userEnableLocalVideo`. Use the `remoteVideoStateChanged` callback instead.
 - `addStream`. Use the `remoteVideoStateChanged` callback instead.
- 
+
 ## v2.8.0
 
 v2.8.0 is released on Jul 8, 2019.
- 
-This is the first release of the Agora SDK for Electron. Refer to the following documentation to quickly integrate the SDK and enable real-time voice and video communication in your project.
- 
+
+This is the first release of the Agora SDK for Electron. Refer to the following documentation to quickly integrate the SDK and enable real-time communication in your project.
+
 - Integrate the SDK: [Start a Call](../../en/Interactive%20Broadcast/start_call_electron.md) or [Start Live Interactive Streaming](../../en/Interactive%20Broadcast/start_live_electron.md)
 - [API Reference](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/electron/index.html)
- 
+
 Agora also provides the open-source [Electron GitHub Demo](https://github.com/AgoraIO-Community/Agora-Electron-Quickstart) for you to download.
