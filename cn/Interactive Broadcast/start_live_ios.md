@@ -109,7 +109,7 @@ end
  - SystemConfiguration.framework
  - VideoToolbox.framework
 	
-<div class="alert note">如需支持 iOS 9 或更低版本的设备，请在 Xcode 中将对 <tt>CoreML.framework</tt> 的依赖设为 <tt>Optional</tt>。</div>
+<div class="alert note">如需支持 iOS 11 或更低版本的设备，请在 Xcode 中将对 <tt>CoreML.framework</tt> 的依赖设为 <tt>Optional</tt>。</div>
 	
 
 
