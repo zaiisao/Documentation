@@ -57,13 +57,13 @@ Agora 在 GitHub 上提供开源的互动直播示例项目 [OpenLive-Voice-Only
 
 1. 开始前确保你已安装 **Cocoapods**。参考 [Getting Started with CocoaPods](https://guides.cocoapods.org/using/getting-started.html#getting-started) 安装说明。
 2. 在 **Terminal** 里进入项目根目录，并运行 `pod init` 命令。项目文件夹下会生成一个 `Podfile` 文本文件。
-3. 打开 `Podfile` 文件，修改文件为如下内容。注意将 `Your App` 替换为你的 Target 名称。
+3. 打开 `Podfile` 文件，修改文件为如下内容。注意将 `Your App` 替换为你的 Target 名称，并将 `version` 替换为你需集成的 SDK 版本。
 
 
 ```
 # platform :ios, '9.0' use_frameworks!
 target 'Your App' do
-    pod 'AgoraAudio_iOS'
+    pod 'AgoraAudio_iOS', '~> version'
 end
 ```
 
@@ -80,6 +80,26 @@ end
  ![](https://web-cdn.agora.io/docs-files/1591775772856)
 2. 将 `AgoraRtcKit.framework` 复制到项目文件夹下。 
 3. 打开 **Xcode**（以 Xcode 11.0 为例），进入 **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content**  菜单，点击 **+**，再点击 **Add Other…** 添加 `AgoraRtcKit.framework`。添加完成后，项目会自动链接其他系统库。为保证动态库的签名和 app 的签名一致，你需要将动态库的 <b>Embed</b> 属性设置为 <b>Embed & Sign</b>。
+
+<details>
+	<summary><font color="#3ab7f8">如需集成 3.0.0 以下版本的 SDK，点击查看操作步骤。</font></summary>
+
+1. 解压 Agora SDK。
+2. 将 `libs` 文件夹内的 `AgoraRtcEngineKit.framework` 文件复制到项目路径下。
+3. 打开 Xcode，进入 `TARGETS > Project Name > Build Phases > Link Binary with Libraries` 菜单，点击 `+` 添加如下库。在添加 `AgoraRtcEngineKit.framework` 文件时，还需在点击 `+` 后点击 `Add Other`… ，找到本地文件并打开。
+
+ - AgoraRtcEngineKit.framework
+ - Accelerate.framework
+ - AudioToolbox.framework
+ - AVFoundation.framework
+ - CoreMedia.framework
+ - CoreTelephony.framework
+ - libc++.tbd
+ - libresolv.tbd
+ - SystemConfiguration.framework
+
+
+</details>
 
  <div class="alert warning">根据 Apple 官方要求，App 的 Extension 不允许包含动态库。如果工程中的 Extension 需要集成 SDK，则集成动态库时需将文件状态改为 <b>Do Not Embed</b>。</div>
 
@@ -100,7 +120,7 @@ end
 
 | Key | Type | Value |
 | ---------------- | ---------------- | ---------------- |
-| Privacy - Microphone Usage Description      | String      | 使用麦克风的目的，例如：for a call。      |
+| Privacy - Microphone Usage Description      | String      | 使用麦克风的目的，例如：for a call or live interactive streaming。      |
 
 
 **添加前**：

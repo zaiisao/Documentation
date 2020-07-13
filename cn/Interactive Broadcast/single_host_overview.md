@@ -3,7 +3,7 @@
 title: 单主播直播
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 09 2020 11:03:12 GMT+0800 (CST)
+updatedAt: Mon Jul 13 2020 09:13:26 GMT+0800 (CST)
 ---
 # 单主播直播
 ## 场景描述
@@ -45,7 +45,7 @@ Agora 为单主播直播提供如下平台的 Demo，扫描下方二维码下载
 
 Agora 使用 Agora RTC SDK、Agora RTM SDK、Agora 社交云服务、第三方美颜 SDK 共同搭建直播场景。
 
-![](https://web-cdn.agora.io/docs-files/1594288868770)
+![](https://web-cdn.agora.io/docs-files/1594631572341)
 
 各 SDK 或服务实现的功能如下：
 

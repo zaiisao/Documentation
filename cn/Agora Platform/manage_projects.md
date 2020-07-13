@@ -3,7 +3,7 @@
 title: 创建和管理项目
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 09 2020 09:33:59 GMT+0800 (CST)
+updatedAt: Mon Jul 13 2020 07:56:33 GMT+0800 (CST)
 ---
 # 创建和管理项目
 本页介绍如何在 Agora 控制台创建和管理项目。
