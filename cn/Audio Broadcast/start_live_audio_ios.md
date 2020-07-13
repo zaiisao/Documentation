@@ -86,7 +86,7 @@ end
 
 1. 解压 Agora SDK。
 2. 将 `libs` 文件夹内的 `AgoraRtcEngineKit.framework` 文件复制到项目路径下。
-3. 打开 Xcode，进入 `TARGETS > Project Name > Build Phases > Link Binary with Libraries` 菜单，点击 `+` 添加如下库。在添加 `AgoraRtcEngineKit.framework` 文件时，还需在点击 `+` 后点击 `Add Other`… ，找到本地文件并打开。
+3. 打开 Xcode，进入 **TARGETS > Project Name > Build Phases > Link Binary with Libraries** 菜单，点击 **+** 添加如下库。在添加 `AgoraRtcEngineKit.framework` 文件时，还需在点击 **+** 后点击 **Add Other…** ，找到本地文件并打开。
 
  - AgoraRtcEngineKit.framework
  - Accelerate.framework
