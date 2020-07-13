@@ -3,7 +3,7 @@
 title: Start Live Interactive Audio Streaming
 description: 
 platform: Android
-updatedAt: Mon Jul 06 2020 06:38:31 GMT+0800 (CST)
+updatedAt: Mon Jul 13 2020 10:25:36 GMT+0800 (CST)
 ---
 # Start Live Interactive Audio Streaming
 Use this guide to quickly start the live interactive audio streaming with the Agora Voice SDK for Android.
@@ -477,7 +477,7 @@ Run the project on your Android device. When the audio streaming starts, all the
 When integrating the Agora Voice SDK, you can also refer to the following articles: 
 
 - [How can I set the log file?](https://docs.agora.io/en/faq/logfile)
-- [How can I listen for an audience joining or leaving a live broadcast channel?](https://docs.agora.io/en/faq/audience_event)
+- [How can I listen for an audience joining or leaving a live interactive streaming channel?](https://docs.agora.io/en/faq/audience_event)
 - [Why is no audio or video captured on Android 9 devices?](https://docs.agora.io/en/faq/android_background)
 
 

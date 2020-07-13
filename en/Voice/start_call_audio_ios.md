@@ -51,13 +51,13 @@ Choose either of the following methods to integrate the Agora SDK into your proj
 
 1. Ensure that you have installed **CocoaPods** before the following steps. See the installation guide in [Getting Started with CocoaPods](https://guides.cocoapods.org/using/getting-started.html#getting-started).
 2. In **Terminal**, go to the project path and run the `pod init` command to create a `Podfile` in the project folder.
-3. Open the `Podfile`, delete all contents and input the following contents. Remember to change **Your App** to the target name of your project.
+3. Open the `Podfile`, delete all contents and input the following contents. Remember to change `Your App` to the target name of your project, and change `version` to the version of the SDK which you want to integrate.
 
 
 ```
 # platform :ios, '9.0' use_frameworks!
 target 'Your App' do
-    pod 'AgoraAudio_iOS'
+    pod 'AgoraAudio_iOS', '~> version'
 end
 ```
 
@@ -74,7 +74,27 @@ end
 ![](https://web-cdn.agora.io/docs-files/1591776711076)
 2. Copy `AgoraRtcKit.framework` to the project folder.
 3. Open **Xcode** (take the Xcode 11.0 as an example), go to the **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content** menu, click **Add Other...** after clicking **+** to add `AgoraRtcKit.framework`. Once added, the project automatically links to other system libraries. To ensure that the signature of the dynamic library is the same as the signature of the app, you need to set the **Embed** attribute of the dynamic library to **Embed & Sign**.
-  <div class="alert warning">According to the requirement of Apple, the Extension of app cannot contain the dynamic library. If you need to integrate the SDK with the dynamic library in the Extension, change the file status as <b>Do Not Embed</b>.</div>
+
+<details>
+	<summary><font color="#3ab7f8">To integrate the SDK earlier than 3.0.0, click here to see the integration steps.</font></summary>
+	
+1. Unzip the downloaded SDK package.
+2. Copy `AgoraRtcEngineKit.framework` to the project folder.
+3. Open **Xcode** (take the Xcode 11.0 as an example), go to the **TARGETS > Project Name > Build Phases > Link Binary with Libraries** menu, click **+** and then click **Add Other...** to add `AgoraRtcKit.framework`.
+
+ - AgoraRtcEngineKit.framework
+ - Accelerate.framework
+ - AudioToolbox.framework
+ - AVFoundation.framework
+ - CoreMedia.framework
+ - CoreTelephony.framework
+ - libc++.tbd
+ - libresolv.tbd
+ - SystemConfiguration.framework
+
+</details>
+
+ <div class="alert warning">According to the requirement of Apple, the Extension of app cannot contain the dynamic library. If you need to integrate the SDK with the dynamic library in the Extension, change the file status as <b>Do Not Embed</b>.</div>
 
  <div class="alert note">Ensure that you integrate <tt>AgoraRtcCryptoLoader.framework</tt> when using the channel encryption function. After integrating the library, the app size increases.</div>
 
@@ -92,7 +112,7 @@ Add the following permissions in the **info.plist** file for device access accor
 
 | Key | Type | Value |
 | ---------------- | ---------------- | ---------------- |
-| Privacy - Microphone Usage Description      | String      | To access the microphone, such as for a call.      |
+| Privacy - Microphone Usage Description      | String      | To access the microphone, such as for a call or live interactive streaming.      |
 
 
 **Before**:

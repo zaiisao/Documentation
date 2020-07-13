@@ -3,7 +3,7 @@
 title: Set up Authentication
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 09 2020 10:34:51 GMT+0800 (CST)
+updatedAt: Mon Jul 13 2020 11:08:49 GMT+0800 (CST)
 ---
 # Set up Authentication
 To ensure communication security, when users log in to the RTM system, Agora needs to check their authentication information. Agora provides three authentication mechanisms. According to your scenarios, you can choose one of the following mechanisms:
@@ -79,7 +79,7 @@ To enable a primary certificate, do the following:
 
   ![](https://web-cdn.agora.io/docs-files/1592535218973)
 
-**<a name = "generatetoken"></a>3. Generate an RTM token 
+**<a name = "generatetoken"></a>3. Generate an RTM token**
 
 Agora provides an open source [Agora Dynamic Key](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey) repository on GitHub. The `./<language>/src` folder of each language holds source codes for generating different types of dynamic keys and tokens. You can use `RtmTokenBuilder` to generate an RTM Token. The `./<language>/sample` folder of each language holds token generator examples that Agora creates for demonstration purposes. `RtmTokenBuilderSample` is a demo for generating an RTM token.
 

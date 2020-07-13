@@ -3,7 +3,7 @@
 title: Video for 7+ Users
 description: 
 platform: Web
-updatedAt: Mon Jul 06 2020 10:35:16 GMT+0800 (CST)
+updatedAt: Mon Jul 13 2020 10:24:44 GMT+0800 (CST)
 ---
 # Video for 7+ Users
 ## Introduction
@@ -20,7 +20,7 @@ Before proceeding, ensure that you implement a basic live broadcast in your proj
 
 Refer to the following steps to enable the video conference of 7+ users:
 
-1. After calling the `Stream.init` method successfully, the hosts in the live broadcast channel call the `enableDualStreamMode` method to enable the [video dual stream mode](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-dualadual-stream-mode).
+1. After calling the `Stream.init` method successfully, the hosts in the live interactive streaming channel call the `enableDualStreamMode` method to enable the [video dual stream mode](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-dualadual-stream-mode).
 	> After calling the method successfully, the SDK automatically sets the parameters of the low-video stream according to the parameters of the high-video stream. See the [Correlation Table](#corr).
 	
 2. The hosts in the channel call the `setRemoteVideoStreamType` method to set one subscribed video stream as the high-video stream and other susbcribed streams as the low-video stream.
