@@ -14,7 +14,7 @@ updatedAt: Thu Jul 09 2020 11:03:21 GMT+0800 (CST)
 
 - 登录登出
 
-![](https://web-cdn.agora.io/docs-files/1592882896382)
+![](https://web-cdn.agora.io/docs-files/1594619113688)
 
 ## 集成指引
 

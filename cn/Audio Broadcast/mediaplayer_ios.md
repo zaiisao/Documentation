@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: iOS
-updatedAt: Mon Jun 15 2020 10:56:23 GMT+0800 (CST)
+updatedAt: Fri Jul 10 2020 02:38:03 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -279,6 +279,13 @@ if(!_defaultCamera)
 }
 [_rtcEngineKit setVideoSource:NULL];
 [_rtcEngineKit setVideoSource:_defaultCamera];
+```
+
+## 开发注意事项
+
+当你只同时使用 MediaPlayer Kit 和 Native SDK 时，为避免 Native SDK 抢占 iOS 系统音频播放模块而导致的 MediaPlayer Kit 播放无声问题，请在 `joinChannelByToken` 前调用接口：
+```
+[rtcEngine setParameters:@"{\"che.audio.keep.audiosession\":true}"];
 ```
 
 ## 获取日志文件

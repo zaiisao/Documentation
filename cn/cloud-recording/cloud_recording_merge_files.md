@@ -3,7 +3,7 @@
 title: 合并音视频文件
 description: 解释如何通过转码脚本将音频和视频合并，或转换文件格式
 platform: All Platforms
-updatedAt: Tue Jun 02 2020 10:46:30 GMT+0800 (CST)
+updatedAt: Fri Jul 10 2020 03:31:43 GMT+0800 (CST)
 ---
 # 合并音视频文件
 ## 功能描述
@@ -89,7 +89,7 @@ updatedAt: Tue Jun 02 2020 10:46:30 GMT+0800 (CST)
 如想将每个 UID 的音视频合并成一个文件，可运行以下命令：
 
 ```
-convert.py -f <待转码文件所在路径> -m 1 -s -p 30 -r 640 360
+python convert.py -f <待转码文件所在路径> -m 1 -s -p 30 -r 640 360
 ```
 
 最终会生成两个转码文件：`100_0_merge_av.mp4` 和 `123_0_merge_av.mp4`。UID `100` 用户退出频道后再进入频道之间的 30 秒时长不会包含在内。如要将 30 秒时长包含在内，需要取消设置 `-s`。
@@ -97,7 +97,7 @@ convert.py -f <待转码文件所在路径> -m 1 -s -p 30 -r 640 360
 如想将每个 UID 的音视频按照录制 segment 合并成一个文件，可运行以下命令：
 
 ```
-convert.py -f <待转码文件所在路径> -m 0 -p 30 -r 640 360
+python convert.py -f <待转码文件所在路径> -m 0 -p 30 -r 640 360
 ```
 
 最终会生成三个转码文件：`100_timestamp1_av.mp4`，`100_timestamp2_av.mp4`，和 `123_timestamp1_av.mp4`。

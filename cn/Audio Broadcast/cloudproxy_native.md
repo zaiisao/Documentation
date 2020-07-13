@@ -3,7 +3,7 @@
 title: 使用云代理服务
 description: 
 platform: Android,iOS,macOS,Windows
-updatedAt: Tue Jun 30 2020 02:02:23 GMT+0800 (CST)
+updatedAt: Fri Jul 10 2020 07:32:26 GMT+0800 (CST)
 ---
 # 使用云代理服务
 ## 功能描述
@@ -53,13 +53,6 @@ updatedAt: Tue Jun 30 2020 02:02:23 GMT+0800 (CST)
 ```java
 // 开启云代理服务，并使用默认云代理服务器配置。
 setParameters("{\"rtc.enable_proxy\":true}");
-```
-
-```java
-// 开启云代理服务。
-setParameters("{\"rtc.enable_proxy\":true}");
-// 使用 Socks5 云代理服务器。
-setParameters("{\"rtc.proxy_server\":[0, \"127.0.0.1\", 1080]}");
 ```
 
 ```java

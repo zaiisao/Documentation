@@ -3,7 +3,7 @@
 title: 收发点对点消息和频道消息
 description: 
 platform: Web
-updatedAt: Fri Jul 03 2020 02:15:28 GMT+0800 (CST)
+updatedAt: Fri Jul 10 2020 06:39:30 GMT+0800 (CST)
 ---
 # 收发点对点消息和频道消息
 
@@ -93,11 +93,11 @@ updatedAt: Fri Jul 03 2020 02:15:28 GMT+0800 (CST)
 
 
 1. 从 Agora 官方网站下载最新版 [Agora RTM SDK for Web](../../cn/Real-time-Messaging/downloads.md) 压缩包。
-2. 将下载下来的压缩包中路径为 `libs/agora-rtm-sdk-1.2.0.js` 的文件保存到你所操作的项目下。
-3. 在项目相应的前端页面文件中，对刚才保存的 SDK 文件进行引用（其中 `/path/to/agora-rtm-sdk-1.2.0.js` 替换为可访问的 SDK 公开网址）：
+2. 将下载下来的压缩包中路径为 `libs/agora-rtm-sdk-1.3.0.js` 的文件保存到你所操作的项目下。
+3. 在项目相应的前端页面文件中，对刚才保存的 SDK 文件进行引用（其中 `/path/to/agora-rtm-sdk-1.3.0.js` 替换为可访问的 SDK 公开网址）：
 
     ```html
-    <script src="/path/to/agora-rtm-sdk-1.2.0.js"></script>
+    <script src="/path/to/agora-rtm-sdk-1.3.0.js"></script>
     ```
 
 <details>

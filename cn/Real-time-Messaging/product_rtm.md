@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Fri Jun 19 2020 06:44:52 GMT+0800 (CST)
+updatedAt: Fri Jul 10 2020 05:03:52 GMT+0800 (CST)
 ---
 # 产品概述
 
@@ -19,9 +19,9 @@ Agora 实时消息（Real-time Messaging，RTM）SDK 提供了稳定可靠、低
  - 获取频道内用户列表。
  - 发送和接收呼叫邀请。
  - 增删改查用户属性和频道属性。
- - 获取单个或多个指定频道的当前成员人数。
- - 订阅或取消订阅指定单个或多个用户的在线状态。
- - 获取订阅特定内容的用户列表。
+ - 获取单个或多个频道的成员人数。
+ - 订阅或取消订阅单个或多个用户的在线状态。
+ - 根据订阅内容获取用户列表。
  - 与 Agora 信令 SDK 互通。
 
 

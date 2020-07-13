@@ -3,7 +3,7 @@
 title: 处理浏览器的自动播放策略
 description: 
 platform: Web
-updatedAt: Mon Apr 13 2020 09:08:46 GMT+0800 (CST)
+updatedAt: Fri Jul 10 2020 07:38:48 GMT+0800 (CST)
 ---
 # 处理浏览器的自动播放策略
 ## 概览
@@ -104,5 +104,3 @@ stream.play("agora_remote"+ stream.getId(), function(err){
     Stream.stop()
     Stream.play("ID", { muted: false })
     ```
-
-因为 iOS Safari 的自动播放策略更为严格，Agora Web SDK 在 Safari 浏览器上会默认设置 `<video controls>`，也就是显示 `<video>` 元素的原生控件，这样即使你在 Safari 上没有对 Autoplay 限制做处理，用户也可以通过手动点击 `<video>` 元素的原生播放按钮来播放音视频。
