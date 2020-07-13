@@ -66,15 +66,15 @@ Agora 在 GitHub 上提供开源的实时语音通话示例项目 [Agora-macOS-T
 **方法二：手动复制 SDK 文件**
 
 1. 前往 [SDK 下载页面](https://docs.agora.io/cn/Agora%20Platform/downloads)，获取最新版的 Agora SDK，然后解压。
-2. 将 **libs** 文件夹内的 **AgoraRtcKit.framework** 文件复制到项目文件夹下。
-3. 打开 **Xcode**（以 Xcode 11.0 为例），进入 **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content**  菜单，点击 **+**，再点击 **Add Other…** 添加 **AgoraRtcKit.framework** 文件。添加完成后，项目会自动链接其他系统库。为保证动态库的签名和 app 的签名一致，你需要将动态库的 **Embed** 属性设置为 **Embed & Sign**。
+2. 将 `libs` 文件夹内的 `AgoraRtcKit.framework` 文件复制到项目文件夹下。
+3. 打开 **Xcode**（以 Xcode 11.0 为例），进入 **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content**  菜单，点击 **+**，再点击 **Add Other…** 添加 `AgoraRtcKit.framework` 文件。添加完成后，项目会自动链接其他系统库。为保证动态库的签名和 app 的签名一致，你需要将动态库的 **Embed** 属性设置为 **Embed & Sign**。
 
 <details>
 	<summary><font color="#3ab7f8">如需集成 3.0.0 以下版本的 SDK，点击查看操作步骤。</font></summary>
 
 1. 解压 Agora SDK。
 2. 将 `libs` 文件夹内的 `AgoraRtcEngineKit.framework` 文件复制到项目路径下。
-3. 打开 Xcode，进入 `TARGETS > Project Name > Build Phases > Link Binary with Libraries` 菜单，点击 `+` 添加如下库。在添加 `AgoraRtcEngineKit.framework` 文件时，还需在点击 `+` 后点击 `Add Other`… ，找到本地文件并打开。
+3. 打开 Xcode，进入 **TARGETS > Project Name > Build Phases > Link Binary with Libraries** 菜单，点击 **+** 添加如下库。在添加 `AgoraRtcEngineKit.framework` 文件时，还需在点击 **+** 后点击 **Add Other…**，找到本地文件并打开。
 
  - Accelerate.framework
  - CoreWLAN.framework
