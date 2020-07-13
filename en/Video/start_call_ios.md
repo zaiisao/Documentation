@@ -77,11 +77,11 @@ end
 3. Open **Xcode** (take the Xcode 11.0 as an example), go to the **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content** menu, click **Add Other...** after clicking **+** to add `AgoraRtcKit.framework`. Once added, the project automatically links to other system libraries. To ensure that the signature of the dynamic library is the same as the signature of the app, you need to set the **Embed** attribute of the dynamic library to **Embed & Sign**.
 
 <details>
-	<summary><font color="#3ab7f8">To integrate the SDK earlier than 3.0.0, click here to see the integration steps.</font></summary>
+	<summary><font color="#3ab7f8">To integrate the SDK earlier than v3.0.0, click here to see the integration steps.</font></summary>
 	
 1. Unzip the downloaded SDK package.
 2. Copy `AgoraRtcEngineKit.framework` to the project folder.
-3. Open **Xcode** (take the Xcode 11.0 as an example), go to the **TARGETS > Project Name > Build Phases > Link Binary with Libraries** menu, click **+** and then click **Add Other...** to add `AgoraRtcKit.framework`.
+3. Open **Xcode** (take the Xcode 11.0 as an example), go to the **TARGETS > Project Name > Build Phases > Link Binary with Libraries** menu, click **+** and then click **Add Other...** to add `AgoraRtcEngineKit.framework`.
 
  - AgoraRtcEngineKit.framework
  - Accelerate.framework
