@@ -3,7 +3,7 @@
 title: Push Streams to CDN
 description: 
 platform: Unity
-updatedAt: Mon Jul 06 2020 10:42:08 GMT+0800 (CST)
+updatedAt: Fri Jul 10 2020 10:25:04 GMT+0800 (CST)
 ---
 # Push Streams to CDN
 ## Introduction
@@ -30,9 +30,9 @@ Ensure that you enable the RTMP Converter service before using this function.
 Now, you can use the function and see the usage statistics.
 
 
-## Implementation 
+## Implementation
 
-Before proceeding, ensure that you implement a basic live broadcast in your project. See [Start Live Interactive Streaming](../../en/Interactive%20Broadcast/start_live_unity.md) for details.
+Before proceeding, ensure that you implement basic live interactive streaming in your project. See [Start Live Interactive Streaming](../../en/Interactive%20Broadcast/start_live_unity.md) for details.
 
 Refer to the following steps to push streams to the CDN:
 
@@ -41,11 +41,11 @@ Refer to the following steps to push streams to the CDN:
 
    <div class="alert note">The <tt>OnTranscodingUpdatedHandler</tt> callback occurs when the <tt>LiveTranscoding</tt> class updates, and reports update information to the local host.</div>
 
-2. The host in a channel calls the `AddPublishStreamUrl` method to add a media stream to the CDN. 
+2. The host in a channel calls the `AddPublishStreamUrl` method to add a media stream to the CDN.
 
    <div class="alert note">Use <tt>transcodingEnabled</tt> to set whether transcoding is enabled or not.</div>
 
-3. The host in a channel cans the `RemovePublishStreamUrl` method to remove a media stream from the CDN live broadcast.
+3. The host in a channel cans the `RemovePublishStreamUrl` method to remove a media stream from the CDN live streaming.
 
 When the state of media streams pushed to the CDN changes, the SDK triggers the `OnRtmpStreamingStateChangedHandler` callback to report current state of pushing streams to the local host. The local host can troubleshoot with the error code when exceptions occur.
 

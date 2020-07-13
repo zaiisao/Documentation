@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Linux
-updatedAt: Fri Nov 02 2018 04:05:41 GMT+0800 (CST)
+updatedAt: Mon Jul 13 2020 09:36:03 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Full SDK for Linux.
@@ -12,14 +12,14 @@ This page provides the release notes for the Agora Full SDK for Linux.
 
 The Full SDK supports the following scenarios:
 
--   Voice/Video Communication
--   Live Voice/Video Broadcast
+-   Voice and Video Call
+-   Live Interactive Audio and Video Streaming
 
 
-## v2.2.0 Beta 
+## v2.2.0 Beta
 
-The version 2.2.0 was released on March 21, 2018. 
- 
+The version 2.2.0 was released on March 21, 2018.
+
 With the first version of the Linux Client SDK, you can:
 
 -   Enable the audio and video call.
@@ -31,11 +31,3 @@ With the first version of the Linux Client SDK, you can:
 
 -   The x86 architecture
 -   Centos/Ubuntu 64 operating system
-
-
-
-
-
-
-
-

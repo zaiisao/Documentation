@@ -3,7 +3,7 @@
 title: Inject Online Media Stream
 description: 
 platform: Unity
-updatedAt: Mon Jul 06 2020 10:45:09 GMT+0800 (CST)
+updatedAt: Fri Jul 10 2020 10:24:42 GMT+0800 (CST)
 ---
 # Inject Online Media Stream
 ## Introduction
@@ -33,7 +33,7 @@ The host in a live interactive streaming channel pulls an online media stream an
 
 ## Implementation
 
-Before proceeding, ensure that you implement a basic live broadcast in your project. See [Start Live Interactive Streaming](../../en/Audio%20Broadcast/start_live_unity.md) for details.
+Before proceeding, ensure that you implement basic live interactive streaming in your project. See [Start Live Interactive Streaming](../../en/Audio%20Broadcast/start_live_unity.md) for details.
 
 <div class="alert note">Ensure that you enable the RTMP Converter service before using this function. See <a href="../../en/Audio%20Broadcast/cdn_streaming_unity.md">Prerequisites</a >.</div>
 

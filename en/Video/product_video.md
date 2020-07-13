@@ -3,15 +3,15 @@
 title: Agora Video Call Overview
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 06 2020 09:00:18 GMT+0800 (CST)
+updatedAt: Mon Jul 13 2020 09:40:25 GMT+0800 (CST)
 ---
 # Agora Video Call Overview
 Agora Video Call enables easy and convenient one-to-one or one-to-many calls and supports voice-only and video modes with the Agora RTC SDK.
 
-The difference between Agora Video Call and [Agora Live Interactive Video Streaming](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms) is: 
+The difference between Agora Video Call and [Agora Live Interactive Video Streaming](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms) is:
 
-* Agora Video Call prioritizes smoothness and low latency. All users are the same role and can talk to each other freely. A typical scenario of an Agora Video Call is a video conference call for many persons. 
-* Agora Live Interactive Video Streaming prioritizes high video quality. Users can be the host or audience, where only the host can talk. A user who wants to talk must change the role to a host. A typical scenario of an Agora Video Interactive Broadcast is an interactive online class.
+* Agora Video Call prioritizes smoothness and low latency. All users are the same role and can talk to each other freely. A typical scenario of an Agora Video Call is a video conference call for many persons.
+* Agora Live Interactive Video Streaming prioritizes high video quality. Users can be the host or audience, where only the host can talk. A user who wants to talk must change the role to a host. A typical scenario of the live interactive video streaming is an interactive online class.
 
 ## Functions and scenarios
 
@@ -51,7 +51,7 @@ Agora Video Call is supported on platforms such as iOS, Android, Windows, macOS,
 | Web                  | <li>Chrome 58+<li>Chrome 49 on Windows XP<li>Firefox 56+<li>Safari 11+<li>Opera 45+<li>QQ 10+<li>360 Security Browser 9.1+ |
 
 <div class="alert note">The browser support on the Web platform varies with the device and system. See <a href="https://docs.agora.io/cn/faq/browser_support">Which browsers does the Agora Web SDK support?</a></div>
-	
+
 
 ## Reference
 

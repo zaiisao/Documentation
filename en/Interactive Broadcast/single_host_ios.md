@@ -3,10 +3,10 @@
 title: Build a Client
 description: 
 platform: iOS
-updatedAt: Thu Jul 09 2020 09:49:27 GMT+0800 (CST)
+updatedAt: Mon Jul 13 2020 09:19:03 GMT+0800 (CST)
 ---
 # Build a Client
-This article describes how to implement the basic features of PK Host.
+This article describes how to implement the basic features of Single Host.
 
 ## Flowchart
 
@@ -15,10 +15,6 @@ Refer to the flowcharts for the following functions:
 - Joins and leaves the room.
 
 ![](https://web-cdn.agora.io/docs-files/1594377181071)
-
-- Co-host across channels.
-
-![](https://web-cdn.agora.io/docs-files/1592898366538)
 
 ## Integrate the SDK
 
@@ -34,17 +30,13 @@ Refer to the following table to integrate the SDKs into your project:
 
 ## Core API call sequence
 
-The following diagrams show the core APIs that the Agora Live Demo app uses to implement a PK Host scenario. Refer to them to implement the various functions in your project.
+The following diagrams show the core APIs that the Agora Live Demo app uses to implement a Single Host scenario. Refer to them to implement the various functions in your project.
 
 <div class="alert note">The Cloud Service in the demo app is implemented by Agora, and you need to deploy your own cloud service for the same purposes.</div>
 
-- The host joins the room and sends a PK host invitation.
+- The host joins the room and starts the interactive streaming.
 
-![](https://web-cdn.agora.io/docs-files/1592900574565)
-
-- The audience chat through text messages and switch channels.
-
-![](https://web-cdn.agora.io/docs-files/1592900593914)
+   ![](https://web-cdn.agora.io/docs-files/1594366226263)
 
 ## Core API reference
 
@@ -57,7 +49,6 @@ The following diagrams show the core APIs that the Agora Live Demo app uses to i
 | [createChannelWithId](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/createChannelWithId:delegate:) | Creates an Agora RTM channel. |
 | [joinWithCompletion](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmChannel.html#//api/name/joinWithCompletion:) | Joins the RTM channel.|
 | [sendMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmChannel.html#//api/name/sendMessage:completion:) | Sends a channel message, which can be received by all users in the channel. |
-| [sendMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/sendMessage:toPeer:sendMessageOptions:completion:) | Sends a peer message. Use this method to send a PK host invitation message to another host. |
 | [leaveWithCompletion](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmChannel.html#//api/name/leaveWithCompletion:) | Leaves the RTM channel. |
 | [logoutWithCompletion](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/logoutWithCompletion:) | Logs out of the Agora RTM system. |
 
@@ -66,14 +57,11 @@ The following diagrams show the core APIs that the Agora Live Demo app uses to i
 | API | Function |
 | ---------------- | ---------------- |
 | [sharedEngineWithAppId](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/sharedEngineWithAppId:delegate:)      | Creates an RtcEngine object. |
-| [setChannelProfile](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setChannelProfile:) | Sets the channel profile. In a PK host, we set the channel profile as live broadcast.|
-| [setClientRole](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setClientRole:) | Sets the user role in a live broadcast. In a PK host, we set the role of the host as broadcaster, and other users as audience. |
+| [setChannelProfile](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setChannelProfile:) | Sets the channel profile. In a Single Host scenario, the channel profile is set as `Broadcasting`.|
+| [setClientRole](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setClientRole:) | Sets the user role in interactive streaming.|
 | [enableVideo](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableVideo) | Enables video.|
 | [setupLocalVideo](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setupLocalVideo:) | Sets the local video view. Call this method on the host's client to configure the view of the host on the local device. |
 | [joinChannelByToken](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByToken:channelId:info:uid:joinSuccess:) | Joins the RTC channel. |
-| [startChannelMediaRelay](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startChannelMediaRelay:) | Starts relaying media streams across channels. This is the core API for the PK host scenario.|
-| [setupRemoteVideo](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setupRemoteVideo:) | Sets the remote video view. Once the host of the destination channel accepts the PK host invitation, call this method on the original host's client to configure the view of the co-hosting host. |
-| [stopChannelMediaRelay](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopChannelMediaRelay) | Stops relaying media streams across channels. |
 | [leaveChannel](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/leaveChannel:) | Leaves the channel. Use this method to quick switch to another live-broadcast channel. |
 
 ## Additional functions
@@ -100,4 +88,4 @@ After joining the channel, call `startAudioMixing` on the host's client to play 
 
 ## Open-source sample project
 
-Agora provides an open-source sample project for [PK Host](https://github.com/AgoraIO-Usecase/AgoraLive) on GitHub for you to download as a source code reference.
+Agora provides an open-source sample project for [Single Host](https://github.com/AgoraIO-Usecase/AgoraLive) on GitHub for you to download as a source code reference.

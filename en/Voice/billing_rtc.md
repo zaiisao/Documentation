@@ -3,7 +3,7 @@
 title: Billing for Real-time Communication
 description: 
 platform: All Platforms
-updatedAt: Tue Jul 07 2020 06:45:25 GMT+0800 (CST)
+updatedAt: Mon Jul 13 2020 09:33:12 GMT+0800 (CST)
 ---
 # Billing for Real-time Communication
 This article introduces the billing policy for the real-time communication (RTC) service provided by Agora.
@@ -14,7 +14,7 @@ This article introduces the billing policy for the real-time communication (RTC)
 
 Agora calculates the billing of all projects under your Agora account monthly.
 
-Billing for RTC begins once you implement an RTC function, such as audio call, group video call, or video broadcast, using the Agora RTC SDK. On the first day of each month, Agora sends you the bill via email, and five days later deducts the payment from your account. For details, see [Billing, fee deduction, and account suspension](https://docs.agora.io/en/faq/billing_account).
+Billing for RTC begins once you implement an RTC function, such as audio call, group video call, or live interactive video streaming, using the Agora RTC SDK. On the first day of each month, Agora sends you the bill via email, and five days later deducts the payment from your account. For details, see [Billing, fee deduction, and account suspension](https://docs.agora.io/en/faq/billing_account).
 
 <div class="alert note">
 	<ul>
@@ -121,13 +121,13 @@ Depending on the subscribing behavior of the user, service minutes comprises the
 
 **Scenario**: Users A and B join the channel at the same time and have a video call for 20 minutes.
 
-In this session, both A and B use the video service. Service minutes = 20 minutes of video service × 2 = 40 minutes of video service. 
+In this session, both A and B use the video service. Service minutes = 20 minutes of video service × 2 = 40 minutes of video service.
 
 ### Voice call with three users
 
 **Scenario**: Users A, B, and C join the channel at the same time and have a voice call for 20 minutes.
 
-In this session, A, B, and C use the audio service for 30 seconds respectively. Service minutes = 30 minutes of audio service × 3 = 90 minutes of audio service. 
+In this session, A, B, and C use the audio service for 30 seconds respectively. Service minutes = 30 minutes of audio service × 3 = 90 minutes of audio service.
 
 ### Video call with four users
 
@@ -144,14 +144,14 @@ In this session, A, B, C, and D use either the audio or video service.
 
 ### Single-hosted video streaming
 
-**Scenario**: User A joins a video broadcast channel and hosts for 20 minutes. Six people watch the live streaming, three subscribing to audio, and three subscribing to video.
+**Scenario**: User A joins a live interactive video streaming channel and hosts for 20 minutes. Six people watch the live streaming, three subscribing to audio, and three subscribing to video.
 
 Since user A does not subscribe to any stream in the channel, A is charged for the audio service only. For the audience, three people are charged for the video service, and three for the audio service.
 - A: 20 minutes of audio service.
 - The three audience members subscribing to the video: 20 minutes of video service × 3.
 - The three audience members subscribing to the audio: 20 minutes of audio service × 3.
 
-Service minutes = 20 minutes of audio service + 20 minutes of video service × 3 + 20 minutes of audio service × 3 = 80 minutes of audio service + 20 minutes of video service. 
+Service minutes = 20 minutes of audio service + 20 minutes of video service × 3 + 20 minutes of audio service × 3 = 80 minutes of audio service + 20 minutes of video service.
 
 ### Co-hosted video streaming
 
@@ -165,13 +165,13 @@ Service minutes = 20 minutes of audio service + 20 minutes of video service × 3
   - The initial 10 minutes: 10 minutes of video service × 5, for subscribing to the video of A.
   - The initial 10 minutes: 10 minutes of video service × 5, for subscribing to the video of both A and B.
 
-Service minutes = (10 minutes of audio service + 10 minutes of video service) + 20 minutes of video service + (50 minutes of video service + 50 minutes of video service) = 10 minutes of audio service + 130 minutes of video service. 
+Service minutes = (10 minutes of audio service + 10 minutes of video service) + 20 minutes of video service + (50 minutes of video service + 50 minutes of video service) = 10 minutes of audio service + 130 minutes of video service.
 
 ## Considerations
 
 ### Accuracy of service minutes
 
-At the end of each month, Agora adds up the usage duration (in seconds) of audio, HD video, and HD+ video, and divides them by 60 to get the respective service minutes (rounded up to the next integer). For example, if the duration of audio service of the month is 59 seconds, then the audio service minutes is calculated as 1 minute; if the duration of video service is 61 seconds, then the video service minutes is calculated as 2 minutes. The error of service minutes for each month is within 1 minute. 
+At the end of each month, Agora adds up the usage duration (in seconds) of audio, HD video, and HD+ video, and divides them by 60 to get the respective service minutes (rounded up to the next integer). For example, if the duration of audio service of the month is 59 seconds, then the audio service minutes is calculated as 1 minute; if the duration of video service is 61 seconds, then the video service minutes is calculated as 2 minutes. The error of service minutes for each month is within 1 minute.
 
 ### Video resolution in the dual-stream scenario
 

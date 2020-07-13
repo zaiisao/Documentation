@@ -1,16 +1,15 @@
 
 ---
-title: PK Host
+title: Single Host
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 13 2020 09:40:09 GMT+0800 (CST)
+updatedAt: Mon Jul 13 2020 09:31:32 GMT+0800 (CST)
 ---
-# PK Host
+# Single Host
 ## Introduction
 
-To attract an audience quickly, the host of a live broadcast often invites the host of another channel for co-hosting. Both hosts then engage in online contests, and audiences of both channels watch the hosts, send gifts, or cast votes for whichever host they like. This scenario, known as PK Host, is widely applied in entertainment apps.
-
-This article describes how to use the Agora SDKs to implement a PK Host scenario.
+The Single Host scenario is an interactive streaming scenario which has only one host in the channel. In the scenario, all other users join the channel as audience and can watch the host, send text messages, and send gifts to the host.
+This article describes how to use the Agora SDKs to implement a Single Host scenario.
 
 ## Feature list
 
@@ -19,41 +18,39 @@ You can use the Agora SDKs to implement the following features in your project:
 | Feature | Description |
 | ---------------- | ---------------- |
 | Real-time communication	      | With ultra low latency, the audience see and hear the host in real time. |
-| Co-host across channels	| Hosts from two channels engage in online contests, and audiences from both channels watch the hosts, send gifts, or cast votes.|
-| Real-time messaging	| Both the host and the audience can chat with each other through text messages.|
-| Switching channels	| Audiences can switch between channels to send gifts or cast votes to whichever host they like.  |
+| Real-time messaging	| Both the host and the audience can chat with each other through text messages. The audience can also send gifts to the host through real-time messaging.|
+| Room management              | The host and the audience can get the following information of the current room:<li>Room type.<li>Number of users in the room.<li>User list.<li>User role and status.<li>Whether the user can send audio and video. |
 | User status	| Both the host and the audience are notified when a user joins or leaves the channel. |
-| Real-time quality statistics	| Before joining a channel or during the live broadcast, all users can check the network quality in real time. |
+| Real-time quality statistics	| Before joining a channel or during interactive streaming, all users can check the network quality in real time. |
 | Background music |  For better interaction effects, the host can play background music when talking or singing. |
 | Image enhancement	 | Basic image enhancement effects, including skin smoothening and cheek blushing, help the host look better. |
 
 ## Try the demo app
 
-Agora provides the PK Host demo apps on the following platforms:
+Agora provides the Single Host demo apps on the following platforms:
 
 | Android | iOS | 
 | ---------------- | ---------------- |
 | ![](https://web-cdn.agora.io/docs-files/1594287476322)      | ![](https://web-cdn.agora.io/docs-files/1594287505817)      | 
 
-Since a PK Host scenario has two hosts across two channels, Agora recommends downloading and installing the demo app on **two** mobile devices. After installation, follow these steps to test the demo app:
+Since a Single Host scenario has a host and audience members, Agora recommends downloading and installing the demo app on **two** mobile devices. After installation, follow these steps to test the demo app:
 
-1. Click **Agora Live** and choose **PK Host**.
-2. Click the **Camera** icon on the lower right, and enter a room name to create a channel. Repeat this step on the other device to create a second channel. Ensure that you use different names for the channels.
-3. On one device, join a channel and click the **PK** icon on the lower right. From the room listing, choose the name of the other channel, and click **Invite**.
-4. On the other device, join the corresponding channel and click **Accept**. When the co-hosting begins, you should be able to see the video of both channels on both devices.
+1. Click **Agora Live** and choose **Single Host**.
+2. On one device, click the **Camera** icon on the lower right and enter a room name to create a channel. Join the channel as the host.
+3. On the other device, join the created channel as an audience member.
 
 <div class="alert note">During the test, the demo app prompts to request authorization for the camera and audio recording. Grant permissions accordingly.</div>
 
 ## Technical solutions
 
-Agora recommends using the following SDKs or services to implement a PK Host scenario:
+Agora recommends using the following SDKs or services to implement a Single Host scenario:
 
-![](https://web-cdn.agora.io/docs-files/1592897748158)
+![](https://web-cdn.agora.io/docs-files/1594631714982)
 
 | Product | Function |
 | ---------------- | ---------------- |
 | Agora RTC SDK      | Joins an RTC channel for real-time audio and video communication.      |
-| Agora RTM SDK | Logs into the RTM system and joins an RTM channel for sending and receiving text messages. |
+| Agora RTM SDK | Logs into the RTM system and joins an RTM channel for sending and receiving text messages and gifts. |
 | Third-party Image Enhancement SDK | Sets basic image enhancement effects, including skin smoothening and cheek blushing. |
 
 

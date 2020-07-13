@@ -3,7 +3,7 @@
 title: Error Codes and Warning Codes
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 09 2020 05:32:31 GMT+0800 (CST)
+updatedAt: Mon Jul 13 2020 10:10:30 GMT+0800 (CST)
 ---
 # Error Codes and Warning Codes
 The Agora Native SDK will return error or warning codes when calling APIs or during runtime:
@@ -349,7 +349,7 @@ The Agora Native SDK will return error or warning codes when calling APIs or dur
 </tr>
 <tr><td>WARN_SET_CLIENT_ROLE_TIMEOUT</td>
 <td>118</td>
-<td>A timeout when setting the client role in the live broadcast profile.</td>
+<td>A timeout when setting the client role in the <code>LIVE_BROADCASTING</code> profile.</td>
 </tr>
 <tr><td>WARN_SET_CLIENT_ROLE_NOT_AUTHORIZED</td>
 <td>119</td>

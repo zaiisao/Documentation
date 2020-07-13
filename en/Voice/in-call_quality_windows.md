@@ -3,7 +3,7 @@
 title: Report In-call Statistics
 description: Call quality for Windows
 platform: Windows
-updatedAt: Mon Jul 06 2020 04:00:11 GMT+0800 (CST)
+updatedAt: Mon Jul 13 2020 10:13:33 GMT+0800 (CST)
 ---
 # Report In-call Statistics
 ## Introduction
@@ -21,7 +21,7 @@ The `onNetworkQuality` callback reports the uplink and downlink last mile networ
 **Note**:
 
 - In the communication profile, you receive network quality reports of all the users (including yours) in the channel once every two seconds.
-- In the live broadcast profile, if you are the host, you receive network quality reports of all hosts (including yours) in the channel once every two seconds; if you are the audience, you receive the report of all hosts and yourself once every two seconds.
+- In the <code>LIVE_BROADCASTING</code> profile, if you are the host, you receive network quality reports of all hosts (including yours) in the channel once every two seconds; if you are the audience, you receive the report of all hosts and yourself once every two seconds.
 - The higher the ratio of the actual transmission bitrate to the target transmission bitrate, the better the call quality and the higher the network quality.
 - <a name="RTT"></a>**The average round-trip delay** refers to the average value of multiple round-trip delays in the reported interval.
 
@@ -76,7 +76,7 @@ The `onRemoteAudioStats` callback reports statistics more closely linked to the 
 **Note**:
 
 - In the communication profile, you receive the audio stream statistics of all the remote users (excluding yours) in the channel once every two seconds.
-- In the live broadcast profile, if you are the host, you receive the audio stream statistics of all remote hosts (excluding yours) in the channel once every two seconds; if you are the audience, you receive the statistics of all hosts in the channel once every two seconds.
+- In the <code>LIVE_BROADCASTING</code> profile, if you are the host, you receive the audio stream statistics of all remote hosts (excluding yours) in the channel once every two seconds; if you are the audience, you receive the statistics of all hosts in the channel once every two seconds.
 - Agora's **audio module** refers to the audio processing process, and not the actual module in the SDK. When sending audio streams, the audio module refers to the processes of audio sampling, pre-processing, and encoding; when receiving audio streams, the audio module refers to the processes of audio decoding, post-processing, and playback.
 - Users can only turn on/off their own audio modules.
 - By default, the audio freezes at most once in each reported interval.
@@ -87,7 +87,7 @@ When the state of **remote** audio stream changes, the SDK triggers the `onRemot
 **Note**:
 
 - In the communication profile, this callback reports to you the audio stream state information of all the remote users (excluding yours) in the channel once every two seconds.
-- In the live broadcast profile, if you are the host, this callback reports to you the audio stream state information of all the remote hosts(excluding yours) in the channel once every two seconds; if you are the audience, this callback reports to you the audio stream state information of all the remote hosts in the channel once every two seconds.
+- In the <code>LIVE_BROADCASTING</code> profile, if you are the host, this callback reports to you the audio stream state information of all the remote hosts(excluding yours) in the channel once every two seconds; if you are the audience, this callback reports to you the audio stream state information of all the remote hosts in the channel once every two seconds.
 
 ## Video Quality Report
 
@@ -135,7 +135,7 @@ The `onRemoteVideoStats` callback reports the video statistics of each remote us
 **Note**:
 
 - In the communication profile, you receive video stream statistics of all the remote users (excluding yours) in the channel once every two seconds.
-- In the live broadcast profile, if you are the host, you receive video stream statistics of all the remote hosts (excluding yours) in the channel once every two seconds; if you are the audience, you receive the statistics for all the hosts in the channel once every two seconds.
+- In the <code>LIVE_BROADCASTING</code> profile, if you are the host, you receive video stream statistics of all the remote hosts (excluding yours) in the channel once every two seconds; if you are the audience, you receive the statistics for all the hosts in the channel once every two seconds.
 - Agora’s **video module** refers to the video processing process, and not the actual module in the SDK. When sending video streams, the video module refers to the processes of video capturing, pre-processing, and encoding; when receiving video streams, the video module refers to the processes of video decoding, post-processing, and rendering/playing.
 - Users can only turn on/off their own video modules.
 
@@ -147,7 +147,7 @@ When the state of remote video streams changes, the SDK triggers the `onRemoteVi
 **Note**:
 
 - In the communication profile, this callback reports to you the video stream state information of all the remote users (excluding yours) in the channel once every two seconds.
-- In the live broadcast profile, if you are the host, this callback reports to you the video stream state information of all the remote hosts (excluding yours) in the channel once every two seconds; if you are the audience, this callback reports to you the video stream state information of all the remote hosts in the channel once every two seconds.
+- In the <code>LIVE_BROADCASTING</code> profile, if you are the host, this callback reports to you the video stream state information of all the remote hosts (excluding yours) in the channel once every two seconds; if you are the audience, this callback reports to you the video stream state information of all the remote hosts in the channel once every two seconds.
 
 ## API reference
 

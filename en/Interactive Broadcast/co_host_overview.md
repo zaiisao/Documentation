@@ -1,16 +1,16 @@
 
 ---
-title: PK Host
-description: 
+title: Multi-hosts
+description: Use case of co-hosted interactive streaming
 platform: All Platforms
-updatedAt: Mon Jul 13 2020 09:40:09 GMT+0800 (CST)
+updatedAt: Mon Jul 13 2020 09:26:43 GMT+0800 (CST)
 ---
-# PK Host
+# Multi-hosts
 ## Introduction
 
-To attract an audience quickly, the host of a live broadcast often invites the host of another channel for co-hosting. Both hosts then engage in online contests, and audiences of both channels watch the hosts, send gifts, or cast votes for whichever host they like. This scenario, known as PK Host, is widely applied in entertainment apps.
+Multi-hosted interactive streaming is a scenario where multiple hosts interact with each other in a live interactive streaming channel. During interactive streaming, the host can manage the host seats and invite the audience members to become a co-host. Additionally, the audience members can apply to become a co-host.
 
-This article describes how to use the Agora SDKs to implement a PK Host scenario.
+This article describes how to use the Agora SDKs to implement a multi-hosted interactive streaming scenario.
 
 ## Feature list
 
@@ -19,43 +19,46 @@ You can use the Agora SDKs to implement the following features in your project:
 | Feature | Description |
 | ---------------- | ---------------- |
 | Real-time communication	      | With ultra low latency, the audience see and hear the host in real time. |
-| Co-host across channels	| Hosts from two channels engage in online contests, and audiences from both channels watch the hosts, send gifts, or cast votes.|
-| Real-time messaging	| Both the host and the audience can chat with each other through text messages.|
-| Switching channels	| Audiences can switch between channels to send gifts or cast votes to whichever host they like.  |
-| User status	| Both the host and the audience are notified when a user joins or leaves the channel. |
-| Real-time quality statistics	| Before joining a channel or during the live broadcast, all users can check the network quality in real time. |
-| Background music |  For better interaction effects, the host can play background music when talking or singing. |
-| Image enhancement	 | Basic image enhancement effects, including skin smoothening and cheek blushing, help the host look better. |
+| Interactive <br>co-hosting       | The host invites the audience members or the audience members apply to become a co-host. All audience members in the channel can see and hear the host and co-hosts interacting with each other in real time. |
+| Host seat management         | A host seat is a seat in the interactive streaming room. An audience member who takes up a host seat can interact with the host. The host has the following control privileges over the co-hosts and host seats:<ul><li>Invite a co-host: The host invites an audience member to become a co-host, who then can interact with the host.</li><li>Stop co-hosting: The host switches a co-host back to an audience member.</li><li>Mute a co-host: The host revokes a co-host's privilege of sending audio and video streams.</li><li>Unmute a co-host: The host restores a co-host's privilege of sending audio and video streams.</li><li>Close a host seat: The host closes a host seat, thus banning an audience member from applying for the seat.</li><li>Reopen a host seat: The host reopens a host seat, thus allowing an audience member to apply for the seat.</li></ul>All users in the channel can see the state changes of each host seat in real time. |
+| Real-time messaging	| The host, co-hosts, and the audience can chat with each other through text messages.|
+| User status	| The host, co-hosts, and the audience are notified when a user joins or leaves the channel. |
+| Real-time quality statistics	| Before joining a channel or during interactive streaming, all users can check the network quality in real time. |
+| Background music |  For better interaction effects, the host and co-hosts can play background music when talking or singing. |
+| Image enhancement	 | Basic image enhancement effects, including skin smoothening and cheek blushing, help the host and co-hosts look better. |
 
 ## Try the demo app
 
-Agora provides the PK Host demo apps on the following platforms:
+Agora provides the Multi-hosted Interactive Streaming demo apps on the following platforms:
 
 | Android | iOS | 
 | ---------------- | ---------------- |
 | ![](https://web-cdn.agora.io/docs-files/1594287476322)      | ![](https://web-cdn.agora.io/docs-files/1594287505817)      | 
 
-Since a PK Host scenario has two hosts across two channels, Agora recommends downloading and installing the demo app on **two** mobile devices. After installation, follow these steps to test the demo app:
+Since a multi-hosted interactive streaming scenario has multiple users, Agora recommends downloading and installing the demo app on **two** mobile devices. After installation, follow these steps to test the demo app:
 
-1. Click **Agora Live** and choose **PK Host**.
-2. Click the **Camera** icon on the lower right, and enter a room name to create a channel. Repeat this step on the other device to create a second channel. Ensure that you use different names for the channels.
-3. On one device, join a channel and click the **PK** icon on the lower right. From the room listing, choose the name of the other channel, and click **Invite**.
-4. On the other device, join the corresponding channel and click **Accept**. When the co-hosting begins, you should be able to see the video of both channels on both devices.
+1. On one device, click **Agora Live** and choose **Multi Hosts**.
+2. Click the **Camera** icon on the lower right and enter a room name to create a channel. The user who first joins the channel becomes the host.
+3. On the other device, click **Agora Live**, choose **Multi Hosts**, and join the created channel as an audience member.
+4. On the host side, tap the user profile to invite an audience member for co-hosting; on the audience side, tap a vacant host seat to apply for co-hosting.
+5. During co-hosting, the host can tap a host seat to stop co-hosting, mute and unmute a co-host, and close a host seat.
 
 <div class="alert note">During the test, the demo app prompts to request authorization for the camera and audio recording. Grant permissions accordingly.</div>
 
 ## Technical solutions
 
-Agora recommends using the following SDKs or services to implement a PK Host scenario:
+Agora recommends using the following SDKs or services to implement a multi-hosted interactive streaming scenario:
 
-![](https://web-cdn.agora.io/docs-files/1592897748158)
+![](https://web-cdn.agora.io/docs-files/1594632165285)
 
 | Product | Function |
 | ---------------- | ---------------- |
 | Agora RTC SDK      | Joins an RTC channel for real-time audio and video communication.      |
 | Agora RTM SDK | Logs into the RTM system and joins an RTM channel for sending and receiving text messages. |
 | Third-party Image Enhancement SDK | Sets basic image enhancement effects, including skin smoothening and cheek blushing. |
+| Cloud Service | Manages host seats, room information, and user information.|
 
+<div class="alert note">The Cloud Service in the demo app is implemented by Agora, and you need to deploy your own cloud service for the same purposes.</div>
 
 ## Advantages
 

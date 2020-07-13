@@ -53,7 +53,7 @@ The following parameters are not mandatory, but they depend on the settings of t
 - `channelKey`: The [dynamic key](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-namekeyadynamic-key) used in the channel to be recorded. Ensure that you set this parameter if the recording channel uses a token.
 - `channelProfile`: Sets the channel profile. **The On-premise Recording SDK must use the same channel profile as the Agora RTC SDK. Otherwise, issues may occur.**
   - `0`: (Default) The communication profile.
-  - `1`: The live broadcast profile. 
+  - `1`: The `LiveBroadcasting` profile. 
 - `decryptionMode`: When the whole channel is encrypted, the On-premise Recording SDK uses `decryptionMode` to enable the built-in decryption function. The decryption mode must be the same as the encryption mode set by the Native/Web SDK. The following decryption methods are supported:
   - `aes-128-xts`: AES-128, XTS mode
   - `aes-128-ecb`: AES-128, ECB mode

@@ -3,10 +3,10 @@
 title: Set the Audio Profile
 description: How to set high-quality audio on Windows
 platform: Windows
-updatedAt: Mon Jul 06 2020 10:21:50 GMT+0800 (CST)
+updatedAt: Mon Jul 13 2020 09:49:15 GMT+0800 (CST)
 ---
 # Set the Audio Profile
-## Introduction 
+## Introduction
 
 High-fidelity audio is essential for professional audio scenarios, such as for podcasts and singing competitions. For example, podcasts require stereo and high-fidelity audio. High-fidelity audio refers to an audio profile with a sample rate of 48 kHz and a bitrate of 192 Kbps.
 
@@ -25,7 +25,7 @@ The Agora SDK provides the `setAudioProfile` method to set the appropriate audio
 <tr>
 <td>profile</td>
 <td>Sets the sample rate, bitrate, encoding mode, and the number of channels.
-	<li>AUDIO_PROFILE_DEFAULT(0): The default audio profile. In the Communication profile, the default value is AUDIO_PROFILE_SPEECH_STANDARD(1). In the Live-broadcast profile, the default value is AUDIO_PROFILE_MUSIC_STANDARD(2).</li>
+	<li>AUDIO_PROFILE_DEFAULT(0): The default audio profile. In the <code>COMMUNICATION</code> profile, the default value is AUDIO_PROFILE_SPEECH_STANDARD(1). In the <code>LIVE_BROADCASTING</code> profile, the default value is AUDIO_PROFILE_MUSIC_STANDARD(2).</li>
 	<li>AUDIO_PROFILE_SPEECH_STANDARD(1): A sample rate of 32 kHz, audio encoding, mono, and a bitrate of up to 18 Kbps.</li>
 	<li>AUDIO_PROFILE_MUSIC_STANDARD(2): A sample rate of 48 kHz, music encoding, mono, and a bitrate of up to 48 Kbps.</li>
 	<li>AUDIO_PROFILE_MUSIC_STANDARD_STEREO(3): A sample rate of 48 kHz, music encoding, stereo, and a bitrate of up to 56 Kbps.</li>
@@ -124,13 +124,13 @@ You can also set the profile and scenario parameters based on different applicat
 ```c++
 // FM high-fidelity
 rtcEngine.setAudioProfile(Constants.AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO, Constants.AUDIO_SCENARIO_SHOWROOM);
- 
+
 // Gaming
 rtcEngine.setAudioProfile(Constants.AUDIO_PROFILE_SPEECH_STANDARD, Constants.AUDIO_SCENARIO_CHATROOM_GAMING);
- 
+
 // Entertainment
 rtcEngine.setAudioProfile(Constants.AUDIO_PROFILE_MUSIC_STANDARD, Constants.AUDIO_SCENARIO_CHATROOM_ENTERTAINMENT);
- 
+
 // KTV
 rtcEngine.setAudioProfile(Constants.AUDIO_AUDIO_PROFILE_MUSIC_HIGH_QUALITY, Constants.AUDIO_SCENARIO_GAME_STREAMING);
 ```
@@ -164,8 +164,8 @@ The audio scenarios in the `setAudioProfile` method use different volume setting
 </tr>
 	<tr>
 <td>DEFAULT</td>
-<td  rowspan="3">	<li>In the Communication profile, all users use the in-call volume.</li>
-	<li>In the Live-broadcast profile, the hosts use the in-call volume, while the audience use the media volume.</li></td>
+<td  rowspan="3">	<li>In the <code>COMMUNICATION</code> profile, all users use the in-call volume.</li>
+	<li>In the <code>LIVE_BROADCASTING</code> profile, the hosts use the in-call volume, while the audience use the media volume.</li></td>
 </tr>
 		<tr>
 <td>EDUCATION</td>
