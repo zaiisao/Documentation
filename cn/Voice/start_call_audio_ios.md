@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: iOS
-updatedAt: Fri Jul 03 2020 02:11:27 GMT+0800 (CST)
+updatedAt: Tue Jul 14 2020 03:10:56 GMT+0800 (CST)
 ---
 # 实现语音通话
 本文介绍如何使用 Agora 语音通话 SDK 快速实现语音通话。
@@ -14,7 +14,7 @@ updatedAt: Fri Jul 03 2020 02:11:27 GMT+0800 (CST)
 
 <div class="alert info">点击参与<a href="https://www.wenjuan.com/s/7FbeEz6/" target="_blank">视频教程问卷调查</a>，帮助我们改进体验。</div>
 
-<video src="https://web-cdn.agora.io/docs-files/1593742244429" poster="https://web-cdn.agora.io/docs-files/1584610484891"   controls width = 100% height = auto>你的浏览器不支持 <code>video</code> 标签。</video>
+<video src="https://web-cdn.agora.io/docs-files/1593742244429" poster="https://web-cdn.agora.io/docs-files/1594697609440"   controls width = 100% height = auto>你的浏览器不支持 <code>video</code> 标签。</video>
 
 <div class="alert note">视频中展示的 UI 可能有部分调整更新，请以当前最新版为准。</div>
 
@@ -241,7 +241,7 @@ func joinChannel() {
 		
 ### 5. 离开频道
 
-根据场景需要，如结束通话、关闭 App 或 App 切换至后台时，调用 `leaveChannel` 离开当前通话频道。
+根据场景需要，如结束通话、关闭 app 或 app 切换至后台时，调用 `leaveChannel` 离开当前通话频道。
 
 ```objective-c
 // Objective-C

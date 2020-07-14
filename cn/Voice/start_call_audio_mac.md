@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: macOS
-updatedAt: Fri Jun 19 2020 14:32:49 GMT+0800 (CST)
+updatedAt: Tue Jul 14 2020 03:11:17 GMT+0800 (CST)
 ---
 # 实现语音通话
 本文介绍如何使用 Agora 语音通话 SDK 快速实现语音通话。
@@ -244,7 +244,7 @@ func joinChannel() {
 
 ### 5. 离开频道
 
-根据场景需要，如结束通话、关闭 App 或 App 切换至后台时，调用 `leaveChannel` 离开当前通话频道。
+根据场景需要，如结束通话、关闭 app 或 app 切换至后台时，调用 `leaveChannel` 离开当前通话频道。
 ```objective-c
 // Objective-C
 - (void)leaveChannel {

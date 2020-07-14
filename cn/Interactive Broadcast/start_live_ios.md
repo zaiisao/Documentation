@@ -3,7 +3,7 @@
 title: 实现视频直播
 description: 
 platform: iOS
-updatedAt: Fri Jul 03 2020 02:08:42 GMT+0800 (CST)
+updatedAt: Tue Jul 14 2020 03:12:39 GMT+0800 (CST)
 ---
 # 实现视频直播
 本文介绍如何使用 Agora SDK 快速实现互动直播。
@@ -16,7 +16,7 @@ updatedAt: Fri Jul 03 2020 02:08:42 GMT+0800 (CST)
 
 <div class="alert info">点击参与<a href="https://www.wenjuan.com/s/7FbeEz6/" target="_blank">视频教程问卷调查</a>，帮助我们改进体验。</div>
 
-<video src="https://web-cdn.agora.io/docs-files/1593741843786" poster="https://web-cdn.agora.io/docs-files/1584610484891"   controls width = 100% height = auto>你的浏览器不支持 <code>video</code> 标签。</video>
+<video src="https://web-cdn.agora.io/docs-files/1593741843786" poster="https://web-cdn.agora.io/docs-files/1594697609440"   controls width = 100% height = auto>你的浏览器不支持 <code>video</code> 标签。</video>
 
 <div class="alert note">视频中展示的 UI 可能有部分调整更新，请以当前最新版为准。</div>
 
@@ -231,7 +231,7 @@ agoraKit.setChannelProfile(.liveBroadcasting)
 
 ### 5. 设置用户角色
 
-直播频道有两种用户角色：主播和观众，其中默认的角色为观众。设置频道场景为直播后，你可以在 App 中参考如下步骤设置用户角色：
+直播频道有两种用户角色：主播和观众，其中默认的角色为观众。设置频道场景为直播后，你可以在 app 中参考如下步骤设置用户角色：
 
 1. 让用户选择自己的角色是主播还是观众
 2. 调用 `setClientRole` 方法，然后使用用户选择的角色进行传参
@@ -370,7 +370,7 @@ func rtcEngine(_ engine: AgoraRtcEngineKit, firstRemoteVideoDecodedOfUid uid: UI
 
 ### 9. 离开频道
 
-根据场景需要，如结束通话、关闭 App 或 App 切换至后台时，调用 `leaveChannel` 离开当前通话频道。
+根据场景需要，如结束通话、关闭 app 或 app 切换至后台时，调用 `leaveChannel` 离开当前通话频道。
 
 ```objective-c
 // Objective-C

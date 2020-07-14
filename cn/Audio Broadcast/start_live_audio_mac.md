@@ -3,7 +3,7 @@
 title: 实现音频直播
 description: 
 platform: macOS
-updatedAt: Fri Jun 19 2020 14:33:03 GMT+0800 (CST)
+updatedAt: Tue Jul 14 2020 03:20:04 GMT+0800 (CST)
 ---
 # 实现音频直播
 本文介绍如何使用 Agora 音频互动直播 SDK 快速实现音频互动直播。
@@ -229,7 +229,7 @@ agoraKit.setChannelProfile(.liveBroadcasting)
 
 ### 5. 设置用户角色
 
-直播频道有两种用户角色：主播和观众，其中默认的角色为观众。设置频道场景为直播后，你可以在 App 中参考如下步骤设置用户角色：
+直播频道有两种用户角色：主播和观众，其中默认的角色为观众。设置频道场景为直播后，你可以在 app 中参考如下步骤设置用户角色：
 
 1. 让用户选择自己的角色是主播还是观众
 2. 调用 `setClientRole` 方法，然后使用用户选择的角色进行传参
@@ -295,7 +295,7 @@ agoraKit.joinChannel(byToken: KeyCenter.Token, channelId: channelId, info: nil, 
 
 ### 7. 离开频道
 
-根据场景需要，如结束通话、关闭 App 或 App 切换至后台时，调用 `leaveChannel` 离开当前通话频道。
+根据场景需要，如结束通话、关闭 app 或 app 切换至后台时，调用 `leaveChannel` 离开当前通话频道。
 
 ```objective-c
 // Objective-C

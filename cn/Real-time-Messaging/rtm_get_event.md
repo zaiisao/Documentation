@@ -3,7 +3,7 @@
 title: 事件与历史消息查询 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 09 2020 11:49:32 GMT+0800 (CST)
+updatedAt: Tue Jul 14 2020 03:15:14 GMT+0800 (CST)
 ---
 # 事件与历史消息查询 RESTful API
 事件与历史消息查询 RESTful API 目前支持以下功能：
@@ -65,7 +65,7 @@ Request request = new Request.Builder()
 - 响应：响应内容的格式为 JSON
 - 基本 URL：`https://api.agora.io/dev/v2/project/<appid>`
 
-<div class="alert note"><code>&lt;appid&gt;</code> 是你的 RTM 项目使用的 <a href="https://docs.agora.io/cn/Agora20%Platform/terms?platform=All20%Platforms#appid">App ID</a>。所有的请求 URL 和请求包体内容都是区分大小写的。</div>
+<div class="alert note"><code>&lt;appid&gt;</code> 是你的 RTM 项目使用的 <a href="https://docs.agora.io/cn/Real-time-Messaging/rtm_token?platform=All%20Platforms#a-name--appida使用-app-id-鉴权">App ID</a>。所有的请求 URL 和请求包体内容都是区分大小写的。</div>
 
 ## 用户与频道事件 API
 
@@ -74,7 +74,7 @@ Request request = new Request.Builder()
 该方法从 Agora RTM 服务器指定的地址获取用户上线或下线事件。
 
 >  - 每个 App ID 每秒钟的请求数不能超过 10 次。
->  - RTM 后台最多存储 2000 条事件。
+>  - RTM 后台最多存储 2000 条事件。如果事件超过 2000 条，最老的事件会被最新的事件替换。
 >  - 单次返回最多 1000 条事件。
 >  - Agora 对事件按地理区域缓存，因此不保证来自不同地理区域的事件顺序的正确性。
 >  - Agora 只在同一地理区域内同步事件，不在地理区域间同步。所以，你从某地理区域拉取了事件后，如果你从另一个区域再次拉取可能会得到相同的事件。
@@ -123,7 +123,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/user_events
 该方法从 Agora RTM 服务器指定的地址获取用户加入或离开频道事件。
 
 >  - 每个 App ID 每秒钟的请求数不能超过 10 次。
->  - RTM 后台最多存储 2000 条事件。
+>  - RTM 后台最多存储 2000 条事件。如果事件超过 2000 条，最老的事件会被最新的事件替换。
 >  - 单次返回最多 1000 条事件。
 >  - Agora 对事件按地理区域缓存，因此不保证来自不同地理区域的事件顺序的正确性。
 >  - Agora 只在同一地理区域内同步事件，不在地理区域间同步。所以，你从某地理区域拉取了事件后，如果你从另一个区域再次拉取可能会得到相同的事件。
