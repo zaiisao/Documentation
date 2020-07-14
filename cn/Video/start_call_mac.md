@@ -71,8 +71,8 @@ Agora 在 GitHub 上提供开源的实时视频通话示例项目 [Agora-macOS-T
  end
 ```
 4. 在 **Terminal** 内运行 `pod update` 命令更新本地库版本。
-5. 运行 `pod install` 命令安装 Agora SDK。成功安装后，**Terminal** 中会显示 `Pod installation complete!`，此时项目文件夹下会生成一个 **xcworkspace** 文件。
-6. 打开新生成的 **xcworkspace** 文件。
+5. 运行 `pod install` 命令安装 Agora SDK。成功安装后，**Terminal** 中会显示 `Pod installation complete!`，此时项目文件夹下会生成一个 `xcworkspace` 文件。
+6. 打开新生成的 `xcworkspace` 文件。
 
 **方法二：手动复制 SDK 文件**
 
