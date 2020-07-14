@@ -37,7 +37,7 @@ Agora 在 GitHub 上提供开源的实时视频通话示例项目 [Agora-macOS-T
 
 ### 创建 macOS 项目
 
-参考以下步骤创建一个 macOS 项目。若已有 macOS 项目，可以直接查看[集成 SDK](#IntegrateSDK)。
+参考以下步骤创建一个 macOS 项目。如果已有 macOS 项目，可以直接查看[集成 SDK](#IntegrateSDK)。
 <details>
 	<summary><font color="#3ab7f8">创建 macOS 项目</font></summary>
 	
@@ -126,7 +126,7 @@ Agora 在 GitHub 上提供开源的实时视频通话示例项目 [Agora-macOS-T
  
  ![](https://web-cdn.agora.io/docs-files/1584604886884) 
 
-2. 若你的项目已启用 **App Sandbox** 或 **Hardened Runtime** 设置，则需勾选如下内容，获取相应的设备权限：
+2. 如果你的项目已启用 **App Sandbox** 或 **Hardened Runtime** 设置，则需勾选如下内容，获取相应的设备权限：
 
 <table>
     <tr>
