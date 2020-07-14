@@ -94,7 +94,7 @@ end
  - SystemConfiguration.framework
  - VideoToolbox.framework
 	
-<div class="alert note">If your device runs iOS 11 or earlier, set the dependency of <tt>CoreML.framework</tt> as <tt>Optional</tt> in Xcode.</div>
+<div class="alert note">If your device runs iOS 11 or earlier, set the dependency of <tt>CoreML.framework</tt> as <b>Optional</b> in Xcode.</div>
 	
 </details>
 
