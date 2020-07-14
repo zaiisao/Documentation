@@ -85,7 +85,7 @@ Agora 在 GitHub 上提供开源的实时语音通话示例项目 [Agora-macOS-T
 
 </details>
 
-  <div class="alert warning">根据 Apple 官方要求，App 的 Extension 不允许包含动态库。如果工程中的 Extension 需要集成 SDK，则集成动态库时需将文件状态改为 <b>Do Not Embed</b>。</div>
+  <div class="alert warning">根据 Apple 官方要求，app 的 Extension 不允许包含动态库。如果工程中的 Extension 需要集成 SDK，则集成动态库时需将文件状态改为 <b>Do Not Embed</b>。</div>
 
  **动态库添加前**：
  
