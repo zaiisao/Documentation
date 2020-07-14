@@ -53,7 +53,7 @@ Agora 在 GitHub 上提供开源的实时语音通话示例项目 [Agora-macOS-T
 1. 开始前确保你已安装 **Cocoapods**。参考 [Getting Started with CocoaPods](https://guides.cocoapods.org/using/getting-started.html#getting-started) 安装说明。
 2. 在 **Terminal** 里进入项目根目录，并运行 `pod init` 命令。项目文件夹下会生成一个 **Podfile** 文本文件。
 3. 打开 **Podfile** 文件，修改文件为如下内容。注意将 `Your App` 替换为你的 Target 名称，并将 `version` 替换为你需集成的 SDK 版本。
-```
+ ```
 # platform :macOS, '10.11' use_frameworks!
  target 'Your App' do
      pod 'AgoraRtcEngine_macOS', '~> version'
