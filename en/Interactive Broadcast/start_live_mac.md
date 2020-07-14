@@ -50,14 +50,15 @@ Choose either of the following methods to integrate the Agora SDK into your proj
 1. Ensure that you have installed **CocoaPods** before the following steps. See the installation guide in [Getting Started with CocoaPods](https://guides.cocoapods.org/using/getting-started.html#getting-started).
 2. In **Terminal**, go to the project path and run the `pod init` command to create a **Podfile** in the project folder.
 3. Open the **Podfile**, delete all contents and input the following contents. Remember to change `Your App` to the target name of your project, and change `version` to the version of the SDK which you want to integrate.
-```
+
+ ```
 # platform :macOS, '10.11' use_frameworks!
  target 'Your App' do
      pod 'AgoraRtcEngine_macOS', '~> version'
  end
 ```
 4. Go back to **Terminal**, and run the `pod update` command to update the local libraries.
-5. Run the `pod install` command to install the Agora SDK. Once you successfully install the SDK, it shows `Pod installation complete!` in Terminal, and you can see an **xcworkspace** file in the project folder.
+5. Run the `pod install` command to install the Agora SDK. Once you successfully install the SDK, it shows `Pod installation complete!` in Terminal, and you can see an `xcworkspace` file in the project folder.
 6. Open the generated xcworkspace file in **Xcode**.
 
 **Method 2: Manually add the SDK files**
