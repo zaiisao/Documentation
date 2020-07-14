@@ -108,13 +108,13 @@ end
  - SystemConfiguration.framework
  - VideoToolbox.framework
 	
-<div class="alert note">如需支持 iOS 11 或更低版本的设备，请在 Xcode 中将对 <tt>CoreML.framework</tt> 的依赖设为 <tt>Optional</tt>。</div>
+<div class="alert note">如需支持 iOS 11 或更低版本的设备，请在 Xcode 中将对 <tt>CoreML.framework</tt> 的依赖设为 <b>Optional</b>。</div>
 	
 
 
 </details>
 
- <div class="alert warning">根据 Apple 官方要求，App 的 Extension 不允许包含动态库。如果工程中的 Extension 需要集成 SDK，则集成动态库时需将文件状态改为 <b>Do Not Embed</b>。</div>
+ <div class="alert warning">根据 Apple 官方要求，app 的 Extension 不允许包含动态库。如果工程中的 Extension 需要集成 SDK，则集成动态库时需将文件状态改为 <b>Do Not Embed</b>。</div>
 
   <div class="alert note">若需使用媒体流加密功能，需添加 <tt>AgoraRtcCryptoLoader.framework</tt>。添加后 app 体积会增大。</div>
  
