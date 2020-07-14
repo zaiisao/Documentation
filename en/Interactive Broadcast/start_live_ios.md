@@ -53,8 +53,8 @@ Choose either of the following methods to integrate the Agora SDK into your proj
 2. In **Terminal**, go to the project path and run the `pod init` command to create a `Podfile` in the project folder.
 3. Open the `Podfile`, delete all contents and input the following contents. Remember to change `Your App` to the target name of your project, and change `version` to the version of the SDK which you want to integrate.
 
-
-```
+ 
+ ```
 # platform :ios, '9.0' use_frameworks!
 target 'Your App' do
     pod 'AgoraRtcEngine_iOS', '~> version'
@@ -81,7 +81,7 @@ end
 	
 1. Unzip the downloaded SDK package.
 2. Copy `AgoraRtcEngineKit.framework` to the project folder.
-3. Open **Xcode** (take the Xcode 11.0 as an example), go to the **TARGETS > Project Name > Build Phases > Link Binary with Libraries** menu, click **+** and then click **Add Other...** to add `AgoraRtcEngineKit.framework`.
+3. Open **Xcode** (take the Xcode 11.0 as an example), go to the **TARGETS > Project Name > Build Phases > Link Binary with Libraries** menu, and click **+** to add the following frameworks and libraries. To add the **AgoraRtcEngineKit.framework** file, remember to click **Add Other...** after clicking **+**.
 
  - AgoraRtcEngineKit.framework
  - Accelerate.framework
