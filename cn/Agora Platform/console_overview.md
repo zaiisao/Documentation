@@ -3,7 +3,7 @@
 title: 控制台概览
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 09 2020 06:37:52 GMT+0800 (CST)
+updatedAt: Fri Jul 17 2020 02:07:35 GMT+0800 (CST)
 ---
 # 控制台概览
 <div class="alert note">Dashboard 已更名为控制台。</div>
@@ -27,7 +27,7 @@ updatedAt: Thu Jul 09 2020 06:37:52 GMT+0800 (CST)
 - 快速学习如何集成 Agora SDK。
 - 试用水晶球（Agora Analytics），查看通话质量。
 
-![](https://web-cdn.agora.io/docs-files/1557741022778)
+![](https://web-cdn.agora.io/docs-files/1594951605661)
 
 ## 主要功能
 
@@ -59,4 +59,4 @@ updatedAt: Thu Jul 09 2020 06:37:52 GMT+0800 (CST)
 
 ### 使用 RESTful API
 
-获取使用 Agora RESTful API 所需的 Customer ID 和 Customer Certificate，实现从服务端踢人、用量查询、查询在线信息等功能。详见 [RESTful API 文档](../../cn/Agora%20Platform/dashboard_restful_live.md)。
+获取使用 Agora RESTful API 所需的 Customer ID 和 Customer Certificate，实现从服务端踢人、用量查询、查询在线信息等功能。详见[服务端 RESTful API](https://docs.agora.io/cn/rtc/restfulapi/)。

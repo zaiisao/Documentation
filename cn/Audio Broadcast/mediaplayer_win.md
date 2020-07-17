@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: Windows
-updatedAt: Mon May 18 2020 04:17:52 GMT+0800 (CST)
+updatedAt: Thu Jul 16 2020 04:11:11 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -12,7 +12,7 @@ updatedAt: Mon May 18 2020 04:17:52 GMT+0800 (CST)
 
 ### 使用须知
 
-- 目前支持播放的媒体格式：AVI、MP4、MP3、MKV 和 FLV 格式的本地文件，RTMP 和 RTSP 协议的在线媒体流。
+- 目前支持播放的媒体格式：AVI、MP4、MP3、MKV 和 FLV 格式的本地文件，HTTP、RTMP 和 RTSP 协议的在线媒体流。
 - 本地播放媒体资源时，只需单独使用 MediaPlayer Kit。分享媒体资源到远端时，需同时使用 MediaPlayer Kit，Agora Native SDK 和 RtcChannelPublishPlugin 三者。其中，MediaPlayer Kit 支持本地用户使用播放器功能，Native SDK 支撑本地用户和远端用户的实时音视频直播场景，RtcChannelPublishPlugin 支持将播放的媒体流发送给 Agora 频道中远端用户。
 - 分享媒体资源到远端时，播放器的画面会抢占主播摄像头采集的画面。所以，如果你希望远端用户同时看到主播和播放器的画面，则需另起一个进程来采集主播的画面。
 

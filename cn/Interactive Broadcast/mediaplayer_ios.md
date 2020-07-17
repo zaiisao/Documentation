@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: iOS
-updatedAt: Fri Jul 10 2020 02:38:03 GMT+0800 (CST)
+updatedAt: Thu Jul 16 2020 07:18:29 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -12,7 +12,7 @@ updatedAt: Fri Jul 10 2020 02:38:03 GMT+0800 (CST)
 
 ### 使用须知
 
-- 目前支持播放的媒体格式：AVI、MP4、MP3、MKV 和 FLV 格式的本地文件，RTMP 和 RTSP 协议的在线媒体流。
+- 目前支持播放的媒体格式：AVI、MP4、MP3、MKV 和 FLV 格式的本地文件，HTTP、RTMP 和 RTSP 协议的在线媒体流。
 - 本地播放媒体资源时，只需单独使用 MediaPlayer Kit。分享媒体资源到远端时，需同时使用 MediaPlayer Kit，Agora Native SDK 和 RtcChannelPublishPlugin 三者。其中，MediaPlayer Kit 支持本地用户使用播放器功能，Native SDK 支撑本地用户和远端用户的实时音视频直播场景，RtcChannelPublishPlugin 支持将播放的媒体流发送给 Agora 频道中远端用户。
 
 ## 准备开发环境
@@ -50,13 +50,21 @@ updatedAt: Fri Jul 10 2020 02:38:03 GMT+0800 (CST)
 
 **方法一：使用 CocoaPods 自动集成**
 
-> 该方法仅适用于 MediaPlayer Kit v1.1.2。
+> 该方法仅适用于 MediaPlayer Kit v1.1.2 及以上。
 
 1. 开始前请确保你已安装 Cocoapods。参考 [Getting Started with CocoaPods](https://guides.cocoapods.org/using/getting-started.html#getting-started) 安装说明。
-2. 在 **Terminal** 里进入项目根目录，并运行 `pod init` 命令。项目文件夹下会生成一个 Podfile 文本文件。
-3. 在 **Terminal** 内运行 `pod update` 命令更新本地库版本。
-4. 运行 `pod install` 命令安装 MediaPlayer Kit。成功安装后，**Terminal** 中会显示 `Pod installation complete!`，此时项目文件夹下会生成一个 `xcworkspace` 文件。
-5. 打开新生成的 `xcworkspace` 文件。
+2. 在 **Terminal** 里进入项目根目录，并运行 `pod init` 命令。项目文件夹下会生成一个 **Podfile** 文本文件。
+3. 打开 **Podfile** 文件，修改文件为如下内容。注意将 `Your App` 替换为你的 Target 名称，并将 `version` 替换为你需集成的 MediaPlayer Kit 版本。
+
+    ```
+    target 'Your App' do
+        pod 'AgoraMediaPlayer_ios', '~> version'
+    end
+    ```
+
+4. 在 **Terminal** 内运行 `pod update` 命令更新本地库版本。
+5. 运行 `pod install` 命令安装 MediaPlayer Kit。成功安装后，**Terminal** 中会显示 `Pod installation complete!`，此时项目文件夹下会生成一个 `xcworkspace` 文件。
+6. 打开新生成的 `xcworkspace` 文件。
 
 **方法二：手动复制 MediaPlayer Kit 文件**
 
@@ -96,10 +104,10 @@ updatedAt: Fri Jul 10 2020 02:38:03 GMT+0800 (CST)
 
 5. 根据场景需要，在 **info.plist** 文件中，点击 **+** 图标开始添加如下内容，获取相应的设备权限：
 
-| Key | Type | Value |
-| ---------------- | ---------------- | ---------------- |
-| Privacy - Microphone Usage Description      | String      | 使用麦克风的目的，例如：for a video call。      |
-| Privacy - Camera Usage Description      | String      | 使用摄像头的目的，例如：for a video call。      |
+	| Key | Type | Value |
+	| ---------------- | ---------------- | ---------------- |
+	| Privacy - Microphone Usage Description      | String      | 使用麦克风的目的，例如：for a video call。      |
+	| Privacy - Camera Usage Description      | String      | 使用摄像头的目的，例如：for a video call。      |
 
 ### 集成 Native SDK
 

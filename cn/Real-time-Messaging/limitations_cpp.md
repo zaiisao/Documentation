@@ -3,7 +3,7 @@
 title: 限制条件
 description: 
 platform: Windows CPP
-updatedAt: Tue Jul 07 2020 03:14:46 GMT+0800 (CST)
+updatedAt: Wed Jul 15 2020 11:03:07 GMT+0800 (CST)
 ---
 # 限制条件
 
@@ -25,7 +25,7 @@ updatedAt: Tue Jul 07 2020 03:14:46 GMT+0800 (CST)
 | 查询单个或多个频道的成员人数 | [`getChannelMemberCount`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a41dee47c6201acb2f29371b6e30249a5) | 每秒 1 次 |
 | 每次都加入不同频道 | [`join`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_channel.html#a6a54cdd8e5db526514e0ca84aa9cba4c) | 每 3 秒 50 次 |
 | 每次都加入同一个频道 | [`join`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_channel.html#a6a54cdd8e5db526514e0ca84aa9cba4c) | 每 5 秒 2 次 |
-| 发送消息| <li>[`sendMessageToPeer`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#afec5391fa9c4ec2bfe9ac4e684705600) <li>[`sendMessageToPeer`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a08c1b3d444af5a2778ede48e4c677a52)<li>[`sendMessage`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_channel.html#a4ae01f44d49f334f7c2950d95f327d30) |每秒 60 次          |
+| 发送消息| <li>[`sendMessageToPeer`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#afec5391fa9c4ec2bfe9ac4e684705600) <li>[`sendMessageToPeer`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a08c1b3d444af5a2778ede48e4c677a52)<li>[`sendMessage`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_channel.html#a4ae01f44d49f334f7c2950d95f327d30) |每 3 秒 180 次          |
 | 获取频道成员列表                    | [`getMembers`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_channel.html#a3f9c943059ac48a568c81798da38c3cb) | 每 2 秒 5 次 |
 | 更新 token| [`renewToken`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a2c33be67bfec02d69041f1e8978f4559) | 每秒 2 次 |
 | 查询指定用户在线状态 | [`queryPeersOnlineStatus`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/classagora_1_1rtm_1_1_i_rtm_service.html#a3add0055c4455dc8d04bfc37edfd8e94) | 每 5 秒 10 次 |

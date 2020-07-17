@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 09 2020 10:37:14 GMT+0800 (CST)
+updatedAt: Thu Jul 16 2020 09:53:43 GMT+0800 (CST)
 ---
 # 校验用户权限
 为保证通信安全，当用户登录 RTM 系统时，Agora 需要对其鉴权。Agora 提供如下鉴权方案，你可以根据自己的实际使用场景，选择合适的鉴权方式：
@@ -127,7 +127,7 @@ static std::string buildToken(const std::string& appId,
 
 <div class="alert warning">为提高项目的安全性，Agora 会逐步取消对 App ID 鉴权方案的支持，建议你将所有项目升级至使用 RTM Token 鉴权。</div>
 
-如果你仅使用 App ID 鉴权，你可以参考如下步骤，同时使用 App ID 和 RTM Token 鉴权进行灰度升级：
+如果你仅使用 App ID 鉴权，你可以参考如下步骤，同时使用 App ID 和 RTM Token 鉴权，对 app 进行灰度升级：
 
 1. [启用主要 App 证书](#appcertificate)。
 

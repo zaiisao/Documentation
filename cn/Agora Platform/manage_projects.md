@@ -3,7 +3,7 @@
 title: 创建和管理项目
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 13 2020 07:56:33 GMT+0800 (CST)
+updatedAt: Fri Jul 17 2020 02:57:09 GMT+0800 (CST)
 ---
 # 创建和管理项目
 本页介绍如何在 Agora 控制台创建和管理项目。
@@ -16,26 +16,25 @@ updatedAt: Mon Jul 13 2020 07:56:33 GMT+0800 (CST)
 
 创建新项目的步骤如下：
 
-1. 登录控制台，点击左侧导航栏 ![](https://web-cdn.agora.io/docs-files/1551254998344) **项目管理**按钮进入[**项目管理**](https://dashboard.agora.io/projects)页面。
+1. 登录控制台，点击左侧导航栏 ![](https://web-cdn.agora.io/docs-files/1594283671161) **项目管理**按钮进入[**项目管理**](https://dashboard.agora.io/projects)页面。
 
 
 2. 在**项目管理**页面，点击**创建**按钮。
 
-![](https://web-cdn.agora.io/docs-files/1574156100068)
+ ![](https://web-cdn.agora.io/docs-files/1594287028966)
 
 3. 在弹出的对话框内输入**项目名称**，选择一种**鉴权机制**。
-
-<div class="alert info">Agora 提供两种鉴权机制：<b>APP ID + APP 证书 + Token（推荐）</b>和 <b>APP ID</b>。我们推荐使用安全性更高的 <b>APP ID + APP 证书 + Token</b> 鉴权机制：<ul><li>在项目测试阶段，<a href="#primary">启用主要证书</a >后可以直接在控制台生成一个临时 Token 进行测试。详见<a href="https://docs.agora.io/cn/Agora%20Platform/token#get-a-temporary-token">获取临时 Token</a >。</li><li>项目准备正式上线时，你需要在你的服务端部署一个 Token Generator 来生成正式 Token。详见<a href="https://docs.agora.io/cn/Interactive%20Broadcast/token_server_cpp">生成正式 Token</a >。</li></ul></div>
-   
-  ![](https://web-cdn.agora.io/docs-files/1592467865538)
+<div class="alert info">Agora 提供两种鉴权机制：<b>APP ID + APP 证书 + Token（推荐）</b>和 <b>APP ID</b>。我们推荐使用安全性更高的 <b>APP ID + APP 证书 + Token</b> 鉴权机制：<ul><li>在项目测试阶段，<a href="#primary">启用主要证书</a >后可以直接在控制台生成一个临时 Token 进行测试。详见<a href="https://docs.agora.io/cn/Agora%20Platform/token#get-a-temporary-token">获取临时 Token</a >。</li><li>项目准备正式上线时，你需要在你的服务端部署一个 Token Generator 来生成正式 Token。详见<a href="https://docs.agora.io/cn/Interactive%20Broadcast/token_server_cpp">生成正式 Token</a >。</li></ul></div>
+ 
+  ![](https://web-cdn.agora.io/docs-files/1594283833299)
 
 4. 点击**提交**后，新建的项目就会显示在**项目管理**页中。Agora 会给每个项目自动分配一个 App ID 作为项目唯一标识。
 
 ## 管理已创建的项目
 
-对于已创建的项目，你还可以在**项目管理页**进行以下操作：
+对于已创建的项目，你还可以在**项目管理**页面进行以下操作：
 
-![](https://web-cdn.agora.io/docs-files/1574156398673)
+![](https://web-cdn.agora.io/docs-files/1594287052269)
 
 - 查看项目基本信息，包括：
 
@@ -44,9 +43,9 @@ updatedAt: Mon Jul 13 2020 07:56:33 GMT+0800 (CST)
   - 创建日期
   - App ID
 
-- 点击 ![](https://web-cdn.agora.io/docs-files/1574156449172)，可在网页端即刻体验实时音视频通信。
+- 点击 ![](https://web-cdn.agora.io/docs-files/1594284750215)，可在网页端即刻体验实时音视频通信。
 
-- 点击 ![img](https://web-cdn.agora.io/docs-files/1564048991389)，可生成**临时 Token**，用于在项目测试阶段进行鉴权。
+- 点击 ![](https://web-cdn.agora.io/docs-files/1594284775010)，可生成**临时 Token**，用于在项目测试阶段进行鉴权。
 
   <div class="alert note">只有主要证书可以用来生成临时 Token，详见<a href="#primary">启用主要证书</a >。</div>
 
@@ -70,16 +69,16 @@ App 证书是 Agora 控制台为开发项目生成的字符串，用于开启 To
 在对安全要求较高的场景中，你可以通过以下方法启用主要证书：
 
 - 如果你在创建项目时，选择 **APP ID + APP 证书 + Token** 为鉴权机制，Agora 会默认为你启用主要证书。主要证书会显示在**编辑项目**页面，你可以点击 ![](https://web-cdn.agora.io/docs-files/1592468375475) 查看并复制主要证书。
- ![](https://web-cdn.agora.io/docs-files/1592468388883)
+  ![](https://web-cdn.agora.io/docs-files/1594953313427)
 - 如果你在创建项目时，选择 **APP ID** 为鉴权机制，那么你需要手动启用主要证书。在**编辑项目**页面，找到**主要证书**，点击**启用**。成功启用后，你可以点击 ![](https://web-cdn.agora.io/docs-files/1592468410982) 查看并复制主要证书。此时，App ID 和主要证书生成的 Token 均可用于鉴权。
- ![](https://web-cdn.agora.io/docs-files/1592468425931)
+ ![](https://web-cdn.agora.io/docs-files/1594953349103)
 
 #### 启用次要证书<a name="secondary"></a>
 
 开启主要证书后，在需要更换 App 证书的场景中，你还可以启用次要证书。
 
 在**编辑项目**页面，找到**次要证书**，点击**启用**。成功启用后，你可以点击 ![](https://web-cdn.agora.io/docs-files/1592468484328) 查看并复制主要证书。此时，主要证书和次要证书生成的 Token 均可用于鉴权。
-![](https://web-cdn.agora.io/docs-files/1592468508012)
+![](https://web-cdn.agora.io/docs-files/1594953370867)
 
 #### 更换和删除主要证书
 
@@ -88,14 +87,14 @@ App 证书是 Agora 控制台为开发项目生成的字符串，用于开启 To
 参考如下步骤更换和删除 App 证书：
 
 1. 找到次要证书，点击**切换为主证书**，次要证书就会和主要证书互换。切换后，使用原主要证书生成的临时 Token 会失效。
- ![](https://web-cdn.agora.io/docs-files/1592468534875)
+   ![](https://web-cdn.agora.io/docs-files/1594953435240)
 2. 点击**删除**即可删除原主要证书。删除后，你无法恢复该证书，且使用该证书生成的 Token 会失效。你需要使用新的主要证书重新生成 Token 并鉴权。
 3. 删除后，次要证书的状态会变成**未启用**。下次启用时会生成新的次要证书。
 
 #### 删除无证书
 
 只有在创建项目时选择 **APP ID** 为鉴权机制，Agora 才会为你启用**无证书**。**无证书**表示用户仅使用 App ID 鉴权，安全性较低。
-![](https://web-cdn.agora.io/docs-files/1592468559818)
+![](https://web-cdn.agora.io/docs-files/1594953452229)
 如果你需要提高安全性，你可以启用主要证书，并使用 Token 鉴权。启用主要证书后，你还可以删除**无证书**。
 <div class="alert warning">一旦无证书被删除，你无法仅使用 App ID 鉴权，且项目无法重新开启无证书。</div>
  

@@ -3,7 +3,7 @@
 title: 录制 SDK 发版说明
 description: 
 platform: Linux
-updatedAt: Mon May 25 2020 07:38:04 GMT+0800 (CST)
+updatedAt: Wed Jul 15 2020 06:15:24 GMT+0800 (CST)
 ---
 # 录制 SDK 发版说明
 ## 简介
@@ -39,6 +39,14 @@ Agora 本地服务端录制 SDK for Linux (简称本地服务端录制 SDK) 在 
 - 在用移动客户端 \(仅 Android 系统\) 录像的过程中，从前置摄像头切换到后置摄像头后，画面将被倒置。
 - 如果在频道内调用 `leaveChannel`, 录制会停止, 但默认录制文件最后会包含一段空白片段，这个时间段由调用 `joinChannel` 时在 `config` 里设定的 `idleLimitSec` 字段值决定。详见 [录制 API](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/index.html)。
 - 由于录制的音视频文件是没有加密的，如果要满足 HIPPA 要求，需使用磁盘加密工具对硬盘进行加密，例如 cryptsetup。
+
+## 3.0.2 版
+
+该版本于 2020 年 7 月 15 日发布。该版本修复了以下问题：
+
+- `uid_UID_timestamp.txt` 偶现时间戳溢出。
+- 日志文件中因单行数据过长导致尾部乱码且内容丢失。
+- 合流录制生成的 MP4 文件无法通过 Windows Media Player 播放器播放。
 
 
 ## 3.0.1 版

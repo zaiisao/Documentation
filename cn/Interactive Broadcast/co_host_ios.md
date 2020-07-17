@@ -3,7 +3,7 @@
 title: 客户端实现
 description: 多人连麦直播场景
 platform: iOS
-updatedAt: Thu Jul 09 2020 10:51:52 GMT+0800 (CST)
+updatedAt: Thu Jul 16 2020 03:59:42 GMT+0800 (CST)
 ---
 # 客户端实现
 本文介绍如何使用 Agora SDK 实现多人连麦直播的重要功能。

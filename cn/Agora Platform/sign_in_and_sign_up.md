@@ -3,7 +3,7 @@
 title: 注册与登录
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 13 2020 07:43:19 GMT+0800 (CST)
+updatedAt: Fri Jul 17 2020 02:12:07 GMT+0800 (CST)
 ---
 # 注册与登录
 在开始使用 Agora 服务之前，你需要注册一个 Agora 开发者账号。注册后，您可以登录控制台，使用 Agora 提供的各种产品和服务。
@@ -52,11 +52,11 @@ updatedAt: Mon Jul 13 2020 07:43:19 GMT+0800 (CST)
 
 1. 登录 [控制台](https://console.agora.io)，点击顶部导航栏右侧账号名下拉菜单中**设置**按钮，进入[账号设置](https://console.agora.io/settings)页面。
 
-![](https://web-cdn.agora.io/docs-files/1563960156644)
+ ![](https://web-cdn.agora.io/docs-files/1594626138503)
 
 2. 如下图所示，你可以修改界面语言、偏好设置、账号密码等。Agora 会根据你的偏好设置为你提供个性化的服务。
 
-![](https://web-cdn.agora.io/docs-files/1563960733631)
+ ![](https://web-cdn.agora.io/docs-files/1594626177787)
 
 
 ## 找回密码
@@ -66,7 +66,7 @@ updatedAt: Mon Jul 13 2020 07:43:19 GMT+0800 (CST)
 1. 进入[登录页面](https://sso.agora.io/cn/signup)。
 2. 点击**忘记密码**。
 
-![](https://web-cdn.agora.io/docs-files/1552447886350)
+ ![](https://web-cdn.agora.io/docs-files/1594276996619)
 
 3. 填写注册时使用的**邮箱地址**。Agora 会向你的邮箱发送一封密码重置邮件。
 4. 登录你的邮箱，根据邮件中的指引重置密码。

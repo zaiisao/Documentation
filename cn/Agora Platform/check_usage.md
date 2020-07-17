@@ -3,7 +3,7 @@
 title: 查看用量
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 09 2020 14:13:51 GMT+0800 (CST)
+updatedAt: Fri Jul 17 2020 03:03:33 GMT+0800 (CST)
 ---
 # 查看用量
 本页介绍如何在 Agora 控制台查看项目用量。
@@ -12,11 +12,11 @@ updatedAt: Thu Jul 09 2020 14:13:51 GMT+0800 (CST)
 
 查看项目用量的步骤如下：
 
-1. 登录控制台，点击左侧导航栏 ![](https://web-cdn.agora.io/docs-files/1551250582235) 按钮进入[**用量统计**页面](https://dashboard.agora.io/duration)。
+1. 登录控制台，点击左侧导航栏 ![](https://web-cdn.agora.io/docs-files/1594292952460) 按钮进入[**产品用量**](https://dashboard.agora.io/duration)页面。
 
 2. 在页面左上角选择某一项目，你可查看该项目在特定时间段内使用 Agora RTC、小程序、本地服务端录制和云端录制等业务的时长。
 
-![](https://web-cdn.agora.io/docs-files/1567410379492)
+![](https://web-cdn.agora.io/docs-files/1594292978571)
 
 > - 时间段范围不能超过 3 个月。
 >

@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 06 2020 06:44:14 GMT+0800 (CST)
+updatedAt: Thu Jul 16 2020 09:51:03 GMT+0800 (CST)
 ---
 # 校验用户权限
 为保证通信安全，当用户加入 RTC 频道或服务端开始录制时，Agora 需要对其鉴权。Agora 提供如下鉴权方案，你可以根据自己的实际使用场景，选择合适的鉴权方式：
@@ -163,7 +163,7 @@ App 证书是 Agora 控制台为开发项目生成的字符串。根据不同的
 
 <div class="alert warning">为提高项目的安全性，Agora 会逐步取消对 App ID 鉴权方案的支持，建议你将所有项目升级至使用 Token 鉴权。</div>
 
-为保证不影响项目的运行，你可以同时使用 App ID 和 Token 鉴权进行灰度升级。参考如下步骤进行灰度升级：
+如果你仅使用 App ID 鉴权，你可以参考如下步骤，同时使用 App ID 和 Token 鉴权，对 app 进行灰度升级：
 
 1. [启用主要 App 证书](#appcertificate)。
 

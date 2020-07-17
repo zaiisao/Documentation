@@ -3,7 +3,7 @@
 title: 实现视频通话
 description: 
 platform: Windows
-updatedAt: Fri Jul 10 2020 09:12:41 GMT+0800 (CST)
+updatedAt: Tue Jul 14 2020 03:36:38 GMT+0800 (CST)
 ---
 # 实现视频通话
 本文介绍如何使用 Agora 视频 SDK 快速实现视频通话。
@@ -17,7 +17,7 @@ Agora 在 GitHub 上提供开源的实时视频通话示例项目 [Agora-Windows
 
 <div class="alert info">点击参与<a href="https://www.wenjuan.com/s/7FbeEz6/" target="_blank">视频教程问卷调查</a>，帮助我们改进体验。</div>
 
-<video src="https://web-cdn.agora.io/docs-files/1594372280348" poster="https://web-cdn.agora.io/docs-files/1584610484891"   controls width = 100% height = auto>你的浏览器不支持 <code>video</code> 标签。</video>
+<video src="https://web-cdn.agora.io/docs-files/1594372280348" poster="https://web-cdn.agora.io/docs-files/1594697609440"   controls width = 100% height = auto>你的浏览器不支持 <code>video</code> 标签。</video>
 
 <div class="alert note">视频中展示的 UI 可能有部分调整更新，请以当前最新版为准。</div>
 
