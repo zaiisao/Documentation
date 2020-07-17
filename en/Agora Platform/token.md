@@ -3,7 +3,7 @@
 title: Set up Authentication
 description: token authentication
 platform: All Platforms
-updatedAt: Tue Jun 30 2020 06:59:46 GMT+0800 (CST)
+updatedAt: Thu Jul 16 2020 10:00:06 GMT+0800 (CST)
 ---
 # Set up Authentication
 To ensure communication security, when users join an RTC channel or you start recording on the server, Agora needs to check their authentication information. Agora provides three authentication mechanisms. According to your scenarios, you can choose one of the following mechanisms:
@@ -165,9 +165,9 @@ After generating a token, see the following steps to use the token:
 
 ## <a name="appid_token"></a>Use either an App ID or a token for authentication
 
-To raise the security level, Agora is phasing out the support for the App ID authentication mechanism. Agora recommends upgrading all your projects to use tokens for authentication. 
+<div class="alert warning">To raise the security level, Agora is phasing out the support for the App ID authentication mechanism. Agora recommends upgrading all your projects to use tokens for authentication.</div>
 
-To avoid the impact on your project, you can upgrade your project to use either an App ID or a token for authentication. Follow the steps below for a grayscale release:
+If you only use the App ID for authentication, you can follow the steps below for upgrading your project to use either an App ID or a token for authentication:
 
 1. [Enable a primary app certificate](#appcertificate). 
 

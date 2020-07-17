@@ -33,7 +33,7 @@ Agora provides the Multi-hosted Interactive Streaming demo apps on the following
 
 | Android | iOS | 
 | ---------------- | ---------------- |
-| ![](https://web-cdn.agora.io/docs-files/1594287476322)      | ![](https://web-cdn.agora.io/docs-files/1594287505817)      | 
+| ![](https://web-cdn.agora.io/docs-files/1594967764588)     | ![](https://web-cdn.agora.io/docs-files/1594287505817)      | 
 
 Since a multi-hosted interactive streaming scenario has multiple users, Agora recommends downloading and installing the demo app on **two** mobile devices. After installation, follow these steps to test the demo app:
 

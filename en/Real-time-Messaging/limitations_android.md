@@ -3,7 +3,7 @@
 title: RTM Limitations
 description: 
 platform: Android
-updatedAt: Fri Jun 12 2020 06:23:43 GMT+0800 (CST)
+updatedAt: Wed Jul 15 2020 11:05:23 GMT+0800 (CST)
 ---
 # RTM Limitations
 

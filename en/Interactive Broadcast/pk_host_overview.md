@@ -33,7 +33,7 @@ Agora provides the PK Host demo apps on the following platforms:
 
 | Android | iOS | 
 | ---------------- | ---------------- |
-| ![](https://web-cdn.agora.io/docs-files/1594287476322)      | ![](https://web-cdn.agora.io/docs-files/1594287505817)      | 
+| ![](https://web-cdn.agora.io/docs-files/1594967764588)     | ![](https://web-cdn.agora.io/docs-files/1594287505817)      | 
 
 Since a PK Host scenario has two hosts across two channels, Agora recommends downloading and installing the demo app on **two** mobile devices. After installation, follow these steps to test the demo app:
 

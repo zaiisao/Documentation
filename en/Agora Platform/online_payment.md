@@ -3,7 +3,7 @@
 title: Make Payments
 description: 
 platform: All Platforms
-updatedAt: Wed Nov 27 2019 08:20:31 GMT+0800 (CST)
+updatedAt: Fri Jul 17 2020 01:46:45 GMT+0800 (CST)
 ---
 # Make Payments
 This page shows how to make payments in Console.
@@ -18,25 +18,25 @@ You can make payments either with a credit card or via bank transfer.
 
 Follow these steps to make payments with a credit card:
 
-1. Log in Console and click **Make Payment** in the **Overview** page to enter the [Billing Center](https://dashboard.agora.io/finance). You can also click ![](https://web-cdn.agora.io/docs-files/1562666103550) in the left navigation menu to enter the Billing Center.
+1. Log in Console and click **Make Payment** in the **Overview** page to enter the [Billing Center](https://console.agora.io/finance/deposit/creditcard). You can also click ![](https://web-cdn.agora.io/docs-files/1594905725937) in the left navigation menu to enter the Billing Center.
 
-![](https://web-cdn.agora.io/docs-files/1565877324211)
+ ![](https://web-cdn.agora.io/docs-files/1594905747423)
 
 2. Click **Add a card** to add a credit card.
 
-![](https://web-cdn.agora.io/docs-files/1567483739192)
+ ![](https://web-cdn.agora.io/docs-files/1594905794181)
 
 3. Enter the card number, month, year, and CVC. Choose whether or not to set this card as the default card. Click **Save** to add this card to your account.
 
-![](https://web-cdn.agora.io/docs-files/1565876877018)
+ ![](https://web-cdn.agora.io/docs-files/1594905825470)
 
 4. After adding a card, enter the **Payment Amount**, which should not be less than 1 U.S. dollar, and then click **Pay**.
 
-![](https://web-cdn.agora.io/docs-files/1567483858734)
+ ![](https://web-cdn.agora.io/docs-files/1594906104354)
 
 5. After successful payment, you will see the following page.
 
-![](https://web-cdn.agora.io/docs-files/1565876903631)
+ ![](https://web-cdn.agora.io/docs-files/1565876903631)
 
 > - Agora only accepts U.S. dollars.
 > - Agora accepts all major credit cards, including Visa, MasterCard, American Express, and Discover.
@@ -46,13 +46,13 @@ Follow these steps to make payments with a credit card:
 
 Click **Bank Transfer** in the left navigation menu to get our bank account information for your bank transfer.
 
-![](https://web-cdn.agora.io/docs-files/1567484031671)
+![](https://web-cdn.agora.io/docs-files/1594906133318)
 
 ## View transaction list
 
 Click **Transactions** in the left navigation menu to see all the transactions in your account. You can also export them into a CSV file.
 
-![](https://web-cdn.agora.io/docs-files/1567484136274)
+![](https://web-cdn.agora.io/docs-files/1594906241180)
 
 ## Make a withdrawal
 
@@ -66,11 +66,11 @@ Follow these steps to make a withdrawal:
 
 2. Click **Request Withdrawal** in the top-right corner.
 
-![](https://web-cdn.agora.io/docs-files/1567482300788)
+ ![](https://web-cdn.agora.io/docs-files/1594906271480)
 
 3. Specify the amount you want to withdraw and click **OK**.
 
-![](https://web-cdn.agora.io/docs-files/1567482408124)
+ ![](https://web-cdn.agora.io/docs-files/1567482408124)
 
 After submitting a withdrawal request, you can check the status of this request in the **Withdraw** page.
 

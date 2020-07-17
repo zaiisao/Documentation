@@ -3,7 +3,7 @@
 title: MediaPlayer Kit
 description: 
 platform: iOS
-updatedAt: Fri Jul 10 2020 08:58:25 GMT+0800 (CST)
+updatedAt: Thu Jul 16 2020 07:21:56 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
 ## Function description
@@ -12,7 +12,7 @@ The MediaPlayer Kit is a powerful player that supports playing local and online 
 
 ## Usage notice
 
-- Currently supported media formats: Local files in AVI, MP4, MP3, MKV, and FLV formats; Online media streams using RTMP and RTSP protocols.
+- Currently supported media formats: Local files in AVI, MP4, MP3, MKV, and FLV formats; online media streams using HTTP, RTMP and RTSP protocols.
 - When locally playing media resources, you only need the separate MediaPlayer Kit. When synchronously sharing media resources with remote users, you need to use the MediaPlayer Kit, Agora Native SDK, and RtcChannelPublishPlugin at the same time. The MediaPlayer Kit supports the local user to use the player function, the Native SDK supports live interactive streaming scenarios, and the RtcChannelPublishPlugin supports publishing media streams to remote users in Agora channel.
 
 ## Set up the development environment
@@ -49,11 +49,19 @@ Choose either of the following methods to integrate the MediaPlayer Kit into you
 
 **Method 1: Automatically integrate the MediaPlayer Kit with CocoaPods**
 
-> Only applies for MediaPlayer Kit v1.1.2.
+> Only applies for MediaPlayer Kit v1.1.2 and later.
 
 1. Ensure that you have installed **CocoaPods** before the following steps. See the installation guide in [Getting Started with CocoaPods](https://guides.cocoapods.org/using/getting-started.html#getting-started).
-2. In **Terminal**, go to the project path and run the `pod init` command to create a `Podfile` in the project folder.
-3. In **Terminal**, run the `pod update` command to update the local libraries.
+2. In **Terminal**, go to the project path and run the `pod init` command to create a **Podfile** in the project folder.
+3. Open the **Podfile**, delete all contents and input the following contents. Remember to change `Your App` to the target name of your project, and change `version` to the version of the MediaPlayer Kit which you want to integrate.
+
+    ```
+    target 'Your App' do
+        pod 'AgoraMediaPlayer_ios', '~> version'
+    end
+    ```
+
+4. In **Terminal**, run the `pod update` command to update the local libraries.
 5. Run the `pod install` command to install the MediaPlayer Kit. Once you successfully install the Kit, it shows `Pod installation complete!` in Terminal, and you can see an `xcworkspace` file in the project folder.
 6. Open the generated `xcworkspace` file in **Xcode**.
 
@@ -81,10 +89,10 @@ Choose either of the following methods to integrate the MediaPlayer Kit into you
 
 5. Add the following permissions in the **info.plist** file for device access according to your needs:
 
-| Key | Type | Value |
-| ---------------- | ---------------- | ---------------- |
-| Privacy - Microphone Usage Description      | String      | To access the microphone, such as for a video call.      |
-| Privacy - Camera Usage Description      | String      | To access the camera, such as for a video call.      |
+	| Key | Type | Value |
+	| ---------------- | ---------------- | ---------------- |
+	| Privacy - Microphone Usage Description      | String      | To access the microphone, such as for a video call.      |
+	| Privacy - Camera Usage Description      | String      | To access the camera, such as for a video call.      |
 
 ### Integrate the Native SDK
 

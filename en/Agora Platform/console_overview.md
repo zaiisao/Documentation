@@ -3,7 +3,7 @@
 title: Console Overview
 description: 
 platform: All Platforms
-updatedAt: Wed Nov 27 2019 08:01:53 GMT+0800 (CST)
+updatedAt: Thu Jul 16 2020 13:50:29 GMT+0800 (CST)
 ---
 # Console Overview
 <div class="alert note">Agora Dashboard is renamed as Agora Console.</div>
@@ -31,7 +31,7 @@ After logging in Agora Console, you see an overview page, which provides entry p
 - Learn to integrate Agora's SDKs.
 - Try Agora Analytics, a tool that tracks the QoE (Quality of Experience) of calls.
 
-![](https://web-cdn.agora.io/docs-files/1567420529846)
+![](https://web-cdn.agora.io/docs-files/1594907380587)
 
 ## Functions
 
@@ -63,4 +63,4 @@ If you have any questions about Agora's products, you can submit a ticket to see
 
 ### Use RESTful API
 
-Agora provides RESTful APIs for you to ban users, check your usage, and inquire about online statistics at the server. You can get the Customer ID and Customer Certificate for the RESTful API in Agora Console. [Learn more](../../en/Agora%20Platform/dashboard_restful_communication.md)
+Agora provides RESTful APIs for you to ban users, check your usage, and inquire about online statistics at the server. You can get the Customer ID and Customer Certificate for the RESTful API in Agora Console. [Learn more](https://docs.agora.io/en/rtc/restfulapi/)

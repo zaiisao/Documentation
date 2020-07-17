@@ -3,7 +3,7 @@
 title: Sign up for an Agora account
 description: 
 platform: All Platforms
-updatedAt: Tue Feb 18 2020 06:35:24 GMT+0800 (CST)
+updatedAt: Thu Jul 16 2020 14:17:54 GMT+0800 (CST)
 ---
 # Sign up for an Agora account
 This page shows how to sign up for an Agora account, and change your account settings.
@@ -51,11 +51,11 @@ After creating an Agora account, you can log in with your email, phone number, o
 
 1. Log in to [Console](https://dashboard.agora.io), and click  **Account Name > Setting** in the top navigation menu.
 
-![](https://web-cdn.agora.io/docs-files/1565244190495)
+![](https://web-cdn.agora.io/docs-files/1594908957584)
 
 2. You can add, edit, or delete your information and change your password on this page. 
 
-![](https://web-cdn.agora.io/docs-files/1565244202054)
+![](https://web-cdn.agora.io/docs-files/1594908985597)
 
 
 ## Reset your password
@@ -65,7 +65,7 @@ If you forget your password, follow these steps to reset it:
 1. Go to https://sso.agora.io/en/signup.
 2. Click **Forget password**.
 
-![](https://web-cdn.agora.io/docs-files/1569312325155)
+![](https://web-cdn.agora.io/docs-files/1594778820456)
 
 3. Fill in your **Email address** and Agora will send an email to you.
 4. Sign in to your email and follow the steps in the email to reset your password.

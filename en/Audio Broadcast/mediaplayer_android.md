@@ -3,7 +3,7 @@
 title: MediaPlayer Kit
 description: 
 platform: Android
-updatedAt: Fri Jul 10 2020 08:56:05 GMT+0800 (CST)
+updatedAt: Thu Jul 16 2020 07:22:57 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
 ## Function description
@@ -12,7 +12,7 @@ The MediaPlayer Kit is a powerful player that supports playing local and online 
 
 ## Usage notice
 
-- Currently supported media formats: Local files in AVI, MP4, MP3, MKV, and FLV formats; Online media streams using RTMP and RTSP protocols.
+- Currently supported media formats: Local files in AVI, MP4, MP3, MKV, and FLV formats; online media streams using HTTP, RTMP and RTSP protocols.
 - When locally playing media resources, you only need the separate MediaPlayer Kit. When synchronously sharing media resources with remote users, you need to use the MediaPlayer Kit, Agora Native SDK, and RtcChannelPublishHelper at the same time. The MediaPlayer Kit supports the local user to use the player function, the Native SDK supports live interactive streaming scenarios, and the RtcChannelPublishHelper supports publishing media streams to remote users in Agora channel.
 - When sharing media resources with remote users, the playback window occupies the local user's video as captured by the camera. Therefore, if you want remote users to see both the local user's and the player's window, you need to start another process to capture the local user's video.
 
@@ -54,7 +54,7 @@ Choose either of the following methods to integrate the MediaPlayer Kit into you
 
 **Method 1: Automatically integrate the MediaPlayer Kit with JCenter**
 
-> Only applies for MediaPlayer Kit v1.1.2.
+> Only applies for MediaPlayer Kit v1.1.2 and later.
 
 Add the following line in the **/app/build.gradle** file of your project:
 
