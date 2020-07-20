@@ -3,7 +3,7 @@
 title: 呼叫邀请
 description: 
 platform: Android
-updatedAt: Fri Jul 17 2020 03:05:35 GMT+0800 (CST)
+updatedAt: Fri Jul 17 2020 06:33:43 GMT+0800 (CST)
 ---
 # 呼叫邀请
 ## 概述
@@ -114,8 +114,10 @@ RemoteInvitation 的生命周期在被叫收到以下回调时结束，并由 SD
 - 呼叫邀请的 channel ID 仅用于与老信令互通时设置。设置的 channel ID 必须与老信令 SDK 设置相同才能实现互通。字符串长度：64 字节，格式为 UTF-8。
 
 
-
 ## API 参考
 
 详见：[呼叫邀请管理](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/index.html#callinvitation)。
 
+## 示例项目
+
+我们在 Github 提供一个开源的[示例项目](https://github.com/AgoraIO-Usecase/Video-Calling)，你也可以前往下载体验并参考源代码。

@@ -3,7 +3,7 @@
 title: 客户端实现
 description: 
 platform: Android
-updatedAt: Thu Jul 09 2020 11:03:21 GMT+0800 (CST)
+updatedAt: Mon Jul 20 2020 06:32:14 GMT+0800 (CST)
 ---
 # 客户端实现
 本节介绍如何使用 Agora SDK 实现单主播直播场景的重要功能。
@@ -37,7 +37,7 @@ updatedAt: Thu Jul 09 2020 11:03:21 GMT+0800 (CST)
 
 房主加入直播间并开始直播：
 
-![](https://web-cdn.agora.io/docs-files/1593499556398)
+![](https://web-cdn.agora.io/docs-files/1595223451381)
 
 ## 核心 API 参考
 

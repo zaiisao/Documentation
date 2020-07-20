@@ -29,7 +29,7 @@ Agora 为单主播直播提供如下平台的 Demo，扫描下方二维码下载
 
 | Android | iOS | 
 | ---------------- | ---------------- |
-| ![](https://web-cdn.agora.io/docs-files/1594287476322)      | ![](https://web-cdn.agora.io/docs-files/1594287505817)      | 
+| ![](https://web-cdn.agora.io/docs-files/1594967781846)      | ![](https://web-cdn.agora.io/docs-files/1594287505817)      | 
 
 
 由于单主播直播涉及到主播和观众，我们建议你准备两台设备进行体验。完成下载和安装后，参考如下步骤试用 Agora 的单主播直播：

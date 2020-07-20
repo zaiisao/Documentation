@@ -3,7 +3,7 @@
 title: 呼叫邀请
 description: 
 platform: iOS,macOS
-updatedAt: Mon Apr 20 2020 04:14:36 GMT+0800 (CST)
+updatedAt: Fri Jul 17 2020 06:41:45 GMT+0800 (CST)
 ---
 # 呼叫邀请
 ## 概述
@@ -118,3 +118,7 @@ AgoraRtmRemoteInvitation 的生命周期在被叫收到以下回调时结束，�
 ## API 参考
 
 详见：[呼叫邀请管理](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_oc/docs/API-Overview.html#callinvitation)。
+
+## 示例项目
+
+我们在 Github 提供一个开源的[示例项目](https://github.com/AgoraIO-Usecase/Video-Calling)，你也可以前往下载体验并参考源代码。

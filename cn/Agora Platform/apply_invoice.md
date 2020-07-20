@@ -3,7 +3,7 @@
 title: 申请发票
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 13 2020 10:52:25 GMT+0800 (CST)
+updatedAt: Fri Jul 17 2020 03:17:15 GMT+0800 (CST)
 ---
 # 申请发票
 本页介绍如何在 Agora 控制台申请开具发票。
@@ -29,9 +29,9 @@ updatedAt: Mon Jul 13 2020 10:52:25 GMT+0800 (CST)
 
 ## 申请指引
 
-登录[控制台](https://console.agora.io/)，点击左侧导航栏**费用中心 > 账单 > 发票**按钮进入[**发票**页面](https://console.agora.io/finance/receipt)，在**可申请**标签下申请发票。
+登录[控制台](https://console.agora.io/)，点击左侧导航栏**费用中心 > 账单 > 发票**按钮进入[**发票**](https://console.agora.io/finance/receipt)页面，在**可申请**标签下申请发票。
 
-![](https://web-cdn.agora.io/docs-files/1562660018660)
+![](https://web-cdn.agora.io/docs-files/1594636943300)
 
 申请发票前，请确保已完成下列任务：
 
@@ -43,7 +43,7 @@ updatedAt: Mon Jul 13 2020 10:52:25 GMT+0800 (CST)
 
 2. 设置发票详情
 
-![](https://web-cdn.agora.io/docs-files/1562663854968)
+![](https://web-cdn.agora.io/docs-files/1594636972949)
 
 1) 选择发票类型。
    

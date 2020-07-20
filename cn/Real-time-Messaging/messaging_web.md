@@ -38,7 +38,6 @@ updatedAt: Fri Jul 10 2020 06:39:30 GMT+0800 (CST)
 | 平台             | 兼容性 |
 | :------------------- | :----------------- |
 | Chrome 49+ | ✔                  |
-| Android Browser 4.4.3+ | ✔     |
 | Safari 9+   | ✔                  |
 | Internet Explorer 11+  | ✔                  |
 | Firefox 52+ |  ✔                  |

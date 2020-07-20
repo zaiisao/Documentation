@@ -2,8 +2,8 @@
 ---
 title: 呼叫邀请
 description: 
-platform: Linux CPP,Windows CPP
-updatedAt: Mon Mar 02 2020 14:28:22 GMT+0800 (CST)
+platform: Windows CPP,Linux CPP
+updatedAt: Fri Jul 17 2020 06:45:32 GMT+0800 (CST)
 ---
 # 呼叫邀请
 ## 概述
@@ -118,3 +118,7 @@ IRemoteCallInvitation 的生命周期在被叫收到以下回调时结束，需�
 ## API 参考
 
 详见：[呼叫邀请管理](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/index.html#callinvitation)。
+
+## 示例项目
+
+我们在 Github 提供一个开源的[示例项目](https://github.com/AgoraIO-Usecase/Video-Calling)，你也可以前往下载体验并参考源代码。

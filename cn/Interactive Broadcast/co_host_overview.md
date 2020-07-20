@@ -32,7 +32,7 @@ Agora 为多人连麦直播提供如下平台的 Demo，扫描下方二维码下
 
 | Android | iOS | 
 | ---------------- | ---------------- |
-| ![](https://web-cdn.agora.io/docs-files/1594287476322)      | ![](https://web-cdn.agora.io/docs-files/1594287505817)      | 
+| ![](https://web-cdn.agora.io/docs-files/1594967781846)      | ![](https://web-cdn.agora.io/docs-files/1594287505817)      | 
 
 
 由于多人连麦直播涉及多个用户，我们建议你至少准备**两台**设备进行体验。完成下载和安装后，参考如下步骤试用 Agora 的多人连麦直播间：

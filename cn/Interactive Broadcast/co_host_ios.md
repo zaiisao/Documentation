@@ -3,7 +3,7 @@
 title: 客户端实现
 description: 多人连麦直播场景
 platform: iOS
-updatedAt: Thu Jul 16 2020 03:59:42 GMT+0800 (CST)
+updatedAt: Mon Jul 20 2020 06:28:48 GMT+0800 (CST)
 ---
 # 客户端实现
 本文介绍如何使用 Agora SDK 实现多人连麦直播的重要功能。
@@ -18,7 +18,7 @@ updatedAt: Thu Jul 16 2020 03:59:42 GMT+0800 (CST)
 
 - 麦位控制
 
-![](https://web-cdn.agora.io/docs-files/1594108966322)
+![](https://web-cdn.agora.io/docs-files/1595218433021)
 
 ## 集成指引
 
@@ -40,15 +40,15 @@ updatedAt: Thu Jul 16 2020 03:59:42 GMT+0800 (CST)
 
 - 房主加入直播间并开始直播
 
-![](https://web-cdn.agora.io/docs-files/1593503362700)
+ ![](https://web-cdn.agora.io/docs-files/1595224158676)
 
 - 房主邀请观众上麦、禁麦、封麦
 
-![](https://web-cdn.agora.io/docs-files/1594291750378)
+ ![](https://web-cdn.agora.io/docs-files/1595224181587)
 
-- 观众申请上麦、连麦、被房主禁麦、解禁
+- 观众申请上麦、主动下麦
 
-![](https://web-cdn.agora.io/docs-files/1594291764498)
+ ![](https://web-cdn.agora.io/docs-files/1595224194966)
 
 
 

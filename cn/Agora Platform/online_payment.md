@@ -3,7 +3,7 @@
 title: 线上充值
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 13 2020 10:33:18 GMT+0800 (CST)
+updatedAt: Fri Jul 17 2020 03:13:45 GMT+0800 (CST)
 ---
 # 线上充值
 本页介绍如何在 Agora 控制台查看账户余额，通过**支付宝**进行线上充值，并查看交易列表。
@@ -12,15 +12,15 @@ updatedAt: Mon Jul 13 2020 10:33:18 GMT+0800 (CST)
 
 ## 查看账户余额
 
-登录 [控制台](https://console.agora.io/) 后，你可以在总览页看到账户余额。
+登录[控制台](https://console.agora.io/)后，你可以在总览页看到账户余额。
   
-![](https://web-cdn.agora.io/docs-files/1562665959826)
+![](https://web-cdn.agora.io/docs-files/1594635601978)
 
 ## 使用支付宝充值
 
-1. 点击总览页的**充值**按钮进入[**费用中心**](https://console.agora.io/finance)。你也可以点击左侧导航栏的 ![](https://web-cdn.agora.io/docs-files/1562666103550) **财务中心 > 支付充值 > 支付宝**按钮进入。
+1. 点击左侧导航栏的 ![](https://web-cdn.agora.io/docs-files/1594635684302)，进入**费用中心**，选择**支付充值 > 支付宝**。
 
-![](https://web-cdn.agora.io/docs-files/1562666275283)
+ ![](https://web-cdn.agora.io/docs-files/1594635770133)
 
 2. 输入你想充值的数额，并点击**前往支付宝**。
 
@@ -30,15 +30,15 @@ updatedAt: Mon Jul 13 2020 10:33:18 GMT+0800 (CST)
 
 3. 前往支付宝付款窗口。打开手机支付宝，扫描付款窗口中的二维码，完成付款。
 
-![](https://web-cdn.agora.io/docs-files/1562666593903)
+ ![](https://web-cdn.agora.io/docs-files/1562666593903)
 
-4. 付款成功后会跳转回到控制台的**财务**页面，出现**支付成功**的提示。
+4. 付款成功后会跳转回到控制台的**费用中心**页面，出现**支付成功**的提示。
 
 ## 查看交易列表
 
 在**费用中心**点击**交易列表**，你会看到所有充值记录。你可以设置起止日期筛选充值记录，或者将充值记录导出为 CSV 文件。
 
-![](https://web-cdn.agora.io/docs-files/1562666802803)
+![](https://web-cdn.agora.io/docs-files/1594636049705)
 
 ## 提现
 
@@ -48,15 +48,16 @@ updatedAt: Mon Jul 13 2020 10:33:18 GMT+0800 (CST)
 
 申请提现的步骤如下：
 
-1. 在财务中心，点击左侧导航栏**提现**按钮，进入[提现页面](https://console.agora.io/finance/withdraw)。
+1. 在**费用中心**，点击左侧导航栏的**提现**按钮，进入[提现](https://console.agora.io/finance/withdraw)页面。
+
  
 2. 点击**申请提现**按钮。
 
-![](https://web-cdn.agora.io/docs-files/1567481453021)
+ ![](https://web-cdn.agora.io/docs-files/1594636128777)
 
-3. 输入您要提现的金额，点击确认。
+3. 输入您要提现的金额，点击**提交**。
 
-![](https://web-cdn.agora.io/docs-files/1567481564978)
+ ![](https://web-cdn.agora.io/docs-files/1594636215018)
 
 提交申请后，你可以在提现页面查看申请记录，追踪申请状态。
 

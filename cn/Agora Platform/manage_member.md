@@ -3,7 +3,7 @@
 title: 管理成员和角色
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 13 2020 08:56:06 GMT+0800 (CST)
+updatedAt: Fri Jul 17 2020 03:10:44 GMT+0800 (CST)
 ---
 # 管理成员和角色
 你创建了一个 Agora 开发者账号后，该账号的角色为**管理员**。在控制台，你可以为你的账号添加新的成员，不同的成员拥有不同的权限，从而实现分工协作。
@@ -12,13 +12,13 @@ updatedAt: Mon Jul 13 2020 08:56:06 GMT+0800 (CST)
 
 添加新成员的步骤如下：
 
-1. 登录控制台，点击左侧导航栏 ![](https://web-cdn.agora.io/docs-files/1551255228096) 按钮进入[**成员管理**](https://dashboard.agora.io/member)页面，点击**添加**按钮。
+1. 登录控制台，点击左侧导航栏 ![](https://web-cdn.agora.io/docs-files/1594627523922) 按钮进入[**成员管理**](https://dashboard.agora.io/member)页面，点击**添加**按钮。
 
-![](https://web-cdn.agora.io/docs-files/1563791106478)
+ ![](https://web-cdn.agora.io/docs-files/1594630496269)
 
 2. 填写成员邮箱，再为该成员指定一个角色，点击**提交**按钮。
 
-![](https://web-cdn.agora.io/docs-files/1563791116662)
+ ![](https://web-cdn.agora.io/docs-files/1594630515432)
 
 > - 只能添加未注册过声网账号的邮箱。
 > - 不同角色拥有不同的[权限](#permission)。
@@ -27,17 +27,17 @@ updatedAt: Mon Jul 13 2020 08:56:06 GMT+0800 (CST)
 
 ## 管理成员
 
-![](https://web-cdn.agora.io/docs-files/1557741436296)
+![](https://web-cdn.agora.io/docs-files/1594630530451)
 
 对于团队成员，你可进行如下操作：
 
-- 点击![](https://web-cdn.agora.io/docs-files/1551255422216)，根据需求重新设置该成员的角色和权限。
-- 点击![](https://web-cdn.agora.io/docs-files/1551255494008)，重置成员的登录密码，该成员会收到密码重置邮件。
-- 点击![](https://web-cdn.agora.io/docs-files/1551255516590)，删除成员，将不需要继续参与该项目的成员移出。
+- 点击 ![](https://web-cdn.agora.io/docs-files/1594629837950)，根据需求重新设置该成员的角色和权限。
+- 点击 ![](https://web-cdn.agora.io/docs-files/1594629848548)，重置成员的登录密码，该成员会收到密码重置邮件。
+- 点击 ![](https://web-cdn.agora.io/docs-files/1594629865302)，删除成员，将不需要继续参与该项目的成员移出。
 
 ## <a name="permission"></a>角色权限说明
 
-![](https://web-cdn.agora.io/docs-files/1563791137583)
+![](https://web-cdn.agora.io/docs-files/1594630548525)
 
 点击左侧次级导航栏**角色管理**按钮进入**角色管理**页面。
 
