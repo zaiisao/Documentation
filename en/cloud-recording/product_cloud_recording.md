@@ -3,7 +3,7 @@
 title: Agora Cloud Recording Overview
 description: 
 platform: Linux
-updatedAt: Thu Jul 16 2020 07:15:15 GMT+0800 (CST)
+updatedAt: Tue Jul 21 2020 06:23:56 GMT+0800 (CST)
 ---
 # Agora Cloud Recording Overview
 Agora Cloud Recording is a component provided by Agora to record and save voice calls, video calls, and interactive streaming on your cloud storage. It is compatible with the Agora Native SDK v1.7.0+ and the Agora Web SDK v1.12.0+. 
@@ -29,6 +29,7 @@ The following table lists the main functions that Agora Cloud Recording provides
 | Record encrypted channels                         | You can record a channel that is encrypted using the following encryption modes:<ul><li>AES128XTS</li><li>AES128ECB</li><li>AES256XTS</li></ul> |
 | Transcoding                               | Agora Cloud Recording provides transcoding scripts for you to [merge audio and video files](https://docs.agora.io/en/cloud-recording/cloud_recording_merge_files?platform=All%20Platforms) and to [convert file formats](https://docs.agora.io/en/cloud-recording/cloud_recording_convert_format?platform=All%20Platforms). |
 | Callback service                                  | The [callback service](https://docs.agora.io/en/cloud-recording/cloud_recording_callback_rest?platform=All%20Platforms) provides information including:<ul><li>The filenames of the recorded files</li><li>The start time of the first slice file</li><li>The timestamp when the stream status changes</li></ul> |
+| Extension services  |  Supports third-party extension services. Currently supports [ApsaraVideo for VoD](https://www.alibabacloud.com/help/doc-detail/51236.htm) only. |
 
 ## Applications
 

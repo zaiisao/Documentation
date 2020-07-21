@@ -3,10 +3,10 @@
 title: Build a Client
 description: 
 platform: Android
-updatedAt: Mon Jul 20 2020 06:23:36 GMT+0800 (CST)
+updatedAt: Tue Jul 21 2020 09:15:42 GMT+0800 (CST)
 ---
 # Build a Client
-This article describes how to implement the basic features of multi-hosted interactive streaming.
+This section describes how to implement the basic features of a virtual host scenario.
 
 ## Flowchart
 
@@ -18,19 +18,15 @@ Refer to the flowcharts for the following functions:
 
 - Controls host seats.
 
-![](https://web-cdn.agora.io/docs-files/1595225449884)
+![](https://web-cdn.agora.io/docs-files/1595322781697)
 
 ## Integrate the SDK
-
-Refer to the following table to integrate the SDKs into your project:
-
 
 | Product | SDK downloads | Integration guide |
 | ---------------- | ---------------- | ---------------- |
 | [Agora RTC (Real-time Communication) SDK](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms)      | [Agora SDK for Android](https://docs.agora.io/en/Agora%20Platform/downloads)      | [Start a Video Broadcast](https://docs.agora.io/en/Interactive%20Broadcast/start_live_android?platform=Android) |
 | [Agora RTM (Real-time Messaging) SDK](https://docs.agora.io/en/Real-time-Messaging/product_rtm?platform=All%20Platforms) | [Real-time messaging SDK](https://docs.agora.io/en/Real-time-Messaging/downloads) | [Peer-to-peer or Channel Messaging](https://docs.agora.io/en/Real-time-Messaging/messaging_android?platform=Android) |
-| [Third-party Image Enhancement SDK](https://www.faceunity.com/#/developindex)	 | N/A | [Android SDK Integration Guide](https://www.faceunity.com/docs_develop_en/#/nama_api_docs/Android/docs/Android_Nama_SDK_Integration_Guide) |
-
+| Third-party Animoji Enhancement SDK	 | N/A | Refer to the integration guide of the third-party Animoji SDK. |
 
 ## Core API call sequence
 
@@ -38,17 +34,17 @@ The following diagrams show the core APIs that the Agora Live Demo app uses to i
 
 <div class="alert note">The Cloud Service in the demo app is implemented by Agora, and you need to deploy your own cloud service for the same purposes.</div>
 
+- Generates avatar using third-party Animoji SDK.
+
+![](https://web-cdn.agora.io/docs-files/1595233374203)
+	 
 - The host joins the room and starts the interactive streaming.
 
-   ![](https://web-cdn.agora.io/docs-files/1595225484601)
-	 
-- The host invites the audience for co-hosting, stops co-hosting, mutes and unmutes a co-host, and closes and reopens a host seat.
-
-   ![](https://web-cdn.agora.io/docs-files/1595225523435)
+![](https://web-cdn.agora.io/docs-files/1595233383169)
 	
-- The audience applies for co-hosting and switches back to an audience member.
+- The host invites the audience member for co-hosting, then stops co-hosting. The audience member stops co-hosting.
 
-   ![](https://web-cdn.agora.io/docs-files/1595225536668)
+![](https://web-cdn.agora.io/docs-files/1595233390117)
 
 
 ## Core API reference
@@ -78,15 +74,12 @@ The following diagrams show the core APIs that the Agora Live Demo app uses to i
 | [setupLocalVideo](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a1fa43a5ce24196e840bcb1062cadbf23) | Sets the local video view. Call this method on the clients of the host and co-hosts to enable the host and co-hosts to see their own video view. |
 | [joinChannel](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a8b308c9102c08cb8dafb4672af1a3b4c) | Joins the RTC channel. |
 | [setupRemoteVideo](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0e9f693c9bc2ccb91554c2c7dc6b7140) | Sets the remote video view. Call this method on the clients of the host and co-hosts to enable the audience to see the video view of the host and co-hosts. |
-| [muteLocalAudioStream](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html?&_ga=2.144305526.2109159719.1594021857-1969480941.1589793536#a838a04b744e6fb53bd1548d30bff1302) | Stops or resumes sending the local audio stream. Use this method with `sendMessageToPeer` to revoke or restore a co-host's privilege of sending audio. |
-| [muteLocalVideoStream](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html?&_ga=2.144305526.2109159719.1594021857-1969480941.1589793536#a949cd7044eec55ffd0b63ad3004db756) | Stops or resumes sending the local video stream. Use this method with `sendMessageToPeer` to revoke or restore a co-host's privilege of sending video. |
 | [leaveChannel](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a2929e4a46d5342b68d0deb552c29d597) | Leaves the channel. |
+| [setVideoSource](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a2929e4a46d5342b68d0deb552c29d597) | Customizes the video source. |
+| [consumeTextureFrame](https://docs.agora.io/en/Voice/API%20Reference/java/interfaceio_1_1agora_1_1rtc_1_1mediaio_1_1_i_video_frame_consumer.html#ae0a7c8f508b4aa814852e4e2af53082c) | Receives the video frame in texture. |
+| [startPreview](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a9143c9bb03165fe8b07c0c1e5a455ffb) | Starts the local video preview before joining a channel. |
 
 ## Additional functions
-
-**Image enhancement**
-
-The Agora Live Demo app uses a third-party SDK for image enhancement. You can refer to the source code in the faceunity file to implement the function.
 
 **Network quality detection**
 
@@ -102,4 +95,4 @@ After joining the channel, call `startAudioMixing` on the host's client to play 
 
 ## Open-source sample project
 
-Agora provides an open-source sample project for [Multi-hosted Interactive Streaming](https://github.com/AgoraIO-Usecase/AgoraLive) on GitHub for you to download as a source code reference.
+Agora provides an open-source sample project for [Virtual Host](https://github.com/AgoraIO-Usecase/AgoraLive) on GitHub for you to download as a source code reference.

@@ -3,7 +3,7 @@
 title: Build a Client
 description: 
 platform: iOS
-updatedAt: Mon Jul 13 2020 09:19:03 GMT+0800 (CST)
+updatedAt: Mon Jul 20 2020 06:36:11 GMT+0800 (CST)
 ---
 # Build a Client
 This article describes how to implement the basic features of Single Host.
@@ -36,7 +36,7 @@ The following diagrams show the core APIs that the Agora Live Demo app uses to i
 
 - The host joins the room and starts the interactive streaming.
 
-   ![](https://web-cdn.agora.io/docs-files/1594366226263)
+   ![](https://web-cdn.agora.io/docs-files/1595225702765)
 
 ## Core API reference
 

@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API Callback Service
 description: Cloud recording restful api callback
 platform: All Platforms
-updatedAt: Thu Jul 16 2020 07:14:01 GMT+0800 (CST)
+updatedAt: Tue Jul 21 2020 06:25:21 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API Callback Service
 You can set up an HTTP/HTTPS server to receive the event notifications of Agora Cloud Recording. When an event occurs, the Agora Cloud Recording service notifies the Agora notification center, and then the notification center notifies your server through an HTTP/HTTPS request.
@@ -36,6 +36,7 @@ The following is an example that shows the fields in the request body.
   - `0`: The cloud recording service.
   - `1`: The recorder module.
   - `2`: The uploader module.
+  - `4`. The extension services. 
 - `details`: JSON. The details of the callback events are described as follows.
 
 ## <a name="event"></a>Callback events
@@ -59,6 +60,8 @@ The event type and the corresponding service type of the Agora Cloud Recording c
 | [42](#42) | 1 (recorder module)           | The recording service syncs the information of the recorded files. |
 | [43](#43) | 1 (recorder module)           | The state of the audio stream changes. |
 | [44](#44) | 1 (recorder module)           | The state of the video stream changes. |
+| [60](#60) | 4 (extension services)           | The uploader for ApsaraVideo for VoD has started and successfully acquired the upload credential.|
+| [61](#61) | 4 (extension services)         | All recorded files have been uploaded to ApsaraVideo for VoD. |
 
 ###  <a name="1"></a>1 cloud_recording_error
 
@@ -224,6 +227,20 @@ eventType 44 indicates that the state of the video stream has changed, and `deta
   - `0`: Agora Cloud Recording is receiving the video stream.
   - `1`: Agora Cloud Recording is not receiving the video stream.
 - `UtcMs`: Number. The UTC time (ms) when the state of the video stream changes.
+
+### <a name="60"></a>60 vod_started
+
+`eventType` 60 indicates that the uploader for ApsaraVideo for VoD has started and successfully acquired the upload credential. `details` includes the following fields:
+
+- `msgName`: String. The message name, `"vod_started"`.
+- `aliVodInfo`: JSON. The information of the video to upload.  
+  - `videoId`: String. The video ID.
+
+### <a name="61"></a>61 vod_triggered
+
+`eventType` 61 indicates that all recorded files have been uploaded to ApsaraVideo for VoD. `details` includes the following fields:
+
+- `msgName`: String. The message name, `"vod_triggered"`.
 
 ## Reference
 

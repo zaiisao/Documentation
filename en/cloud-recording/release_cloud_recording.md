@@ -3,7 +3,7 @@
 title: Agora Cloud Recording Changelog
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 16 2020 07:17:05 GMT+0800 (CST)
+updatedAt: Tue Jul 21 2020 06:36:49 GMT+0800 (CST)
 ---
 # Agora Cloud Recording Changelog
 ## Overview
@@ -16,6 +16,20 @@ Agora Cloud Recording is compatible with the following SDKs:
 
 - Agora Native SDK v1.7.0 or later.
 - Agora Web SDK v1.12 or later.
+
+## 2020.07.21
+
+This release adds the following new feature and API changes:
+
+**New feature**
+
+#### ApsaraVideo for VoD
+In composite recording mode, you can now upload recorded files to [ApsaraVideo for VoD](https://www.alibabacloud.com/help/doc-detail/51236.htm) for further processing.
+
+**API changes**
+- [`start`](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/start) adds the `extensionServiceConfig` parameter for specifying the configurations of ApsaraVideo for VoD. 
+- Adds the [`vod_started`](https://docs.agora.io/en/cloud-recording/cloud_recording_callback_rest?platform=All%20Platforms#60) and the [`vod_triggered`](https://docs.agora.io/en/cloud-recording/cloud_recording_callback_rest?platform=All%20Platforms#61) callbacks, which report the status of uploading recorded files to ApsaraVideo for VoD.
+
 
 ## 2020.06.12
 

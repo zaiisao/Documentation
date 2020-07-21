@@ -3,7 +3,7 @@
 title: Build a Client
 description: 
 platform: Android
-updatedAt: Mon Jul 13 2020 09:18:56 GMT+0800 (CST)
+updatedAt: Mon Jul 20 2020 06:35:01 GMT+0800 (CST)
 ---
 # Build a Client
 This article describes how to implement the basic features of Single Host.
@@ -37,7 +37,7 @@ The following diagrams show the core APIs that the Agora Live Demo app uses to i
 
 - The host joins the room and starts the interactive streaming.
 
-![](https://web-cdn.agora.io/docs-files/1594365053924)
+![](https://web-cdn.agora.io/docs-files/1595225484601)
 
 
 ## Core API reference

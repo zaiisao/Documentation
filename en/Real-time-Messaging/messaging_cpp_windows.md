@@ -127,30 +127,16 @@ This section provides API call sequence diagrams and sample codes related to pee
 
 
 ```cpp
-#include "IAgoraService.h" 
 #include "IAgoraRtmService.h"
 
-std::unique_ptr<agora::base::IAgoraService> agoraInstance_;
-agora::base::AgoraServiceContext context_;
 std::unique_ptr<agora::rtm::IRtmServiceEventHandler> RtmEventCallback_;
 std::unique_ptr<agora::rtm::IChannelEventHandler> channelEventCallback_;
 std::shared_ptr<agora::rtm::IRtmService> rtmInstance_;
 std::shared_ptr<agora::rtm::IChannel> channelHandler_;
 
 void Init() {
-  agoraInstance_.reset(createAgoraService());
-  if (!agoraInstance_) {
-    cout << "core service created failure!" << endl;
-    exit(0);
-  }
-
-  if (agoraInstance_->initialize(context_)) {
-    cout << "core service initialize failure!" << endl;
-    exit(0);
-  }
-
   RtmEventCallback_.reset(new RtmEventHandler());
-  agora::rtm::IRtmService* p_rs = agoraInstance_->createRtmService();
+  agora::rtm::IRtmService* p_rs = agora::rtm::createRtmService();
   rtmInstance_.reset(p_rs, [](agora::rtm::IRtmService* p) {
   p->release();
   });
@@ -164,7 +150,6 @@ void Init() {
     cout << "rtm service initialize failure! appid invalid?" << endl;
     exit(0);
   }
-}
 ```
 
 ### Log in and log out of the Agora RTM system

@@ -3,7 +3,7 @@
 title: Call Invitation
 description: 
 platform: Android
-updatedAt: Fri Jul 17 2020 06:34:59 GMT+0800 (CST)
+updatedAt: Fri Jul 17 2020 06:40:32 GMT+0800 (CST)
 ---
 # Call Invitation
 # Introduction
@@ -125,3 +125,7 @@ The following diagram shows the change of the call invitation states that are re
 ## API Reference
 
 See [Call invitation](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/index.html#callinvitation).
+
+## Sample project
+
+We provide a [demo project](https://github.com/AgoraIO-Usecase/Video-Calling) on GitHub. You can try the demo and view the source code.

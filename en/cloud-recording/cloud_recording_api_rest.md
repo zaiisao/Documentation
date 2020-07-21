@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Fri Jul 17 2020 02:28:32 GMT+0800 (CST)
+updatedAt: Tue Jul 21 2020 06:25:15 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API
 This article contains detailed help for the Cloud Recording RESTful APIs.
@@ -108,7 +108,7 @@ The following parameters are required in the request body.
 After getting a resource ID, call `start` to begin cloud recording. The Cloud Recording service does the following after you call `start`:
 
 1. [Subscribes](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#sub) to the audio and video streams in the channel according to `recordingConfig`.
-2. Records the media streams according to `recordingFileConfig`, or takes screenshots according to `snapshotConfig`.
+2. Processes the subscribed media streams, such as generating recorded files in the specified file format, taking video screenshots, or uploading recorded files to an extension service.
 3. Uploads the recorded files or screenshots to your third-party cloud storage according to `storageConfig`.
 
 The HTTP method and endpoint of `start`:
@@ -134,7 +134,22 @@ The following parameters are required in the request body.
 | :-------------- | :----- | :----------------------------------------------------------- |
 | `cname`         | String | The name of the channel to be recorded.                      |
 | `uid`           | String | A string containing the UID of the recording client. Must be the same `uid` used in the [`acquire`](#acquire) method. |
-| `clientRequest` | JSON   | A specific client request that requires the following parameters: <li>`token`: (Optional) String. The [dynamic key](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#token) used for the channel to record. Ensure that you set this parameter if App Certificate is enabled for your application. See [Set up Authentication](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms).</li><li>[`recordingConfig`](#recordingConfig): JSON. Configurations for subscribing to media streams.</li><li>[`recordingFileConfig`](#recordingFileConfig): (Optional) JSON. Configurations for the recorded files.</li><li>[`snapshotConfig`](#snapshotConfig): (Optional) JSON. Video screenshot configurations.</li><li>[`storageConfig`](#storageConfig): JSON. Third-party cloud storage configurations.</li> |
+| `clientRequest` | JSON   | A specific client request that requires the following parameters: <li>`token`: (Optional) String. The [dynamic key](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#token) used for the channel to record. Ensure that you set this parameter if App Certificate is enabled for your application. See [Set up Authentication](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms).</li><li>[`recordingConfig`](#recordingConfig): JSON. Configurations for subscribing to media streams.</li><li>[`recordingFileConfig`](#recordingFileConfig): (Optional) JSON. Configurations for the recorded files.</li><li>[`snapshotConfig`](#snapshotConfig): (Optional) JSON. Video screenshot configurations.</li><li>[`storageConfig`](#storageConfig): JSON. Third-party cloud storage configurations.</li><li>[`extensionServiceConfig`](#extensionServiceConfig): (Optional) JSON. Configurations for third-party extension services. Currently supports ApsaraVideo for VoD only.</li> |
+
+#### Requirements for parameters in ` clientRequest`:
+
+- You must configure the stream subscription.
+- You can choose to configure either recorded files or video screenshots at one time.
+- Each extension service has specific compatibility requirements. See the table below for details:
+
+| Parameter                                     | Configuration                                | Compatibility                                                | Recording mode          |
+| :-------------------------------------------- | :------------------------------------------- | :----------------------------------------------------------- | :---------------------- |
+| [`recordingConfig`](#recordingConfig)         | Stream subscription                          | Compatible with all other settings                           | Individual or composite |
+| [`recordingFileConfig`](#recordingFileConfig) | Recorded files                               | Cannot be set with `snapshotConfig` simultaneously           | Individual or composite |
+| [`snapshotConfig`](#snapshotConfig)           | Video screenshots                            | Cannot be set with `recordingFileConfig` or `aliyun_vod_service` simultaneously | Individual              |
+| [`extensionServiceConfig`](#extensionServiceConfig)                      | ApsaraVideo for VoD （`aliyun_vod_service`） | Cannot be set with `snapshotConfig` or `storageConfig` simultaneously | Composite               |
+| [`storageConfig`](#storageConfig)             | Third-party cloud storage                    | Cannot be set with `aliyun_vod_service` simultaneously       | Individual or composite |
+
 
 #### <a name="recordingConfig"></a>Recording configuration
 
@@ -335,6 +350,38 @@ If you set up a subscription list for audio, but not for video, then Agora Cloud
   - The 26 uppercase English letters: A to Z
   - The 10 numbers: 0 to 9
 
+#### <a name="extensionServiceConfig">Extension service configuration</a>
+
+`extensionServiceConfig` is a JSON Object for extension service configurations. Extension services are a collection of applications that process the media streams generated from the Agora RTC SDK. One example extension service is VoD service.
+
+`extensionServiceConfig` has the following fields:
+
+- `errorHandlePolicy`: (Optional) String. Error handling policy. You can only set it to the default value, `"error_abort"`, which means that once an error occurs to an extension service, all other non-extension services, such as stream subscription, also stop.
+
+- `extensionServices`: JSONArray. An array of the configuration for each extension service. `extensionServices` includes the following fields:
+
+  - `serviceName`: String. The name of the extension service. To use ApsaraVideo for VoD, set it as `aliyun_vod_service`. 
+
+    <div class="alert note">To use ApsaraVideo for VoD:<ul><li>You must choose composite recording mode.</li><li>Do not configure <code>snapshotConfig</code> or <code>storageConfig</code>.</li></ul></div>
+
+  - `errorHandlePolicy`: (Optional) String. Error handling policy. You can only set it to the default value, `"error_abort"`, which means that if an error occurs to the current extension service, other extension services also stop.
+
+  - `serviceParam`: JSON. Configurations for an extension service. To use ApsaraVideo for VoD, configure as follows: 
+
+    - `accessKey`: String. `AccessKeyId` in the AccessKey of Alibaba Cloud. For details, see [Alibaba Cloud's documentation](https://www.alibabacloud.com/help/doc-detail/53045.html).
+    - `secretKey`: String. `AccessKeySecret` in the AccessKey of Alibaba Cloud. For details, see [Alibaba Cloud's documentation](https://www.alibabacloud.com/help/doc-detail/53045.html).
+    - `regionId`: String. The service region. For details, see [Alibaba Cloud's documentation](https://www.alibabacloud.com/help/doc-detail/43248.html).
+    - `apiData`: JSON. Configurations for ApsaraVideo for VoD.
+      - `videoData`: JSON. Video configurations.  See [Alibaba Cloud's documentation](https://www.alibabacloud.com/help/doc-detail/55407.html) for details about the following parameters.
+        - `title`: String. The title of the video.
+        - `description`: (Optional) String. The description of the video.  
+        - `coverUrl`: (Optional) String. The URL of the custom video thumbnail.
+        - `cateId`: (Optional) String. The ID of the video category.
+        - `tags`: (Optional) String. The tags of the video. 
+        - `templateGroupId`: (Optional) String. The ID of the transcoding template group.
+        - `userData`: (Optional) String. The custom configurations.
+        - `storageLocation`: (Optional) String. The bucket.
+        - `workflowId`: (Optional) String. The ID of the workflow. 
 
 ### An HTTP request example of `start`
 
@@ -384,6 +431,39 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
             "fileNamePrefix": ["directory1","directory2"]
         }
     }
+}
+```
+####	VoD service
+```json
+{
+    "uid": "527841",
+    "cname": "httpClient463224",
+    "clientRequest": {
+        "token": "<token if any>",
+        "recordingConfig": {
+            "maxIdleTime": 30,
+            "streamTypes": 2,
+            "channelType": 0,
+            "subscribeUidGroup": 0
+       },
+        "extensionServiceConfig": {
+          "extensionServices": [{
+            "serviceName": "aliyun_vod_service",
+            "serviceParam": {
+              "secretKey": "xxxxxx",
+              "accessKey": "xxxxxx",
+              "regionId": "cn-shanghai",
+              "apiData": {
+                "videoData": {
+                  "title": "My Video",
+                  "description": "This is my first video",
+                  "coverUrl": "http://xxxxx"
+               }
+             }
+           }
+         }]
+       }
+   }
 }
 ```
 
@@ -683,7 +763,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 - `Authorization` is the basic authentication, see [RESTful API authentication](https://docs.agora.io/en/faq/restful_authentication) for details.
 
 ### A response example of `query`
-
+#### Recording or taking screenshots
 ```json
 "Code": 200,
 "Body":
@@ -715,14 +795,43 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
    }       
 }
 ```
-
+#### VoD
+```json
+"Code": 200,
+"Body":
+{
+  "resourceId":"JyvK8nXHuV1BE64GDkAaBGEscvtHW7v8BrQoRPCHxmeVxwY22-x-kv4GdPcjZeMzoCBUCOr9q-k6wBWMC7SaAkZ_4nO3JLqYwM1bL1n6wKnnD9EC9waxJboci9KUz2WZ4YJrmcJmA7xWkzs_L3AnNwdtcI1kr_u1cWFmi9BWAWAlNd7S7gfoGuH0tGi6CNaOomvr7-ILjPXdCYwgty1hwT6tbAuaW1eqR0kOYTO0Z1SobpBxu1czSFh1GbzGvTZG",
+  "sid":"38f8e3cfdc474cd56fc1ceba380d7e1a",
+  "serverResponse":{
+    "extensionServiceState":[
+     {
+        "payload":{
+          "state": "inProgress",
+          "videoInfo":[
+           {
+              "fileName":"38f8e3cfdc474cd56fc1ceba380d7e1a_httpClient463224.m3u8",
+              "videoId":"3af7751d658a4381bbed893381708c92"
+           }
+         ]
+       },
+        "serviceName": "aliyun_vod_service"
+     }
+   ],
+    "subServiceStatus":{
+      "recordingService": "serviceInProgress"
+   }
+ }
+}
+```
 - `code`: Number. [Status code](#status).
 
 - `resourceId`: String. The resource ID for cloud recording. The resource ID is valid for five minutes.
 
 - `sid`: String. The recording ID. The unique identification of the current recording.
 
-- `serverResponse`: JSON. The details about the recording status. The `query` method does not return this field if you have set `snapshotConfig`.
+- `serverResponse`: JSON. The details about the recording status. 
+  <div class="alert note">The child elements in <code>serverResponse</code> vary according to your configurations in <code>start</code>. For example, if you configure <code>snapshotConfig</code> or <code>extensionServiceConfig</code> in <code>start</code>, then <code>query</code> does not return <code>fileListMode</code>.</div>
+	
   - `fileListMode`: String. The data type of `fileList`.
     - `"string"`: `fileList` is a string. In composite mode, `fileListMode` is `"string"`.
     - `"json"`: `fileList` is a JSONArray. In individual mode, `fileListMode` is `"json"`.
@@ -752,6 +861,18 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
     - `8`: The recording is ready to exit.
     - `20`: The recording exits abnormally.
   - `sliceStartTime`: Number. The time when the recording starts. Unix timestamp (ms).
+  - `extensionServiceState`: JSONArray. An array of the status of each extension service. 
+	  - `serviceName`: String. The name of the extension service.  `aliyun_vod_service` means ApsaraVideo for VoD.
+	  - `payload`: JSON. The status of the extension service.
+	    - `state`: String. The status of uploading media content to the extension service. 
+	      - `"inProgress"`: The recorded files are being uploaded to the extension service. 
+	      - `"idle"`: No user is sending streams in the channel. Nothing is being uploaded.
+	    - `videoInfo`: JSONArray. An array of the M3U8 files and their corresponding video IDs. ApsaraVideo for VoD generates a video ID for each M3U8 file uploaded.
+	      - `fileName`: String. The name of the M3U8 file.
+	      - `videoId`: String. The corresponding video ID of the M3U8 file.
+  - `subServiceStatus`: JSON. The status of the cloud recording submodules.
+	  - `recordingService`: String. The status of the video subscription submodule. For details, see [Service status](#service_status). 
+	
 
 ## <a name="stop"></a>Stops cloud recording
 
@@ -880,6 +1001,19 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 | 500  | Internal server error.                                       |
 | 504  | The server was acting as a gateway or proxy and did not receive a timely response from the upstream server. |
 
+## <a name="service_status"></a>Service status
+
+| State                     | Description                                                  |
+| :------------------------ | :----------------------------------------------------------- |
+| "serviceIdle"             | The submodule is idle.                                       |
+| "serviceStarted"          | The submodule has started.                                   |
+| "serviceReady"            | The submodule is ready.                                      |
+| "serviceInProgress"       | The submodule is running.                                    |
+| "serviceCompleted"        | All subscribed contents have been uploaded to the extension service. |
+| "servicePartialCompleted" | Part of the subscribed contents have been uploaded to the extension service. |
+| "serviceValidationFailed" | The validation of the extension service failed. For example, `apiData` is incorrect. |
+| "serviceAbnormal"         | The submodule is in an abnormal status.                      |
+
 ## Errors
 
 This section lists the common errors you may encounter when using the Agora Cloud Recording RESTful APIs. If you encounter other errors, contact support@agora.io.
@@ -913,6 +1047,6 @@ This section lists the common errors you may encounter when using the Agora Clou
   - The space character.
   - Punctuation characters and other symbols, including: "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "|", "~", ",".
 - `1028`: Invalid parameters in the request body of the [`updateLayout`](#update) method.
-- `"invalid appid"`: The App ID you entered is invalid. If the error persists after you verify the App ID, contact [support@agora.io.](mailto:support@agora.io.)
+- `"invalid appid"`: The App ID you entered is invalid. If the error persists after you verify the App ID, contact [support@agora.io](mailto:support@agora.io).
 - `"no Route matched with those values"`: A possible reason for this message is that you entered an incorrect HTTP method in your request, such as using GET when it should have been POST.
-- `"Invalid authentication credentials"`: A possible reason for this message is that the Customer ID or Customer Certificate you entered is incorrect. If the error persists after you verify the Customer ID and Customer Certificate, contact [support@agora.io.](
+- `"Invalid authentication credentials"`: A possible reason for this message is that the Customer ID or Customer Certificate you entered is incorrect. If the error persists after you verify the Customer ID and Customer Certificate, contact [support@agora.io](mailto:support@agora.io).
