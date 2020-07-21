@@ -3,7 +3,7 @@
 title: 云端录制
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 16 2020 06:19:10 GMT+0800 (CST)
+updatedAt: Tue Jul 21 2020 06:23:50 GMT+0800 (CST)
 ---
 # 云端录制
 Agora 云端录制，是 Agora 针对音视频通话、直播研发的录制组件，与 Agora Native SDK （1.7.0 或更高版本） 及 Agora Web SDK (1.12.0 或更高版本) 兼容，通过简单的操作方法，帮助开发者快速、灵活地实现录制服务，实现一对一、一对多的音视频通话或直播的录制。同 Agora 本地服务端录制相比，Agora 云端录制无需部署 Linux 服务器，减轻了研发和运维的压力，更轻量便捷。
@@ -27,6 +27,7 @@ Agora 云端录制，是 Agora 针对音视频通话、直播研发的录制组�
 | 录制加密频道       | 支持录制采用以下加密方式的频道：<ul><li>AES128XTS</li><li>AES128ECB</li><li>AES256XTS</li></ul> |
 | 转码           | Agora 提供转码脚本，用于[合并音视频文件](https://docs.agora.io/cn/cloud-recording/cloud_recording_merge_files?platform=All%20Platforms)以及[转换文件格式](https://docs.agora.io/cn/cloud-recording/cloud_recording_convert_format?platform=All%20Platforms)。 |
 | 消息通知服务           | Agora 提供[消息通知服务](../../cn/cloud-recording/cloud_recording_callback_rest.md)。开通该服务后，你会收到云端录制的事件通知，例如：<ul><li>录制文件的文件名</li><li>第一个切片文件的开始时间</li><li>流状态改变时的时间戳</li></ul> |
+| 扩展服务   |  支持对接第三方扩展服务。目前仅支持[阿里视频点播服务（VoD）](https://help.aliyun.com/document_detail/51236.html)。 |
 
 ## 适用场景
 
@@ -34,7 +35,7 @@ Agora 云端录制应用广泛，主要可以在以下场景中发挥重要作�
 
 | <span style="white-space:nowrap;">&emsp;&emsp;行业&emsp;&emsp;</span>      | 适用场景                                                     |
 | -------- | ------------------------------------------------------------ |
-| 在线教育 | 在 1v1 、1v多 的小班线上课堂中，提供高质量的音视频录制：<li>方便用户在课程结束后，反复观看、收听录制下来的课堂视频或音频，来巩固及复习学习成果；<li>因时间冲突错过上课的用户也可以观看课堂视频或音频进行学习。 |
+| 在线教育 | 在 1v1 、1v多的小班线上课堂中，提供高质量的音视频录制：<li>方便用户在课程结束后，反复观看、收听录制下来的课堂视频或音频，来巩固及复习学习成果；<li>因时间冲突错过上课的用户也可以观看课堂视频或音频进行学习。 |
 | 社交直播 | <li>精彩瞬间录制<li>直播回放<li>截图鉴黄                                 |
 | 金融行业 | 在开展在线理财、开户、面签等业务时，应国家监管要求，必须提供录音录像服务，形成交易记录的视频，存档备查。 |
 | 客服中心 | <li>方便后期用户调研<li>获取相关用户信息<li>客服质量评估                 |

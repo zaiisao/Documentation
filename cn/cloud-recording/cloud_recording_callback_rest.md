@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API 回调服务
 description: Cloud recording restful api callback
 platform: All Platforms
-updatedAt: Thu Jul 16 2020 06:18:00 GMT+0800 (CST)
+updatedAt: Tue Jul 21 2020 06:25:31 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 回调服务
 Agora 提供消息通知服务，你可以配置一个接收回调的 HTTP/HTTPS 服务器地址来接收云端录制的事件通知。当事件发生时，Agora 云端录制服务会将事件消息发送给 Agora 消息通知服务器，然后 Agroa 消息通知服务器会通过 HTTP/HTTPS 请求将事件投递给你的服务器。
@@ -35,6 +35,7 @@ Agora 提供消息通知服务，你可以配置一个接收回调的 HTTP/HTTPS
     - 0：云端录制服务。
     - 1：录制模块。
     - 2：上传模块。
+    - 4：扩展服务。
   - `details`：JSON 类型，具体的消息内容，详见下面每个事件的描述。
 
 ## <a name="event"></a>回调事件
@@ -58,7 +59,8 @@ Agora 提供消息通知服务，你可以配置一个接收回调的 HTTP/HTTPS
 | [42](#42) | 1（录制模块）     | 同步录制文件信息                                       |
 | [43](#43) | 1（录制模块）     | 音频流状态变化                                       |
 | [44](#44) | 1（录制模块）     | 视频流状态变化                                       |
-
+| [60](#60) | 4（扩展服务）     | 阿里视频点播服务上传模块启动，并成功获取上传凭证。|
+| [61](#61) | 4（扩展服务）     | 所有录制文件已上传至阿里视频点播服务。|
 
 ### <a name="1"></a>1 cloud_recording_error
 
@@ -216,6 +218,19 @@ Agora 提供消息通知服务，你可以配置一个接收回调的 HTTP/HTTPS
   - `1`：云端录制服务未在接收视频流
 - `UtcMs`：Number 类型，视频流状态变化时的时间，UTC 时间，精确到毫秒。
 
+### <a name="60"></a>60 vod_started
+
+`eventType` 为 60 表示阿里视频点播服务上传模块启动成功，并成功获取阿里视频点播服务的上传凭证， `details` 中包含以下字段：
+
+- `msgName`：String 类型，消息名称，即 `"vod_started"`。
+- `aliVodInfo`：JSON 类型，待上传视频的相关信息。
+  - `videoId`：String 类型，待上传视频的视频 ID。
+
+### <a name="61"></a>61 vod_triggered
+
+`eventType` 为 61 表示所有录制文件均已上传至阿里视频点播服务， `details` 中包含以下字段：
+
+- `msgName`：String 类型，消息名称，即 `"vod_triggered"`。
 
 ## 参考
 

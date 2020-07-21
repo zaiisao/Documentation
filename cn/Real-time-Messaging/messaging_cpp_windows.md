@@ -119,37 +119,21 @@ updatedAt: Mon Mar 16 2020 11:28:07 GMT+0800 (CST)
 
 ### 初始化
 
-1. 根据需求继承实现 `agora::rtm::IRtmServiceEventHandler`  `agora::rtm::IChannelEventHandler`
+1. 根据需求继承实现 `agora::rtm::IRtmServiceEventHandler`  `agora::rtm::IChannelEventHandler`。
 
-2. 创建 `agora::base::IAgoraService` `agora::base::AgoraServiceContext` 实例 `agoraInstance_` ， `context_`  并初始化 `agoraInstance_` ；
-
-3. 创建 `agora::rtm::IRtmService` `agora::rtm::IRtmServiceEventHandler` `agora::rtm::IChannelEventHandler` 实例 `rtmInstance_` 初始化；
+2. 创建 `agora::rtm::IRtmService` `agora::rtm::IRtmServiceEventHandler` `agora::rtm::IChannelEventHandler` 实例 `rtmInstance_` 初始化。
 
 ```cpp
-#include "IAgoraService.h" 
 #include "IAgoraRtmService.h"
 
-std::unique_ptr<agora::base::IAgoraService> agoraInstance_;
-agora::base::AgoraServiceContext context_;
 std::unique_ptr<agora::rtm::IRtmServiceEventHandler> RtmEventCallback_;
 std::unique_ptr<agora::rtm::IChannelEventHandler> channelEventCallback_;
 std::shared_ptr<agora::rtm::IRtmService> rtmInstance_;
 std::shared_ptr<agora::rtm::IChannel> channelHandler_;
 
 void Init() {
-  agoraInstance_.reset(createAgoraService());
-  if (!agoraInstance_) {
-    cout << "core service created failure!" << endl;
-    exit(0);
-  }
-
-  if (agoraInstance_->initialize(context_)) {
-    cout << "core service initialize failure!" << endl;
-    exit(0);
-  }
-
   RtmEventCallback_.reset(new RtmEventHandler());
-  agora::rtm::IRtmService* p_rs = agoraInstance_->createRtmService();
+  agora::rtm::IRtmService* p_rs = agora::rtm::createRtmService();
   rtmInstance_.reset(p_rs, [](agora::rtm::IRtmService* p) {
   p->release();
   });

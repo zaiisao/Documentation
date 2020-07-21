@@ -3,16 +3,14 @@
 title: 发送和接收图片或文件消息
 description: 
 platform: Android,Linux Java
-updatedAt: Thu Jun 04 2020 03:27:38 GMT+0800 (CST)
+updatedAt: Tue Jul 21 2020 06:48:43 GMT+0800 (CST)
 ---
 # 发送和接收图片或文件消息
 ## 功能描述
 
 你可以使用 Agora RTM SDK 发送和接收图片或文件消息。
 
-Agora RTM SDK 支持上传下载大小不超过 30 MB 的任意文件格式的非空图片或文件。每份上传到 Agora 服务器的图片或文件都对应一个 media ID，在服务端保存 7 天。你可以通过 media ID 在 7 天有效期内从 Agora 服务器下载对应的图片或文件。
-
-Agora RTM SDK 引入了 `RtmImageMessage` 类和 `RtmFileMessage` 类用于保存和传递系统生成的 media ID。`RtmImageMessage` 类和 `RtmFileMessage` 类继承自 `RtmMessage` 类，所以你可以通过已有的点对点消息或频道消息发送方法传递 `RtmImageMessage` 实例和 `RtmFileMessage` 实例，从而实现图片或文件消息的发送和接收。
+Agora RTM SDK 支持发送大小不超过 30 MB 的任意文件格式的非空图片或文件。每个上传到 Agora 服务器的图片或文件都对应一个 media ID，在服务端保存 7 天。你可以通过 media ID 在 7 天有效期内从 Agora 服务器下载对应的图片或文件。
 
 你可以通过 `RtmImageMessage` 对象对图片进行以下操作：
 
@@ -27,6 +25,8 @@ Agora RTM SDK 引入了 `RtmImageMessage` 类和 `RtmFileMessage` 类用于保�
 - 获取相应的上传文件的大小。
 
 ## 实现方法
+
+Agora RTM SDK 引入了 `RtmImageMessage` 类和 `RtmFileMessage` 类用于保存和传递系统生成的 media ID。`RtmImageMessage` 类和 `RtmFileMessage` 类继承自 `RtmMessage` 类，所以你可以通过已有的点对点消息或频道消息发送方法传递 `RtmImageMessage` 实例和 `RtmFileMessage` 实例，从而实现图片或文件消息的发送和接收。
 
 ### 发送和接收图片消息
 
@@ -172,34 +172,7 @@ Agora RTM SDK 引入了 `RtmImageMessage` 类和 `RtmFileMessage` 类用于保�
     );
    ```
 
-   如果你要取消上传或下载图片，参考以下示例代码：
 
-   ```java
-    mRtmClient.cancelMediaUpload(requestId, new ResultCallback<Void>() {
-        @Override
-        public void onSuccess(Void aVoid) {
-    
-        }
-    
-        @Override
-        public void onFailure(ErrorInfo errorInfo) {
-    
-        }
-    });
-   ```
-   ```java
-    mRtmClient.cancelMediaDownload(requestId, new ResultCallback<Void>() {
-        @Override
-        public void onSuccess(Void aVoid) {
-            
-        }
-    
-        @Override
-        public void onFailure(ErrorInfo errorInfo) {
-    
-        }
-    });
-   ```
 ### 发送和接收文件消息
 
 <div class="alert note">开始前请确保你已集成最新版的 Agora RTM SDK 到你的项目中，而且已实现点对点消息和频道消息功能。</div>
@@ -334,6 +307,11 @@ Agora RTM SDK 引入了 `RtmImageMessage` 类和 `RtmFileMessage` 类用于保�
     );
    ```
 
+
+
+### 取消上传或下载任务
+
+
    如果你要取消上传或下载文件，参考以下示例代码：
 
    ```java
@@ -349,29 +327,14 @@ Agora RTM SDK 引入了 `RtmImageMessage` 类和 `RtmFileMessage` 类用于保�
         }
     });
    ```
-   ```java
-    mRtmClient.cancelMediaDownload(requestId, new ResultCallback<Void>() {
-        @Override
-        public void onSuccess(Void aVoid) {
-            
-        }
-    
-        @Override
-        public void onFailure(ErrorInfo errorInfo) {
-    
-        }
-    });
-   ```
 
-	 
-
+<div class="note">你只能取消正在进行的上传或下载任务。上传或下载任务结束后，对应的 request ID 将失效。</div>
 
 ## 注意事项
 
 - 你必须在成功登录 Agora RTM 系统后才能调用本功能相关的方法。
 - 请确保每个消息实例的消息内容、显示文件名和显示缩略图的总大小不得超过 32 KB。
 - 上传下载相关所有方法涉及的 `filePath` 参数必须是 UTF-8 编码格式字符串，而且必须是绝对路径。
-- 你只能取消正在进行中的上传或下载任务。上传或下载任务结束后，对应的 request ID 将不再有效。
 - 如需将下载文件或图片存储至本地内存，你必须在收到 `onSuccess` 回调后再访问相应内存地址。
 - 每个客户端实例支持同时进行最多 9 个上传或下载任务（上传和下载任务一并计算）。
 - 你可以通过 `RtmImageMessage` 自行设置上传图片的宽和高。设置内容只作为上传图片的附加属性存在，不影响上传图片本身内容。SDK 也不会对上传图片进行裁剪或缩放。

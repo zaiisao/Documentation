@@ -3,7 +3,7 @@
 title: 云端录制更新历史
 description: 
 platform: Linux
-updatedAt: Thu Jul 16 2020 06:22:12 GMT+0800 (CST)
+updatedAt: Tue Jul 21 2020 06:34:03 GMT+0800 (CST)
 ---
 # 云端录制更新历史
 ## 简介
@@ -23,6 +23,21 @@ width: 150px;
 | :--------------- | :----------------------------------------------------------- |
 | Agora Native SDK | 云端录制与全平台 Agora Native SDK 1.7.0 或更高版本兼容，如果频道内有任何人使用了 1.6 版本的 Agora Native SDK， 则整个频道无法录制。 |
 | Agora Web SDK    | 云端录制与 Agora Web SDK 1.12.0 或更高版本兼容。            |
+
+## 2020.07.21
+
+本次发布的新增特性和 API 变更如下：
+
+**新增特性**
+
+#### 阿里视频点播服务
+
+在合流模式下，支持将录制文件上传至阿里视频点播服务（VoD）。
+
+**API 变更**
+
+- [`start`](https://docs.agora.io/cn/cloud-recording/restfulapi/#/云端录制/start) 方法中新增了 `extensionServiceConfig` 参数，用于指定阿里视频点播服务的配置。
+- 新增 [`vod_started`](https://docs.agora.io/cn/cloud-recording/cloud_recording_callback_rest?platform=All%20Platforms#60) 回调和 [`vod_triggered`](https://docs.agora.io/cn/cloud-recording/cloud_recording_callback_rest?platform=All%20Platforms#61) 回调，提供阿里视频点播服务上传模块的状态。
 
 ## 2020.06.12
 本次发布的新增特性和 API 变更如下：

@@ -3,14 +3,14 @@
 title: 发送和接收图片或文件消息
 description: 
 platform: iOS,macOS
-updatedAt: Mon May 11 2020 04:07:50 GMT+0800 (CST)
+updatedAt: Tue Jul 21 2020 06:49:08 GMT+0800 (CST)
 ---
 # 发送和接收图片或文件消息
 ## 功能描述
 
 你可以使用 Agora RTM SDK 发送和接收图片或文件消息。
 
-Agora RTM SDK 支持上传下载大小不超过 30 MB 的任意文件格式的非空图片或文件。每份上传到 Agora 服务器的图片或文件都对应一个 media ID，在服务端保存 7 天。你可以通过 media ID 在 7 天有效期内从 Agora 服务器下载对应的图片或文件。
+Agora RTM SDK 支持发送大小不超过 30 MB 的任意文件格式的非空图片或文件。每份上传到 Agora 服务器的图片或文件都对应一个 media ID，在服务端保存 7 天。你可以通过 media ID 在 7 天有效期内从 Agora 服务器下载对应的图片或文件。
 
 Agora RTM SDK 引入了 `AgoraRtmImageMessage` 接口类和 `AgoraRtmFileMessage` 接口类用于保存和传递系统生成的 media ID。`AgoraRtmImageMessage` 接口类和 `AgoraRtmFileMessage` 接口类继承自 `AgoraRtmMessage` 接口类，所以你可以通过已有的点对点消息或频道消息发送方法传递 `AgoraRtmImageMessage` 实例和 `AgoraRtmFileMessage` 实例，从而实现图片或文件消息的发送和接收。
 

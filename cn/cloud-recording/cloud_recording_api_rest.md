@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Mon Jul 20 2020 02:25:51 GMT+0800 (CST)
+updatedAt: Tue Jul 21 2020 08:08:20 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 该文提供云端录制 RESTful API 的详细信息。
@@ -110,8 +110,8 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
 
 
 1. 根据你的[订阅](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#sub)设置（`recordingConfig`）订阅频道中的媒体流。
-2. 根据你的录制文件设置 （`recordingFileConfig`）将媒体流录制成指定的文件格式，或根据截图设置（`snapshotConfig`）对视频流进行截图。
-3. 根据你的第三方云存储设置（`storageConfig`），将录制文件或截图上传到第三方云存储。
+2. 对订阅的媒体流进行处理，如录制成指定的文件格式、截图、或上传至扩展服务。
+3. 如果你设置了[第三方云存储](#storageConfig)（`storageConfig`），则云端录制还会将录制文件或截图上传到第三方云存储。
 
 该 API 的请求方法和接入点为：
 
@@ -137,8 +137,21 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
 | :-------------- | :----- | :----------------------------------------------------------- |
 | `cname`         | String | 待录制的频道名。                                             |
 | `uid`           | String | 字符串内容为云端录制服务在频道内使用的 UID，用于标识该录制服务，需要和你在 [`acquire`](#acquire) 请求中输入的 UID 相同。 |
-| `clientRequest` | JSON   | 特定的客户请求参数，对于该请求包含以下参数：<li>`token`：（选填） String 类型，用于鉴权的[动态密钥](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#token)。如果你的项目已启用 App 证书，则务必在该参数中传入你项目的动态秘钥。详见[校验用户权限](https://docs.agora.io/cn/cloud-recording/token?platform=All%20Platforms)。</li><li>[`recordingConfig`](#recordingConfig)：JSON 类型，订阅的详细设置。</li><li>[`recordingFileConfig`](#recordingFileConfig)：（选填）JSON 类型，录制文件的详细设置。</li><li>[`snapshotConfig`](#snapshotConfig)：（选填）JSON 类型，截图的详细设置。</li><li>[`storageConfig`](#storageConfig)：JSON 类型，第三方云存储的设置。</li> |
+| `clientRequest` | JSON   | 特定的客户请求参数，对于该请求包含以下参数：<li>`token`：（选填） String 类型，用于鉴权的[动态密钥](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#token)。如果你的项目已启用 App 证书，则务必在该参数中传入你项目的动态秘钥。详见[校验用户权限](https://docs.agora.io/cn/cloud-recording/token?platform=All%20Platforms)。</li><li>[`recordingConfig`](#recordingConfig)：JSON 类型，订阅的详细设置。</li><li>[`recordingFileConfig`](#recordingFileConfig)：（选填）JSON 类型，录制文件的详细设置。</li><li>[`snapshotConfig`](#snapshotConfig)：（选填）JSON 类型，截图的详细设置。</li><li>[`storageConfig`](#storageConfig)：（选填）JSON 类型，第三方云存储的设置。</li><li>[`extensionServiceConfig`](#extensionServiceConfig)：（选填）JSON 类型，扩展服务的设置，目前仅支持阿里视频点播服务。</li> |
 
+`clientRequest` 中各参数的关系及限制：
+
+- 无论何种情况，都需要进行流订阅的设置。
+- 音视频录制文件和截图只能择一设置。
+- 每一种扩展服务都有特定的兼容性要求，详情可见下表：
+
+| 参数                                                | 配置内容                                 | 互斥关系                                                    | 录制模式 |
+| :-------------------------------------------------- | :--------------------------------------- | :---------------------------------------------------------- | :------- |
+| [`recordingConfig`](#recordingConfig)               | 流订阅                                   | 无                                                          | 不限     |
+| [`recordingFileConfig`](#recordingFileConfig)       | 音视频录制文件                           | 不可与 `snapshotConfig` 同时设置。                          | 不限     |
+| [`snapshotConfig`](#snapshotConfig)                 | 截图文件                                 | 不可与 `recordingFileConfig` 或阿里视频点播服务同时设置。 | 仅限单流 |
+| [`extensionServiceConfig`](#extensionServiceConfig) | 阿里视频点播服务（`aliyun_vod_service`） | 不可与 `snapshotConfig` 或 `storageConfig` 同时设置。     | 仅限合流 |
+| [`storageConfig`](#storageConfig)                   | 第三方云存储                             | 不可与阿里视频点播服务同时设置。                            | 不限     |
 
 #### <a name="recordingConfig"></a>**录制设置**
 
@@ -213,8 +226,8 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
 
 `snapshotConfig` 是一个用于设置截图的 JSON Object。使用云端录制进行截图，需要注意以下参数的设置。设置错误会收到报错，或无法生成截图文件。
 
-- 请求 URL 中的 `mode` 参数必须设为 `individual。`
-- `不可设置 recordingFileConfig。`
+- 请求 URL 中的 `mode` 参数必须设为 `individual`。
+- 不可设置 `recordingFileConfig`。
 - `streamType` 必须设置为 1 或 2
 - 如果设置了 `subscribeAudioUid`，则必须同时设置 `subscribeVideoUids`。
 
@@ -331,6 +344,40 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
   - 26 个大写英文字母 A-Z
   - 10 个数字 0-9
 
+#### <a name="extensionServiceConfig"></a>扩展服务设置
+
+`extensionServiceConfig` 是一个用于设置扩展服务的 JSON Object。扩展服务是基于 Agora RTC SDK 的一系列应用服务，能够对 Agora RTC SDK 中产生的音视频流进行进一步处理，如视频点播服务。
+
+`extensionServiceConfig` 包含以下字段：
+
+- `errorHandlePolicy`：（选填）String 类型。错误处理策略。目前仅可设置为默认值 `"error_abort"`，表示当某一扩展服务发生错误后，订阅及其他非扩展服务均停止。
+
+- `extensionServices`：JSONArray 类型，由每个扩展服务的设置组成的数组。一个扩展服务的设置包含以下字段：
+
+  - `serviceName`：String 类型，扩展服务的名称。要使用阿里视频点播服务（VoD），你需要将其设置为 `"aliyun_vod_service"`。
+
+    <div class="alert note">使用阿里视频点播服务，需要注意以下参数的设置：<ul><li>请求 URL 中的 <code>mode</code> 参数必须设为 <code>mix</code>。</li><li>不可设置 <code>snapshotConfig</code> 或 <code>storageConfig</code>。</li></ul>
+
+  - `errorHandlePolicy`：（选填）String 类型。错误处理策略。目前仅可设置为默认值 `"error_abort"`，表示如果当前扩展服务发生错误，其他扩展服务均停止。
+
+  - `serviceParam`：JSON 类型。扩展服务的具体参数设置。当使用阿里视频点播服务时，你需要设置以下参数：
+
+    - `accessKey`：String 类型。阿里云访问秘钥 AccessKey 中的 `AccessKeyId`。详见[阿里云文档](https://help.aliyun.com/document_detail/53045.html)。
+    - `secretKey`：String 类型。阿里云访问秘钥 AccessKey 中的 `AccessKeySecret`。详见[阿里云文档](https://help.aliyun.com/document_detail/53045.html)。
+    - `regionId`：String 类型，接入区域标识。详见[阿里云文档](https://help.aliyun.com/document_detail/98194.html)。
+    - `apiData`：JSON 类型。阿里视频点播服务的详细设置，包含以下参数：
+      - `videoData`：JSON 类型。视频设置。你可以至[阿里云文档中心](https://help.aliyun.com/document_detail/55407.html)获取以下参数的详细解释。
+        - `title`：String 类型。视频标题。
+        - `description`：（选填）String 类型。视频描述。
+        - `coverUrl`：（选填）String 类型。自定义视频封面的 URL 地址。
+        - `cateId`：（选填）String 类型。字符串内容为视频分类 ID。
+        - `tags`：（选填）String 类型。视频标签。
+        - `templateGroupId`：（选填）String 类型。转码模板组 ID。
+        - `userData`：（选填）String 类型。自定义设置。
+        - `storageLocation`：（选填）String 类型。存储地址。
+        - `workflowId`：（选填）String 类型。工作流 ID。
+	
+	
 ### `start` 请求示例
 
 - 请求 URL：
@@ -411,7 +458,39 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
     }
 }
 ```
-
+#### 阿里视频点播
+```json
+{
+    "uid": "527841",
+    "cname": "httpClient463224",
+    "clientRequest": {
+        "token": "<token if any>",
+        "recordingConfig": {
+            "maxIdleTime": 30,
+            "streamTypes": 2,
+            "channelType": 0,
+            "subscribeUidGroup": 0
+       },
+        "extensionServiceConfig": {
+          "extensionServices": [{
+            "serviceName": "aliyun_vod_service",
+            "serviceParam": {
+              "secretKey": "xxxxxx",
+              "accessKey": "xxxxxx",
+              "regionId": "cn-shanghai",
+              "apiData": {
+                "videoData": {
+                  "title": "My Video",
+                  "description": "This is my first video",
+                  "coverUrl": "http://xxxxx"
+               }
+             }
+           }
+         }]
+       }
+   }
+}
+```			
 ### `start` 响应示例
 
 ```json
@@ -654,7 +733,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 - `Authorization` 为 Basic authorization，生成方法请参考 [RESTful API 认证](https://docs.agora.io/cn/faq/restful_authentication)。
 
 ### `query` 响应示例
-
+#### 录制或截图
  ```json
 "Code": 200,
 "Body":
@@ -686,12 +765,41 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
    }       
 }
  ```
-
+#### 阿里视频点播
+```json
+"Code": 200,
+"Body":
+{
+  "resourceId":"JyvK8nXHuV1BE64GDkAaBGEscvtHW7v8BrQoRPCHxmeVxwY22-x-kv4GdPcjZeMzoCBUCOr9q-k6wBWMC7SaAkZ_4nO3JLqYwM1bL1n6wKnnD9EC9waxJboci9KUz2WZ4YJrmcJmA7xWkzs_L3AnNwdtcI1kr_u1cWFmi9BWAWAlNd7S7gfoGuH0tGi6CNaOomvr7-ILjPXdCYwgty1hwT6tbAuaW1eqR0kOYTO0Z1SobpBxu1czSFh1GbzGvTZG",
+  "sid":"38f8e3cfdc474cd56fc1ceba380d7e1a",
+  "serverResponse":{
+    "extensionServiceState":[
+     {
+        "payload":{
+          "state": "inProgress",
+          "videoInfo":[
+           {
+              "fileName":"38f8e3cfdc474cd56fc1ceba380d7e1a_httpClient463224.m3u8",
+              "videoId":"3af7751d658a4381bbed893381708c92"
+           }
+         ]
+       },
+        "serviceName": "aliyun_vod_service"
+     }
+   ],
+    "subServiceStatus":{
+      "recordingService": "serviceInProgress"
+   }
+ }
+}
+```
 - `code`：Number 类型，[响应状态码](#status)。
 - `resourceId`: String 类型，云端录制使用的 resource ID。
 - `sid`: String 类型，录制 ID。成功开始云端录制后，你会得到一个 sid （录制 ID)。该 ID 是一次录制周期的唯一标识。
 - `serverResponse`：JSON 类型，服务器返回的具体信息。  
-  - `fileListMode`: String 类型，`fileList` 字段的数据格式。如果你设置了 `snapshotConfig`，则不会返回该字段。
+  <div class="alert note">该字段中的子元素与你在 start 请求中的设置有关。例如，如果你在 <code>start</code> 请求中设置了 <code>snapshotConfig</code> 或 <code>extensionServiceConfig</code>，则 <code>query</code> 不会返回 <code>fileListMode</code> 字段。</div>
+			
+  - `fileListMode`: String 类型，`fileList` 字段的数据格式。
     - `"string"`：`fileList` 为 String 类型。合流模式下，`fileListMode` 为 `"string"`。
     - `"json"`：`fileList` 为 JSONArray 类型。单流模式下，`fileListMode` 为 `"json"`。
   - `fileList`：当 `fileListMode` 为 `"string"` 时，`fileList` 为 String 类型，录制产生的 M3U8 文件的文件名。当 `fileListMode` 为 `"json"` 时, `fileList` 为 JSONArray 类型，由每个录制文件的具体信息组成的数组。如果你设置了 `snapshotConfig`，则不会返回该字段。一个录制文件的具体信息包括以下字段:
@@ -720,6 +828,17 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
     - `8`：云端录制准备退出。
     - `20`：云端录制异常退出。
   - `sliceStartTime`: Number 类型，录制开始的时间，Unix 时间戳，单位为毫秒。
+ - `extensionServiceState`: JSONArray 类型。由每个扩展服务的状态信息组成的数组。
+    - `serviceName`：String 类型，扩展服务类型。 `"aliyun_vod_service"` 代表阿里视频点播服务。
+    - `payload`：JSON 类型。该扩展服务的状态信息。
+      - `state`：String 类型，将订阅内容上传至扩展服务的状态。
+        - `"inProgress"`：正在将录制文件上传至扩展服务。
+        - `"idle"`：无发流端，上传停止。
+      - `videoInfo`：JSONArray 类型。M3U8 文件和视频 ID 的对应关系。每个 M3U8 文件上传至阿里视频点播服务后，都会生成一个视频 ID。
+        - `fileName`：String 类型，M3U8 文件的文件名。
+        - `videoId`：String 类型，视频 ID。
+  - `subServiceStatus`：JSON 类型，云端录制子模块的状态。
+    - `recordingService`：String 类型，订阅模块的状态，具体取值详见[服务状态](#service_status)。
 
 
 
@@ -845,6 +964,19 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 | 404    | 服务器无法根据请求找到资源（网页）。                         |
 | 500    | 服务器内部错误，无法完成请求。                               |
 | 504    | 服务器内部错误。充当网关或代理的服务器未从远端服务器获取请求。 |
+
+## <a name="service_status"></a>服务状态
+
+| 状态                      | 描述                                                         |
+| :------------------------ | :----------------------------------------------------------- |
+| "serviceIdle"             | 子模块服务未开始。                                           |
+| "serviceStarted"          | 子模块服务已开始。                                           |
+| "serviceReady"            | 子模块服务已就绪。                                           |
+| "serviceInProgress"       | 子模块服务正在进行中。                                       |
+| "serviceCompleted"        | 订阅内容已全部上传至扩展服务。                               |
+| "servicePartialCompleted" | 订阅内容部分上传至扩展服务。                                 |
+| "serviceValidationFailed" | 扩展服务验证失败。例如 `extensionServiceConfig` 中 `apiData` 填写错误。 |
+| "serviceAbnormal"         | 子模块状态异常。                                             |
 
 ## 常见错误
 
