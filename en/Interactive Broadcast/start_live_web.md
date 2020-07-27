@@ -3,10 +3,10 @@
 title: Start Live Interactive Video Streaming
 description: 
 platform: Web
-updatedAt: Tue Jul 07 2020 06:34:10 GMT+0800 (CST)
+updatedAt: Tue Jul 21 2020 10:38:34 GMT+0800 (CST)
 ---
 # Start Live Interactive Video Streaming
-<div class="alert note">Agora will soon release the Agora Web SDK NG, the next generation of the Agora Web SDK. The internal architecture of the Agora Web SDK NG is fully optimized, and the usability of its APIs greatly improved. Click <a href="https://agoraio-community.github.io/AgoraWebSDK-NG/en/">here</a> to learn more about the Agora Web SDK NG.</div>
+<div class="alert note">Agora has released the Agora Web SDK NG, the next generation of the Agora Web SDK, which fully optimizes the internal architecture of the SDK and improves its usability. Based on Typescript, the Agora Web SDK NG uses Promises for asynchronous operations and provides more flexible and easy-to-use APIs. Click <a href="https://agoraio-community.github.io/AgoraWebSDK-NG/en/">here</a> to learn more about the Agora Web SDK NG.</div>
 
 Use this guide to quickly set up the Agora Web SDK and enable the live interactive streaming functions in your app. 
 

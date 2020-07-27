@@ -3,7 +3,7 @@
 title: Play Audio Effects/Audio Mixing File
 description: How to use play effect and audio mixing methods
 platform: Android
-updatedAt: Mon Jul 06 2020 10:09:57 GMT+0800 (CST)
+updatedAt: Thu Jul 23 2020 10:18:45 GMT+0800 (CST)
 ---
 # Play Audio Effects/Audio Mixing File
 ## Introduction
@@ -100,12 +100,12 @@ Agora audio mixing supports the following options:
 
 ```java
 // Sets the audio mixing options.
-int loopCount = -1; // Loops the audio mixing file playback infinitely. Set a positive integer for the number of times to play the file.
-boolean shouldLoop = true; // Sets whether other users can hear the audio mixing. If set as true, only the local user can hear the audio mixing.
-boolean replaceMic = false; // The audio captured by the microphone is not replaced by the audio mixing file.
+int cycle = -1; // Loops the audio mixing file playback infinitely. Set a positive integer for the number of times to play the file.
+boolean loopback = false; // Sets whether other users can hear the audio mixing. If set as true, only the local user can hear the audio mixing.
+boolean replace = false; // The audio captured by the microphone is not replaced by the audio mixing file.
   
 // Starts audio mixing.
-rtcEngine.startAudioMixing("path/to/music", shouldLoop, replaceMic, loopCount);
+rtcEngine.startAudioMixing("path/to/music", loopback, replace, cycle);
   
 // Sets the audio mixing volume of the music for the local user and remote users as 50% of original volume.
 int volume = 50;

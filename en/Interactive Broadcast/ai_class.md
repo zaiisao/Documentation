@@ -3,7 +3,7 @@
 title: AI Interactive Classroom
 description: 
 platform: All Platforms
-updatedAt: Fri Jun 19 2020 02:55:26 GMT+0800 (CST)
+updatedAt: Fri Jul 24 2020 04:10:21 GMT+0800 (CST)
 ---
 # AI Interactive Classroom
 ## Overview
@@ -116,10 +116,10 @@ You can download the Agora RTC SDK and follow the steps in the Quick Start to in
 
 | Platform | SDK download                                                 | Open-source demo                                             | Integration guide                                            |
 | :------- | :----------------------------------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
-| Android | [v2.9.0.102](https://download.agora.io/sdk/release/Agora_Native_SDK_for_Android_v2_9_0_102_FULL_20200216_1288.zip) | [Open Live (Java)](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Android) | [Quick start on Android](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_android?platform=Android) |
-| iOS     | [v2.9.0.102](https://download.agora.io/sdk/release/Agora_Native_SDK_for_iOS_v2_9_0_102_FULL_20200216_2115.zip) | [Open Live (OC)](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-iOS-Objective-C)<br>[Open Live (Swift)](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-iOS) | [Quick start on iOS](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_ios?platform=iOS) |
-| macOS   | [v2.9.0.102](https://download.agora.io/sdk/release/Agora_Native_SDK_for_Mac_v2_9_0_102_FULL_20200216_1279.zip) | [Open Live (OC)](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS-Objective-C)<br>[Open Live (Swift)](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS) | [Quick start on macOS](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_mac?platform=macOS) |
-| Windows | [v2.9.0.102](https://download.agora.io/sdk/release/Agora_Native_SDK_for_Windows(x86)_v2.9.0.102_20200216_FULL_3151.zip) | [Open Live (C++)](https://github.com/AgoraIO/Basic-Video-Broadcasting/blob/master/OpenLive-Windows) | [Quick start on Windows](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_windows?platform=Windows) |
+| Android | [v2.9.0.106](https://download.agora.io/sdk/release/Agora_Native_SDK_for_Android_v2_9_0_106_FULL_20200714_1987.zip) | [Open Live (Java)](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Android) | [Quick start on Android](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_android?platform=Android) |
+| iOS     | [v2.9.0.106](https://download.agora.io/sdk/release/Agora_Native_SDK_for_iOS_v2_9_0_106_FULL_20200714_3240.zip) | [Open Live (OC)](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-iOS-Objective-C)<br>[Open Live (Swift)](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-iOS) | [Quick start on iOS](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_ios?platform=iOS) |
+| macOS   | [v2.9.0.106](https://download.agora.io/sdk/release/Agora_Native_SDK_for_Mac_v2_9_0_106_FULL_20200714_2162.zip) | [Open Live (OC)](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS-Objective-C)<br>[Open Live (Swift)](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS) | [Quick start on macOS](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_mac?platform=macOS) |
+| Windows | [v2.9.0.106](https://download.agora.io/sdk/release/Agora_Native_SDK_for_Windows(x86)_v2_9_0_106_20200714_FULL_160.zip) | [Open Live (C++)](https://github.com/AgoraIO/Basic-Video-Broadcasting/blob/master/OpenLive-Windows) | [Quick start on Windows](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_windows?platform=Windows) |
 | Web     | [Web SDK](https://docs.agora.io/cn/Agora%20Platform/downloads) | [Demo (JS)](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-Web/README.zh.md) | [Quick start on Web](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_web?platform=Web)  |              
 
 #### Real-time message

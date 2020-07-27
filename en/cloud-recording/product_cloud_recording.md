@@ -3,7 +3,7 @@
 title: Agora Cloud Recording Overview
 description: 
 platform: Linux
-updatedAt: Tue Jul 21 2020 06:23:56 GMT+0800 (CST)
+updatedAt: Mon Jul 27 2020 03:13:46 GMT+0800 (CST)
 ---
 # Agora Cloud Recording Overview
 Agora Cloud Recording is a component provided by Agora to record and save voice calls, video calls, and interactive streaming on your cloud storage. It is compatible with the Agora Native SDK v1.7.0+ and the Agora Web SDK v1.12.0+. 
@@ -51,7 +51,7 @@ Agora Cloud Recording consists of the following features:
 | ---------------- | ------------------------------------------------------------ |
 | High Reliability | <li>Supports globally distributed cluster deployment and highly available services.</li><li>Automatically backs up files on Agora cloud server when the third-party cloud storage fails and automatically uploads the backup to the third-party cloud storage when it recovers.</li> |
 | High Security    | Provides end-to-end security mechanisms for video calls, data transmission, data storage, and so on. For details, see [Information Security Policy](../../en/Agora%20Platform/security.md). |
-| Compatibility    | Supports third-party cloud storages, such as [Amazon S3](https://aws.amazon.com/s3/?nc1=h_ls), [Alibaba Cloud](https://www.alibabacloud.com/product/oss), [Tencent Cloud](https://intl.cloud.tencent.com/product/cos) and [Qiniu Cloud](https://www.qiniu.com/en/products/kodo). |
+| Compatibility    | Supports third-party cloud storages, such as [Amazon S3](https://aws.amazon.com/s3/?nc1=h_ls), [Alibaba Cloud](https://www.alibabacloud.com/product/oss), [Tencent Cloud](https://intl.cloud.tencent.com/product/cos), [Kingsoft Cloud](https://en.ksyun.com/post/product/KS3.html) and [Qiniu Cloud](https://www.qiniu.com/en/products/kodo). |
 | Ease of Use      | Simple implementation and easy to learn. With four RESTful API calls, you can start, stop, and query the recording. You can get started quickly, flexibly deploy recording services, and easily record on mobile and web pages. |
 
 ## Billing

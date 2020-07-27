@@ -21,9 +21,9 @@ The Real-time Messaging RESTful API only supports HTTPS. You can use either of t
 You need to pass the basic HTTP authentication and put `api_key:api_secret` in the `Authorization` field of the HTTP header: 
 
 - `api_key`: Customer ID
-- `api_secret`: Customer Certificate
+- `api_secret`: Customer Secret
 
-You can get your Customer ID and Customer Certificate on the [RESTful API](https://console.agora.io/restful) page of the Agora Console. For more information on how to generate the `Authorization` filed, see [RESTful API authentication](https://docs.agora.io/en/faq/restful_authentication).
+You can get your Customer ID and Customer Secret on the [RESTful API](https://console.agora.io/restful) page of the Agora Console. For more information on how to generate the `Authorization` filed, see [RESTful API authentication](https://docs.agora.io/en/faq/restful_authentication).
 
 ### <a name="tokenauth"></a>Token authentication
 
