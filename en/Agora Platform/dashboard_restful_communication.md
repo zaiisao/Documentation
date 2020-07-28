@@ -12,12 +12,7 @@ updatedAt: Thu Jul 09 2020 02:17:28 GMT+0800 (CST)
 
 <div class="alert info">Before using the RESTful APIs, ensure that your account has enabled the relevant privilege of a specified project in Agora Console. Agora supports customizing different user roles and privileges. For more information, see <a href="../../en/Agora%20Platform/manage_member.md">Management members</a >.</div>
 
-The RESTful API only supports HTTPS. Before sending HTTP requests, you must pass the basic Agora HTTP authentication (the `Authorization` parameter in the HTTP request head) with `api_key:api_secret`:
-
-- `api_key`: Customer ID
-- `api_secret`: Customer Certificate
-
-You can find your Customer ID and Customer Certificate on the [RESTful API](https://console.agora.io/restfulApi) page in Console. See [RESTful API authentication](https://docs.agora.io/en/faq/restful_authentication) for details.
+The RESTful API only supports HTTPS. Before using the Agora RESTful API, you need to pass the basic HTTP authentication. See [RESTful API authentication](https://docs.agora.io/en/faq/restful_authentication) for details.
 
 <div class="alert note">The call frequency of RESTful APIs is no more than ten queries per second. To apply for higher call frequency, contact  <a href="mailto:support@agora.io">support@agora.io</a >.</div>
 

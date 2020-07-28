@@ -15,12 +15,7 @@ This article contains detailed help for the Cloud Recording RESTful APIs.
 
 ## <a name="auth"></a>Authentication
 
-The RESTful APIs only support HTTPS. Before sending HTTP requests, you must pass the basic Agora HTTP authentication (the `Authorization` parameter in the HTTP request head) with `api_key:api_secret`:
-
-- `api_key`: Customer ID
-- `api_secret`: Customer Certificate
-
-You can find your Customer ID and Customer Certificate on the [RESTful API](https://console.agora.io/restfulApi) page in Console. See [RESTful API authentication](https://docs.agora.io/en/faq/restful_authentication) for details.
+The RESTful APIs only support HTTPS. Before using the Agora RESTful API, you need to pass the basic HTTP authentication. See [RESTful API authentication](https://docs.agora.io/en/faq/restful_authentication) for details.
 
 ## Data format
 
