@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: iOS
-updatedAt: Thu Jul 16 2020 07:18:29 GMT+0800 (CST)
+updatedAt: Tue Jul 28 2020 08:50:57 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -58,7 +58,7 @@ updatedAt: Thu Jul 16 2020 07:18:29 GMT+0800 (CST)
 
     ```
     target 'Your App' do
-        pod 'AgoraMediaPlayer_ios', '~> version'
+        pod 'AgoraMediaPlayer_iOS', '~> version'
     end
     ```
 
