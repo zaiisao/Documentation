@@ -3,7 +3,7 @@
 title: MediaPlayer Kit
 description: 
 platform: iOS
-updatedAt: Thu Jul 16 2020 07:21:56 GMT+0800 (CST)
+updatedAt: Tue Jul 28 2020 08:51:07 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
 ## Function description
@@ -57,7 +57,7 @@ Choose either of the following methods to integrate the MediaPlayer Kit into you
 
     ```
     target 'Your App' do
-        pod 'AgoraMediaPlayer_ios', '~> version'
+        pod 'AgoraMediaPlayer_iOS', '~> version'
     end
     ```
 
