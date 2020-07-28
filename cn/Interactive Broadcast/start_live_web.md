@@ -3,10 +3,10 @@
 title: 实现视频直播
 description: 
 platform: Web
-updatedAt: Tue Jul 21 2020 02:33:36 GMT+0800 (CST)
+updatedAt: Tue Jul 21 2020 10:31:53 GMT+0800 (CST)
 ---
 # 实现视频直播
-<div class="alert note">提示：<br/>声网即将推出下一代 Agora Web SDK (Agora Web SDK NG)，优化了 SDK 的内部架构，提高了 SDK 的可用性。该版本基于 Typescript 开发，并使用 Promise 来管理异步操作，提供了更灵活更易用的 API 方案。点击<a href="https://agoraio-community.github.io/AgoraWebSDK-NG/zh-CN/">此处</a>即刻体验 Agora Web SDK NG。</div>
+<div class="alert note">声网已经推出下一代 Agora Web SDK (Agora Web SDK NG)，优化了 SDK 的内部架构，提高了 SDK 的可用性。Agora Web SDK NG 基于 Typescript 开发，并使用 Promise 来管理异步操作，提供了更灵活更易用的 API 方案。点击<a href="https://agoraio-community.github.io/AgoraWebSDK-NG/zh-CN/">此处</a>即刻体验 Agora Web SDK NG。</div>
 
 根据本文指导快速集成 Agora Web SDK 并在你自己的 app 里实现音视频互动直播。
 

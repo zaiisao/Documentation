@@ -3,7 +3,7 @@
 title: 屏幕共享
 description: 
 platform: Android
-updatedAt: Thu Jun 11 2020 09:38:54 GMT+0800 (CST)
+updatedAt: Tue Jul 21 2020 10:42:42 GMT+0800 (CST)
 ---
 # 屏幕共享
 ## 功能简介
@@ -50,11 +50,8 @@ rtcEngine.pushExternalVideoFrame(new AgoraVideoFrame(...));
 projection.stop();
 ```
 
-同时，我们在 GitHub 提供已实现屏幕共享功能的开源示例项目。你可以前往 [Switch External Video](https://github.com/AgoraIO/Advanced-Video/blob/master/Android/sample-switch-external-video) 下载体验并参考 [`switchVideoInputActivity.java`](https://github.com/AgoraIO/Advanced-Video/blob/master/Android/sample-switch-external-video/src/main/java/io/agora/advancedvideo/switchvideoinput/SwitchVideoInputActivity.java) 文件中 `startScreenShare` 方法的代码。
+同时，我们在 GitHub 提供已实现屏幕共享功能的开源示例项目。你可以前往 [Agora-Screen-Sharing-Android](https://github.com/AgoraIO/Advanced-Video/tree/dev/win-screenshare/Screensharing/Agora-Screen-Sharing-Android) 下载体验。该示例项目还提供了同时发布屏幕共享流和开启本地视频流的实现逻辑。
 
-## 同时共享屏幕和开启视频
-
-我们在 GitHub 提供一个实现同时发布屏幕共享流和用户视频流功能的开源示例项目。请前往 [Agora-Screen-Sharing-Android](https://github.com/AgoraIO/Advanced-Video/tree/dev/win-screenshare/Screensharing/Agora-Screen-Sharing-Android) 下载体验。
 
 ## 开发注意事项
 * MediaProjection 等 API 需要 Android API level 21+，相关的使用方法请参考 [Google MediaProjection API 文档](https://developer.android.com/reference/android/media/projection/MediaProjection)。

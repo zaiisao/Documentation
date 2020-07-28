@@ -3,7 +3,7 @@
 title: AI 互动课堂
 description: 
 platform: All Platforms
-updatedAt: Fri Jun 19 2020 02:56:09 GMT+0800 (CST)
+updatedAt: Fri Jul 24 2020 04:13:04 GMT+0800 (CST)
 ---
 # AI 互动课堂
 ## 场景介绍
@@ -129,10 +129,10 @@ Agora 为 AI 互动课堂提供如下平台的 Demo，方便你即刻体验 AI �
 
 | 平台    | SDK 下载                                                     | 开源示例项目                                                 | 集成指南                                                     |
 | :------ | :----------------------------------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
-| Android | [v2.9.0.102](https://download.agora.io/sdk/release/Agora_Native_SDK_for_Android_v2_9_0_102_FULL_20200216_1288.zip) | [互动直播 Demo Open Live (Java)](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Android) | [Android 快速开始](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_android?platform=Android) |
-| iOS     | [v2.9.0.102](https://download.agora.io/sdk/release/Agora_Native_SDK_for_iOS_v2_9_0_102_FULL_20200216_2115.zip) | [互动直播 Demo Open Live (OC)](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-iOS-Objective-C)<br>[互动直播 Demo Open Live (Swift)](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-iOS) | [iOS 快速开始](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_ios?platform=iOS) |
-| macOS   | [v2.9.0.102](https://download.agora.io/sdk/release/Agora_Native_SDK_for_Mac_v2_9_0_102_FULL_20200216_1279.zip) | [互动直播 Demo Open Live (OC)](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS-Objective-C)<br>[互动直播 Demo Open Live (Swift)](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS) | [macOS 快速开始](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_mac?platform=macOS) |
-| Windows | [v2.9.0.102](https://download.agora.io/sdk/release/Agora_Native_SDK_for_Windows(x86)_v2.9.0.102_20200216_FULL_3151.zip) | [互动直播 Demo Open Live (C++)](https://github.com/AgoraIO/Basic-Video-Broadcasting/blob/master/OpenLive-Windows) | [Windows 快速开始](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_windows?platform=Windows) |
+| Android | [最新版 SDK](https://docs-preview.agoralab.co/cn/Interactive%20Broadcast/edu_release_note_android?platform=Android) | [互动直播 Demo Open Live (Java)](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-Android) | [Android 快速开始](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_android?platform=Android) |
+| iOS     | [最新版 SDK](https://docs-preview.agoralab.co/cn/Interactive%20Broadcast/edu_release_note_ios?platform=iOS) | [互动直播 Demo Open Live (OC)](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-iOS-Objective-C)<br>[互动直播 Demo Open Live (Swift)](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-iOS) | [iOS 快速开始](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_ios?platform=iOS) |
+| macOS   | [最新版 SDK](https://docs-preview.agoralab.co/cn/Interactive%20Broadcast/edu_release_note_macos?platform=macOS) | [互动直播 Demo Open Live (OC)](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS-Objective-C)<br>[互动直播 Demo Open Live (Swift)](https://github.com/AgoraIO/Basic-Video-Broadcasting/tree/master/OpenLive-macOS) | [macOS 快速开始](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_mac?platform=macOS) |
+| Windows | [最新版 SDK](https://docs-preview.agoralab.co/cn/Interactive%20Broadcast/edu_release_note_windows?platform=Windows) | [互动直播 Demo Open Live (C++)](https://github.com/AgoraIO/Basic-Video-Broadcasting/blob/master/OpenLive-Windows) | [Windows 快速开始](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_windows?platform=Windows) |
 | Web     | [最新版 Web SDK](https://docs.agora.io/cn/Agora%20Platform/downloads) | [互动直播 Demo (JS)](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-Web/README.zh.md) | [Web 快速开始](https://docs.agora.io/cn/Interactive%20Broadcast/start_live_web?platform=Web)  |                                            
 
 #### 实时消息

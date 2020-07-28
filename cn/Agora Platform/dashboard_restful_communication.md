@@ -12,12 +12,7 @@ updatedAt: Thu Jul 09 2020 02:06:11 GMT+0800 (CST)
 
 <div class="alert info">在使用本文 RESTful API 提供的功能前，请确认你的账号已在控制台开通指定项目的相关权限。Agora 支持自定义用户角色和相应的项目权限，详见<a href="../../cn/Agora%20Platform/manage_member.md">控制台角色权限说明</a >。</div>
 
-控制台 RESTful API 仅支持 HTTPS 协议。发送请求时，你需要提供 `api_key:api_secret` 通过 Basic HTTP 认证并填入 HTTP 请求头部的 Authorization 字段：
-
-- `api_key`: Customer ID （客户 ID）
-- `api_secret`: Customer Certificate （客户证书）
-
-你可以在控制台的 [RESTful API](https://console.agora.io/restfulApi) 页面找到你的 Customer ID 和 Customer Certificate。具体生成 `Authorization` 字段的方法请参考 [RESTful API 认证](https://docs.agora.io/cn/faq/restful_authentication)。
+控制台 RESTful API 仅支持 HTTPS 协议。使用 RESTful API 前，你需要通过 HTTP 基本认证，详见 [RESTful API 认证](https://docs.agora.io/cn/faq/restful_authentication)。
 
 <div class="alert note">本文 RESTful API 调用频率上限为每秒 10 次。若需提高调用频率上限，可<a href="https://agora-ticket.agora.io/">提交工单</a>联系技术支持。</div>
 

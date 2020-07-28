@@ -3,14 +3,14 @@
 title: 发版说明
 description: 
 platform: 微信小程序
-updatedAt: Tue Jul 07 2020 09:23:30 GMT+0800 (CST)
+updatedAt: Mon Jul 27 2020 10:20:01 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供声网 Agora 小程序 SDK 的发版说明。
 
 ## **简介**
 
-声网 Agora 小程序 SDK 支持微信小程序实现功能, 并能与声网其他 SDK 进行互通：
+声网 Agora 小程序 SDK 支持微信小程序实现以下功能, 并能与声网其他 SDK 进行互通：
 
 -   音视频通话
 -   音视频直播
@@ -34,7 +34,7 @@ updatedAt: Tue Jul 07 2020 09:23:30 GMT+0800 (CST)
 
 在这个架构图中：
 
-1.  在大网边缘节点部署协议转换服务对小程序端发出的 RTMP 流进行转换；
+1.  在 Agora SD-RTN 边缘节点部署协议转换服务对小程序端发出的 RTMP 流进行转换；
 2.  将转化后的 UDP 传输到 Agora SD-RTN 上；
 3.  通过 Agora SD-RTN 与 Agora 其他平台 SDK 实现音视频互通。
 

@@ -3,7 +3,7 @@
 title: 水晶球内嵌 (Beta)
 description: 
 platform: All Platforms
-updatedAt: Wed Jul 01 2020 07:16:46 GMT+0800 (CST)
+updatedAt: Fri Jul 24 2020 09:32:25 GMT+0800 (CST)
 ---
 # 水晶球内嵌 (Beta)
 水晶球的**水晶球内嵌**功能帮助你快速在你的内部系统中嵌入水晶球功能，仅需少量开发成本即可实现以下功能：
@@ -102,8 +102,10 @@ URL: https://analytics-lab.agora.io/api/analytics/research
 | cname   | 频道名称。<br>**Note**<br>需填写正确的频道名称。如果频道名称不存在，你会获取通话搜索页面，但搜索结果为空。</br> |
 | fromUid | （选填）发送端用户 ID。                                      |
 | toUid   | （选填）接收端用户 ID。                                      |
+| fromTs | （选填）查询开始时间，Unix 时间戳 （秒）。设置后，你可以查询该时间点（包含）之后的通话。                                      |
+| toTs   | （选填）查询结束时间，Unix 时间戳 （秒）。设置后，你可以查询该时间点（包含）之前的通话。                                      |
 
-<div class="alert note"><li>根据查询参数的设置，你会获取以下两种通话详情页面：<ul><ul><li>如果只填写了正确的 <tt>cname</tt>，你会获取通话体验质量页面。<li>如果填写了正确的 <tt>cname</tt>、<tt>fromUid</tt> 和 <tt>toUid</tt>，你会获取通话的端到端详情页面。</ul></ul><li>如果多个通话有相同的 <tt>cname</tt>，获取的是通话开始时间距离当前时刻最近的通话详情页面。</div>
+<div class="alert note"><li>根据查询参数的设置，你会获取以下两种通话详情页面：<ul><ul><li>如果只填写了正确的 <tt>cname</tt>，你会获取通话体验质量页面。<li>如果填写了正确的 <tt>cname</tt>、<tt>fromUid</tt> 和 <tt>toUid</tt>，你会获取通话的端到端详情页面。</ul></ul><li>如果多个通话有相同的 <tt>cname</tt>，获取的是通话开始时间距离当前时刻最近的通话详情页面。<li>如果不设置 <tt>fromTs</tt> 和 <tt>toTs</tt>，则默认显示最近 14 天的搜索结果。</li></div>
 
 拼接示例如下： 
 

@@ -3,7 +3,7 @@
 title: 应用企业防火墙限制
 description: 
 platform: All Platforms
-updatedAt: Wed Jun 24 2020 09:56:42 GMT+0800 (CST)
+updatedAt: Fri Jul 24 2020 07:08:57 GMT+0800 (CST)
 ---
 # 应用企业防火墙限制
 对于有外网访问限制的公司，在使用 Agora 相关服务之前，需要添加防火墙白名单。
@@ -65,7 +65,7 @@ vocs5.agora.io
 
 ### 微信小程序 SDK
 
-在微信公众平台账号的开发设置中，给予下述域名请求权限：
+将以下目标域名及对应的端口添加到防火墙白名单：
 
 ```
 miniapp.agoraio.cn

@@ -3,7 +3,7 @@
 title: 事件与历史消息查询 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Tue Jul 14 2020 03:15:14 GMT+0800 (CST)
+updatedAt: Tue Jul 28 2020 05:45:32 GMT+0800 (CST)
 ---
 # 事件与历史消息查询 RESTful API
 事件与历史消息查询 RESTful API 目前支持以下功能：
@@ -14,12 +14,7 @@ updatedAt: Tue Jul 14 2020 03:15:14 GMT+0800 (CST)
 
 ### Basic HTTP 认证
 
-离线推送 RESTful API 仅支持 HTTPS 协议。发送请求时，你需要提供 `api_key:api_secret` 通过 Basic HTTP 认证并填入 HTTP 请求头部的 Authorization 字段：
-
-- `api_key`: Customer ID （客户 ID）
-- `api_secret`: Customer Certificate （客户证书）
-
-你可以在控制台的 [RESTful API](https://console.agora.io/restfulApi) 页面找到你的 Customer ID 和 Customer Certificate。具体生成 `Authorization` 字段的方法请参考 [RESTful API 认证](https://docs.agora.io/cn/faq/restful_authentication)。
+实时消息 RESTful API 仅支持 HTTPS 协议。发送请求时，你需要提供 `api_key:api_secret` 通过 basic HTTP 认证并填入 HTTP 请求头部的 Authorization 字段。具体生成 `Authorization` 字段的方法请参考 [RESTful API 认证](https://docs.agora.io/cn/faq/restful_authentication)。
 
 ### Token 认证
 

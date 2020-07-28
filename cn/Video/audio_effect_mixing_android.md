@@ -3,7 +3,7 @@
 title: 播放音效与混音文件
 description: How to enable audio mixing, play audio effects and the related settings
 platform: Android
-updatedAt: Fri Jun 19 2020 11:25:25 GMT+0800 (CST)
+updatedAt: Thu Jul 23 2020 10:18:24 GMT+0800 (CST)
 ---
 # 播放音效与混音文件
 ## 功能描述
@@ -102,11 +102,11 @@ Agora 混音功能支持如下设置：
 ```java
 // 混音设置
 int loopCount = -1; //无限循环播放混音文件；设置为正整数表示混音文件播放的次数
-boolean shouldLoop = true; ////文件音频流是否发送给对端；如果设置为 true，文件音频流仅在本地可以听见，不会发送到对端
-boolean replaceMic = false; //不替换麦克风采集的音频
+boolean loopback = false; ////文件音频流是否发送给对端；如果设置为 true，文件音频流仅在本地可以听见，不会发送到对端
+boolean cycle = false; //不替换麦克风采集的音频
   
 // 开始播放混音
-rtcEngine.startAudioMixing("path/to/music", shouldLoop, replaceMic, loopCount);
+rtcEngine.startAudioMixing("path/to/music", loopback, replace, cycle);
   
 // 将本地和远端音乐文件播放音量调节为原始音量的 50%
 int volume = 50;
