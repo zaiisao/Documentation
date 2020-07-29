@@ -3,7 +3,7 @@
 title: Start Live Interactive Audio Streaming
 description: 
 platform: macOS
-updatedAt: Tue Jul 07 2020 14:59:43 GMT+0800 (CST)
+updatedAt: Wed Jul 29 2020 07:29:42 GMT+0800 (CST)
 ---
 # Start Live Interactive Audio Streaming
 Use this guide to quickly start the live interactive audio streaming demo with the Agora Voice SDK for macOS.
@@ -260,7 +260,7 @@ After setting the client role, you can call the `joinChannelByToken` method to j
 - `token`: Pass a token that identifies the role and privilege of the user. You can set it as one of the following values:
 
  - `nil`.
- - A temporary token generated in Console. A temporary token is valid for 24 hours. For details, see [Get a Temporary Token](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#get-a-temporary-token).
+ - A temporary token generated in Console. A temporary token is valid for 24 hours. For details, see [Get a Temporary Token](https://docs.agora.io/en/Agora%20Platform/token#get-a-temporary-token).
  - A token generated at the server. This applies to scenarios with high-security requirements. For details, see [Generate a token from Your Server](../../en/Audio%20Broadcast/token_server_cpp.md).
 
  <div class="alert note">If your project has enabled the app certificate, ensure that you provide a token.</div>
