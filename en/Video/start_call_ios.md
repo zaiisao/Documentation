@@ -3,7 +3,7 @@
 title: Start a Video Call
 description: 
 platform: iOS
-updatedAt: Fri Jun 19 2020 14:36:21 GMT+0800 (CST)
+updatedAt: Wed Jul 29 2020 07:29:33 GMT+0800 (CST)
 ---
 # Start a Video Call
 Use this guide to quickly start a basic video call demo with the Agora Video SDK for iOS.
@@ -240,7 +240,7 @@ After initializing the `AgoraRtcEngineKit` object and setting the local video vi
 - channelId: Specify the channel name that you want to join. Input your `channelId` before running the sample code.
 - token: Pass a token that identifies the role and privilege of the user.  You can set it as one of the following values:
 	- `nil`.
-	- A temporary token generated in Console. A temporary token is valid for 24 hours. For details, see [Get a Temporary Token](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#get-a-temporary-token).
+	- A temporary token generated in Console. A temporary token is valid for 24 hours. For details, see [Get a Temporary Token](https://docs.agora.io/en/Agora%20Platform/token#get-a-temporary-token).
 	- A token generated at the server. This applies to scenarios with high-security requirements. For details, see [Generate a token from Your Server](../../en/Video/token_server_cpp.md).
 	<div class="alert note">If your project has enabled the app certificate, ensure that you provide a token.</div>
 - uid: ID of the local user that is an integer and should be unique. If you set `uid` as 0,  the SDK assigns a user ID for the local user and returns it in the `joinSuccessBlock` callback.
