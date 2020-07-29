@@ -3,7 +3,7 @@
 title: 实现视频直播
 description: 
 platform: Web
-updatedAt: Tue Jul 21 2020 10:31:53 GMT+0800 (CST)
+updatedAt: Wed Jul 29 2020 07:34:07 GMT+0800 (CST)
 ---
 # 实现视频直播
 <div class="alert note">声网已经推出下一代 Agora Web SDK (Agora Web SDK NG)，优化了 SDK 的内部架构，提高了 SDK 的可用性。Agora Web SDK NG 基于 Typescript 开发，并使用 Promise 来管理异步操作，提供了更灵活更易用的 API 方案。点击<a href="https://agoraio-community.github.io/AgoraWebSDK-NG/zh-CN/">此处</a>即刻体验 Agora Web SDK NG。</div>
@@ -230,7 +230,7 @@ var option = {
 
 在 `AgoraRTC.createClient` 方法中，需注意 `mode` 和 `codec` 这两个参数的设置：
 
-   - `mode` 用于设置[频道场景](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms%23live-broadcast-core-concepts#频道场景)。一对一或多人通话中，建议设为 `"rtc"` ，使用通信场景；[互动直播](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms%23live-broadcast-core-concepts#a-name-livea直播核心概念)中，建议设为 `"live"`，使用直播场景。
+   - `mode` 用于设置[频道场景](https://docs.agora.io/cn/Agora%20Platform/terms#channel-profile)。一对一或多人通话中，建议设为 `"rtc"` ，使用通信场景；[互动直播](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms%23live-broadcast-core-concepts#a-name-livea直播核心概念)中，建议设为 `"live"`，使用直播场景。
    - `codec` 用于设置浏览器使用的编解码格式。如果你需要使用 Safari 12.1 及之前版本，将该参数设为 `"h264"`；如果你需要在手机上使用 Agora Web SDK，请参考[移动端使用 Web SDK](https://docs.agora.io/cn/faq/web_on_mobile)。
 
 ### 设置用户角色
