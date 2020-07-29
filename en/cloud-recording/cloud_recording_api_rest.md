@@ -15,7 +15,7 @@ This article contains detailed help for the Cloud Recording RESTful APIs.
 
 ## <a name="auth"></a>Authentication
 
-The RESTful APIs only support HTTPS. Before using the Agora RESTful API, you need to pass the basic HTTP authentication. See [RESTful API authentication](https://docs.agora.io/en/faq/restful_authentication) for details.
+The RESTful APIs only support HTTPS. Before using the Agora RESTful API, you need to pass the [basic HTTP authentication](https://docs.agora.io/en/faq/restful_authentication).
 
 ## Data format
 

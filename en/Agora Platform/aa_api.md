@@ -25,7 +25,7 @@ You can use the Agora Analytics RESTful APIs to request the following data.
 
 ## Authentication
 
-Before using the Agora RESTful API, you need to pass the basic HTTP authentication. See [RESTful API authentication](https://docs.agora.io/en/faq/restful_authentication) for details.
+Before using the Agora RESTful API, you need to pass the [basic HTTP authentication](https://docs.agora.io/en/faq/restful_authentication).
 
 ## Data format
 
