@@ -3,7 +3,7 @@
 title: Start a Voice Call
 description: 
 platform: Unity
-updatedAt: Fri Jun 19 2020 14:42:44 GMT+0800 (CST)
+updatedAt: Wed Jul 29 2020 07:29:38 GMT+0800 (CST)
 ---
 # Start a Voice Call
 Use this guide to quickly start a basic one-to-one voice call with the Agora SDK for Unity.
@@ -171,7 +171,7 @@ After initializing the `IRtcEngine` object, you can call `JoinChannelByKey` to j
 - `channelKey`: The token for identifying the role and privileges of a user. Set it as one of the following values:
 
   - `NULL`.
-  - A temporary token generated in Agora Console. A temporary token is valid for 24 hours. For details, see [Get a temporary token](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#get-a-temporary-token).
+  - A temporary token generated in Agora Console. A temporary token is valid for 24 hours. For details, see [Get a temporary token](https://docs.agora.io/en/Agora%20Platform/token#get-a-temporary-token).
   - A token generated at the server. This applies to scenarios with high-security requirements. For details, see [Generate a token from Your Server](https://docs.agora.io/en/Video/token_server_cpp).
 
   <div class="alert note">If your project has enabled the app certificate, ensure that you provide a token.</div>
