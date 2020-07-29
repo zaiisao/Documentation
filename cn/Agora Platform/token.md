@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 16 2020 09:51:03 GMT+0800 (CST)
+updatedAt: Wed Jul 29 2020 06:45:03 GMT+0800 (CST)
 ---
 # 校验用户权限
 为保证通信安全，当用户加入 RTC 频道或服务端开始录制时，Agora 需要对其鉴权。Agora 提供如下鉴权方案，你可以根据自己的实际使用场景，选择合适的鉴权方式：
@@ -99,7 +99,7 @@ App 证书是 Agora 控制台为开发项目生成的字符串。根据不同的
  <details>
 	<summary><font color="#3ab7f8">生成临时 Token</font></summary>
 	
-	<div class="alert note"><li>生成临时 Token 前，请确保你已开启主要 App 证书。详见<a href="#appcertificate">启用主要 App 证书</a >。<li>临时 Token 适用于对安全要求一般的测试场景。对于正式生产环境，我们推荐使用正式 Token。<li>临时 Token 不适用于 Agora RTM SDK。</li></div>
+	<div class="alert note"><ul><li>生成临时 Token 前，请确保你已开启主要 App 证书。详见<a href="#appcertificate">启用主要 App 证书</a >。<li>临时 Token 适用于对安全要求一般的测试场景。对于正式生产环境，我们推荐使用正式 Token。<li>临时 Token 不适用于 Agora RTM SDK。</li></ul></div>
 	
 	进入<b>项目管理</b>页面，在项目列表中，点击 ![](https://web-cdn.agora.io/docs-files/1574923151660) 按钮。 
 	
@@ -113,7 +113,7 @@ App 证书是 Agora 控制台为开发项目生成的字符串。根据不同的
   
 - <a name = "generatetoken"></a>在正式生产环境中，Agora 建议你在服务端调用 `buildTokenWithUid` 生成正式 Token。详见[生成 Token](https://docs.agora.io/cn/Audio%20Broadcast/token_server_cpp)。
 
-<div class="alert note"><li>Agora 支持使用 C++、Java、Python、PHP 等语言在你的服务端生成正式 Token。本节 API 注释以 C++ 示例代码为例。<li>Token 采用业界标准化的 HMAC/SHA1 加密方案，在 Node.js、Java、Python、C++ 等绝大多数通用的服务端开发平台上均可获得所需加密库。具体加密方案可参看 <a href="http://en.wikipedia.org/wiki/Hash-based_message_authentication_code">Authentication code</a >。</li></div>
+<div class="alert note"><ul><li>Agora 支持使用 C++、Java、Python、PHP 等语言在你的服务端生成正式 Token。本节 API 注释以 C++ 示例代码为例。<li>Token 采用业界标准化的 HMAC/SHA1 加密方案，在 Node.js、Java、Python、C++ 等绝大多数通用的服务端开发平台上均可获得所需加密库。具体加密方案可参看 <a href="http://en.wikipedia.org/wiki/Hash-based_message_authentication_code">Authentication code</a >。</li></ul></div>
    
   示例代码
  
@@ -174,5 +174,3 @@ App 证书是 Agora 控制台为开发项目生成的字符串。根据不同的
 4. 在全量用户切换至 Token 鉴权后，Agora 建议你删除无证书。
 
 	<div class="alert warning">一旦无证书被删除，你无法使用 App ID 鉴权，且项目无法重新开启无证书。</div>
-
-   
