@@ -3,7 +3,7 @@
 title: 消息发送 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Tue Jul 28 2020 05:45:12 GMT+0800 (CST)
+updatedAt: Wed Jul 29 2020 06:20:06 GMT+0800 (CST)
 ---
 # 消息发送 RESTful API
 ## 认证
@@ -173,7 +173,7 @@ Request request = new Request.Builder()
 
 ### 调用频率限制
 
-对于每个 App ID，发送频道消息 API 的调用频率上限是 1,000 次每秒。
+对于每个 App ID，发送频道消息 API 的调用频率上限是 500 次每秒。
 
 ### 参数
 
