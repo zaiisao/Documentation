@@ -14,7 +14,7 @@ updatedAt: Tue Jul 21 2020 10:27:37 GMT+0800 (CST)
 
 ## <a name="auth"></a>认证
 
-云端录制 RESTful API 仅支持 HTTPS 协议。使用 RESTful API 前，你需要通过 HTTP 基本认证，详见 [RESTful API 认证](https://docs.agora.io/cn/faq/restful_authentication)。
+云端录制 RESTful API 仅支持 HTTPS 协议。使用 RESTful API 前，你需要通过 [HTTP 基本认证](https://docs.agora.io/cn/faq/restful_authentication)。
 
 ## 数据格式
 

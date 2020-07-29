@@ -27,7 +27,7 @@ updatedAt: Sun Jun 28 2020 08:33:42 GMT+0800 (CST)
 
 ## 认证
 
-使用 RESTful API 前，你需要通过 HTTP 基本认证，详见 [RESTful API 认证](https://docs.agora.io/cn/faq/restful_authentication)。
+使用 RESTful API 前，你需要通过 [HTTP 基本认证](https://docs.agora.io/cn/faq/restful_authentication)。
 
 ## 数据格式
 
