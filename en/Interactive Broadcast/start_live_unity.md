@@ -3,7 +3,7 @@
 title: Start Live Interactive Video Streaming
 description: 
 platform: Unity
-updatedAt: Tue Jul 07 2020 15:12:15 GMT+0800 (CST)
+updatedAt: Wed Jul 29 2020 07:29:37 GMT+0800 (CST)
 ---
 # Start Live Interactive Video Streaming
 Use this guide to quickly start the live interactive video streaming with the Agora Video SDK for Unity.
@@ -225,7 +225,7 @@ After setting the client role and the local video view (for the interactive vide
 - `channelKey`: The token for identifying the role and privileges of a user. Set it as one of the following values:
 
   - `NULL`.
-  - A temporary token generated in Agora Console. A temporary token is valid for 24 hours. For details, see [Get a temporary token](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#get-a-temporary-token).
+  - A temporary token generated in Agora Console. A temporary token is valid for 24 hours. For details, see [Get a temporary token](https://docs.agora.io/en/Agora%20Platform/token#get-a-temporary-token).
   - A token generated at the server. This applies to scenarios with high-security requirements. For details, see [Generate a token from Your Server](https://docs.agora.io/en/Video/token_server_cpp).
 
   <div class="alert note">If your project has enabled the app certificate, ensure that you provide a token.</div>
