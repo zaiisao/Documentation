@@ -3,7 +3,7 @@
 title: Set up Authentication
 description: token authentication
 platform: All Platforms
-updatedAt: Wed Jul 29 2020 06:48:36 GMT+0800 (CST)
+updatedAt: Wed Jul 29 2020 06:49:10 GMT+0800 (CST)
 ---
 # Set up Authentication
 To ensure communication security, when users join an RTC channel or you start recording on the server, Agora needs to check their authentication information. Agora provides three authentication mechanisms. According to your scenarios, you can choose one of the following mechanisms:
@@ -102,7 +102,7 @@ To enable a primary certificate, do the following:
  <details>
 	<summary><font color="#3ab7f8">Generate a temporary token</font></summary>
 	
-	<div class="alert note"><li>Ensure that you have enabled a primary certificate before generating a temporary token. See <a href="#appcertificate">Enable a primary app certificate</a >.<li>A temporary token applies to scenarios requiring low security. Agora recommends using a token generated on your server for production environment.<li>A temporary token does not apply to the Agora RTM SDK.</li></div>
+	<div class="alert note"><ul><li>Ensure that you have enabled a primary certificate before generating a temporary token. See <a href="#appcertificate">Enable a primary app certificate</a >.<li>A temporary token applies to scenarios requiring low security. Agora recommends using a token generated on your server for production environment.<li>A temporary token does not apply to the Agora RTM SDK.</li></ul></div>
 	
 	On the <b>Project Management</b> page, find the project for which you want to generate a temporary token, and click ![](https://web-cdn.agora.io/docs-files/1574923151660).
 
