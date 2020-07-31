@@ -3,10 +3,17 @@
 title: Start a Video Call
 description: 
 platform: Android
-updatedAt: Tue Jun 09 2020 04:45:40 GMT+0800 (CST)
+updatedAt: Fri Jul 31 2020 09:30:56 GMT+0800 (CST)
 ---
 # Start a Video Call
 Use this guide to quickly start a basic video call with the Agora Video SDK for Android.
+
+
+## Video tutorial
+
+The following video demonstrates how to build an app that implements the Agora video call from scratch.
+
+<video src="https://web-cdn.agora.io/docs-files/1596187703386"  controls width = 100% height = auto>Your browser does not support the <code>video</code> tag.</video>
 
 ## Sample project
 
@@ -484,7 +491,7 @@ After initializing the RtcEngine object and setting the local video view (for a 
 
 * `token`: Pass a token that identifies the role and privilege of the user.  You can set it as one of the following values:
   * `NULL`.
-  * A temporary token generated in Console. A temporary token is valid for 24 hours. For details, see [Get a Temporary Token](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#get-a-temporary-token).
+  * A temporary token generated in Console. A temporary token is valid for 24 hours. For details, see [Get a Temporary Token](https://docs.agora.io/en/Agora%20Platform/token#get-a-temporary-token).
   * A token generated at the server. This applies to scenarios with high-security requirements. For details, see [Generate a token from Your Server](../../en/Video/token_server_cpp.md).
   
  <div class="alert note">If your project has enabled the app certificate, ensure that you provide a token.</div>

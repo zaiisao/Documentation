@@ -3,7 +3,7 @@
 title: Start a Video Call
 description: 
 platform: Web
-updatedAt: Wed Jul 29 2020 07:31:39 GMT+0800 (CST)
+updatedAt: Fri Jul 31 2020 09:28:50 GMT+0800 (CST)
 ---
 # Start a Video Call
 <div class="alert note">Agora has released the Agora Web SDK NG, the next generation of the Agora Web SDK, which fully optimizes the internal architecture of the SDK and improves its usability. Based on Typescript, the Agora Web SDK NG uses Promises for asynchronous operations and provides more flexible and easy-to-use APIs. Click <a href="https://agoraio-community.github.io/AgoraWebSDK-NG/en/">here</a> to learn more about the Agora Web SDK NG.</div>
@@ -14,11 +14,12 @@ This guide shows you how to build a simple web app with the Agora Web SDK. We re
 
 <div class="alert warning">Due to security limits on HTTP addresses except 127.0.0.1, Agora Web SDK only supports HTTPS or http://localhost (http://127.0.0.1). Do not deploy your project over HTTP.</div>
 
+
 ## Video tutorial
 
 The following video demonstrates how to build an app that implements the Agora video call from scratch.
 
-<video src="https://web-cdn.agora.io/docs-files/1582790845065" poster="https://web-cdn.agora.io/docs-files/1582790881579"  controls width = 100% height = auto>Your browser does not support the <code>video</code> tag.</video>
+<video src="https://web-cdn.agora.io/docs-files/1582790845065"  controls width = 100% height = auto>Your browser does not support the <code>video</code> tag.</video>
 
 ## Sample project
 

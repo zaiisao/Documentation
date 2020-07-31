@@ -171,7 +171,7 @@ After initializing the IRtcEngine object and setting the local video view, you c
 
 * `token`: Pass a token that identifies the role and privilege of the user.  You can set it as one of the following values:
   * `NULL`.
-  * A temporary token generated in Console. A temporary token is valid for 24 hours. For details, see [Get a Temporary Token](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#get-a-temporary-token).
+  * A temporary token generated in Console. A temporary token is valid for 24 hours. For details, see [Get a Temporary Token](https://docs.agora.io/en/Agora%20Platform/token#get-a-temporary-token).
   * A token generated at the server. This applies to scenarios with high-security requirements. For details, see [Generate a token from Your Server](../../en/Video/token_server_cpp.md).
   
  <div class="alert note">If your project has enabled the app certificate, ensure that you provide a token.</div>
