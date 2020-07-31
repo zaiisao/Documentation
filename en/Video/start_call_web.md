@@ -19,7 +19,7 @@ This guide shows you how to build a simple web app with the Agora Web SDK. We re
 
 The following video demonstrates how to build an app that implements the Agora video call from scratch.
 
-<video src="https://web-cdn.agora.io/docs-files/1582790845065"  controls width = 100% height = auto>Your browser does not support the <code>video</code> tag.</video>
+<video src="https://web-cdn.agora.io/docs-files/1582790845065"  poster="https://web-cdn.agora.io/docs-files/1596188065118" controls width = 100% height = auto>Your browser does not support the <code>video</code> tag.</video>
 
 ## Sample project
 

@@ -13,7 +13,7 @@ Use this guide to quickly start a basic video call with the Agora Video SDK for 
 
 The following video demonstrates how to build an app that implements the Agora video call from scratch.
 
-<video src="https://web-cdn.agora.io/docs-files/1596187703386"  controls width = 100% height = auto>Your browser does not support the <code>video</code> tag.</video>
+<video src="https://web-cdn.agora.io/docs-files/1596187703386"  poster="https://web-cdn.agora.io/docs-files/1596188065118" controls width = 100% height = auto>Your browser does not support the <code>video</code> tag.</video>
 
 ## Sample project
 
