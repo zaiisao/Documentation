@@ -3,7 +3,7 @@
 title: 实现音频直播
 description: 
 platform: Web
-updatedAt: Wed Jul 29 2020 07:34:09 GMT+0800 (CST)
+updatedAt: Wed Jul 29 2020 07:39:07 GMT+0800 (CST)
 ---
 # 实现音频直播
 <div class="alert note">声网已经推出下一代 Agora Web SDK (Agora Web SDK NG)，优化了 SDK 的内部架构，提高了 SDK 的可用性。Agora Web SDK NG 基于 Typescript 开发，并使用 Promise 来管理异步操作，提供了更灵活更易用的 API 方案。点击<a href="https://agoraio-community.github.io/AgoraWebSDK-NG/zh-CN/">此处</a>即刻体验 Agora Web SDK NG。</div>
@@ -220,7 +220,7 @@ var option = {
 
 在 `AgoraRTC.createClient` 方法中，需注意 `mode` 和 `codec` 这两个参数的设置：
 
-   - `mode` 用于设置[频道场景](https://docs.agora.io/cn/Agora%20Platform/terms#channel-profile)。一对一或多人通话中，建议设为 `"rtc"` ，使用通信场景；[互动直播](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms%23live-broadcast-core-concepts#a-name-livea直播核心概念)中，建议设为 `"live"`，使用直播场景。
+   - `mode` 用于设置[频道场景](https://docs.agora.io/cn/Agora%20Platform/terms#channel-profile)。一对一或多人通话中，建议设为 `"rtc"` ，使用通信场景；互动直播中，建议设为 `"live"`，使用直播场景。
    - `codec` 用于设置浏览器使用的编解码格式。如果你需要使用 Safari 12.1 及之前版本，将该参数设为 `"h264"`；如果你需要在手机上使用 Agora Web SDK，请参考[移动端使用 Web SDK](https://docs.agora.io/cn/faq/web_on_mobile)。
 
 ### 设置用户角色
@@ -252,8 +252,8 @@ rtc.client.setClientRole(role);
 
 在 `Client.join` 中注意以下参数的设置：
 
-- `token`: 该参数为可选。如果你的 Agora 项目开启了 App 证书，你需要在该参数中传入一个 Token，详见 [使用 Token](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#使用-token)。
-	- 在测试环境，我们推荐使用控制台生成临时 Token，详见[获取临时 Token](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms%23get-a-temporary-token#获取临时-token)。
+- `token`: 该参数为可选。如果你的 Agora 项目开启了 App 证书，你需要在该参数中传入一个 Token，详见 [使用 Token](https://docs.agora.io/cn/Agora%20Platform/token#Token)。
+	- 在测试环境，我们推荐使用控制台生成临时 Token，详见[获取临时 Token](https://docs.agora.io/cn/Agora%20Platform/token#get-a-temporary-token)。
 	- 在生产环境，我们推荐你在自己的服务端生成 Token，详见 [生成 Token](../../cn/Audio%20Broadcast/token_server_cpp.md).
 - `channel`: 频道名，长度在 64 字节以内的字符串。
 - `uid`: 用户 ID，频道内每个用户的 UID 必须是唯一的。如果你将 `uid` 设为 `null` 或 `0`，Agora 会自动分配一个 UID 并在 `onSuccess` 回调中返回。

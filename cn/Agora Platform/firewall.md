@@ -3,12 +3,14 @@
 title: 应用企业防火墙限制
 description: 
 platform: All Platforms
-updatedAt: Fri Jul 24 2020 07:08:57 GMT+0800 (CST)
+updatedAt: Thu Jul 30 2020 09:32:32 GMT+0800 (CST)
 ---
 # 应用企业防火墙限制
-对于有外网访问限制的公司，在使用 Agora 相关服务之前，需要添加防火墙白名单。
+## 概览
 
-如果你的防火墙不允许打开本文端口和白名单，我们推荐使用 Agora 云代理功能连接到 Agora 服务。各产品云代理文档如下：
+对于有外网访问限制的网络环境，在使用 Agora 相关服务之前，需要添加本文中的域名白名单、不对 IP 地址设限、且开放相应端口。
+
+如果你的防火墙不能完全满足上述操作，我们推荐使用 Agora 云代理功能连接到 Agora 服务。各产品云代理文档如下：
 
 - [RTC Native SDK 使用云代理](../../cn/Agora%20Platform/cloudproxy_native.md)
 - [RTC Web SDK 使用云代理](../../cn/Agora%20Platform/cloud_proxy_web.md)
@@ -17,8 +19,6 @@ updatedAt: Fri Jul 24 2020 07:08:57 GMT+0800 (CST)
 <div class="alert note"><li>如果你想通过 VPN 使用 Agora 的服务，请确保已联系 VPN 运营商将对应端口添加到白名单中，否则可能会遇到通话失败等未定义行为。</li><li>如无特殊说明，源地址就是集成了 Agora SDK 的客户端。</li></div>
 
 ## Agora RTC SDK
-
-为获得优质的音视频通话体验，Agora 建议你使用 UDP 端口。与 TCP 相比，UDP 更注重通话的时效性，因此能在填补丢包的同时同时将通话延迟降到最低。
 
 ### Native SDK
 
