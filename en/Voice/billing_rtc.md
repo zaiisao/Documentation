@@ -3,7 +3,7 @@
 title: Billing for Real-time Communication
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 13 2020 09:33:12 GMT+0800 (CST)
+updatedAt: Tue Aug 04 2020 02:09:52 GMT+0800 (CST)
 ---
 # Billing for Real-time Communication
 This article introduces the billing policy for the real-time communication (RTC) service provided by Agora.
@@ -89,8 +89,9 @@ The aggregate resolution of A is calculated as follows:
 
 | Time | Video from B | Video from C | Video from D | The aggregate resolution |
 | ---------------- | ---------------- | ---------------- | ---------------- | ---------------- |
-| The initial 10 minutes | 640 × 360      | 240 × 180      | 1280 × 720 | 1195200 |
-| The subsequent 10 minutes | 640 × 360      | 640 × 360      | 640 × 360   | 691200 |
+| The initial 10 minutes | 640 × 360      | 640 × 360      | 640 × 360   | 691200 |
+| The subsequent 10 minutes | 640 × 360      | 240 × 180      | 1280 × 720 | 1195200 |
+
 
 As shown in the table:
 
@@ -127,7 +128,7 @@ In this session, both A and B use the video service. Service minutes = 20 minute
 
 **Scenario**: Users A, B, and C join the channel at the same time and have a voice call for 20 minutes.
 
-In this session, A, B, and C use the audio service for 30 seconds respectively. Service minutes = 30 minutes of audio service × 3 = 90 minutes of audio service.
+In this session, A, B, and C use the audio service for 20 minutes respectively. Service minutes = 20 minutes of audio service × 3 = 60 minutes of audio service.
 
 ### Video call with four users
 

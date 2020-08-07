@@ -3,7 +3,7 @@
 title: Channel Encryption
 description: 
 platform: Windows
-updatedAt: Mon Jul 06 2020 07:29:45 GMT+0800 (CST)
+updatedAt: Thu Aug 06 2020 11:15:46 GMT+0800 (CST)
 ---
 # Channel Encryption
 This page introduces various encryption modes. Choose one that best suits your needs.

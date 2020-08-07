@@ -3,7 +3,7 @@
 title: Start Live Interactive Audio Streaming
 description: 
 platform: Electron
-updatedAt: Fri Jul 10 2020 07:07:54 GMT+0800 (CST)
+updatedAt: Fri Jul 31 2020 12:05:03 GMT+0800 (CST)
 ---
 # Start Live Interactive Audio Streaming
 Use this guide to quickly start the live interactive audio streaming with the Agora SDK for Electron.
@@ -17,7 +17,7 @@ We provide an open-source sample project that implements [Agora Electron Quickst
 * Node.js 6.9.1 or later
 * Electron 1.8.3 or later
 
-<div class="alert note">If you use Windows for development, ensure that you run <code>npm install -D --arch = ia32 electron</code> to install a 32-bit Electron. Otherwise you may receive the error: <code>Not a valid win32 application</code>.</div>
+<div class="alert note">If you use Windows for development, ensure that you run <code>npm install -D --arch=ia32 electron</code> to install a 32-bit Electron. Otherwise you may receive the error: <code>Not a valid win32 application</code>.</div>
 <div class="alert note">Open the specified ports in <a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a> if your network has a firewall.</div>
 
 ## Set up the development environment
