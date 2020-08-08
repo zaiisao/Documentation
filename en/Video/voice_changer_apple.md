@@ -14,10 +14,10 @@ To accomplish this, Agora RTC SDK provides preset voice effects. You can also dy
 ## Implementation
 
 
-Before proceeding, ensure that you implement a basic call or the interactive live streaming in your project. See the following documents:
+Before proceeding, ensure that you implement a basic call or the live interactive streaming in your project. See the following documents:
 
-- iOS: [Start a Call](../../en/Video/start_call_ios.md) or [Start the interactive live streaming](../../en/Video/start_live_ios.md)
-- macOS: [Start a Call](../../en/Video/start_call_mac.md) or [Start the interactive live streaming](../../en/Video/start_live_mac.md)
+- iOS: [Start a Call](../../en/Video/start_call_ios.md) or [Start Live Interactive Streaming](../../en/Video/start_live_ios.md)
+- macOS: [Start a Call](../../en/Video/start_call_mac.md) or [Start Live Interactive Streaming](../../en/Video/start_live_mac.md)
 
 
 ### Use preset voice effects
