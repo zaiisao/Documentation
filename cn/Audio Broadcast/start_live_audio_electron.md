@@ -3,21 +3,25 @@
 title: 实现音频直播
 description: 
 platform: Electron
-updatedAt: Thu Jun 18 2020 10:40:50 GMT+0800 (CST)
+updatedAt: Fri Jul 31 2020 12:02:19 GMT+0800 (CST)
 ---
 # 实现音频直播
-本文介绍如何使用 Agora Electron SDK 快速实现音频直播。
+本文介绍如何使用 Agora Electron SDK 快速实现音频互动直播。
 
 ## 示例项目
 
 Agora 在 GitHub 提供一个开源的 [Agora Electron Quickstart](https://github.com/AgoraIO-Community/Agora-Electron-Quickstart) 示例项目。在实现相关功能前，你可以下载并查看源代码。
 
+<div class="alert note">为避免 crash，请通过命令行运行 Agora Electron Quickstart 示例项目。</div>
+
 ## 开发环境要求
 
 * Node.js 6.9.1 及以上
-* Electron 1.8.3 及以上
+* Electron 1.8.3 或 3.0.6 或 4.2.8 或 5.0.8 或 6.1.7 或 7.1.2
+* Win32（IA32）或 Darwin 操作系统
 
-<div class="alert note">在 Windows 平台使用 Agora Electron SDK 时，请先安装 32 位的 Electron：<code>npm install -D --arch = ia32 electron</code>。否则你会收到报错：<code>Not a valid win32 application</code>。</div>
+<div class="alert note">在 Windows 平台使用 Agora Electron SDK 时，请先安装 32 位的 Electron：<code>npm install -D --arch=ia32 electron</code>。否则你会收到报错：<code>Not a valid win32 application</code>。</div>
+
 <div class="alert note">如果你的网络环境部署了防火墙，请根据<a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">应用企业防火墙限制</a>打开相关端口。</div>
 
 ## 准备开发环境
@@ -47,6 +51,7 @@ Agora 在 GitHub 提供一个开源的 [Agora Electron Quickstart](https://githu
 	import AgoraRtcEngine from 'agora-electron-sdk'
 	```
 	
+
 **方法二：官网下载 SDK 并引入**
 
 <div class="alert note">如果你选择官网下载并引入的方式，请务必使用 Electron 3.0.6。</div>
@@ -59,21 +64,56 @@ Agora 在 GitHub 提供一个开源的 [Agora Electron Quickstart](https://githu
 	import AgoraRtcEngine from './agora-electron-sdk/AgoraSdk.js'
 	```
 
-### 修改 .npmrc 文件切换预编译版本
+### 修改配置
 
-Agora 默认使用 1.8.3 版本的 Electron 进行编译。请根据你的 Electron 版本修改 .npmrc 文件，切换预编译版本：
+根据实际情况，选择如下任意一种方式，修改平台、Electron 预编译版本和架构的配置。
 
-<div class="alert note">如果你的 Electron 版本和预编译版本不同，你会收到报错，如 <code>is compiled from Nodejs version 54, this version requires Nodejs version 64</code>。</div>
+<div class="alert note">Agora 默认使用 1.8.3 版本的 Electron 进行编译。如果你的 Electron 版本和预编译版本不同，你会收到报错，如 <code>is compiled from Nodejs version 54, this version requires Nodejs version 64</code>。</div>
+
+#### 修改 package.json 文件
+
+在项目根目录下的 `package.json` 文件中修改配置。示例如下：
+
+```json
+{
+  ......
+  // Windows 平台
+  "agora_electron": {
+    "platform": "win32", // 只支持 win32
+    "electron_version": "5.0.8", // 支持 1.8.3 或 3.0.6 或 4.2.8 或 5.0.8 或 6.1.7 或 7.1.2
+    "prebuilt": true,
+    "arch": "ia32" // 只支持 ia32
+  },
+}
+```
+
+```json
+{
+  ......
+  // macOS 平台
+  "agora_electron": {
+    "platform": "darwin", // 只支持 darwin
+    "electron_version": "5.0.8", // 支持 1.8.3 或 3.0.6 或 4.2.8 或 5.0.8 或 6.1.7 或 7.1.2
+    "prebuilt": true
+  },
+}
+```
+
+#### 修改 .npmrc 文件
+
+在 `.npmrc` 文件中修改配置。示例如下：
+
+``` javascript
+// Windows 平台
+agora_electron_platform = win32 // 只支持 win32
+agora_electron_dependent = 5.0.8 // 支持 1.8.3 或 3.0.6 或 4.2.8 或 5.0.8 或 6.1.7 或 7.1.2
+agora_electron_arch = ia32 // 只支持 ia32
+```
 
 ```javascript
-// 下载使用 Electron 1.8.3 预编译的版本
-agora_electron_dependent = 1.8.3
-// 下载使用 Electron 3.0.6 预编译的版本
-agora_electron_dependent = 3.0.6
-// 下载使用 Electron 4.2.8 预编译的版本
-agora_electron_dependent = 4.2.8
-// 下载使用 Electron 5.0.8 预编译的版本
-agora_electron_dependent = 5.0.8
+// macOS 平台
+agora_electron_platform = darwin // 只支持 darwin
+agora_electron_dependent = 5.0.8 // 支持 1.8.3 或 3.0.6 或 4.2.8 或 5.0.8 或 6.1.7 或 7.1.2
 ```
 
 ### 安装依赖项
@@ -86,7 +126,7 @@ agora_electron_dependent = 5.0.8
 
 ## 实现互动直播
 
-请参考 [Agora Electron Quickstart](https://github.com/AgoraIO-Community/Agora-Electron-Quickstart) 示例项目在你的项目中实现相关的互动直播功能。
+请参考 [Agora Electron Quickstart](https://github.com/AgoraIO-Community/Agora-Electron-Quickstart) 示例项目在你的项目中实现相关的音频互动直播功能。
 
 ## SDK 开源
 

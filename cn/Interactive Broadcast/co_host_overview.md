@@ -2,7 +2,7 @@
 ---
 title: 多人连麦直播
 description: 多人连麦直播场景方案
-platform: Android
+platform: All Platforms
 updatedAt: Mon Jul 13 2020 09:42:31 GMT+0800 (CST)
 ---
 # 多人连麦直播

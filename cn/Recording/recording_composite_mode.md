@@ -3,7 +3,7 @@
 title: 合流录制
 description: 
 platform: Linux
-updatedAt: Thu Apr 16 2020 10:08:07 GMT+0800 (CST)
+updatedAt: Thu Aug 06 2020 13:46:27 GMT+0800 (CST)
 ---
 # 合流录制
 ## 功能描述
@@ -29,7 +29,7 @@ updatedAt: Thu Apr 16 2020 10:08:07 GMT+0800 (CST)
 
 | 录制内容       | 参数设置                                  | 录制生成文件        |
 | :------------- | :---------------------------------------- | :------------------ |
-| 仅录制音频     | `--isAudioOnly 1 --isMixingEabled 1`      | 一个 AAC 音频文件   |
+| 仅录制音频     | `--isAudioOnly 1 --isMixingEnabled 1`      | 一个 AAC 音频文件   |
 | 仅录制视频     | `--isVideoOnly 1 --isMixingEnabled 1`     | 一个 MP4 视频文件   |
 | 同时录制音视频 | `--isMixingEnabled 1 --mixedVideoAudio 2` | 一个 MP4 音视频文件 |
 

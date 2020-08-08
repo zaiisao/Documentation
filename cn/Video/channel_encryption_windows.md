@@ -3,7 +3,7 @@
 title: 媒体流加密
 description: 
 platform: Windows
-updatedAt: Wed May 27 2020 05:20:18 GMT+0800 (CST)
+updatedAt: Thu Aug 06 2020 11:11:50 GMT+0800 (CST)
 ---
 # 媒体流加密
 本文描述如何使用 Agora 内置的加密方案。

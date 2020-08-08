@@ -3,7 +3,7 @@
 title: 实现视频通话
 description: 
 platform: Electron
-updatedAt: Thu Jun 18 2020 10:42:38 GMT+0800 (CST)
+updatedAt: Fri Jul 31 2020 12:02:46 GMT+0800 (CST)
 ---
 # 实现视频通话
 本文介绍如何使用 Agora Electron SDK 快速实现视频通话。
@@ -18,7 +18,7 @@ Agora 在 GitHub 提供一个开源的 [Agora Electron Quickstart](https://githu
 * Electron 1.8.3 及以上
 
 
-<div class="alert note">在 Windows 平台使用 Agora Electron SDK 时，请先安装 32 位的 Electron：<code>npm install -D --arch = ia32 electron</code>。否则你会收到报错：<code>Not a valid win32 application</code>。</div>
+<div class="alert note">在 Windows 平台使用 Agora Electron SDK 时，请先安装 32 位的 Electron：<code>npm install -D --arch=ia32 electron</code>。否则你会收到报错：<code>Not a valid win32 application</code>。</div>
 <div class="alert note">如果你的网络环境部署了防火墙，请根据<a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">应用企业防火墙限制</a>打开相关端口。</div>
 
 ## 准备开发环境

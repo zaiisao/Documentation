@@ -3,7 +3,7 @@
 title: 频道连接状态管理
 description: 
 platform: Android
-updatedAt: Tue Sep 24 2019 07:46:05 GMT+0800 (CST)
+updatedAt: Fri Aug 07 2020 08:45:04 GMT+0800 (CST)
 ---
 # 频道连接状态管理
 当用户使用 Agora SDK 进行音视频通话或互动直播时，他会有多个 Agora 频道连接状态。本文介绍 Agora 频道如何判断用户在通信的各个阶段处于什么连接状态以及各状态的转变过程。
@@ -52,4 +52,4 @@ updatedAt: Tue Sep 24 2019 07:46:05 GMT+0800 (CST)
 
 ## 相关文档
 
-v2.3.2 版本及之前的断线重连机制， 以及进程被杀时 SDK 会触发的回调，请参考 [FAQ：SDK 对断网、杀进程的处理](https://docs.agora.io/cn/faq/sdk_behavior)。
+v2.3.2 版本及之前的断线重连机制， 以及进程被杀时 SDK 会触发的回调，请参考 [FAQ：SDK 是否支持断线重连机制](https://docs.agora.io/cn/faq/sdk_behavior)。

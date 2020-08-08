@@ -3,7 +3,7 @@
 title: 事件与历史消息查询 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Tue Jul 28 2020 05:45:32 GMT+0800 (CST)
+updatedAt: Fri Jul 31 2020 07:54:52 GMT+0800 (CST)
 ---
 # 事件与历史消息查询 RESTful API
 事件与历史消息查询 RESTful API 目前支持以下功能：
@@ -14,7 +14,7 @@ updatedAt: Tue Jul 28 2020 05:45:32 GMT+0800 (CST)
 
 ### Basic HTTP 认证
 
-实时消息 RESTful API 仅支持 HTTPS 协议。发送请求时，你需要提供 `api_key:api_secret` 通过 basic HTTP 认证并填入 HTTP 请求头部的 Authorization 字段。具体生成 `Authorization` 字段的方法请参考 [RESTful API 认证](https://docs.agora.io/cn/faq/restful_authentication)。
+实时消息 RESTful API 仅支持 HTTPS 协议。发送请求时，你需要提供 `api_key:api_secret` 通过 basic HTTP 认证并填入 HTTP 请求头部的 `Authorization` 字段。具体生成 `Authorization` 字段的方法请参考 [RESTful API 认证](https://docs.agora.io/cn/faq/restful_authentication)。
 
 ### Token 认证
 
