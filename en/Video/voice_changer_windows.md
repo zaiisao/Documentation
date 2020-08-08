@@ -3,119 +3,290 @@
 title: Set the Voice Enhancement and Effects
 description: How to adjust pitch and tone on Windows
 platform: Windows
-updatedAt: Fri Jun 19 2020 14:04:04 GMT+0800 (CST)
+updatedAt: Sat Aug 08 2020 16:13:10 GMT+0800 (CST)
 ---
 # Set the Voice Enhancement and Effects
-## Introduction 
+## Introduction
 
-In social and entertainment scenarios, users often need various voice effects to enhance an interactive experience. To accomplish this, Agora provides multiple preset voice changers and reverberation effects. You can also dynamically change the users' voice, such as adjusting the pitch and setting the equalization and reverberation modes.
-
-Agora provides an [online demo](https://www.agora.io/en/audio-demo) to try out the voice changer and reverberation effects.
+In social and entertainment scenarios, users often want various voice enhancements or voice effects to improve their interactive experiences. For example, in chat rooms, a user can select a voice effect to add a virtual stereo effect to their voice.
+To accomplish this, Agora RTC SDK provides preset voice effects. You can also dynamically change the users' voices, such as adjusting the pitch, setting the equalization, and reverberation modes. Try out the preset voice effects on the [online Demo](https://www.agora.io/en/audio-demo) provided by Agora. 
 
 ## Implementation
 
-Before proceeding, ensure that you have implemented basic real-time functions in your project. See [Start a  Call](../../en/Video/start_call_windows.md) or [Start Live Interactive Streaming](../../en/Video/start_live_windows.md) for details.
 
-### Preset voice effects
+Before proceeding, ensure that you implement a basic call or the interactive live streaming in your project. See [Start a call](../../en/Video/start_call_windows.md) or [Start the interactive live streaming](../../en/Video/start_live_windows.md) for details.
 
-#### Voice enhancement
 
-You can use one of the following preset voice changer options by calling `setLocalVoiceChanger`:
+### Use preset voice effects
 
-| Voice effect             | Description                                                  | Scenario          |
-| :----------------------- | :----------------------------------------------------------- | :---------------- |
-| VOICE_CHANGER_XXX        | Changes the local voice to an old man, a little boy, or the Hulk. | Voice talk        |
-| VOICE_BEAUTY_XXX         | Beautifies the local voice by making it sound more vigorous, resounding, or adding spatial resonance. | <li>Voice talk<li>Singing</li> |
-| GENERAL_VOICE_BEAUTY_XXX | Adds gender-based beautification effects to the local voice:<li>For a male voice: Adds magnetism to the voice.<li>For a female voice: Adds freshness or vitality to the voice.</li> | Voice talk        |
+The SDK provides voice enhancement and voice effects for different scenarios, as follows:
 
-See details in the following table:
+<table>
+  <tr>
+    <th colspan="2">Category</th>
+    <th>Scenario</th>
+  </tr>
+  <tr>
+    <td rowspan="2">Voice enhancement</td>
+    <td>Chat enhancement</td>
+    <td>Audio and video scenarios focusing on a user’s speaking voice:<li>Blind date</li><li>Emotional radio</li><li>Co-host audio streaming</li><li>Voice-only PK Hosting</li><li>Gaming chatroom</li></td>
+  </tr>
+  <tr>
+    <td>Timbre transformation</td>
+    <td>Audio and video scenarios focusing on a user’s speaking voice or singing voice:<li>Co-host audio streaming</li><li>Voice PK hosting</li><li>Gaming chatroom</li><li>Blind date</li><li>Online KTV</li><li>FM radio</li></td>
+  </tr>
+  <tr>
+    <td rowspan="3">Voice effect</td>
+    <td>Voice changer effect</td>
+    <td>Audio and video scenarios focusing on a user’s speaking voice:<li>Co-host audio streaming</li><li>Voice-only PK Hosting</li><li>Gaming chatroom</li></td>
+  </tr>
+  <tr>
+    <td>Style transformation</td>
+    <td>Audio and video scenarios focusing on a user’s singing voice:<li>Online KTV</li><li>Music radio</li><li>Live-streaming showroom</li></td>
+  </tr>
+  <tr>
+    <td>Room acoustics</td>
+    <td>Audio and video scenarios focusing on a user’s speaking voice or singing voice:<li>Co-host audio streaming</li><li>Voice PK hosting</li><li>Gaming chatroom</li><li>Blind date</li><li>Online KTV</li><li>FM radio</li></td>
+  </tr>
+ </table>
+
+You can use the preset voice effects by calling `setLocalVoiceChanger` or `setLocalVoiceReverbPreset`.
+
+
+
+<div class="alert note"><li>Before calling the method, you need to set the <tt>profile</tt> parameter of <tt>setAudioProfile</tt> to <tt>AUDIO_PROFILE_MUSIC_HIGH_QUALITY(4)</tt> or <tt>AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO(5)</tt>, and to set <tt>scenario</tt> parameter to <tt>AUDIO_SCENARIO_GAME_STREAMING(3)</tt>.</li><li>The voice effects preset in <tt>setLocalVoiceChanger</tt> and <tt>setLocalVoiceReverbPreset</tt> are mutually exclusive. The method called later overrides the one called earlier.</li> </div>
+
+
+#### Chat enhancement 
+
+Chat enhancement refers to enhancing the characteristics of male or female voices without altering the original voice beyond recognition.
+
+You can implement the chat enhancement by the enumerations in `setLocalVoiceChanger` as follows:
 
 | Enumeration                          | Description                                                  |
 | :----------------------------------- | :----------------------------------------------------------- |
-| VOICE_CHANGER_OFF                    | Turn off the local voice changer and revert to the original voice. |
-| VOICE_CHANGER_OLDMAN                 | The voice of an old man.                                     |
-| VOICE_CHANGER_BABYBOY                | The voice of a little boy.                                   |
-| VOICE_CHANGER_BABYGIRL               | The voice of a little girl.                                  |
-| VOICE_CHANGER_ZHUBAJIE               | The voice of Zhu Bajie, a character in *Journey to the West* who has a voice like that of a growling bear. |
-| VOICE_CHANGER_ETHEREAL               | The ethereal voice.                                          |
-| VOICE_CHANGER_HULK                   | The voice of Hulk.                                           |
-| VOICE_BEAUTY_VIGOROUS                | A more vigorous voice.                                       |
-| VOICE_BEAUTY_DEEP                    | A deeper voice.                                              |
-| VOICE_BEAUTY_MELLOW                  | A mellower voice.                                            |
-| VOICE_BEAUTY_FALSETTO                | Falsetto.                                                    |
-| VOICE_BEAUTY_FULL                    | A fuller voice.                                              |
-| VOICE_BEAUTY_CLEAR                   | A clearer voice.                                             |
-| VOICE_BEAUTY_RESOUNDING              | A more resounding voice.                                     |
-| VOICE_BEAUTY_RINGING                 | A more ringing voice.                                        |
-| VOICE_BEAUTY_SPACIAL                 | A more spatially resonant voice.                             |
-| GENERAL_BEAUTY_VOICE_MALE_MAGNETIC   | (For male only) A more magnetic voice. Do not use it for speakers with a female-sounding voice; otherwise, voice distortion occurs. |
-| GENERAL_BEAUTY_VOICE_FEMALE_FRESH    | (For female only) A fresher voice. Do not use it for speakers with a male-sounding voice; otherwise, voice distortion occurs. |
-| GENERAL_BEAUTY_VOICE_FEMALE_VITALITY | (For female only) A more vital voice. Do not use it for speakers with a male-sounding voice; otherwise, voice distortion occurs. |
+| `GENERAL_BEAUTY_VOICE_MALE_MAGNETIC`   | (For male-sounding voice only) A more magnetic voice. Do not use for speakers with a female-sounding voice; otherwise, voice distortion occurs. |
+| `GENERAL_BEAUTY_VOICE_FEMALE_FRESH`    | (For female-sounding voice only) A fresher voice. Do not use for speakers with a male-sounding voice; otherwise, voice distortion occurs. |
+| `GENERAL_BEAUTY_VOICE_FEMALE_VITALITY` | (For female-sounding voice only) A more vital voice. Do not use for speakers with a male-sounding voice; otherwise, voice distortion occurs. |
 
-<div class="alert warning">Enumerations that begin with <tt>GENERAL_BEAUTY_VOICE</tt> add gender-based beautification effect to the local voice.<p>Gender-based beautification effect works well only when applied to voices with the following characteristics:<p><li>Suitable for male-sounding voices: <tt>GENERAL_BEAUTY_VOICE_MALE_MAGNETIC</tt>.<li>Suitable for female-sounding voices: <tt>GENERAL_BEAUTY_VOICE_FEMALE_FRESH</tt> or <tt>GENERAL_BEAUTY_VOICE_FEMALE_VITALITY</tt>.</li></p><p>Using an unsuitable effect can lead to voice distortion.</li></div>
+```c++
+VOICE_CHANGER_PRESET voiceChanger;
+// Beautifies the local voice by making it sound more magnetic (for male only).
+voiceChanger = GENERAL_BEAUTY_VOICE_MALE_MAGNETIC;
+rtcEngine.setLocalVoiceChanger(voiceChanger);
+// Disables voice effects.
+voiceChanger = VOICE_CHANGER_OFF;
+rtcEngine.setLocalVoiceChanger(voiceChanger);
+```
 
-<div class="alert note">Do not use this method with <tt>setLocalVoiceReverbPreset</tt>, because the method called later overrides the one called earlier.</div>
+#### Timbre transformation 
+
+Timbre transformation changes the timbre of a voice in a specific way. Users can choose the most appropriate effect for their voice.
+
+You can implement the timbre transformation by the enumerations in `setLocalVoiceChanger` as follows:
+
+| Enumeration             | Description              |
+| :---------------------- | :----------------------- |
+| `VOICE_BEAUTY_VIGOROUS`   | A more vigorous voice.   |
+| `VOICE_BEAUTY_DEEP`       | A deeper voice.          |
+| `VOICE_BEAUTY_MELLOW`     | A mellower voice.        |
+| `VOICE_BEAUTY_FALSETTO`   | Falsetto.                |
+| `VOICE_BEAUTY_FULL`       | A fuller voice.          |
+| `VOICE_BEAUTY_CLEAR`      | A clearer voice.         |
+| `VOICE_BEAUTY_RESOUNDING` | A more resounding voice. |
+| `VOICE_BEAUTY_RINGING`    | A more ringing voice.    |
 
 ```c++
 VOICE_CHANGER_PRESET voiceChanger;
 // Beautifies the local voice by making it sound more vigorous.
 voiceChanger = VOICE_BEAUTY_VIGOROUS;
 rtcEngine.setLocalVoiceChanger(voiceChanger);
-// Disables voice enhancement.
+// Disables voice effects.
 voiceChanger = VOICE_CHANGER_OFF;
 rtcEngine.setLocalVoiceChanger(voiceChanger);
 ```
 
-#### Voice reverberation effects
+#### Voice changer effect
 
-You can use one of the following preset voice reverberation options by calling `setLocalVoiceReverbPreset`:
+Voice changer effects adjust the voice to make it sound different from the original.
 
-| Enumeration                   | Description                                                  |
-| :---------------------------- | :----------------------------------------------------------- |
-| AUDIO_REVERB_OFF              | Turn off local voice reverberation and revert to the original voice. |
-| AUDIO_REVERB_POPULAR          | The reverberation style typical of popular music.            |
-| AUDIO_REVERB_RNB              | The reverberation style typical of R&B music.                |
-| AUDIO_REVERB_ROCK             | The reverberation style typical of rock music.               |
-| AUDIO_REVERB_HIPHOP           | The reverberation style typical of hip-hop music.            |
-| AUDIO_REVERB_VOCAL_CONCERT    | The reverberation style typical of a concert hall.           |
-| AUDIO_REVERB_KTV              | The reverberation style typical of a KTV venue.              |
-| AUDIO_REVERB_STUDIO           | The reverberation style typical of a recording studio.       |
-| AUDIO_REVERB_FX_KTV           | The reverberation style typical of a KTV venue (enhanced).   |
-| AUDIO_REVERB_FX_VOCAL_CONCERT | The reverberation style typical of a concert hall (enhanced). |
-| AUDIO_REVERB_FX_UNCLE         | The reverberation style typical of an uncle's voice.         |
-| AUDIO_REVERB_FX_SISTER        | The reverberation style typical of a sister's voice.         |
-| AUDIO_REVERB_FX_STUDIO        | The reverberation style typical of a recording studio (enhanced). |
-| AUDIO_REVERB_FX_POPULAR       | The reverberation style typical of popular music (enhanced). |
-| AUDIO_REVERB_FX_RNB           | The reverberation style typical of R&B music (enhanced).     |
-| AUDIO_REVERB_FX_PHONOGRAPH    | The reverberation style typical of a vintage phonograph.     |
-| AUDIO_VIRTUAL_STEREO          | A reverberation style that adds a virtual stereo effect. The virtual stereo is an effect that renders the monophonic audio as the stereo audio, so that all users in the channel can hear the stereo voice effect. To achieve better virtual stereo reverberation, Agora recommends setting `profile` in `setAudioProfile` as `AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO(5).` |
+You can implement the voice changer effect by the enumerations in `setLocalVoiceChanger` or `setLocalVoiceReverbPreset` as follows:
 
-<div class="alert warning">When calling the <tt>setLocalVoiceReverbPreset</tt> method with an enumeration that begins with <tt>AUDIO_REVERB_FX</tt>, ensure that you set the <tt>profile</tt> parameter passed to the <tt>setAudioProfile</tt> as <tt>AUDIO_PROFILE_MUSIC_HIGH_QUALITY(4)</tt> or <tt>AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO(5)</tt>. Failure to do so prevents the <tt>setLocalVoiceReverbPreset</tt> method from setting the corresponding voice reverberation option.</div>
+<table>
+  <tr>
+    <th>Method</th>
+		<th>Enumeration</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td rowspan="5"><tt>setLocalVoiceChanger</tt></td>
+		<td><tt>VOICE_CHANGER_OLDMAN</tt></td>
+    <td>(For male-sounding voice only) Voice of an old man.</td>
+  </tr>
+  <tr>
+    <td><tt>VOICE_CHANGER_BABYBOY</tt></td>
+    <td>(For male-sounding voice only) Voice of a little boy.</td>
+  </tr>
+  <tr>
+    <td><tt>VOICE_CHANGER_BABYGIRL</tt></td>
+    <td>(For female-sounding voice only) Voice of a little girl.</td>
+  </tr>
+  <tr>
+    <td><tt>VOICE_CHANGER_ZHUBAJIE</tt></td>
+		<td>Voice of the Zhu Bajie, a character in <i>Journey to the West</i> who has a voice like that of a growling bear.</td>
+  </tr>
+  <tr>
+    <td><tt>VOICE_CHANGER_HULK</tt></td>
+    <td>Voice of the Hulk. </td>
+  </tr>
+	<tr>
+    <td rowspan="2"><tt>setLocalVoiceReverbPreset</tt></td>
+		<td><tt>AUDIO_REVERB_FX_UNCLE</tt></td>
+    <td>(For male-sounding voice only) Voice of a middle-aged uncle.</td>
+  </tr>
+  <tr>
+    <td><tt>AUDIO_REVERB_FX_SISTER</tt></td>
+    <td>(For female-sounding voice only) Voice of a maiden.</td>
+  </tr>
+ </table>
 
-<div class="alert note">Do not use this method with <tt>setLocalVoiceChanger</tt>, because the method called later overrides the one called earlier.</div>
+```c++
+VOICE_CHANGER_PRESET voiceChanger;
+// Presets the local voice by making it sound like the Hulk.
+voiceChanger = VOICE_CHANGER_HULK;
+rtcEngine.setLocalVoiceChanger(voiceChanger);
+// Disables voice effects.
+voiceChanger = VOICE_CHANGER_OFF;
+rtcEngine.setLocalVoiceChanger(voiceChanger);
+```
 
 ```c++
 AUDIO_REVERB_PRESET reverbPreset;
-// Sets the reverberation style typical of a concert hall (enhanced).
-reverbPreset = AUDIO_REVERB_FX_VOCAL_CONCERT;
+// Presets the local voice by making it sound like a middle-aged uncle (for male-sounding voice only).
+reverbPreset = AUDIO_REVERB_FX_UNCLE;
 rtcEngine.setLocalVoiceReverbPreset(reverbPreset);
-// Disables the voice reverberation.
+// Disables voice effects.
 reverbPreset = AUDIO_REVERB_OFF;
 rtcEngine.setLocalVoiceReverbPreset(reverbPreset);
 ```
 
-### Customize the voice effects
+#### Style transformation 
 
-You can also customize the voice effects by adjusting the voice pitch, equalization, and reverberation settings.
+A style transformation makes singing more harmonious for specific styles of songs.
 
-The following sample code shows how to change from the original voice to Hulk's voice.
+You can implement the style transformation by the enumerations in `setLocalVoiceReverbPreset` as follows:
+
+<div class="alert note">To implement better voice effects, Agora recommends enumerations with <tt>AUDIO_REVERB_FX</tt> as the prefix.</div>
+
+| Enumeration             | Description                                                 |
+| :---------------------- | :---------------------------------------------------------- |
+| `AUDIO_REVERB_FX_POPULAR` | The reverberation style typical of pop music.               |
+| `AUDIO_REVERB_POPULAR`    | The reverberation style typical of pop music (old version). |
+| `AUDIO_REVERB_FX_RNB`     | The reverberation style typical of R&B music.               |
+| `AUDIO_REVERB_RNB`        | The reverberation style typical of R&B music (old version). |
+| `AUDIO_REVERB_ROCK`       | The reverberation style typical of rock music.              |
+| `AUDIO_REVERB_HIPHOP`     | The reverberation style typical of hip-hop music.           |
+
+```c++
+AUDIO_REVERB_PRESET reverbPreset;
+// Presets the local voice to the style of pop music.
+reverbPreset = AUDIO_REVERB_FX_POPULAR;
+rtcEngine.setLocalVoiceReverbPreset(reverbPreset);
+// Disables voice effects.
+reverbPreset = AUDIO_REVERB_OFF;
+rtcEngine.setLocalVoiceReverbPreset(reverbPreset);
+```
+
+#### Room acoustics 
+
+Room acoustics refers to the spatial dimension added to a user’s voice for making the voice seem to come from a specific type of enclosed place.
+
+You can implement the space construction by the enumerations in `setLocalVoiceChanger` or `setLocalVoiceReverbPreset` as follows:
+
+<div class="alert note"><li>To implement better voice effects, Agora recommends enumerations with <tt>AUDIO_REVERB_FX</tt> as the prefix.</li><li>To achieve better virtual stereo reverberation, Agora recommends setting the <tt>profile</tt> parameter of <tt>setAudioProfile</tt> as <tt>AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO(5).</tt></li></div>
+
+<table>
+  <tr>
+    <th>Method</th>
+		<th>Enumeration</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td rowspan="2"><tt>setLocalVoiceChanger</tt></td>
+		<td><tt>VOICE_BEAUTY_SPACIAL</tt></td>
+    <td>A more spatially resonant voice.</td>
+  </tr>
+  <tr>
+    <td><tt>VOICE_CHANGER_ETHEREAL</tt></td>
+    <td>An ethereal voice</td>
+  </tr>
+  <tr>
+		<td rowspan="8"><tt>setLocalVoiceReverbPreset</tt></td>
+    <td><tt>AUDIO_REVERB_FX_VOCAL_CONCERT</tt></td>
+    <td>The reverberation style typical of a concert hall.</td>
+  </tr>
+	<tr>
+		<td><tt>AUDIO_REVERB_VOCAL_CONCERT</tt></td>
+    <td>The reverberation style typical of a concert hall (old version).</td>
+  </tr>
+	<tr>
+		<td><tt>AUDIO_REVERB_FX_KTV</tt></td>
+    <td>The reverberation style typical of a KTV venue.</td>
+  </tr>
+  <tr>
+    <td><tt>AUDIO_REVERB_KTV</tt></td>
+    <td>The reverberation style typical of a KTV venue (old version).</td>
+  </tr>
+	<tr>
+		<td><tt>AUDIO_REVERB_FX_STUDIO</tt></td>
+    <td>The reverberation style typical of a recording studio.</td>
+  </tr>
+  <tr>
+    <td><tt>AUDIO_REVERB_STUDIO</tt></td>
+    <td>The reverberation style typical of a recording studio (old version). </td>
+  </tr>
+  <tr>
+    <td><tt>AUDIO_REVERB_FX_PHONOGRAPH</tt></td>
+    <td>The reverberation style typical of a vintage phonograph.</td>
+  </tr>
+	<tr>
+		<td><tt>AUDIO_VIRTUAL_STEREO</tt></td>
+		<td>A reverberation style that adds a virtual stereo effect. The virtual stereo is an effect that renders the monophonic audio as stereo.</td>
+  </tr>
+ </table>
+
+```c++
+VOICE_CHANGER_PRESET voiceChanger;
+// Presets the local voice by making it sound more spatially resonant.
+voiceChanger = VOICE_BEAUTY_SPACIAL;
+rtcEngine.setLocalVoiceChanger(voiceChanger);
+// Disables voice effects.
+voiceChanger = VOICE_CHANGER_OFF;
+rtcEngine.setLocalVoiceChanger(voiceChanger);
+```
+
+```c++
+AUDIO_REVERB_PRESET reverbPreset;
+// Presets the local voice by making it sound like it is coming from a concert hall.
+reverbPreset = AUDIO_REVERB_FX_VOCAL_CONCERT;
+rtcEngine.setLocalVoiceReverbPreset(reverbPreset);
+// Disables voice effects.
+reverbPreset = AUDIO_REVERB_OFF;
+rtcEngine.setLocalVoiceReverbPreset(reverbPreset);
+```
+
+### Customize voice effects 
+
+If the preset effect does not meet your requirement, you can also customize the voice effects by adjusting the voice pitch, equalization, and reverberation settings through `setLocalVoicePitch`, `setLocalVoiceEqualization`, and `setLocalVoiceReverb`.
+
+The following sample code shows how to change the original user's voice to the Hulk's voice.
 
 ```c++
 // Sets the pitch. The value ranges between 0.5 and 2.0. The lower the value, the lower the pitch. The default value is 1.0, which is the original pitch.
 int nRet = rtcEngine.setLocalVoicePitch(0.5);
-
+ 
 // Sets the local voice equalization.
-// The first parameter sets the band frequency. The value ranges between 0 and 9. Each value represents the center frequency of the band: 31, 62, 125, 250, 500, 1k, 2k, 4k, 8k, and 16k Hz
+// The first parameter sets the band frequency. The value ranges between 0 and 9. Each value represents the center frequency of the band: 31, 62, 125, 250, 500, 1k, 2k, 4k, 8k, and 16k Hz.
 // The second parameter sets the gain of each band. The value ranges between -15 and 15 dB. The default value is 0.
 nRet = rtcEngine.setLocalVoiceEqualization(AUDIO_EQUALIZATION_BAND_31, -15);
 nRet = rtcEngine.setLocalVoiceEqualization(AUDIO_EQUALIZATION_BAND_62, 3);
@@ -127,34 +298,37 @@ nRet = rtcEngine.setLocalVoiceEqualization(AUDIO_EQUALIZATION_BAND_2K, -3);
 nRet = rtcEngine.setLocalVoiceEqualization(AUDIO_EQUALIZATION_BAND_4K, -2);
 nRet = rtcEngine.setLocalVoiceEqualization(AUDIO_EQUALIZATION_BAND_8K, -1);
 nRet = rtcEngine.setLocalVoiceEqualization(AUDIO_EQUALIZATION_BAND_16K, 1);
-
+ 
 // The level of the dry signal in dB. The value ranges between -20 and 10.
 nRet = rtcEngine.setLocalVoiceReverb(AUDIO_REVERB_DRY_LEVEL, 10);
-
+ 
 // The level of the early reflection signal (wet signal) in dB. The value ranges between -20 and 10.
 nRet = rtcEngine.setLocalVoiceReverb(AUDIO_REVERB_WET_LEVEL, 7);
-
+ 
 // The room size of the reverberation. A larger room size means a stronger reverberation. The value ranges between 0 and 100.
 nRet = rtcEngine.setLocalVoiceReverb(AUDIO_REVERB_ROOM_SIZE, 6);
-
+ 
 // The length of the initial delay of the wet signal (ms). The value ranges between 0 and 200.
 nRet = rtcEngine.setLocalVoiceReverb(AUDIO_REVERB_WET_DELAY, 124);
-
+ 
 // The reverberation strength. The value ranges between 0 and 100. The higher the value, the stronger the reverberation.
 nRet = rtcEngine.setLocalVoiceReverb(AUDIO_REVERB_STRENGTH, 78);
 ```
 
-### API reference
+##  API reference
+
+**Preset voice effects**
 
 - [`setLocalVoiceChanger`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a99dc3d74202422436d40f6d7aa6e99dc)
 - [`setLocalVoiceReverbPreset`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a51a429a5a848b2ad591220aa6c24a898)
+
+**Customized voice effects**
+
 - [`setLocalVoicePitch`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a43616f919e0906279dff5648830ce31a)
 - [`setLocalVoiceEqualization`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a8c75994eb06ab26a1704715ec76e0189)
 - [`setLocalVoiceReverb`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a4d1d1309f97f3c430a1aa2d060bb7316)
 
 ## Considerations
 
-- All methods mentioned in this guide work best with a human voice, and Agora recommends not using it for audio containing both music and a human voice.
-- Agora recommends not using the methods for presetting voice effects and methods for customizing voice effects together. Failure to do so may result in undefined behaviors. If you want to use preset voice effects together with methods that customize voice effects, call the preset methods before the customization methods, or the method called later overrides the one called earlier.
-- Agora recommends not using `setLocalVoiceChanger` and `setLocalVoiceReverbPreset` together, or the method called later overrides the one called earlier.
-- To achieve a better voice effect quality, Agora recommends setting the `profile` parameter passed to the `setAudioProfile` as `AUDIO_PROFILE_MUSIC_HIGH_QUALITY(4)` or `AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO(5)` before calling `setLocalVoiceChanger` or `setLocalVoiceReverbPreset`.
+- All methods mentioned in this article work best with the human voice only. Agora does not recommend using them for audio containing both music and voice.
+- Agora recommends not using the methods for presetting voice effects and for customizing voice effects together, as undefined behaviors may result. If you want to use preset voice effects together with methods that customize voice effects, call the preset methods before the customization methods, or the method called later overrides the one called earlier.

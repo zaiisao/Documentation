@@ -7,9 +7,71 @@ updatedAt: Tue Dec 10 2019 04:20:29 GMT+0800 (CST)
 ---
 # Set the Voice Changer and Reverberation Effects
 ## Introduction 
-In social and entertainment scenarios, users often need various voice effects to enhance an interactive experience. To accomplish this, Agora provides multiple preset voice changers and reverberation effects. You can also dynamically change the users' voice, such as adjusting the pitch and setting the equalization and reverberation modes.
+## Introduction
 
-Agora provides an [online demo](https://www.agora.io/en/audio-demo) to try out the voice changer and reverberation effects.
+In social and entertainment scenarios, users often want various voice enhancements or voice effects to improve their interactive experiences. For example, in chat rooms, a user can select a voice effect to add a virtual stereo effect to their voice.
+To accomplish this, Agora RTC SDK provides preset voice effects. You can also dynamically change the users' voices, such as adjusting the pitch, setting the equalization, and reverberation modes. Try out the preset voice effects on the [online Demo](https://www.agora.io/en/audio-demo) provided by Agora. 
+
+## Implementation
+
+<% 
+if (os == "android" || os == "windows") { %>
+Before proceeding, ensure that you implement a basic call or the interactive live streaming in your project. See [Start a call](../../en/Audio%20Broadcast/start_call_%3C%=os%20%%3E.md) or [Start the interactive live streaming](../../en/Audio%20Broadcast/start_live_%3C%=os%20%%3E.md) for details.
+<% }
+
+if (os == "apple") { %>
+Before proceeding, ensure that you implement a basic call or the interactive live streaming in your project. See the following documents:
+
+- iOS: [Start a Call](../../en/Audio%20Broadcast/start_call_ios.md) or [Start the interactive live streaming](../../en/Audio%20Broadcast/start_live_ios.md)
+- macOS: [Start a Call](../../en/Audio%20Broadcast/start_call_mac.md) or [Start the interactive live streaming](../../en/Audio%20Broadcast/start_live_mac.md)
+<% }
+%>
+
+### Use preset voice effects
+
+The SDK provides voice enhancement and voice effects for different scenarios, as follows:
+
+<table>
+  <tr>
+    <th colspan="2">Category</th>
+    <th>Scenario</th>
+  </tr>
+  <tr>
+    <td rowspan="2">Voice enhancement</td>
+    <td>Chat enhancement</td>
+    <td>Audio and video scenarios focusing on a user’s speaking voice:<li>Blind date</li><li>Emotional radio</li><li>Co-host audio streaming</li><li>Voice-only PK Hosting</li><li>Gaming chatroom</li></td>
+  </tr>
+  <tr>
+    <td>Timbre transformation</td>
+    <td>Audio and video scenarios focusing on a user’s speaking voice or singing voice:<li>Co-host audio streaming</li><li>Voice PK hosting</li><li>Gaming chatroom</li><li>Blind date</li><li>Online KTV</li><li>FM radio</li></td>
+  </tr>
+  <tr>
+    <td rowspan="3">Voice effect</td>
+    <td>Voice changer effect</td>
+    <td>Audio and video scenarios focusing on a user’s speaking voice:<li>Co-host audio streaming</li><li>Voice-only PK Hosting</li><li>Gaming chatroom</li></td>
+  </tr>
+  <tr>
+    <td>Style transformation</td>
+    <td>Audio and video scenarios focusing on a user’s singing voice:<li>Online KTV</li><li>Music radio</li><li>Live-streaming showroom</li></td>
+  </tr>
+  <tr>
+    <td>Room acoustics</td>
+    <td>Audio and video scenarios focusing on a user’s speaking voice or singing voice:<li>Co-host audio streaming</li><li>Voice PK hosting</li><li>Gaming chatroom</li><li>Blind date</li><li>Online KTV</li><li>FM radio</li></td>
+  </tr>
+ </table>
+
+You can use the preset voice effects by calling `setLocalVoiceChanger` or `setLocalVoiceReverbPreset`.
+
+
+<% 
+if (os == "android" || os == "windows") { %>
+<div class="alert note"><li>Before calling the method, you need to set the <tt>profile</tt> parameter of <tt>setAudioProfile</tt> to <tt>AUDIO_PROFILE_MUSIC_HIGH_QUALITY(4)</tt> or <tt>AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO(5)</tt>, and to set <tt>scenario</tt> parameter to <tt>AUDIO_SCENARIO_GAME_STREAMING(3)</tt>.</li><li>The voice effects preset in <tt>setLocalVoiceChanger</tt> and <tt>setLocalVoiceReverbPreset</tt> are mutually exclusive. The method called later overrides the one called earlier.</li> </div>
+<% }
+
+if (os == "apple") { %>
+<div class="alert note"><li>Before calling the method, you need to set the <tt>profile</tt> parameter of <tt>setAudioProfile</tt> to <tt>AgoraAudioProfileMusicHighQuality(4)</tt> or <tt>AgoraAudioProfileMusicHighQualityStereo(5)</tt>, and to set <tt>scenario</tt> parameter to <tt>AgoraAudioScenarioGameStreaming(3)</tt>.</li><li>The voice effects preset in <tt>setLocalVoiceChanger</tt> and <tt>setLocalVoiceReverbPreset</tt> are mutually exclusive. The method called later overrides the one called earlier.</li> </div>
+<% }
+%>
 
 ## Implementation
 Ensure that you prepare the development environment. See [Integrate the SDK](../../en/Audio%20Broadcast/start_live_android.md).
