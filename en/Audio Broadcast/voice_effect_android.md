@@ -16,14 +16,14 @@ To accomplish this, Agora RTC SDK provides preset voice effects. You can also dy
 
 <% 
 if (os == "android" || os == "windows") { %>
-Before proceeding, ensure that you implement a basic call or the interactive live streaming in your project. See [Start a Call](../../en/Audio%20Broadcast/start_call_%3C%=os%20%%3E.md) or [Start Live Interactive Streaming](../../en/Audio%20Broadcast/start_live_%3C%=os%20%%3E.md) for details.
+Before proceeding, ensure that you implement a basic call or the live interactive streaming in your project. See [Start a Call](../../en/Audio%20Broadcast/start_call_%3C%=os%20%%3E.md) or [Start Live Interactive Streaming](../../en/Audio%20Broadcast/start_live_%3C%=os%20%%3E.md) for details.
 <% }
 
 if (os == "apple") { %>
-Before proceeding, ensure that you implement a basic call or the interactive live streaming in your project. See the following documents:
+Before proceeding, ensure that you implement a basic call or the live interactive streaming in your project. See the following documents:
 
-- iOS: [Start a Call](../../en/Audio%20Broadcast/start_call_ios.md) or [Start the interactive live streaming](../../en/Audio%20Broadcast/start_live_ios.md)
-- macOS: [Start a Call](../../en/Audio%20Broadcast/start_call_mac.md) or [Start the interactive live streaming](../../en/Audio%20Broadcast/start_live_mac.md)
+- iOS: [Start a Call](../../en/Audio%20Broadcast/start_call_ios.md) or [Start Live Interactive Streaming](../../en/Audio%20Broadcast/start_live_ios.md)
+- macOS: [Start a Call](../../en/Audio%20Broadcast/start_call_mac.md) or [Start Live Interactive Streaming](../../en/Audio%20Broadcast/start_live_mac.md)
 <% }
 %>
 

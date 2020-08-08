@@ -14,7 +14,7 @@ To accomplish this, Agora RTC SDK provides preset voice effects. You can also dy
 ## Implementation
 
 
-Before proceeding, ensure that you implement a basic call or the interactive live streaming in your project. See [Start a Call](../../en/Voice/start_call_android.md) or [Start Live Interactive Streaming](../../en/Voice/start_live_android.md) for details.
+Before proceeding, ensure that you implement a basic call or the live interactive streaming in your project. See [Start a Call](../../en/Voice/start_call_android.md) or [Start Live Interactive Streaming](../../en/Voice/start_live_android.md) for details.
 
 
 ### Use preset voice effects
