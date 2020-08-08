@@ -14,7 +14,7 @@ To accomplish this, Agora RTC SDK provides preset voice effects. You can also dy
 ## Implementation
 
 
-Before proceeding, ensure that you implement a basic call or the interactive live streaming in your project. See [Start a call](../../en/Video/start_call_windows.md) or [Start the interactive live streaming](../../en/Video/start_live_windows.md) for details.
+Before proceeding, ensure that you implement a basic call or the interactive live streaming in your project. See [Start a Call](../../en/Video/start_call_windows.md) or [Start Live Interactive Streaming](../../en/Video/start_live_windows.md) for details.
 
 
 ### Use preset voice effects
