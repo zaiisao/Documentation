@@ -3,7 +3,7 @@
 title: user role
 description: 
 platform: All Platforms
-updatedAt: Fri Jul 03 2020 12:47:24 GMT+0800 (CST)
+updatedAt: Fri Aug 07 2020 03:08:55 GMT+0800 (CST)
 ---
 # user role
 The type of user role determines whether the user in the channel has streaming permissions. A user role is either host or audience. In a communication channel, all users are hosts. In a live-broadcast channel, users can switch their user roles, from host to audience or from audience to host.
