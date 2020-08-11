@@ -3,7 +3,7 @@
 title: Channel Encryption
 description: 
 platform: Web
-updatedAt: Mon Jul 06 2020 07:29:14 GMT+0800 (CST)
+updatedAt: Tue Aug 11 2020 02:53:28 GMT+0800 (CST)
 ---
 # Channel Encryption
 ## Introduction

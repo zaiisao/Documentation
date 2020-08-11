@@ -8,7 +8,7 @@ updatedAt: Sat Aug 08 2020 16:13:10 GMT+0800 (CST)
 # Set the Voice Enhancement and Effects
 ## Introduction
 
-In social and entertainment scenarios, users often want various voice enhancements or voice effects to improve their interactive experiences. For example, in chat rooms, a user can select a voice effect to add a virtual stereo effect to their voice.
+In social and entertainment scenarios, users often want various voice effects to improve their interactive experiences. For example, in chat rooms, a user can select a voice effect to add a virtual stereo effect to their voice.
 To accomplish this, Agora RTC SDK provides preset voice effects. You can also dynamically change the users' voices, such as adjusting the pitch, setting the equalization, and reverberation modes. Try out the preset voice effects on the [online Demo](https://www.agora.io/en/audio-demo) provided by Agora. 
 
 ## Implementation
@@ -19,7 +19,7 @@ Before proceeding, ensure that you implement a basic call or the live interactiv
 
 ### Use preset voice effects
 
-The SDK provides voice enhancement and voice effects for different scenarios, as follows:
+The SDK provides voice beautifier and voice effects for different scenarios, as follows:
 
 <table>
   <tr>
@@ -27,8 +27,8 @@ The SDK provides voice enhancement and voice effects for different scenarios, as
     <th>Scenario</th>
   </tr>
   <tr>
-    <td rowspan="2">Voice enhancement</td>
-    <td>Chat enhancement</td>
+    <td rowspan="2">Voice beautifier</td>
+    <td>Chat beautifier</td>
     <td>Audio and video scenarios focusing on a user’s speaking voice:<li>Blind date</li><li>Emotional radio</li><li>Co-host audio streaming</li><li>Voice-only PK Hosting</li><li>Gaming chatroom</li></td>
   </tr>
   <tr>

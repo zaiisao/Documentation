@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: 1.1.0
 platform: Web
-updatedAt: Fri Jul 10 2020 06:38:07 GMT+0800 (CST)
+updatedAt: Mon Aug 10 2020 02:15:42 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 
@@ -271,5 +271,5 @@ channel.leave();
 
 - When you do not want to use a specific instance any more, you can use the `removeAllListeners` method to remove all its listeners. 
 
-- You cannot reuse a received [RtmMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmmessage.html) instance.
+- You cannot reuse a received [RtmMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/globals.html#rtmmessage) instance.
 

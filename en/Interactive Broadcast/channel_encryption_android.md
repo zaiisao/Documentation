@@ -3,7 +3,7 @@
 title: Channel Encryption
 description: 
 platform: Android
-updatedAt: Thu Aug 06 2020 11:12:30 GMT+0800 (CST)
+updatedAt: Tue Aug 11 2020 02:01:14 GMT+0800 (CST)
 ---
 # Channel Encryption
 This page introduces various encryption modes. Choose one that best suits your needs.

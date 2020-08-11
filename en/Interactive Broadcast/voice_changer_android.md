@@ -1,14 +1,14 @@
 
 ---
-title: Set the Voice Enhancement and Effects
+title: Set the Voice Beautifier and Effects
 description: How to adjust the voice effect on Android
 platform: Android
-updatedAt: Sat Aug 08 2020 16:13:01 GMT+0800 (CST)
+updatedAt: Tue Aug 11 2020 10:14:01 GMT+0800 (CST)
 ---
-# Set the Voice Enhancement and Effects
+# Set the Voice Beautifier and Effects
 ## Introduction
 
-In social and entertainment scenarios, users often want various voice enhancements or voice effects to improve their interactive experiences. For example, in chat rooms, a user can select a voice effect to add a virtual stereo effect to their voice.
+In social and entertainment scenarios, users often want various voice effects to improve their interactive experiences. For example, in chat rooms, a user can select a voice effect to add a virtual stereo effect to their voice.
 To accomplish this, Agora RTC SDK provides preset voice effects. You can also dynamically change the users' voices, such as adjusting the pitch, setting the equalization, and reverberation modes. Try out the preset voice effects on the [online Demo](https://www.agora.io/en/audio-demo) provided by Agora. 
 
 ## Implementation
@@ -19,7 +19,7 @@ Before proceeding, ensure that you implement a basic call or the live interactiv
 
 ### Use preset voice effects
 
-The SDK provides voice enhancement and voice effects for different scenarios, as follows:
+The SDK provides voice beautifier and voice effects for different scenarios, as follows:
 
 <table>
   <tr>
@@ -27,8 +27,8 @@ The SDK provides voice enhancement and voice effects for different scenarios, as
     <th>Scenario</th>
   </tr>
   <tr>
-    <td rowspan="2">Voice enhancement</td>
-    <td>Chat enhancement</td>
+    <td rowspan="2">Voice beautifier</td>
+    <td>Chat beautifier</td>
     <td>Audio and video scenarios focusing on a user’s speaking voice:<li>Blind date</li><li>Emotional radio</li><li>Co-host audio streaming</li><li>Voice-only PK Hosting</li><li>Gaming chatroom</li></td>
   </tr>
   <tr>
@@ -57,11 +57,11 @@ You can use the preset voice effects by calling `setLocalVoiceChanger` or `setLo
 <div class="alert note"><li>Before calling the method, you need to set the <tt>profile</tt> parameter of <tt>setAudioProfile</tt> to <tt>AUDIO_PROFILE_MUSIC_HIGH_QUALITY(4)</tt> or <tt>AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO(5)</tt>, and to set <tt>scenario</tt> parameter to <tt>AUDIO_SCENARIO_GAME_STREAMING(3)</tt>.</li><li>The voice effects preset in <tt>setLocalVoiceChanger</tt> and <tt>setLocalVoiceReverbPreset</tt> are mutually exclusive. The method called later overrides the one called earlier.</li> </div>
 
 
-#### Chat enhancement 
+#### Chat beautifier 
 
-Chat enhancement refers to enhancing the characteristics of male or female voices without altering the original voice beyond recognition.
+Chat beautifier refers to beautifying the characteristics of male or female voices without altering the original voice beyond recognition.
 
-You can implement the chat enhancement by the enumerations in `setLocalVoiceChanger` as follows:
+You can implement the chat beautifier by the enumerations in `setLocalVoiceChanger` as follows:
 
 | Enumeration                          | Description                                                  |
 | :----------------------------------- | :----------------------------------------------------------- |

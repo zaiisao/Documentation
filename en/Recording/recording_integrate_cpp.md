@@ -3,7 +3,7 @@
 title: Integrate the SDK
 description: 
 platform: Linux CPP
-updatedAt: Mon Jun 01 2020 10:25:33 GMT+0800 (CST)
+updatedAt: Tue Aug 11 2020 06:44:35 GMT+0800 (CST)
 ---
 # Integrate the SDK
 This page shows how to set up the environment to integrate the Agora On-premise Recording SDK.
@@ -154,21 +154,24 @@ Set up the environment on your Linux server:
       - Add the **include** folder to your project.
       - Add the **lib** folder to your project and make sure the `libRecordingEngine.a` file is connected to the project.
 5. Ensure that your compiler is GCC 4.4+.
-2. Open the following TCP destination ports: 80, 1080, 5888, 8000, 9700, 25000, and 30000.
-3. Open the following UDP destination ports: 1080, 4000 to 4030, 7000, 8000, 8913, 9700, and 25000.
-4. Open the simplex downlink ports used by the recording processes. The simplex downlink ports are the ports between the `lowUdpPort` and `highUdpPort` parameters specified in  `RecordingConfig`.
+6. If your firewall restricts access to the Agora services, add the following domains and destination ports to the firewall whitelist:
+   - `.agora.io`
+   - `.agoralab.co`
+  
+ | Destination ports | Port type | Operation |
+| --------------- | -------------- | ----------- |
+| 80, 1080, 5888, 8000, 9700, 25000, 30000 | TCP | Allow |
+| 1080, 4000-4030, 7000, 8000, 8913, 9700, 25000 | UDP | Allow |
+
+7. Open the UDP ports used by the recording processes. The UDP ports are the ports between the `lowUdpPort` and `highUdpPort` parameters specified in  `RecordingConfig`.
 
    > - Use the `iptables -L` command line to check the UDP port.
-   > - To record the content in the channels, you need one recording process for each of the channels. One recording process requires four simplex downlink ports. There must be no port conflict among the processes, including the system processes and all recording processes.
+   > - To record the content in the channels, you need one recording process for each of the channels. One recording process requires four UDP ports. There must be no port conflict among the processes, including the system processes and all recording processes.
    > - We recommend that you specify the range of ports used by the recording processes. Configure a large range for all recording processes \(Agora recommends 40000 to 41000 or larger\). If so, the On-premise Recording SDK assigns ports to each recording process within the specified range and avoids port conflicts automatically. To set the port range, you need to configure the `lowUdpPort` and `highUdpPort` parameters.
    > - If the `lowUdpPort` and `highUdpPort` parameters are not specified, the ports used by the recording processes are at random, which may cause port conflicts.
 
-4. Whitelist the following domains:
 
-   - .agora.io
-   - .agoralab.co
-
-7. For debugging purposes, we recommend that you enable core dump on your Linux system.
+6. For debugging purposes, we recommend that you enable core dump on your Linux system.
 
 
 The Agora On-premise Recording SDK is integrated. You can choose either of the following ways to start recording:
