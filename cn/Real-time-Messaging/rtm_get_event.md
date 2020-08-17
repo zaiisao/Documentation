@@ -3,7 +3,7 @@
 title: 事件与历史消息查询 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Mon Aug 17 2020 06:11:06 GMT+0800 (CST)
+updatedAt: Mon Aug 17 2020 06:11:11 GMT+0800 (CST)
 ---
 # 事件与历史消息查询 RESTful API
 事件与历史消息查询 RESTful API 目前支持以下功能：
@@ -326,7 +326,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query
 
 ### <a name="get_history_message"></a>获取历史消息 API（GET）
 
-该方法从 Agora RTM 服务器指定的地址获取历史消息。
+该方法从**创建历史消息查询资源 API** 返回的查询资源 URL 获取历史消息。如果你已经通过某个查询资源 URL 获取了历史消息，则此查询资源 URL 会失效。你无法通过某个查询资源 URL 重复获取历史消息。
 
 <div class="alert note">如果需要将某条点对点或频道消息存为历史消息，你必须在调用 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a6e16eb0e062953980a92e10b0baec235"><code>sendMessage</code></a> 或 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a729079805644b3307297fb2e902ab4c9"><code>sendMessageToPeer</code></a> 时将 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_send_message_options.html"><code>sendMessageOptions</code></a> 类中的 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_send_message_options.html#a924ef8c28e7a1d41a215a7331e284330"><code>enableHistoricalMessaging</code></a> 成员变量设为 <code>true</code>。否则你无法通过 RESTful API 查询到这条历史消息。</div>
 
@@ -342,7 +342,13 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query
 https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query/$handle
 ```
 
-> - `$handle`  是[创建历史消息查询资源 API](#create_history_res) 返回的 `location` 字段中 `~/rtm/message/history/query/` 后面的部分。例如，如果` location` 返回 `"~/rtm/message/history/query/123456123456"`，则 `$handle` 为 `123456123456`。
+#### URL 参数
+
+此 API 需要下列 URL 参数：
+
+| 参数       | 类型   | 描述                                                         |
+| :--------- | :----- | :----------------------------------------------------------- |
+| `handle` | string | [创建历史消息查询资源 API](#create_history_res) 返回的 `location` 字段中 `~/rtm/message/history/query/` 后面的部分。例如，如果` location` 返回 `"~/rtm/message/history/query/123456123456"`，则 `$handle` 为 `123456123456`。 |
 
 #### 响应示例
 
