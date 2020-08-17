@@ -3,7 +3,7 @@
 title: 事件与历史消息查询 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Mon Aug 17 2020 06:12:24 GMT+0800 (CST)
+updatedAt: Mon Aug 17 2020 06:38:34 GMT+0800 (CST)
 ---
 # 事件与历史消息查询 RESTful API
 事件与历史消息查询 RESTful API 目前支持以下功能：
