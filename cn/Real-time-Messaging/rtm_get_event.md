@@ -3,7 +3,7 @@
 title: 事件与历史消息查询 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Mon Aug 17 2020 06:49:35 GMT+0800 (CST)
+updatedAt: Mon Aug 17 2020 07:33:44 GMT+0800 (CST)
 ---
 # 事件与历史消息查询 RESTful API
 事件与历史消息查询 RESTful API 目前支持以下功能：
@@ -377,6 +377,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query/1234561234
 	"ms": 1587009745719,
     "payload": "123",
 	"src": "src"
+}
 ```
 
 响应包体的参数如下：
