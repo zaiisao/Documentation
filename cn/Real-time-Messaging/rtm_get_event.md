@@ -3,7 +3,7 @@
 title: 事件与历史消息查询 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Mon Aug 17 2020 05:56:24 GMT+0800 (CST)
+updatedAt: Mon Aug 17 2020 05:58:51 GMT+0800 (CST)
 ---
 # 事件与历史消息查询 RESTful API
 事件与历史消息查询 RESTful API 目前支持以下功能：
@@ -122,6 +122,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/user_events
 >  - 单次返回最多 1000 条事件。
 >  - Agora 对事件按地理区域缓存，因此不保证来自不同地理区域的事件顺序的正确性。
 >  - Agora 只在同一地理区域内同步事件，不在地理区域间同步。所以，你从某地理区域发起请求拉取了事件后，如果你从另一个区域再次发起请求可能会得到相同的事件。
+
 - 方法：GET
 - 
 - 接入点：`/rtm/vendor/channel_events`
