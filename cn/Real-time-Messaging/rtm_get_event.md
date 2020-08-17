@@ -3,7 +3,7 @@
 title: 事件与历史消息查询 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Mon Aug 17 2020 06:39:17 GMT+0800 (CST)
+updatedAt: Mon Aug 17 2020 06:40:44 GMT+0800 (CST)
 ---
 # 事件与历史消息查询 RESTful API
 事件与历史消息查询 RESTful API 目前支持以下功能：
@@ -349,6 +349,15 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query/$handle
 | 参数       | 类型   | 描述                                                         |
 | :--------- | :----- | :----------------------------------------------------------- |
 | `$handle` | string | [创建历史消息查询资源 API](#create_history_res) 返回的 `location` 字段中 `~/rtm/message/history/query/` 后面的部分。例如，如果` location` 返回 `"~/rtm/message/history/query/123456123456"`，则 `$handle` 为 `123456123456`。 |
+
+#### 请求示例
+
+`$handle` 为 `123456123456`：
+
+```
+https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query/123456123456
+```
+
 
 #### 响应示例
 
