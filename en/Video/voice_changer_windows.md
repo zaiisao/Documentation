@@ -1,11 +1,11 @@
 
 ---
-title: Set the Voice Enhancement and Effects
+title: Set the Voice Beautifier and Effects
 description: How to adjust pitch and tone on Windows
 platform: Windows
-updatedAt: Sat Aug 08 2020 16:13:10 GMT+0800 (CST)
+updatedAt: Mon Aug 17 2020 07:02:21 GMT+0800 (CST)
 ---
-# Set the Voice Enhancement and Effects
+# Set the Voice Beautifier and Effects
 ## Introduction
 
 In social and entertainment scenarios, users often want various voice effects to improve their interactive experiences. For example, in chat rooms, a user can select a voice effect to add a virtual stereo effect to their voice.
@@ -57,11 +57,11 @@ You can use the preset voice effects by calling `setLocalVoiceChanger` or `setLo
 <div class="alert note"><li>Before calling the method, you need to set the <tt>profile</tt> parameter of <tt>setAudioProfile</tt> to <tt>AUDIO_PROFILE_MUSIC_HIGH_QUALITY(4)</tt> or <tt>AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO(5)</tt>, and to set <tt>scenario</tt> parameter to <tt>AUDIO_SCENARIO_GAME_STREAMING(3)</tt>.</li><li>The voice effects preset in <tt>setLocalVoiceChanger</tt> and <tt>setLocalVoiceReverbPreset</tt> are mutually exclusive. The method called later overrides the one called earlier.</li> </div>
 
 
-#### Chat enhancement 
+#### Chat beautifier 
 
-Chat enhancement refers to enhancing the characteristics of male or female voices without altering the original voice beyond recognition.
+Chat beautifier refers to beautifying the characteristics of male or female voices without altering the original voice beyond recognition.
 
-You can implement the chat enhancement by the enumerations in `setLocalVoiceChanger` as follows:
+You can implement the chat beautifier by the enumerations in `setLocalVoiceChanger` as follows:
 
 | Enumeration                          | Description                                                  |
 | :----------------------------------- | :----------------------------------------------------------- |
