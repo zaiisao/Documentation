@@ -3,7 +3,7 @@
 title: 事件与历史消息查询 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Mon Aug 17 2020 05:40:52 GMT+0800 (CST)
+updatedAt: Mon Aug 17 2020 05:56:24 GMT+0800 (CST)
 ---
 # 事件与历史消息查询 RESTful API
 事件与历史消息查询 RESTful API 目前支持以下功能：
@@ -66,13 +66,13 @@ Request request = new Request.Builder()
 
 ### <a name="get_user"></a>获取用户上线或下线事件 API（GET）
 
-该方法从 Agora RTM 服务器指定的地址获取用户上线或下线事件。
+该方法从 Agora RTM 服务器指定的地址获取用户上线或下线事件。已经获取的事件会从 Agora RTM 服务器中移除。
 
 >  - 每个 App ID 每秒钟的请求数不能超过 10 次。
 >  - RTM 后台最多存储 2000 条事件。如果事件超过 2000 条，最老的事件会被最新的事件替换。
 >  - 单次返回最多 1000 条事件。
 >  - Agora 对事件按地理区域缓存，因此不保证来自不同地理区域的事件顺序的正确性。
->  - Agora 只在同一地理区域内同步事件，不在地理区域间同步。所以，你从某地理区域拉取了事件后，如果你从另一个区域再次拉取可能会得到相同的事件。
+>  - Agora 只在同一地理区域内同步事件，不在地理区域间同步。所以，你从某地理区域发起请求拉取了事件后，如果你从另一个区域再次发起请求可能会得到相同的事件。
 
 - 方法：GET
 - 接入点：`/rtm/vendor/user_events`
@@ -115,15 +115,15 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/user_events
 
 ### <a name="get_channel"></a>获取用户加入或离开频道事件 API（GET）
 
-该方法从 Agora RTM 服务器指定的地址获取用户加入或离开频道事件。
+该方法从 Agora RTM 服务器指定的地址获取用户加入或离开频道事件。已经获取的事件会从 Agora RTM 服务器中移除。
 
 >  - 每个 App ID 每秒钟的请求数不能超过 10 次。
->  - RTM 后台最多存储 2000 条事件。如果事件超过 2000 条，最老的事件会被最新的事件替换。
+>  - RTM 系统最多存储 2000 条事件。如果事件超过 2000 条，最老的事件会被最新的事件替换。
 >  - 单次返回最多 1000 条事件。
 >  - Agora 对事件按地理区域缓存，因此不保证来自不同地理区域的事件顺序的正确性。
->  - Agora 只在同一地理区域内同步事件，不在地理区域间同步。所以，你从某地理区域拉取了事件后，如果你从另一个区域再次拉取可能会得到相同的事件。
-
+>  - Agora 只在同一地理区域内同步事件，不在地理区域间同步。所以，你从某地理区域发起请求拉取了事件后，如果你从另一个区域再次发起请求可能会得到相同的事件。
 - 方法：GET
+- 
 - 接入点：`/rtm/vendor/channel_events`
 - 请求 URL：
 ```
@@ -180,7 +180,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/channel_events
 
 <div class="alert note">如果需要将某条点对点或频道消息存为历史消息，你必须在调用 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a6e16eb0e062953980a92e10b0baec235"><code>sendMessage</code></a> 或 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a729079805644b3307297fb2e902ab4c9"><code>sendMessageToPeer</code></a> 时将 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_send_message_options.html"><code>sendMessageOptions</code></a> 类中的 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_send_message_options.html#a924ef8c28e7a1d41a215a7331e284330"><code>enableHistoricalMessaging</code></a> 成员变量设为 <code>true</code>。否则你无法通过 RESTful API 查询到这条历史消息。</div>
 
-> - 历史消息默认保留七天，单个项目的默认存储空间限制为 2 GB，一般足够支持数万日活应用的消息量。如果需要延长保留时间或提高存储空间，请[提交工单](https://agora-ticket.agora.io/?_ga=2.80217495.108219700.1587866859-1583961819.1580439641)联系技术支持。
+> - 历史消息默认保留七天，单个 App ID 的默认存储空间限制为 2 GB，一般足够支持数万日活应用的消息量。如果需要延长保留时间或提高存储空间，请[提交工单](https://agora-ticket.agora.io/?_ga=2.80217495.108219700.1587866859-1583961819.1580439641)联系技术支持。
 > - 当前版本仅支持文本消息，不支持自定义二进制消息。
 > - 对于每个 App ID，每秒请求数不能超过 100 次。
 
@@ -326,12 +326,12 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query
 
 ### <a name="get_history_message"></a>获取历史消息 API（GET）
 
-该方法从 Agora RTM 服务器指定的地址获取历史消息。
+该方法从 Agora RTM 服务器指定的地址获取历史消息。已经获取的历史消息会从 Agora RTM 服务器中移除。
 
 <div class="alert note">如果需要将某条点对点或频道消息存为历史消息，你必须在调用 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a6e16eb0e062953980a92e10b0baec235"><code>sendMessage</code></a> 或 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a729079805644b3307297fb2e902ab4c9"><code>sendMessageToPeer</code></a> 时将 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_send_message_options.html"><code>sendMessageOptions</code></a> 类中的 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_send_message_options.html#a924ef8c28e7a1d41a215a7331e284330"><code>enableHistoricalMessaging</code></a> 成员变量设为 <code>true</code>。否则你无法通过 RESTful API 查询到这条历史消息。</div>
 
 
-> - 历史消息默认保留七天，单个项目的默认存储空间限制为 2 GB，一般足够支持数万日活应用的消息量。如果需要延长保留时间或提高存储空间，请[提交工单](https://agora-ticket.agora.io/?_ga=2.80217495.108219700.1587866859-1583961819.1580439641)联系技术支持。
+> - 历史消息默认保留七天，单个 App ID 的默认存储空间限制为 2 GB，一般足够支持数万日活应用的消息量。如果需要延长保留时间或提高存储空间，请[提交工单](https://agora-ticket.agora.io/?_ga=2.80217495.108219700.1587866859-1583961819.1580439641)联系技术支持。
 > - 当前版本仅支持文本消息，不支持自定义二进制消息。
 > - 对于每个 App ID，每秒请求数不能超过 100 次。
 
@@ -342,7 +342,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query
 https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query/$handle
 ```
 
-> - `$handle`  由[创建历史消息查询资源 API](#create_history_res) 返回。
+> - `$handle`  是[创建历史消息查询资源 API](#create_history_res) 返回的 `location` 字段中 `~/rtm/message/history/query/` 后面的部分。例如，如果` location` 返回 `"~/rtm/message/history/query/123456123456"`，则 `$handle` 为 `123456123456`。
 
 #### 响应示例
 
