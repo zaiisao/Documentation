@@ -3,7 +3,7 @@
 title: 事件与历史消息查询 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Mon Aug 17 2020 06:00:10 GMT+0800 (CST)
+updatedAt: Mon Aug 17 2020 06:06:52 GMT+0800 (CST)
 ---
 # 事件与历史消息查询 RESTful API
 事件与历史消息查询 RESTful API 目前支持以下功能：
@@ -326,7 +326,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query
 
 ### <a name="get_history_message"></a>获取历史消息 API（GET）
 
-该方法从 Agora RTM 服务器指定的地址获取历史消息。已经获取的历史消息会从 Agora RTM 服务器中移除，你无法再次获取。
+该方法从 Agora RTM 服务器指定的地址获取历史消息。
 
 <div class="alert note">如果需要将某条点对点或频道消息存为历史消息，你必须在调用 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a6e16eb0e062953980a92e10b0baec235"><code>sendMessage</code></a> 或 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a729079805644b3307297fb2e902ab4c9"><code>sendMessageToPeer</code></a> 时将 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_send_message_options.html"><code>sendMessageOptions</code></a> 类中的 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_send_message_options.html#a924ef8c28e7a1d41a215a7331e284330"><code>enableHistoricalMessaging</code></a> 成员变量设为 <code>true</code>。否则你无法通过 RESTful API 查询到这条历史消息。</div>
 
