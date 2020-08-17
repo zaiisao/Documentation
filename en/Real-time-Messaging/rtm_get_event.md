@@ -3,7 +3,7 @@
 title: User and Channel Events RESTful API
 description: 
 platform: All Platforms
-updatedAt: Tue Jul 14 2020 10:01:04 GMT+0800 (CST)
+updatedAt: Mon Aug 17 2020 06:03:00 GMT+0800 (CST)
 ---
 # User and Channel Events RESTful API
 
@@ -64,7 +64,7 @@ All requests are sent to the host: `api.agora.io`.
 
 ## <a name="get_user"></a>Gets user events (GET)
 
-This method gets the user events from the address specified by the Agora RTM server. 
+This method gets the user events from the address specified by the Agora RTM server. Events you acquired from this API are removed from the Agora RTM server. You cannot get the same event twice.
 
 > - The number of requests per second for each App ID must not exceed 10.
 > - The RTM backend stores a maximum of 2,000 events. If the number of events exceeds 2,000, the latest event replaces the oldest event.
@@ -117,10 +117,10 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/user_events
 
 ## <a name="get_channel"></a>Gets channel events (GET)
 
-This method gets the channel events from the address specified by the Agora RTM server. 
+This method gets the channel events from the address specified by the Agora RTM server. Events you acquired from this API are removed from the Agora RTM server. You cannot get the same event twice.
 
 > - The number of requests per second for each App ID must not exceed 10.
-> - The RTM backend stores a maximum of 2,000 events. If the number of events exceeds 2,000, the latest event replaces the oldest event.
+> - The RTM server stores a maximum of 2,000 events. If the number of events exceeds 2,000, the latest event replaces the oldest event.
 > - The backend returns a maximum of 1,000 events each time.
 > - Agora does not guarantee the time sequence of events across geographical regions (countries or continents), because Agora stores events by geographical regions.
 > - If you have pulled events from one geographical region, you may get the same events when you pull from a different geographical region. This is because Agora only synchronize events within a geographical region and does not synchronize events across geographical regions.
