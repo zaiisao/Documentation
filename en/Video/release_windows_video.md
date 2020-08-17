@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Tue Aug 11 2020 02:09:43 GMT+0800 (CST)
+updatedAt: Tue Aug 11 2020 10:31:04 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK.
@@ -17,7 +17,123 @@ The Video SDK for Windows supports the following scenarios:
 
 For the key features included in each scenario, see [Agora Voice Call Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms), [Agora Video Call Overview](https://docs.agora.io/en/Video/product_video?platform=All%20Platforms), [Agora Live Interactive Audio Streaming Overview](https://docs.agora.io/en/Audio%20Broadcast/product_live_audio?platform=All_Platforms) and [Agora Live Interactive Video Streaming Overview](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms).
 
-The Windows Video SDK supports the X86 and X64 architecture.
+The Windows Video SDK supports the x86 and x64 architecture.
+
+## v3.1.0
+
+v3.1.0 was released on Aug 11, 2020.
+
+**New features**
+
+#### 1. Publishing and subscription states
+This release adds the following callbacks to report the current publishing and subscribing states:
+
+- `onAudioPublishStateChanged`: Reports the change of the audio publishing state.
+- `onVideoPublishStateChanged`: Reports the change of the video publishing state.
+- `onAudioSubscribeStateChanged`: Reports the change of the audio subscribing state.
+- `onVideoSubscribeStateChanged`: Reports the change of the video subscribing state.
+
+#### 2. First local frame published callback
+
+This release adds the `onFirstLocalAudioFramePublished` and `onFirstLocalVideoFramePublished` callbacks to report that the first audio or video frame is published. The `onFirstLocalAudioFrame` callback is deprecated from v3.1.0.
+
+#### 3. Custom data report
+
+This release adds the `sendCustomReportMessage` method for reporting customized messages. To try out this function, contact support@agora.io and discuss the format of customized messages with us.
+
+**Improvement**
+
+#### 1. Regional connection
+
+This release adds the following regions for regional connection. After you specify the region for connection, your app that integrates the Agora SDK connects to the Agora servers within that region.
+
+- `AREA_CODE_JAPAN`: Japan.
+- `AREA_CODE_INDIA`: India.
+
+#### 2. Advanced screen sharing
+
+This release adds the following features for screen sharing:
+
+- Bringing the window to the front: By adding the `windowFocus` member to the `ScreenCaptureParameters` struct.
+- Excluding specified windows from screen sharing: By adding the `excludeWindowList` member to the `ScreenCaptureParameters` struct.
+- Reporting more specific local video states during a screen share: By adding the state code `LOCAL_VIDEO_STREAM_STATE_CAPTURING(1)` and the error code `LOCAL_VIDEO_STREAM_ERROR_SCREEN_CAPTURE_WINDOW_MINIMIZED(11)` to the `onLocalVideoStateChanged` callback.
+- Using MediaIO mode for customized video source: Adding the `IVideoSource` class, which defines the custom video source.
+
+#### 3. CDN live streaming
+
+To improve the user experience in CDN live streaming, this release adds the `onRtmpStreamingEvent` callback to report events during CDN live streaming, such as failure to add a background image or watermark image.
+
+#### 4. Encryption
+
+This release adds the `enableEncryption` method for enabling built-in encryption, and deprecates the following methods:
+
+- `setEncryptionSecret`
+- `setEncryptionMode`
+
+#### 5. More in-call statistics
+
+This release adds the following attributes to provide more in-call statistics:
+
+- Adds `txPacketLossRate` in `LocalAudioStats`, which represents the audio packet loss rate (%) from the local client to the Agora edge server before applying anti-packet loss strategies.
+- Adds the following attributes in `LocalVideoStats`:
+    - `txPacketLossRate`: The video packet loss rate (%) from the local client to the Agora edge server before applying anti-packet loss strategies.
+    - `captureFrameRate`: The capture frame rate (fps) of the local video.
+- Adds `publishDuration` in `RemoteAudioStats` and `RemoteVideoStats`, which represents the total publish duration (ms) of the remote media stream.
+
+#### 6. Audio profile
+
+To improve audio performance, this release adjusts the maximum audio bitrate of each audio profile as follows:
+
+| Profile |  v3.1.0 |  Earlier than v3.1.0  |
+|---|---|---|
+| `AUDIO_PROFILE_DEFAULT`   | <li>For the interactive streaming profile: 64 Kbps</li><li>For the communication profile: 16 Kbps</li>   |  <li>For the interactive streaming profile: 52 Kbps</li><li>For the communication profile: 16 Kbps</li>  |
+| `AUDIO_PROFILE_SPEECH_STANDARD`   | 18 Kbps   |  18 Kbps  |
+| `AUDIO_PROFILE_MUSIC_STANDARD`   | 64 Kbps   | 48 Kbps   |
+| `AUDIO_PROFILE_MUSIC_STANDARD_STEREO`  |  80 Kbps | 56 Kbps   |
+| `AUDIO_PROFILE_MUSIC_HIGH_QUALITY`  |  96 Kbps  | 128 Kbps   |
+| `AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO`  | 128 Kbps   |  192 Kbps  |
+
+#### 7. Log files
+
+This release increases the default number of log files that the Agora SDK outputs from 2 to 5, and increases the default size of each log file from 512 KB to 1024 KB. By default, the SDK outputs five log files, `agorasdk.log`, `agorasdk_1.log`, `agorasdk_2.log`, `agorasdk_3.log`, `agorasdk_4.log`. The SDK writes the latest logs in `agorasdk.log`. When `agorasdk.log` is full, the SDK deletes the log file with the earliest modification time among the other four, renames `agorasdk.log` to the name of the deleted log file, and creates a new `agorasdk.log` to record the latest logs.
+
+**Issues fixed**
+
+This release fixed the occasional howling issue on some Huawei laptops.
+
+**API changes**
+
+#### Added
+
+- [`onAudioPublishStateChanged`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af5188bdc817fa62aac51b3dc627dfb64)
+- [`onVideoPublishStateChanged`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a72e100956b925151a217b99ab66c0425)
+- [`onAudioSubscribeStateChanged`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ae3f517bd166a9e34aa77f9fbf137a7b9)
+- [`onVideoSubscribeStateChanged`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aebedc2b484b4e6b9f5d9a28aea997d65)
+- [`onFirstLocalAudioFramePublished`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a03058e62a0a4a41e80ecf0279975ab99)
+- [`onFirstLocalVideoFramePublished`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a55b8755b6b0d672b23013ed438b4eca2)
+- [`enableEncryption`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ad5ea5f0dfd8117f38d9c4b12fe01fece)
+- `txPacketLossRate` in the [`LocalAudioStats`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_local_audio_stats.html) struct
+- `txPacketLossRate` and `captureFrameRate` in the [`LocalVideoStats`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_local_video_stats.html) struct
+- `publishDuration` in the [`RemoteAudioStats`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_audio_stats.html) and [`RemoteVideoStats`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_video_stats.html) structs
+- `windowFocus` and `excludeWindowList` in the [`ScreenCaptureParameters`](https://docs.agora.io/en/Video/API%20Reference/cpp/structagora_1_1rtc_1_1_screen_capture_parameters.html) struct
+- `LOCAL_VIDEO_STREAM_STATE_CAPTURING(1)` in the [`LOCAL_VIDEO_STREAM_STATE`](https://docs.agora.io/en/Video/API%20Reference/cpp/namespaceagora_1_1rtc.html) enum
+- `LOCAL_VIDEO_STREAM_ERROR_SCREEN_CAPTURE_WINDOW_MINIMIZED(11)` in the [`LOCAL_VIDEO_STREAM_ERROR`](https://docs.agora.io/en/Video/API%20Reference/cpp/namespaceagora_1_1rtc.html) enum
+- [`setVideoSource`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html)
+- [`IVideoSource`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_video_source.html) class
+- [`IVideoFrameConsumer`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_video_frame_consumer.html) class
+- [`onRtmpStreamingEvent`](https://docs.agora.io/en/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aa2beb17562a3be9b5ddbe9366245cb0e)
+- Error code: `ERR_NO_SERVER_RESOURCES(103)`
+- Warning code: `WARN_APM_RESIDUAL_ECHO(1053)`
+
+#### Deprecated
+
+- `setEncryptionSecret`
+- `setEncryptionMode`
+- `onFirstLocalAudioFrame`
+
+#### Deleted
+
+- Warning code: `WARN_ADM_IMPROPER_SETTINGS(1053)`
 
 ## v3.0.1.1
 

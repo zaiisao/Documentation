@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Thu Jul 16 2020 03:09:18 GMT+0800 (CST)
+updatedAt: Tue Aug 11 2020 11:13:18 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -91,6 +91,36 @@ Other browser support:
 - The Agora Web SDK does not support code obfuscation.
 
 For more issues, see [Web FAQs](https://docs.agora.io/en/search?type=faq&platform=Web).
+
+## v3.1.2
+
+v3.1.2 was released on August 11, 2020.
+
+**New features**
+
+#### Regional connection
+
+This release adds the `areaCode` property in `ClientConfig` for specifying the region for the connection when creating a `Client` object. After specifying the region, the SDK connects to the Agora servers within that region.
+
+You can choose from the following regions:
+
+- China
+- North America
+- Europe
+- Asia, excluding Mainland China
+- Japan
+- India
+- Global
+
+This advanced feature applies to scenarios that have regional restrictions.
+
+**Fixed issues**
+
+The value of the `success` parameter in the `Client.on("stream-reconnect-end")` callback was inaccurate.
+
+**API changes**
+
+Adds the [`areaCode`](https://docs.agora.io/en/Voice/API%20Reference/web/interfaces/agorartc.clientconfig.html#areacode) property in `ClientConfig`.
 
 ## v3.1.1
 

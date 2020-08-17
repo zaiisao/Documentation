@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Thu Aug 06 2020 09:59:42 GMT+0800 (CST)
+updatedAt: Wed Aug 12 2020 06:18:55 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Voice SDK for Android.
@@ -33,6 +33,108 @@ If your app needs to access a device's hardware serial number, you should instea
 Apps targeting Android 9 should honor the private DNS APIs. In particular, apps should ensure that, if the system resolver is doing DNS-over-TLS, any built-in DNS client either uses encrypted DNS to the same hostname as the system, or is disabled in favor of the system resolver.
 
 For more information about privacy changes, see [Android Privacy Changes](https://developer.android.com/about/versions/pie/android-9.0-changes-28#privacy-changes-p).
+
+## v3.1.0
+v3.1.0 was released on August 11, 2020.
+
+**New features**
+
+#### 1. Publishing and subscription states
+
+This release adds the following callbacks to report the current publishing and subscribing states:
+
+- `onAudioPublishStateChanged`: Reports the change of the audio publishing state.
+- `onAudioSubscribeStateChanged`: Reports the change of the audio subscribing state.
+
+#### 2. First local frame published callback
+
+This release adds the `onFirstLocalAudioFramePublished` callback to report that the first audio frame is published. The `onFirstLocalAudioFrame` callback is deprecated from v3.1.0.
+
+#### 3. Custom data report
+
+This release adds the `sendCustomReportMessage` method for reporting customized messages. To try out this function, contact [support@agora.io](mailto:support@agora.io) and discuss the format of customized messages with us.
+
+**Improvement**
+
+#### 1. Regional connection
+
+This release adds the following regions for regional connection. After you specify the region for connection, your app that integrates the Agora SDK connects to the Agora servers within that region.
+
+- `AREA_CODE_JAPAN`: Japan.
+- `AREA_CODE_INDIA`: India.
+
+#### 2. Encryption
+
+This release adds the `enableEncryption` method for enabling built-in encryption, and deprecates the following methods:
+
+- `setEncryptionSecret`
+- `setEncryptionMode`
+
+#### 3. More in-call statistics
+
+This release adds the following attributes to provide more in-call statistics:
+
+- Adds `txPacketLossRate` in `LocalAudioStats`, which represents the audio packet loss rate (%) from the local client to the Agora edge server before applying anti-packet loss strategies.
+- Adds `publishDuration` in `RemoteAudioStats`, which represents the total publish duration (ms) of the remote media stream.
+
+#### 4. Audio profile
+
+To improve audio performance, this release adjusts the maximum audio bitrate of each audio profile as follows:
+
+| Profile                                   | v3.1.0                                                       | Earlier than v3.1.0                                          |
+| :---------------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
+| `AUDIO_PROFILE_DEFAULT`                   | <li>For the interactive streaming profile: 64 Kbps</li><li>For the communication profile: 18 Kbps</li> | <li>For the interactive streaming profile: 52 Kbps</li><li>For the communication profile: 18 Kbps</li> |
+| `AUDIO_PROFILE_SPEECH_STANDARD`           | 18 Kbps                                                      | 18 Kbps                                                      |
+| `AUDIO_PROFILE_MUSIC_STANDARD`            | 64 Kbps                                                      | 48 Kbps                                                      |
+| `AUDIO_PROFILE_MUSIC_STANDARD_STEREO`     | 80 Kbps                                                      | 56 Kbps                                                      |
+| `AUDIO_PROFILE_MUSIC_HIGH_QUALITY`        | 96 Kbps                                                      | 128 Kbps                                                     |
+| `AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO` | 128 Kbps                                                     | 192 Kbps                                                     |
+
+#### 5. Log files
+
+This release increases the default number of log files that the Agora SDK outputs from 2 to 5, and increases the default size of each log file from 512 KB to 1024 KB. By default, the SDK outputs five log files, `agorasdk.log`, `agorasdk_1.log`, `agorasdk_2.log`, `agorasdk_3.log`, `agorasdk_4.log`. The SDK writes the latest logs in `agorasdk.log`. When `agorasdk.log` is full, the SDK deletes the log file with the earliest modification time among the other four, renames `agorasdk.log ` to the name of the deleted log file, and creates a new `agorasdk.log` to record the latest logs.
+
+#### 6. In-ear monitoring improvement on OPPO models (Android)
+
+This release reduces the delay of in-ear monitoring on the following OPPO models:
+
+- Reno4 Pro 5G
+- Reno4 5G 
+
+#### 7. Others
+
+- Reduces the audio delay.
+- Reduces the playback time of the first remote audio frame.
+
+**Issues fixed**
+
+This release fixed the following issues:
+
+- `setAudioMixingPitch` did not work when setting the `pitch` parameter to certain values.
+
+**API changes**
+
+#### Added
+
+- [`onAudioPublishStateChanged`](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a19d2c72ed37bc3c1e8fbb9744060cec8)
+- [`onAudioSubscribeStateChanged`](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a3fdd1d93b146c58e7bf69f36766b2f3a)
+- [`onFirstLocalAudioFramePublished`](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a94c87921fc48dbd80048efc785270808)
+- [`enableEncryption`](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a8d283886c17dbd2555e1f967c7faff2d)
+- [`txPacketLossRate`](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_local_audio_stats.html#a3f39c69e3a02c05044603b28da879e9c) in `LocalAudioStats`
+- [`publishDuration`](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_audio_stats.html#ad56757c408074784356bbfac47f58af2) in `RemoteAudioStats`
+- [`onRtmpStreamingEvent`](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a2c26ecc40133c2bb18b30f4752edc61c)
+- Error code: [`ERR_NO_SERVER_RESOURCES(103)`](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_constants.html#ab0e9fe12b5357df5f03019d084183799)
+- Warning code:
+  - [`WARN_ADM_RECORD_IS_OCCUPIED(1033)`](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_constants.html#adead939e929d2a89b458ae7ece72f797)
+  - [`WARN_ADM_RECORD_ABNORMAL_FREQUENCY(1021)`](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_constants.html#a1c0d1e891192c8a37a59cb9f32b7ba64)
+  - [`WARN_ADM_PLAYOUT_ABNORMAL_FREQUENCY(1020)`](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_constants.html#a67dfe3691ed974e46f6f37cb696b01b3)
+  - [`WARN_APM_RESIDUAL_ECHO(1053)`](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_constants.html#a449523bb31a7ce15f38006531244d537)
+
+#### Deprecated
+
+- `setEncryptionSecret`
+- `setEncryptionMode`
+- `onFirstLocalAudioFrame`
 
 ## v3.0.1
 

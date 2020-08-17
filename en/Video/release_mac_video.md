@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Thu Aug 06 2020 07:47:53 GMT+0800 (CST)
+updatedAt: Tue Aug 11 2020 11:25:58 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for macOS.
@@ -20,6 +20,127 @@ For the key features included in each scenario, see [Agora Voice Call Overview](
 #### Known Issues and Limitations
 
 A USB device driver issue occurs when you do not hear any audio or the audio is corrupted with a USB headset. USB is not user-friendly on macOS, and we recommend using higher quality headsets.
+
+
+## v3.1.0
+
+v3.1.0 was released on August 11, 2020.
+
+**New features**
+
+#### 1. Publishing and subscription states
+
+This release adds the following callbacks to report the current publishing and subscribing states:
+
+- `didAudioPublishStateChange`: Reports the change of the audio publishing state.
+- `didVideoPublishStateChange`: Reports the change of the video publishing state.
+- `didAudioSubscribeStateChange`: Reports the change of the audio subscribing state.
+- `didVideoSubscribeStateChange`: Reports the change of the video subscribing state.
+
+#### 2. First local frame published callback
+
+This release adds the `firstLocalAudioFramePublished` and `firstLocalVideoFramePublished` callbacks to report that the first audio or video frame is published. The `firstLocalAudioFrame` callback is deprecated from v3.1.0.
+
+#### 3. Custom data report
+
+This release adds the `sendCustomReportMessage` method for reporting customized messages. To try out this function, contact [support@agora.io](mailto:support@agora.io) and discuss the format of customized messages with us.
+
+**Improvement**
+
+#### 1. Regional connection
+
+This release adds the following regions for regional connection. After you specify the region for connection, your app that integrates the Agora SDK connects to the Agora servers within that region.
+
+- `AgoraIpAreaCode_JAPAN`: Japan.
+- `AgoraIpAreaCode_INDIA`: India.
+
+#### 2. Advanced screen sharing
+
+This release adds the following features for screen sharing:
+
+- Bringing the window to the front: By adding the `windowFocus` member to the `AgoraScreenCaptureParameters` class.
+- Excluding specified windows from screen sharing: By adding the `excludeWindowList` member to the `AgoraScreenCaptureParameters` class.
+- Reporting more specific local video states during a screen share: By adding the state code `AgoraLocalVideoStreamStateCapturing(1)` and the error code `AgoraLocalVideoStreamErrorScreenCaptureWindowMinimized(11)` to the `localVideoStateChange` callback.
+- Getting the capture type of the custom video source: By adding the `captureType` callback to the `AgoraVideoSourceProtocol` protocol.
+- Getting the content hint of the custom video source: By adding the `contentHint` callback to the `AgoraVideoSourceProtocol` protocol.
+
+#### 3. CDN live streaming
+
+This release adds the `rtmpStreamingEventWithUrl` callback to report events during CDN live streaming, such as failure to add a background image or watermark image.
+
+#### 4. Encryption
+
+This release adds the `enableEncryption` method for enabling built-in encryption, and deprecates the following methods:
+
+- `setEncryptionSecret`
+- `setEncryptionMode`
+
+#### 5. More in-call statistics
+
+This release adds the following attributes to provide more in-call statistics:
+
+- Adds `txPacketLossRate` in `AgoraRtcLocalAudioStats`, which represents the audio packet loss rate (%) from the local client to the Agora edge server before applying anti-packet loss strategies.
+- Adds the following attributes in `AgoraRtcLocalVideoStats`: 
+  - `txPacketLossRate`: The video packet loss rate (%) from the local client to the Agora edge server before applying anti-packet loss strategies.
+  - `captureFrameRate`: The capture frame rate (fps) of the local video.
+- Adds `publishDuration` in `AgoraRtcRemoteAudioStats` and `AgoraRtcRemoteVideoStats`, which represents the total publish duration (ms) of the remote media stream.
+
+#### 6. Audio profile
+
+To improve audio performance, this release adjusts the maximum audio bitrate of each audio profile as follows:
+
+| Profile                                   | v3.1.0                                                       | Earlier than v3.1.0                                          |
+| :---------------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
+| `AgoraAudioProfileDefault`                   | <li>For the interactive streaming profile: 64 Kbps</li><li>For the communication profile: 18 Kbps</li> | <li>For the interactive streaming profile: 52 Kbps</li><li>For the communication profile: 18 Kbps</li> |
+| `AgoraAudioProfileSpeechStandard`           | 18 Kbps                                                      | 18 Kbps                                                      |
+| `AgoraAudioProfileMusicStandard`            | 64 Kbps                                                      | 48 Kbps                                                      |
+| `AgoraAudioProfileMusicStandardStereo`     | 80 Kbps                                                      | 56 Kbps                                                      |
+| `AgoraAudioProfileMusicHighQuality`        | 96 Kbps                                                      | 128 Kbps                                                     |
+| `AgoraAudioProfileMusicHighQualityStereo` | 128 Kbps                                                     | 192 Kbps                                                     |
+
+#### 7. Log files
+
+This release increases the default number of log files that the Agora SDK outputs from 2 to 5, and increases the default size of each log file from 512 KB to 1024 KB. By default, the SDK outputs five log files, `agorasdk.log`, `agorasdk_1.log`, `agorasdk_2.log`, `agorasdk_3.log`, `agorasdk_4.log`. The SDK writes the latest logs in `agorasdk.log`. When `agorasdk.log` is full, the SDK deletes the log file with the earliest modification time among the other four, renames `agorasdk.log` to the name of the deleted log file, and create a new `agorasdk.log` to record the latest logs.
+
+#### 8. Audio route
+
+To play audio on more devices, this release adds four enumerators in `AgoraAudioOutputRouting`, and supports USB, HDMI, DisplayPort peripherals, and Apple AirPlay.
+
+**Issues fixed**
+
+This release fixed the issue that the app failed to record any audio because the audio device module failed to start.
+
+**API changes**
+
+#### Added
+
+- [`didAudioPublishStateChange`](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didAudioPublishStateChange:oldState:newState:elapseSinceLastState:)
+- [`didVideoPublishStateChange`](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didVideoPublishStateChange:oldState:newState:elapseSinceLastState:)
+- [`didAudioSubscribeStateChange`](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didAudioSubscribeStateChange:withUid:oldState:newState:elapseSinceLastState:)
+- [`didVideoSubscribeStateChange`](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didVideoSubscribeStateChange:withUid:oldState:newState:elapseSinceLastState:)
+- [`firstLocalAudioFramePublished`](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:firstLocalAudioFramePublished:)
+- [`firstLocalVideoFramePublished`](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:firstLocalVideoFramePublished:)
+- [`enableEncryption`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableEncryption:encryptionConfig:)
+- `txPacketLossRate` in [`AgoraRtcLocalAudioStats`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcLocalAudioStats.html) class
+- `txPacketLossRate` and `captureFrameRate` in [`AgoraRtcLocalVideoStats`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcLocalVideoStats.html) class
+- `publishDuration` in [`AgoraRtcRemoteAudioStats`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcRemoteAudioStats.html) and [`AgoraRtcRemoteVideoStats`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcRemoteVideoStats.html) class
+- `windowFocus` and `excludeWindowList` in [`AgoraScreenCaptureParameters`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraScreenCaptureParameters.html) class
+- `AgoraLocalVideoStreamStateCapturing(1)` in [`AgoraLocalVideoStreamState`](https://docs.agora.io/en/Video/API%20Reference/oc/Constants/AgoraLocalVideoStreamState.html) class
+- `AgoraLocalVideoStreamErrorScreenCaptureWindowMinimized(11)` in [`AgoraLocalVideoStreamError`](https://docs.agora.io/en/Video/API%20Reference/oc/Constants/AgoraLocalVideoStreamError.html) class
+- `captureType` and `contentHint` in [`AgoraVideoSourceProtocol`](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraVideoSourceProtocol.html) protocol
+- [`rtmpStreamingEventWithUrl`](https://docs.agora.io/en/Video/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:rtmpStreamingEventWithUrl:eventCode:)
+- Warning code: `AgoraWarningCodeAdmCategoryNotPlayAndRecord(1029)` and `AgoraWarningCodeApmResidualEcho(1053)`
+- Error code: `AgoraErrorCodeNoServerResources(103)`
+
+#### Deprecated
+
+- `setEncryptionSecret`
+- `setEncryptionMode`
+- `firstLocalAudioFrame`
+
+#### Deleted
+
+- Warning code: `AgoraWarningCodeAdmImproperSettings(1053)`
 
 ## v3.0.1.1
 

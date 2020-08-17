@@ -3,7 +3,7 @@
 title: Start a Video Call
 description: 
 platform: Web
-updatedAt: Mon Aug 10 2020 05:21:02 GMT+0800 (CST)
+updatedAt: Wed Aug 12 2020 09:07:11 GMT+0800 (CST)
 ---
 # Start a Video Call
 <div class="alert note">Agora has released the Agora Web SDK NG, the next generation of the Agora Web SDK, which fully optimizes the internal architecture of the SDK and improves its usability. Based on Typescript, the Agora Web SDK NG uses Promises for asynchronous operations and provides more flexible and easy-to-use APIs. Click <a href="https://agoraio-community.github.io/AgoraWebSDK-NG/en/">here</a> to learn more about the Agora Web SDK NG.</div>
@@ -155,23 +155,23 @@ npm install agora-rtc-sdk
 Add the following code to the line after `<head>` in your project.
 
 ```javascript
-<script src="https://cdn.agora.io/sdk/release/AgoraRTCSDK-3.1.1.js"></script>
+<script src="https://cdn.agora.io/sdk/release/AgoraRTCSDK-3.1.2.js"></script>
 ```
 
 #### Method 3: Through the Agora website
 
 1. Download the latest [Agora Web SDK](https://docs.agora.io/en/Agora%20Platform/downloads).
 
-2. Copy the `AgoraRTCSDK-3.1.1.js` file to the same directory as your project file.
+2. Copy the `AgoraRTCSDK-3.1.2.js` file to the same directory as your project file.
 
 3. Add the following code to the line above `</body>` in your project.
 
    ```javascript
-   <script src="./AgoraRTCSDK-3.1.1.js"></script>
+   <script src="./AgoraRTCSDK-3.1.2.js"></script>
    ```
 
 
-For simplicity, let's include the Agora Web SDK from a CDN source and copy `<script src="https://cdn.agora.io/sdk/web/AgoraRTCSDK-3.1.1.js"></script>` to the project file.
+For simplicity, let's include the Agora Web SDK from a CDN source and copy `<script src="https://cdn.agora.io/sdk/web/AgoraRTCSDK-3.1.2.js"></script>` to the project file.
 
 Now, the project is set up. Next, we'll add the JavaScript code to implement the basic voice/video call functions.
 

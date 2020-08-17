@@ -3,232 +3,239 @@
 title: Channel Encryption
 description: 
 platform: Android
-updatedAt: Tue Aug 11 2020 02:01:14 GMT+0800 (CST)
+updatedAt: Fri Aug 14 2020 08:10:10 GMT+0800 (CST)
 ---
 # Channel Encryption
-This page introduces various encryption modes. Choose one that best suits your needs.
+## Introduction
 
-<div class="alert note"><li>Both the communication and live-streaming scenarios support encryption. If you need to push streams to the CDN in a live-streaming channel, do not use channel encryption.<br><li>Ensure that both receivers and senders use the same encryption scheme. Otherwise, you may meet undefined behaviors such as no voice and black screen.</br></div>
+To improve data security, developers can encrypt users' media streams during the real-time engagement. Agora supports built-in encryption and customized encryption, and the differences between two encryption schemes are as follows:
+
+- Built-in encryption: The encryption mode and encryption key exist in the app and the SDK.
+- Customized encryption: The encryption mode and encryption key only exist in the app.
+
+You can choose an encryption schema according to your needs.
+
+<div class="alert note"><li>Both the communication and live interactive streaming scenarios support encryption, but Agora does not support pushing encrypted streams to the CDN in a live-streaming channel.</li><li>Eure that both the receivers and senders use the same encryption scheme. Otherwise, undefined behaviors such as no voice and black screen may occour.</li></div>
 
 The following diagram describes the encrypted data transmission process:
-![](https://web-cdn.agora.io/docs-files/1590556479532)
 
-## Scenario 1: Do Not Use Encryption
+![](https://web-cdn.agora.io/docs-files/1596711714514)
 
-If you do not use encryption, you can delete the unnecessary `libagora-crypto.so` file in the [Agora SDK](https://docs.agora.io/en/Agora%20Platform/downloads) to reduce the SDK package size.
+## Implementation
 
-## Scenario 2: Use Built-in Encryption
+Before enabling the encryption, ensure that you have implemented the basic real-time communication functions in your project. For details, see [Start a Video Call](../../en/Interactive%20Broadcast/start_call_android.md) or [Start Live Interactive Video Streaming](../../en/Interactive%20Broadcast/start_live_android.md).
 
-The [Agora SDK](https://docs.agora.io/en/Agora%20Platform/downloads) for Android includes an independent dynamic library, `libagora-crypto.so`, in both the `arm64-v8a` and `armeabi-v7a` folders under `libs` for the app to load dynamically.
+### Use the built-in encryption
 
-### Step 1: Change the file location
+Before joining a channel, call `enableEncryption` to enable the built-in encryption, and set the encryption mode and encryption key.
 
-Put `libagora-crypto.so` in the specified path of your project where `libagora-rtc-sdk-jni.so` is located.
+<div class="alert note"><li>All users in the same channel must use the same encryption mode and encryption key.</li><li>As of v3.0.0, if you want to reduce the app size and your app has integrated <tt>libcrypto.so</tt>, you can delete <tt>libagora-crypto.so</tt> when integrating the Agora SDK. The version of the <tt>libagora-crypto.so</tt> library in the Agora SDK is 1.0.2g.</li></div>
 
-### Step 2: Enable encryption
+Agora supports the following encryption modes:
 
-Call the `setEncryptionSecret` method to enable built-in encryption and set the encryption password.
+- `AES_128_XTS`: 128-bit AES encryption, XTS mode.
+- `AES_128_ECB`: 128-bit AES encryption, ECB mode.
+- `AES_256_XTS`: 256-bit AES encryption, XTS mode.
 
-### Step 3.  Set the encryption mode to be used
+#### Sample code
 
-Call the`setEncryptionMode` method to set the built-in encryption mode.
-
-We provide an open-source demo project [OpenVideoCall-Android](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-Android) that implements channel encryption on GitHub. You can try the demo and refer to the source code.
-
-> To reduce the SDK size, if your app uses `libcrypto.so`, you can use it instead of `libagora-crypto.so` included in the Agora SDK since both files are the same. The Agora SDK `libagora-crypto.so` version is 1.0.2g.
-
-## Scenario 3: Use Customized Encryption
-
-### Step 1: Register a Packet Observer
-
-The Agora Native SDK allows your app to register a packet observer to receive events whenever a voice or video packet is transmitting.
-
-Register a packet observer on your app using the following method:
-
-```
-virtual int registerPacketObserver(IPacketObserver* observer);
+```java
+// Creates an EncryptionConfig instance.
+EncryptionConfig config = new EncryptionConfig();
+// Sets the encryption mode as AES_128_XTS.
+config.encryptionMode = EncryptionConfig.AES_128_XTS;
+// Sets the encryption key.
+config.encryptionKey = "xxxxxxxxxxxxxxxx";
+// Enables the built-in encryption.
+mRtcEngine.enableEncryption(true, config);
 ```
 
-The observer must be inherited from `agora::IPacketObserver` and be implemented in C++. The following example is the definition of the `IPacketObserver` class:
+#### API reference
 
-```
-class IPacketObserver
-{
-public:
+[`enableEncryption`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a8d283886c17dbd2555e1f967c7faff2d)
 
-struct Packet
-{
-       /** Buffer address of the sent or received data.
-         */
-const unsigned char* buffer;
-        /** Buffer size of the sent or received data.
-         */
-unsigned int size;
-};
-/** An audio packet is sent to other users.
+### Use the customized encryption
 
-     @param packet See Packet.
-     @return
-     - true: The packet is sent successfully.
-     - false: The packet is discarded.
-     */
-virtual bool onSendAudioPacket(Packet& packet) = 0;
-/** A video packet is sent to other users.
+To implement the customized encryption, use `IPacketObserver` class and `registerPacketObserver` in C++ as follows:
 
-     @param packet See Packet.
-     @return
-     - true: The packet is sent successfully.
-     - false: The packet is discarded.
-     */
-virtual bool onSendVideoPacket(Packet& packet) = 0;
-/** An audio packet is sent by other users.
+1. Before joining a channel, call `registerPacketObserver` to register the packet observer, so that you can receive events during audio or video packet transmission.
 
-     @param packet See Packet.
-     @return
-     - true: The packet is received successfully.
-     - false: The packet is discarded.
-*/
-virtual bool onReceiveAudioPacket(Packet& packet) = 0;
-/** A video packet is sent by other users.
-
-     @param packet See Packet.
-     @return
-     - true: The packet is received successfully.
-     - false: The packet is discarded.
-*/
-virtual bool onReceiveVideoPacket(Packet& packet) = 0;
-};
-               
+   ```c++
+	 virtual int registerPacketObserver(IPacketObserver* observer);
 ```
 
-### Step 2: Implement a Customized Data Encryption Algorithm
+2. Implement an `IPacketObserver` class.
 
-The observer must be inherited from `agora::IPacketObserver` to be implemented in the customized data encryption algorithm on your application. The following example uses XOR for data processing. For the Agora Native SDK, sending and receiving packets are handled by different threads, which is why encryption and decryption can use different buffers:
-
-```
-class AgoraPacketObserver : public agora::IPacketObserver
- {
-             public:
-                 AgoraPacketObserver()
-                 {
-                     m_txAudioBuffer.resize(2048);
-                     m_rxAudioBuffer.resize(2048);
-                     m_txVideoBuffer.resize(2048);
-                     m_rxVideoBuffer.resize(2048);
-                 }
-                 virtual bool onSendAudioPacket(Packet& packet)
-                 {
-                     int i;
-                     //encrypt the packet
-                     const unsigned char* p = packet.buffer;
-                     const unsigned char* pe = packet.buffer+packet.size;
-
-
-                     for (i = 0; p < pe && i < m_txAudioBuffer.size(); ++p, ++i)
-                     {
-                         m_txAudioBuffer[i] = *p ^ 0x55;
-                     }
-                     //assign the new buffer and the length back to the SDK
-                     packet.buffer = &m_txAudioBuffer[0];
-                     packet.size = i;
-                     return true;
-                 }
-
-                 virtual bool onSendVideoPacket(Packet& packet)
-                 {
-                     int i;
-                     //encrypt the packet
-                     const unsigned char* p = packet.buffer;
-                     const unsigned char* pe = packet.buffer+packet.size;
-                     for (i = 0; p < pe && i < m_txVideoBuffer.size(); ++p, ++i)
-                     {
-                         m_txVideoBuffer[i] = *p ^ 0x55;
-                     }
-                     //assign the new buffer and the length back to the SDK
-                     packet.buffer = &m_txVideoBuffer[0];
-                     packet.size = i;
-                     return true;
-                 }
-
-                 virtual bool onReceiveAudioPacket(Packet& packet)
-                 {
-                     int i = 0;
-                     //decrypt the packet
-                     const unsigned char* p = packet.buffer;
-                     const unsigned char* pe = packet.buffer+packet.size;
-                     for (i = 0; p < pe && i < m_rxAudioBuffer.size(); ++p, ++i)
-                     {
-                         m_rxAudioBuffer[i] = *p ^ 0x55;
-                     }
-                     //assign the new buffer and the length back to the SDK
-                     packet.buffer = &m_rxAudioBuffer[0];
-                     packet.size = i;
-                     return true;
-                 }
-
-                 virtual bool onReceiveVideoPacket(Packet& packet)
-                 {
-                     int i = 0;
-                     //decrypt the packet
-                     const unsigned char* p = packet.buffer;
-                     const unsigned char* pe = packet.buffer+packet.size;
-
-
-                     for (i = 0; p < pe && i < m_rxVideoBuffer.size(); ++p, ++i)
-                     {
-                         m_rxVideoBuffer[i] = *p ^ 0x55;
-                     }
-                     //assign the new buffer and the length back to the SDK
-                     packet.buffer = &m_rxVideoBuffer[0];
-                     packet.size = i;
-                     return true;
-                 }
-
-             private:
-                 std::vector<unsigned char> m_txAudioBuffer; //buffer for sending the audio data
-                 std::vector<unsigned char> m_txVideoBuffer; //buffer for sending the video data
-
-                 std::vector<unsigned char> m_rxAudioBuffer; //buffer for receiving the audio data
-                 std::vector<unsigned char> m_rxVideoBuffer; //buffer for receiving the video data
-     };
+   ```c++
+   class IPacketObserver
+   {
+   public:
+    
+   struct Packet
+   {
+   // Buffer address of the sent or received data.
+   const unsigned char* buffer;
+   // Buffer size of the sent or received data.
+   unsigned int size;
+   };
+    
+   // Occurs when the local user sends an audio packet.
+   // The SDK triggers this callback before the audio packet is sent to the remote user.
+   // @param packet See Packet.
+   // @return
+   // - true: The audio packet is sent successfully.
+   // - false: The audio packet is discarded.
+   virtual bool onSendAudioPacket(Packet& packet) = 0;
+    
+   // Occurs when the local user sends a video packet.
+   // The SDK triggers this callback before the video packet is sent to the remote user.
+   // @param packet See Packet.
+   // @return
+   // - true: The video packet is sent successfully.
+   // - false: The video packet is discarded.
+   virtual bool onSendVideoPacket(Packet& packet) = 0;
+    
+   // Occurs when the local user receives an audio packet.
+   // The SDK triggers this callback before the audio packet of the remote user is received.
+   // @param packet See Packet.
+   // @return
+   // - true: The audio packet is sent successfully.
+   // - false: The audio packet is discarded.
+   virtual bool onReceiveAudioPacket(Packet& packet) = 0;
+    
+   // Occurs when the local user receives a video packet.
+   // The SDK triggers this callback before the video packet of the remote user is received.
+   // @param packet See Packet.
+   // @return
+   // - true: The video packet is sent successfully.
+   // - false: The video packet is discarded.
+   virtual bool onReceiveVideoPacket(Packet& packet) = 0;
+   };
 ```
 
-### Step 3: Register the Instance
+3. Inherit the `IPacketObserver` class and use your customized encryption algorithm on your app.
 
-1.  Implement a Java wrapper. For example,
-
-    ```
-      JNIEXPORT jint JNICALL Java_io_agora_video_demo_RtcEngineEncryption_enableEncryption(JNIEnv *env, jclass clazz, jlong engineHandle)
+   ```c++
+   class AgoraPacketObserver : public agora::IPacketObserver
     {
-       typedef jint (*PFN_registerAgoraPacketObserver)(void* engine, agora::IPacketObserver* observer);
-    
-       void* handle = dlopen("libagora-rtc-sdk-jni.so", RTLD_LAZY);
-       if (!handle)
-       {
-          __android_log_print(ANDROID_LOG_ERROR, "agora encrypt demo",
-    
-    "cannot find libagora-rtc-sdk-jni.so");
-          return -1;
-       }
-       PFN_registerAgoraPacketObserver pfn = (PFN_registerAgoraPacketObserver)dlsym(handle, "registerAgoraPacketObserver");
-       if (!pfn)
-       {
-          __android_log_print(ANDROID_LOG_ERROR, "aogra encrypt demo", "cannot find registerAgoraPacketObserver");
-          return -2;
-       }
-       return pfn((void*)engineHandle, &s_packetObserver);
-    }
-    
-    Java wrapper:
-    public class RtcEngineEncryption {
-        static {
-            System.loadLibrary("agora-encrypt-demo-jni");
+    public:
+        AgoraPacketObserver()
+        {
+            m_txAudioBuffer.resize(2048);
+            m_rxAudioBuffer.resize(2048);
+            m_txVideoBuffer.resize(2048);
+            m_rxVideoBuffer.resize(2048);
         }
-        public static native int enableEncryption(long rtcEngineHandle);
-    }
-    ```
+        virtual bool onSendAudioPacket(Packet& packet)
+        {
+            int i;
+            // Encrypts the packet.
+            const unsigned char* p = packet.buffer;
+            const unsigned char* pe = packet.buffer+packet.size;
+    
+            for (i = 0; p < pe && i < m_txAudioBuffer.size(); ++p, ++i)
+            {
+                m_txAudioBuffer[i] = *p ^ 0x55;
+            }
+            // Sends the buffer and size of the encrypted data to the SDK.
+            packet.buffer = &m_txAudioBuffer[0];
+            packet.size = i;
+            return true;
+        }
+    
+        virtual bool onSendVideoPacket(Packet& packet)
+        {
+            int i;
+            // Encrypts the packet.
+            const unsigned char* p = packet.buffer;
+            const unsigned char* pe = packet.buffer+packet.size;
+            for (i = 0; p < pe && i < m_txVideoBuffer.size(); ++p, ++i)
+            {
+                m_txVideoBuffer[i] = *p ^ 0x55;
+            }
+            // Sends the buffer and size of the encrypted data to the SDK.
+            packet.buffer = &m_txVideoBuffer[0];
+            packet.size = i;
+            return true;
+        }
+    
+        virtual bool onReceiveAudioPacket(Packet& packet)
+        {
+            int i = 0;
+            // Decrypts the packet.
+            const unsigned char* p = packet.buffer;
+            const unsigned char* pe = packet.buffer+packet.size;
+            for (i = 0; p < pe && i < m_rxAudioBuffer.size(); ++p, ++i)
+            {
+                m_rxAudioBuffer[i] = *p ^ 0x55;
+            }
+            // Sends the buffer and size of the decrypted data to the SDK.
+            packet.buffer = &m_rxAudioBuffer[0];
+            packet.size = i;
+            return true;
+        }
+    
+        virtual bool onReceiveVideoPacket(Packet& packet)
+        {
+            int i = 0;
+            // Decrypts the packet.
+            const unsigned char* p = packet.buffer;
+            const unsigned char* pe = packet.buffer+packet.size;
+    
+            for (i = 0; p < pe && i < m_rxVideoBuffer.size(); ++p, ++i)
+            {
+                m_rxVideoBuffer[i] = *p ^ 0x55;
+            }
+            // Sends the buffer and size of the decrypted data to the SDK.
+            packet.buffer = &m_rxVideoBuffer[0];
+            packet.size = i;
+            return true;
+        }
+    
+    private:
+        std::vector<unsigned char> m_txAudioBuffer; // Buffer for sending the audio data
+        std::vector<unsigned char> m_txVideoBuffer; // Buffer for sending the video data
+    
+        std::vector<unsigned char> m_rxAudioBuffer; // Buffer for receiving the audio data
+        std::vector<unsigned char> m_rxVideoBuffer; // Buffer for receiving the video data
+    };
+```
 
-2.  Call the `registerAgoraPacketObserver` method to register the instance of the `agora::IPacketObserver` class implemented by your application.
+4. Implement a Java wrapper. You can refer to the following example:
 
+   ```c++
+     JNIEXPORT jint JNICALL Java_io_agora_video_demo_RtcEngineEncryption_enableEncryption(JNIEnv *env, jclass clazz, jlong engineHandle)
+   {
+      typedef jint (*PFN_registerAgoraPacketObserver)(void* engine, agora::IPacketObserver* observer);
+    
+      void* handle = dlopen("libagora-rtc-sdk-jni.so", RTLD_LAZY);
+      if (!handle)
+      {
+         __android_log_print(ANDROID_LOG_ERROR, "agora encrypt demo",
+    
+   "cannot find libagora-rtc-sdk-jni.so");
+         return -1;
+      }
+      PFN_registerAgoraPacketObserver pfn = (PFN_registerAgoraPacketObserver)dlsym(handle, "registerAgoraPacketObserver");
+      if (!pfn)
+      {
+         __android_log_print(ANDROID_LOG_ERROR, "aogra encrypt demo", "cannot find registerAgoraPacketObserver");
+         return -2;
+      }
+      return pfn((void*)engineHandle, &s_packetObserver);
+   }
+    
+   Java wrapper:
+   public class RtcEngineEncryption {
+       static {
+           System.loadLibrary("agora-encrypt-demo-jni");
+       }
+       public static native int enableEncryption(long rtcEngineHandle);
+   }
+```
 
+5. Call `registerAgoraPacketObserver` implemented in step 4 to register the `IPacketObserver` instance.
 
+#### API reference
+
+[`registerPacketObserver`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a95b53a32d598c3d98a51c24f7f9af4b4)

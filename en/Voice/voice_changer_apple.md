@@ -39,7 +39,7 @@ The SDK provides voice beautifier and voice effects for different scenarios, as 
     <td>Audio and video scenarios focusing on a user’s speaking voice or singing voice:<li>Co-host audio streaming</li><li>Voice PK hosting</li><li>Gaming chatroom</li><li>Blind date</li><li>Online KTV</li><li>FM radio</li></td>
   </tr>
   <tr>
-    <td rowspan="3">Voice effect</td>
+    <td rowspan="3">Audio effect</td>
     <td>Voice changer effect</td>
     <td>Audio and video scenarios focusing on a user’s speaking voice:<li>Co-host audio streaming</li><li>Voice-only PK Hosting</li><li>Gaming chatroom</li></td>
   </tr>
