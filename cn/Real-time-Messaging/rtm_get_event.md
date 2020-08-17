@@ -3,7 +3,7 @@
 title: 事件与历史消息查询 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Mon Aug 17 2020 06:40:44 GMT+0800 (CST)
+updatedAt: Mon Aug 17 2020 06:49:35 GMT+0800 (CST)
 ---
 # 事件与历史消息查询 RESTful API
 事件与历史消息查询 RESTful API 目前支持以下功能：
@@ -320,7 +320,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query
 | :--------- | :----- | :----------------------------------------------------------- |
 | `result`   | string | 请求结果。                                                     |
 | `offset`   | int    | 当前时间段内的消息偏移量。                                   |
-| `limit`    | int    | 单页历史消息条数。                                           |
+| `limit`    | int    | 单次返回的历史消息条数。                                           |
 | `location` | string | 历史消息资源地址。你可以从这个 URL 调用[获取历史消息 API](#get_history_message) 获取查询结果。 |
 
 
