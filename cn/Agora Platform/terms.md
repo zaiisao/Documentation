@@ -3,7 +3,7 @@
 title: 术语库
 description: 
 platform: All Platforms
-updatedAt: Fri Jul 03 2020 11:57:49 GMT+0800 (CST)
+updatedAt: Mon Aug 17 2020 08:13:52 GMT+0800 (CST)
 ---
 # 术语库
 ## A
@@ -245,7 +245,7 @@ Token 也称为动态密钥，用于在生产环境等安全要求更高的环�
 
 #### <a name="low-stream"></a>**小流 (low-quality video stream)**
 
-开启双流模式后，发送端发送的视频双流中，分辨率跟小、码率更低的那路视频流就是视频小流。详见[双流模式](#dual-stream)。
+开启双流模式后，发送端发送的视频双流中，分辨率更小、码率更低的那路视频流就是视频小流。详见[双流模式](#dual-stream)。
 
 ## Y
 
