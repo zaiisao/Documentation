@@ -1,14 +1,14 @@
 
 ---
-title: RTMP 推流组件
+title: 推流组件
 description: 
 platform: Android
-updatedAt: Fri Aug 14 2020 12:25:57 GMT+0800 (CST)
+updatedAt: Tue Aug 18 2020 09:13:38 GMT+0800 (CST)
 ---
-# RTMP 推流组件
+# 推流组件
 ## 简介
 
-Agora 为 CDN 直播推流场景研发 RTMP Streaming Kit，支持将单个主播音视频流推送到 CDN。如果你同时集成 RTMP Streaming Kit 和 Agora RTC SDK，你还可以在观众无感知的情况下实现单主播和多主播画面的动态切换。
+Agora 为 CDN 直播推流场景研发 Streaming Kit（推流组件），支持将单个主播音视频流推送到 CDN。如果你同时集成 Streaming Kit 和 Agora RTC SDK，你还可以在观众无感知的情况下实现单主播和多主播画面的动态切换。
 
 ![](https://web-cdn.agora.io/docs-files/1597407156923)
 
@@ -44,7 +44,7 @@ Agora 为 CDN 直播推流场景研发 RTMP Streaming Kit，支持将单个主�
 然后点击 <b>Finish</b>。根据屏幕提示，安装可能需要的插件。
 </details>
 
-### 集成 RTMP Streaming Kit
+### 集成 Streaming Kit
 
 **方法一：使用 JCenter 自动集成**
 
