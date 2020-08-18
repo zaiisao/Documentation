@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume for Android
 platform: Android
-updatedAt: Mon Jul 06 2020 09:19:48 GMT+0800 (CST)
+updatedAt: Tue Aug 18 2020 10:17:52 GMT+0800 (CST)
 ---
 # Adjust the Volume
 ## Introduction
@@ -71,7 +71,7 @@ rtcEngine.adjustUserPlaybackSignalVolume(uid, volume);
 
 - [`adjustPlaybackSignalVolume`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af7d7f10fc96db2febb9c2590891d071b)
 - [`adjustUserPlaybackSignalVolume`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aac9c5135996428d9a238fe8e66858268)
-- [`adjustAudioMixingVolume`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a13c5737248d5a5abf6e8eb3130aba65a)
+- [`adjustAudioMixingPlayoutVolume`](https://docs.agora.io/en/Video/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0308c6bc82af433ae8340e0b3cd228c9)
 
 ### Adjust the audio mixing volume
 
