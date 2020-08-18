@@ -3,7 +3,7 @@
 title: 推流组件
 description: 
 platform: Android
-updatedAt: Tue Aug 18 2020 09:13:38 GMT+0800 (CST)
+updatedAt: Tue Aug 18 2020 09:16:07 GMT+0800 (CST)
 ---
 # 推流组件
 ## 简介
@@ -58,11 +58,11 @@ dependencies {
 }
 ```
 
-**方法二：手动复制 RTMP Streaming Kit 文件**
+**方法二：手动复制 Streaming Kit 文件**
 
-1. 前往[下载](https://docs.agora.io/cn/AgoraPlatform/downloads)页面，下载最新版 RTMP Streaming Kit，然后解压。
+1. 前往[下载](https://docs.agora.io/cn/AgoraPlatform/downloads)页面，下载最新版 Streaming Kit，然后解压。
 
-2. 将 RTMP Streaming Kit 的如下文件，拷贝到你的项目路径下：
+2. 将 Streaming Kit 的如下文件，拷贝到你的项目路径下：
 
    | 文件或文件夹              | 项目路径               |
    | :------------------------ | :--------------------- |
@@ -283,4 +283,4 @@ public void switchToRtmpStreaming() {
 
 ## API 参考
 
-[RTMP Streaming Kit API 文档](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/rsk_java/index.html)
+[Streaming Kit API 文档](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/rsk_java/index.html)
