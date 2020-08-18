@@ -3,7 +3,7 @@
 title: 调整通话音量
 description: How to adjust volume on Android
 platform: Android
-updatedAt: Tue Apr 28 2020 13:36:57 GMT+0800 (CST)
+updatedAt: Tue Aug 18 2020 10:17:15 GMT+0800 (CST)
 ---
 # 调整通话音量
 ## 功能描述
@@ -72,7 +72,7 @@ rtcEngine.adjustUserPlaybackSignalVolume(uid, volume);
 #### API 参考
 - [`adjustPlaybackSignalVolume`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#af7d7f10fc96db2febb9c2590891d071b)
 - [`adjustUserPlaybackSignalVolume`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#aac9c5135996428d9a238fe8e66858268)
-- [`adjustAudioMixingVolume`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a13c5737248d5a5abf6e8eb3130aba65a)
+- [`adjustAudioMixingPlayoutVolume`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a0308c6bc82af433ae8340e0b3cd228c9)
 
 ### 设置混音音量
 **混音**是指播放本地或者在线音乐文件，同时让频道内的其他人听到此音乐。你可以参考[播放音效/混音](../../cn/Interactive%20Broadcast/audio_effect_mixing_android.md)开启混音功能。
