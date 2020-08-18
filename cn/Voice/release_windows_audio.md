@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Thu Aug 06 2020 06:23:44 GMT+0800 (CST)
+updatedAt: Tue Aug 11 2020 10:30:31 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -18,7 +18,104 @@ Windows 语音 SDK 支持两种主要场景:
 
 点击 [语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms) 以及 [音频互动直播产品概述](https://docs.agora.io/cn/Audio%20Broadcast/product_live_audio?platform=All%20Platforms)了解关键特性。
 
-Windows 语音 SDK 支持 X86 和 X64 架构。
+Windows 语音 SDK 支持 x86 和 x64 架构。
+
+## **3.1.0 版**
+
+该版本于 2020 年 8 月 11 日发布。
+
+**新增特性**
+
+#### 1. 发布和订阅状态转换回调
+
+该版本新增以下回调方便你了解音频流当前的发布及订阅状态，有助于订阅和发布相关的数据统计：
+
+- `onAudioPublishStateChanged`：音频发布状态发生改变。
+- `onAudioSubscribeStateChanged`：音频订阅状态发生改变。
+
+#### 2. 本地首帧发布回调
+
+为提示用户本地音频首帧已发布，该版本新增如下回调：
+
+`onFirstLocalAudioFramePublished`：已发布本地音频首帧回调。该回调取代 `onFirstLocalAudioFrame` 回调，我们推荐你不再使用 `onFirstLocalAudioFrame` 回调。
+
+#### 3. 自定义数据上报
+
+该版本支持自定义数据上报。如需试用，请联系 sales@agora.io 开通并商定自定义数据格式。
+
+**改进**
+
+#### 1. 指定访问区域完善
+
+该版本新增以下枚举值，在调用 `initialize` 初始化 `IRtcEngine` 时提供更多区域选择。指定访问区域后，集成了 Agora SDK 的 app 会连接指定区域内的 Agora 服务器。
+
+- `AREA_CODE_JAPAN`：日本。
+- `AREA_CODE_INDIA`：印度。
+
+#### 2. CDN 直播推流
+
+为提升 CDN 直播推流用户体验，该版本新增 `onRtmpStreamingEvent` 回调，报告推流过程中发生的事件，如未成功添加背景图或水印。
+
+#### 3. 加密
+
+该版本新增 `enableEncryption` 方法，用于开启内置加密，并废弃原加密方法：
+
+- `setEncryptionSecret`
+- `setEncryptionMode`
+
+与原加密方法相比，该方法新增对国密 SM4 加密模式的支持，你可以根据需要选择合适的加密模式。
+
+#### 4. 通话中质量透明
+
+该版本进一步扩充了 `LocalAudioStats` 和 `RemoteAudioStats` 类的成员，提供更多音频质量相关数据。
+
+- `LocalAudioStats` 类新增 `txPacketLossRate`，表示本端到 Agora 边缘服务器的物理音频丢包率 (%)。
+- `RemoteAudioStats` 类中新增 `publishDuration`，表示远端音频流和视频流的累计发布时长（毫秒）。
+
+#### 5. 设置音频编码属性
+
+为提升音频性能，该版本对音频编码码率最大值进行如下优化：
+
+| Profile |  3.1.0 版本 |  3.1.0 版本之前  |
+|---|---|---|
+| `AUDIO_PROFILE_DEFAULT`   | <li>直播场景：64 Kbps</li><li>通信场景：16 Kbps</li>   |  <li>直播场景：52 Kbps</li><li>通信场景：16 Kbps</li>  |
+| `AUDIO_PROFILE_SPEECH_STANDARD`   | 18 Kbps   |  18 Kbps  |
+| `AUDIO_PROFILE_MUSIC_STANDARD`   | 64 Kbps   | 48 Kbps   |
+| `AUDIO_PROFILE_MUSIC_STANDARD_STEREO`  |  80 Kbps | 56 Kbps   |
+| `AUDIO_PROFILE_MUSIC_HIGH_QUALITY`  |  96 Kbps  | 128 Kbps   |
+| `AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO`  | 128 Kbps   |  192 Kbps  |
+
+#### 6. 日志扩容
+
+该版本中，Agora SDK 日志文件的默认个数由 2 个增加至 5 个，单个日志文件的默认大小由 512 KB 扩大至 1024 KB。默认情况下，SDK 会生成 `agorasdk.log`、`agorasdk_1.log`、`agorasdk_2.log`、`agorasdk_3.log`、`agorasdk_4.log` 这 5 个日志文件。最新的日志永远写在 `agorasdk.log` 中。`agorasdk.log` 写满后，SDK 会从 1-4 中删除修改时间最早的一个文件，然后将 `agorasdk.log` 重命名为该文件，并建立新的 `agorasdk.log` 写入最新的日志。
+
+**问题修复**
+
+该版本修复了华为特定型号的笔记本上偶现啸叫的问题。
+
+**API 变更**
+
+#### 新增
+
+- [`onAudioPublishStateChanged`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#af5188bdc817fa62aac51b3dc627dfb64)
+- [`onAudioSubscribeStateChanged`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#ae3f517bd166a9e34aa77f9fbf137a7b9)
+- [`onFirstLocalAudioFramePublished`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a03058e62a0a4a41e80ecf0279975ab99)
+- [`enableEncryption`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ad5ea5f0dfd8117f38d9c4b12fe01fece)
+- [`LocalAudioStats`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/structagora_1_1rtc_1_1_local_audio_stats.html) struct 中新增 `txPacketLossRate`
+- [`RemoteAudioStats`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/structagora_1_1rtc_1_1_remote_audio_stats.html) struct 中新增 `publishDuration`
+- [`onRtmpStreamingEvent`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aa2beb17562a3be9b5ddbe9366245cb0e)
+- 错误码：`ERR_NO_SERVER_RESOURCES(103)`
+- 警告码：`WARN_APM_RESIDUAL_ECHO(1053)`
+
+#### 废弃
+
+- `setEncryptionSecret`
+- `setEncryptionMode`
+- `onFirstLocalAudioFrame`
+
+#### 删除
+
+- 警告码：`WARN_ADM_IMPROPER_SETTINGS(1053)`
 
 ## **3.0.1 版**
 

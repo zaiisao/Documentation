@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Thu Aug 06 2020 06:16:45 GMT+0800 (CST)
+updatedAt: Tue Aug 11 2020 10:55:42 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 语音 SDK 的发版说明。
@@ -33,6 +33,111 @@ Android 语音 SDK 支持两种主要场景:
 以 Android 9 为目标平台的应用应采用私有 DNS API。 具体而言，当系统解析程序正在执行 DNS-over-TLS 时，应用应确保任何内置 DNS 客户端均使用加密的 DNS 查找与系统相同的主机名，或停用它而改用系统解析程序。
 
 详情请参考 [Android 隐私权变更](https://developer.android.com/about/versions/pie/android-9.0-changes-28?hl=zh-CN#privacy-changes-p)。
+
+## **3.1.0 版**
+该版本于 2020 年 8 月 11 日发布。
+
+**新增特性**
+
+#### 1. 发布和订阅状态转换回调
+
+该版本新增以下回调方便你了解音频流当前的发布及订阅状态，有助于订阅和发布相关的数据统计：
+
+- `onAudioPublishStateChanged`: 音频发布状态发生改变。
+- `onAudioSubscribeStateChanged`: 音频订阅状态发生改变。
+
+#### 2. 本地首帧发布回调
+
+该版本新增 `onFirstLocalAudioFramePublished` 提示用户本地音频首帧已发布。该回调取代 `onFirstLocalAudioFrame` 回调，我们建议你不再使用 `onFirstLocalAudioFrame` 回调。
+
+#### 3. 自定义数据上报
+
+该版本支持自定义数据上报。如需试用，请联系 [sales@agora.io](mailto:sales@agora.io) 开通并商定自定义数据格式。
+
+**改进**
+
+#### 1. 指定访问区域完善
+
+该版本新增以下枚举值，在调用 `create` 创建 `RtcEngine` 实例时提供更多区域选择。指定访问区域后，集成了 Agora SDK 的 app 会连接指定区域内的 Agora 服务器。
+
+- `AREA_CODE_JAPAN`: 日本。
+- `AREA_CODE_INDIA`: 印度。
+
+#### 2. 加密
+
+该版本新增 `enableEncryption` 方法，用于开启内置加密，并废弃原加密方法：
+
+- `setEncryptionSecret`
+- `setEncryptionMode`
+
+与原加密方法相比，该方法新增对国密 SM4 加密模式的支持，你可以根据需要选择合适的加密模式。
+
+#### 3. 通话中质量透明
+
+该版本进一步扩充了 `LocalAudioStats` 类和 `RemoteAudioStats` 类的成员，提供更多音频质量相关数据。
+
+- `LocalAudioStats` 类新增 `txPacketLossRate`，表示本端到 Agora 边缘服务器的物理音频丢包率 (%)。
+- `RemoteAudioStats` 类中新增 `publishDuration`，表示远端音频流的累计发布时长（毫秒）。
+
+#### 4. 设置音频编码属性
+
+为提升音频性能，该版本对音频编码码率最大值进行如下优化：
+
+| Profile                                 | 3.1.0 版本                                                   | 3.1.0 版本之前                                               |
+| :-------------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
+| AUDIO_PROFILE_DEFAULT                   | <li>直播场景: 64 Kbps</li><li>通信场景: 18 Kbps</li> | <li>直播场景: 52 Kbps</li><li>通信场景: 18 Kbps</li> |
+| AUDIO_PROFILE_SPEECH_STANDARD           | 18 Kbps                                                      | 18 Kbps                                                      |
+| AUDIO_PROFILE_MUSIC_STANDARD            | 64 Kbps                                                      | 48 Kbps                                                      |
+| AUDIO_PROFILE_MUSIC_STANDARD_STEREO     | 80 Kbps                                                      | 56 Kbps                                                      |
+| AUDIO_PROFILE_MUSIC_HIGH_QUALITY        | 96 Kbps                                                      | 128 Kbps                                                     |
+| AUDIO_PROFILE_MUSIC_HIGH_QUALITY_STEREO | 128 Kbps                                                     | 192 Kbps                                                     |
+
+#### 5. 日志扩容
+
+该版本中，Agora SDK 日志文件的默认个数由 2 个增加至 5 个，单个日志文件的默认大小由 512 KB 扩大至 1024 KB。默认情况下，SDK 会生成 `agorasdk.log`、`agorasdk_1.log`、`agorasdk_2.log`、`agorasdk_3.log`、`agorasdk_4.log` 这 5 个日志文件。最新的日志永远写在 `agorasdk.log` 中。`agorasdk.log` 写满后，SDK 会从 1-4 中删除修改时间最早的一个文件，然后将 `agorasdk.log` 重命名为该文件，并建立新的 `agorasdk.log` 写入最新的日志。
+
+#### 6. OPPO 耳返优化
+
+该版本在 OPPO 如下机型上降低了耳返延时：
+
+- Reno4 Pro 5G
+- Reno4 5G 
+
+#### 7. 其他改进
+
+- 降低了音频延时。
+- 降低了远端用户音频首帧解码时间。
+
+**问题修复**
+
+该版本修复了如下问题：
+
+- 调用 `setAudioMixingPitch` 方法时，部分参数不生效。
+
+**API 变更**
+
+#### 新增
+
+- [`onAudioPublishStateChanged`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a19d2c72ed37bc3c1e8fbb9744060cec8)
+- [`onAudioSubscribeStateChanged`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a3fdd1d93b146c58e7bf69f36766b2f3a)
+- [`onFirstLocalAudioFramePublished`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a94c87921fc48dbd80048efc785270808)
+- [`enableEncryption`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a8d283886c17dbd2555e1f967c7faff2d)
+- `LocalAudioStats` 类中新增 [`txPacketLossRate`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_local_audio_stats.html#a3f39c69e3a02c05044603b28da879e9c)
+- `RemoteAudioStats` 类中新增 [`publishDuration`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler_1_1_remote_audio_stats.html#ad56757c408074784356bbfac47f58af2)
+- [`onRtmpStreamingEvent`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_i_rtc_engine_event_handler.html#a2c26ecc40133c2bb18b30f4752edc61c)
+- 错误码: [`ERR_NO_SERVER_RESOURCES(103)`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_constants.html#ab0e9fe12b5357df5f03019d084183799)
+- 警告码:
+  - [`WARN_ADM_RECORD_IS_OCCUPIED(1033)`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_constants.html#adead939e929d2a89b458ae7ece72f797)
+  - [`WARN_ADM_RECORD_ABNORMAL_FREQUENCY(1021)`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_constants.html#a1c0d1e891192c8a37a59cb9f32b7ba64)
+  - [`WARN_ADM_PLAYOUT_ABNORMAL_FREQUENCY(1020)`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_constants.html#a67dfe3691ed974e46f6f37cb696b01b3)
+  - [`WARN_APM_RESIDUAL_ECHO(1053)`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_constants.html#a449523bb31a7ce15f38006531244d537)
+
+#### 废弃
+
+- `setEncryptionSecret`
+- `setEncryptionMode`
+- `onFirstLocalAudioFrame`
+
 
 ## **3.0.1 版**
 

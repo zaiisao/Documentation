@@ -3,7 +3,7 @@
 title: 实现视频直播
 description: wechat live
 platform: 微信小程序
-updatedAt: Fri Jun 19 2020 14:31:43 GMT+0800 (CST)
+updatedAt: Wed Aug 12 2020 06:23:59 GMT+0800 (CST)
 ---
 # 实现视频直播
 本文介绍如何使用 Agora 微信小程序 SDK 快速实现视频直播。
@@ -122,6 +122,7 @@ client.init(appId, onSuccess, onFailure);
 
 * channel：指明你想要加入的频道名。
 * uid：用户 ID。整数，且需保持唯一性。
+   <div class="alert note">小程序 SDK 暂不支持 string 型的用户 ID。</div>
 
 ```javascript
 client.join(token, channel, uid, onSuccess, onFailure);

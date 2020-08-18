@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Wed Jul 15 2020 09:23:52 GMT+0800 (CST)
+updatedAt: Tue Aug 11 2020 11:48:05 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -93,6 +93,40 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 - Agora Web SDK 暂不支持代码二次混淆。
 
 更多问题，详见 [Web 常见问题集](https://docs.agora.io/cn/search?type=faq&platform=Web)。
+
+## 3.1.2 版
+
+该版本于 2020 年 8 月 11 日发布。
+
+**新增特性**
+
+#### 设置区域访问限制
+
+`ClientConfig` 新增 `areaCode` 属性，支持在创建客户端对象时指定服务器的访问区域。指定访问区域之后，SDK 只会连接到指定区域内的 Agora 服务器。支持的区域如下：
+
+- 中国
+- 北美
+- 欧洲
+- 亚洲（中国大陆除外）
+- 日本
+- 印度
+- 全球
+
+该功能为高级设置，适用于有访问安全限制的场景。
+
+**改进**
+
+ #### 加密
+
+该版本在 `setEncryptionMode` 方法中新增对国密 SM4 加密模式的支持，你可以根据需要选择合适的加密模式。
+
+**修复问题**
+
+该版本修复了 `Client.on("stream-reconnect-end")` 回调中 `success` 参数的值不准确的问题。
+
+**API 变更**
+
+`ClientConfig` 新增 [`areaCode`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.clientconfig.html#areacode) 属性。
 
 ## 3.1.1 版
 

@@ -3,7 +3,7 @@
 title: 水晶球内嵌 (Beta)
 description: 
 platform: All Platforms
-updatedAt: Fri Jul 24 2020 09:32:25 GMT+0800 (CST)
+updatedAt: Tue Aug 11 2020 03:14:41 GMT+0800 (CST)
 ---
 # 水晶球内嵌 (Beta)
 水晶球的**水晶球内嵌**功能帮助你快速在你的内部系统中嵌入水晶球功能，仅需少量开发成本即可实现以下功能：
@@ -40,7 +40,7 @@ updatedAt: Fri Jul 24 2020 09:32:25 GMT+0800 (CST)
 
 参考下图代码，在服务端发送 HTTP 请求获取水晶球功能页面的 URL。
 
- ![](https://web-cdn.agora.io/docs-files/1593585745645)
+ ![](https://web-cdn.agora.io/docs-files/1597115664563)
 
 #### 1. HTTP 基本认证
 
@@ -54,6 +54,9 @@ updatedAt: Fri Jul 24 2020 09:32:25 GMT+0800 (CST)
 #### <a name="featureList"></a>2. 获取水晶球功能列表页面 URL
 
 调用此方法，你可以获取水晶球功能列表页 URL，例如通话调查页面 URL。
+
+**数据格式**
+请求和响应的格式为 JSON。
 
 **基本信息**
 

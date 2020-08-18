@@ -3,12 +3,25 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Fri Aug 07 2020 02:07:41 GMT+0800 (CST)
+updatedAt: Wed Aug 12 2020 12:08:43 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
 
 Agora 实时消息 SDK 提供了稳定可靠、低延时、高并发的全球消息云服务，帮助你快速构建实时通信场景,  可实现消息通道、呼叫、聊天、状态同步等功能。点击[实时消息产品概述](../../cn/Real-time-Messaging/product_rtm.md)了解详情。
+
+
+## 1.3.1 版
+
+该版本于 2020 年 8 月 12 日发布。
+
+**问题修复**
+
+- 修复了重连后 SDK 与 RTM 系统连接不稳定的问题。
+- 修复了离线消息可能重复投递的问题。
+- 修复了 SDK 登录 RTM 系统的可靠性问题。
+- 修复了点对点消息发送和回执的可靠性问题。
+- 修复了 [`TokenExpired`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmevents.rtmclientevents.html#tokenexpired) 回调无法及时触发的问题。
 
 
 ## 1.3.0 版

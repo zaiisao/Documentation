@@ -3,241 +3,263 @@
 title: 媒体流加密
 description: 
 platform: iOS,macOS
-updatedAt: Thu Aug 06 2020 11:11:34 GMT+0800 (CST)
+updatedAt: Fri Aug 14 2020 08:07:18 GMT+0800 (CST)
 ---
 # 媒体流加密
-本文介绍媒体流加密方案。
+## 功能描述
 
-<div class="alert note"><li>通信和直播场景均支持媒体流加密功能。但是在直播场景下，如果你需要推流到 CDN，请勿使用媒体流加密功能。<br><li>若需使用媒体流加密功能，需确保接收端和发送端都使用相同的加密方案，否则会出现未定义行为（例如音频无声或视频黑屏）。</br></div>
+在实时音视频互动过程中，开发者需要对媒体流加密，从而保障用户的数据安全。Agora 提供内置加密方案和自定义加密方案，区别如下：
 
-下图描述了启用加密功能后的数据传输流程：
+- 内置加密：加密模式和密钥存在于 app 和 SDK 中。
+- 自定义加密：加密模式和密钥仅存在于 app 中。
 
-![](https://web-cdn.agora.io/docs-files/1590556755691)
+你可以根据需要选择合适的加密方案。
 
-你下载的 [SDK 软件包](https://docs.agora.io/cn/Agora%20Platform/downloads) 里，包含:
+<div class="alert note"><li>通信和直播场景均支持媒体流加密功能。但是在直播场景下，Agora 不支持将加密后的媒体流推到 CDN 上。</li><li>如需使用媒体流加密功能，请确保接收端和发送端都使用相同的加密方案，否则会出现未定义行为（例如音频无声或视频黑屏）。</li></div>
 
-- `AgoraRtcCryptoLoader.framework`: 该独立的静态 framework 即为加密模块。
-- `libcrypto.a`: 它是一个标准的 OpenSSL 加密库，与 OpenSSL 1.0.2 \(或更高版本\)兼容。
+下图描述了启用媒体流加密后的数据传输流程：
 
-## 场景 1: 不需要加密
+![](https://web-cdn.agora.io/docs-files/1596706031835)
 
-如果你不需要加密，可以删除下载的 SDK 软件包里的`AgoraRtcCryptoLoader.framework` 和 `libcrypto.a` 。
+## 实现方法
 
-## 场景 2: 使用内置的加密方案
+在启用媒体流加密前，请确保已在你的项目中实现基本的实时音视频功能。详见如下文档：
 
-我们在 GitHub 提供实现了媒体流加密的示例项目。你可以下载体验并参考源代码。
+- iOS: [实现音视频通话](../../cn/Audio%20Broadcast/start_call_ios.md)或[实现互动直播](../../cn/Audio%20Broadcast/start_live_ios.md)
+- macOS: [实现音视频通话](../../cn/Audio%20Broadcast/start_call_mac.md)或[实现互动直播](../../cn/Audio%20Broadcast/start_live_mac.md)
 
-**iOS**
-- Swift 项目： [OpenVideoCall-iOS](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-iOS)
-- Objective-C 项目：[OpenVideoCall-iOS-Objective-C](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-iOS-Objective-C)
+此外，iOS SDK 包中有一个独立的动态加密库 `AgoraRtcCryptoLoader.framework`，你需要参考以下步骤集成并导入加密库：
 
-**macOS**
+1. 参考如下方法集成加密库：
 
-Swift 项目：[OpenVideoCall-macOS](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-macOS)，参考 [`RoomViewController.swift`](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-macOS/OpenVideoCall/RoomViewController.swift#L398)
+ <details>
+	<summary><font color="#3ab7f8">使用 CocoaPods 自动集成</font></summary>
+	a. 开始前确保你已安装 Cocoapods。参考 <a href="https://guides.cocoapods.org/using/getting-started.html#getting-started">Getting Started with CocoaPods</a > 安装说明。
+	<p>b. 在 Terminal 里进入项目根目录，并运行 <tt>pod init</tt> 命令。项目文件夹下会生成一个 <tt>Podfile</tt> 文本文件。</p>
+	<p>c. 打开 <tt>Podfile</tt> 文件，修改文件为如下内容。注意将 <tt>Your App</tt> 替换为你的 Target 名称，并将 <tt>version</tt> 替换为你需集成的 SDK 版本。</p>
+	<pre>
+	# platform :ios, '9.0' use_frameworks!
+	target 'Your App' do
+      pod 'AgoraRtcEngine_iOS_Crypto', '~> version'
+	end</pre>
+	<p>d. 在 Terminal 内运行 <tt>pod update</tt> 命令更新本地库版本。</p>
+	<p>e. 运行 <tt>pod install</tt> 命令安装 Agora SDK。成功安装后，Terminal 中会显示 <tt>Pod installation complete!</tt>，此时项目文件夹下会生成一个 <tt>xcworkspace</tt> 文件。</p>
+	<p>f. 打开新生成的 <tt>xcworkspace</tt> 文件。</p>
+</details>
 
-> 如果你有缩小 SDK 包的考虑，且你的 App 已经有了 `libcrypto.a` ，由于 SDK 包里也包含了一个 `libcrypto.a` ，可以共用一个 `.a` 文件。 Agora 提供的库和 App 正在使用的库不同之处在于: Agora 提供的库版本指定为 1.0.2g，与 App 使用的库的版本不同。
+ <details>
+	<summary><font color="#3ab7f8">手动集成</font></summary>
+	a. 将 SDK 包中的 <tt>AgoraRtcCryptoLoader.framework</tt> 复制到项目文件夹下。
+	<p>b. 打开 Xcode（以 Xcode 11.0 为例），进入 <b>TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content</b> 菜单，点击 <b>+</b>，再点击 <b>Add Other…</b> 添加 <tt>AgoraRtcCryptoLoader.framework</tt>。为保证动态库的签名和 app 的签名一致，你需要将动态库的 <b>Embed</b> 属性设置为 <b>Embed & Sign</b>。</p>
+	 <div class="alert warning">根据 Apple 官方要求，app 的 <b>Extension</b> 不允许包含动态库。如果工程中的 <b>Extension</b> 需要集成 SDK，则集成动态库时需将文件状态改为 <b>Do Not Embed</b>。 </div>
+</details>
 
-### Objective-C
-
-步骤如下：
-
-1. 在 Xcode 里设置 framework 的 search path 。
-
-2. 在 build phase 里添加 `AgoraRtcCryptoLoader.framework` 和 `libcrypto.a` 。
-
-3. 启用加密功能。
-
-    调用 `setEncryptionSecret`，启用内置加密，并设置数据加密密码。
-
-4. 设置加密模式。
-
-    调用 `setEncryptionMode`，设置内置的加密方法。
-
-### Swift
-
-步骤如下：
-
-#### 步骤 1: 请在 Xcode 里设置 framework 的 search path 设为你的项目文件夹地址。比如：
-
-<img alt="../_images/encryption_search_path.jpg" src="https://web-cdn.agora.io/docs-files/cn/encryption_search_path.jpg"/>
-
-#### 步骤 2: 在项目文件夹下添加桥接文件 `XXX-bridge.h`，在 **Swift Compiler - General** 下将 **Objective-C Bridging Header** 设为该桥接文件。
-
-<img alt="../_images/encryption_select_bridgefile.jpg" src="https://web-cdn.agora.io/docs-files/cn/encryption_select_bridgefile.jpg"/>
-
-#### 步骤 3: 点击 **build phase**，将 SDK 包 **libs** 文件夹下的 `AgoraRtcCryptoLoader.framework` 和 `libcrypto.a` 文件添加到项目文件夹的 **Frameworks** 目录下。
-
-<img alt="../_images/encryption_add_encryptionlib.jpg" src="https://web-cdn.agora.io/docs-files/cn/encryption_add_encryptionlib.jpg"/>
-
-#### 步骤 4:
-
-在桥接文件里添加 `#import <AgoraRtcCryptoLoader/AgoraRtcCryptoLoader.h>` 。
-
-#### 步骤 5: 在初始化 AgoraRtcEngine 的文件中，声明一个 AgoraRtcCryptoLoader 对象，即可在编译链接时，加载加密模块。
-
-<img alt="../_images/encryption_declare_loader.png" src="https://web-cdn.agora.io/docs-files/cn/encryption_declare_loader.png"/>
-
-#### 步骤 6: 启用加密功能。
-
-调用 `setEncryptionSecret`，启用内置加密，并设置数据加密密码。
-
-#### 步骤 7: 设置加密模式。
-
-调用 `setEncryptionMode`，设置内置的加密方法。
-
-## 场景 3: 使用第三方提供的加密方案
-
-### 步骤 1: 注册数据包观测器
-
-应用程序可以注册数据包观测器 \(Packet Observer\), 用于在语音或视频数据包传输时接收事件。在你的应用程序上，调用以下 API 注册数据包观测器：
-
-```c++
-virtual int registerPacketObserver(IPacketObserver* observer);
+2. 参考如下代码在项目中导入 `AgoraRtcCryptoLoader` 类：
+	
+ ```swift
+// Swift 
+#import <AgoraRtcCryptoLoader/AgoraRtcCryptoLoader.h>
 ```
 
-观测器必须继承 `agora::IPacketObserver` 类，且用 C++ 语言实现。以下为 `IPacketObserver` 类的定义:
+ ```objective-c
+// Objective-C
+import AgoraRtcCryptoLoader
+```
+	
+### 使用内置的加密方案
 
-```c++
-class IPacketObserver
-{
-public:
+在加入频道前，调用 `enableEncryption` 方法开启内置加密，并设置加密模式和密钥。
 
-struct Packet
-{
-        /** Buffer address of the sent or received data.
-         */
-const unsigned char* buffer;
-        /** Buffer size of the sent or received data.
-         */
-unsigned int size;
-};
-/** An audio packet is sent to other users.
+<div class="alert note">同一频道内所有用户必须使用相同的加密模式和密钥。</div>
 
-     @param packet See Packet.
-     @return
-     - true: The packet is sent successfully.
-     - false: The packet is discarded.
-     */
-virtual bool onSendAudioPacket(Packet& packet) = 0;
-/** A video packet is sent to other users.
+Agora 支持 4 种加密模式：
 
-     @param packet See Packet.
-     @return
-     - true: The packet is sent successfully.
-     - false: The packet is discarded.
-     */
-virtual bool onSendVideoPacket(Packet& packet) = 0;
-/** An audio packet is sent by other users.
+- `AgoraEncryptionModeAES128XTS`: 128 位 AES 加密，XTS 模式。
+- `AgoraEncryptionModeAES128ECB`: 128 位 AES 加密，ECB 模式。
+- `AgoraEncryptionModeAES256XTS`: 256 位 AES 加密，XTS 模式。
+- `AgoraEncryptionModeSM4128ECB`: 128 位国密 SM4 加密，ECB 模式。
 
-     @param packet See Packet.
-     @return
-     - true: The packet is received successfully.
-     - false: The packet is discarded.
-*/
-virtual bool onReceiveAudioPacket(Packet& packet) = 0;
-/** A video packet is sent by other users.
+#### 示例代码
 
-     @param packet See Packet.
-     @return
-     - true: The packet is received successfully.
-     - false: The packet is discarded.
-*/
-virtual bool onReceiveVideoPacket(Packet& packet) = 0;
-};
+```swift
+// Swift
+// 创建一个 AgoraEncryptionConfig 实例
+let config = AgoraEncryptionConfig()
+// 设置加密模式为国密 SM4 加密模式
+config.encryptionMode = AgoraEncryptionMode.SM4128ECB
+// 设置加密密钥
+config.encryptionKey = "xxxxxxxxxxxxxxxx"
+// 启用内置加密
+agoraKit.enableEncryption(YES, config)
+```
+		
+```objective-c
+// Objective-C
+// 创建一个 AgoraEncryptionConfig 实例
+AgoraEncryptionConfig *config = [[AgoraEncryptionConfig alloc] init];
+// 设置加密模式为国密 SM4 加密模式，并设置加密密钥
+config.encryptionMode = AgoraEncryptionModeSM4128ECB;
+config.encryptionKey = @"xxxxxxxxxxxxxxxx";
+// 启用内置加密
+[agoraKit enableEncryption: YES encryptionConfig:config];
 ```
 
-### 步骤 2: 使用定制的数据加密算法
+#### API 参考
 
-继承 `agora::IPacketObserver`，在你的应用程序上使用你自定义的数据加密算法。
+[`enableEncryption`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableEncryption:encryptionConfig:)
 
-```c++
-class AgoraPacketObserver : public agora::IPacketObserver
- {
- public:
-     AgoraPacketObserver()
-     {
-         m_txAudioBuffer.resize(2048);
-         m_rxAudioBuffer.resize(2048);
-         m_txVideoBuffer.resize(2048);
-         m_rxVideoBuffer.resize(2048);
-     }
-     virtual bool onSendAudioPacket(Packet& packet)
-     {
-         int i;
-         //encrypt the packet
-         const unsigned char* p = packet.buffer;
-         const unsigned char* pe = packet.buffer+packet.size;
+### 使用自定义的加密方案
 
+Agora 在各平台上提供了 C++ 的 `registerPacketObserver` 方法及 `IPacketObserver` 类，帮助你实现自定义加密功能。参考步骤如下：
 
-          for (i = 0; p < pe && i < m_txAudioBuffer.size(); ++p, ++i)
-         {
-             m_txAudioBuffer[i] = *p ^ 0x55;
-         }
-         //assign new buffer and the length back to SDK
-         packet.buffer = &m_txAudioBuffer[0];
-         packet.size = i;
-         return true;
-     }
+1. 在加入频道前，调用 `registerPacketObserver` 注册数据包观测器，从而在语音或视频数据包传输时接收事件。
 
-     virtual bool onSendVideoPacket(Packet& packet)
-     {
-         int i;
-         //encrypt the packet
-         const unsigned char* p = packet.buffer;
-         const unsigned char* pe = packet.buffer+packet.size;
-         for (i = 0; p < pe && i < m_txVideoBuffer.size(); ++p, ++i)
-         {
-             m_txVideoBuffer[i] = *p ^ 0x55;
-         }
-         //assign new buffer and the length back to SDK
-         packet.buffer = &m_txVideoBuffer[0];
-         packet.size = i;
-         return true;
-     }
+   ```c++
+	 virtual int registerPacketObserver(IPacketObserver* observer);
+	 ```
 
-     virtual bool onReceiveAudioPacket(Packet& packet)
-     {
-         int i = 0;
-         //decrypt the packet
-         const unsigned char* p = packet.buffer;
-         const unsigned char* pe = packet.buffer+packet.size;
-         for (i = 0; p < pe && i < m_rxAudioBuffer.size(); ++p, ++i)
-         {
-             m_rxAudioBuffer[i] = *p ^ 0x55;
-         }
-         //assign new buffer and the length back to SDK
-         packet.buffer = &m_rxAudioBuffer[0];
-         packet.size = i;
-         return true;
-     }
+2. 实现一个 `IPacketObserver` 类:
 
-     virtual bool onReceiveVideoPacket(Packet& packet)
-     {
-         int i = 0;
-         //decrypt the packet
-         const unsigned char* p = packet.buffer;
-         const unsigned char* pe = packet.buffer+packet.size;
-
-
-         for (i = 0; p < pe && i < m_rxVideoBuffer.size(); ++p, ++i)
-         {
-             m_rxVideoBuffer[i] = *p ^ 0x55;
-         }
-         //assign new buffer and the length back to SDK
-         packet.buffer = &m_rxVideoBuffer[0];
-         packet.size = i;
-         return true;
-     }
-
- private:
-     std::vector<unsigned char> m_txAudioBuffer; //buffer for sending audio data
-     std::vector<unsigned char> m_txVideoBuffer; //buffer for sending video data
-
-     std::vector<unsigned char> m_rxAudioBuffer; //buffer for receiving audio data
-     std::vector<unsigned char> m_rxVideoBuffer; //buffer for receiving video data
- };
+   ```c++
+    class IPacketObserver
+    {
+    public:
+    
+    struct Packet
+    {
+    // 需要发送或接收的数据的缓存地址
+    const unsigned char* buffer;
+    // 需要发送或接收的数据的缓存大小
+    unsigned int size;
+    };
+    
+    // 已发送音频包回调
+    // 在音频包被发送给远端用户前触发
+    // @param packet 详见: Packet
+    // @return
+    // - true: 发送音频包
+    // - false: 丢弃音频包
+    virtual bool onSendAudioPacket(Packet& packet) = 0;
+    
+    // 已发送视频包回调
+    // 在视频包被发送给远端用户前触发
+    // @param packet 详见: Packet
+    // @return
+    // - true: 发送视频包
+    // - false: 丢弃视频包
+    virtual bool onSendVideoPacket(Packet& packet) = 0;
+    
+    // 收到音频包回调
+    // 在收到远端用户的音频包前触发
+    // @param packet 详见: Packet
+    // @return
+    // - true: 发送音频包
+    // - false: 丢弃音频包
+    virtual bool onReceiveAudioPacket(Packet& packet) = 0;
+    
+    // 收到视频包回调
+    // 在收到远端用户的视频包前触发
+    // @param packet 详见: Packet
+    // @return
+    // - true: 发送视频包
+    // - false: 丢弃视频包
+    virtual bool onReceiveVideoPacket(Packet& packet) = 0;
+    };
 ```
 
-### 步骤 3: 注册实例
+3. 继承 `IPacketObserver`，并在你的 app 上使用你自定义的数据加密算法。
 
-调用 `registerAgoraPacketObserver` 为应用程序使用的 `agora::IPacketObserver` 类注册一个实例。
+   ```c++
+   class AgoraPacketObserver : public agora::IPacketObserver
+    {
+    public:
+        AgoraPacketObserver()
+        {
+            m_txAudioBuffer.resize(2048);
+            m_rxAudioBuffer.resize(2048);
+            m_txVideoBuffer.resize(2048);
+            m_rxVideoBuffer.resize(2048);
+        }
+        virtual bool onSendAudioPacket(Packet& packet)
+        {
+            int i;
+            // 加密数据包
+            const unsigned char* p = packet.buffer;
+            const unsigned char* pe = packet.buffer+packet.size;
+   
+            for (i = 0; p < pe && i < m_txAudioBuffer.size(); ++p, ++i)
+            {
+                m_txAudioBuffer[i] = *p ^ 0x55;
+            }
+            // 将加密后数据的缓存地址和缓存大小发回 SDK
+            packet.buffer = &m_txAudioBuffer[0];
+            packet.size = i;
+            return true;
+        }
+   
+        virtual bool onSendVideoPacket(Packet& packet)
+        {
+            int i;
+            // 加密数据包
+            const unsigned char* p = packet.buffer;
+            const unsigned char* pe = packet.buffer+packet.size;
+            for (i = 0; p < pe && i < m_txVideoBuffer.size(); ++p, ++i)
+            {
+                m_txVideoBuffer[i] = *p ^ 0x55;
+            }
+            // 将加密后数据的缓存地址和缓存大小发回 SDK
+            packet.buffer = &m_txVideoBuffer[0];
+            packet.size = i;
+            return true;
+        }
+   
+        virtual bool onReceiveAudioPacket(Packet& packet)
+        {
+            int i = 0;
+            // 解密数据包
+            const unsigned char* p = packet.buffer;
+            const unsigned char* pe = packet.buffer+packet.size;
+            for (i = 0; p < pe && i < m_rxAudioBuffer.size(); ++p, ++i)
+            {
+                m_rxAudioBuffer[i] = *p ^ 0x55;
+            }
+            // 将解密后数据的缓存地址和缓存大小发回 SDK
+            packet.buffer = &m_rxAudioBuffer[0];
+            packet.size = i;
+            return true;
+        }
+   
+        virtual bool onReceiveVideoPacket(Packet& packet)
+        {
+            int i = 0;
+            // 解密数据包
+            const unsigned char* p = packet.buffer;
+            const unsigned char* pe = packet.buffer+packet.size;
+   
+            for (i = 0; p < pe && i < m_rxVideoBuffer.size(); ++p, ++i)
+            {
+                m_rxVideoBuffer[i] = *p ^ 0x55;
+            }
+            // 将解密后数据的缓存地址和缓存大小发回 SDK
+            packet.buffer = &m_rxVideoBuffer[0];
+            packet.size = i;
+            return true;
+        }
+   
+    private:
+        // 发送音频数据 buffer
+        std::vector<unsigned char> m_txAudioBuffer; 
+        // 发送视频数据 buffer
+        std::vector<unsigned char> m_txVideoBuffer; 
+        // 接收音频数据 buffer
+        std::vector<unsigned char> m_rxAudioBuffer; 
+        // 接收视频数据 buffer
+        std::vector<unsigned char> m_rxVideoBuffer; 
+    };
+```
+
+4. 调用 `registerPacketObserver` 为 `IPacketObserver` 类注册一个实例。
+
+#### API 参考
+
+[`registerPacketObserver`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a95b53a32d598c3d98a51c24f7f9af4b4)

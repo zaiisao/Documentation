@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: macOS
-updatedAt: Thu Aug 06 2020 06:41:23 GMT+0800 (CST)
+updatedAt: Tue Aug 11 2020 10:47:42 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -17,6 +17,102 @@ macOS 语音 SDK 支持两种主要场景:
 -   音频直播
 
 点击 [语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms) 以及 [音频互动直播产品概述](https://docs.agora.io/cn/Audio%20Broadcast/product_live_audio?platform=All%20Platforms)了解关键特性。
+
+## **3.1.0 版**
+该版本于 8 月 11 日发布。
+
+**新增特性**
+
+#### 1. 发布和订阅状态转换回调
+
+该版本新增以下回调方便你了解音频流当前的发布及订阅状态，有助于订阅和发布相关的数据统计：
+
+- `didAudioPublishStateChange`: 音频发布状态发生改变。
+- `didAudioSubscribeStateChange`: 音频订阅状态发生改变。
+
+#### 2. 本地首帧发布回调
+
+为提示用户本地音频首帧已发布，该版本新增 `firstLocalAudioFramePublished` 回调。该回调取代 `firstLocalAudioFrame` 回调，我们推荐你不再使用 `firstLocalAudioFrame` 回调。
+
+#### 3. 自定义数据上报
+
+该版本支持自定义数据上报。如需试用，请联系 [sales@agora.io](mailto:sales@agora.io) 开通并商定自定义数据格式。
+
+**改进**
+
+#### 1. 指定访问区域完善
+
+该版本新增以下枚举值，在调用 `sharedEngineWithConfig` 创建 `AgoraRtcEngineKit` 实例时提供更多区域选择。指定访问区域后，集成了 Agora SDK 的 app 会连接指定区域内的 Agora 服务器。
+
+- `AgoraIpAreaCode_JAPAN`: 日本。
+- `AgoraIpAreaCode_INDIA`: 印度。
+
+#### 2. 加密
+
+该版本新增 `enableEncryption` 方法，用于开启内置加密，并废弃原加密方法：
+
+- `setEncryptionSecret`
+- `setEncryptionMode`
+
+与原加密方法相比，该方法新增对国密 SM4 加密模式的支持，你可以根据需要选择合适的加密模式。
+
+#### 3. 通话中质量透明
+
+该版本进一步扩充了 `AgoraRtcLocalAudioStats` 类和 `AgoraRtcRemoteAudioStats` 类的成员，提供更多音频质量相关数据。
+
+- `AgoraRtcLocalAudioStats` 类新增 `txPacketLossRate`，表示本端到 Agora 边缘服务器的物理音频丢包率 (%)。
+- `AgoraRtcRemoteAudioStats` 类中新增 `publishDuration`，表示远端音频流的累计发布时长（毫秒）。
+
+#### 4. 设置音频编码属性
+
+为提升音频性能，该版本对音频编码码率最大值进行如下优化：
+
+| Profile                                 | 3.1.0 版本                                                   | 3.1.0 版本之前                                               |
+| :-------------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
+| `AgoraAudioProfileDefault`                   | <li>直播场景: 64 Kbps</li><li>通信场景: 18 Kbps</li> | <li>直播场景: 52 Kbps</li><li>通信场景: 18 Kbps</li> |
+| `AgoraAudioProfileSpeechStandard`           | 18 Kbps                                                      | 18 Kbps                                                      |
+| `AgoraAudioProfileMusicStandard`            | 64 Kbps                                                      | 48 Kbps                                                      |
+| `AgoraAudioProfileMusicStandardStereo`     | 80 Kbps                                                      | 56 Kbps                                                      |
+| `AgoraAudioProfileMusicHighQuality`        | 96 Kbps                                                      | 128 Kbps                                                     |
+| `AgoraAudioProfileMusicHighQualityStereo` | 128 Kbps                                                     | 192 Kbps                                                     |
+
+#### 5. 日志扩容
+
+该版本中，Agora SDK 日志文件的默认个数由 2 个增加至 5 个，单个日志文件的默认大小由 512 KB 扩大至 1024 KB。默认情况下，SDK 会生成 `agorasdk.log`、`agorasdk_1.log`、`agorasdk_2.log`、`agorasdk_3.log`、`agorasdk_4.log 这` 5 个日志文件。最新的日志永远写在 `agorasdk.log` 中。`agorasdk.log `写满后，SDK 会从 1-4 中删除修改时间最早的一个文件，然后将 `agorasdk.log` 重命名为该文件，并建立新的 `agorasdk.log` 写入最新的日志。
+
+#### 6. 音频路由
+
+为支持在更多设备中播放音频，该版本在 `AgoraAudioOutputRouting` 枚举中新增 4 个枚举值，支持 USB 外围设备、HDMI 外围设备、DisplayPort 外围设备和 Apple AirPlay。
+
+**问题修复**
+
+该版本修复了特定场景下偶现因设备音频模块未启动，导致的本地录音无声。
+
+**API 变更**
+
+#### 新增
+
+- [`didAudioPublishStateChange`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didAudioPublishStateChange:oldState:newState:elapseSinceLastState:)
+- [`didAudioSubscribeStateChange`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:didAudioSubscribeStateChange:withUid:oldState:newState:elapseSinceLastState:)
+- [`firstLocalAudioFramePublished`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:firstLocalAudioFramePublished:)
+- [`enableEncryption`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/enableEncryption:encryptionConfig:)
+- [`AgoraRtcLocalAudioStats`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcLocalAudioStats.html) 类中新增 `txPacketLossRate`
+- [`AgoraRtcRemoteAudioStats`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcRemoteAudioStats.html) 类中新增 `publishDuration`
+- [`AgoraScreenCaptureParameters`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraScreenCaptureParameters.html) 类中新增 `windowFocus` 和 `excludeWindowList`
+- [`rtmpStreamingEventWithUrl`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:rtmpStreamingEventWithUrl:eventCode:)
+- 警告码: `AgoraWarningCodeAdmCategoryNotPlayAndRecord(1029)` 和 `AgoraWarningCodeApmResidualEcho(1053)`
+- 错误码: `AgoraErrorCodeNoServerResources(103)`
+
+#### 废弃
+
+- `setEncryptionSecret`
+- `setEncryptionMode`
+- `firstLocalAudioFrame`
+
+#### 删除
+
+警告码: `AgoraWarningCodeAdmImproperSettings(1053)`
+
 ## **3.0.1 版**
 
 该版本于 2020 年 5 月 27 日发布。
