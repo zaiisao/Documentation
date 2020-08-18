@@ -3,7 +3,7 @@
 title: How can I use Agora Web SDK on mobile devices?
 description: Support for mobile webpages
 platform: Web
-updatedAt: Wed Mar 25 2020 22:51:00 GMT+0800 (CST)
+updatedAt: Tue Aug 18 2020 14:40:21 GMT+0800 (CST)
 ---
 # How can I use Agora Web SDK on mobile devices?
 The Agora Web SDK is based on WebRTC and relies on the browser's support for WebRTC. However, some apps on some mobile devices may not support WebRTC depending on their WebView implementation. This page introduces the support for sending and receiving audio/video streams on mobile webpages.
@@ -20,7 +20,6 @@ On iOS, all apps with built-in browsers use the system WebView which does not su
 | Apps with built-in WebView (supports receiving streams)     | iOS 12.1.4 or later |
 | Safari (supports sending and receiving streams)             | iOS 11.0 or later   |
 
-<div class="alert note">On iOS versions that do not support receiving audio streams, you can <a href="https://docs-preview.agoralab.co/en/Interactive%20Broadcast/web_in_app?platform=Web">use the RTS plugin</a > to receive and play audio streams.</div>
 
 ### Android
 
@@ -32,7 +31,7 @@ Android WebView supports customization, and the system WebView varies by device.
 | Apps with built-in WebView     | No support on most mobile devices.                           |
 | Chrome 58 or later             | Supports sending and receiving streams.                      |
 
-<div class="alert note"><li>The support for sending and receiving audio streams on apps with built-in WebView is dependent on the mobile device.<li>On apps that do not support receiving audio streams, you can <a href="https://docs-preview.agoralab.co/en/Interactive%20Broadcast/web_in_app?platform=Web">use the RTS plugin</a > to receive and play audio streams.</div>
+<div class="alert note">The support for sending and receiving audio streams on apps with built-in WebView is dependent on the mobile device.</div>
 
 ## Video streams
 
@@ -46,7 +45,6 @@ On iOS, all apps with built-in browsers use the system WebView which does not su
 | Apps with built-in WebView (supports receiving streams)     | iOS 12.2 or later | iOS 12.1.4 or later |
 | Safari (supports sending and receiving streams)             | iOS 12.2 or later | iOS 11 or later     |
 
-<div class="alert note">On iOS versions that do not support H.264, you can <a href="https://docs-preview.agoralab.co/en/Interactive%20Broadcast/web_in_app?platform=Web">use the RTS plugin</a > to receive the H.264 video.</div>
 
 ### Android
 
@@ -58,10 +56,8 @@ Android WebView supports customization, and the system WebView varies by device.
 | Apps with built-in WebView     | Supports sending and receiving streams on some mobile devices. | Supports sending and receiving streams on some mobile devices. |
 | Chrome 58 or later             | Supports sending and receiving video streams.                | Supports sending and receiving streams on some mobile devices |
 
-<div class="alert note"><li>VP8 and H.264 support on apps with built-in WebView and H.264 support on Chrome are dependent on the mobile device.<li>On apps that do not support H.264, you can <a href="https://docs-preview.agoralab.co/en/Interactive%20Broadcast/web_in_app?platform=Web">use the RTS plugin</a > to receive the H.264 video.</li></div>
+<div class="alert note">VP8 and H.264 support on apps with built-in WebView and H.264 support on Chrome are dependent on the mobile device.</div>
 
 ### Codec setting
 
-If all users in the channel use the Agora Web SDK, we recommend setting `codec` as `"vp8"` in the `createStream` method. Refer to the above tables for the supported system and app versions.
-
-If there are senders using the Agora Native SDK, you can [use the RTS plugin](https://docs-preview.agoralab.co/en/Interactive%20Broadcast/web_in_app?platform=Web) to support watching H.264 video on mobile webpages. In the meantime, all the senders using the Agora Web SDK should set `codec` as `"h264"`.
+If all users in the channel use the Agora Web SDK, we recommend setting `codec` as `"vp8"` in the `createClient` method. Refer to the above tables for the supported system and app versions.
