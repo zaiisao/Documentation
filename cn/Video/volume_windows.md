@@ -3,7 +3,7 @@
 title: 调整通话音量
 description: How to adjust volume on Windows
 platform: Windows
-updatedAt: Tue Apr 28 2020 13:38:34 GMT+0800 (CST)
+updatedAt: Tue Aug 18 2020 10:26:37 GMT+0800 (CST)
 ---
 # 调整通话音量
 ## 功能描述
@@ -116,7 +116,7 @@ int ret = rtcEngine.adjustUserPlaybackSignalVolume(uid, 50);
 - [`setPlaybackDeviceVolume`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_audio_device_manager.html#ac14a1238e83303abed2f36e02fcc9366)
 - [`adjustPlaybackSignalVolume`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a98919705c8b2346811f91f9ce5e97a79)
 - [`adjustUserPlaybackSignalVolume`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a609e74c9a6e8df205543326f2ca6a965)
-- [`adjustAudioMixingVolume`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a544aee96b789ac5a57d26b61b7e1a5fa)
+- [`adjustAudioMixingPlayoutVolume`](https://docs.agora.io/cn/Video/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a8677c3f3160927d25d9814a88ab06da6)
 
 ### 设置混音音量
 
