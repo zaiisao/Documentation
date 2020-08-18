@@ -3,7 +3,7 @@
 title: 云端录制集成最佳实践
 description: 
 platform: All Platforms
-updatedAt: Tue Aug 18 2020 06:09:57 GMT+0800 (CST)
+updatedAt: Tue Aug 18 2020 06:10:11 GMT+0800 (CST)
 ---
 # 云端录制集成最佳实践
 为了保障录制服务的可靠性，Agora 建议你在集成云端录制 RESTful API 时注意以下几点：
@@ -12,7 +12,7 @@ updatedAt: Tue Aug 18 2020 06:09:57 GMT+0800 (CST)
 
 <div class="alert note">如果要使用域名 <code>api.agora.cn</code> 发起 RESTful API 请求，必须保证发起请求的服务器位于中国大陆。非中国大陆地区仅支持域名 <code>api.agora.io</code>。</div>
 
-如果你使用域名 `api.agora.io` 发起 RESTful API 请求失败，可以先用该域名重试一次；如再次失败，可将域名替换为 `api.agora.cn`，再次发送请求。建议使用退避策略，如第一次等待 1 秒后重试，第二次等待 3 秒后重试、第三次等待 6 秒后重试，以免超过 QPS 限制导致失败。
+如果你使用域名 `api.agora.io` 发起 RESTful API 请求失败，可以先用该域名重试一次；如再次失败，可将域名替换为 `api.agora.cn`，再次发送请求。建议使用退避策略，如第一次等待 1 秒后重试、第二次等待 3 秒后重试、第三次等待 6 秒后重试，以免超过 QPS 限制导致失败。
 
 ## `start` 请求失败后的处理方式
 
@@ -20,7 +20,7 @@ updatedAt: Tue Aug 18 2020 06:09:57 GMT+0800 (CST)
 
 - 如果返回的 HTTP 状态码为 `40x`，则表示请求参数错误，需要进行排查。
 
-- 如果返回的 HTTP 状态码为 `50x`，可使用相同的参数重试多次，直到成功返回 `sid` 为止。建议使用退避策略，如第一次等待 3 秒后重试，第二次等待 6 秒后重试、第三次等待 9 秒后重试，以免超过 QPS 限制导致失败。
+- 如果返回的 HTTP 状态码为 `50x`，可使用相同的参数重试多次，直到成功返回 `sid` 为止。建议使用退避策略，如第一次等待 3 秒后重试、第二次等待 6 秒后重试、第三次等待 9 秒后重试，以免超过 QPS 限制导致失败。
 
   <div class="alert note">使用 <code>acquire</code> 方法获得的 resource ID 时效为 5 分钟；5 分钟后，如果 <code>start</code> 请求仍然返回 <code>50x</code> 错误，建议更换 UID 再次调用 <code>acquire</code>， 获得一个新的 resource ID，并用该 resource ID 再次调用 <code>start</code></code> 方法。</div>
 
@@ -40,7 +40,7 @@ updatedAt: Tue Aug 18 2020 06:09:57 GMT+0800 (CST)
 
 你可以通过 `query` 请求获得 M3U8 文件的文件名。M3U8 文件名是第一份切片文件生成后产生的，所以需要在第一次切片完成后查询。详见[切片规则](https://docs.agora.io/cn/cloud-recording/cloud_recording_manage_files?platform=All%20Platforms#切片规则)。
 
-合流录制模式下，建议在成功开启云端录制 15 秒后调用 `query` 查询 M3U8 文件名；单流录制模式下，建议在成功开启云端录制 1 分钟后调用 query 查询 M3U8 文件名。如果第一次查询失败，可以在 1 分钟后重试。
+合流录制模式下，建议在成功开启云端录制 15 秒后调用 `query` 查询 M3U8 文件名；单流录制模式下，建议在成功开启云端录制 1 分钟后调用 `query` 查询 M3U8 文件名。如果第一次查询失败，可以在 1 分钟后重试。
 
 合流录制模式下，M3U8 文件名的格式为 `<sid>_<cname>.m3u8`。因此，你还可以通过拼接的方式获取切片文件名。详见[录制文件命名规则](https://docs.agora.io/cn/cloud-recording/cloud_recording_manage_files?platform=All%20Platforms#合流模式)。
 
@@ -52,7 +52,7 @@ updatedAt: Tue Aug 18 2020 06:09:57 GMT+0800 (CST)
 
 ## 保证录制服务状态正常
 
-你可以通过周期性调用 `query` 或冗余消息通知来确认录制服务正在进行中且状态正常。消息通知服务和 `query` 各有优劣，详见[消息通知服务和 query 方法的对比](https://confluence.agoralab.co/pages/viewpage.action?pageId=681271989)。
+你可以通过周期性调用 `query` 或冗余消息通知来确认录制服务正在进行中且状态正常。消息通知服务和 `query` 各有优劣，详见[消息通知服务和 query 方法的对比](https://docs.agora.io/cn/faq/ncs_vs_query)。
 
 ### 周期性频道查询
 
