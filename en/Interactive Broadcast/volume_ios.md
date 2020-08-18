@@ -3,7 +3,7 @@
 title: Adjust the Volume
 description: How to adjust volume on iOS
 platform: iOS
-updatedAt: Mon Jul 06 2020 09:20:22 GMT+0800 (CST)
+updatedAt: Tue Aug 18 2020 10:22:23 GMT+0800 (CST)
 ---
 # Adjust the Volume
 ## Introduction
