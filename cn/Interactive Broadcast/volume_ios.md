@@ -3,7 +3,7 @@
 title: 调整通话音量
 description: How to adjust volume on iOS
 platform: iOS
-updatedAt: Tue Apr 28 2020 13:37:24 GMT+0800 (CST)
+updatedAt: Tue Aug 18 2020 10:23:04 GMT+0800 (CST)
 ---
 # 调整通话音量
 ## 功能描述
@@ -89,7 +89,7 @@ agoraKit.adjustUserPlaybackSignalVolume(uid, volume: 50)
 
 - [`adjustPlaybackSignalVolume`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustPlaybackSignalVolume:)
 - [`adjustUserPlaybackSignalVolume`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustUserPlaybackSignalVolume:volume:)
-- [`adjustAudioMixingVolume`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingVolume:)
+- [`adjustAudioMixingPlayoutVolume`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingPlayoutVolume:)
 
 ### 设置混音音量
 
