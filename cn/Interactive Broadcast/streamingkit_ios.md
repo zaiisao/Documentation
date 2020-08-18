@@ -3,12 +3,12 @@
 title: 推流组件
 description: 
 platform: iOS
-updatedAt: Tue Aug 18 2020 09:14:54 GMT+0800 (CST)
+updatedAt: Tue Aug 18 2020 09:16:30 GMT+0800 (CST)
 ---
 # 推流组件
 ## 简介
 
-Agora 为 CDN 直播推流场景研发 Streaming Kit（推流组件），支持将单个主播音视频流推送到 CDN。如果你同时集成 RTMP Streaming Kit 和 Agora RTC SDK，你还可以在观众无感知的情况下实现单主播和多主播画面的动态切换。
+Agora 为 CDN 直播推流场景研发 Streaming Kit（推流组件），支持将单个主播音视频流推送到 CDN。如果你同时集成 Streaming Kit 和 Agora RTC SDK，你还可以在观众无感知的情况下实现单主播和多主播画面的动态切换。
 
 ![](https://web-cdn.agora.io/docs-files/1597407339661)
 
@@ -53,12 +53,12 @@ Agora 为 CDN 直播推流场景研发 Streaming Kit（推流组件），支持�
     ```
 
 4. 在 **Terminal** 内运行 `pod update` 命令更新本地库版本。
-5. 运行 `pod install` 命令安装 RTMP Streaming Kit。成功安装后，**Terminal** 中会显示 `Pod installation complete!`，此时项目文件夹下会生成一个 `xcworkspace` 文件。
+5. 运行 `pod install` 命令安装 Streaming Kit。成功安装后，**Terminal** 中会显示 `Pod installation complete!`，此时项目文件夹下会生成一个 `xcworkspace` 文件。
 6. 打开新生成的 `xcworkspace` 文件。
 
-**方法二：手动复制 RTMP Streaming Kit 文件**
+**方法二：手动复制 Streaming Kit 文件**
 
-1. 前往[下载](https://docs.agora.io/cn/AgoraPlatform/downloads)页面，下载最新版 RTMP Streaming Kit，然后解压。
+1. 前往[下载](https://docs.agora.io/cn/AgoraPlatform/downloads)页面，下载最新版 Streaming Kit，然后解压。
 
 2. 将 `libs` 文件夹内的 `AgoraStreamingKit.framework` 文件复制到项目文件夹下。
 3. 在 **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content** 菜单中，将 `AgoraStreamingKit.framework` 的状态修改为 **Embed & Sign**。
@@ -273,4 +273,4 @@ Streaming Kit 通过 `process` 方法的 `inputPixelBuffer` 参数向你输出�
 
 ## API 参考
 
-[RTMP Streaming Kit API 文档](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/rsk_oc/docs/headers/RTMP-Streaming-Kit-Objective-C-API-Overview.html)
+[Streaming Kit API 文档](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/rsk_oc/docs/headers/RTMP-Streaming-Kit-Objective-C-API-Overview.html)
