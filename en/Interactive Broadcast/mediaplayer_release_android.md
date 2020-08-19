@@ -3,7 +3,7 @@
 title: Release Notes
 description: draft
 platform: Android
-updatedAt: Fri Jul 10 2020 10:16:41 GMT+0800 (CST)
+updatedAt: Wed Aug 19 2020 11:10:46 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides release notes for the Agora MediaPlayer Kit plugin.
