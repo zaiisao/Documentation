@@ -3,7 +3,7 @@
 title: 如何处理录制 SDK 集成问题？
 description: 
 platform: Linux
-updatedAt: Wed Aug 19 2020 18:00:46 GMT+0800 (CST)
+updatedAt: Wed Aug 19 2020 18:00:58 GMT+0800 (CST)
 ---
 # 如何处理录制 SDK 集成问题？
 ### Java SDK 集成时报错 java.land.UnsatisfiedLinkError: no recording in java.library.path
@@ -18,7 +18,6 @@ updatedAt: Wed Aug 19 2020 18:00:46 GMT+0800 (CST)
 LD_LIBRARY_PATH=/home/user/Desktop/tool/Agora_Recording/samples/java/bin/io/agora/recording/librecording.so
 ```
 
-不同系统与程序配置 `java.library.path` 的方法请参考[修改java.library.path的位置](https://blog.csdn.net/quqibing001/article/details/51201768)。
 
 ### 如何知道录制程序是正常退出频道，还是异常退出频道?
 
