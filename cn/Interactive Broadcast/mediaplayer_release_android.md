@@ -3,7 +3,7 @@
 title: 媒体播放器组件发版说明
 description: 
 platform: Android
-updatedAt: Mon Jun 15 2020 08:31:22 GMT+0800 (CST)
+updatedAt: Wed Aug 19 2020 11:09:44 GMT+0800 (CST)
 ---
 # 媒体播放器组件发版说明
 本文提供媒体播放器组件的发版说明。
