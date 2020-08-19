@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: iOS
-updatedAt: Tue Jul 14 2020 03:10:56 GMT+0800 (CST)
+updatedAt: Wed Aug 19 2020 06:41:28 GMT+0800 (CST)
 ---
 # 实现语音通话
 本文介绍如何使用 Agora 语音通话 SDK 快速实现语音通话。
