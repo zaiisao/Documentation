@@ -1,11 +1,11 @@
 
 ---
-title: 录制集成常见问题集
+title: 如何处理录制 SDK 集成问题？
 description: 
 platform: Linux
-updatedAt: Mon Jul 15 2019 11:25:08 GMT+0800 (CST)
+updatedAt: Wed Aug 19 2020 18:00:46 GMT+0800 (CST)
 ---
-# 录制集成常见问题集
+# 如何处理录制 SDK 集成问题？
 ### Java SDK 集成时报错 java.land.UnsatisfiedLinkError: no recording in java.library.path
 
 报错原因：系统环境找不到 `librecording.so` 库文件。
