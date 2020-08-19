@@ -3,7 +3,7 @@
 title: Release Notes
 description: draft
 platform: Android
-updatedAt: Wed Aug 19 2020 11:10:46 GMT+0800 (CST)
+updatedAt: Wed Aug 19 2020 11:12:13 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides release notes for the Agora MediaPlayer Kit plugin.
@@ -18,6 +18,15 @@ To enrich the live interactive streaming playability and improve the real-time i
 - Online education: The teacher shares a currently playing video with the students during an online class.
 - Live sports: The host shares the live sports with the audience during his/her live interactive streaming.
 - Pseudo live interactive streaming: Share or publish the video recorded by the host in advance to the audience.
+
+## v1.1.4
+
+v1.1.4 was released on August 19, 2020.
+
+Improvements and fixed issues are as follows:
+- Reduced the performance loss of the device during playback.
+- Reduced the size of the MediaPlayer Kit package.
+- Fixed occasional crashes and application unresponsiveness issues.
 
 ## v1.1.2
 
