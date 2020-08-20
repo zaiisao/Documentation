@@ -14,13 +14,13 @@ updatedAt: Wed Aug 12 2020 09:07:27 GMT+0800 (CST)
 
 <div class="alert warning">由于浏览器的安全策略对除 127.0.0.1 以外的 HTTP 地址作了限制，Agora Web SDK 仅支持 HTTPS 协议或者 http://localhost（http://127.0.0.1），请勿使用 HTTP 协议部署你的项目。</div>
 
-## 快速跑通 Demo
+## 快速跑通示例项目
 
-如果你是第一次使用声网的服务，我们推荐观看下面的视频，了解关于声网服务的基本信息以及如何快速跑通 demo。
+如果你是第一次使用声网的服务，我们推荐观看下面的视频，了解关于声网服务的基本信息以及如何快速跑通示例项目。
 
 <div class="alert info">点击参与<a href="https://www.wenjuan.com/s/7FbeEz6/" target="_blank">视频教程问卷调查</a>，帮助我们改进体验。</div>
 
-<video src="https://web-cdn.agora.io/docs-files/1584514830714" poster="https://web-cdn.agora.io/docs-files/1594697609440"   controls width = 100% height = auto>你的浏览器不支持 <code>video</code> 标签。</video>
+<video src="<%= src %>" poster="<%= poster %>"   controls width = 100% height = auto>你的浏览器不支持 <code>video</code> 标签。</video>
 
 <div class="alert note">视频中展示的 UI 可能有部分调整更新，请以当前最新版为准。</div>
 
