@@ -3,7 +3,7 @@
 title: 实现视频通话
 description: 
 platform: Unity
-updatedAt: Thu Aug 20 2020 08:36:44 GMT+0800 (CST)
+updatedAt: Thu Aug 20 2020 08:37:44 GMT+0800 (CST)
 ---
 # 实现视频通话
 本文介绍如何使用 Agora Unity SDK 快速实现视频通话。
@@ -21,7 +21,7 @@ updatedAt: Thu Aug 20 2020 08:36:44 GMT+0800 (CST)
 
 ## 示例项目
 
-Agora 在 Github 上提供开源的实时视频通话示例项目 [Hello-Video-Unity-Agora](https://github.com/AgoraIO/Agora-Unity-Quickstart/tree/master/video/Hello-Video-Unity-Agora)。在实现相关功能前，你可以下载并查看源代码。
+Agora 在 GitHub 上提供开源的实时视频通话示例项目 [Hello-Video-Unity-Agora](https://github.com/AgoraIO/Agora-Unity-Quickstart/tree/master/video/Hello-Video-Unity-Agora)。在实现相关功能前，你可以下载并查看源代码。
 
 ## 前提条件
 
