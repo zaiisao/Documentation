@@ -3,7 +3,7 @@
 title: Firewall Requirements
 description: 
 platform: All Platforms
-updatedAt: Thu Aug 20 2020 02:07:54 GMT+0800 (CST)
+updatedAt: Thu Aug 20 2020 02:07:59 GMT+0800 (CST)
 ---
 # Firewall Requirements
 This page describes the firewall requirements for different Agora SDKs. Before accessing Agora’s services, ensure that you open the local firewall ports and whitelist the domains specified in this article.
@@ -100,7 +100,7 @@ logservice-rtm.agoraio.cn
 
 | Destination ports | Port type | Operation |
 | ---------- | ------------------------------------------------ | -----------------|
-| 443; 9591; 9593     | TCP              |  Allow |
+| 443; 6443; 9591; 9593     | TCP              |  Allow |
 
 ## Agora On-premise Recording SDK
 
