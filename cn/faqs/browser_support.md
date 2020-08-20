@@ -3,7 +3,7 @@
 title: Agora Web SDK 支持哪些浏览器？
 description: 
 platform: Web
-updatedAt: Thu Aug 20 2020 12:16:46 GMT+0800 (CST)
+updatedAt: Thu Aug 20 2020 12:16:53 GMT+0800 (CST)
 ---
 # Agora Web SDK 支持哪些浏览器？
 Agora Web SDK 支持所有主流浏览器，支持的浏览器及平台如下。
@@ -116,14 +116,16 @@ Agora Web SDK 是基于 WebRTC 实现的采集和编解码，而 Chrome 又是�
    ![](https://web-cdn.agora.io/docs-files/1591078696865)
 - Safari 不支持 `addTrack` 和 `removeTrack`。
 - Safari 不支持开启[双流模式](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#dual-stream)。
+- Safari 上调用相关方法获取质量相关统计数据时，多个字段的值为 0。例如调用 `getLocalAudioStats` 获取数据时，`RecordingLevel` 和 `SendLevel` 字段值为 0。
 
 ### Firefox 
 
-- 如果 Web 端使用 Firefox 浏览器，Native 端使用 iOS 设备，Firefox 看到的视频方向会发生旋转。
+- Firefox 上使用 Web SDK 时与某些设备互通时，Firefox 端看其他端的视频画面会发生旋转。
 - Firefox 只支持视频帧率设为 30 fps。
 - 在部分设备上 Firefox 设置视频编码配置不生效，目前已知有此问题的设备如下：
   - MacBook Pro (13-inch, 2016, Two Thunderbolt 3 ports)
   - Windows 10 (MI)
+- Firefox 上调用相关方法获取质量相关统计数据时，多个字段的值为 0。例如调用 `getLocalAudioStats` 获取数据时，`RecordingLevel` 和 `SendLevel` 字段值为 0。
 
 ### <a name="edge"></a>Edge
 
