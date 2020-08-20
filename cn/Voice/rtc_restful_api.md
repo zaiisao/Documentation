@@ -3,7 +3,7 @@
 title: 服务端 RESTful API
 description: Agora RESTful 形式的服务端 API 概览。
 platform: All Platforms
-updatedAt: Fri Jul 03 2020 02:17:09 GMT+0800 (CST)
+updatedAt: Thu Aug 20 2020 03:55:27 GMT+0800 (CST)
 ---
 # 服务端 RESTful API
 除客户端 API 外，Agora 还提供 RESTful 形式的服务端 API，通过发送 HTTPS 请求就可以获取 （GET），更新（PUT）, 创建 （POST），和删除 （DELETE） 项目、用量等相关数据。
