@@ -3,7 +3,7 @@
 title: RESTful API
 description: 
 platform: All Platforms
-updatedAt: Thu Aug 06 2020 10:28:53 GMT+0800 (CST)
+updatedAt: Thu Aug 20 2020 03:53:50 GMT+0800 (CST)
 ---
 # RESTful API
 Agora 提供 RESTful 形式的服务端 API，通过发送 HTTPS 请求就可以获取 （GET），更新（PUT）, 创建 （POST），和删除 （DELETE） 项目、用量等相关数据。
