@@ -3,12 +3,12 @@
 title: 如何使用 String 型用户 ID？
 description: 
 platform: All Platforms
-updatedAt: Wed Jun 03 2020 10:40:37 GMT+0800 (CST)
+updatedAt: Thu Aug 20 2020 11:41:05 GMT+0800 (CST)
 ---
 # 如何使用 String 型用户 ID？
 ## 场景描述
 
-<div class="alert warning">该功能目前正在验证阶段。如需使用，我们建议你联系声网技术支持。<p>以下产品或功能不支持 String 型的用户 ID：<li><a href="https://docs.agora.io/cn/cloud-recording/product_cloud_recording?platform=All%20Platforms">云端录制</a ><li><a href="https://docs.agora.io/cn/Interactive%20Broadcast/cdn_streaming_android?platform=Android">RTMP 推流</a ><li><a href="https://docs.agora.io/cn/Agora%20Platform/dashboard_restful_communication?platform=All%20Platforms">RESTful API</a ></p></div>
+<div class="alert warning">该功能目前正在验证阶段。如需使用，我们建议你联系声网技术支持。<p>以下产品或功能不支持 String 型的用户 ID：<li><a href="https://docs.agora.io/cn/cloud-recording/product_cloud_recording?platform=All%20Platforms">云端录制</a ><li><a href="https://docs.agora.io/cn/Interactive%20Broadcast/cdn_streaming_android?platform=Android">RTMP 推流</a ><li><a href="https://docs.agora.io/cn/Interactive%20Broadcast/rtc_restful_api?platform=All%20Platforms">服务端 RESTful API</a ><li><a href="https://docs.agora.io/cn/Interactive%20Broadcast/start_live_wechat?platform=微信小程序">微信小程序</a ></p></div>
 
 
 很多 App 使用 String 类型的用户账号。为降低开发成本，Agora 新增支持 String 型的用户 ID，方便用户使用 App 账号直接加入 Agora 频道。
