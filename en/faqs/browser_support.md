@@ -3,7 +3,7 @@
 title: Which browsers does the Agora Web SDK support?
 description: 
 platform: Web
-updatedAt: Thu Aug 20 2020 14:26:28 GMT+0800 (CST)
+updatedAt: Thu Aug 20 2020 14:36:41 GMT+0800 (CST)
 ---
 # Which browsers does the Agora Web SDK support?
 The Agora Web SDK supports all mainstream browsers. 
@@ -113,7 +113,7 @@ The following lists other known issues and limitations of Safari on iOS and macO
     ![](https://web-cdn.agora.io/docs-files/1591079062644)
 - Safari does not support the `addTrack` and `removeTrack` methods.
 - Safari does not support enabling [dual-stream mode](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#dual-stream).
-- On Safari, when calling APIs to get quality statistics, the values of some properties are 0.For example, when calling `getLocalAudioStats` to get the audio statistics of the local stream, the values of `RecordingLevel` and `SendLevel` are 0.
+- On Safari, when calling APIs to get quality statistics, the values of some properties are 0. For example, when calling `getLocalAudioStats` to get the audio statistics of the local stream, the values of `RecordingLevel` and `SendLevel` are 0.
 
 ### Firefox
 
@@ -122,7 +122,7 @@ The following lists other known issues and limitations of Safari on iOS and macO
 - Setting the video profile on Firefox does not take effect on the following devices:
   - MacBook Pro (13-inch, 2016, Two Thunderbolt 3 ports)
   - Windows 10 (MI)
-- On Firefox, when calling APIs to quality statistics, the values of some properties are 0.For example, when calling `getLocalAudioStats` to get the audio statistics of the local stream, the values of `RecordingLevel` 和 `SendLevel` are 0.
+- On Firefox, when calling APIs to get quality statistics, the values of some properties are 0. For example, when calling `getLocalAudioStats` to get the audio statistics of the local stream, the values of `RecordingLevel` and `SendLevel` are 0.
 
 ### Edge
 
