@@ -3,7 +3,7 @@
 title: RESTful API
 description: 
 platform: All_Platforms
-updatedAt: Thu Aug 20 2020 03:53:50 GMT+0800 (CST)
+updatedAt: Thu Aug 20 2020 03:54:00 GMT+0800 (CST)
 ---
 # RESTful API
 Agora 提供 RESTful 形式的服务端 API，通过发送 HTTPS 请求就可以获取 （GET），更新（PUT）, 创建 （POST），和删除 （DELETE） 项目、用量等相关数据。
@@ -24,8 +24,8 @@ Agora 提供 RESTful 形式的服务端 API，通过发送 HTTPS 请求就可以
 | [BaseUrl/dev/v1/projects](https://docs.agora.io/cn/rtc/restfulapi/?_ga=2.218864153.1695148571.1593515861-1969480941.1589793536#/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/getProjects) | GET    | 获取所有项目            |
 | [BaseUrl/dev/v1/project_status](https://docs.agora.io/cn/rtc/restfulapi/?_ga=2.218864153.1695148571.1593515861-1969480941.1589793536#/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/changeProjectStatus) | POST   | 禁用或启用项目          |
 | [BaseUrl/dev/v1/recording_config](https://docs.agora.io/cn/rtc/restfulapi/?_ga=2.218864153.1695148571.1593515861-1969480941.1589793536#/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/setRecordingServer) | POST   | 设置录制服务器 IP       |
-| [BaseUrl/dev/v1/signkey](https://docs.agora.io/cn/rtc/restfulapi/?_ga=2.218864153.1695148571.1593515861-1969480941.1589793536#/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/changeSignKey) | POST   | 启用或禁用注意 App 证书 |
-| [BaseUrl/dev/v1/reset_signkey](https://docs.agora.io/cn/rtc/restfulapi/?_ga=2.218864153.1695148571.1593515861-1969480941.1589793536#/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/resetSignKey) | POST   | 重置注意 App 证书       |
+| [BaseUrl/dev/v1/signkey](https://docs.agora.io/cn/rtc/restfulapi/?_ga=2.218864153.1695148571.1593515861-1969480941.1589793536#/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/changeSignKey) | POST   | 启用或禁用主要 App 证书 |
+| [BaseUrl/dev/v1/reset_signkey](https://docs.agora.io/cn/rtc/restfulapi/?_ga=2.218864153.1695148571.1593515861-1969480941.1589793536#/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/resetSignKey) | POST   | 重置主要 App 证书       |
 
 
 
