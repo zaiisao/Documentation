@@ -3,7 +3,7 @@
 title: Agora Web SDK 支持哪些浏览器？
 description: 
 platform: Web
-updatedAt: Thu Aug 20 2020 12:13:07 GMT+0800 (CST)
+updatedAt: Thu Aug 20 2020 12:16:46 GMT+0800 (CST)
 ---
 # Agora Web SDK 支持哪些浏览器？
 Agora Web SDK 支持所有主流浏览器，支持的浏览器及平台如下。
