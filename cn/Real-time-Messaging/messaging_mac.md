@@ -3,7 +3,7 @@
 title: 发送和接收点对点消息及频道消息
 description: 
 platform: macOS
-updatedAt: Thu Aug 20 2020 08:50:21 GMT+0800 (CST)
+updatedAt: Thu Aug 20 2020 08:52:17 GMT+0800 (CST)
 ---
 # 发送和接收点对点消息及频道消息
 
@@ -30,6 +30,7 @@ updatedAt: Thu Aug 20 2020 08:50:21 GMT+0800 (CST)
 <video src="https://web-cdn.agora.io/docs-files/1583387623387" poster="https://web-cdn.agora.io/docs-files/1597912008540"   controls width = 100% height = auto>你的浏览器不支持 <code>video</code> 标签。</video>
 
 <div class="alert note">视频中展示的 UI 可能有部分调整更新，请以当前最新版为准。</div>
+
 ## 开发环境要求
 
 
