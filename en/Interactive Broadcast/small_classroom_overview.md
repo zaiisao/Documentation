@@ -67,7 +67,7 @@ This technical solution has the following advantages:
 
 **Low latency**
 
-Agora SD-RTN<sup>TM</sup> is Agora's proprietary network for audio and video transmission,  covering more than 200 countries and regions. The intelligent routing algorithms it uses ensure that the average end-to-end latency worldwide is less than 300 ms.
+Agora SD-RTN<sup>TM</sup> is Agora's proprietary network for audio and video transmission,  covering more than 200 countries and regions. The intelligent routing algorithms it uses ensure that the average end-to-end latency worldwide is less than 400 ms.
 
 **High service stability and accessibility**
 

@@ -64,7 +64,7 @@ Agora 使用 [Agora RTC SDK](https://docs.agora.io/cn/Agora%20Platform/terms?pla
 
 **超低延时**
 
-Agora SD-RTN™ 网络节点覆盖全球 200 多个国家和地区，通过就近接入、智能路由等控制策略，保证全球平均端到端延时 < 300 ms。
+Agora SD-RTN™ 网络节点覆盖全球 200 多个国家和地区，通过就近接入、智能路由等控制策略，保证全球平均端到端延时 < 400 ms。
 
 **稳定可靠**
 
