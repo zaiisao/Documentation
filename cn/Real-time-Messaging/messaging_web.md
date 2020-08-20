@@ -3,11 +3,18 @@
 title: 发送和接收点对点消息及频道消息
 description: 
 platform: Web
-updatedAt: Fri Jul 31 2020 06:34:50 GMT+0800 (CST)
+updatedAt: Thu Aug 20 2020 08:51:21 GMT+0800 (CST)
 ---
 # 发送和接收点对点消息及频道消息
 
 本页介绍在正式使用 [Agora RTM Web SDK](https://docs.agora.io/cn/Real-time-Messaging/downloads) 进行实时消息通讯前，需要准备的开发环境要求及 SDK 集成方法等内容。
+
+## 示例项目体验
+
+
+<div class="alert info">点击<a href="https://webdemo.agora.io/agora-web-showcase/examples/Agora-RTM-Tutorial-Web/">在线体验</a>试用Agora RTM Tutorial for Web功能。</div>
+
+你可以到 GitHub 下载最新版的 [Agora-RTM-Tutorial-for-Web](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-Web) 查看完整的源码和代码逻辑。
 
 ## 快速跑通示例项目
 
@@ -15,16 +22,9 @@ updatedAt: Fri Jul 31 2020 06:34:50 GMT+0800 (CST)
 
 <div class="alert info">点击参与<a href="https://www.wenjuan.com/s/7FbeEz6/" target="_blank">视频教程问卷调查</a>，帮助我们改进体验。</div>
 
-<video src="<%= src %>" poster="<%= poster %>"   controls width = 100% height = auto>你的浏览器不支持 <code>video</code> 标签。</video>
+<video src="https://web-cdn.agora.io/docs-files/1593742453707" poster="https://web-cdn.agora.io/docs-files/1597912060100"   controls width = 100% height = auto>你的浏览器不支持 <code>video</code> 标签。</video>
 
 <div class="alert note">视频中展示的 UI 可能有部分调整更新，请以当前最新版为准。</div>
-
-## Demo 体验
-
-
-<div class="alert info">点击<a href="https://webdemo.agora.io/agora-web-showcase/examples/Agora-RTM-Tutorial-Web/">在线体验</a>试用Agora RTM Tutorial for Web功能。</div>
-
-你可以到 GitHub 下载最新版的 [Agora-RTM-Tutorial-for-Web](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-Web) 查看完整的源码和代码逻辑
 
 
 ## 开发环境要求
