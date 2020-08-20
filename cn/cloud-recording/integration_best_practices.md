@@ -3,7 +3,7 @@
 title: 云端录制集成最佳实践
 description: 
 platform: All Platforms
-updatedAt: Thu Aug 20 2020 09:46:21 GMT+0800 (CST)
+updatedAt: Thu Aug 20 2020 09:46:36 GMT+0800 (CST)
 ---
 # 云端录制集成最佳实践
 为了保障录制服务的可靠性，Agora 建议你在集成云端录制 RESTful API 时注意以下几点：
@@ -33,7 +33,7 @@ updatedAt: Thu Aug 20 2020 09:46:21 GMT+0800 (CST)
 
   <div class="alert note">此种方法有小于万分之一的误判率，即将一个正在进行的录制进程判定为已结束。因此，建议你在重新启动录制时使用一个新的 UID，以避免频道内两个相同 UID 互踢的情况。</div>
 
-- 如果返回的 HTTP 状态码为 `50x`，则表示 `query` 请求失败，但尚不明确录制是否已退出。出现 50x 错误的概率极小，建议使用退避策略 (5 秒, 10 秒, 15 秒，30 秒) 继续调用 `query`。
+- 如果返回的 HTTP 状态码为 `50x`，则表示 `query` 请求失败，但尚不明确录制是否已退出。出现 `50x` 错误的概率极小，建议使用退避策略 (5 秒, 10 秒, 15 秒，30 秒) 继续调用 `query`。
 
 ## 使用 `query` 请求获取 M3U8 文件名
 
