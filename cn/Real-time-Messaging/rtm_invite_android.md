@@ -120,4 +120,4 @@ RemoteInvitation 的生命周期在被叫收到以下回调时结束，并由 SD
 
 ## 示例项目
 
-我们在 Github 提供一个开源的[示例项目](https://github.com/AgoraIO-Usecase/Video-Calling)，你也可以前往下载体验并参考源代码。
+我们在 GitHub 提供一个开源的[示例项目](https://github.com/AgoraIO-Usecase/Video-Calling)，你也可以前往下载体验并参考源代码。
