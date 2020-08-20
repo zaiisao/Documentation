@@ -3,7 +3,7 @@
 title: 实现视频直播
 description: 
 platform: macOS
-updatedAt: Tue Jul 14 2020 03:14:44 GMT+0800 (CST)
+updatedAt: Thu Aug 20 2020 08:40:26 GMT+0800 (CST)
 ---
 # 实现视频直播
 本文介绍如何使用 Agora SDK 快速实现互动直播。
@@ -16,7 +16,7 @@ updatedAt: Tue Jul 14 2020 03:14:44 GMT+0800 (CST)
 
 <div class="alert info">点击参与<a href="https://www.wenjuan.com/s/7FbeEz6/" target="_blank">视频教程问卷调查</a>，帮助我们改进体验。</div>
 
-<video src="<%= src %>" poster="<%= poster %>"   controls width = 100% height = auto>你的浏览器不支持 <code>video</code> 标签。</video>
+<video src="https://web-cdn.agora.io/docs-files/1593741447106" poster="https://web-cdn.agora.io/docs-files/1597911446287"   controls width = 100% height = auto>你的浏览器不支持 <code>video</code> 标签。</video>
 
 <div class="alert note">视频中展示的 UI 可能有部分调整更新，请以当前最新版为准。</div>
 
