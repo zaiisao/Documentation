@@ -3,16 +3,16 @@
 title: 云端录制集成最佳实践
 description: 
 platform: All Platforms
-updatedAt: Thu Aug 20 2020 09:41:25 GMT+0800 (CST)
+updatedAt: Thu Aug 20 2020 09:41:29 GMT+0800 (CST)
 ---
 # 云端录制集成最佳实践
 为了保障录制服务的可靠性，Agora 建议你在集成云端录制 RESTful API 时注意以下几点：
 
 ## 使用双域名
 
-<div class="alert note">如果要使用域名 <code>api.agora.cn</code> 发起 RESTful API 请求，必须保证发起请求的服务器位于中国大陆。非中国大陆地区仅支持域名 <code>api.agora.io</code>。</div>
+<div class="alert note">如果要使用域名 <code>api.agoraio.cn</code> 发起 RESTful API 请求，必须保证发起请求的服务器位于中国大陆。非中国大陆地区仅支持域名 <code>api.agora.io</code>。</div>
 
-如果你使用域名 `api.agora.io` 发起 RESTful API 请求失败，可以先用该域名重试一次；如再次失败，可将域名替换为 `api.agora.cn`，再次发送请求。建议使用退避策略，如第一次等待 1 秒后重试、第二次等待 3 秒后重试、第三次等待 6 秒后重试，以免超过 QPS 限制导致失败。
+如果你使用域名 `api.agora.io` 发起 RESTful API 请求失败，可以先用该域名重试一次；如再次失败，可将域名替换为 `api.agoraio.cn`，再次发送请求。建议使用退避策略，如第一次等待 1 秒后重试、第二次等待 3 秒后重试、第三次等待 6 秒后重试，以免超过 QPS 限制导致失败。
 
 ## `start` 请求失败后的处理方式
 
@@ -20,9 +20,8 @@ updatedAt: Thu Aug 20 2020 09:41:25 GMT+0800 (CST)
 
 - 如果返回的 HTTP 状态码为 `40x`，则表示请求参数错误，需要进行排查。
 
-- 如果返回的 HTTP 状态码为 `50x`，可使用相同的参数重试多次，直到成功返回 `sid` 为止。建议使用退避策略，如第一次等待 3 秒后重试、第二次等待 6 秒后重试、第三次等待 9 秒后重试，以免超过 QPS 限制导致失败。
+- 如果返回的 HTTP 状态码为 `50x`，可使用相同的参数重试多次，直到成功返回 `sid` 为止。建议使用退避策略，如第一次等待 3 秒后重试、第二次等待 6 秒后重试、第三次等待 9 秒后重试，以免超过 QPS 限制导致失败。如果三次重试均失败，建议更换 UID 再次调用 <code>acquire</code>， 获得一个新的 resource ID，并用该 resource ID 再次调用 <code>start</code></code> 方法。
 
-  <div class="alert note">使用 <code>acquire</code> 方法获得的 resource ID 时效为 5 分钟；5 分钟后，如果 <code>start</code> 请求仍然返回 <code>50x</code> 错误，建议更换 UID 再次调用 <code>acquire</code>， 获得一个新的 resource ID，并用该 resource ID 再次调用 <code>start</code></code> 方法。</div>
 
 ## <a name="query_fail"></a>`query` 请求失败后的处理方式
 
@@ -34,7 +33,7 @@ updatedAt: Thu Aug 20 2020 09:41:25 GMT+0800 (CST)
 
   <div class="alert note">此种方法有小于万分之一的误判率，即将一个正在进行的录制进程判定为已结束。因此，建议你在重新启动录制时使用一个新的 UID，以避免频道内两个相同 UID 互踢的情况。</div>
 
-- 如果返回的 HTTP 状态码为 `50x`，则表示 `query` 请求失败，但尚不明确录制是否已退出。建议继续使用退避策略 (5 秒, 10 秒, 15 秒，30 秒) 多次调用 `query`。如果最终返回 `20x` 则表示请求成功，返回 `40x` 需要继续排查。
+- 如果返回的 HTTP 状态码为 `50x`，则表示 `query` 请求失败，但尚不明确录制是否已退出。建议继续使用退避策略 (5 秒, 10 秒, 15 秒，30 秒) 多次调用 `query`。
 
 ## 使用 `query` 请求获取 M3U8 文件名
 
