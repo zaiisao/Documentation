@@ -3,7 +3,7 @@
 title: 应用企业防火墙限制
 description: 
 platform: All Platforms
-updatedAt: Thu Aug 20 2020 02:06:56 GMT+0800 (CST)
+updatedAt: Thu Aug 20 2020 02:07:02 GMT+0800 (CST)
 ---
 # 应用企业防火墙限制
 ## 概览
@@ -120,7 +120,7 @@ logservice-rtm.agoraio.cn
 
 | 目标端口 | 协议 | 操作 |
 | --------------- | ------------ | ------------ |
-| 443；9591；9593；9601 | TCP | 允许 |
+| 443; 6443; 9591; 9593; 9601 | TCP | 允许 |
 
 
 ## Agora 本地服务端录制 SDK
