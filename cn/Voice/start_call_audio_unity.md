@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: Unity
-updatedAt: Thu Aug 20 2020 08:31:00 GMT+0800 (CST)
+updatedAt: Thu Aug 20 2020 08:37:45 GMT+0800 (CST)
 ---
 # 实现语音通话
 本文介绍如何使用 Agora Unity SDK 快速实现语音通话。
@@ -21,7 +21,7 @@ updatedAt: Thu Aug 20 2020 08:31:00 GMT+0800 (CST)
 
 ## 示例项目
 
-Agora 在 Github 上提供开源的实时语音通话示例项目 [Hello-Unity3D-Agora](https://github.com/AgoraIO/Agora-Unity-Quickstart/tree/master/audio/Hello-Unity3D-Agora)。在实现相关功能前，你可以下载并查看源代码。
+Agora 在 GitHub 上提供开源的实时语音通话示例项目 [Hello-Unity3D-Agora](https://github.com/AgoraIO/Agora-Unity-Quickstart/tree/master/audio/Hello-Unity3D-Agora)。在实现相关功能前，你可以下载并查看源代码。
 
 ## 前提条件
 
