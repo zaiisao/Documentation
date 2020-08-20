@@ -3,7 +3,7 @@
 title: 限制条件
 description: RTM Linux Java SDK limitations.
 platform: Linux Java
-updatedAt: Wed Aug 19 2020 08:37:21 GMT+0800 (CST)
+updatedAt: Thu Aug 20 2020 11:34:23 GMT+0800 (CST)
 ---
 # 限制条件
 
