@@ -3,7 +3,7 @@
 title: 实现视频通话
 description: 
 platform: macOS
-updatedAt: Tue Jul 14 2020 03:12:10 GMT+0800 (CST)
+updatedAt: Thu Aug 20 2020 08:33:55 GMT+0800 (CST)
 ---
 # 实现视频通话
 本文介绍如何使用 Agora 视频通话 SDK 快速实现视频通话。
