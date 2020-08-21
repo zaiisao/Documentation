@@ -3,7 +3,7 @@
 title: 发送和接收点对点消息及频道消息
 description: 
 platform: Android
-updatedAt: Thu Aug 20 2020 08:47:49 GMT+0800 (CST)
+updatedAt: Fri Aug 21 2020 02:54:08 GMT+0800 (CST)
 ---
 # 发送和接收点对点消息及频道消息
 
