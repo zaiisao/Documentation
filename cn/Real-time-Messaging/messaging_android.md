@@ -3,7 +3,7 @@
 title: 发送和接收点对点消息及频道消息
 description: 
 platform: Android
-updatedAt: Fri Aug 21 2020 02:54:08 GMT+0800 (CST)
+updatedAt: Fri Aug 21 2020 02:54:12 GMT+0800 (CST)
 ---
 # 发送和接收点对点消息及频道消息
 
@@ -20,7 +20,7 @@ Agora 在 GitHub 上提供一个开源的实时消息示例项目 [Agora-RTM-Tut
 
 <div class="alert info">点击参与<a href="https://www.wenjuan.com/s/7FbeEz6/" target="_blank">视频教程问卷调查</a>，帮助我们改进体验。</div>
 
-<video src="https://web-cdn.agora.io/docs-files/1593741570029" poster="https://web-cdn.agora.io/docs-files/1597911895409"   controls width = 100% height = auto>你的浏览器不支持 <code>video</code> 标签。</video>
+<video src="https://web-cdn.agora.io/docs-files/1583378169208" poster="https://web-cdn.agora.io/docs-files/1597911895409"   controls width = 100% height = auto>你的浏览器不支持 <code>video</code> 标签。</video>
 
 <div class="alert note">视频中展示的 UI 可能有部分调整更新，请以当前最新版为准。</div>
 
