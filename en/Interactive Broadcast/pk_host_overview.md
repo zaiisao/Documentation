@@ -61,7 +61,7 @@ Agora recommends using the following SDKs or services to implement a PK Host sce
 
 **Ultra low latency** 
 
-Agora SD-RTN<sup>TM</sup> is the Agora proprietary network for audio and video transmission, covering more than 200 countries and regions. It uses the intelligent routing algorithms to ensure that the average end-to-end latency worldwide is less than 300 ms.
+Agora SD-RTN<sup>TM</sup> is the Agora proprietary network for audio and video transmission, covering more than 200 countries and regions. It uses the intelligent routing algorithms to ensure that the average end-to-end latency worldwide is less than 400 ms.
 
 **Stability and reliability**
 
