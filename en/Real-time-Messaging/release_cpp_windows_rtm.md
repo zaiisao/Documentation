@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows CPP
-updatedAt: Mon Aug 24 2020 05:00:45 GMT+0800 (CST)
+updatedAt: Mon Aug 24 2020 08:19:35 GMT+0800 (CST)
 ---
 # Release Notes
   ## Overview
