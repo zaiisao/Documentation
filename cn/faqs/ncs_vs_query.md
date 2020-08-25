@@ -3,7 +3,7 @@
 title: 消息通知服务和 query 方法的对比
 description: 1
 platform: All Platforms
-updatedAt: Mon Aug 17 2020 22:24:20 GMT+0800 (CST)
+updatedAt: Tue Aug 25 2020 14:42:03 GMT+0800 (CST)
 ---
 # 消息通知服务和 query 方法的对比
 你可以通过云端录制的 `query` 方法或消息通知服务来监视云端录制服务的状态，在状态异常时及时采取措施，以保证服务可用性。两种方法各有优劣：
