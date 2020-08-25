@@ -1,11 +1,11 @@
 
 ---
-title: How to solve the problem of low volume? 
+title: How can I solve the problem of low volume? 
 description: 
 platform: All Platforms
-updatedAt: Tue Apr 28 2020 21:33:47 GMT+0800 (CST)
+updatedAt: Tue Aug 25 2020 16:04:54 GMT+0800 (CST)
 ---
-# How to solve the problem of low volume? 
+# How can I solve the problem of low volume? 
 ## Step 1: Self-check
 
 Check the following:
@@ -13,7 +13,7 @@ Check the following:
 * Check whether the issue is caused by the device. You can change your playback device or try other VoIP services on the same device.
 * Check whether the user opens another app during the call, which may change the audio settings or routing.
 * Call the following methods to adjust the volume: `enableAudioVolumeIndication`, `adjustRecordingSignalVolume`, `adjustPlaybackSignalVolume`, and `adjustAudioMixingVolume`.
-* Check the `onAudioRouteChanged` callback to see whether the audio route is set to the headset or speaker. If the audio route is set to the headset, call the `setDefaultRouteToSpeakerphone` method and switch the audio route to the speaker.
+* Check the `onAudioRouteChanged` callback to see whether the audio route is set to the headset or speaker. If the audio route is set to the headset, call the `setDefaultAudioRouteToSpeakerphone` method and switch the audio route to the speaker.
 
 ## Step 2: Contact Agora Customer Support
 
