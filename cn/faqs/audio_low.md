@@ -3,7 +3,7 @@
 title: 如何处理音量太小问题？
 description: 
 platform: All Platforms
-updatedAt: Tue Apr 28 2020 21:32:26 GMT+0800 (CST)
+updatedAt: Tue Aug 25 2020 16:03:33 GMT+0800 (CST)
 ---
 # 如何处理音量太小问题？
 ## 步骤 1：自检操作
@@ -12,7 +12,7 @@ updatedAt: Tue Apr 28 2020 21:32:26 GMT+0800 (CST)
 * 请检查该问题是否由您的设备引起的，例如，更换耳机或者其他播放设备，或在您的 PC 店或移动端，测试其他同类 VoIP 引用是否也存在声音小的问题。
 * 请确认在通话过程中是否使用了第三方的音频应用，因而改变了音频系统底层的设置或者路由，请开发者自行检查代码逻辑。
 * 调用以下 API 获取音量信息，调节音量大小：`enableAudioVolumeIndication`，`adjustRecordingSignalVolume`，`adjustPlaybackSignalVolume`，和 `adjustAudioMixingVolume`。详见各平台的 API 参考说明文档。
-* 在 `onAudioRouteChanged` 回调里检查语音路由到听筒还是外放(扬声器)。如果是听筒，请调用 API `setDefaultRouteToSpeakerphone` 将语音路由修改至从外放出声。
+* 在 `onAudioRouteChanged` 回调里检查语音路由到听筒还是外放(扬声器)。如果是听筒，请调用 API `setDefaultAudioRouteToSpeakerphone` 将语音路由修改至从外放出声。
 
 ## 步骤 2：联系技术支持
 
