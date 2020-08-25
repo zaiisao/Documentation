@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Tue Jul 21 2020 10:27:37 GMT+0800 (CST)
+updatedAt: Tue Aug 25 2020 06:59:43 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 该文提供云端录制 RESTful API 的详细信息。
@@ -812,16 +812,16 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
       - `false`：无法在线播放。
     - `sliceStartTime`：Number 类型，该文件的录制开始时间，Unix 时间戳，单位为毫秒。
   - `status`：Number 类型，当前录制的状态。
-    - `0`：没有开始云端录制。
-    - `1`：云端录制初始化完成。
-    - `2`：录制组件开始启动。
-    - `3`：上传组件启动完成。
-    - `4`：录制组件启动完成。
-    - `5`：已成功上传第一个文件。第一个文件上传完成后，录制在进行中均会返回此状态。
-    - `6`：已经停止录制。
-    - `7`：云端录制服务全部停止。
-    - `8`：云端录制准备退出。
-    - `20`：云端录制异常退出。
+    - `0`：没有开始云服务。
+    - `1`：云服务初始化完成。
+    - `2`：云服务组件开始启动。
+    - `3`：云服务部分组件启动完成。
+    - `4`：云服务所有组件启动完成。
+    - `5`：云服务正在进行中。
+    - `6`：云服务收到停止请求。
+    - `7`：云服务所有组件均停止。
+    - `8`：云服务已退出。
+    - `20`：云服务异常退出。
   - `sliceStartTime`: Number 类型，录制开始的时间，Unix 时间戳，单位为毫秒。
  - `extensionServiceState`: JSONArray 类型。由每个扩展服务的状态信息组成的数组。
     - `serviceName`：String 类型，扩展服务类型。 `"aliyun_vod_service"` 代表阿里视频点播服务。
