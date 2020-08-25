@@ -3,14 +3,14 @@
 title: 云端录制集成最佳实践
 description: 
 platform: All Platforms
-updatedAt: Tue Aug 25 2020 06:55:29 GMT+0800 (CST)
+updatedAt: Tue Aug 25 2020 07:06:42 GMT+0800 (CST)
 ---
 # 云端录制集成最佳实践
 为了保障录制服务的可靠性，Agora 建议你在集成云端录制 RESTful API 时注意以下几点：
 
 ## 使用双域名
 
-如果要使用域名 `api.agoraio.cn` 发起 RESTful API 请求，必须保证发起请求的服务器位于中国大陆。非中国大陆地区仅支持域名 `api.agora.io`。
+<div class="alert note">如果要使用域名 <code>api.agoraio.cn</code> 发起 RESTful API 请求，必须保证发起请求的服务器位于中国大陆。非中国大陆地区仅支持域名 <code>api.agora.io</code>。</div>
 
 如果你使用域名 `api.agora.io` 发起 RESTful API 请求失败，可以先用该域名重试一次；如再次失败，可将域名替换为 `api.agoraio.cn`，再次发送请求。建议使用退避策略，如第一次等待 1 秒后重试、第二次等待 3 秒后重试、第三次等待 6 秒后重试，以免超过 QPS 限制导致失败。
 
