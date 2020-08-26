@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: iOS
-updatedAt: Tue Jul 28 2020 08:50:57 GMT+0800 (CST)
+updatedAt: Wed Aug 26 2020 10:22:48 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
