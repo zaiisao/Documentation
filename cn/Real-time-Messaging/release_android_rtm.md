@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Mon Aug 24 2020 07:31:43 GMT+0800 (CST)
+updatedAt: Wed Aug 26 2020 07:59:30 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
