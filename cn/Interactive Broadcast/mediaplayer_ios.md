@@ -3,7 +3,7 @@
 title: 媒体播放器组件
 description: 
 platform: iOS
-updatedAt: Wed Aug 26 2020 10:22:48 GMT+0800 (CST)
+updatedAt: Wed Aug 26 2020 10:23:03 GMT+0800 (CST)
 ---
 # 媒体播放器组件
 ## 功能描述
@@ -100,7 +100,8 @@ updatedAt: Wed Aug 26 2020 10:22:48 GMT+0800 (CST)
 	添加后：
 ![](https://web-cdn.agora.io/docs-files/1583119068826)
 
-	> 如需支持 iOS 11 或更低版本的设备，请在 Xcode 中将对 **CoreML.framework** 的依赖设为 **Optional**。
+	> - 自 v1.1.4.0 起，你还需添加 **AgoraFFmpeg.framework**。
+	> - 如需支持 iOS 11 或更低版本的设备，请在 Xcode 中将对 **CoreML.framework** 的依赖设为 **Optional**。
 
 5. 根据场景需要，在 **info.plist** 文件中，点击 **+** 图标开始添加如下内容，获取相应的设备权限：
 
