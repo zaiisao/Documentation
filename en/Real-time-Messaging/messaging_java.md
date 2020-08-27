@@ -76,23 +76,6 @@ You can skip to [Integrate the SDK](#sdk) if you already have an App ID.
 
 This section provides API call sequence diagrams and sample codes related to peer-to-peer messaging and channel messaging. 
 
-### API Call sequence diagrams
-
-#### Login and logout of the Agora RTM system
-
-![](https://web-cdn.agora.io/docs-files/1562566527083)
-
-#### Send or receive peer-to-peer messages
-
-![](https://web-cdn.agora.io/docs-files/1562566549404)
-
-#### Join and leave an Agora RTM channel 
-
-![](https://web-cdn.agora.io/docs-files/1562566630113)
-
-#### Send or receive channel messages
-
-![](https://web-cdn.agora.io/docs-files/1562566639888)
 
 ### Create and Initialize an Agora RTM Client
 
@@ -138,7 +121,7 @@ public void init() {
 }
 ```
 
-### Log in and log out of the Agora RTM system
+### Log in to and log out of the Agora RTM system
 
 Only when you successfully log in the Agora RTM system, can you use most of the core features provided by the Agora RTM SDK. When logging in the Agora RTM system, you need to:
 
