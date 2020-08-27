@@ -129,28 +129,6 @@ end
 
 本节主要提供实现实时消息和基本频道操作的 API 调用时序图以及相关示例代码。
 
-### API 调用时序图
-
-#### 登录登出 Agora RTM 系统
-
-
-![](https://web-cdn.agora.io/docs-files/1583998324120)
-
-#### 收发点对点消息
-
-
-![](https://web-cdn.agora.io/docs-files/1583942637899)
-
-#### 加入离开频道
-
-
-![](https://web-cdn.agora.io/docs-files/1583942656098)
-
-#### 收发频道消息
-
-
-![](https://web-cdn.agora.io/docs-files/1583942679434)
-
 ### <a name = "create"></a>初始化
 
 调用 `initWithAppId` 方法创建一个实例。在该方法中:
@@ -233,8 +211,8 @@ App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的�
 
 ```objective-c
 - (void)... {
-    [_kit sendMessage:[[AgoraRtmMessage alloc] initWithText:@"testmsg"] toPeer:@"peer" completion:^(AgoraRtmSendPeerMessageState state) {
-        if (state == AgoraRtmSendPeerMessageStateReceivedByPeer) {
+    [_kit sendMessage:[[AgoraRtmMessage alloc] initWithText:@"testmsg"] toPeer:@"peer" completion:^(AgoraRtmSendPeerMessageErrorCode state) {
+        if (state == AgoraRtmSendPeerMessageErrorOk) {
             NSLog(@"Message successfully sent.");
         }
     }];
@@ -313,8 +291,8 @@ App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的�
 
 ```objective-c
 - (void)... {
-    [_channel sendMessage:[[AgoraRtmMessage alloc] initWithText:@"channelmsg"] completion:^(AgoraRtmSendChannelMessageState state) {
-        if(state == AgoraRtmSendChannelMessageStateReceivedByServer) {
+    [_channel sendMessage:[[AgoraRtmMessage alloc] initWithText:@"channelmsg"] completion:^(AgoraRtmSendChannelMessageErrorCode state) {
+        if(state == AgoraRtmSendChannelMessageErrorOk) {
             NSLog(@"sent success");
         }
     }];

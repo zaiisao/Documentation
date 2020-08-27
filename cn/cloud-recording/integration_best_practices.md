@@ -3,7 +3,7 @@
 title: 云端录制集成最佳实践
 description: 
 platform: All Platforms
-updatedAt: Wed Aug 26 2020 01:24:33 GMT+0800 (CST)
+updatedAt: Thu Aug 27 2020 06:46:15 GMT+0800 (CST)
 ---
 # 云端录制集成最佳实践
 为了保障录制服务的可靠性，Agora 建议你在集成云端录制 RESTful API 时注意以下几点：
@@ -45,7 +45,7 @@ M3U8 文件名是第一份切片文件生成后产生的，所以需要在第一
 
 ### 按照文件命名规则拼接 
 
-合流录制模式下，M3U8 文件名的格式为 `<sid>_<cname>.m3u8`。因此，你还可以通过拼接的方式获取切片文件名。详见[录制文件命名规则](https://docs.agora.io/cn/cloud-recording/cloud_recording_manage_files#合流模式)。
+合流录制模式下，M3U8 文件名的格式为 `<sid>_<cname>.m3u8`。因此，你还可以通过拼接的方式获取 M3U8 文件名。详见[录制文件命名规则](https://docs.agora.io/cn/cloud-recording/cloud_recording_manage_files#合流模式)。
 
 ## 避免录制服务频繁退出
 
