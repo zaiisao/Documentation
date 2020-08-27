@@ -219,8 +219,8 @@ Call the [sendMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Refere
 
 ```objective-c
 - (void)sendYourPeerToPeerMessage {
-    [_kit sendMessage:[[AgoraRtmMessage alloc] initWithText:@"testmsg"] toPeer:@"peer" completion:^(AgoraRtmSendPeerMessageState state) {
-        if (state == AgoraRtmSendPeerMessageStateReceivedByPeer) {
+    [_kit sendMessage:[[AgoraRtmMessage alloc] initWithText:@"testmsg"] toPeer:@"peer" completion:^(AgoraRtmSendPeerMessageErrorCode state) {
+        if (state == AgoraRtmSendPeerMessageErrorOk) {
             NSLog(@"sent success");
         }
     }];
@@ -293,8 +293,8 @@ Call the [sendMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Refere
 
 ```objective-c
 - (void)sendYourChannelMessage {
-    [_channel sendMessage:[[AgoraRtmMessage alloc] initWithText:@"channelmsg"] completion:^(AgoraRtmSendChannelMessageState state) {
-        if(state == AgoraRtmSendChannelMessageStateReceivedByServer) {
+    [_channel sendMessage:[[AgoraRtmMessage alloc] initWithText:@"channelmsg"] completion:^(AgoraRtmSendChannelMessageErrorCode state) {
+        if(state == AgoraRtmSendChannelMessageErrorOk) {
             NSLog(@"sent success");
         }
     }];

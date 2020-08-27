@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: v1.0
 platform: iOS
-updatedAt: Tue Oct 22 2019 09:53:04 GMT+0800 (CST)
+updatedAt: Thu Aug 27 2020 06:52:43 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 
@@ -15,11 +15,7 @@ You can use this guide to quickly start messaging with the [Agora RTM iOS SDK](h
 We provide open-source demo projects on GitHub, which implement an elementary messaging system. You can try out the corresponding demo and view our source code. 
 
 - [Agora-RTM-Tutorial-iOS-Objective-C](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-iOS-Objective-C)
-  - [MainViewController.m](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-iOS-Objective-C/Agora-RTM-Tutorial/MainViewController.m)
-  - [ChatViewController.m](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-iOS-Objective-C/Agora-RTM-Tutorial/ChatViewController.m)
 - [Agora-RTM-Tutorial-iOS-Swift](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-iOS)
-  - [MainViewController.swift](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-iOS/Agora-RTM-Tutorial/MainViewController.swift)
-  - [ChatViewController.swift](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-iOS/Agora-RTM-Tutorial/ChatViewController.swift)
 
 
 ## Prerequisites
@@ -219,8 +215,8 @@ Call the [sendMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Refere
 
 ```objective-c
 - (void)sendYourPeerToPeerMessage {
-    [_kit sendMessage:[[AgoraRtmMessage alloc] initWithText:@"testmsg"] toPeer:@"peer" completion:^(AgoraRtmSendPeerMessageState state) {
-        if (state == AgoraRtmSendPeerMessageStateReceivedByPeer) {
+    [_kit sendMessage:[[AgoraRtmMessage alloc] initWithText:@"testmsg"] toPeer:@"peer" completion:^(AgoraRtmSendPeerMessageErrorCode state) {
+        if (state == AgoraRtmSendPeerMessageErrorOk) {
             NSLog(@"sent success");
         }
     }];
@@ -293,8 +289,8 @@ Call the [sendMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Refere
 
 ```objective-c
 - (void)sendYourChannelMessage {
-    [_channel sendMessage:[[AgoraRtmMessage alloc] initWithText:@"channelmsg"] completion:^(AgoraRtmSendChannelMessageState state) {
-        if(state == AgoraRtmSendChannelMessageStateReceivedByServer) {
+    [_channel sendMessage:[[AgoraRtmMessage alloc] initWithText:@"channelmsg"] completion:^(AgoraRtmSendChannelMessageErrorCode state) {
+        if(state == AgoraRtmSendChannelMessageErrorOk) {
             NSLog(@"sent success");
         }
     }];
