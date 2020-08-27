@@ -23,7 +23,7 @@ We provide open-source demo projects on GitHub, which implement an elementary me
 
 
 - Xcode 9.0 or later
-- A iOS device running on iOS 8.0 or later.
+- An iOS device running on iOS 8.0 or later.
 
 - A valid Agora account. ([Sign up](https://sso.agora.io/en/signup) for free)
 
