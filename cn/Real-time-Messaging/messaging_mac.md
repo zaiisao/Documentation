@@ -211,8 +211,8 @@ App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的�
 
 ```objective-c
 - (void)... {
-    [_kit sendMessage:[[AgoraRtmMessage alloc] initWithText:@"testmsg"] toPeer:@"peer" completion:^(AgoraRtmSendPeerMessageErrorCode state) {
-        if (state == AgoraRtmSendPeerMessageErrorOk) {
+    [_kit sendMessage:[[AgoraRtmMessage alloc] initWithText:@"testmsg"] toPeer:@"peer" completion:^(AgoraRtmSendPeerMessageErrorCode errorCode) {
+        if (errorCode == AgoraRtmSendPeerMessageErrorOk) {
             NSLog(@"Message successfully sent.");
         }
     }];

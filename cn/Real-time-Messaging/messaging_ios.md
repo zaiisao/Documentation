@@ -3,7 +3,7 @@
 title: 发送和接收点对点消息及频道消息
 description: 
 platform: iOS
-updatedAt: Thu Aug 20 2020 08:49:01 GMT+0800 (CST)
+updatedAt: Thu Aug 27 2020 06:59:04 GMT+0800 (CST)
 ---
 # 发送和接收点对点消息及频道消息
 
@@ -13,13 +13,8 @@ updatedAt: Thu Aug 20 2020 08:49:01 GMT+0800 (CST)
 
 你可以在 GitHub 下载最新版的示例项目查看相关功能的具体实现。
 
-- [Agora-RTM-Tutorial-iOS-Objective-C](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-iOS-Objective-C) 示例项目的主要代码逻辑可以在以下文件查看：
-  - [MainViewController.m](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-iOS-Objective-C/Agora-RTM-Tutorial/MainViewController.m)
-  - [ChatViewController.m](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-iOS-Objective-C/Agora-RTM-Tutorial/ChatViewController.m)
-
-- [Agora-RTM-Tutorial-iOS-Swift](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-iOS) 示例项目的主要代码逻辑可以在以下文件查看：
-  - [MainViewController.swift](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-iOS/Agora-RTM-Tutorial/MainViewController.swift)
-  - [ChatViewController.swift](https://github.com/AgoraIO/RTM/blob/master/Agora-RTM-Tutorial-iOS/Agora-RTM-Tutorial/ChatViewController.swift)
+- [Agora-RTM-Tutorial-iOS-Objective-C](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-iOS-Objective-C) 
+- [Agora-RTM-Tutorial-iOS-Swift](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-iOS) 
 
 ## 快速跑通示例项目
 
@@ -210,8 +205,8 @@ App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的�
 
 ```objective-c
 - (void)... {
-    [_kit sendMessage:[[AgoraRtmMessage alloc] initWithText:@"testmsg"] toPeer:@"peer" completion:^(AgoraRtmSendPeerMessageErrorCode state) {
-        if (state == AgoraRtmSendPeerMessageErrorOk) {
+    [_kit sendMessage:[[AgoraRtmMessage alloc] initWithText:@"testmsg"] toPeer:@"peer" completion:^(AgoraRtmSendPeerMessageErrorCode errorCode) {
+        if (errorCode == AgoraRtmSendPeerMessageErrorOk) {
             NSLog(@"Message successfully sent.");
         }
     }];
