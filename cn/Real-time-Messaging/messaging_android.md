@@ -3,7 +3,7 @@
 title: 发送和接收点对点消息及频道消息
 description: 
 platform: Android
-updatedAt: Thu Aug 27 2020 07:31:09 GMT+0800 (CST)
+updatedAt: Thu Aug 27 2020 07:33:19 GMT+0800 (CST)
 ---
 # 发送和接收点对点消息及频道消息
 
@@ -145,7 +145,7 @@ dependencies {
 ## 实时消息和基本频道操作
 
 
-本节主要提供实现实时消息和基本频道操作的 API 调用时序图及相关示例代码。
+本节主要提供实现实时消息和基本频道操作的相关示例代码。
 
 ### 初始化
 
