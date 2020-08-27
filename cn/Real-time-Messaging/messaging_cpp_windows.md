@@ -3,7 +3,7 @@
 title: 发送和接收点对点消息及频道消息
 description: 
 platform: Windows CPP
-updatedAt: Fri Jul 31 2020 06:34:30 GMT+0800 (CST)
+updatedAt: Thu Aug 27 2020 08:03:16 GMT+0800 (CST)
 ---
 # 发送和接收点对点消息及频道消息
 
@@ -95,27 +95,6 @@ updatedAt: Fri Jul 31 2020 06:34:30 GMT+0800 (CST)
 ## 实时消息和基本频道操作
 
 本节主要提供实现实时消息和基本频道操作的 API 调用时序图及相关示例代码。
-
-### API 调用时序图
-
-#### 登录登出 Agora RTM 系统
-
-
-![](https://web-cdn.agora.io/docs-files/1583998404803)
-
-#### 收发点对点消息
-
-![](https://web-cdn.agora.io/docs-files/1583998436436)
-
-#### 加入离开频道
-
-
-![](https://web-cdn.agora.io/docs-files/1583998454046)
-
-#### 收发频道消息
-
-
-![](https://web-cdn.agora.io/docs-files/1583998506595)
 
 ### 初始化
 
