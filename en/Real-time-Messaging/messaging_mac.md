@@ -119,23 +119,6 @@ end
 
 This section provides API call sequence diagrams, sample codes, and considerations related to peer-to-peer messaging and channel messaging.
 
-### API call sequence diagrams
-
-#### Login and logout of the Agora RTM system
-
-![](https://web-cdn.agora.io/docs-files/1562566652476)
-
-#### Send or receive peer-to-peer messages
-
-![](https://web-cdn.agora.io/docs-files/1562566668046)
-
-#### Join and leave an Agora RTM channel
-
-![](https://web-cdn.agora.io/docs-files/1562566699241)
-
-#### Send and receive channel messages
-
-![](https://web-cdn.agora.io/docs-files/1562566713620)
 
 ### <a name = "create"></a>Create and Initialize an AgoraRtmKit Instance
 
