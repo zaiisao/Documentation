@@ -291,8 +291,8 @@ App 在成功[登录 RTM 服务器](#login)之后，可以开始使用 RTM 的�
 
 ```objective-c
 - (void)... {
-    [_channel sendMessage:[[AgoraRtmMessage alloc] initWithText:@"channelmsg"] completion:^(AgoraRtmSendChannelMessageErrorCode state) {
-        if(state == AgoraRtmSendChannelMessageErrorOk) {
+    [_channel sendMessage:[[AgoraRtmMessage alloc] initWithText:@"channelmsg"] completion:^(AgoraRtmSendChannelMessageErrorCode errorCode) {
+        if(errorCode == AgoraRtmSendChannelMessageErrorOk) {
             NSLog(@"sent success");
         }
     }];
