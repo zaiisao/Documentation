@@ -3,10 +3,10 @@
 title: Monitor Service Status During Recording
 description: 
 platform: All Platforms
-updatedAt: Mon Aug 31 2020 07:56:16 GMT+0800 (CST)
+updatedAt: Mon Aug 31 2020 07:56:53 GMT+0800 (CST)
 ---
 # Monitor Service Status During Recording
-You can periodically call `query` to ensure that the recording service is in progress and in a normal state. Apart from `query`, you can use the Message Notification Service (NCS) as a complementary method to monitor the service status. See [Comparison Between NCS and the `query` Method](https://docs.agora.io/cn/faq/ncs_vs_query) for detailed comparison between the two methods.
+You can periodically call `query` to ensure that the recording service is in progress and in a normal state. Apart from `query`, you can use the Message Notification Service as a complementary method to monitor the service status. See [Comparison Between the Message Notification Service and the `query` Method](https://docs.agora.io/cn/faq/ncs_vs_query) for detailed comparison between the two methods.
 
 ### Periodically query service status
 
@@ -18,7 +18,7 @@ If the reliability of the status of a cloud recording is a high priority, Agora 
 
 ### Redundant message notifications
 
-If you rely on NCS to monitor the status of the recording service, Agora recommends that you contact [support@agora.io](mailto:support@agora.io) to enable the redundant message notification function, which doubles the received notifications and reduces the probability of message loss. Redundant message notification still cannot guarantee a 100% arrival rate.
+If you rely on the Message Notification Service to monitor the status of the recording service, Agora recommends that you contact [support@agora.io](mailto:support@agora.io) to enable the redundant message notification function, which doubles the received notifications and reduces the probability of message loss. Redundant message notification still cannot guarantee a 100% arrival rate.
 
 After enabling the redundant message notification function, you need to deduplicate messages based on `sid`. For example, if you need to start recording again after a recording session times out and quits, the process is:
 
