@@ -3,7 +3,7 @@
 title: Join Multiple Channels
 description: 3.0 feature multi-channel
 platform: Android
-updatedAt: Mon Aug 31 2020 08:03:33 GMT+0800 (CST)
+updatedAt: Mon Aug 31 2020 08:03:38 GMT+0800 (CST)
 ---
 # Join Multiple Channels
 ## Introduction
@@ -33,7 +33,7 @@ This approach applies to scenarios where you need to frequently switch between c
 
 Refer to the following API sequence to implement the multi-channel function in your project with the `RtcChannel` class.
 
-![](https://web-cdn.agora.io/docs-files/1575876020101)
+![](https://web-cdn.agora.io/docs-files/1598860998009)
 
 **Sample code**
 
