@@ -3,10 +3,10 @@
 title: Monitor Service Status During Recording
 description: 
 platform: All Platforms
-updatedAt: Mon Aug 31 2020 07:56:53 GMT+0800 (CST)
+updatedAt: Mon Aug 31 2020 07:57:11 GMT+0800 (CST)
 ---
 # Monitor Service Status During Recording
-You can periodically call `query` to ensure that the recording service is in progress and in a normal state. Apart from `query`, you can use the Message Notification Service as a complementary method to monitor the service status. See [Comparison Between the Message Notification Service and the `query` Method](https://docs.agora.io/cn/faq/ncs_vs_query) for detailed comparison between the two methods.
+You can periodically call `query` to ensure that the recording service is in progress and in a normal state. Apart from `query`, you can use the Message Notification Service as a complementary method to monitor the service status. See [Comparison Between the Message Notification Service and the `query` Method](https://docs.agora.io/en/faq/ncs_vs_query) for detailed comparison between the two methods.
 
 ### Periodically query service status
 
