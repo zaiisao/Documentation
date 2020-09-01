@@ -3,7 +3,7 @@
 title: 自定义视频采集和渲染
 description: How to use external audio/video sources for Web SDK
 platform: Web
-updatedAt: Fri Mar 27 2020 06:17:30 GMT+0800 (CST)
+updatedAt: Tue Sep 01 2020 07:22:58 GMT+0800 (CST)
 ---
 # 自定义视频采集和渲染
 ## 功能介绍
@@ -59,7 +59,3 @@ navigator.mediaDevices.getUserMedia(
 ### 示例代码
 
 我们在 GitHub 提供一个开源的 [Agora-Custom-VideoSource-Web-Webpack](https://github.com/AgoraIO/Advanced-Video/tree/master/Web/Agora-Custom-VideoSource-Web-Webpack) 示例项目。你可以下载体验，或查看 [rtc-client.js](https://github.com/AgoraIO/Advanced-Video/blob/master/Web/Agora-Custom-VideoSource-Web-Webpack/src/rtc-client.js) 文件中的源代码。
-
-## 开发注意事项
-
-自定义音视频采集功能目前仅支持 Chrome 浏览器。
