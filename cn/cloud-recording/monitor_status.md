@@ -3,7 +3,7 @@
 title: 录制过程中的服务状态监控
 description: 
 platform: All Platforms
-updatedAt: Tue Sep 01 2020 10:20:45 GMT+0800 (CST)
+updatedAt: Tue Sep 01 2020 10:20:56 GMT+0800 (CST)
 ---
 # 录制过程中的服务状态监控
 你可以通过周期性调用 `query` 来确认录制服务正在进行中且状态正常。相比于 query，消息通知服务可以作为辅助手段。详见[消息通知服务和 query 方法的对比](https://docs.agora.io/cn/faq/ncs_vs_query)。
@@ -18,7 +18,7 @@ updatedAt: Tue Sep 01 2020 10:20:45 GMT+0800 (CST)
 
 ## 冗余消息通知服务
 
-如果你依赖消息通知服务来监测录制服务状态，建议联系 [support@agora.io](mailto:support@agora.io) 开通冗余消息功能，即接收双路消息通知，降低消息丢失的概率。冗余消息功能仍然不能保证 100% 的消息到达率。
+如果你依赖消息通知服务来监测录制服务状态，建议联系 [sales@agora.io](mailto:sales@agora.io) 开通冗余消息功能，即接收双路消息通知，降低消息丢失的概率。冗余消息功能仍然不能保证 100% 的消息到达率。
 
 开通冗余消息功能后，需要你基于 `sid` 对消息进行去重。举例来说，如果你需要在录制超时退出后再次开启录制，流程为：
 
