@@ -3,13 +3,37 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Tue Sep 01 2020 01:37:33 GMT+0800 (CST)
+updatedAt: Tue Sep 01 2020 04:03:16 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
 
 Agora 实时消息 SDK 提供了稳定可靠、低延时、高并发的全球消息云服务，帮助你快速构建实时通信场景,  可实现消息通道、呼叫、聊天、状态同步等功能。点击[实时消息产品概述](../../cn/Real-time-Messaging/product_rtm.md)了解详情。
 
+
+## 1.4.0 版（Beta）
+
+该版本于 2020 年 9 月 1 日发布。
+
+**升级必看**
+
+`setLogFileSize` 日志文件的大小默认值从 512 KB 增加到 10 MB。上限从 10 MB 增加到 1 GB。
+
+**新增功能**
+
+- 增加限定访问区域功能。你可以调用 `setRtmServiceContext` 方法设置 Agora RTM SDK 的访问区域。设置之后，RTM SDK 只能连接位于限定区域的 Agora RTM 服务器。
+- 增加链路加密功能。此功能默认开启。如果你要关闭此功能，请[提交工单](https://agora-ticket.agora.io/)联系 Agora 技术支持。
+
+**改进**
+
+- 优化了弱网对抗能力，提高了弱网环境下的登录成功率和消息投递成功率。
+- 优化了重连机制。
+
+**API 变更**
+
+#### 新增方法
+
+[`setRtmServiceContext`](https://docs.agora.io/cn/Video/API%20Reference/RTM_java/v1.4.0/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a60f0dae72834f3d300bd7e5abb3fdcc7)
 
 ## 1.3.0 版
 
