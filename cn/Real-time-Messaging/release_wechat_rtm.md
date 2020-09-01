@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: 微信小程序
-updatedAt: Tue Sep 01 2020 06:27:57 GMT+0800 (CST)
+updatedAt: Tue Sep 01 2020 06:29:14 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora RTM 微信小程序 SDK（Beta） 的发版说明。
@@ -12,7 +12,7 @@ updatedAt: Tue Sep 01 2020 06:27:57 GMT+0800 (CST)
 
 Agora 实时消息 SDK 提供了稳定可靠、低延时、高并发的全球消息云服务，帮助你快速构建实时通信场景。点击[实时消息产品概述](../../cn/Real-time-Messaging/product_rtm.md)了解详情。
 
-### 1.0.0 版
+## 1.0.0 版
 
 该版本于 2020 年 9 月 1 日发布。本次发版为 RTM 微信小程序 SDK （Beta）的第一次发版，主要包含以下功能：
 
