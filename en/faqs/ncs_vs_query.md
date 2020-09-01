@@ -3,7 +3,7 @@
 title: What are the differences between the Message Notification Service and the query Method?
 description: 
 platform: All Platforms
-updatedAt: Tue Sep 01 2020 18:46:33 GMT+0800 (CST)
+updatedAt: Tue Sep 01 2020 18:46:39 GMT+0800 (CST)
 ---
 # What are the differences between the Message Notification Service and the query Method?
 You can monitor the status of the cloud recording service either through the `query` method or by the Message Notification Service, to take action when required. Both options have pros and cons.
@@ -15,9 +15,9 @@ You can periodically call the `query` method to monitor the status of a cloud re
 - Pros: Reliable, as the status is queried proactively.
 - Cons:
   - Provides limited status information.
-  - Requires an active query. You cannot query too often because of the Queries Per Second(QPS) limit, and thus it is not as real-time as the Message Notification Service.
+  - Requires an active query. You cannot query too often because of the Queries Per Second (QPS) limit, and thus it is not as real-time as the Message Notification Service.
 
-If the reliability of the status of a cloud recording is a high priority, Agora strongly recommends using the query method.
+If the reliability of the status of a cloud recording is a high priority, Agora strongly recommends using the `query` method.
 
 ## Message Notification Service 
 
