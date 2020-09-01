@@ -3,7 +3,7 @@
 title: 云端录制集成最佳实践
 description: 
 platform: All Platforms
-updatedAt: Tue Sep 01 2020 10:43:29 GMT+0800 (CST)
+updatedAt: Tue Sep 01 2020 10:43:38 GMT+0800 (CST)
 ---
 # 云端录制集成最佳实践
 为了保障录制服务的可靠性，Agora 建议你在集成云端录制 RESTful API 时注意以下几点：
@@ -37,15 +37,15 @@ updatedAt: Tue Sep 01 2020 10:43:29 GMT+0800 (CST)
 
 获取 M3U8 文件名有两种方式，一种是按照文件命名规则拼接，另一种是通过 `query` 来查询。Agora 推荐通过拼接的方式获取文件名。
 
+### 按照文件命名规则拼接 
+
+合流录制模式下，M3U8 文件名的格式为 `<sid>_<cname>.m3u8`。因此，你还可以通过拼接的方式获取 M3U8 文件名。详见[录制文件命名规则](https://docs.agora.io/cn/cloud-recording/cloud_recording_manage_files#合流模式)。
+
 ### 通过 `query` 请求获得 M3U8 文件的文件名
 
 M3U8 文件名是第一份切片文件生成后产生的，所以需要在第一次切片完成后查询。详见[切片规则](https://docs.agora.io/cn/cloud-recording/cloud_recording_manage_files#切片规则)。
 
 合流录制模式下，建议在成功开启云端录制 15 秒后调用 `query` 查询 M3U8 文件名；单流录制模式下，建议在成功开启云端录制 1 分钟后调用 `query` 查询 M3U8 文件名。如果第一次查询失败，可以在 1 分钟后重试。
-
-### 按照文件命名规则拼接 
-
-合流录制模式下，M3U8 文件名的格式为 `<sid>_<cname>.m3u8`。因此，你还可以通过拼接的方式获取 M3U8 文件名。详见[录制文件命名规则](https://docs.agora.io/cn/cloud-recording/cloud_recording_manage_files#合流模式)。
 
 ## 避免录制服务频繁退出
 
