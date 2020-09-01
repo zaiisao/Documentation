@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: 微信小程序
-updatedAt: Tue Sep 01 2020 06:29:14 GMT+0800 (CST)
+updatedAt: Tue Sep 01 2020 06:35:33 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora RTM 微信小程序 SDK（Beta） 的发版说明。
@@ -23,4 +23,5 @@ Agora 实时消息 SDK 提供了稳定可靠、低延时、高并发的全球消
 
 你还可以参考以下文档：
 - [RTM 微信小程序 SDK 快速开始](https://docs.agora.io/cn/Real-time-Messaging/messaging_wechat?platform=%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F)
+- [RTM 微信小程序 SDK 限制条件](https://docs.agora.io/cn/Real-time-Messaging/limitations_wechat?platform=%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F)
 - [RTM 微信小程序 SDK API 参考](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_wechat/index.html)
