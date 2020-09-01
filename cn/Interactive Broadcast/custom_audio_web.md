@@ -3,7 +3,7 @@
 title: 自定义音频采集
 description: How to use external audio sources for Web SDK
 platform: Web
-updatedAt: Mon Mar 09 2020 05:44:05 GMT+0800 (CST)
+updatedAt: Tue Sep 01 2020 07:22:14 GMT+0800 (CST)
 ---
 # 自定义音频采集
 ## 功能介绍
@@ -45,7 +45,3 @@ navigator.mediaDevices.getUserMedia(
 <div class="alert info"><code>MediaStreamTrack</code> 对象是指浏览器原生支持的 <code>MediaStreamTrack</code> 对象，具体用法和浏览器支持状况请参考 <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack">MediaStreamTrack API 说明</a>。</div>
 
 同时，我们在 GitHub 提供一个开源的 [AgoraAudioIO-Web-Webpack](https://github.com/AgoraIO/Advanced-Audio/tree/master/Web/AgoraAudioIO-Web-Webpack) 示例项目。你可以下载体验，或查看 [rtc-client.js](https://github.com/AgoraIO/Advanced-Audio/blob/master/Web/AgoraAudioIO-Web-Webpack/src/rtc-client.js) 文件中的源代码。
-
-## 开发注意事项
-
-自定义音频采集功能目前仅支持 Chrome 浏览器。
