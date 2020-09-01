@@ -3,7 +3,7 @@
 title: 限定访问区域
 description: 
 platform: Windows CPP,Linux CPP
-updatedAt: Tue Sep 01 2020 03:37:16 GMT+0800 (CST)
+updatedAt: Tue Sep 01 2020 03:50:35 GMT+0800 (CST)
 ---
 # 限定访问区域
 ## 功能描述
@@ -62,4 +62,4 @@ agora::rtm::SET_RTM_SERVICE_CONTEXT_ERR_CODE errorCode = setRtmServiceContext(rt
 
 ## API 参考
 
-[setRtmServiceContext](https://docs.agora.io/cn/Video/API%20Reference/RTM_cpp/group__get_rtm_sdk_version.html#ga55ed2d637b72bf2940872b8736a00bd3)
+[`setRtmServiceContext`](https://docs.agora.io/cn/Video/API%20Reference/RTM_cpp/group__get_rtm_sdk_version.html#ga55ed2d637b72bf2940872b8736a00bd3)
