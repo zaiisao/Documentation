@@ -3,7 +3,7 @@
 title: 录制过程中的服务状态监控
 description: 
 platform: All Platforms
-updatedAt: Fri Aug 28 2020 08:48:19 GMT+0800 (CST)
+updatedAt: Tue Sep 01 2020 10:20:45 GMT+0800 (CST)
 ---
 # 录制过程中的服务状态监控
 你可以通过周期性调用 `query` 来确认录制服务正在进行中且状态正常。相比于 query，消息通知服务可以作为辅助手段。详见[消息通知服务和 query 方法的对比](https://docs.agora.io/cn/faq/ncs_vs_query)。
