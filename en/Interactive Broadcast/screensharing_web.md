@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: Web
-updatedAt: Mon Jul 06 2020 04:30:48 GMT+0800 (CST)
+updatedAt: Tue Sep 01 2020 09:18:53 GMT+0800 (CST)
 ---
 # Share the Screen
 ## Introduction
@@ -245,7 +245,9 @@ If two clients of a host subscribe to each other, extra charges incur.
 
 <img alt="../_images/screensharing_streams.png" src="https://web-cdn.agora.io/docs-files/en/screensharing_streams.png" style="width: 500px; "/>
 
-Agora recommends that you save the returned `uid` when each client joins the channel. When the `stream-added` event occurs, first check if the joined client is a local stream, if yes, do not subscribe to the client.
+Agora recommends that you save the returned `uid` when each client joins the channel and handle the subscription as follows: 
+- For the video client, when the `stream-added` event occurs, first check if the joined `uid` belongs to a local stream. If yes, do not subscribe to the stream.
+- For the screen-sharing client, do not subscribe to any stream.
 
 ```javascript
 var localStreams = [];
@@ -257,14 +259,14 @@ screenClient.join(channelKey, channel, null, function(uid) {
 }
 ...
 
-screenClient.on('stream-added', function(evt) {
+videoClient.on('stream-added', function(evt) {
  var stream = evt.stream;
  var uid = stream.getId()
  // When the 'stream-added' event occurs, check if the stream is a local uid.
  if(!localStreams.includes(uid)) {
   console.log('subscribe stream: ' + uid);
   // Subscribe to the stream.
-  screenClient.subscribe(stream);
+  videoClient.subscribe(stream);
  }
 })
 ```
@@ -289,6 +291,7 @@ var screenClient = AgoraRTC.createClient({
     mode: 'rtc',
     codec: 'vp8'
 });
+
 screenClient.init(appID, function() {
     screenClient.join(channelKey, channel, null, function(uid) {
         // Save the uid of the local stream.
@@ -315,19 +318,6 @@ screenClient.init(appID, function() {
             // Publish the stream.
             screenClient.publish(screenStream);
 
-            // Listen to the 'stream-added' event.
-            screenClient.on('stream-added', function(evt) {
-                var stream = evt.stream;
-                var uid = stream.getId()
-
-                // Check if the stream is a local uid.
-                if (!localStreams.includes(uid)) {
-                    console.log('subscribe stream:' + uid);
-                    // Subscribe to the stream.
-                    screenClient.subscribe(stream);
-                }
-            })
-
         }, function(err) {
             console.log(err);
         });
@@ -341,6 +331,7 @@ var videoClient = AgoraRTC.createClient({
     mode: 'rtc',
     codec: 'vp8'
 });
+
 videoClient.init(appID, function() {
     videoClient.join(channelKey, channel, null, function(uid) {
         // Save the uid of the local stream.
