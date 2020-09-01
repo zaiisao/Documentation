@@ -3,7 +3,7 @@
 title: 应用企业防火墙限制
 description: 
 platform: All Platforms
-updatedAt: Tue Sep 01 2020 03:32:21 GMT+0800 (CST)
+updatedAt: Tue Sep 01 2020 03:44:14 GMT+0800 (CST)
 ---
 # 应用企业防火墙限制
 ## 概览
@@ -97,7 +97,7 @@ qos.agoralab.co
 | 目标端口 | 协议 | 操作 |
 | -------------- | ---------- | -------------- |
 | 9130；9131；9140 | TCP | 允许 |
-| 8000；1080；25000 | UDP | 允许 |
+| 1080; 8000; 8130;  9120; 9121; 9700; 25000 | UDP | 允许 |
 
 ### Web SDK
 
@@ -122,6 +122,21 @@ logservice-rtm.agoraio.cn
 | --------------- | ------------ | ------------ |
 | 443; 6443; 9591; 9593; 9601 | TCP | 允许 |
 
+### 微信小程序 SDK
+
+```
+miniapp.agoraio.cn
+webcollector-rtm.agora.io
+logservice-rtm.agora.io
+ap-web-1.agoraio.cn
+ap-web-2.agoraio.cn
+ap-web-3.agoraio.cn
+ap-web-4.agoraio.cn
+```
+
+| 目标端口 | 协议 | 操作 |
+| --------------- | ------------ | ------------ |
+| 443 ; 6443 | TCP | 允许 |
 
 ## Agora 本地服务端录制 SDK
 
