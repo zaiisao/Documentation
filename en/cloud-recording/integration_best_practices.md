@@ -3,7 +3,7 @@
 title: Best Practices in Integrating Cloud Recording
 description: 
 platform: All Platforms
-updatedAt: Mon Aug 31 2020 07:53:07 GMT+0800 (CST)
+updatedAt: Tue Sep 01 2020 10:44:01 GMT+0800 (CST)
 ---
 # Best Practices in Integrating Cloud Recording
 To improve application robustness, Agora recommends that you do the following when integrating Cloud Recording RESTful APIs:
@@ -39,15 +39,15 @@ You can call `query` periodically to ensure that the recording is in progress an
 
 You can obtain the M3U8 file name by two means. One is by splicing according to the file naming rules. The other is by calling the `query` method. Agora recommends that you use splicing to obtain the M3U8 file name.
 
+### Obtain file name by splicing
+
+In composite recording mode, the format of the M3U8 file name is `<sid>_<cname>.m3u8`. Therefore, you can predict the M3U8 file name by splicing. See [Naming conventions](https://docs.agora.io/en/cloud-recording/cloud_recording_manage_files#合流模式) for details.
+
 ### Obtain file name via the `query` call
 
 The M3U8 file name is generated after the first slice file is generated. Therefore, you should call `query` after the first slicing completes. See [Slicing](https://docs.agora.io/en/cloud-recording/cloud_recording_manage_files#slicing) for details.
 
 In composite recording mode, call `query` 15 seconds after the cloud recording starts; in individual recording mode, call `query` one minute after the cloud recording starts. If the first `query` call fails, you can try again after one minute.
-
-### Obtain file name by splicing
-
-In composite recording mode, the format of the M3U8 file name is `<sid>_<cname>.m3u8`. Therefore, you can predict the M3U8 file name by splicing. See [Naming conventions](https://docs.agora.io/en/cloud-recording/cloud_recording_manage_files#合流模式) for details.
 
 ## Avoid frequent quits of the recording service
 
