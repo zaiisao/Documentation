@@ -3,7 +3,7 @@
 title: 限定访问区域
 description: 
 platform: Android
-updatedAt: Tue Sep 01 2020 03:36:52 GMT+0800 (CST)
+updatedAt: Tue Sep 01 2020 03:49:57 GMT+0800 (CST)
 ---
 # 限定访问区域
 ## 功能描述
@@ -61,4 +61,4 @@ RtmClient.setRtmServiceContext(context);
 
 ## API 参考
 
-[setRtmServiceContext](https://docs.agora.io/cn/Video/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a60f0dae72834f3d300bd7e5abb3fdcc7)
+[`setRtmServiceContext`](https://docs.agora.io/cn/Video/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a60f0dae72834f3d300bd7e5abb3fdcc7)
