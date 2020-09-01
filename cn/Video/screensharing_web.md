@@ -3,7 +3,7 @@
 title: 屏幕共享
 description: 
 platform: Web
-updatedAt: Tue Sep 01 2020 09:04:34 GMT+0800 (CST)
+updatedAt: Tue Sep 01 2020 09:05:45 GMT+0800 (CST)
 ---
 # 屏幕共享
 ## 功能简介
