@@ -3,7 +3,7 @@
 title: 屏幕共享
 description: 
 platform: Web
-updatedAt: Tue Sep 01 2020 09:05:45 GMT+0800 (CST)
+updatedAt: Tue Sep 01 2020 09:07:07 GMT+0800 (CST)
 ---
 # 屏幕共享
 ## 功能简介
@@ -230,26 +230,28 @@ videoClient.join(channelKey, channel, null, function(uid) {
 
 <img alt="../_images/screensharing_streams.png" src="https://web-cdn.agora.io/docs-files/cn/screensharing_streams.png" style="width: 500px;" />
 
-Agora 建议，为避免重复计费，每个 Client 成功加入频道以后，把返回的 uid 存在列表里。每次监听到 `’stream-added’` 事件的时候，先判断加入的流是否是本地流，如果是，则不订阅。
+Agora 建议，为避免重复计费，用于发送屏幕共享流的 Client 成功加入频道以后，把返回的 `uid` 存在列表里，然后按照以下方式处理订阅行为：
+-  用于发布本地视频流的 Client，监听到 `'stream-added'` 事件的时候，先判断加入的流是否是本地的屏幕共享流，如果是，则不订阅。
+-  用于发布屏幕共享流的 Client 不需要订阅任何流，因此无需监听  `'stream-added'` 事件。
 
 ```javascript
 var localStreams = [];
 ...
 
 screenClient.join(channelKey, channel, null, function(uid) {
- // 保存本地流的uid
+ // 保存本地屏幕共享流的uid
  localStreams.push(uid);
 }
 ...
 
-screenClient.on('stream-added', function(evt) {
+videoClient.on('stream-added', function(evt) {
  var stream = evt.stream;
  var uid = stream.getId()
  // 收到流加入频道的事件后，先判定是不是本地的uid
  if(!localStreams.includes(uid)) {
   console.log('subscribe stream: ' + uid);
-  // 拉流
-  screenClient.subscribe(stream);
+  // 订阅流
+  videoClient.subscribe(stream);
  }
 })
 ```
@@ -300,19 +302,6 @@ screenClient.init(appID, function() {
             // 发布流
             screenClient.publish(screenStream);
 
-            // 监听流（用户）加入频道事件
-            screenClient.on('stream-added', function(evt) {
-                var stream = evt.stream;
-                var uid = stream.getId()
-
-                // 收到流加入频道的事件后，先判定是不是本地的uid
-                if (!localStreams.includes(uid)) {
-                    console.log('subscribe stream:' + uid);
-                    // 订阅流
-                    screenClient.subscribe(stream);
-                }
-            })
-
         }, function(err) {
             console.log(err);
         });
@@ -354,7 +343,7 @@ videoClient.init(appID, function() {
                 if (!localStreams.includes(uid)) {
                     console.log('subscribe stream:' + uid);
                     // 订阅流
-                    screenClient.subscribe(stream);
+                    videoClient.subscribe(stream);
                 }
             })
         }, function(err) {
