@@ -3,7 +3,7 @@
 title: 应用企业防火墙限制
 description: 
 platform: All Platforms
-updatedAt: Wed Aug 26 2020 02:12:39 GMT+0800 (CST)
+updatedAt: Tue Sep 01 2020 03:32:21 GMT+0800 (CST)
 ---
 # 应用企业防火墙限制
 ## 概览
