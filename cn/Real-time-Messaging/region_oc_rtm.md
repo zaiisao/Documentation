@@ -3,7 +3,7 @@
 title: 限定访问区域
 description: 
 platform: iOS,macOS
-updatedAt: Tue Sep 01 2020 03:37:47 GMT+0800 (CST)
+updatedAt: Tue Sep 01 2020 03:50:12 GMT+0800 (CST)
 ---
 # 限定访问区域
 ## 功能描述
@@ -61,4 +61,4 @@ ctx.areaCode = AgoraAreaCodeCN | AgoraAreaCodeNA;
 
 ## API 参考
 
-[setRtmServiceContext](https://docs.agora.io/cn/Video/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/setRtmServiceContext:)
+[`setRtmServiceContext`](https://docs.agora.io/cn/Video/API%20Reference/RTM_oc/Classes/AgoraRtmKit.html#//api/name/setRtmServiceContext:)
