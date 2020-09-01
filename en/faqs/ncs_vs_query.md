@@ -1,11 +1,11 @@
 
 ---
-title: Comparison Between the Message Notification Service and the query Method
+title: What are the differences between the Message Notification Service and the query Method?
 description: 
 platform: All Platforms
-updatedAt: Mon Aug 31 2020 16:02:13 GMT+0800 (CST)
+updatedAt: Tue Sep 01 2020 18:46:33 GMT+0800 (CST)
 ---
-# Comparison Between the Message Notification Service and the query Method
+# What are the differences between the Message Notification Service and the query Method?
 You can monitor the status of the cloud recording service either through the `query` method or by the Message Notification Service, to take action when required. Both options have pros and cons.
 
 ## The query method
