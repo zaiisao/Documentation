@@ -3,7 +3,7 @@
 title: Why can't I answer calls through a Bluetooth device after connecting it to an iOS or Android device?
 description: iOS 或 Android 蓝牙耳机相关问题
 platform: iOS,Android
-updatedAt: Wed Sep 02 2020 15:17:12 GMT+0800 (CST)
+updatedAt: Wed Sep 02 2020 15:34:33 GMT+0800 (CST)
 ---
 # Why can't I answer calls through a Bluetooth device after connecting it to an iOS or Android device?
 ## Issue description
