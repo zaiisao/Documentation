@@ -3,7 +3,7 @@
 title: Why can't I answer calls through a Bluetooth device after connecting it to an iOS or Android device?
 description: iOS 或 Android 蓝牙耳机相关问题
 platform: iOS,Android
-updatedAt: Wed Sep 02 2020 15:34:33 GMT+0800 (CST)
+updatedAt: Wed Sep 02 2020 15:34:39 GMT+0800 (CST)
 ---
 # Why can't I answer calls through a Bluetooth device after connecting it to an iOS or Android device?
 ## Issue description
@@ -44,7 +44,10 @@ Depending on which type of call you have an issue with, choose one of the follow
 
 **Phone call**
 
-- Before answering a phone call, change the audio route setting in **Settings** > **General** > **Accessibility** > **Call Audio Routing**. When you select the **Bluetooth Headset** option, all incoming calls will be answered through the Bluetooth device even if you press the answer button on the iPhone.
+- Before answering a phone call, change the audio route setting in **Settings**: swipe down to reveal the search field, search **Call Audio Routing**, and change the audio route to **Bluetooth Headset**. All incoming calls will be answered through the Bluetooth device even if you press the answer button on the iPhone.
+
+ ![](https://web-cdn.agora.io/docs-files/1599030765099) ![](https://web-cdn.agora.io/docs-files/1599030771759)
+
 - During a phone call, you can switch between the **Bluetooth Headset**, **Handset**, or **Speaker** options in the call interface.
 - If you connect an iOS device to a Bluetooth speaker and answer calls in an app, ensure that the app uses the CallKit, otherwise, the above settings do not work.
 
