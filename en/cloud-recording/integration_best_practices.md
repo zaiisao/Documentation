@@ -3,16 +3,10 @@
 title: Best Practices in Integrating Cloud Recording
 description: 
 platform: All Platforms
-updatedAt: Tue Sep 01 2020 10:44:01 GMT+0800 (CST)
+updatedAt: Wed Sep 02 2020 07:40:22 GMT+0800 (CST)
 ---
 # Best Practices in Integrating Cloud Recording
 To improve application robustness, Agora recommends that you do the following when integrating Cloud Recording RESTful APIs:
-
-## Use dual domain names
-
-<div class="alert note">The dual domain name method is applicable in mainland China only. For all other countries and regions, always send your requests to <code>api.agora.io</code>.</div>
-
-If you send a Cloud Recording RESTful API request to `api.agora.io` and the request fails, retry with the same domain name first. If it fails again, replace the domain name with `api.agoraio.cn` and retry. Agora recommends that you use a backoff strategy, for example, retry after 1, 3, and 6 seconds successively, to avoid exceeding the Queries Per Second (QPS) limits.
 
 ## Ensure the recording service starts successfully
 
