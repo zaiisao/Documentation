@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Wed Aug 26 2020 07:39:36 GMT+0800 (CST)
+updatedAt: Thu Aug 27 2020 11:53:07 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 语音 SDK 的发版说明。
@@ -33,6 +33,21 @@ Android 语音 SDK 支持两种主要场景:
 以 Android 9 为目标平台的应用应采用私有 DNS API。 具体而言，当系统解析程序正在执行 DNS-over-TLS 时，应用应确保任何内置 DNS 客户端均使用加密的 DNS 查找与系统相同的主机名，或停用它而改用系统解析程序。
 
 详情请参考 [Android 隐私权变更](https://developer.android.com/about/versions/pie/android-9.0-changes-28?hl=zh-CN#privacy-changes-p)。
+
+## **3.1.1 版**
+
+该版本于 2020 年 8 月 27 日发布。该版本修改了区域访问限制的区域码 `AreaCode`，最新区域码如下：
+
+- `AREA_CODE_CN`: 中国大陆。
+- `AREA_CODE_NA`: 北美区域。
+- `AREA_CODE_EU`: 欧洲区域。
+- `AREA_CODE_AS`: 除中国大陆以外的亚洲区域。 
+- `AREA_CODE_JP`: 日本。
+- `AREA_CODE_IN`: 印度。
+- `AREA_CODE_GLOB`:（默认）全球。
+
+如你此前调用 [`create`](https://docs.agora.io/cn/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a45832a91b1051bc7641ccd8958288dba) 方法时指定了访问区域，在由之前版本升级至该版本时，请确保使用正确的区域码。
+
 
 ## **3.1.0 版**
 该版本于 2020 年 8 月 11 日发布。

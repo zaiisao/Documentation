@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: macOS
-updatedAt: Tue Aug 11 2020 10:47:42 GMT+0800 (CST)
+updatedAt: Thu Aug 27 2020 13:47:18 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -18,8 +18,26 @@ macOS 语音 SDK 支持两种主要场景:
 
 点击 [语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms) 以及 [音频互动直播产品概述](https://docs.agora.io/cn/Audio%20Broadcast/product_live_audio?platform=All%20Platforms)了解关键特性。
 
+## **3.1.1 版**
+
+该版本于 2020 年 8 月 27 日发布。
+
+**升级必看**
+
+该版本修改了区域访问限制的区域码 `AgoraAreaCode`，最新区域码如下：
+
+- `AgoraAreaCodeCN`: 中国大陆。
+- `AgoraAreaCodeNA`: 北美区域。
+- `AgoraAreaCodeEU`: 欧洲区域。
+- `AgoraAreaCodeAS`: 除中国大陆以外的亚洲区域。 
+- `AgoraAreaCodeJP`: 日本。
+- `AgoraAreaCodeIN`: 印度。
+- `AgoraAreaCodeGLOB`:（默认）全球。
+
+如你此前调用 [`sharedEngineWithConfig`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/sharedEngineWithConfig:delegate:) 方法时指定了访问区域，在由之前版本升级至该版本时，请确保使用正确的区域码。
+
 ## **3.1.0 版**
-该版本于 8 月 11 日发布。
+该版本于 2020 年 8 月 11 日发布。
 
 **新增特性**
 

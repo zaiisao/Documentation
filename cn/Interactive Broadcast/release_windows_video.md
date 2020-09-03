@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Tue Aug 11 2020 10:30:15 GMT+0800 (CST)
+updatedAt: Fri Aug 28 2020 02:29:02 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -19,6 +19,22 @@ Windows 视频 SDK 支持两种主要场景:
 点击 [语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms)、[视频通话产品概述](https://docs.agora.io/cn/Video/product_video?platform=All%20Platforms) 、[音频互动直播产品概述](https://docs.agora.io/cn/Audio%20Broadcast/product_live_audio?platform=All%20Platforms)以及[视频互动直播产品概述](https://docs.agora.io/cn/Interactive%20Broadcast/product_live?platform=All%20Platforms)了解关键特性。
 
 Windows 视频 SDK 支持 x86 和 x64 架构。
+
+## **3.1.1 版**
+
+该版本于 2020 年 8 月 27 日发布。
+
+该版本修改了区域访问限制的区域码 `AREA_CODE`，最新区域码如下：
+
+- `AREA_CODE_CN`: 中国大陆。
+- `AREA_CODE_NA`: 北美区域。
+- `AREA_CODE_EU`: 欧洲区域。
+- `AREA_CODE_AS`: 除中国大陆以外的亚洲区域。
+- `AREA_CODE_JP`: 日本。
+- `AREA_CODE_IN`: 印度。
+- `AREA_CODE_GLOB`:（默认）全球。
+
+如你此前调用 [`initialize`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ac71db65e66942e4e0a0550e95c16890f) 方法时指定了访问区域，在由之前版本升级至该版本时，请确保使用正确的区域码。
 
 ## **3.1.0 版**
 

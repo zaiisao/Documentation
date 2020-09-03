@@ -3,7 +3,7 @@
 title: 发送和接收点对点消息及频道消息
 description: 
 platform: Windows CPP
-updatedAt: Thu Aug 27 2020 08:03:16 GMT+0800 (CST)
+updatedAt: Thu Aug 27 2020 09:53:43 GMT+0800 (CST)
 ---
 # 发送和接收点对点消息及频道消息
 
@@ -11,7 +11,7 @@ updatedAt: Thu Aug 27 2020 08:03:16 GMT+0800 (CST)
 
 ## Demo 体验
 
-你可以到 GitHub 下载最新版的 [Agora-RTM-Tutorial-Windows](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-Windows) 查看完整的源码和代码逻辑：
+你可以到 GitHub 下载最新版的 [Agora-RTM-Tutorial-Windows](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-Windows) 查看完整的源码和代码逻辑。
 
 ## 开发环境要求
 
@@ -80,13 +80,13 @@ updatedAt: Thu Aug 27 2020 08:03:16 GMT+0800 (CST)
 
 - 根据应用场景，从 [SDK 下载](https://docs.agora.io/cn/Agora%20Platform/downloads)获取最新 SDK，解压并打开。
 
-- 打开已下载的 SDK 文件，并将其中的 **sdk** 文件夹复制到你的项目文件夹下。
+- 打开已下载的 SDK 文件，并将其中的 **sdk** 文件夹复制到你的解决方案文件夹下。保证 **sdk** 文件夹和你的 **sln** 文件处于同一目录。
 
 **2. 配置项目属性**
 
 在**解决方案资源管理器**窗口中，右击项目名称并点击属性进行以下配置，配置完成后点击**确定**。
 
-- 进入 **C/C++ > 常规 > 附加包含目录**菜单，点击**编辑**，并在弹出窗口中输入 **$(SolutionDir)include**。
+- 进入 **C/C++ > 常规 > 附加包含目录**菜单，点击**编辑**，并在弹出窗口中输入 **$(SolutionDir)**。
 
 - 进入**链接器 > 常规 > 附加库目录**菜单，点击**编辑**，并在弹出窗口中输入 **$(SolutionDir)**。
 
