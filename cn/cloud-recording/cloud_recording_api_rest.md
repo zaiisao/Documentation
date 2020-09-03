@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Tue Aug 25 2020 06:59:43 GMT+0800 (CST)
+updatedAt: Thu Sep 03 2020 03:44:29 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 该文提供云端录制 RESTful API 的详细信息。
@@ -811,7 +811,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
       - `true`：可以在线播放。
       - `false`：无法在线播放。
     - `sliceStartTime`：Number 类型，该文件的录制开始时间，Unix 时间戳，单位为毫秒。
-  - `status`：Number 类型，当前录制的状态。
+  - `status`：Number 类型，当前云服务的状态。
     - `0`：没有开始云服务。
     - `1`：云服务初始化完成。
     - `2`：云服务组件开始启动。
@@ -823,7 +823,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
     - `8`：云服务已退出。
     - `20`：云服务异常退出。
   - `sliceStartTime`: Number 类型，录制开始的时间，Unix 时间戳，单位为毫秒。
- - `extensionServiceState`: JSONArray 类型。由每个扩展服务的状态信息组成的数组。
+ - `extensionServiceState`: JSONArray 类型。由每个扩展服务的详细状态信息组成的数组。
     - `serviceName`：String 类型，扩展服务类型。 `"aliyun_vod_service"` 代表阿里视频点播服务。
     - `payload`：JSON 类型。该扩展服务的状态信息。
       - `state`：String 类型，将订阅内容上传至扩展服务的状态。
