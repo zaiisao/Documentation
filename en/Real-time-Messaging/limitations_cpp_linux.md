@@ -3,7 +3,7 @@
 title: RTM Limitations
 description: 
 platform: Linux CPP
-updatedAt: Thu Aug 13 2020 02:24:10 GMT+0800 (CST)
+updatedAt: Thu Sep 03 2020 03:49:52 GMT+0800 (CST)
 ---
 # RTM Limitations
 
