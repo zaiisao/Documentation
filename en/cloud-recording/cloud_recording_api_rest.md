@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Thu Sep 03 2020 08:13:18 GMT+0800 (CST)
+updatedAt: Thu Sep 03 2020 08:13:36 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API
 This article contains detailed help for the Cloud Recording RESTful APIs.
@@ -844,19 +844,19 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
       - `true`: The file can be played online.
       - `false`: The file cannot be played online.
     - `sliceStartTime`: Number. The Unix time (ms) when the recording starts.
-  - `status`: Number. The recording status.
-    - `0`: The recording has not started.
+  - `status`: Number. The status of the cloud service.
+    - `0`: The cloud service has not started.
     - `1`: The initialization is complete.
-    - `2`: The recorder is starting.
-    - `3`: The uploader is ready.
-    - `4`: The recorder is ready.
-    - `5`: The first recorded file is uploaded. After uploading the first file, the status is `5` when the recording is running.
-    - `6`: The recording stops.
-    - `7`: The Agora Cloud Recording service stops.
-    - `8`: The recording is ready to exit.
-    - `20`: The recording exits abnormally.
+    - `2`: The cloud service is starting.
+    - `3`: The cloud service is partially ready.
+    - `4`: The cloud service is ready.
+    - `5`: The cloud service is in progress.
+    - `6`: The cloud service receives the request to stop.
+    - `7`: The cloud service stops.
+    - `8`: The cloud service exits.
+    - `20`: The cloud service exits abnormally.
   - `sliceStartTime`: Number. The time when the recording starts. Unix timestamp (ms).
-  - `extensionServiceState`: JSONArray. An array of the status of each extension service. 
+  - `extensionServiceState`: JSONArray. An array of the detailed status information of each extension service. 
 	  - `serviceName`: String. The name of the extension service.  `aliyun_vod_service` means ApsaraVideo for VoD.
 	  - `payload`: JSON. The status of the extension service.
 	    - `state`: String. The status of uploading media content to the extension service. 
