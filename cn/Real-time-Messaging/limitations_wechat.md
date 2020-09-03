@@ -3,7 +3,7 @@
 title: 限制条件
 description: 
 platform: 微信小程序
-updatedAt: Tue Sep 01 2020 03:58:27 GMT+0800 (CST)
+updatedAt: Thu Sep 03 2020 03:46:29 GMT+0800 (CST)
 ---
 # 限制条件
 本页简要介绍 Agora RTM 微信小程序 SDK （Beta）的使用限制条件，包括调用频率、字符串大小、编码格式等。
@@ -33,4 +33,4 @@ updatedAt: Tue Sep 01 2020 03:58:27 GMT+0800 (CST)
 
 ## 其他限制
 
-当频道人数超过 512 人时，用户进出频道的提示会被自动关闭。
+当频道人数超过 512 人时，用户进出频道的提示会被自动关闭。Agora 建议你在自己的业务服务器调用[获取用户加入或离开频道事件 RESTful API](../../cn/Real-time-Messaging/rtm_get_event.md) 获取进出频道通知。
