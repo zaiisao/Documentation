@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: iOS
-updatedAt: Tue Aug 11 2020 11:27:35 GMT+0800 (CST)
+updatedAt: Thu Aug 27 2020 13:44:04 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for iOS.
@@ -16,6 +16,24 @@ The Video SDK supports the following scenarios:
 -   Live interactive audio or video streaming
 
 For the key features included in each scenario, see [Agora Voice Call Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms), [Agora Video Call Overview](https://docs.agora.io/en/Video/product_video?platform=All%20Platforms), [Agora Live Interactive Audio Streaming Overview](https://docs.agora.io/en/Audio%20Broadcast/product_live_audio?platform=All_Platforms) and [Agora Live Interactive Video Streaming Overview](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms).
+
+## v3.1.1
+
+v3.1.1 was released on August 27, 2020.
+
+**Compatibility changes**
+
+This release changes the `AgoraAreaCode` for regional connection. The latest area codes are as follows:
+
+- `AgoraAreaCodeCN`: Mainland China.
+- `AgoraAreaCodeNA`: North America.
+- `AgoraAreaCodeEU`: Europe.
+- `AgoraAreaCodeAS`: Asia, excluding Mainland China.
+- `AgoraAreaCodeJP`: Japan.
+- `AgoraAreaCodeIN`: India.
+- `AgoraAreaCodeGLOB`: (Default) Global.
+
+If you have specified a region for connection when calling [`sharedEngineWithConfig`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/sharedEngineWithConfig:delegate:), ensure that you use the latest area code when migrating from an earlier SDK version.
 
 ## v3.1.0
 

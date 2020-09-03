@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: cpp
 platform: Windows CPP
-updatedAt: Mon Mar 16 2020 11:28:37 GMT+0800 (CST)
+updatedAt: Thu Aug 27 2020 09:54:41 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 
@@ -86,7 +86,7 @@ Follow these steps to integrate the Agora RTM C++ SDK for Windows into your proj
 
 - Go to [SDK Downloads](https://docs.agora.io/en/Agora%20Platform/downloads), download the latest version of the Agora SDK for Windows, and unzip the downloaded SDK package.
 
-- Copy the **sdk** folder of the downloaded SDK package to your project files.
+- Copy the **sdk** folder of the downloaded SDK package to the solution directory. Ensure that the **sdk** folder is in the same location as your **sln** file.
 
 **2. Configure the project properties**
 

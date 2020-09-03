@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Tue Aug 11 2020 10:30:48 GMT+0800 (CST)
+updatedAt: Fri Aug 28 2020 02:30:18 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -16,6 +16,22 @@ The Voice SDK supports the following scenarios:
 For the key features included in each scenario, see [Agora Voice Call Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms) and [Agora Live Interactive Audio Streaming Overview](https://docs.agora.io/en/Audio%20Broadcast/product_live_audio?platform=All_Platforms).
 
 The Windows Voice SDK supports the x86 and  x64 architecture.
+
+## v3.1.1
+
+v3.1.1 was released on August 28, 2020.
+
+This release changes the `AREA_CODE` for regional connection. The latest area codes are as follows:
+
+- `AREA_CODE_CN`: Mainland China.
+- `AREA_CODE_NA`: North America.
+- `AREA_CODE_EU`: Europe.
+- `AREA_CODE_AS`: Asia, excluding Mainland China.
+- `AREA_CODE_JP`: Japan.
+- `AREA_CODE_IN`: India.
+- `AREA_CODE_GLOB`: (Default) Global.
+
+If you have specified a region for connection when calling [`initialize`](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ac71db65e66942e4e0a0550e95c16890f), ensure that you use the latest area code when migrating from an earlier SDK version.
 
 ## v3.1.0
 

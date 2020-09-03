@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Wed Aug 26 2020 07:45:27 GMT+0800 (CST)
+updatedAt: Thu Aug 27 2020 11:53:44 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Voice SDK for Android.
@@ -33,6 +33,19 @@ If your app needs to access a device's hardware serial number, you should instea
 Apps targeting Android 9 should honor the private DNS APIs. In particular, apps should ensure that, if the system resolver is doing DNS-over-TLS, any built-in DNS client either uses encrypted DNS to the same hostname as the system, or is disabled in favor of the system resolver.
 
 For more information about privacy changes, see [Android Privacy Changes](https://developer.android.com/about/versions/pie/android-9.0-changes-28#privacy-changes-p).
+
+## v3.1.1
+v3.1.1 was released on August 27, 2020. This release changes the `AreaCode` for regional connection. The latest area codes are as follows:
+
+- `AREA_CODE_CN`: Mainland China.
+- `AREA_CODE_NA`: North America.
+- `AREA_CODE_EU`: Europe.
+- `AREA_CODE_AS`: Asia, excluding Mainland China.
+- `AREA_CODE_JP`: Japan.
+- `AREA_CODE_IN`: India.
+- `AREA_CODE_GLOB`: (Default) Global.
+
+If you have specified a region for connection when calling [`create`](https://docs.agora.io/en/Voice/API%20Reference/java/classio_1_1agora_1_1rtc_1_1_rtc_engine.html#a45832a91b1051bc7641ccd8958288dba), ensure that you use the latest area code when migrating from an earlier SDK version.
 
 ## v3.1.0
 v3.1.0 was released on August 11, 2020.
