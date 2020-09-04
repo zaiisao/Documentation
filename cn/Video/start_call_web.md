@@ -3,7 +3,7 @@
 title: 实现视频通话
 description: 
 platform: Web
-updatedAt: Thu Aug 27 2020 10:10:08 GMT+0800 (CST)
+updatedAt: Fri Sep 04 2020 03:50:24 GMT+0800 (CST)
 ---
 # 实现视频通话
 <div class="alert note">声网已经推出下一代 Agora Web SDK (Agora Web SDK NG)，优化了 SDK 的内部架构，提高了 SDK 的可用性。Agora Web SDK NG 基于 Typescript 开发，并使用 Promise 来管理异步操作，提供了更灵活更易用的 API 方案。点击<a href="https://agoraio-community.github.io/AgoraWebSDK-NG/zh-CN/">此处</a>即刻体验 Agora Web SDK NG。</div>
@@ -13,6 +13,16 @@ updatedAt: Thu Aug 27 2020 10:10:08 GMT+0800 (CST)
 本文会详细介绍如何建立一个简单的项目并使用 Agora Web SDK 实现基础的一对一视频通话。我们建议你阅读本文以快速了解 Agora 的核心方法。
 
 <div class="alert warning">由于浏览器的安全策略对除 127.0.0.1 以外的 HTTP 地址作了限制，Agora Web SDK 仅支持 HTTPS 协议或者 http://localhost（http://127.0.0.1），请勿使用 HTTP 协议部署你的项目。</div>
+
+## 快速跑通示例项目
+
+如果你是第一次使用声网的服务，我们推荐观看下面的视频，了解关于声网服务的基本信息以及如何快速跑通示例项目。
+
+<div class="alert info">点击参与<a href="https://www.wenjuan.com/s/7FbeEz6/" target="_blank">视频教程问卷调查</a>，帮助我们改进体验。</div>
+
+<video src="https://web-cdn.agora.io/docs-files/1599190966315" poster="https://web-cdn.agora.io/docs-files/1599191154523"   controls width = 100% height = auto>你的浏览器不支持 <code>video</code> 标签。</video>
+
+<div class="alert note">视频中展示的 UI 可能有部分调整更新，请以当前最新版为准。</div>
 
 ## 示例项目
 我们在 GitHub 上提供一个开源的基础一对一视频通话[示例项目](https://github.com/AgoraIO/Basic-Video-Call/tree/master/One-to-One-Video/Agora-Web-Tutorial-1to1)供你参考。
