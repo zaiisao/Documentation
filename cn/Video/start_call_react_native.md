@@ -3,7 +3,7 @@
 title: 实现视频通话
 description: 快速实现视频通话
 platform: React Native
-updatedAt: Fri Sep 04 2020 08:45:09 GMT+0800 (CST)
+updatedAt: Fri Sep 04 2020 08:53:11 GMT+0800 (CST)
 ---
 # 实现视频通话
 本文介绍如何使用 Agora React Native SDK 快速实现视频通话。
