@@ -3,7 +3,7 @@
 title: 发版说明
 description: Release notes
 platform: React Native
-updatedAt: Fri Sep 04 2020 08:42:52 GMT+0800 (CST)
+updatedAt: Fri Sep 04 2020 08:43:12 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora React Native SDK 的发版说明。
@@ -35,7 +35,7 @@ Agora React Native SDK 主要支持两种场景：
 你可以参考以下文档集成 SDK，实现相应的实时音视频功能：
 
 - 快速开始：
- - [实现音频通话](../../cn/Video/start_call_audio_react_native.md)
+ - [实现语音通话](../../cn/Video/start_call_audio_react_native.md)
  - [实现视频通话](../../cn/Video/start_call_react_native.md)
  - [实现视频互动直播](../../cn/Video/start_live_react_native.md)
  - [实现音频互动直播](../../cn/Video/start_live_audio_react_native.md)
