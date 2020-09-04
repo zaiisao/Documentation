@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 快速实现语音通话
 platform: React Native
-updatedAt: Fri Sep 04 2020 08:41:29 GMT+0800 (CST)
+updatedAt: Fri Sep 04 2020 08:48:36 GMT+0800 (CST)
 ---
 # 实现语音通话
 本文介绍如何使用 Agora React Native SDK 快速实现语音通话。
@@ -102,9 +102,9 @@ async function init() {
   
 	 <div class="alert note">若项目已启用 App 证书，请使用 Token。</div>
 
- - `channelName`：传入能标识频道的频道 ID。App ID 相同、频道 ID 相同的用户会进入同一个频道。
+- `channelName`：传入能标识频道的频道 ID。App ID 相同、频道 ID 相同的用户会进入同一个频道。
 
- - `uid`： 本地用户的 ID。数据类型为整型，且频道内每个用户的 uid 必须是唯一的。若将 `uid` 设为 0，则 SDK 会自动分配一个 `uid`，并在 `JoinChannelSuccess` 回调中报告。
+- `uid`： 本地用户的 ID。数据类型为整型，且频道内每个用户的 uid 必须是唯一的。若将 `uid` 设为 0，则 SDK 会自动分配一个 `uid`，并在 `JoinChannelSuccess` 回调中报告。
 
 ```
 engine.joinChannel(token, channelName, null, 0)
