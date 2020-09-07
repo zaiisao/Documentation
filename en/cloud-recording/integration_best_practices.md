@@ -3,7 +3,7 @@
 title: Best Practices in Integrating Cloud Recording
 description: 
 platform: All Platforms
-updatedAt: Mon Sep 07 2020 08:16:30 GMT+0800 (CST)
+updatedAt: Mon Sep 07 2020 08:21:55 GMT+0800 (CST)
 ---
 # Best Practices in Integrating Cloud Recording
 To improve application robustness, Agora recommends that you do the following when integrating Cloud Recording RESTful APIs:
