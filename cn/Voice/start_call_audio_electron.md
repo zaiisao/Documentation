@@ -2,7 +2,7 @@
 ---
 title: 实现语音通话
 description: 
-platform: Electron,electron
+platform: electron
 updatedAt: Fri Jul 31 2020 12:03:21 GMT+0800 (CST)
 ---
 # 实现语音通话

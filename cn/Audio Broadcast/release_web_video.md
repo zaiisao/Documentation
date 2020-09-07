@@ -25,7 +25,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
     <th>Opera 45+</th>
     <th>QQ 浏览器 10.5+</th>
     <th>360 安全浏览器</th>
-    <th>微信浏览器</th>
+    <th>Edge 浏览器 80+</th>
   </tr>
   <tr>
     <td>Android 4.1+</td>
@@ -65,7 +65,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
     <td><font color="green">✔</td>
     <td><font color="green">✔</td>
     <td><font color="green">✔</td>
-    <td><font color="red">✘</td>
+    <td><font color="green">✔</td>
   </tr>
 </table>
 
@@ -80,8 +80,7 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 除上表浏览器外，还有以下支持：
 
 - Agora Web SDK 2.5 及以上版本支持 Windows XP 平台的 Chrome 49 版本浏览器（仅支持 VP8 编解码，不能与 Native SDK 互通）。
-	<li>Agora Web SDK 2.7 及以上版本支持 Windows 10 平台的 Edge 浏览器，详见 <a href="https://docs.agora.io/cn/faq/browser_support#a-nameedgeaedge">Edge 浏览器支持</a>。</li>
-	<li>Agora Web SDK 理论上还支持 360 极速浏览器，但未经过验证，不保证全部功能正常工作。</li>
+- Agora Web SDK 理论上还支持 360 极速浏览器，但未经过验证，不保证全部功能正常工作。
 
 > 如需实现 Agora Native SDK 与 Agora Web SDK 的互通，必须将 Agora Native SDK 升级至 1.12 及以上版本。
 
