@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Mon Sep 07 2020 11:54:45 GMT+0800 (CST)
+updatedAt: Mon Sep 07 2020 12:24:51 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -92,6 +92,39 @@ Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库
 - Agora Web SDK 暂不支持代码二次混淆。
 
 更多问题，详见 [Web 常见问题集](https://docs.agora.io/cn/search?type=faq&platform=Web)。
+
+## 3.2.0 版
+该版本于 2020 年 9 月 7 日发布。
+
+**新增特性**
+
+#### 视频传输优化策略
+
+v3.2.0 在 `StreamSpec` 类中新增 `optimizationMode` 字段，支持在调用 `createStream` 方法创建 Stream 对象时选择以下视频传输优化策略，以确保遭遇网络波动时视频画面依然满足用户需求。
+
+- `"motion"`: 流畅优先。大部分情况下，SDK 不会降低帧率，但是可能会降低发送分辨率。
+- `"detail"`: 清晰优先。大部分情况下，SDK 不会降低发送分辨率，但是可能会降低帧率。
+
+如果该字段留空，则使用 SDK 默认的优化策略：
+
+- 对于屏幕共享视频流（调用 `createStream` 时 `screen` 属性设为 `true`），SDK 默认的优化策略为清晰优先。
+- 对于其他视频流，SDK 默认的优化策略为兼顾清晰和流畅，弱网条件下，帧率和分辨率都会被调整。
+
+**改进**
+
+v3.2.0 全面支持基于 Chromium 内核的 Windows Edge 浏览器（80 及以上版本）。
+
+**问题修复**
+
+该版本修复了以下问题：
+- 使用混音功能导致内存泄漏。
+- 偶现的黑屏。
+- 设置音频属性（`setAudioProfile`）后，音频发送码率过高。
+- 设备不支持 15 fps 的采集帧率时，调用 `Stream.init` 失败。
+
+**API 变更**
+
+- `StreamSpec` 类新增 `optimizationMode` 属性。
 
 ## 3.1.2 版
 
