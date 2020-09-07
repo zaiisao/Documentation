@@ -3,7 +3,7 @@
 title: 云端录制集成最佳实践
 description: 
 platform: All Platforms
-updatedAt: Mon Sep 07 2020 07:28:34 GMT+0800 (CST)
+updatedAt: Mon Sep 07 2020 07:35:14 GMT+0800 (CST)
 ---
 # 云端录制集成最佳实践
 为了保障录制服务的可靠性，Agora 建议你在集成云端录制 RESTful API 时注意以下几点：
