@@ -25,7 +25,7 @@ See the table below for the web browser support of the Agora Web SDK:
     <th>Opera 45 or later</th>
     <th>QQ Browser 10.5 or later</th>
     <th>360 Secure Browser</th>
-    <th>WeChat Built-in Browser</th>
+    <th>Edge Browser 80 or later</th>
   </tr>
    <tr>
     <td>Android 4.1 or later</td>
@@ -65,7 +65,7 @@ See the table below for the web browser support of the Agora Web SDK:
     <td><font color="green">✔</td>
     <td><font color="green">✔</td>
     <td><font color="green">✔</td>
-    <td><font color="red">✘</td>
+    <td><font color="green">✔</td>
   </tr>
 </table>
 
@@ -78,7 +78,6 @@ See the table below for the web browser support of the Agora Web SDK:
 Other browser support:
 
 - The Agora Web SDK v2.5 or later supports Chrome 49 on Windows XP (supports the VP8 codec only, and cannot interop with the Native SDK).
-- The Agora Web SDK v2.7 or later supports Edge on Windows 10, see <a href="https://docs.agora.io/en/faq/browser_support#edge">Edge support</a> for details.
 - The Agora Web SDK theoretically supports 360 Extreme Browser, but we do not guarantee full support.
 
 > To enable interoperability between the Agora Native SDK and Agora Web SDK, use the Agora Native SDK v1.12 or later.
