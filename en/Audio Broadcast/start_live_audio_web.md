@@ -3,7 +3,7 @@
 title: Start Live Interactive Audio Streaming
 description: 
 platform: Web
-updatedAt: Mon Sep 07 2020 12:15:23 GMT+0800 (CST)
+updatedAt: Mon Sep 07 2020 12:16:56 GMT+0800 (CST)
 ---
 # Start Live Interactive Audio Streaming
 <div class="alert note">Agora has released the Agora Web SDK NG, the next generation of the Agora Web SDK, which fully optimizes the internal architecture of the SDK and improves its usability. Based on Typescript, the Agora Web SDK NG uses Promises for asynchronous operations and provides more flexible and easy-to-use APIs. Click <a href="https://agoraio-community.github.io/AgoraWebSDK-NG/en/">here</a> to learn more about the Agora Web SDK NG.</div>
@@ -22,12 +22,12 @@ You can also use this [online demo](https://webdemo.agora.io/agora-web-showcase/
 
 1. Install a browser supported by the Agora Web SDK, as shown in the following table:     <div class="alert info">Agora recommends using the latest Chrome browser.</div>
 
-   | Platform             | Chrome 58 or later | Firefox 56 or later | Safari 11 or later | Opera 45 or later | QQ Browser 10.5 or later | 360 Secure Browser | Edge Browser |
+   | Platform             | Chrome 58 or later | Firefox 56 or later | Safari 11 or later | Opera 45 or later | QQ Browser 10.5 or later | 360 Secure Browser | WeChat Built-in Browser |
    | :------------------- | :----------------- | :------------------ | :----------------- | :---------------- | :--------- | :----------------- | :---------------------- |
    | Android 4.1 or later | ✔                  | ✘                   | N/A                | ✘                 | ✘          | ✘                  | ✘                       |
    | iOS 11 or later      | ✘                  | ✘                   | ✔                  | ✘                 | ✘          | ✘                  | ✘                       |
    | macOS 10 or later    | ✔                  | ✔                   | ✔                  | ✔                 | ✔          | ✘                  | ✘                       |
-   | Windows 7 or later   | ✔                  | ✔                   | N/A                | ✔                 | ✔          | ✔                  | ✔                       |
+   | Windows 7 or later   | ✔                  | ✔                   | N/A                | ✔                 | ✔          | ✔                  | ✘                       |
 
 2. Get a valid [Agora account](https://docs.agora.io/en/Agora%20Platform/sign_in_and_sign_up) and an [App ID](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#get-an-app-id).
 
@@ -146,7 +146,7 @@ This method requires npm, see [Install npm](https://www.npmjs.com/get-npm) for d
 Add the following code to the line after `<head>` in your project.
 
 ```javascript
-<script src="https://cdn.agora.io/sdk/release/AgoraRTCSDK-3.2.0.js"></script>
+<script src="https://cdn.agora.io/sdk/release/AgoraRTCSDK-3.1.2.js"></script>
 ```
 
 #### Method 3: Through the Agora website
