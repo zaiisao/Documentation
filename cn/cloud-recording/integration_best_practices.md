@@ -3,14 +3,14 @@
 title: 云端录制集成最佳实践
 description: 
 platform: All Platforms
-updatedAt: Mon Sep 07 2020 08:37:44 GMT+0800 (CST)
+updatedAt: Mon Sep 07 2020 10:05:53 GMT+0800 (CST)
 ---
 # 云端录制集成最佳实践
 为了保障录制服务的可靠性，Agora 建议你在集成云端录制 RESTful API 时注意以下几点：
 
 ## 获取服务状态
 
-你可以通过云端录制 RESTful API 来获取录制服务状态。相比于云端录制 RESTful API，消息通知服务可以作为辅助手段。
+你可以通过云端录制 RESTful API 来获取录制服务状态。相比于云端录制 RESTful API，[消息通知服务](../../cn/cloud-recording/cloud_recording_callback_rest.md)可以作为辅助手段。
 
 <div class="alert note">消息通知服务只能作为辅助手段来获取服务录制状态。不建议你的核心业务逻辑依赖消息通知服务。如果你的业务对该服务强依赖，建议联系 <a href="mailto:sales@agora.io">sales@agora.io</a> 开通冗余消息功能，即接收双路消息通知，降低消息丢失的概率。冗余消息功能仍然不能保证 100% 的消息到达率。</div>
 
