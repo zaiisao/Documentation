@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: Web
-updatedAt: Mon Sep 07 2020 12:12:49 GMT+0800 (CST)
+updatedAt: Mon Sep 07 2020 12:12:57 GMT+0800 (CST)
 ---
 # 实现语音通话
 <div class="alert note">声网已经推出下一代 Agora Web SDK (Agora Web SDK NG)，优化了 SDK 的内部架构，提高了 SDK 的可用性。Agora Web SDK NG 基于 Typescript 开发，并使用 Promise 来管理异步操作，提供了更灵活更易用的 API 方案。点击<a href="https://agoraio-community.github.io/AgoraWebSDK-NG/zh-CN/">此处</a>即刻体验 Agora Web SDK NG。</div>
@@ -23,12 +23,12 @@ updatedAt: Mon Sep 07 2020 12:12:49 GMT+0800 (CST)
 
 1. 安装一款 Agora Web SDK 支持的浏览器，如下表所示：     <div class="alert info">Agora 推荐使用最新版本的 Chrome 浏览器。</div>
 
-   | 平台         | Chrome 58+ | Firefox 56+ | Safari 11+ | Opera 45+ | QQ 浏览器 10.5+ | 360 安全浏览器 | 微信浏览器 |
+   | 平台         | Chrome 58+ | Firefox 56+ | Safari 11+ | Opera 45+ | QQ 浏览器 10.5+ | 360 安全浏览器 | Edge 浏览器 80+ |
    | ------------ | ---------- | ----------- | ---------- | --------- | --------------- | -------------- | ---------- |
    | Android 4.1+ | ✔          | ✘           | **N/A**    | ✘         | ✘               | ✘              | ✘          |
    | iOS 11+      | ✘          | ✘           | ✔          | ✘         | ✘               | ✘              | ✘          |
    | macOS 10+    | ✔          | ✔           | ✔          | ✔         | ✔               | ✘              | ✘          |
-   | Windows 7+   | ✔          | ✔           | **N/A**    | ✔         | ✔               | ✔              | ✘          |
+   | Windows 7+   | ✔          | ✔           | **N/A**    | ✔         | ✔               | ✔              | ✔          |
 
 2. 有效的 [Agora 账户](https://docs.agora.io/cn/Agora%20Platform/sign_in_and_sign_up)和 [App ID](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#获取-app-id)。
 
