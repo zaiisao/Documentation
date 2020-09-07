@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API 快速开始
 description: Quick start for rest api
 platform: All Platforms
-updatedAt: Mon Sep 07 2020 08:38:59 GMT+0800 (CST)
+updatedAt: Mon Sep 07 2020 09:52:05 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API 快速开始
 Agora 云端录制 1.1.0 及以后版本支持 RESTful API，无需集成 SDK，直接通过网络请求开启和控制云录制，在自己的网页或应用中灵活使用。
@@ -82,7 +82,7 @@ Agora RESTful API 要求 Basic HTTP 认证。每次发送 HTTP 请求时，都�
 
 录制过程中，你可以多次调用 [`query`](https://docs.agora.io/cn/cloud-recording/restfulapi/#/%E4%BA%91%E7%AB%AF%E5%BD%95%E5%88%B6/query) 方法查询录制的状态。
 
-调用该方法成功后，你可以从 HTTP 响应包体中获得录制生成的[索引文件](#m3u8)和当前录制的状态。你可以参考云端录制最佳集成实践来实现[录制过程中的服务状态监控](../../cn/cloud-recording/integration_best_practices.md)和[获取 M3U8 文件名](../../cn/cloud-recording/integration_best_practices.md)。
+调用该方法成功后，你可以从 HTTP 响应包体中获得录制生成的[索引文件](#m3u8)和当前录制的状态。你可以参考《云端录制最佳集成实践》来实现[录制过程中的服务状态监控](../../cn/cloud-recording/integration_best_practices.md)和[获取 M3U8 文件名](../../cn/cloud-recording/integration_best_practices.md)。
 
 
 ### 更新订阅名单
