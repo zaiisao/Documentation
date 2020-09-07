@@ -3,7 +3,7 @@
 title: Agora Web SDK 支持哪些浏览器？
 description: 
 platform: Web
-updatedAt: Mon Sep 07 2020 20:19:04 GMT+0800 (CST)
+updatedAt: Mon Sep 07 2020 20:19:23 GMT+0800 (CST)
 ---
 # Agora Web SDK 支持哪些浏览器？
 Agora Web SDK 支持所有主流浏览器，支持的浏览器及平台如下。
@@ -125,17 +125,6 @@ Agora Web SDK 是基于 WebRTC 实现的采集和编解码，而 Chrome 又是�
   - MacBook Pro (13-inch, 2016, Two Thunderbolt 3 ports)
   - Windows 10 (MI)
 - Firefox 上调用相关方法获取质量相关统计数据时，多个字段的值为 0。例如调用 `getLocalAudioStats` 获取数据时，`RecordingLevel` 和 `SendLevel` 字段值为 0。
-
-### <a name="edge"></a>Edge
-
-Agora Web SDK 2.7 及以上版本支持 Edge 浏览器。受浏览器自身限制，仅支持以下功能：
-
-- 与 Agora RTC SDK 音视频互通。
-- 调用 `getStats` 方法获取音视频流的连接数据（受浏览器更新的影响，可能存在部分字段缺失的情况）。
-- 调用 `getAudioLevel` 方法获取当前音量。
-- 调用 `muteAudio` 或 `unmuteAudio` 方法禁用或启用音频轨道。
-- 调用 `muteVideo` 或 `unmuteVideo` 方法禁用或启用视频轨道。
-- 调用 `setVideoProfile` 方法设置视频属性。
 
 ## 相关链接
 [移动端如何使用 Agora Web SDK？](https://docs.agora.io/cn/faq/web_on_mobile)
