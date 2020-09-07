@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Mon Sep 07 2020 11:56:55 GMT+0800 (CST)
+updatedAt: Mon Sep 07 2020 12:24:41 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -90,6 +90,38 @@ Other browser support:
 - The Agora Web SDK does not support code obfuscation.
 
 For more issues, see [Web FAQs](https://docs.agora.io/en/search?type=faq&platform=Web).
+
+## v3.2.0
+v3.2.0 was released on September 7, 2020.
+
+**New features**
+
+#### Video transmission optimization strategy
+
+v3.2.0 adds the `optimizationMode` property in the `StreamSpec` interface. When creating a stream object by calling `createStream`, you can choose between the following two optimization strategies to ensure the quality of video images meets the end users' requirement under poor network conditions:
+
+- `"detail"`: Prioritizes clarity. In most cases, the SDK does not reduce the sending resolution, but may reduce the frame rate.
+- `"motion"`: Prioritizes smoothness. In most cases, the SDK does not reduce the frame rate, but may reduce the sending resolution.
+
+If you leave this property empty, the SDK uses the default transmission optimization strategy:
+
+- For a screen-sharing video stream (setting the `screen` property as `true` when calling `createStream`), the default transmission optimization strategy is to prioritizes clarity.
+- For the other types of video streams, the SDK may reduce the frame rate or the sending resolution in poor network conditions.
+
+**Improvements**
+
+v3.2.0 fully supports Chromium-based versions of Microsoft Edge (versions 80 and later).
+
+**Fixed issues**
+
+- Memory leak caused by the audio mixing function.
+- Occasional black screens.
+- The audio sending bitrate was too high after the audio profile was set by `setAudioProfile`.
+- The method call of `Stream.init` failed when the device does not support the capture frame rate of 15 fps.
+
+**API changes**
+
+v3.2.0 adds the `optimizationMode` property in `StreamSpec`.
 
 ## v3.1.2
 
