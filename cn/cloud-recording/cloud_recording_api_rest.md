@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Thu Sep 03 2020 03:44:29 GMT+0800 (CST)
+updatedAt: Mon Sep 07 2020 09:46:44 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 该文提供云端录制 RESTful API 的详细信息。
@@ -696,7 +696,7 @@ https://api.agora.io/v1/apps/<appid>/cloud_recording/resourceid/<resourceid>/sid
 
 开始录制后，你可以调用 query 查询录制状态。
 
-<div class="note alert"><code>query</code> 请求仅在会话内有效。如果录制启动错误，或录制已结束，调用 <code>query</code> 将返回 404。建议你同时使用回调服务，以获得云端录制所有的事件通知和具体信息。如需使用回调服务，请参考 <a href="https://docs.agora.io/cn/cloud-recording/cloud_recording_callback_rest">RESTful API 回调</a>。</div>
+<div class="note alert"><code>query</code> 请求仅在会话内有效。如果录制启动错误，或录制已结束，调用 <code>query</code> 将返回 404。</div>
 
 - 方法：GET
 
