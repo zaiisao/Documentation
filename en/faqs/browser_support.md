@@ -3,7 +3,7 @@
 title: Which browsers does the Agora Web SDK support?
 description: 
 platform: Web
-updatedAt: Thu Aug 20 2020 14:36:41 GMT+0800 (CST)
+updatedAt: Mon Sep 07 2020 20:19:55 GMT+0800 (CST)
 ---
 # Which browsers does the Agora Web SDK support?
 The Agora Web SDK supports all mainstream browsers. 
@@ -17,7 +17,7 @@ The Agora Web SDK supports all mainstream browsers.
     <th>Opera 45 or later</th>
     <th>QQ Browser 10.5 or later</th>
     <th>360 Secure Browser</th>
-    <th>WeChat Built-in Browser</th>
+    <th>Edge Browser 80 or later</th>
   </tr>
    <tr>
     <td>Android 4.1 or later</td>
@@ -57,7 +57,7 @@ The Agora Web SDK supports all mainstream browsers.
     <td><font color="green">✔</td>
     <td><font color="green">✔</td>
     <td><font color="green">✔</td>
-    <td><font color="red">✘</td>
+    <td><font color="green">✔</td>
   </tr>
 </table>
 
@@ -70,7 +70,6 @@ The Agora Web SDK supports all mainstream browsers.
 Other browser support:
 
 - The Agora Web SDK v2.5 or later supports Chrome 49 on Windows XP (supports the VP8 codec only, and cannot interop with the Native SDK).
-- The Agora Web SDK v2.7 or later supports Edge on Windows 10, see <a href="https://docs.agora.io/en/faq/browser_support#edge">Edge support</a> for details.
 - The Agora Web SDK theoretically supports 360 Extreme Browser, but we do not guarantee full support.
 
 Due to the various browser engine implementations, support for some features may vary by browser and platform. The following are known issues and limitations.
@@ -123,16 +122,6 @@ The following lists other known issues and limitations of Safari on iOS and macO
   - MacBook Pro (13-inch, 2016, Two Thunderbolt 3 ports)
   - Windows 10 (MI)
 - On Firefox, when calling APIs to get quality statistics, the values of some properties are 0. For example, when calling `getLocalAudioStats` to get the audio statistics of the local stream, the values of `RecordingLevel` and `SendLevel` are 0.
-
-### Edge
-
-The Agora Web SDK v2.7 or later supports the Microsoft Edge browser. Due to browser limitations, the Agora Web SDK supports the following functions:
-
-- Communicates with the Agora Native/Web SDK in audio calls, video calls, and live interactive streaming.
-- Gets the connection statistics by calling the `getStats` method.
-- Gets the audio level by calling the `getAudioLevel` method.
-- Disables/Enables the audio track by calling the `muteAudio`/`unmuteAudio` method.
-- Disables/Enables the video track by calling the `muteVideo`/`unmuteVideo` method.
 
 ## Reference
 [How to use Agora Web SDK on mobile devices?](https://docs.agora.io/en/faq/web_on_mobile)
