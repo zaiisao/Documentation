@@ -3,14 +3,14 @@
 title: Best Practices in Integrating Cloud Recording
 description: 
 platform: All Platforms
-updatedAt: Mon Sep 07 2020 08:38:35 GMT+0800 (CST)
+updatedAt: Mon Sep 07 2020 10:07:17 GMT+0800 (CST)
 ---
 # Best Practices in Integrating Cloud Recording
 To improve application robustness, Agora recommends that you do the following when integrating Cloud Recording RESTful APIs:
 
 ## Acquire service status
 
-You can use Cloud Recording RESTful APIs to acquire the status of the recording service.  Apart from Cloud Recording RESTful APIs, you can use the Message Notification Service as a complementary method to get the service status. 
+You can use Cloud Recording RESTful APIs to acquire the status of the recording service.  Apart from Cloud Recording RESTful APIs, you can use the [Message Notification Service](../../en/cloud-recording/cloud_recording_callback_rest.md) as a complementary method to get the service status. 
 
 <div class="alert note">Agora recommends that core apps should not rely on the Message Notification Service. If your apps already rely heavily on the Message Notification Service, Agora recommends that you contact <a href="mailto:support@agora.io">support@agora.io</a> to enable the redundant message notification function, which doubles the received notifications and reduces the probability of message loss. Redundant message notification still cannot guarantee a 100% arrival rate.</div>
 
