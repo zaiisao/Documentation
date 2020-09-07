@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API Quickstart
 description: Quick start for rest api
 platform: All Platforms
-updatedAt: Mon Sep 07 2020 08:48:23 GMT+0800 (CST)
+updatedAt: Mon Sep 07 2020 09:40:00 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API Quickstart
 Agora Cloud Recording provides RESTful APIs for you to control cloud recording through HTTP requests.
@@ -78,14 +78,14 @@ Call the [`start`](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%2
 
 <div class="alert warning"> Agora Cloud Recording does not support string user IDs (User Accounts). Ensure that every user in the channel has an integer UID. When you call the start method, ensure that the UID in the quotation marks is an integer UID, too.</div>
 
-If this method call succeeds, you get a recording ID (`sid`) from the HTTP response body.
+If this method call succeeds, you get a recording ID (`sid`) from the HTTP response body. See [Best Practices in Integrating Cloud Recording](../../en/cloud-recording/integration_best_practices.md) for details about ensuring the recording service starts successfully.
 
 
 ### Query recording status
 
 During the recording, you can call the [`query`](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/query) method to check the recording status multiple times.
 
-If this method call succeeds, you get the M3U8 filename and the current recording status from the HTTP response body.
+If this method call succeeds, you get the M3U8 filename and the current recording status from the HTTP response body. See *Best Practices in Integrating Cloud Recording* for details about [monitoring service status](../../en/cloud-recording/integration_best_practices.md) and [getting the M3U8 filename](../../en/cloud-recording/integration_best_practices.md).
 
 ### Update subscription lists
 
@@ -100,7 +100,7 @@ During the recording, you can call the [`updateLayout`](https://docs.agora.io/en
 
 Call the [`stop`](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/stop) method to stop the recording.
 
-> Agora Cloud Recording automatically leaves the channel and stops recording when no user is in the channel for more than 30 seconds by default.
+> Agora Cloud Recording automatically leaves the channel and stops recording when no user is in the channel for more than 30 seconds by default. See [Best Practices in Integrating Cloud Recording](../../en/cloud-recording/integration_best_practices.md) for details about avoiding frequent quits of the recording service.
 
 If this method call succeeds, you get the M3U8 filename and the current uploading status from the HTTP response body.
 
