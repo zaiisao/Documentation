@@ -3,7 +3,7 @@
 title: 合流录制
 description: 描述如何设置参数以进行合流录制
 platform: All Platforms
-updatedAt: Sat May 09 2020 02:15:47 GMT+0800 (CST)
+updatedAt: Tue Sep 08 2020 03:03:46 GMT+0800 (CST)
 ---
 # 合流录制
 ## 功能描述
