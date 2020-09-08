@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Tue Sep 08 2020 03:09:53 GMT+0800 (CST)
+updatedAt: Tue Sep 08 2020 03:10:11 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API
 This article contains detailed help for the Cloud Recording RESTful APIs.
@@ -188,11 +188,11 @@ The following parameters are required in the request body.
     - `3`: Customized layout. Set the `layoutConfig` parameter to customize the layout.
   - `layoutConfig`: (Optional) JSONArray. An array of the configuration of each user's region. Supports 17 users at most. Each user's region configuration is a JSON object with the following parameters:
     - `uid`: (Optional) String. The string contains the UID of the user displaying the video in the region. If this parameter is not specified, the configurations apply in the order of the users joining the channel.
-    - `x_axis`: (Mandatory) Float. The relative horizontal position of the top-left corner of the region. The value is between 0.0 (leftmost) and 1.0 (rightmost). 
-    - `y_axis`: (Mandatory) Float. The relative vertical position of the top-left corner of the region. The value is between 0.0 (top) and 1.0 (bottom).
-    - `width`: (Mandatory) Float. The relative width of the region. The value is between 0.0 and 1.0.
-    - `height`: (Mandatory) Float. The relative height of the region. The value is between 0.0 and 1.0.
-    - `alpha`: (Optional) Float. The transparency of the image. The value is between 0.0 (transparent) and 1.0 (opaque). The default value is 1.0.
+    - `x_axis`: (Mandatory) Float. The relative horizontal position of the top-left corner of the region. The value is between 0.0 (leftmost) and 1.0 (rightmost), and is accurate to six decimal places.
+    - `y_axis`: (Mandatory) Float. The relative vertical position of the top-left corner of the region. The value is between 0.0 (top) and 1.0 (bottom), and is accurate to six decimal places.
+    - `width`: (Mandatory) Float. The relative width of the region. The value is between 0.0 and 1.0, and is accurate to six decimal places.
+    - `height`: (Mandatory) Float. The relative height of the region. The value is between 0.0 and 1.0, and is accurate to six decimal places.
+    - `alpha`: (Optional) Float. The transparency of the image. The value is between 0.0 (transparent) and 1.0 (opaque), and is accurate to six decimal places. The default value is 1.0.
     - `render_mode`: (Optional) Number. The video display mode:
       - `0`: (Default) Cropped mode. Uniformly scales the video until it fills the visible boundaries (cropped). One dimension of the video may have clipped contents.
       - `1`: Fit mode. Uniformly scales the video until one of its dimension fits the boundary (zoomed to fit). Areas that are not filled due to the disparity in the aspect ratio will be filled with black.
