@@ -76,7 +76,7 @@ updatedAt: Fri Jun 19 2020 14:32:01 GMT+0800 (CST)
    | 开发平台 | 文件或文件夹                      | 项目路径                |
    | :------- | :-------------------------------- | :---------------------- |
    | Android  | /Android/AgoraRtcEngineKit.plugin | /Assets/Plugins/Android |
-   | iOS      | /iOS/AgoraRtcEngineKit.framework  | /Assets/Plugins/iOS     |
+   | iOS      | /iOS/AgoraAudioKit.framework  | /Assets/Plugins/iOS     |
    | macOS    | /macOS/agoraSdkCWrapper.bundle    | /Assets/Plugins/macOS   |
    | Windows  | /x86                              | /Assets/Plugins/x86     |
    | Windows  | /x86_64  | /Assets/Plugins/x86_64            |

@@ -91,7 +91,7 @@ Agora 在 GitHub 上提供开源的实时语音通话示例项目 [Hello-Unity3D
    | 开发平台 | 文件或文件夹                      | 项目路径                |
    | :------- | :-------------------------------- | :---------------------- |
    | Android  | /Android/AgoraRtcEngineKit.plugin | /Assets/Plugins/Android |
-   | iOS      | /iOS/AgoraRtcEngineKit.framework  | /Assets/Plugins/iOS     |
+   | iOS      | /iOS/AgoraAudioKit.framework  | /Assets/Plugins/iOS     |
    | macOS    | /macOS/agoraSdkCWrapper.bundle    | /Assets/Plugins/macOS   |
    | Windows  | /x86                              | /Assets/Plugins/x86     |
    | Windows  | /x86_64  | /Assets/Plugins/x86_64            |
