@@ -3,7 +3,7 @@
 title: 合流录制
 description: 描述如何设置参数以进行合流录制
 platform: All Platforms
-updatedAt: Tue Sep 08 2020 03:03:46 GMT+0800 (CST)
+updatedAt: Tue Sep 08 2020 03:06:45 GMT+0800 (CST)
 ---
 # 合流录制
 ## 功能描述
@@ -89,5 +89,5 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 
 ## 开发注意事项
 
-- 如果录制内容选择**仅录制视频**或**同时录制音视频**，但是 Web 端用户没有发送视频，也会生成视频录制文件，录制黑屏。
-- 如果某用户中途停止发流或退出频道，该用户画面会显示为背景色。
+- 对于 Web 端用户，如果用户从未发布过本地视频（`publish`），或中途取消发布本地视频（`unpublish`），则该用户画面显示为背景色；如果用户禁用视频轨道（`muteVideo`），则该用户画面为黑屏。
+- 对于 Native 端用户，如果某用户中途停止发流或退出频道，该用户画面会显示为背景色。
