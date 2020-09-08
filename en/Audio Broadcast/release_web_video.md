@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Mon Sep 07 2020 12:24:41 GMT+0800 (CST)
+updatedAt: Tue Sep 08 2020 04:07:07 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -121,7 +121,7 @@ v3.2.0 fully supports Chromium-based versions of Microsoft Edge (versions 80 and
 
 **API changes**
 
-v3.2.0 adds the `optimizationMode` property in `StreamSpec`.
+v3.2.0 adds the [`optimizationMode`](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/web/interfaces/agorartc.streamspec.html#optimizationmode) property in `StreamSpec`.
 
 ## v3.1.2
 
