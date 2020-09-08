@@ -72,7 +72,7 @@ Choose either of the following approaches to integrate the Agora Unity SDK into 
   | Target Platform | File or subfolder                 | Directory of your project |
   | :-------------- | :-------------------------------- | :------------------------ |
   | Android         | /Android/AgoraRtcEngineKit.plugin | /Assets/Plugins/Android   |
-  | iOS             | /iOS/AgoraRtcEngineKit.framework  | /Assets/Plugins/iOS       |
+  | iOS             | /iOS/AgoraAudioKit.framework  | /Assets/Plugins/iOS       |
   | macOS           | /macOS/agoraSdkCWrapper.bundle    | /Assets/Plugins/macOS     |
   | Windows         | /x86                              | /Assets/Plugins/x86       |
   | Windows  | /x86_64  | /Assets/Plugins/x86_64            |
