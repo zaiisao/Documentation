@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Tue Sep 08 2020 04:07:35 GMT+0800 (CST)
+updatedAt: Tue Sep 08 2020 04:07:59 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -124,7 +124,7 @@ v3.2.0 全面支持基于 Chromium 内核的 Windows Edge 浏览器（80 及以�
 
 **API 变更**
 
-- `StreamSpec` 类新增 `optimizationMode` 属性。
+`StreamSpec` 类新增 [`optimizationMode`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/interfaces/agorartc.streamspec.html#optimizationmode) 属性。
 
 ## 3.1.2 版
 
