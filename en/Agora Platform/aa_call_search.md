@@ -3,7 +3,7 @@
 title: Call Search
 description: Introduction to call research
 platform: All Platforms
-updatedAt: Mon Jul 06 2020 05:04:01 GMT+0800 (CST)
+updatedAt: Fri Sep 11 2020 09:49:44 GMT+0800 (CST)
 ---
 # Call Search
 The [**Call Search**](https://dashboard.agora.io/analytics/call/search) function of Agora Analytics allows you to see the quality of your calls in diagrams displaying data during the call process. The information includes:
@@ -35,7 +35,7 @@ To search calls, fill in the search fields:
 4.  Filter the calls by the call states, and you can choose to search for calls that are ongoing or ended.
 5.  Enter a channel name or [user ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameusernameausername) and click **Search**.
 
-> By default, **Call Search** uses the UTC zone. To use your local time zone, click the clock icon ![](https://web-cdn.agora.io/docs-files/1545893874792) on the top menu bar.
+> By default, **Call Search** uses your local time zone. To use the UTC zone, click the clock icon ![](https://web-cdn.agora.io/docs-files/1545893874792) on the top menu bar.
 
 ## View Quality of Experience
 

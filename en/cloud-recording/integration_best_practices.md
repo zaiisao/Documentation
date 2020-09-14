@@ -3,7 +3,7 @@
 title: Best Practices in Integrating Cloud Recording
 description: 
 platform: All Platforms
-updatedAt: Tue Sep 08 2020 04:20:30 GMT+0800 (CST)
+updatedAt: Thu Sep 10 2020 10:53:06 GMT+0800 (CST)
 ---
 # Best Practices in Integrating Cloud Recording
 To improve application robustness, Agora recommends that you do the following when integrating Cloud Recording RESTful APIs:
@@ -12,7 +12,9 @@ To improve application robustness, Agora recommends that you do the following wh
 
 You can use Cloud Recording RESTful APIs to acquire the status of the recording service.  Apart from Cloud Recording RESTful APIs, you can use the [Message Notification Service](../../en/cloud-recording/cloud_recording_callback_rest.md) as a complementary method to get the service status. 
 
-<div class="alert note">Agora recommends that core apps should not rely on the Message Notification Service. If your apps already rely heavily on the Message Notification Service, Agora recommends that you contact <a href="mailto:support@agora.io">support@agora.io</a> to enable the redundant message notification function, which doubles the received notifications and reduces the probability of message loss. Redundant message notification still cannot guarantee a 100% arrival rate.</div>
+<div class="alert note">Agora recommends that core apps should not rely on the Message Notification Service. If your apps already rely heavily on the Message Notification Service, Agora recommends that you contact <a href="mailto:support@agora.io">support@agora.io</a> to enable the redundant message notification function, which doubles the received notifications and reduces the probability of message loss. After enabling the redundant message notification function, you need to deduplicate messages based on <code>sid</code>. Redundant message notification still cannot guarantee a 100% arrival rate.</div>
+
+<div class="alert note">The queries per second (QPS) quota is 10 requests per second for each App ID. You can estimate the QPS quota your project needs according to your PCU and query frequency, and contact <a href="mailto:support@agora.io">support@agora.io</a> to increase your quota if necessary.</div>
 
 ### <a name="start_success"></a>Ensure the recording service starts successfully
 
@@ -33,7 +35,9 @@ You can periodically call `query` to ensure that the recording service is in pro
 
 #### Periodically query service status
 
-If the reliability of the status of a cloud recording is a high priority, Agora strongly recommends using the `query` method to periodically query the recording service status. The interval between two calls can be around one minute. Take the corresponding measure based on the received HTTP status code:
+If the reliability of the status of a cloud recording is a high priority, Agora strongly recommends using the `query` method to periodically query the recording service status. The interval between two calls can be around two minutes. Take the corresponding measure based on the received HTTP status code:
+
+<div class="alert note">The queries per second (QPS) quota is 10 requests per second for each App ID. You can estimate the QPS quota your project needs according to your PCU and query frequency, and contact <a href="mailto:support@agora.io">support@agora.io</a> to increase your quota if necessary.</div>
 
 - If the returned HTTP status code is always `40x`, check the parameter values in your request.
 - If the returned HTTP status code is `404`, and the request parameters are confirmed to be correct, the recording has either not started successfully, or the recording quit after starting. Agora recommends that you use a backoff strategy, for example, retry after 5, 10, and 15 seconds successively.

@@ -2,7 +2,7 @@
 ---
 title: Rotate the Video
 description: 
-platform: iOS,macOS
+platform: iOS
 updatedAt: Mon Jul 06 2020 09:58:25 GMT+0800 (CST)
 ---
 # Rotate the Video

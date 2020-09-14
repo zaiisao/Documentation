@@ -3,7 +3,7 @@
 title: Composite Recording
 description: 
 platform: All Platforms
-updatedAt: Tue Sep 08 2020 03:07:47 GMT+0800 (CST)
+updatedAt: Thu Sep 10 2020 09:55:22 GMT+0800 (CST)
 ---
 # Composite Recording
 ## Overview
@@ -91,4 +91,4 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 ## Considerations
 
 - If a Web user never publishes the local video, or unpublishes the video during a recording session, the recording service fills the region of that user with the color of the canvas; if the user mutes the local video, the region becomes black.
-- If a native user stops sending streams or leaves the channel during a recording session, the recording service fills the region of that user with the color of the canvas.
+- If a native user stops sending streams during a recording session, the region of that user shows the last frame; if the user leaves the channel, the recording service fills the region of that user with the color of the canvas.

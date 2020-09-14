@@ -3,7 +3,7 @@
 title: Big Channel (Beta)
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 06 2020 05:03:29 GMT+0800 (CST)
+updatedAt: Fri Sep 11 2020 09:50:38 GMT+0800 (CST)
 ---
 # Big Channel (Beta)
 The **[Big Channel](#BigChannel)** function of Agora Analytics enables you to view and analyze the real-time usage and quality of Big Channels, to help you improve the efficiency of activities in Big Channels.
@@ -28,7 +28,7 @@ Big Channel provides the following information:
 4. Click **Investigation Tool** > **Big Channel Config** to configure a Big Channel. For details, see [Big Channel Config](../../en/Agora%20Platform/aa_big_channel_config.md).
 5. Click **Investigation Tool** > **Big Channel** to view and analyze the real-time usage and quality of Big Channels.
 
-> By default, Big Channel uses UTC. To change UTC to your local time zone, click ![](https://web-cdn.agora.io/docs-files/1545894297187) on the top menu bar.
+> By default, Big Channel uses your local time zone. To use the UTC zone, click ![](https://web-cdn.agora.io/docs-files/1545894297187) on the top menu bar.
 
 ## Find a Big Channel
 

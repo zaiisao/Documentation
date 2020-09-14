@@ -3,7 +3,7 @@
 title: Capture Screenshots
 description: snapshot
 platform: All Platforms
-updatedAt: Tue May 19 2020 03:48:02 GMT+0800 (CST)
+updatedAt: Thu Sep 10 2020 03:34:47 GMT+0800 (CST)
 ---
 # Capture Screenshots
 ## Overview
@@ -71,7 +71,7 @@ Pay attention to the following parameters as incorrect settings result in errors
 
 - In the URL of your request, `mode` must be `individual`.
 - You cannot set both `recordingFileConfig` and `snapshotConfig` at the same time.
-- `streamType` must be `1` or `2`.
+- `streamTypes` must be `1` or `2`.
 - If you have set `subscribeAudioUid`, you must also set `subscribeVideoUids`.
 
 If a user stops sending the video stream during a session, the Cloud Recording service ceases taking screenshots until the stream resumes. The [Agora message notification service](../../en/cloud-recording/cloud_recording_callback_rest.md) sends you a callback notifying you of the event. The event does not affect other users in the channel.

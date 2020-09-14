@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: iOS
-updatedAt: Thu Aug 27 2020 13:44:04 GMT+0800 (CST)
+updatedAt: Mon Sep 14 2020 03:33:34 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for iOS.
@@ -16,6 +16,24 @@ The Video SDK supports the following scenarios:
 -   Live interactive audio or video streaming
 
 For the key features included in each scenario, see [Agora Voice Call Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms), [Agora Video Call Overview](https://docs.agora.io/en/Video/product_video?platform=All%20Platforms), [Agora Live Interactive Audio Streaming Overview](https://docs.agora.io/en/Audio%20Broadcast/product_live_audio?platform=All_Platforms) and [Agora Live Interactive Video Streaming Overview](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms).
+
+## v3.1.2
+
+v3.1.2 was released on September 14, 2020.
+
+**Compatibility changes**
+
+To improve user experience, this version disables the local network connection quality report by default, to prevent the prompt to find local network devices from popping up when an end user launches the app on an iOS 14.0 device. The [`gatewayRtt`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraChannelStats.html#//api/name/gatewayRtt) parameter in the [`reportRtcStats`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:reportRtcStats:) callback is disabled by default. Do not use `gatewayRtt` to obtain the round-trip delay between the client and the local router. See the [FAQ](https://docs.agora.io/en/faq/local_network_privacy) for details.
+
+If you want to enable the `gatewayRtt` parameter, please contact Agora technical support via [support@agora.io](mailto:support@agora.io).
+
+**Issues fixed**
+
+This release fixed the following issues:
+
+- When you use MediaIO to switch to a different video source, the screen gets frozen.
+- When a remote user leaves the channel, the view of the remote user becomes black.
+- The [`firstLocalVideoFrameWithSize`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:firstLocalVideoFrameWithSize:elapsed:) and [`firstRemoteVideoFrameOfUid`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:firstRemoteVideoFrameOfUid:size:elapsed:) callbacks are not triggered at the right time.
 
 ## v3.1.1
 

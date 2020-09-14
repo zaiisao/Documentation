@@ -120,6 +120,8 @@ Add the following permissions in the **info.plist** file for device access accor
 | Privacy - Camera Usage Description      | String      | To access the camera, such as for a call or live interactive streaming.      |
 
 
+<div class="alert note">iOS 14.0 adds <b>Privacy - Local Network Usage Description</b> permission. If you use the SDK with the version earlier than v3.1.2, you need to add this permission. See <a href="https://docs.agora.io/en/faq/local_network_privacy">FAQ</a > for details.</div>
+	
 **Before**:
  
 ![](https://web-cdn.agora.io/docs-files/1584604864457)

@@ -3,7 +3,7 @@
 title: Big Channel Config (Beta)
 description: 
 platform: All Platforms
-updatedAt: Wed May 06 2020 09:52:04 GMT+0800 (CST)
+updatedAt: Fri Sep 11 2020 09:51:08 GMT+0800 (CST)
 ---
 # Big Channel Config (Beta)
 The **Big Channel Config** function of Agora Analytics enables you to customize big channels in your project, and you can choose **Enable All**, **Enable by Project** or **Enable by Channel** according to your actual needs.
@@ -16,7 +16,7 @@ The **Big Channel Config** function of Agora Analytics enables you to customize 
    ![](https://web-cdn.agora.io/docs-files/1581333255519)
 4. Click **Big Channel Config** to customize big channels in your project.
 
-> By default, **Big Channel Config** uses the UTC zone. To use your local time zone, click ![](https://web-cdn.agora.io/docs-files/1545894297187) on the top menu bar.
+> By default, **Big Channel Config** uses your local time zone. To use the UTC zone, click ![](https://web-cdn.agora.io/docs-files/1545894297187) on the top menu bar.
 
 ## Strategy
 

@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Tue Sep 08 2020 03:10:11 GMT+0800 (CST)
+updatedAt: Thu Sep 10 2020 03:35:32 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API
 This article contains detailed help for the Cloud Recording RESTful APIs.
@@ -227,7 +227,7 @@ If you set up a subscription list for audio, but not for video, then Agora Cloud
 
 - In the URL of your request, `mode` must be `individual`.
 - You cannot set both `recordingFileConfig` and `snapshotConfig` at the same time.
-- `streamType` must be `1` or `2`.
+- `streamTypes` must be `1` or `2`.
 - If you have set `subscribeAudioUid`, you must also set `subscribeVideoUids`.
 
 `snapshotConfig` includes the following fields:

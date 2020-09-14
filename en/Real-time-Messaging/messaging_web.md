@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: 1.1.0
 platform: Web
-updatedAt: Mon Aug 10 2020 02:15:42 GMT+0800 (CST)
+updatedAt: Mon Sep 14 2020 01:45:15 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 
@@ -126,10 +126,10 @@ const client = AgoraRTM.createInstance('YourAppId');
 
 #### Set a listener to the connection state change 
 
-By listening to the [ConnectionStateChanged](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmclientevents.html#connectionstatechange) event on [RtmClient](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html), you can be notified of connection state changes between the SDK and the Agora RTM server. 
+By listening to the [ConnectionStateChanged](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmevents.rtmclientevents.html#connectionstatechanged) event on [RtmClient](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html), you can be notified of connection state changes between the SDK and the Agora RTM server. 
 
 ```JavaScript
-client.on('ConnectionStateChange', (newState, reason) => {
+client.on('ConnectionStateChanged', (newState, reason) => {
   console.log('on connection state changed to ' + newState + ' reason: ' + reason);
 });
 ```
@@ -176,7 +176,7 @@ You can send and receive peer-to-peer messages after logging in Agora's RTM serv
 Call the [sendMessageToPeer](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html#sendmessagetopeer) method of [RtmClient](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html) to send a peer-to-peer message. You need to do the following:
 
 - Pass the user ID of the intended receiver.
-- Pass an [RtmMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmmessage.html) object.
+- Pass an [RtmMessage](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmevents.rtmclientevents.html#connectionstatechanged) object.
 
 This method returns a Promise:
 
