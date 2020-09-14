@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS
-updatedAt: Thu Aug 27 2020 13:47:17 GMT+0800 (CST)
+updatedAt: Mon Sep 14 2020 03:34:25 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 语音 SDK 的发版说明。
@@ -16,6 +16,18 @@ iOS 语音 SDK 支持两种主要场景:
 -   语音直播
 
 点击 [语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms) 以及 [音频互动直播产品概述](https://docs.agora.io/cn/Audio%20Broadcast/product_live_audio?platform=All%20Platforms) 了解关键特性。
+
+## **3.1.2 版**
+
+该版本于 2020 年 9 月 14 日发布。
+
+**升级必看**
+
+为提升用户体验，防止 app 在 iOS 14.0 版本上触发查看本地网络设备的弹窗提示，该版本默认关闭本地网络连通质量报告功能。[`reportRtcStats`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:reportRtcStats:) 中的 [`gatewayRtt`](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraChannelStats.html#//api/name/gatewayRtt) 参数会失效，请不要使用该参数获取客户端到本地路由器的往返延时。详见 [FAQ](https://docs.agora.io/cn/faq/local_network_privacy)。如需启用该功能，请[提交工单](https://agora-ticket.agora.io/)联系声网技术支持。
+
+**问题修复**
+
+该版本修复了推流失败的问题。
 
 ## **3.1.1 版**
 

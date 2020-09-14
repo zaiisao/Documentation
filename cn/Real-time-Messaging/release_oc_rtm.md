@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS,macOS
-updatedAt: Tue Sep 01 2020 04:03:21 GMT+0800 (CST)
+updatedAt: Thu Sep 10 2020 11:10:36 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -17,7 +17,8 @@ Agora 实时消息 SDK 提供了稳定可靠、低延时、高并发的全球消
 
 **升级必看**
 
-`setLogFileSize` 日志文件的大小默认值从 512 KB 增加到 10 MB。上限从 10 MB 增加到 1 GB。
+- `setLogFileSize` 日志文件的大小默认值从 512 KB 增加到 10 MB。上限从 10 MB 增加到 1 GB。
+- 在销毁 `AgoraRtmKit` 实例之前，你需要调用 `destroyChannelWithId` 销毁所有现存的 `AgoraRtmChannel` 实例，否则可能会造成崩溃。
 
 **新增功能**
 

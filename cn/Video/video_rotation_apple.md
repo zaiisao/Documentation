@@ -2,7 +2,7 @@
 ---
 title: 视频采集旋转
 description: 
-platform: iOS,macOS
+platform: iOS
 updatedAt: Mon Jul 06 2020 10:04:07 GMT+0800 (CST)
 ---
 # 视频采集旋转

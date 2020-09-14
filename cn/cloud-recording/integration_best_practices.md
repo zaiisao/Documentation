@@ -3,7 +3,7 @@
 title: 云端录制集成最佳实践
 description: 
 platform: All Platforms
-updatedAt: Tue Sep 08 2020 04:19:05 GMT+0800 (CST)
+updatedAt: Thu Sep 10 2020 07:50:12 GMT+0800 (CST)
 ---
 # 云端录制集成最佳实践
 为了保障录制服务的可靠性，Agora 建议你在集成云端录制 RESTful API 时注意以下几点：
@@ -12,7 +12,9 @@ updatedAt: Tue Sep 08 2020 04:19:05 GMT+0800 (CST)
 
 你可以通过云端录制 RESTful API 来获取录制服务状态。相比于云端录制 RESTful API，[消息通知服务](../../cn/cloud-recording/cloud_recording_callback_rest.md)可以作为辅助手段。
 
-<div class="alert note">消息通知服务只能作为辅助手段来获取服务录制状态。不建议你的核心业务逻辑依赖消息通知服务。如果你的业务对该服务强依赖，建议联系 <a href="mailto:sales@agora.io">sales@agora.io</a> 开通冗余消息功能，即接收双路消息通知，降低消息丢失的概率。冗余消息功能仍然不能保证 100% 的消息到达率。</div>
+<div class="alert note">消息通知服务只能作为辅助手段来获取服务录制状态。不建议你的核心业务逻辑依赖消息通知服务。如果你的业务对该服务强依赖，建议联系 <a href="mailto:sales@agora.io">sales@agora.io</a> 开通冗余消息功能，即接收双路消息通知，降低消息丢失的概率。开通冗余消息功能后，需要你基于 <code>sid</code> 对消息进行去重。冗余消息功能仍然不能保证 100% 的消息到达率。</div>
+
+<div class="alert note">每个 App ID 每秒钟的请求数（QPS）限制默认为 10 次。请根据你的同时最大并发频道量（PCU）和查询间隔，预估所需的 QPS，并通过提交工单的方式申请调整 QPS 限制。</div>
 
 
 ### <a name="start_success"></a>确认录制服务已成功启动
@@ -32,7 +34,9 @@ updatedAt: Tue Sep 08 2020 04:19:05 GMT+0800 (CST)
 
 #### 周期性频道查询
 
-如果你对状态查询的可靠性要求较高，Agora 强烈建议你使用 `query` 方法周期性查询频道内的录制状态，例如每隔 1 分钟调用一次 `query`，并根据返回的 HTTP 状态码采取相应措施。
+如果你对状态查询的可靠性要求较高，Agora 强烈建议你使用 `query` 方法周期性查询频道内的录制状态，例如每隔 2 分钟调用一次 `query`，并根据返回的 HTTP 状态码采取相应措施。
+
+<div class="alert note">每个 App ID 每秒钟的请求数（QPS）限制默认为 10 次。请根据你的同时最大并发频道量（PCU）和查询间隔，预估所需的 QPS，并通过提交工单的方式申请调整 QPS 限制。</div>
 
 - 如果返回的 HTTP 状态码一直为 `40x`，则表示请求参数错误，需要进行排查。
 - 如果返回的 HTTP 状态码为 `404`，且已经确认请求参数无误，则表示录制并未成功启动、或启动后中途退出。建议采用退避策略多次调用 `query` （例如间隔 5 秒、10 秒、15 秒）进行确认。

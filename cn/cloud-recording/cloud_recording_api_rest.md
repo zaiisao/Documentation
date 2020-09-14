@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Tue Sep 08 2020 03:08:55 GMT+0800 (CST)
+updatedAt: Thu Sep 10 2020 03:36:52 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 该文提供云端录制 RESTful API 的详细信息。
@@ -223,7 +223,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
 
 - 请求 URL 中的 `mode` 参数必须设为 `individual`。
 - 不可设置 `recordingFileConfig`。
-- `streamType` 必须设置为 1 或 2
+- `streamTypes` 必须设置为 1 或 2
 - 如果设置了 `subscribeAudioUid`，则必须同时设置 `subscribeVideoUids`。
 
 `snapshotConfig` 包含以下字段：

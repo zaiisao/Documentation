@@ -3,7 +3,7 @@
 title: 视频截图
 description: 
 platform: All Platforms
-updatedAt: Tue May 19 2020 03:47:35 GMT+0800 (CST)
+updatedAt: Thu Sep 10 2020 03:34:28 GMT+0800 (CST)
 ---
 # 视频截图
 ## 功能描述
@@ -65,7 +65,7 @@ updatedAt: Tue May 19 2020 03:47:35 GMT+0800 (CST)
 
 - 请求 URL 中的 `mode` 参数必须设为 `individual。`
 - `不可设置 recordingFileConfig。`
-- `streamType` 必须设置为 1 或 2
+- `streamTypes` 必须设置为 1 或 2
 - 如果设置了 `subscribeAudioUid`，则必须同时设置 `subscribeVideoUids`。
 
 另外，在截图过程中，如果某用户中途停止发布视频流，云端录制会停止对其截图，并发送 [Agora 消息通知服务](https://docs.agora.io/cn/cloud-recording/cloud_recording_callback_rest)的回调。其他用户的截图不受影响。当该用户再次发布视频流时，云端录制会恢复对其截图。

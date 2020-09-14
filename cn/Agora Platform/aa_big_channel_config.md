@@ -3,7 +3,7 @@
 title: 大频道配置 (Beta)
 description: 
 platform: All Platforms
-updatedAt: Wed Feb 19 2020 10:19:00 GMT+0800 (CST)
+updatedAt: Fri Sep 11 2020 09:46:56 GMT+0800 (CST)
 ---
 # 大频道配置 (Beta)
 水晶球的**大频道配置**功能帮助你实现自定义项目中的大频道，你可以根据实际需要选择全部开启、按项目开启或按频道开启[大频道](../../cn/Agora%20Platform/aa_big_channel.md)功能。
@@ -16,7 +16,7 @@ updatedAt: Wed Feb 19 2020 10:19:00 GMT+0800 (CST)
    ![](https://web-cdn.agora.io/docs-files/1579063870030)
 4. 点击**问题调查**下的**大频道配置**，对大频道进行配置。
 
-> **大频道配置**默认使用 UTC 时间，如果你需要以本地时区查看通话，点击页面顶部菜单栏的时钟![](https://web-cdn.agora.io/docs-files/1545894297187)切换时区。
+> **大频道配置**默认使用本地时间，如果你需要以本地时区查看通话，点击页面顶部菜单栏的时钟![](https://web-cdn.agora.io/docs-files/1545894297187)切换时区。
 
 ## 策略
 

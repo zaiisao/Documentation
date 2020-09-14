@@ -3,7 +3,7 @@
 title: 大频道 (Beta)
 description: 
 platform: All Platforms
-updatedAt: Thu Apr 02 2020 06:13:17 GMT+0800 (CST)
+updatedAt: Fri Sep 11 2020 09:46:51 GMT+0800 (CST)
 ---
 # 大频道 (Beta)
 水晶球的**大频道**功能为大频道提供实时质量监控和分析，可以极大提高运营大频道的效率。
@@ -28,7 +28,7 @@ updatedAt: Thu Apr 02 2020 06:13:17 GMT+0800 (CST)
 4. 点击**问题调查**下的**大频道配置**，对大频道进行配置。详见[大频道配置](../../cn/Agora%20Platform/aa_big_channel_config.md)。
 5. 点击**问题调查**下的**大频道**，查看或分析大频道的用量和观众分布情况。
 
-> 大频道默认使用 UTC 时间，如果你需要以本地时区查看[通话](#Call)，点击页面顶部菜单栏的时钟![](https://web-cdn.agora.io/docs-files/1545894297187)切换时区。
+> 大频道默认使用本地时间，如果你需要以本地时区查看[通话](#Call)，点击页面顶部菜单栏的时钟![](https://web-cdn.agora.io/docs-files/1545894297187)切换时区。
 
 ## 查找大频道
 

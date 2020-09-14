@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Thu Aug 27 2020 11:53:29 GMT+0800 (CST)
+updatedAt: Mon Sep 14 2020 03:13:46 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -33,6 +33,14 @@ Android 视频 SDK 支持两种主要场景:
 以 Android 9 为目标平台的应用应采用私有 DNS API。 具体而言，当系统解析程序正在执行 DNS-over-TLS 时，应用应确保任何内置 DNS 客户端均使用加密的 DNS 查找与系统相同的主机名，或停用它而改用系统解析程序。
 
 详情请参考 [Android 隐私权变更](https://developer.android.com/about/versions/pie/android-9.0-changes-28?hl=zh-CN#privacy-changes-p)。
+
+## **3.1.2 版**
+
+该版本于 2020 年 9 月 14 日发布。该版本修复了如下问题：
+
+- 使用 MediaIO 方式切换视频源时画面会卡住。
+- `onFirstLocalVideoFrame` 和 `onFirstRemoteVideoFrame` 回调的触发时机不准确。
+
 
 ## **3.1.1 版**
 

@@ -137,6 +137,8 @@ end
 | Privacy - Camera Usage Description      | String      | 使用摄像头的目的，例如：for a call or live interactive streaming。      |
 
 
+<div class="alert note">iOS 14.0 版本新增了 <b>Privacy - Local Network Usage Description</b> 权限。如果使用 3.1.2 之前版本的 SDK，你需要添加该权限。详见 <a href="https://docs.agora.io/cn/faq/local_network_privacy">FAQ</a >。</div>
+	
 **添加前**：
  
 ![](https://web-cdn.agora.io/docs-files/1584604864457)
