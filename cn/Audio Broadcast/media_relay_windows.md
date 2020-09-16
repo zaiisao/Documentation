@@ -3,7 +3,7 @@
 title: 跨直播间连麦
 description: 
 platform: Windows
-updatedAt: Fri May 08 2020 08:33:09 GMT+0800 (CST)
+updatedAt: Tue Sep 15 2020 03:09:46 GMT+0800 (CST)
 ---
 # 跨直播间连麦
 ## 功能描述
@@ -81,7 +81,7 @@ lpUpdateDestInfos->uid = 0;
 cmrc.destInfos = lpUpdateDestInfos;
 cmrc.destCount = 1;
 // 设置要更新的远端频道信息
-ret = m_lpAgoraEngine->startChannelMediaRelay(cmrc);	
+ret = m_lpAgoraEngine->updateChannelMediaRelay(cmrc);	
 ```
 
 <div class="alert note"><code>updateChannelMediaRelay</code> 方法需在 <code>startChannelMediaRelay</code> 后调用。</div>

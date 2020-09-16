@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: macOS
-updatedAt: Fri Sep 11 2020 04:05:23 GMT+0800 (CST)
+updatedAt: Tue Sep 15 2020 02:32:27 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -17,6 +17,12 @@ macOS 语音 SDK 支持两种主要场景:
 -   音频直播
 
 点击 [语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms) 以及 [音频互动直播产品概述](https://docs.agora.io/cn/Audio%20Broadcast/product_live_audio?platform=All%20Platforms)了解关键特性。
+
+## **3.1.2 版**
+
+该版本于 2020 年 9 月 15 日发布。
+
+该版本修复了推流失败的问题。
 
 ## **3.1.1 版**
 

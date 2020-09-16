@@ -3,12 +3,12 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Tue Jun 30 2020 02:18:56 GMT+0800 (CST)
+updatedAt: Mon Sep 14 2020 10:26:57 GMT+0800 (CST)
 ---
 # 产品概述
 视频通话 SDK 可实现一对一单聊、多人群聊，同时具备纯语音通话和视频通话功能。
 
-视频通话和[视频互动直播](https://docs.agora.io/cn/Interactive%20Broadcast/product_live?platform=All%20Platforms)不同。视频通话，不分主播和观众，所有用户都可自由发言，默认流畅和低延时优先，画质稍低，典型场景如多人视频会议；互动直播，用户区分主播和观众，只有主播可以自由发言，默认高画质优先，典型场景如互动课堂。
+视频通话不同于[视频互动直播](https://docs.agora.io/cn/Interactive%20Broadcast/product_live?platform=All%20Platforms)。视频通话不区分主播和观众，所有用户都可以发言并看见彼此；视频直播的用户分为主播和观众，只有主播可以自由发言，且被其他用户看见。详见[通信和直播场景有什么区别](https://docs.agora.io/cn/faq/profile_difference)。
 
 ## 功能和场景
 

@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: macOS
-updatedAt: Fri Sep 11 2020 04:07:01 GMT+0800 (CST)
+updatedAt: Tue Sep 15 2020 02:32:06 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -20,6 +20,12 @@ macOS 视频 SDK 支持两种主要场景:
 #### 已知问题和局限性
 
 macOS 上连接 USB 耳麦，可能会出现听不见声音或者声音显示异常等问题，通常为 USB 设备驱动的问题，macOS 上对普通的 USB 支持都不是很友好，建议购买更优质的 USB 耳麦。
+
+## **3.1.2 版**
+
+该版本于 2020 年 9 月 15 日发布。
+
+该版本修复了 [`firstLocalVideoFrameWithSize`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:firstLocalVideoFrameWithSize:elapsed:) 和 [`firstRemoteVideoFrameOfUid`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:firstRemoteVideoFrameOfUid:size:elapsed:) 回调触发时机不准确的问题。
 
 ## **3.1.1 版**
 

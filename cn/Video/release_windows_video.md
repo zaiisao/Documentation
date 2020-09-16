@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Windows
-updatedAt: Fri Sep 11 2020 10:16:22 GMT+0800 (CST)
+updatedAt: Tue Sep 15 2020 02:29:32 GMT+0800 (CST)
 ---
 # 发版说明
 
@@ -19,6 +19,12 @@ Windows 视频 SDK 支持两种主要场景:
 点击 [语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms)、[视频通话产品概述](https://docs.agora.io/cn/Video/product_video?platform=All%20Platforms) 、[音频互动直播产品概述](https://docs.agora.io/cn/Audio%20Broadcast/product_live_audio?platform=All%20Platforms)以及[视频互动直播产品概述](https://docs.agora.io/cn/Interactive%20Broadcast/product_live?platform=All%20Platforms)了解关键特性。
 
 Windows 视频 SDK 支持 x86 和 x64 架构。
+
+## **3.1.2 版**
+
+该版本于 2020 年 9 月 15 日发布。
+
+该版本修复了 `onFirstLocalVideoFrame` 和 `onFirstRemoteVideoFrame` 回调的触发时机不准确的问题。
 
 ## **3.1.1 版**
 

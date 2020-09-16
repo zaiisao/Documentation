@@ -3,7 +3,7 @@
 title: 应用企业防火墙限制
 description: 
 platform: All Platforms
-updatedAt: Tue Sep 01 2020 03:44:14 GMT+0800 (CST)
+updatedAt: Tue Sep 15 2020 10:23:47 GMT+0800 (CST)
 ---
 # 应用企业防火墙限制
 ## 概览
@@ -22,29 +22,7 @@ updatedAt: Tue Sep 01 2020 03:44:14 GMT+0800 (CST)
 
 ### Native SDK
 
-将以下目标域名及对应的端口添加到防火墙白名单：
-
-```
-qoslbs.agoralab.co
-qos.agoralab.co
-ap1.agora.io
-ap2.agora.io
-ap3.agora.io
-ap4.agora.io
-ap5.agora.io
-ap.agoraio.cn
-vocs1.agora.io
-vocs2.agora.io
-vocs3.agora.io
-vocs4.agora.io
-vocs5.agora.io
-```
-
-| 目标端口 | 协议 | 操作 |
-| ---------- | ------------------------------------------------ | -----------------|
-| 1080；8000；9700；25000；30000；30001 - 30003（用于推流） | TCP              |  允许 |
-| 1080；4000 - 4030；7000；8000；8913；9700；25000   |  UDP  | 允许 |
-
+Agora RTC Native SDK 不支持通过添加域名及端口的方式提供音视频功能。Agora 推荐你参考[使用云代理](../../cn/Agora%20Platform/cloudproxy_native.md)进行连接。
 
 ### Web SDK
 
@@ -90,8 +68,6 @@ miniapp.agoraio.cn
 
 ```
 .agora.io
-qoslbs.agoralab.co
-qos.agoralab.co
 ```
 
 | 目标端口 | 协议 | 操作 |
@@ -140,49 +116,9 @@ ap-web-4.agoraio.cn
 
 ## Agora 本地服务端录制 SDK
 
-将以下目标域名及对应的端口添加到防火墙白名单：
-
-```
-qoslbs.agoralab.co
-qos.agoralab.co
-ap1.agora.io
-ap2.agora.io
-ap3.agora.io
-ap4.agora.io
-ap5.agora.io
-ap.agoraio.cn
-vocs1.agora.io
-vocs2.agora.io
-vocs3.agora.io
-vocs4.agora.io
-vocs5.agora.io
-```
-
-| 目标端口 | 协议 | 操作 |
-| --------------- | -------------- | ----------- |
-| 1080；8000；9700；25000；30000 | TCP | 允许 |
-| 双向 1080；7000；8000；8913；9700；25000；本地端口 4000-4030；所有的录制进程所使用的单向下行本地端口 | UDP | 允许 |
-
-<div class="alert note">单向下行接口：录制一个频道的内容需要开启一个对应的录制进程；单个录制进程需要使用 4 个单向下行端口。进程（包括各个录制进程和系统进程）之间不得有端口冲突。<ul><li>Agora 建议你指定录制进程使用端口的范围。你可以为多个录制进程统一配置较大的端口范围（Agora 建议 40000 ~ 41000 或更大）。此时，录制 SDK 会在指定范围内为每个录制进程分配端口，并避免端口的冲突。要设置端口范围，您需要配置参数 <code>lowUdpPort</code> 和 <code>highUdpPort</code>。</li><li>如果不指定参数 <code>lowUdpPort</code> 和 <code>highUdpPort</code>，录制进程所使用的端口为随机端口，会有端口冲突的风险。</li></ul></div>
+Agora 本地服务端录制 SDK 不支持通过添加域名及端口的方式提供音视频录制功能。Agora 推荐你参考[使用云代理](../../cn/Agora%20Platform/cloudproxy_recording.md)进行连接。
 
 
 ## Agora 游戏 SDK
 
-将以下目标域名及对应的端口添加到防火墙白名单：
-
-```
-.agora.io
-qoslbs.agoralab.co
-qos.agoralab.co
-ap.agoraio.cn
-vocs1.agora.io
-vocs2.agora.io
-vocs3.agora.io
-vocs4.agora.io
-vocs5.agora.io
-```
-
-| 目标端口 | 协议 | 操作 |
-| -------------- | --------- | ------------ |
-| 1080；8000 | TCP | 允许 |
-| 1080；4000 - 4030；8000；9700；25000 | UDP | 允许 |
+Agora 游戏 SDK 不支持通过添加域名及端口的方式提供音视频功能。Agora 推荐你参考[使用云代理](../../cn/Agora%20Platform/cloudproxy_native.md)进行连接。

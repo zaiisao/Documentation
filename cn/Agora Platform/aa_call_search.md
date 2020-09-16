@@ -3,7 +3,7 @@
 title: 通话调查
 description: Introduction to Call Research in AA
 platform: All Platforms
-updatedAt: Fri Sep 11 2020 10:28:28 GMT+0800 (CST)
+updatedAt: Tue Sep 15 2020 10:18:46 GMT+0800 (CST)
 ---
 # 通话调查
 水晶球的[**通话调查**](https://dashboard.agora.io/analytics/call/search)功能以图表的形式展示每一通通话全链路质量数据，可以极大提高解决通话问题的效率。
@@ -11,10 +11,11 @@ updatedAt: Fri Sep 11 2020 10:28:28 GMT+0800 (CST)
 **通话调查**中提供的数据包括：
 - 设备状态，包括系统 CPU 的使用率，以及 App 的 CPU 使用率
 - 本地采集和远端播放音量
-- 音视频发送/接收码率
-- 视频发送/接收帧率
-- 视频接收分辨率
-- 视频上行和端对端的丢包率
+- 音视频发送和接收码率
+- 视频发送和接收帧率
+- 视频发送和接收分辨率
+- 音视频上行和网络的丢包率
+- 音视频下行和端到端的丢包率
 - 音视频卡顿情况
 - 用户行为，比如静音、离线等
 - 用户对通话的主观评分
@@ -27,7 +28,7 @@ updatedAt: Fri Sep 11 2020 10:28:28 GMT+0800 (CST)
 
 登录 [控制台](https://dashboard.agora.io/)，点击左侧菜单栏**水晶球**下的**通话调查**，进入通话搜索页面。
 
-![](https://web-cdn.agora.io/docs-files/1568025171366)
+![](https://web-cdn.agora.io/docs-files/1600163836628)
 
 搜索通话步骤：
 1. 点击左上角选择你要查询的项目。
@@ -36,7 +37,7 @@ updatedAt: Fri Sep 11 2020 10:28:28 GMT+0800 (CST)
 4. 筛选通话：你可以选择**全部**通话或**已结束**的通话或**进行中**的通话。
 5. 点击**搜索通话**，即可显示符合搜索条件的所有通话。
 
-> 通话调查默认使用本地时间，如果你需要以本地时区查看通话，点击页面顶部菜单栏的时钟![](https://web-cdn.agora.io/docs-files/1545894297187)切换时区。
+<div class="alert note">通话调查默认使用本地时间，如果你需要以本地时区查看通话，点击页面顶部菜单栏的时钟 <img src="https://web-cdn.agora.io/docs-files/1545894297187"/> 切换时区。</div>
 
 
 ## 查看通话质量
@@ -45,32 +46,30 @@ updatedAt: Fri Sep 11 2020 10:28:28 GMT+0800 (CST)
 
 ### 通话基本信息
 
-![](https://web-cdn.agora.io/docs-files/1545379159095)
+![](https://web-cdn.agora.io/docs-files/1599819718190)
 **通话基本信息**显示你的项目名称、频道名称、整段通话的起止时间和总时长。
 
 <div class="alert info"> 目前支持查看的通话时长最长为 3 小时。如果通话超过 3 小时，默认显示该通话的最后 3 小时，你可以在时间线上拖动鼠标调整查看的时间段。</div>
 
 ### 用户列表
 
-![](https://web-cdn.agora.io/docs-files/1568013807361)
+![](https://web-cdn.agora.io/docs-files/1599819729582)
 
 **用户列表**显示[用户 ID](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#username)、所在区域、进出频道的时间、总时长、在频道内的实际时间和 SDK 版本等。
 
 在列表最右侧的**查看体验**栏，点击按钮选择是否用通话体验质量面板显示该用户的信息。
 
-<div class="alert note"> 通话中人数较多时，用户列表仅列出部分关键用户；如果你想查看的用户不在列表内，点击列表上的<b>点击这里展开</b>，通过选择用户的平台、设备名、角色是否为主播等<b>搜索</b>用户，找到你想添加的用户后，开启<b>添加用户</b>按钮。</div>
+<div class="alert note">通话中人数较多时，用户列表仅列出部分关键用户；如果你想查看的用户不在列表内，点击列表上的<b>点击这里展开</b>，通过选择用户的平台、设备名、角色是否为主播等<b>搜索</b>用户，找到你想添加的用户后，开启<b>添加用户</b>按钮。</div>
 
 ### 通话体验质量
 
-![](https://web-cdn.agora.io/docs-files/1567754628798)
+![](https://web-cdn.agora.io/docs-files/1599819740768)
 
 **通话体验质量面板**展示各用户作为接收端的通话体验质量。
 
 面板上方展示用户的基本信息，包括 User ID/User Account、平台、SDK 版本和用户对通话的评分（需要开启评分功能）。
 
-> 点击了解如何在 [Android](../../cn/Agora%20Platform/rate_call_android.md)，[iOS](../../cn/Agora%20Platform/rate_call_apple.md)，[macOS](../../cn/Agora%20Platform/rate_call_apple.md) 以及 [Windows](../../cn/Agora%20Platform/rate_call_windows.md) 平台上实现评分功能。
-
-面板下方展示用户的事件轴，点击事件轴上的箭头可以了解到该用户的行为。你需要着重关注红色的箭头，它代表着比较重要的[用户行为](#event)，如加入频道失败。
+<div class="alert note">点击了解如何在 <a href="../../cn/Agora%20Platform/rate_call_android.md">Android</a >，<a href="../../cn/Agora%20Platform/rate_call_apple.md">iOS</a >，<a href="../../cn/Agora%20Platform/rate_call_apple.md">macOS</a > 以及 <a href="../../cn/Agora%20Platform/rate_call_windows.md">Windows</a > 平台上实现评分功能。</div>
 
 ![](https://web-cdn.agora.io/docs-files/1545277525497)
 
@@ -82,18 +81,28 @@ updatedAt: Fri Sep 11 2020 10:28:28 GMT+0800 (CST)
 - 横轴以下为音频接收码率，音频接收码率不区分发送端，一条曲线显示总的音频接收码率。
 - 红色向下的毛刺表示音频卡顿。
 
-> 通话体验质量面板默认显示所有的[发送端](#send)数据，如果发送端较多，你可以通过在页面右下角的工具栏勾选只显示你关注的发送端。
+<div class="alert note">通话体验质量面板默认显示所有的<a href="#send">发送端</a >数据，如果发送端较多，你可以通过在页面右下角的工具栏勾选只显示你关注的发送端。</div>
 
 如果发现某一个发送端通话体验质量不佳，点击面板右上角的**查看详情**，选择该发送端，进入**端到端详情页面**分析通话质量问题。
 
+如果需要技术支持，点击页面右下角的图标 ![](https://web-cdn.agora.io/docs-files/1600162422683) 提交工单。
 
 ## 分析通话质量问题
 
-![](https://web-cdn.agora.io/docs-files/1568010509133)
+![](https://web-cdn.agora.io/docs-files/1600162446420)
 
 **端到端详情页面**提供从特定发送端到特定接收端详细的音频和视频质量指标，这些指标共同影响了最终用户的通话体验。
 
-<div class="alert note"> 你也可以点击 <b>Exchange Direction</b> 切换用户视角。左边面板原来显示用户 A 作为发送端的音视频信息，右边面板原来显示用户 B 作为接收端的音视频信息，切换用户视角后，左边面板则显示用户 B 作为发送端的音视频信息，右边面板则显示用户 A 作为接收端的音视频信息。</div>
+你可以在以下面板中看到用户的事件轴：
+
+- 音频上行和网络的丢包率
+- 音频下行和端到端的丢包率
+- 视频上行和网络的丢包率
+- 视频下行和端到端的丢包率
+
+点击事件轴上的竖条可以了解到该用户的行为。你需要着重关注红色的竖条，它代表着比较重要的[用户行为](#event)，如加入频道失败。
+
+<div class="alert note"> 你也可以点击 <b>Change</b> 切换用户视角。左边面板原来显示用户 A 作为发送端的音视频信息，右边面板原来显示用户 B 作为接收端的音视频信息，切换用户视角后，左边面板则显示用户 B 作为发送端的音视频信息，右边面板则显示用户 A 作为接收端的音视频信息。</div>
 
 通过分析这些指标，你可以找到通话质量问题出在哪个环节。以下为各项指标的具体含义：
 
@@ -142,8 +151,6 @@ App 和系统的 CPU 占用率。如果用户使用的设备性能较差，CPU �
 分辨率是指图像的宽和高的像素值。
 
 接收的视频画面分辨率越高（像素值越大），视频的画面越清晰。
-
-<div class="alert info"> 该指标仅在接收端展示。</div>
 
 ## 重要概念
 

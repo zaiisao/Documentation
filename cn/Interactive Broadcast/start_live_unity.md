@@ -81,7 +81,7 @@ updatedAt: Fri Jun 19 2020 14:31:56 GMT+0800 (CST)
    | Windows  | /x86                              | /Assets/Plugins/x86     |
    | Windows  | /x86_64  | /Assets/Plugins/x86_64            |
 
- <div class="alert note"><ul><li>对于开发 Android 或 iOS 应用的用户，若需在 macOS 或 Windows 设备中使用 Unity Editor 调试，请确保放入上述 macOS 或 Windows 所需的文件或文件夹。<li>Android 平台集成时，还需要 AndroidManifest.xml 文件和 project.properties 文件来添加项目权限和项目属性，建议从示例项目中直接拷贝。<li>iOS 平台集成时，还需要如下操作：（你可以参考  <a href="https://github.com/AgoraIO/Agora-Unity-Quickstart/blob/master/video/Hello-Video-Unity-Agora/Assets/Editor/BL_BuildPostProcess.cs">BL_BuildPostProcess.cs</a> 代码逻辑，或直接将该文件拷贝至你的项目路径下）<ul><li>链接系统库：<ul><li>CoreTelephony.framework<li>VideoToolbox.framework<li>libresolv.tbd<li>libiPhone-lib.a<li>CoreText.framework<li>Metal.framework<li>CoreML.framework<li>Accelerate.framework</li></ul><li>申请权限：<ul><li>NSCameraUsageDescription<li>NSMicrophoneUsageDescription</div>
+ <div class="alert note"><ul><li>对于开发 Android 或 iOS 应用的用户，若需在 macOS 或 Windows 设备中使用 Unity Editor 调试，请确保放入上述 macOS 或 Windows 所需的文件或文件夹。<li>Android 平台集成时，还需要 AndroidManifest.xml 文件和 project.properties 文件来添加项目权限和项目属性，建议从示例项目中直接拷贝。<li>在 iOS 平台集成 3.0.1 之前版本 SDK 时，还需要如下操作：（你可以参考  <a href="https://github.com/AgoraIO/Agora-Unity-Quickstart/blob/master/video/Hello-Video-Unity-Agora/Assets/Editor/BL_BuildPostProcess.cs">BL_BuildPostProcess.cs</a> 代码逻辑，或直接将该文件拷贝至你的项目路径下）<ul><li>链接系统库：<ul><li>CoreTelephony.framework<li>VideoToolbox.framework<li>libresolv.tbd<li>libiPhone-lib.a<li>CoreText.framework<li>Metal.framework<li>CoreML.framework<li>Accelerate.framework</li></ul><li>申请权限：<ul><li>NSCameraUsageDescription<li>NSMicrophoneUsageDescription</div>
 
 
 ## 实现视频互动直播

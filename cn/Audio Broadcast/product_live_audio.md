@@ -3,14 +3,12 @@
 title: 产品概述
 description: 
 platform: All Platforms
-updatedAt: Thu Aug 20 2020 03:55:23 GMT+0800 (CST)
+updatedAt: Mon Sep 14 2020 10:25:43 GMT+0800 (CST)
 ---
 # 产品概述
 Agora 音频互动直播（Live Interactive Audio Streaming）可以实现一对多，多对多的纯音频互动直播。
 
-Agora 音频互动直播和 [Agora 语音通话](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms)的区别是：
-- 语音通话，不区分主播和观众，所有用户都可发言，默认流畅和低延时优先，典型场景如多人语音会议。
-- 语音直播，用户分为主播和观众，只有主播可以自由发言，默认高音质优先，典型场景如在线音乐直播。
+Agora 音频互动直播不同于 [Agora 语音通话](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms)。语音通话不区分主播和观众，所有用户都可以发言；音频直播的用户分为主播和观众，只有主播可以自由发言。详见[通信和直播场景有什么区别](https://docs.agora.io/cn/faq/profile_difference)。
 
 常见的 CDN 直播是一个主播和多个观众，是单向的。而互动直播还能多个主播之间，观众与主播之间连麦，就像在小剧场里观众可以上台表演一样。适用于娱乐直播如狼人杀、教育直播如小班课、电商直播中的导购问答等强互动场景。
 
