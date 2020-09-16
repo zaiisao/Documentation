@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Fri Sep 11 2020 11:01:04 GMT+0800 (CST)
+updatedAt: Tue Sep 15 2020 02:29:20 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK.
@@ -18,6 +18,12 @@ The Video SDK for Windows supports the following scenarios:
 For the key features included in each scenario, see [Agora Voice Call Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms), [Agora Video Call Overview](https://docs.agora.io/en/Video/product_video?platform=All%20Platforms), [Agora Live Interactive Audio Streaming Overview](https://docs.agora.io/en/Audio%20Broadcast/product_live_audio?platform=All_Platforms) and [Agora Live Interactive Video Streaming Overview](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms).
 
 The Windows Video SDK supports the x86 and x64 architecture.
+
+## v3.1.2
+
+v3.1.2 was released on September 15, 2020.
+
+This release fixed the issue that the trigger timing of the `onFirstLocalVideoFrame` and `onFirstRemoteVideoFrame` callbacks is not accurate.
 
 ## v3.1.1
 

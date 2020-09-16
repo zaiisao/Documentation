@@ -3,7 +3,7 @@
 title: Agora Cloud Recording Changelog
 description: 
 platform: All Platforms
-updatedAt: Thu Sep 10 2020 03:44:53 GMT+0800 (CST)
+updatedAt: Wed Sep 16 2020 06:35:27 GMT+0800 (CST)
 ---
 # Agora Cloud Recording Changelog
 ## Overview
@@ -16,6 +16,13 @@ Agora Cloud Recording is compatible with the following SDKs:
 
 - Agora Native SDK v1.7.0 or later.
 - Agora Web SDK v1.12 or later.
+
+## 2020.09.16
+
+This release improved the stability and performance of the recording service, and fixed the following issues:
+
+- Failure to subscribe to a low-quality stream.
+- Occasional failure to record a whole call.
 
 ## 2020.07.21
 
@@ -57,7 +64,7 @@ Cloud Recording now supports taking screenshots of the video streams in individu
 
 ## 2019.12.16
 
-This release improves the availability of the cloud recording service. When a server is disconnected or when the process is killed, the cloud recording automatically switches to a new server to resume the service. See [Fault processing when a cloud recording server is disconnected or the process killed](../../en/faq/high-availability.md) for more information.
+This release improved the availability of the cloud recording service. When a server is disconnected or when the process is killed, the cloud recording automatically switches to a new server to resume the service. See [Fault processing when a cloud recording server is disconnected or the process killed](../../en/faq/high-availability.md) for more information.
 
 **API Changes**
 

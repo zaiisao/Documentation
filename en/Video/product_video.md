@@ -3,15 +3,12 @@
 title: Agora Video Call Overview
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 13 2020 09:40:25 GMT+0800 (CST)
+updatedAt: Mon Sep 14 2020 10:34:58 GMT+0800 (CST)
 ---
 # Agora Video Call Overview
 Agora Video Call enables easy and convenient one-to-one or one-to-many calls and supports voice-only and video modes with the Agora RTC SDK.
 
-The difference between Agora Video Call and [Agora Live Interactive Video Streaming](https://docs.agora.io/en/Interactive%20Broadcast/product_live?platform=All%20Platforms) is:
-
-* Agora Video Call prioritizes smoothness and low latency. All users are the same role and can talk to each other freely. A typical scenario of an Agora Video Call is a video conference call for many persons.
-* Agora Live Interactive Video Streaming prioritizes high video quality. Users can be the host or audience, where only the host can talk. A user who wants to talk must change the role to a host. A typical scenario of the live interactive video streaming is an interactive online class.
+Agora Video Call is different from [Agora Live Interactive Video Streaming](https://docs.agora.io/en/Interactive%20Broadcast/product_live). In a video call, all users are the same role and can talk to each other freely. In a live video streaming, users can be the host or audience, where only the host can talk. For details, see this [FAQ](https://docs.agora.io/en/faq/profile_difference).
 
 ## Functions and scenarios
 

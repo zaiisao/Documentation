@@ -3,15 +3,12 @@
 title: Agora Voice Call Overview
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 06 2020 08:31:11 GMT+0800 (CST)
+updatedAt: Mon Sep 14 2020 10:31:06 GMT+0800 (CST)
 ---
 # Agora Voice Call Overview
 Agora Voice Call enables easy and convenient one-to-one or one-to-many **voice-only** calls with the Agora RTC SDK. With a small SDK package size, the Agora RTC SDK is applicable to a variety of recreational and business activities.
 
-The difference between Agora Voice Call and [Agora Live Interactive Audio Streaming](https://docs.agora.io/en/Audio%20Broadcast/product_live_audio?platform=All%20Platforms) is: 
-
-* Agora Voice Call prioritizes smoothness and low latency. All users are the same role and can talk to each other freely. A typical scenario of Agora Voice Call is a voice conference call for many persons.
-* Agora Live Interactive Audio Streaming prioritizes high voice quality. Users can be the host or audience, where only the host can talk. A user who wants to talk must change the role to a host. A typical scenario of Agora Live Interactive Audio Streaming is an online trivia game.
+Agora Voice Call is different from [Agora Live Interactive Audio Streaming](https://docs.agora.io/en/Audio%20Broadcast/product_live_audio?platform=All%20Platforms). In a voice call, all users are the same role and can talk to each other freely. In a live audio streaming, users can be the host or audience, where only the host can talk. For details, see this [FAQ](https://docs.agora.io/en/faq/profile_difference).
 
 ## Functions and scenarios
 

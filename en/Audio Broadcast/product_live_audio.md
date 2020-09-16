@@ -3,15 +3,12 @@
 title: Agora Live Interactive Audio Streaming Overview
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 13 2020 09:39:12 GMT+0800 (CST)
+updatedAt: Mon Sep 14 2020 10:32:38 GMT+0800 (CST)
 ---
 # Agora Live Interactive Audio Streaming Overview
 Agora Live Interactive Audio Streaming enables one-to-many and many-to-many audio live streaming with the Agora RTC SDK.
 
-The difference between [Agora Voice Call](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms) and Agora Live Interactive Audio Streaming is:
-
-- Agora Voice Call prioritizes smoothness and low latency. All users are the same role and can talk to each other freely. A typical scenario of an Agora Voice Call is a voice conference call for many persons.
-- Agora Live Interactive Audio Streaming prioritizes high voice quality. Users can be the host or audience, where only the host can talk. A user who wants to talk must change the role to a host. A typical scenario of the live interactive audio streaming is an online trivia game.
+Agora Live Interactive Audio Streaming is different from [Agora Voice Call](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms). In a voice call, all users are the same role and can talk to each other freely. In a live audio streaming, users can be the host or audience, where only the host can talk. For details, see this [FAQ](https://docs.agora.io/en/faq/profile_difference).
 
 Different from the traditional CDN live streaming, which only allows one-way communication from the hosts to the audience, the Agora SDK for live interactive streaming empowers the audience to interact with the hosts by [becoming a host](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#become-host), like a viewer jumping onto the stage in the middle of a play to perform.
 

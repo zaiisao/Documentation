@@ -3,17 +3,18 @@
 title: Call Search
 description: Introduction to call research
 platform: All Platforms
-updatedAt: Fri Sep 11 2020 09:49:44 GMT+0800 (CST)
+updatedAt: Tue Sep 15 2020 10:28:27 GMT+0800 (CST)
 ---
 # Call Search
 The [**Call Search**](https://dashboard.agora.io/analytics/call/search) function of Agora Analytics allows you to see the quality of your calls in diagrams displaying data during the call process. The information includes:
 
 - The device status, including the system CPU usage and the app's CPU usage.
 - The local captured volume and the remote playout volume.
-- Bitrates of the sent/received audio and video.
-- Frame rate of the sent/received audio and video.
-- The received video resolution.
-- The upstream and end-to-end packet loss rates of the sent audio and video.
+- The bitrate of the sent or received audio and video.
+- The frame rate of the sent or received audio and video.
+- The resolution of the sent or received video.
+- The upstream bitrate and packet loss rate of the sent audio and video.
+- The downstream bitrate and end-to-end packet loss rate of the received audio and video.
 - The freeze time in rendering the audio and video.
 - User events. For example, stop sending audio or start receiving video.
 - The users' ratings of the call.
@@ -26,7 +27,7 @@ See the use case [tutorials](../../en/Agora%20Platform/aa_tutorial.md) to learn 
 
 Log in [Agora Console](https://dashboard.agora.io/) and click **Call Search** under **Agora Analytics** on the left of the navigation bar.
 
-![](https://web-cdn.agora.io/docs-files/1568025804525)
+![](https://web-cdn.agora.io/docs-files/1600165702488)
 
 To search calls, fill in the search fields:
 1.  Select the project in the top-left corner.
@@ -35,7 +36,7 @@ To search calls, fill in the search fields:
 4.  Filter the calls by the call states, and you can choose to search for calls that are ongoing or ended.
 5.  Enter a channel name or [user ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameusernameausername) and click **Search**.
 
-> By default, **Call Search** uses your local time zone. To use the UTC zone, click the clock icon ![](https://web-cdn.agora.io/docs-files/1545893874792) on the top menu bar.
+<div class="alert note">By default, <b>Call Search</b> uses your local time zone. To use the UTC zone, click the clock icon <img src="https://web-cdn.agora.io/docs-files/1545894297187"/> on the top menu bar.</div>
 
 ## View Quality of Experience
 
@@ -45,15 +46,15 @@ The QoE page shows each user's quality of experience as the receiver in the call
 
 ### Basic information
 
-![](https://web-cdn.agora.io/docs-files/1545382838358)
+![](https://web-cdn.agora.io/docs-files/1600164202811)
 
 The top of the QoE page shows the basic information of the call, such as the project name, channel name, starting and ending times, and duration of the call.
 
-> The QoE page shows up to three hours duration of each call. If a call lasts more than 3 hours, the QoE page shows the last 3 hours by default. You can use the timeline to select the time frame to view.
+<div class="alert info">The <b>QoE</b> page shows up to three hours duration of each call. If a call lasts more than 3 hours, the <b>QoE</b> page shows the last 3 hours by default. You can use the timeline to select the time frame to view.</div>
 
 ### User list
 
-![](https://web-cdn.agora.io/docs-files/1568013405385)
+![](https://web-cdn.agora.io/docs-files/1600164214666)
 
 The user list shows the information of the users in the call, such as the [user ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameusernameausername), the location, when the user joins/leaves the channel and the actual time in the channel (In-call Periods).
 
@@ -63,15 +64,13 @@ The **View QoE** toggle switch turns on/off displaying the QoE diagram for each 
 
 ### Quality of Experience Overview
 
-![](https://web-cdn.agora.io/docs-files/1568103635242)
+![](https://web-cdn.agora.io/docs-files/1600164386879)
 
 The **Quality of Experience Overview** section displays each user's QoE diagram.
 
 The user's basic information is shown above the QoE diagram, including the [user ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-nameusernameausername), platform, SDK version, and user's ratings of the call (when the rating function is enabled).
 
-> See how to enable the rating function on [Android](../../en/Agora%20Platform/rate_call_android.md), [iOS](../../en/Agora%20Platform/rate_call_apple.md), [macOS](../../en/Agora%20Platform/rate_call_apple.md), and [Windows](../../en/Agora%20Platform/rate_call_windows.md).
-
-The user's event timeline is displayed below the QoE diagram. Select the spikes on the timeline to see the [user events](#event). Pay attention to the red spikes, which represent important events, such as failure to join the channel.
+<div class="alert note">See how to enable the rating function on <a href="../../en/Agora%20Platform/rate_call_android.md">Android</a >, <a href="../../en/Agora%20Platform/rate_call_apple.md">iOS</a >, <a href="../../en/Agora%20Platform/rate_call_apple.md">macOS</a >, and <a href="../../en/Agora%20Platform/rate_call_windows.md">Windows</a >.</div>
 
 ![](https://web-cdn.agora.io/docs-files/1545382892984)
 
@@ -83,17 +82,28 @@ In the QoE diagram, the x-axis represents the time of the call, and the y-axis r
 - The curve below the x-axis represents the total bitrate of the received audio from all senders.
 - The red glitches below the x-axis indicate audio freeze.
 
-The QoE section displays data from all senders by default. You can select which senders to display by using the toolbar at the bottom-right of the page.
+<div class="alert note">The <b>QoE</b> section displays data from all senders by default. You can select which senders to display by using the toolbar at the bottom-right of the page.</div>
 
 If you find quality issues of a specific sender, click the **End-to-End Details** button to go to the E2E (End-to-End) page.
 
+If you need support, click the bottom-right icon ![](https://web-cdn.agora.io/docs-files/1600162422683) to submit a ticket.
+
 ## Analyze quality issues
 
-![](https://web-cdn.agora.io/docs-files/1568009284642)
+![](https://web-cdn.agora.io/docs-files/1600165256901)
 
 The **End-to-End Details** page shows the audio and video statistics of a specific sender and receiver. These statistics affect the user's quality of experience and help you understand the quality issues. 
 
-<div class="alert note">You can also click <b>Exchange Direction</b> to switch the user's perspective. For example, if the left page originally displays the audio/video information of user A as the sender and the right page originally displays the information of user B as the receiver, after switching the user's perspective, the left page displays the information of user B as the sender and the right page displays the information of user A as the receiver.</div>
+You can see the user's event timeline on the following diragrams:
+
+- Audio Upstream Bitrate and Packet Loss
+- Audio Downstream Bitrate and End-to-End Packet Loss
+- Video Upstream Bitrate and Packet Loss
+- Video Downstream Bitrate and End-to-End Packet Loss
+
+Select the spikes on the timeline to see the [user events](#event). Pay attention to the red spikes, which represent important events, such as failure to join the channel.
+
+<div class="alert note">You can also click <b>Change</b> to switch the user's perspective. For example, if the left page originally displays the audio/video information of user A as the sender and the right page originally displays the information of user B as the receiver, after switching the user's perspective, the left page displays the information of user B as the sender and the right page displays the information of user A as the receiver.</div>
 Here is a brief explanation of these statistics:
 
 <a name="device"></a>
@@ -101,7 +111,7 @@ Here is a brief explanation of these statistics:
 
 The CPU usage of the system and the App, indicating how busy the system is. If the system is busy (the CPU usage is high), the audio/video may freeze.
 
-> Changes in Android 8.0 make it difficult to get accurate CPU usage statistics. Agora provides a **Task Scheduling Delay** indicator to represent how busy the system is.
+<div class="alert note">Changes in Android 8.0 make it difficult to get accurate CPU usage statistics. Agora provides a <b>Task Scheduling Delay</b> indicator to represent how busy the system is.</div>
 
 <a name="event"></a>
 ### User events
@@ -138,8 +148,6 @@ A higher frame rate means smoother video but uses more bandwidth and CPU usage. 
 ### Resolution
 
 The resolution is the number of pixels in the width and height of an image. A higher resolution means clearer video.
-
-> The **End-to-End Details** page shows only the resolution of the rendered video for the receiver.
 
 ## Key terms
 

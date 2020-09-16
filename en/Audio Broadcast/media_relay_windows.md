@@ -3,7 +3,7 @@
 title: Co-host across Channels
 description: 
 platform: Windows
-updatedAt: Mon Jul 06 2020 10:38:22 GMT+0800 (CST)
+updatedAt: Tue Sep 15 2020 03:10:15 GMT+0800 (CST)
 ---
 # Co-host across Channels
 ## Introduction
@@ -82,7 +82,7 @@ lpUpdateDestInfos->uid = 0;
 cmrc.destInfos = lpUpdateDestInfos;
 cmrc.destCount = 1;
 // Updates the media relay channels.
-ret = m_lpAgoraEngine->startChannelMediaRelay(cmrc);	
+ret = m_lpAgoraEngine->updateChannelMediaRelay(cmrc);	
 ```
 
 <div class="alert note">After calling the <code>startChannelMediaRelay</code> method, you can call the <code>updateChannelMediaRelay</code> method to add or delete the relay channels.</div>

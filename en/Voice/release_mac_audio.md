@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Fri Sep 11 2020 04:01:13 GMT+0800 (CST)
+updatedAt: Tue Sep 15 2020 02:31:15 GMT+0800 (CST)
 ---
 # Release Notes
 ## Overview
@@ -14,6 +14,12 @@ The Voice SDK supports the following scenarios:
 - Live interactive audio streaming
 
 For the key features included in each scenario, see [Voice Call Overview](https://docs.agora.io/en/Voice/product_voice?platform=All%20Platforms) and [Live interactive audio streaming Overview](https://docs.agora.io/en/Audio%20Broadcast/product_live_audio?platform=All_Platforms).
+
+## v3.1.2
+
+v3.1.2 was released on September 15, 2020. 
+
+This release fixed the issue that hosts fail to push streams to CDN.
 
 ## v3.1.1
 

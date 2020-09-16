@@ -3,11 +3,34 @@
 title: Agora Analytics Changelog
 description: 
 platform: All Platforms
-updatedAt: Fri May 22 2020 05:08:39 GMT+0800 (CST)
+updatedAt: Tue Sep 15 2020 09:08:26 GMT+0800 (CST)
 ---
 # Agora Analytics Changelog
 ## Overview
 Agora Analytics is a tool that tracks and analyzes the usage and quality of calls. You can use this tool to locate quality issues, find root causes, and fix the issues to improve the final user experience. See details in [Agora Analytics Overview](../../en/Agora%20Platform/aa_guide.md).
+
+## 2020.09
+
+This release improves the following features:
+
+#### 1. Call Search
+
+- Moves the event timeline from the **Quality of Experience Overview** page to the **End-to-End Details** page. You can see the event timeline on the **Audio/Video Upstream Bitrate and Packet Loss** and **Audio/Video Downstream Bitrate and End-to-End Packet Loss** diagrams.
+
+- Adds the following statistics on the **End-to-End Details** page:
+
+   - Bitrate of the sent high-quality video
+   - Bitrate of the sent low-quality video
+   - Frame rate of the captured video
+   - Resolution of the sent video
+
+- Supports submitting a ticket on the **Quality of Experience Overview** page.
+
+- Improves the user interface design.
+
+#### 2. Others
+
+Except for RESTful APIs, all Agora Analytics functions use the local time zone by default.
 
 ## 2020.05
 

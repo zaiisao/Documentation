@@ -3,15 +3,12 @@
 title: Agora Live Interactive Video Streaming Overview
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 13 2020 10:24:38 GMT+0800 (CST)
+updatedAt: Mon Sep 14 2020 10:38:33 GMT+0800 (CST)
 ---
 # Agora Live Interactive Video Streaming Overview
 Agora Live Interactive Video Streaming enables one-to-many and many-to-many audio or video live streaming with the Agora RTC SDK. 
 
-The difference between [Agora Video Call ](https://docs.agora.io/en/Video/product_video?platform=All%20Platforms)and Agora Live Interactive Video Streaming is:
-
-- Agora Video Call prioritizes smoothness and low latency. All users are the same role and can talk to each other freely. A typical scenario of Agora Video Call is a video conference call for many persons.
-- Agora Live Interactive Video Streaming prioritizes high video quality. Users can be the host or audience, where only the host can talk. A user who wants to talk must change the role to a host. A typical scenario of Agora Live Interactive Video Streaming is an interactive online class.
+Agora Live Interactive Video Streaming is different from [Agora Video Call](https://docs.agora.io/en/Video/product_video?platform=All%20Platforms). In a video call, all users are the same role and can talk to each other freely. In a live video streaming, users can be the host or audience, where only the host can talk. For details, see this [FAQ](https://docs.agora.io/en/faq/profile_difference).
 
 Different from the traditional CDN live broadcast, which only allows one-way communication from the hosts to the audience, the Agora RTC SDK empowers the audience to interact with the hosts by [becoming a host](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#becoming-host), like a viewer jumping onto the stage in the middle of a play to perform. 
 

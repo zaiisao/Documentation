@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: macOS
-updatedAt: Fri Sep 11 2020 04:09:42 GMT+0800 (CST)
+updatedAt: Tue Sep 15 2020 02:31:40 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for macOS.
@@ -20,6 +20,12 @@ For the key features included in each scenario, see [Agora Voice Call Overview](
 #### Known Issues and Limitations
 
 A USB device driver issue occurs when you do not hear any audio or the audio is corrupted with a USB headset. USB is not user-friendly on macOS, and we recommend using higher quality headsets.
+
+## v3.1.2
+
+v3.1.2 was released on September 15, 2020. 
+
+This release fixed the issue that the [`firstLocalVideoFrameWithSize`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:firstLocalVideoFrameWithSize:elapsed:) and [`firstRemoteVideoFrameOfUid`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:firstRemoteVideoFrameOfUid:size:elapsed:) callbacks are not triggered at the right time.
 
 ## v3.1.1
 
