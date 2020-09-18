@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: macOS
-updatedAt: Tue Jul 14 2020 03:11:17 GMT+0800 (CST)
+updatedAt: Fri Sep 18 2020 04:40:58 GMT+0800 (CST)
 ---
 # 实现语音通话
 本文介绍如何使用 Agora 语音通话 SDK 快速实现语音通话。
@@ -213,7 +213,7 @@ func initializeAgoraEngine() {
 - `token`：传入能标识用户角色和权限的 Token。可设为如下一个值：
   - `nil`
   -  控制台中生成的临时 Token。一个临时 Token 的有效期为 24 小时，详情见[获取临时 Token](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#%E8%8E%B7%E5%8F%96%E4%B8%B4%E6%97%B6-token)。
-	- 你的服务器端生成的正式 Token。适用于对安全要求较高的生产环境，详情见[生成 Token](../../cn/Voice/token_server_cpp.md)。
+	- 你的服务器端生成的正式 Token。适用于对安全要求较高的生产环境，详情见[生成 Token](../../cn/Voice/token_server.md)。
 
   <div class="alert note">若项目已启用 App 证书，请使用 Token。</div>
 

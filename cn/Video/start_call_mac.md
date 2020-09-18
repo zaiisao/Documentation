@@ -3,7 +3,7 @@
 title: 实现视频通话
 description: 
 platform: macOS
-updatedAt: Thu Aug 20 2020 08:34:00 GMT+0800 (CST)
+updatedAt: Fri Sep 18 2020 04:49:29 GMT+0800 (CST)
 ---
 # 实现视频通话
 本文介绍如何使用 Agora 视频通话 SDK 快速实现视频通话。
@@ -270,7 +270,7 @@ func setupLocalVideo() {
 
   - `nil`
   -  临时 Token。临时 Token 服务有效期为 24 小时。你可以在控制台里生成一个临时 Token，详见[获取临时 Token](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#%E8%8E%B7%E5%8F%96%E4%B8%B4%E6%97%B6-token)。
-  -  在你的服务器端生成的 Token。在安全要求高的场景下，我们推荐你使用此种方式生成的 Token，详见[生成 Token](../../cn/Video/token_server_cpp.md)。
+  -  在你的服务器端生成的 Token。在安全要求高的场景下，我们推荐你使用此种方式生成的 Token，详见[生成 Token](../../cn/Video/token_server.md)。
 
   <div class="alert note">若项目已启用 App 证书，请使用 Token。</div>
 

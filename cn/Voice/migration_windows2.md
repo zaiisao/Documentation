@@ -1,12 +1,12 @@
 
 ---
-title: 升级指南：从 v2.0.8 升级至 v2.3.2（Windows)
+title: 升级指南：从 v2.0.8 升级至 v2.3.4.100（Windows)
 description: 
-platform: v2.3.2
-updatedAt: Fri Sep 18 2020 04:42:30 GMT+0800 (CST)
+platform: v2.3.4.100
+updatedAt: Fri Sep 18 2020 04:43:43 GMT+0800 (CST)
 ---
-# 升级指南：从 v2.0.8 升级至 v2.3.2（Windows)
-本页包含 Agora SDK for Windows 从 v2.0.8 到 v2.3.2 升级后，用户需要注意的 API 用法变更。
+# 升级指南：从 v2.0.8 升级至 v2.3.4.100（Windows)
+本页包含 Agora SDK for Windows 从 v2.0.8 到 v2.3.4.100 升级后，用户需要注意的 API 用法变更。
 
 ## 重要变更
 
@@ -58,6 +58,8 @@ Agora SDK 在 v2.2.0 改进了 [`enableAudioVolumeIndication`](https://docs.agor
 
 ## 主要新增功能
 
+- 支持摄像头设备热插拔。通过 API [`initialize`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ac71db65e66942e4e0a0550e95c16890f) 中 `RtcEngineContext` 结构体的 `context` 成员实现。
+- 实时反馈客户端到路由器的网络往返时延。通过 API `onRtcStats` 中 `RtcStats` 结构体的 `gatewayRtt` 成员实现。
 - 使用声卡采集系统声音。通过 API [`enableLoopbackRecording`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a065f485fd23b8c24a593680a47d754aa) 实现。
 - 音效均衡和音效混淆。分别通过 API [`setLocalVoiceEqualization`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a3de79ba906e6b254b997eda4d395d052)  和 [`setLocalVoiceReverb`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#aa00e903b1cc6f2752373afbe556ef456) 实现。
 - 直播场景下导入外部媒体流。通过 API [`addInjectStreamUrl`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a42247db589b55d3cfa98d8e1be06d8e6) 实现。
@@ -79,7 +81,7 @@ Agora SDK 在 v2.2.0 改进了 [`enableAudioVolumeIndication`](https://docs.agor
   
 - 服务端部署代理服务器。支持有企业防火墙的用户使用 Agora 服务。
 - 获取远端视频状态。通过 API [`onRemoteVideoStateChanged`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine_event_handler.html#aac7b62b1307be124423008e45eb02f80) 实现。
-- 直播场景下添加视频水印。支持用户将一张 PNG 图片作为水印添加到本地或旁路直播中。本地直播通过 API [`addVideoWatermark`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a7db71d3de47227f7419202fde0875058) 实现；旁路直播通过 [`setLiveTranscoding`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a0601e4671357dc1ec942cccc5a6a1dde) 中的 `watermark` 参数实现。
+- 直播场景下添加视频水印。支持用户将一张 PNG 图片作为水印添加到本地或旁路直播中。本地直播通过 API [`addVideoWatermark`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a7db71d3de47227f7419202fde0875058) 实现；旁路直播通过 [`setLiveTranscoding`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a0601e4671357dc1ec942cccc5a6a1dde) 中 `LiveTranscoding` 结构体的 `watermark` 成员实现。
 - 视频自采集（Push 模式）。通过 API [`setExternalVideoSource`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1media_1_1_i_media_engine.html#a6716908edc14317f2f6f14ee4b1c01b7) 和 [`pushVideoFrame`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1media_1_1_i_media_engine.html#ae064aedfdb6ac63a981ca77a6b315985) 实现。
 - 音频自渲染（Pull 模式）。通过 API [`setExternalAudioSink`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a08450bffffc578290d4a1317f2938638) 和 [`pullAudioFrame`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1media_1_1_i_media_engine.html#aaf43fc265eb4707bb59f1bf0cbe01940) 实现。
 - 分别控制混音音乐文件的本地和远端播放音量。分别通过 API [`adjustAudioMixingPlayoutVolume`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a99ab2878e0c4fbf1be6970a2c545d085) 和 [`adjustAudioMixingPublishVolume`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_rtc_engine_parameters.html#a8f8d2af4b4c7988934e152e3b281d734) 实现。

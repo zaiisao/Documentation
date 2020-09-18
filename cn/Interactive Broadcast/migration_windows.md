@@ -3,7 +3,7 @@
 title: 升级指南：从 v2.0.8 升级至 v2.3.2（Windows)
 description: 
 platform: Windows
-updatedAt: Fri Jun 19 2020 14:29:46 GMT+0800 (CST)
+updatedAt: Fri Sep 18 2020 04:42:30 GMT+0800 (CST)
 ---
 # 升级指南：从 v2.0.8 升级至 v2.3.2（Windows)
 本页包含 Agora SDK for Windows 从 v2.0.8 到 v2.3.2 升级后，用户需要注意的 API 用法变更。
@@ -33,14 +33,13 @@ updatedAt: Fri Jun 19 2020 14:29:46 GMT+0800 (CST)
 
 - [动态密钥升级说明](https://docs.agora.io/cn/Agora%20Platform/token_migration?platform=All%20Platforms)
 - [校验用户权限](../../cn/Interactive%20Broadcast/token.md)
-- [在服务端生成密钥](../../cn/Interactive%20Broadcast/token_server_cpp.md)
+- [在服务端生成密钥](../../cn/Interactive%20Broadcast/token_server.md)
 
 #### 2. 设置视频编码属性
 
 为满足场景中视频旋转的需要，提升自定义视频源画质，Agora SDK 在 v2.3.2 引入 [`setVideoEncoderConfiguration`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a9bcbdcee0b5c52f96b32baec1922cf2e) 接口替换原 [`setVideoProfile`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ac8b16d2a4e67bd75231a76e06d2d85eb) 接口，来设置视频编码属性。 新接口中的 [`setVideoEncoderConfiguration`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a9bcbdcee0b5c52f96b32baec1922cf2e) 类对应一套视频参数，包含视频的分辨率、帧率、码率、最低编码码率以及视频方向。原接口 [`setVideoProfile`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#ac8b16d2a4e67bd75231a76e06d2d85eb)仍可使用，但不再推荐。更多文档请参考：
 
 - [设置视频属性](../../cn/Interactive%20Broadcast/video_profile_windows.md)
-- [视频采集旋转](../../cn/Interactive%20Broadcast/video_rotation_windows.md)
 
 #### 3. 透明质量数据
 
