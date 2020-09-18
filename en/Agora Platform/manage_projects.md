@@ -3,7 +3,7 @@
 title: Manage Projects
 description: 
 platform: All Platforms
-updatedAt: Fri Jul 17 2020 01:34:41 GMT+0800 (CST)
+updatedAt: Fri Sep 18 2020 04:36:35 GMT+0800 (CST)
 ---
 # Manage Projects
 This article shows how to create and manage projects in Agora Console.
@@ -26,7 +26,7 @@ To create a new project, follow these steps:
 3. Enter your project name and select your authentication mechanism in the dialog box.
 
    <div class="alert info">We provide two authentication mechanisms: <ul><li>APP ID + APP Certificate + Token (Recommended)</li><li>APP ID</li></ul>
-We recommend that you use the <b>APP ID + APP Certificate + Token</b> authentication mechanism which is more secure:<ul><li>In the testing stage, you can generate a temporary token in Agora Console after <a href="#primary">enabling the primary certificate</a >. See <a href="https://docs.agora.io/en/Agora%20Platform/token#get-a-temporary-token">Get a temporary token</a >.</li><li>In the production stage, you need to deploy a token generator on your server. See <a href="https://docs.agora.io/en/Interactive%20Broadcast/token_server_cpp?platform=CPP">Generate a Token</a >.</li></ul></div>
+We recommend that you use the <b>APP ID + APP Certificate + Token</b> authentication mechanism which is more secure:<ul><li>In the testing stage, you can generate a temporary token in Agora Console after <a href="#primary">enabling the primary certificate</a >. See <a href="https://docs.agora.io/en/Agora%20Platform/token#get-a-temporary-token">Get a temporary token</a >.</li><li>In the production stage, you need to deploy a token generator on your server. See <a href="https://docs.agora.io/en/Interactive%20Broadcast/token_server?platform=All%20Platforms">Generate a Token</a >.</li></ul></div>
 
   ![](https://web-cdn.agora.io/docs-files/1594779062005)
 4. Click **Submit**, and you can see the project on the **Project Management** page. Agora automatically assigns each project an App ID as a unique identifier.

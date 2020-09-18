@@ -3,7 +3,7 @@
 title: Billing for Real-time Communication
 description: 
 platform: All Platforms
-updatedAt: Tue Aug 04 2020 02:09:52 GMT+0800 (CST)
+updatedAt: Fri Sep 18 2020 04:19:13 GMT+0800 (CST)
 ---
 # Billing for Real-time Communication
 This article introduces the billing policy for the real-time communication (RTC) service provided by Agora.
@@ -14,16 +14,18 @@ This article introduces the billing policy for the real-time communication (RTC)
 
 Agora calculates the billing of all projects under your Agora account monthly.
 
-Billing for RTC begins once you implement an RTC function, such as audio call, group video call, or live interactive video streaming, using the Agora RTC SDK. On the first day of each month, Agora sends you the bill via email, and five days later deducts the payment from your account. For details, see [Billing, fee deduction, and account suspension](https://docs.agora.io/en/faq/billing_account).
+Billing for RTC begins once you implement an RTC function, such as audio call, group video call, or live interactive video streaming, using the Agora RTC SDK. 
+
+Agora calculates the billing of all projects under your Agora account monthly. On the first day of each month, Agora sends you your bill for the previous month's usage via mail, and five days later deducts the payment from your account. For details, see [Billing, fee deduction, and account suspension](https://docs.agora.io/en/faq/billing_account).
 
 <div class="alert note">
 	<ul>
-		<li>Agora gives each Agora account 10,000 charge-free minutes each month. For more information on the deduction sequence and applicable products, see<a href="https://docs.agora.io/cn/faq/billing_free"> Agora's free-of-charge policy for the first 10,000 minutes</a>.</li>
+		<li>Agora gives each Agora account 10,000 charge-free minutes each month. For more information on the deduction sequence and applicable products, see<a href="https://docs.agora.io/en/faq/billing_free"> Agora's free-of-charge policy for the first 10,000 minutes</a>.</li>
 		<li>If your scenario involves the RTMP converter, expect additional transcoding charges.</li>
 	</ul>
 </div>
 
-## Composition
+## Calculation
 
 Agora calculates your billing based on the sessions under each project. The billing for each session equals the total sum of charges for all users in the session. At the end of each month, Agora adds up the service minutes and multiplies it by the pricing to get the cost of this month.
 
@@ -56,26 +58,26 @@ The pricing for audio and video are as follows:
 
 Agora adds up the resolution of all the video streams a user subscribes to at the same time to determine the user's **aggregate resolution**, which categorizes video as either HD or HD+:
 
-- HD: The aggregate resolution is smaller than or equal to 921600 (1280 × 720).
+- HD: The aggregate resolution is less than or equal to 921600 (1280 × 720).
 - HD+: The aggregate resolution is greater than 921600 (1280 × 720).
 
 Suppose users A, B, C, and D are in the same channel, and A subscribes to the video of B, C, and D.
 
 **Example 1**
 
-Suppose the resolution of the videos A subscribes to are as follows:
+Suppose the resolution of the video streams A subscribes to are as follows:
 
 - Video from B: 640 × 360
 - Video from C: 640 × 360
 - Video from D: 640 × 360
 
-The aggregate resolution: (640 × 360) + (640 × 360) + (640 × 360) = 691200.
+The aggregate resolution: (640 × 360) + (640 × 360) + (640 × 360) = 691,200.
 
 Since 691,200 is smaller than 921,600, the aggregate resolution of A falls into the category of HD, and is charged $3.99/1,000 minutes.
 
 **Example 2**
 
-Suppose the resolution of the videos A subscribes to change during the session:
+Suppose the resolution of the video streams A subscribes to change during the session:
 
 - Video from B: 640 × 360
 - Video from C:
@@ -89,14 +91,14 @@ The aggregate resolution of A is calculated as follows:
 
 | Time | Video from B | Video from C | Video from D | The aggregate resolution |
 | ---------------- | ---------------- | ---------------- | ---------------- | ---------------- |
-| The initial 10 minutes | 640 × 360      | 640 × 360      | 640 × 360   | 691200 |
-| The subsequent 10 minutes | 640 × 360      | 240 × 180      | 1280 × 720 | 1195200 |
+| The initial 10 minutes | 640 × 360      | 640 × 360      | 640 × 360   | 691,200 |
+| The subsequent 10 minutes | 640 × 360      | 240 × 180      | 1,280 × 720 | 1,195,200 |
 
 
 As shown in the table:
 
-- In the initial 10 minutes, the aggregate resolution that A subscribes to is 691200 (< 921600), and should be charged as HD, at the rate of $3.99/1,000 minutes.
-- In the subsequent 10 minutes, the aggregate resolution that A subscribes to is 1195200 (> 921600), and should be charged as HD+, at the rate of $14.99/1,000 minutes.
+- In the initial 10 minutes, the aggregate resolution that A subscribes to is 691,200 (< 921,600), and should be charged as HD, at the rate of $3.99/1,000 minutes.
+- In the subsequent 10 minutes, the aggregate resolution that A subscribes to is 1,195,200 (> 921,600), and should be charged as HD+, at the rate of $14.99/1,000 minutes.
 
 ## Service minutes
 
@@ -105,7 +107,7 @@ Service minutes (accurate to seconds), are calculated from a user joining a chan
 Depending on the subscribing behavior of the user, service minutes comprises the following:
 
 - Video minutes: The total duration of the user receiving video.
-- Audio minutes: If you deduct the video minutes from the total duration when the user is in the channel, you get the audio minutes of that user, regardless of whether that user subscribes to any audio.
+- Audio minutes: The total duration of the user in the channel minus any video minutes, regardless of whether the user subscribes to any audio. In other words, any time spent in the channel that is not video is considered to be audio (and billed as such).
 
 <div class="alert note">If the user subscribes to multiple audio and video streams at the same time, the total service minutes per stream are not additive. For example:
 <ul>
@@ -116,7 +118,7 @@ Depending on the subscribing behavior of the user, service minutes comprises the
 
 ## Examples
 
-<div class="alert note">Use the following examples to better understand Agora's policy in calculating RTC service minutes:</div>
+<div class="alert note">Use the following examples to better understand the way Agora calculates RTC service minutes.</div>
 
 ### Video call with two users
 
@@ -143,7 +145,7 @@ In this session, A, B, C, and D use either the audio or video service.
   - The initial 10 minutes: No service minutes since D is not in the channel.
   - The subsequent 10 minutes: 10 minutes of video service, for subscribing to the video of A, B, and C.
 
-### Single-hosted video streaming
+### Single-user-hosted video streaming
 
 **Scenario**: User A joins a live interactive video streaming channel and hosts for 20 minutes. Six people watch the live streaming, three subscribing to audio, and three subscribing to video.
 
@@ -152,7 +154,7 @@ Since user A does not subscribe to any stream in the channel, A is charged for t
 - The three audience members subscribing to the video: 20 minutes of video service × 3.
 - The three audience members subscribing to the audio: 20 minutes of audio service × 3.
 
-Service minutes = 20 minutes of audio service + 20 minutes of video service × 3 + 20 minutes of audio service × 3 = 80 minutes of audio service + 20 minutes of video service.
+Service minutes = 20 minutes of audio service + 20 minutes of video service × 3 + 20 minutes of audio service × 3 = 80 minutes of audio service + 60 minutes of video service.
 
 ### Co-hosted video streaming
 
@@ -164,7 +166,7 @@ Service minutes = 20 minutes of audio service + 20 minutes of video service × 3
 - B: 20 minutes of video service, for subscribing to the video of A.
 - The remaining five audience members:
   - The initial 10 minutes: 10 minutes of video service × 5, for subscribing to the video of A.
-  - The initial 10 minutes: 10 minutes of video service × 5, for subscribing to the video of both A and B.
+  - The subsequent 10 minutes: 10 minutes of video service × 5, for subscribing to the video of both A and B.
 
 Service minutes = (10 minutes of audio service + 10 minutes of video service) + 20 minutes of video service + (50 minutes of video service + 50 minutes of video service) = 10 minutes of audio service + 130 minutes of video service.
 
@@ -172,7 +174,7 @@ Service minutes = (10 minutes of audio service + 10 minutes of video service) + 
 
 ### Accuracy of service minutes
 
-At the end of each month, Agora adds up the usage duration (in seconds) of audio, HD video, and HD+ video, and divides them by 60 to get the respective service minutes (rounded up to the next integer). For example, if the duration of audio service of the month is 59 seconds, then the audio service minutes is calculated as 1 minute; if the duration of video service is 61 seconds, then the video service minutes is calculated as 2 minutes. The error of service minutes for each month is within 1 minute.
+At the end of each month, Agora adds up the usage duration (in seconds) of audio, HD video, and HD+ video, and divides them by 60 to get the respective service minutes (rounded up to the next integer). For example, if the duration of audio service of the month is 59 seconds, then the audio service minutes is calculated as 1 minute; if the duration of video service is 61 seconds, then the video service minutes is calculated as 2 minutes. The margin of error of service minutes for each month is within 1 minute.
 
 ### Video resolution in the dual-stream scenario
 
@@ -196,7 +198,7 @@ Chances are:
 If either of these conditions occurs, the corresponding user's aggregate resolution is 0 and the user's service time counts as audio minutes.
 </details>
 <details><summary><font color="#3ab7f8">Why am I charged for HD+ video, even though all users subscribe only to video streams with the resolution of 360 × 640?</font></summary>
-Video streams are categorized as HD or HD+ by <b>aggregate resolution</b>, which is the sum of all the resolutions of the video streams a user subscribes to. That said, the more video streams a user subscirbes to, the more likely that user's aggregate resolution falls into HD+ (1280 × 720).
+Video streams are categorized as HD or HD+ by <b>aggregate resolution</b>, which is the sum of all the resolutions of the video streams a user subscribes to. In other words, the more video streams a user subscribes to, the more likely that user's aggregate resolution falls into HD+ (1,280 × 720).
 </details>
 <details><summary><font color="#3ab7f8">Are the audio minutes on my bill for a specific user?</font></summary>
 No. The audio minutes that you see on your bill are the sum of the audio minutes used by all users under your Agora account.
@@ -206,4 +208,4 @@ No. The audio minutes that you see on your bill are the sum of the audio minutes
 
 - [Agora's free-of-charge policy for the first 10,000 minutes](https://docs.agora.io/en/faq/billing_free)
 - [Billing, free deduction, and account suspension](https://docs.agora.io/en/faq/billing_account)
-- [How can I bill individual?](https://docs.agora.io/en/faq/business_billing)
+- [How do I get the user's call duration?](https://docs.agora.io/en/faq/business_billing)

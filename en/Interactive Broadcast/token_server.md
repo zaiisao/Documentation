@@ -1,132 +1,248 @@
 
 ---
-title: Generate a Token from Your Server
+title: Generate a Token
 description: Guide on how to generate tokens on the server side
-platform: CPP
-updatedAt: Mon Nov 11 2019 09:51:59 GMT+0800 (CST)
+platform: All Platforms
+updatedAt: Fri Sep 18 2020 04:30:27 GMT+0800 (CST)
 ---
-# Generate a Token from Your Server
-This page provides Agora RTC SDK v2.1+, Agora Web SDK v2.4+, Agora Recording SDK v2.1+, and Agora RTSA SDK users with  a quick guide on generating a sample token using the **RtcTokenBuilderSample** demos we provide, as well as token-generating API references in C++. 
+# Generate a Token
+The Token, also known as the dynamic key, is used for authenticating app users when a user joins a channel, or logs onto the service system.
 
-## An introduction to Agora's token repository
+Tokens are generated on your server. When an app user joins a channel or logs onto the service system, the app client interacts with the app server in the following way:
 
-Your token needs to be generated on your own server, hence you are required to first deploy a token generator on the server. In our [GitHub Repository](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey), we provide source codes and token generator demos in the following programming languages:
+1. The app client sends a request for token to the app server.
+2. The app server generates a token.
+3. The app server passes the token back to the app client.
+4. The app client then passes the token to the Agora server by calling the method provided by the SDK, such as `joinChannel`.
 
-- CPP
-- Java
-- Python
-- PHP
-- Node.js
-- Go
-- Ruby
+This article introduces how to generate a token on your server using the code provided by Agora.
 
-The <b>./\<language\>/src</b> folder of each language holds source codes for generating different types of dynamic keys and tokens. Note that both **AccessToken** and **SimpleTokenBuilder** can generate a token for the following SDKs:
+<div class="alert note">Based on the Agora product that you use, you need to generate different tokens:
+	<ul>
+		<li>The RTC token: Refer to this article to generate an RTC token if you use the Agora RTC SDK, On-premise Recording SDK, Cloud Recording, or Interactive Gaming SDK.</li>
+		<li>The RTM token: Refer to <a href="https://docs.agora.io/en/Real-time-Messaging/rtm_token?platform=All%20Platforms">Generate an RTM token</a> if you use the Agora RTM SDK.</li>
+	</ul>
+</div>
 
-- Agora RTC SDK (Java, Objective-C, C++, Electron) v2.1+
-- Agora Web SDK v2.4+
-- Agora Recording SDK v2.1+ 
-- Agora RTSA SDK
+## Prerequisites
 
-However, we recommend using **RtcTokenBuilder** instead of **AccessToken**.  **AccessToken** implements all the core algorithms for generating a token, while **RtcTokenBuilder** is a wrapper of **AccessToken** and provides much more simplified Interfaces. 
+Before proceeding, ensure that your project and the Agora product that you use meet the following requirements:
 
-The **./\<language\>/sample** folder of each language holds token generator demos we create for demonstration purposes. **RtcTokenBuilderSample** is  a demo for generating a token for the Agora RTC SDK, Agora Web SDK, Agora Recording SDK or Agora RTSA SDK. You can customize it based on your real business needs. 
+- Your Agora project has enabled the App Certificate on Console.
+- The version of the Agora product that you use meet the following requirements:
 
-## Generate a token using **RtcTokenBuilderSample**
+	| Product | Versions that support tokens |
+	| ---------------- | ---------------- |
+	| RTC SDK      |<ul><li>The Native SDK: v2.1.0 or later</li><li>The Web SDK: v2.4.0 or later</li><li>The Electron SDK: All versions</li><li>The Unity SDK: All versions</li><li>The React Native SDK: All versions</li></ul>      |
+	| On-premise Recording SDK | v2.1.0 or later |
+	| Cloud Recording  | No version requirement |
+	| Interactive Gaming SDK  | v2.2.0 or later |
 
-We take **RtcTokenBuilderSample.cpp** as an example:
+## Implementation
 
-1. Ensure that you have installed **openssl**. If you are using macOS, try the following command:
-    `brew install openssl`
-2. Synchronize the GitHub repository to your local drive.
-3. Navigate to the **/cpp/sample/** folder and open **RtcTokenBuilderSample.cpp**. 
-> Our demo provides pseudo-App ID, appCertificate, channelName, uid, and userAccount for demonstration purposes.
-4. Replace the pseudo-App ID, appCertificate, and channelName with your own. For information about getting an App ID and an App certificate, see [Token Security](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#app-id).
-    - If you use an int uid to join a channel, comment out the following code block:
+Agora provides an open-source [AgoraDynamicKey](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey) repository on GitHub, which enables you to generate tokens on your server with programming languages such as C++, Java, Python, PHP, Ruby, Node.js, and Go. Take C++ as an example, the following picture shows the code structure:
+
+![](https://web-cdn.agora.io/docs-files/1600072461550)
+
+Under the `cpp` directory:
+
+- `./sample/RtcTokenBuilderSample.cpp` contains the sample code for generating a token.
+- `./src/RtcTokenBuilder.h` contains the API used for generating a token.
+
+### Generate a token with the sample code
+
+Under the `sample` directory of each programming language, you can find the sample code for generating a token. Take C++ as an example:
+
 ```C++
-  result = SimpleTokenBuilder::buildTokenWithUserAccount(
-      appID, appCertificate, channelName, userAccount, UserRole::Role_Attendee,
+int main(int argc, char const *argv[]) {
+ 
+  // Fill in your App ID
+  std::string appID  = "970Cxxxxxxxxxxxxxxxxxxxxxxx1b33";
+  // Fill in your App Certificate
+  std::string  appCertificate = "5CFdxxxxxxxxxxxxxxxxxxxxxxx5d3b";
+  // Fill in the channel name
+  std::string channelName= "7d72xxxxxxxxxxxxxxxxxxxxxxbdda";
+  // Fill in the user ID. 0 means that the server does not authenticate user IDs.
+  uint32_t uid = 2882341273;
+  // The timestamp for the token to expire
+  uint32_t expirationTimeInSeconds = 3600;
+  uint32_t currentTimeStamp = time(NULL);
+  uint32_t privilegeExpiredTs = currentTimeStamp + expirationTimeInSeconds;
+  std::string result;
+ 
+  result = RtcTokenBuilder::buildTokenWithUid(
+      appID, appCertificate, channelName, uid, UserRole::Role_Publisher,
       privilegeExpiredTs);
- std::cout << "Token With UserAccount:" << result << std::endl;
-```    
-    - If you use a string userAccount to join a channel, comment out the following code block:
+  std::cout << "Token With Int Uid:" << result << std::endl;
+```
+
+Refer to the following steps to generate a token with the sample code above.
+
+Before proceeding, ensure that you have installed OpenSSL.
+
+1. Download or clone the [AgoraDynamicKey](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey) repository.
+2. Open the `AgoraDynamicKey/cpp/sample/RtcTokenBuilderSample.cpp` file, replace the value of `appID`, `appCertificate`, `channelName`, and `uid` with your own, and comment out the code snippets of `buildTokenWithUserAccount`.
+3. Open your Terminal, navigate to the same directory that holds `RtcTokenBuilderSample.cpp`, and run the following command. After that, an executable file `RtcTokenBuilderSample` appears in the folder:
+
+	```
+	g++ -std=c++0x -O0 -I../../ -L. RtcTokenBuilderSample.cpp -lz -lcrypto -o RtcTokenBuilderSample
+	```
+
+4. Run the following command. You token is generated and printed in your Terminal window.
+
+	```
+	./RtcTokenBuilderSample
+	```
+
+Steps for generating a token with the sample code of different programming languages are as follows:
+
+<details>
+	<summary><font color="#3ab7f8">Java</font></summary>
+Before proceeding, ensure that you have installed a Java IDE.
+	<ol>
+		<li>Download or clone the <a href="https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey">AgoraDynamicKey</a> repository.</li>
+		<li>Open the <code>AgoraDynamicKey/java</code> file in your IDE.</li>
+		<li>Open <code>AgoraDynamicKey/java/src/io/agora/sample/RtcTokenBuilderSample.java</code> file, replace the value of <code>appID</code>, <code>appCertificate</code>, <code>channelName</code>, and <code>uid</code> with your own, and comment out the code snippets of <code>buildTokenWithUserAccount</code>.</li>
+		<li>Run the sample project. Your token is generated and printed in your IDE.
+</li>
+	</ol>
+</details>
+
+
+<details>
+	<summary><font color="#3ab7f8">Python</font></summary>
+Before proceeding, ensure that you have Python 2 as the development environment. Use the following command to check your current Python version:
+<pre><code>Python -V</code></pre>
+	<ol>
+		<li>Download or clone the <a href="https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey">AgoraDynamicKey</a> repository.</li>
+		<li>Open the <code>AgoraDynamicKey/python/sample/RtcTokenBuilderSample.py</code> file, replace the value of <code>appID</code>, <code>appCertificate</code>, <code>channelName</code>, and <code>uid</code> with your own, and comment out the code snippets of <code>buildTokenWithUserAccount</code>.</li>
+		<li>Open Terminal, navigate to the same directory that holds <code>RtcTokenBuilderSample.py</code>, and run the following command. The token is generated and printed in your Terminal window.
+			<pre><code>python RtcTokenBuilderSample.py</code></pre>
+		</li>
+	</ol>
+</details>
+
+<details>
+	<summary><font color="#3ab7f8">Python3</font></summary>
+Before proceeding, ensure that you have Python 3 as the development environment. Use the following command to check your current Python version:
+<pre><code>Python -V</code></pre>
+	<ol>
+		<li>Download or clone the <a href="https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey">AgoraDynamicKey</a> repository.</li>
+		<li>Open the <code>AgoraDynamicKey/python/sample/RtcTokenBuilderSample.py</code> file, replace the value of <code>appID</code>, <code>appCertificate</code>, <code>channelName</code>, and <code>uid</code> with your own, and comment out the code snippets of <code>buildTokenWithUserAccount</code>.</li>
+		<li>Open Terminal, navigate to the same directory that holds <code>RtcTokenBuilderSample.py</code>, and run the following command. The token is generated and printed in your Terminal window.
+			<pre><code>python RtcTokenBuilderSample.py</code></pre>
+		</li>
+	</ol>
+</details>
+
+<details>
+	<summary><font color="#3ab7f8">PHP</font></summary>
+Before proceeding, ensure that you have installed the latest version of PHP.
+	<ol>
+		<li>Download or clone the <a href="https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey">AgoraDynamicKey</a> repository.</li>
+		<li>Open the <code>AgoraDynamicKey/sample/RtcTokenBuilderSample.php</code> file, replace the value of <code>appID</code>, <code>appCertificate</code>, <code>channelName</code>, and <code>uid</code> with your own, and comment out the code snippets of <code>buildTokenWithUserAccount</code>.</li>
+		<li>Open Terminal, navigate to the same directory that holds <code>RtcTokenBuilderSample.php</code>, and run the following command. The token is generated and printed in your Terminal window.
+			<pre><code>php RtcTokenBuilderSample.php</code></pre>
+		</li>
+	</ol>
+</details>
+
+<details>
+	<summary><font color="#3ab7f8">Node.js</font></summary>
+Before proceeding, ensure that you have installed the LTS version of Node.js.
+	<ol>
+		<li>Run the following command to install the Node.js dependencies:
+			<pre><code>npm install</code></pre>
+		</li>
+		<li>Download or clone the <a href="https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey">AgoraDynamicKey</a> repository.</li>
+		<li>Open the <code>AgoraDynamicKey/nodejs/sample/RtcTokenBuilderSample.js</code> file, replace the value of <code>appID</code>, <code>appCertificate</code>, <code>channelName</code>, and <code>uid</code> with your own, and comment out the code snippets of <code>buildTokenWithUserAccount</code>.</li>
+		<li>Open Terminal, navigate to the same directory that holds <code>RtcTokenBuilderSample.js</code>, and run the following command. The token is generated and printed in your Terminal window.
+			<pre><code>node RtcTokenBuilderSample.js</code></pre>
+		</li>
+	</ol>
+</details>
+
+<details>
+	<summary><font color="#3ab7f8">Go</font></summary>
+Before proceeding, ensure that you have installed the latest version of Golang.
+	<ol>
+		<li>Download or clone the <a href="https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey">AgoraDynamicKey</a> repository.</li>
+		<li>Open the <code>AgoraDynamicKey/go/sample/RtcTokenBuilder/sample.go</code> file, replace the value of <code>appID</code>, <code>appCertificate</code>, <code>channelName</code>, and <code>uid</code> with your own, and comment out the code snippets of <code>buildTokenWithUserAccount</code>.</li>
+		<li>Open Terminal, navigate to the same directory that holds <code>sample.go</code>, and run the following command. After that, an executable file <code>RtcTokenBuilder</code> appears in the folder
+			<pre><code>go build</code></pre>
+		</li>
+		<li>Run the following command. The token is generated and printed in your Terminal window.
+			<pre><code>./RtcTokenBuilder</code></pre>
+		</li>
+	</ol>
+</details>
+
+<details>
+	<summary><font color="#3ab7f8">Ruby</font></summary>
+Before proceeding, ensure that you have installed Ruby v1.9 or later. Run the following command to check your current Ruby version:
+	<pre><code>ruby -version</code></pre>
+	<ol>
+		<li>Download or clone the <a href="https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey">AgoraDynamicKey</a> repository.</li>
+		<li>Open the <code>AgoraDynamicKey/ruby/sample/rtc_token_builder_sample.rb</code> file, replace the value of <code>appID</code>, <code>appCertificate</code>, <code>channelName</code>, and <code>uid</code> with your own, and comment out the code snippets of <code>buildTokenWithUserAccount</code>.</li>
+		<li>Open Terminal, navigate to the same directory that holds <code>rtc_token_builder_sample.rb</code>, and run the following command. The token is generated and printed in your Terminal window.
+			<pre><code>ruby rtc_token_builder_sample.rb</code></pre>
+		</li>
+	</ol>
+</details>
+
+### API reference
+
+This section introduces the method to generate a token. Take C++ as an example:
+
 ```C++
-  result = SimpleTokenBuilder::buildTokenWithUid(
-      appID, appCertificate, channelName, uid, UserRole::Role_Attendee,
-      privilegeExpiredTs);
- std::cout << "Token With Int Uid:" << result << std::endl;
-```
-> Skip this step if you just want to take a quick look at how a token is generated.
-5. Open your terminal and navigate to the local folder holding **RtcTokenBuilderSample.cpp**.
-6. Run the following command:
-    `g++ -std=c++0x -O0 -I../../ RtcTokenBuilderSample.cpp -lz -lcrypto -o RtcTokenBuilderSample`
- *An executable file <b>RtcTokenBuilderSample</b> appears in the folder.*
-7. In your terminal, run `./RtcTokenBuilderSample` to generate a Token. 
- *Your token is printed in your terminal window.*
-		
-> Ensure that you have correctly set the environment variant of **openssl**. Suppose you are using macOS and if `fatal error: 'openssl/hmac.h' file not found` appears, try the followling command to debug:
->1. Run the `which openssl` command in your terminal.
->     *The terminal prints: `/usr/bin/openssl`*
->2. `cd /usr/local/include`
->3. `ln -s ../opt/openssl/include/openssl .`   
-
-
-## API Reference
-
-Source code:  [../cpp/src/RtcTokenBuilder.h](https://github.com/AgoraIO/Tools/blob/master/DynamicKey/AgoraDynamicKey/cpp/src/RtcTokenBuilder.h)
-
-You can create your own token generator using the public methods that **RtcTokenBuilder.h** provides. Note that **RtcTokenBuilder.h** supports both int uid and string userAccount. Ensure that you choose the right method. 
-
-### buildTokenWithUid
-
-
-
-```c++
-   static std::string buildTokenWithUid(
-       const std::string& appId,
-       const std::string& appCertificate,
-       const std::string& channelName,
-       uint32_t uid,
-       UserRole role,
-       uint32_t privilegeExpiredTs = 0);
+static std::string buildTokenWithUid(
+    const std::string& appId,
+    const std::string& appCertificate,
+    const std::string& channelName,
+    uint32_t uid,
+    UserRole role,
+    uint32_t privilegeExpiredTs = 0);
 ```
 
-This method builds a token with your int uid.
+| Parameter | Description | 
+| ---------------- | ---------------- | 
+| `appId`      | The App ID of your Agora project.      | 
+| `appCertificate` | The App Certificate of your Agora project.|
+| `channelName` | The unique channel name for the Agora RTC session in the string format. The string length must be less than 64 bytes. Supported character scopes are:</br><ul><li>All lowercase English letters: a to z.</li><li>All uppercase English letters: A to Z.</li><li>All numeric characters: 0 to 9.</li><li>The space character.</li><li>Punctuation characters and other symbols, including: "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "\|", "~", ",".</li></ul>|
+| `uid` | The user ID. A 32-bit unsigned integer with a value range from 1 to (2<sup>32</sup> - 1). It must be unique. Set `uid` as 0, if you do not want to authenticate the user ID, that is, any uid from the app client can join the channel or log onto the service system.|
+| `role` | The privilege of the user:<ul><li>`Role_Publisher`(1): (Default) The user has the privilege of publishing streams.<li>`Role_Subscriber`(2): The user does not have the privilege of publishing streams.</ul>If you have enabled co-host token authentication, whether a user can publish streams is determined by this parameter and the user role in the `setClientRole` method. For details, see FAQ: <a href="https://docs.agora.io/en/faq/token_cohost">How do I use co-host token authentication</a>.|
+| `privilegeExpiredTs` | The Unix timestamp (s) when the token expires, represented by the sum of the current timestamp and the valid time of the token. For example, if you set `privilegeExpiredTs` as the current timestamp plus 600 seconds, the token expires in 10 minutes. A token is valid for 24 hours at most. If you set this parameter as 0 or a period longer than 24 hours, the token is valid for 24 hours.|
+	
+<div class="note alert">Agora also provides a <code>buildTokenWithUserAccount</code> method which enables you to generate a token with a user account in the string format, though we recommend not using it.</div>
+	
+## Considerations
+	
+### Channel name and user ID
 
-| **Parameter**    | **Description**                                              |
-| ---------------- | ------------------------------------------------------------ |
-| `appID`          | The App ID issued to you by Agora. Apply for a new App ID from Agora Console if it is missing from your kit. See [Get an App ID](https://docs.agora.io/en/Agora%20Platform/token/#app-id). |
-| `appCertificate` | Certificate of the application that you registered in the Agora Console. See [Get an App Certificate](https://docs.agora.io/en/Agora%20Platform/token/#app-certificate). |
-| `channelName`    | Unique channel name for the AgoraRTC session in the string format. The string length must be less than 64 bytes. Supported character scopes are: <li>The 26 lowercase English letters: a to z.<li>The 26 uppercase English letters: A to Z.<li>The 10 digits: 0 to 9.<li>The space.<li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "\|", "~", ",". |
-| `uid`            | User ID. A 32-bit unsigned integer with a value ranging from 1 to (2<sup>32</sup>-1). optionalUid must be unique. |
-| `role` <sup>1</sup>          | <li> `Role_Publisher = 1`: (Recommended) A broadcaster (host) in a live-broadcast profile.<li>`Role_Subscriber = 2`: An audience in a live-broadcast profile. |
-| `privilegeExpiredTs`      | Time represented by the number of seconds elapsed since 1/1/1970. If, for example, you want to access the Agora Service within 10 minutes after the token is generated, set expireTimestamp as the current timestamp + 600 (seconds). Set it as 0 if the privilege never expires. |
+The channel name and user ID that you use to generate the token must be the same with those that you use to join the channel.
 
-<div class="alert warning"><sup>1</sup>: All the <code>role</code> enums share exactly the same privileges. To enable privilege authentication with a Token, e.g., to remove the upstreaming privilege of the audience, contact sales-us@agora.io.</div>
+### App Certificate and token
 
-### buildTokenWithUserAccount
+To use the token for authentication, you need to enable the App Certificate for your project on Console. Once a project has enabled the App Certificate, you must use tokens to authenticate its users.
+
+### Token expiration
+
+A token is valid for 24 hours at most. To ensure the experience of your app user, the Agora SDK that you use triggers the following callbacks when a token expires:
+
+- `onTokenPrivilegeWillExpire`: Occurs when the token expires in 30 seconds. Upon receiving this callback, you need to generate a new token on your server, and call `renewToken` to pass the new token to the SDK.
+- `onRequestToken` (`onTokenPrivilegeDidExpire` on the Web platform): Occurs when the token has expired. Upon receiving this callback, you need to generate a new token on your server, and re-join the channel.
+
+
+## Reference
+
+You can also refer to the following documents according to your needs:
+
+- [How to solve token-related errors?](https://docs.agora.io/en/faq/token_error)
+- [What causes the 101 error on Cloud Recording SDK?](https://docs.agora.io/en/faq/101_error)
+- [How to use co-host token authentication?](https://docs.agora.io/en/faq/token_cohost)
 
 
 
-```c++
-  static std::string buildTokenWithUserAccount(
-      const std::string& appId,
-      const std::string& appCertificate,
-      const std::string& channelName,
-      const std::string& userAccount,
-      UserRole role,
-      uint32_t privilegeExpiredTs = 0);
-```
 
-This method builds a token with your string userAccount.
 
-| **Parameter**    | **Description**                                              |
-| ---------------- | ------------------------------------------------------------ |
-| `appID`          | The App ID issued to you by Agora. Apply for a new App ID from Agora Console if it is missing from your kit. See [Get an App ID](https://docs.agora.io/en/Agora%20Platform/token/#app-id). |
-| `appCertificate` | Certificate of the application that you registered in the Agora Console. See [Get an App Certificate](https://docs.agora.io/en/Agora%20Platform/token/#app-certificate). |
-| `channelName`    | Unique channel name for the AgoraRTC session in the string format. The string length must be less than 64 bytes. Supported character scopes are: <li>The 26 lowercase English letters: a to z.<li>The 26 uppercase English letters: A to Z.<li>The 10 digits: 0 to 9.<li>The space.<li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "\|", "~", ",". |
-| `userAccount`    | The user account. The maximum length of this parameter is 255 bytes. Ensure that you set this parameter and do not set it as null. Supported character scopes are: <li>The 26 lowercase English letters: a to z.<li>The 26 uppercase English letters: A to Z.<li>The 10 digits: 0 to 9.<li>The space.<li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "\|", "~", ",". |
-| `role` <sup>2</sup>          | <li> `Role_Publisher = 1`: (Recommended) A broadcaster (host) in a live-broadcast profile.<li>`Role_Subscriber = 2`: An audience in a live-broadcast profile. |
-| `privilegeExpiredTs`      | Time represented by the number of seconds elapsed since 1/1/1970. If, for example, you want to access the Agora Service within 10 minutes after the token is generated, set expireTimestamp as the current timestamp + 600 (seconds). Set it as 0 if the privilege never expires. |
-
-<div class="alert warning"><sup>2</sup>: All the <code>role</code> enums share exactly the same privileges. To enable privilege authentication with a Token, e.g., to remove the upstreaming privilege of the audience, contact sales-us@agora.io.</div>
 

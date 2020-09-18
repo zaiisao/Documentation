@@ -3,7 +3,7 @@
 title: Release Notes for the Recording SDK
 description: 
 platform: Linux
-updatedAt: Wed Jul 15 2020 06:15:11 GMT+0800 (CST)
+updatedAt: Thu Sep 17 2020 07:41:09 GMT+0800 (CST)
 ---
 # Release Notes for the Recording SDK
 ## Overview
@@ -44,6 +44,19 @@ This component package is compatible with the following SDKs:
 
 > The Agora On-premise Recording SDK supports both Java and C++ from v2.2.0.
 
+
+## v3.0.3
+
+v3.0.3 was released on September 17, 2020.
+
+**New feature**
+
+#### Restoration of recorded files after crashes 
+
+Before v3.0.3, the MP4 files generated after a recording may not be playable due to recording crashes. To solve this issue, from v3.0.3, the Agora Recording SDK provides the following solutions:
+
+- The SDK generates video files in TS format during the recording. When the recording ends, the SDK automatically converts the TS files to MP4 format. Even if occasional crashes occur during the recording, the MP4 files can still be played.
+- The SDK adds the `crash_restore.sh` script. When the recording service quits abnormally after multiple crashes, you can run the script to convert the TS files to MP4 files and restore the incomplete `uid_UID_timestamp.txt` files.
 
 ## v3.0.2
 

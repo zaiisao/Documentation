@@ -3,7 +3,7 @@
 title: Token
 description: 
 platform: All Platforms
-updatedAt: Fri Jul 03 2020 12:16:03 GMT+0800 (CST)
+updatedAt: Fri Sep 18 2020 04:37:01 GMT+0800 (CST)
 ---
 # Token
 A Token, also known as a dynamic key, is used for authentication when your app user joins an RTC channel or logs onto the Agora RTM system.
@@ -15,7 +15,7 @@ Tokens are generated on the business server. When generating a token, developers
 Once a token expires, developers can no longer access the Agora service: App users are kicked out of the channel, or can no longer log onto the service system. To prevent this from happening, the Agora SDKs have callbacks to remind the app to renew the token both before and after the token expires. When this happens, developers need to generate a new token on the business server and pass the new token to the SDK to resume communication.
 
 <div class="alert info">References: 
-	<li><a href="https://docs.agora.io/en/Interactive%20Broadcast/token_server_cpp">Generate a token for Agora RTC SDK, On-premise Recording, or Cloud Recording</a></li>
+	<li><a href="https://docs.agora.io/en/Interactive%20Broadcast/token_server?platform=All%20Platforms">Generate a token for Agora RTC SDK, On-premise Recording, or Cloud Recording</a></li>
 	<li><a href="https://docs.agora.io/en/Real-time-Messaging/rtm_token">Generate a token for Agora RTM SDK</a></li>
 	<li><a href="https://docs.agora.io/en/faq/token_error">Troubleshooting token-related errors</a></li>
 </div>

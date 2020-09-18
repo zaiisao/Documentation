@@ -3,7 +3,7 @@
 title: Agora Analytics RESTful API (Beta)
 description: AA rest api reference
 platform: All Platforms
-updatedAt: Sun Jun 28 2020 08:33:13 GMT+0800 (CST)
+updatedAt: Thu Sep 17 2020 07:45:13 GMT+0800 (CST)
 ---
 # Agora Analytics RESTful API (Beta)
 Agora Analytics provides RESTful APIs for you to retrieve the statistics of your calls and use them in your own application.
@@ -73,7 +73,7 @@ The following query string parameters are required in the URL as search criteria
 GET /beta/analytics/call/lists?start_ts=1550024508&end_ts=1550025508&appid=xxxxxxxxxxxxxxxxxxxx HTTP/1.1
 Host: api.agora.io
 Accept: application/json
-Authorization: Basic ZGJhZDMyNmFkMzQ0NDk2NGEzYzAwNjZiZmYwNTZmNjo2ZjIyMmZhMTkzNWE0MWQzYTczNzg2ODdiMmNiYjRh
+Authorization: Basic ZGJhZDMyNmFkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxWQzYTczNzg2ODdiMmNiYjRh
 ```
 
 #### A response example
@@ -134,7 +134,7 @@ This API requires the following parameters to specify the call.
 GET /beta/analytics/call/details?start_ts=1548665345&end_ts=1548670821&appid=axxxxxxxxxxxxxxxxxxxx&call_id=cxxxxxxxxxxxxxxxxxxxx HTTP/1.1
 Host: api.agora.io
 Accept: application/json
-Authorization: Basic ZGJhZDMyNmFkMzQ0NDk2NGEzYzAwNjZiZmYwNTZmNjo2ZjIyMmZhMTkzNWE0MWQzYTczNzg2ODdiMmNiYjRh
+Authorization: Basic ZGJhZDMyNmFkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxWQzYTczNzg2ODdiMmNiYjRh
 ```
 
 #### A response example
@@ -243,7 +243,7 @@ The URL requires the following query string parameters:
 | Parameter  | Type   | Description                                                  |
 | :--------- | :----- | :----------------------------------------------------------- |
 | `start_ts` | Number | The starting time of the search time frame. Unix format (time in seconds since 1970) in UTC. |
-| `end_ts`   | Number | The starting time of the search time frame. Unix format (time in seconds since 1970) in UTC. |
+| `end_ts`   | Number | The ending time of the search time frame. Unix format (time in seconds since 1970) in UTC. |
 | `appid`    | String | [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-appid-a-app-id) of your project. |
 | `metric`   | String | The metric(s) you want to query.<li>`userCount`: Total number of unique UIDs. If two channels have a same UID, Agora Analytics counts it as two users.</li><li>`sessionCount`: It counts each time a user joins a channel.</li><li>`channelCount`: Total number of channels. A channel begins when the first user joins and ends when the last user leaves.</li>To query multiple metrics, add a comma between metrics, such as `userCount,sessionCount`. |
 
@@ -255,7 +255,7 @@ The URL requires the following query string parameters:
 GET /beta/insight/usage/by_time?start_ts=1570579200&end_ts=1570838400&appid=axxxxxxxxxxxxxxxxxxxx&metric=userCount HTTP/1.1
 Host: api.agora.io
 Accept: application/json
-Authorization: Basic ZGJhZDMyNmFkMzQ0NDk2NGEzYzAwNjZiZmYwNTZmNjo2ZjIyMmZhMTkzNWE0MWQzYTczNzg2ODdiMmNiYjRh
+Authorization: Basic ZGJhZDMyNmFkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxWQzYTczNzg2ODdiMmNiYjRh
 ```
 
 #### A response example
@@ -328,7 +328,7 @@ The URL requires the following query string parameters:
 GET /beta/live/scale/by_time?start_ts=1548665345&end_ts=1548670821&appid=axxxxxxxxxxxxxxxxxxxx&metric=pcu,pcc HTTP/1.1
 Host: api.agora.io
 Accept: application/json
-Authorization: Basic ZGJhZDMyNmFkMzQ0NDk2NGEzYzAwNjZiZmYwNTZmNjo2ZjIyMmZhMTkzNWE0MWQzYTczNzg2ODdiMmNiYjRh
+Authorization: Basic ZGJhZDMyNmFkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxWQzYTczNzg2ODdiMmNiYjRh
 ```
 
 #### A response example
@@ -388,7 +388,7 @@ The URL requires the following query string parameters:
 GET /beta/live/experience/by_time?start_ts=1548665345&end_ts=1548670821&appid=axxxxxxxxxxxxxxxxxxxx&metric=joinSuccessRate HTTP/1.1
 Host: api.agora.io
 Accept: application/json
-Authorization: Basic ZGJhZDMyNmFkMzQ0NDk2NGEzYzAwNjZiZmYwNTZmNjo2ZjIyMmZhMTkzNWE0MWQzYTczNzg2ODdiMmNiYjRh
+Authorization: Basic ZGJhZDMyNmFkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxWQzYTczNzg2ODdiMmNiYjRh
 ```
 
 #### A response example
@@ -446,7 +446,7 @@ The URL requires the following query string parameters:
 GET /beta/live/net/by_time?start_ts=1548665345&end_ts=1548670821&appid=axxxxxxxxxxxxxxxxxxxx&metric=videoUpstreamExcellentTransRate HTTP/1.1
 Host: api.agora.io
 Accept: application/json
-Authorization: Basic ZGJhZDMyNmFkMzQ0NDk2NGEzYzAwNjZiZmYwNTZmNjo2ZjIyMmZhMTkzNWE0MWQzYTczNzg2ODdiMmNiYjRh
+Authorization: Basic ZGJhZDMyNmFkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxWQzYTczNzg2ODdiMmNiYjRh
 ```
 
 #### A response example
@@ -494,7 +494,7 @@ The URL requires the following query string parameters:
 GET /beta/live/diagnosis?start_ts=1548665345&end_ts=1548670821&appid=axxxxxxxxxxxxxxxxxxxx HTTP/1.1
 Host: api.agora.io
 Accept: application/json
-Authorization: Basic ZGJhZDMyNmFkMzQ0NDk2NGEzYzAwNjZiZmYwNTZmNjo2ZjIyMmZhMTkzNWE0MWQzYTczNzg2ODdiMmNiYjRh
+Authorization: Basic ZGJhZDMyNmFkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxWQzYTczNzg2ODdiMmNiYjRh
 ```
 
 #### A response example

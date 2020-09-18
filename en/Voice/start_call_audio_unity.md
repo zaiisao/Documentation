@@ -3,12 +3,12 @@
 title: Start a Voice Call
 description: 
 platform: Unity
-updatedAt: Wed Jul 29 2020 07:29:38 GMT+0800 (CST)
+updatedAt: Thu Sep 17 2020 12:09:28 GMT+0800 (CST)
 ---
 # Start a Voice Call
 Use this guide to quickly start a basic one-to-one voice call with the Agora SDK for Unity.
 
-## Try the sample project
+## Sample project
 
 We provide an open-source [Hello-Unity3D-Agora](https://github.com/AgoraIO/Agora-Unity-Quickstart/tree/master/audio/Hello-Unity3D-Agora) sample project on GitHub that implements the basic one-to-one voice call. You can also see how to run the sample project in [Add voice chat to your Unity app on Android and iOS](https://medium.com/agora-io/add-voice-chat-to-your-unity-game-2194dbcf6eff).
 
@@ -216,10 +216,6 @@ void OnApplicationQuit()
 	}
 }
 ```
-
-### Sample code
-
-You can find the complete code in the [HelloUnity3D.cs](https://github.com/AgoraIO/Agora-Unity-Quickstart/blob/master/audio/Hello-Unity3D-Agora/Assets/HelloUnity3D.cs) file in the [Hello-Unity3D-Agora](https://github.com/AgoraIO/Agora-Unity-Quickstart/tree/master/audio/Hello-Unity3D-Agora) sample project.
 
 ## Run the project
 

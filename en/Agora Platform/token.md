@@ -3,7 +3,7 @@
 title: Set up Authentication
 description: token authentication
 platform: All Platforms
-updatedAt: Thu Aug 06 2020 08:18:01 GMT+0800 (CST)
+updatedAt: Fri Sep 18 2020 04:34:31 GMT+0800 (CST)
 ---
 # Set up Authentication
 To ensure communication security, when users join an RTC channel or you start recording on the server, Agora needs to check their authentication information. Agora provides three authentication mechanisms. According to your scenarios, you can choose one of the following mechanisms:
@@ -114,7 +114,7 @@ To enable a primary certificate, do the following:
 
 </details>
   
-- <a name = "generatetoken"></a>For production environment, Agora recommends generating a token at your server by calling `buildTokenWithUid`. See [Generate a token](https://docs.agora.io/en/Audio%20Broadcast/token_server_cpp).
+- <a name = "generatetoken"></a>For production environment, Agora recommends generating a token at your server by calling `buildTokenWithUid`. See [Generate a token](https://docs.agora.io/en/Audio%20Broadcast/token_server).
 
 <div class="alert note"><li>Agora supports C++, Java, Python, PHP and other languages for generating tokens on your server. In this section, take the C++ language as an example.<li>The token encoding uses the standard HMAC/SHA1 approach and the libraries are available on common server-side development platforms, such as Node.js, Java, PHP, Python, and C++. For more information, see <a href="http://en.wikipedia.org/wiki/Hash-based_message_authentication_code">Authentication code</a >.</li></div>
 
@@ -171,7 +171,7 @@ If you only use the App ID for authentication, you can follow the steps below fo
 
 1. [Enable a primary app certificate](#appcertificate). 
 
-2. After successfully enabling a primary app certificate, use the primary app certificate to [generate a token](https://docs.agora.io/en/Audio%20Broadcast/token_server_cpp).
+2. After successfully enabling a primary app certificate, use the primary app certificate to [generate a token](https://docs.agora.io/en/Audio%20Broadcast/token_server).
 
 3. Use either an App ID or a token for authentication. For example, when existing users are using App ID for authentication, new users can use a token for authentication, and thus both new and old users can join the same channel. You can gradually phase out the use of App ID for authentication.
  ![](https://web-cdn.agora.io/docs-files/1593500372631)
