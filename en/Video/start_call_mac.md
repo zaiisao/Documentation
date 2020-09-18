@@ -3,7 +3,7 @@
 title: Start a Video Call
 description: 
 platform: macOS
-updatedAt: Wed Jul 29 2020 07:29:34 GMT+0800 (CST)
+updatedAt: Fri Sep 18 2020 04:47:01 GMT+0800 (CST)
 ---
 # Start a Video Call
 Use this guide to quickly start a basic video call demo with the Agora Video SDK for macOS.
@@ -260,7 +260,7 @@ After initializing the `AgoraRtcEngineKit` object and setting the local video vi
 - `token`: Pass a token that identifies the role and privilege of the user. You can set it as one of the following values:
   - `nil`.
   - A temporary token generated in Console. A temporary token is valid for 24 hours. For details, see [Get a Temporary Token](https://docs.agora.io/en/Agora%20Platform/token#get-a-temporary-token).
-  - A token generated at the server. This applies to scenarios with high-security requirements. For details, see [Generate a token from Your Server](../../en/Video/token_server_cpp.md).
+  - A token generated at the server. This applies to scenarios with high-security requirements. For details, see [Generate a token from Your Server](../../en/Video/token_server.md).
 
   <div class="alert note">If your project has enabled the app certificate, ensure that you provide a token.</div>
 

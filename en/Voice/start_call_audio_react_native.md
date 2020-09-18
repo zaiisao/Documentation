@@ -4,7 +4,7 @@ title: Start a Voice Call
 description: Describes how quickly implement a voice call with Agora React Native SDK.
 
 platform: React Native
-updatedAt: Fri Sep 04 2020 08:45:34 GMT+0800 (CST)
+updatedAt: Fri Sep 18 2020 04:46:17 GMT+0800 (CST)
 ---
 # Start a Voice Call
 Learn how to quickly start a basic voice call with the Agora React Native SDK.
@@ -98,7 +98,7 @@ After initializing the `RtcEngine` object, you can call `joinChannel` to join a 
 
   - `null` or an empty string "".
   - A temporary token generated in Console. A temporary token is valid for 24 hours. For details, see [Get a Temporary Token](https://docs.agora.io/en/Agora%20Platform/token#get-a-temporary-token).
-  - A token generated at the server. This applies to scenarios with high-security requirements. For details, see [Generate a token from Your Server](https://docs.agora.io/en/Interactive%20Broadcast/token_server_cpp).
+  - A token generated at the server. This applies to scenarios with high-security requirements. For details, see [Generate a token from Your Server](https://docs.agora.io/en/Interactive%20Broadcast/token_server).
   
  <div class="alert note">If your project has enabled the app certificate, ensure that you provide a token.</div>
 

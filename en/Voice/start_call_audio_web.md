@@ -3,7 +3,7 @@
 title: Start a Voice Call
 description: 
 platform: Web
-updatedAt: Fri Sep 11 2020 07:18:52 GMT+0800 (CST)
+updatedAt: Fri Sep 18 2020 04:45:12 GMT+0800 (CST)
 ---
 # Start a Voice Call
 <div class="alert note">Agora has released the Agora Web SDK NG, the next generation of the Agora Web SDK, which fully optimizes the internal architecture of the SDK and improves its usability. Based on Typescript, the Agora Web SDK NG uses Promises for asynchronous operations and provides more flexible and easy-to-use APIs. Click <a href="https://agoraio-community.github.io/AgoraWebSDK-NG/en/">here</a> to learn more about the Agora Web SDK NG.</div>
@@ -243,7 +243,7 @@ var option = {
 
 	- `token`: This is optional. Pass a token that identifies the role and privilege of the user if your project enables an app certificate. See [Use a token for authentication](https://docs.agora.io/en/Agora%20Platform/token#Token) for details.
 		- For testing, we recommend using a Temp Token generated in Console. See [Get a Temp Token](https://docs.agora.io/en/Agora%20Platform/token#get-a-temporary-token).
-		- For production, we recommend using a Token generated at your server. For how to generate a token, see [Token Security](https://docs.agora.io/en/Video/token_server_cpp).
+		- For production, we recommend using a Token generated at your server. For how to generate a token, see [Token Security](https://docs.agora.io/en/Video/token_server).
 	- `channel`: Channel name. A string within 64 bytes.
 	- `uid`: The user ID should be unique in a channel. If you set the user ID as `null` or `0`, the Agora server assigns a user ID and returns it in the `onSuccess` callback.
 

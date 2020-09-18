@@ -3,7 +3,7 @@
 title: Start a Video Call
 description: 
 platform: Unity
-updatedAt: Thu Sep 17 2020 12:10:19 GMT+0800 (CST)
+updatedAt: Fri Sep 18 2020 04:47:05 GMT+0800 (CST)
 ---
 # Start a Video Call
 Use this guide to quickly start a basic video call with the Agora SDK for Unity.
@@ -218,7 +218,7 @@ After initializing an `IRtcEngine` object and setting the local video, call `Joi
 
   - `NULL`.
   - A temporary token generated in Agora Console. A temporary token is valid for 24 hours. For details, see [Get a temporary token](https://docs.agora.io/en/Agora%20Platform/token#get-a-temporary-token).
-  - A token generated at the server. This applies to scenarios with high-security requirements. For details, see [Generate a token from Your Server](https://docs.agora.io/en/Video/token_server_cpp).
+  - A token generated at the server. This applies to scenarios with high-security requirements. For details, see [Generate a token from Your Server](https://docs.agora.io/en/Video/token_server).
 
   <div class="alert note">If your project has enabled the app certificate, ensure that you provide a token.</div>
 
