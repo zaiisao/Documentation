@@ -3,7 +3,7 @@
 title: 水晶球 RESTful API (Beta)
 description: AA rest api reference 
 platform: All Platforms
-updatedAt: Sun Jun 28 2020 08:33:42 GMT+0800 (CST)
+updatedAt: Thu Sep 17 2020 07:46:24 GMT+0800 (CST)
 ---
 # 水晶球 RESTful API (Beta)
 水晶球现在提供 RESTful API，可以让你直接通过网络请求获取水晶球里的数据，在自己的网页或应用中灵活使用。
@@ -75,7 +75,7 @@ updatedAt: Sun Jun 28 2020 08:33:42 GMT+0800 (CST)
 GET /beta/analytics/call/lists?start_ts=1550024508&end_ts=1550025508&appid=xxxxxxxxxxxxxxxxxxxx HTTP/1.1
 Host: api.agora.io
 Accept: application/json
-Authorization: Basic ZGJhZDMyNmFkMzQ0NDk2NGEzYzAwNjZiZmYwNTZmNjo2ZjIyMmZhMTkzNWE0MWQzYTczNzg2ODdiMmNiYjRh
+Authorization: Basic ZGJhZDMyNmFkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxWQzYTczNzg2ODdiMmNiYjRh
 ```
 
 #### 响应示例
@@ -134,7 +134,7 @@ Authorization: Basic ZGJhZDMyNmFkMzQ0NDk2NGEzYzAwNjZiZmYwNTZmNjo2ZjIyMmZhMTkzNWE
 GET /beta/analytics/call/details?start_ts=1548665345&end_ts=1548670821&appid=axxxxxxxxxxxxxxxxxxxx&call_id=cxxxxxxxxxxxxxxxxxxxx HTTP/1.1
 Host: api.agora.io
 Accept: application/json
-Authorization: Basic ZGJhZDMyNmFkMzQ0NDk2NGEzYzAwNjZiZmYwNTZmNjo2ZjIyMmZhMTkzNWE0MWQzYTczNzg2ODdiMmNiYjRh
+Authorization: Basic ZGJhZDMyNmFkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxWQzYTczNzg2ODdiMmNiYjRh
 ```
 
 #### 响应示例
@@ -253,7 +253,7 @@ Authorization: Basic ZGJhZDMyNmFkMzQ0NDk2NGEzYzAwNjZiZmYwNTZmNjo2ZjIyMmZhMTkzNWE
 GET /beta/insight/usage/by_time?start_ts=1570579200&end_ts=1570838400&appid=axxxxxxxxxxxxxxxxxxxx&metric=userCount HTTP/1.1
 Host: api.agora.io
 Accept: application/json
-Authorization: Basic ZGJhZDMyNmFkMzQ0NDk2NGEzYzAwNjZiZmYwNTZmNjo2ZjIyMmZhMTkzNWE0MWQzYTczNzg2ODdiMmNiYjRh
+Authorization: Basic ZGJhZDMyNmFkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxWQzYTczNzg2ODdiMmNiYjRh
 ```
 
 #### 响应示例
@@ -326,7 +326,7 @@ Authorization: Basic ZGJhZDMyNmFkMzQ0NDk2NGEzYzAwNjZiZmYwNTZmNjo2ZjIyMmZhMTkzNWE
 GET /beta/live/scale/by_time?start_ts=1548665345&end_ts=1548670821&appid=axxxxxxxxxxxxxxxxxxxx&metric=pcu,pcc HTTP/1.1
 Host: api.agora.io
 Accept: application/json
-Authorization: Basic ZGJhZDMyNmFkMzQ0NDk2NGEzYzAwNjZiZmYwNTZmNjo2ZjIyMmZhMTkzNWE0MWQzYTczNzg2ODdiMmNiYjRh
+Authorization: Basic ZGJhZDMyNmFkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxWQzYTczNzg2ODdiMmNiYjRh
 ```
 
 #### 响应示例
@@ -388,7 +388,7 @@ Authorization: Basic ZGJhZDMyNmFkMzQ0NDk2NGEzYzAwNjZiZmYwNTZmNjo2ZjIyMmZhMTkzNWE
 GET /beta/live/experience/by_time?start_ts=1548665345&end_ts=1548670821&appid=axxxxxxxxxxxxxxxxxxxx&metric=joinSuccessRate HTTP/1.1
 Host: api.agora.io
 Accept: application/json
-Authorization: Basic ZGJhZDMyNmFkMzQ0NDk2NGEzYzAwNjZiZmYwNTZmNjo2ZjIyMmZhMTkzNWE0MWQzYTczNzg2ODdiMmNiYjRh
+Authorization: Basic ZGJhZDMyNmFkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxWQzYTczNzg2ODdiMmNiYjRh
 ```
 
 #### 响应示例
@@ -448,7 +448,7 @@ Authorization: Basic ZGJhZDMyNmFkMzQ0NDk2NGEzYzAwNjZiZmYwNTZmNjo2ZjIyMmZhMTkzNWE
 GET /beta/live/net/by_time?start_ts=1548665345&end_ts=1548670821&appid=axxxxxxxxxxxxxxxxxxxx&metric=videoUpstreamExcellentTransRate HTTP/1.1
 Host: api.agora.io
 Accept: application/json
-Authorization: Basic ZGJhZDMyNmFkMzQ0NDk2NGEzYzAwNjZiZmYwNTZmNjo2ZjIyMmZhMTkzNWE0MWQzYTczNzg2ODdiMmNiYjRh
+Authorization: Basic ZGJhZDMyNmFkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxWQzYTczNzg2ODdiMmNiYjRh
 ```
 
 #### 响应示例
@@ -496,7 +496,7 @@ Authorization: Basic ZGJhZDMyNmFkMzQ0NDk2NGEzYzAwNjZiZmYwNTZmNjo2ZjIyMmZhMTkzNWE
 GET /beta/live/diagnosis?start_ts=1548665345&end_ts=1548670821&appid=axxxxxxxxxxxxxxxxxxxx HTTP/1.1
 Host: api.agora.io
 Accept: application/json
-Authorization: Basic ZGJhZDMyNmFkMzQ0NDk2NGEzYzAwNjZiZmYwNTZmNjo2ZjIyMmZhMTkzNWE0MWQzYTczNzg2ODdiMmNiYjRh
+Authorization: Basic ZGJhZDMyNmFkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxWQzYTczNzg2ODdiMmNiYjRh
 ```
 
 ####  响应示例
@@ -572,7 +572,7 @@ Authorization: Basic ZGJhZDMyNmFkMzQ0NDk2NGEzYzAwNjZiZmYwNTZmNjo2ZjIyMmZhMTkzNWE
 POST /beta/analytics/feedback/reportV2?appid=axxxxxxxxxxxxxxxxxxxx HTTP/1.1
 Host: api.agora.io
 Content-type: application/json
-Authorization: Basic ZGJhZDMyNmFkMzQ0NDk2NGEzYzAwNjZiZmYwNTZmNjo2ZjIyMmZhMTkzNWE0MWQzYTczNzg2ODdiMmNiYjRh
+Authorization: Basic ZGJhZDMyNmFkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxWQzYTczNzg2ODdiMmNiYjRh
 Cache-Control: no-cache
 
 { 

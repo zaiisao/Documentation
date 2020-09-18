@@ -3,7 +3,7 @@
 title: 创建和管理项目
 description: 
 platform: All Platforms
-updatedAt: Fri Jul 17 2020 02:57:09 GMT+0800 (CST)
+updatedAt: Fri Sep 18 2020 04:38:04 GMT+0800 (CST)
 ---
 # 创建和管理项目
 本页介绍如何在 Agora 控制台创建和管理项目。
@@ -24,7 +24,7 @@ updatedAt: Fri Jul 17 2020 02:57:09 GMT+0800 (CST)
  ![](https://web-cdn.agora.io/docs-files/1594287028966)
 
 3. 在弹出的对话框内输入**项目名称**，选择一种**鉴权机制**。
-<div class="alert info">Agora 提供两种鉴权机制：<b>APP ID + APP 证书 + Token（推荐）</b>和 <b>APP ID</b>。我们推荐使用安全性更高的 <b>APP ID + APP 证书 + Token</b> 鉴权机制：<ul><li>在项目测试阶段，<a href="#primary">启用主要证书</a >后可以直接在控制台生成一个临时 Token 进行测试。详见<a href="https://docs.agora.io/cn/Agora%20Platform/token#get-a-temporary-token">获取临时 Token</a >。</li><li>项目准备正式上线时，你需要在你的服务端部署一个 Token Generator 来生成正式 Token。详见<a href="https://docs.agora.io/cn/Interactive%20Broadcast/token_server_cpp">生成正式 Token</a >。</li></ul></div>
+<div class="alert info">Agora 提供两种鉴权机制：<b>APP ID + APP 证书 + Token（推荐）</b>和 <b>APP ID</b>。我们推荐使用安全性更高的 <b>APP ID + APP 证书 + Token</b> 鉴权机制：<ul><li>在项目测试阶段，<a href="#primary">启用主要证书</a >后可以直接在控制台生成一个临时 Token 进行测试。详见<a href="https://docs.agora.io/cn/Agora%20Platform/token#get-a-temporary-token">获取临时 Token</a >。</li><li>项目准备正式上线时，你需要在你的服务端部署一个 Token Generator 来生成正式 Token。详见<a href="https://docs.agora.io/cn/Interactive%20Broadcast/token_server?platform=All%20Platforms">生成正式 Token</a >。</li></ul></div>
  
   ![](https://web-cdn.agora.io/docs-files/1594283833299)
 

@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: Web
-updatedAt: Fri Sep 11 2020 07:19:01 GMT+0800 (CST)
+updatedAt: Fri Sep 18 2020 04:40:17 GMT+0800 (CST)
 ---
 # 实现语音通话
 <div class="alert note">声网已经推出下一代 Agora Web SDK (Agora Web SDK NG)，优化了 SDK 的内部架构，提高了 SDK 的可用性。Agora Web SDK NG 基于 Typescript 开发，并使用 Promise 来管理异步操作，提供了更灵活更易用的 API 方案。点击<a href="https://agoraio-community.github.io/AgoraWebSDK-NG/zh-CN/">此处</a>即刻体验 Agora Web SDK NG。</div>
@@ -241,7 +241,7 @@ var option = {
 
 	- `token`: 该参数为可选。如果你的 Agora 项目开启了 App 证书，你需要在该参数中传入一个 Token，详见 [使用 Token](https://docs.agora.io/cn/Agora%20Platform/token#Token)。
 		- 在测试环境，我们推荐使用控制台生成临时 Token，详见[获取临时 Token](https://docs.agora.io/cn/Agora%20Platform/token#get-a-temporary-token)。
-		- 在生产环境，我们推荐你在自己的服务端生成 Token，详见 [生成 Token](../../cn/Voice/token_server_cpp.md).
+		- 在生产环境，我们推荐你在自己的服务端生成 Token，详见 [生成 Token](../../cn/Voice/token_server.md).
 	- `channel`: 频道名，长度在 64 字节以内的字符串。
 	- `uid`: 用户 ID，频道内每个用户的 UID 必须是唯一的。如果你将 `uid` 设为 `null` 或 `0`，Agora 会自动分配一个 UID 并在 `onSuccess` 回调中返回。
 

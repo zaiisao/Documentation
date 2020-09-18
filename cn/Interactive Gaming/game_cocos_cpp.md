@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Cocos
-updatedAt: Mon Nov 25 2019 10:14:34 GMT+0800 (CST)
+updatedAt: Wed Sep 16 2020 09:28:21 GMT+0800 (CST)
 ---
 # 游戏 API
 本文提供游戏 SDK 的 **C++ 接口**，使应用程序实现音视频功能。

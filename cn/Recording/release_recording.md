@@ -3,7 +3,7 @@
 title: 录制 SDK 发版说明
 description: 
 platform: Linux
-updatedAt: Wed Jul 15 2020 06:15:24 GMT+0800 (CST)
+updatedAt: Thu Sep 17 2020 07:25:07 GMT+0800 (CST)
 ---
 # 录制 SDK 发版说明
 ## 简介
@@ -40,6 +40,20 @@ Agora 本地服务端录制 SDK for Linux (简称本地服务端录制 SDK) 在 
 - 如果在频道内调用 `leaveChannel`, 录制会停止, 但默认录制文件最后会包含一段空白片段，这个时间段由调用 `joinChannel` 时在 `config` 里设定的 `idleLimitSec` 字段值决定。详见 [录制 API](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/index.html)。
 - 由于录制的音视频文件是没有加密的，如果要满足 HIPPA 要求，需使用磁盘加密工具对硬盘进行加密，例如 cryptsetup。
 
+## 3.0.3 版
+
+该版本于 2020 年 9 月 17 日发布。该版本新增特性如下：
+
+**新增特性**
+
+#### 录制崩溃后录制文件可修复
+
+在过去的版本中，由于录制崩溃，录制生成的 MP4 文件可能无法播放。针对该问题，自 3.0.3 版本起， Agora 录制 SDK 提供如下解决方案：
+
+- 录制 SDK 在录制过程中生成 TS 格式的视频文件，并在录制正常结束后自动转封装为 MP4 文件。即使录制过程中偶现崩溃，最终生成的 MP4 文件依然可以播放。
+- 录制 SDK 新增 `crash_restore.sh` 脚本。当录制服务因多次崩溃而异常退出时，你可以运行该脚本将 TS 文件转封装为 MP4 文件，并修复内容缺失的 `uid_UID_timestamp.txt` 文件。
+
+详见 《[录制崩溃后修复录制文件](../../cn/Recording/recording_restore_files.md)》。
 ## 3.0.2 版
 
 该版本于 2020 年 7 月 15 日发布。该版本修复了以下问题：

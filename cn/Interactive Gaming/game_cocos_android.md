@@ -3,7 +3,7 @@
 title: 实现游戏语音功能
 description: 
 platform: Cocos
-updatedAt: Mon Apr 20 2020 02:59:02 GMT+0800 (CST)
+updatedAt: Wed Sep 16 2020 09:28:05 GMT+0800 (CST)
 ---
 # 实现游戏语音功能
 使用 Agora 的 `Hello-Cocos2d-Agora` 代码示例可以实现以下功能:

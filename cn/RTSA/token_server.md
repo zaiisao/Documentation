@@ -2,7 +2,7 @@
 ---
 title: 生成 Token
 description: Guide on how to generate tokens on the server side
-platform: All Platforms
+platform: CPP
 updatedAt: Fri Sep 18 2020 04:30:23 GMT+0800 (CST)
 ---
 # 生成 Token

@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Thu Aug 06 2020 08:11:51 GMT+0800 (CST)
+updatedAt: Fri Sep 18 2020 04:34:08 GMT+0800 (CST)
 ---
 # 校验用户权限
 为保证通信安全，当用户加入 RTC 频道或服务端开始录制时，Agora 需要对其鉴权。Agora 提供如下鉴权方案，你可以根据自己的实际使用场景，选择合适的鉴权方式：
@@ -111,7 +111,7 @@ App 证书是 Agora 控制台为开发项目生成的字符串。根据不同的
 
 </details>
   
-- <a name = "generatetoken"></a>在正式生产环境中，Agora 建议你在服务端调用 `buildTokenWithUid` 生成正式 Token。详见[生成 Token](https://docs.agora.io/cn/Audio%20Broadcast/token_server_cpp)。
+- <a name = "generatetoken"></a>在正式生产环境中，Agora 建议你在服务端调用 `buildTokenWithUid` 生成正式 Token。详见[生成 Token](https://docs.agora.io/cn/Audio%20Broadcast/token_server)。
 
 <div class="alert note"><ul><li>Agora 支持使用 C++、Java、Python、PHP 等语言在你的服务端生成正式 Token。本节 API 注释以 C++ 示例代码为例。<li>Token 采用业界标准化的 HMAC/SHA1 加密方案，在 Node.js、Java、Python、C++ 等绝大多数通用的服务端开发平台上均可获得所需加密库。具体加密方案可参看 <a href="http://en.wikipedia.org/wiki/Hash-based_message_authentication_code">Authentication code</a >。</li></ul></div>
    
@@ -167,7 +167,7 @@ App 证书是 Agora 控制台为开发项目生成的字符串。根据不同的
 
 1. [启用主要 App 证书](#appcertificate)。
 
-2. 成功启用主要 App 证书后，你可以使用主要证书[生成 Token](https://docs.agora.io/cn/Audio%20Broadcast/token_server_cpp)。
+2. 成功启用主要 App 证书后，你可以使用主要证书[生成 Token](https://docs.agora.io/cn/Audio%20Broadcast/token_server)。
 
 3. 同时使用 App ID 和 Token 鉴权。例如，当现存用户都使用 App ID 鉴权时，你可以对新用户使用 Token 鉴权，保障新老用户可以加入相同频道。再逐步将老用户的鉴权方案升级为使用 Token 鉴权。
  ![](https://web-cdn.agora.io/docs-files/1593499734108)

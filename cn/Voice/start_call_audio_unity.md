@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: Unity
-updatedAt: Thu Aug 20 2020 08:37:45 GMT+0800 (CST)
+updatedAt: Fri Sep 18 2020 04:39:42 GMT+0800 (CST)
 ---
 # 实现语音通话
 本文介绍如何使用 Agora Unity SDK 快速实现语音通话。
@@ -188,7 +188,7 @@ mRtcEngine.OnUserOfflineHandler = OnUserOfflineHandler;
 
   - `NULL`
   - 临时 Token。在安全要求一般的测试场景下，可使用临时 Token。你可以在控制台里生成一个临时 Token（服务有效期为 24 小时），详见[获取临时 Token](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#获取临时-token)。
-  - 在你的服务器端生成的 Token。在安全要求高的场景下，Agora 推荐你使用此种方式生成的 Token，详见[生成 Token](https://docs.agora.io/cn/Video/token_server_cpp)。
+  - 在你的服务器端生成的 Token。在安全要求高的场景下，Agora 推荐你使用此种方式生成的 Token，详见[生成 Token](https://docs.agora.io/cn/Video/token_server)。
 
   <div class="alert note">若项目已启用 App 证书，请使用 Token。</div>
 

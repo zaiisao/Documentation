@@ -3,7 +3,7 @@
 title: 游戏裁剪版 API
 description: 
 platform: Cocos
-updatedAt: Mon Nov 25 2019 10:13:57 GMT+0800 (CST)
+updatedAt: Wed Sep 16 2020 09:28:35 GMT+0800 (CST)
 ---
 # 游戏裁剪版 API
 本文提供基于 C++ 语言的游戏语音 API 描述，包括以下类:
