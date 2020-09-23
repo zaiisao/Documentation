@@ -6,7 +6,7 @@ platform: Web
 updatedAt: Fri Sep 18 2020 04:40:17 GMT+0800 (CST)
 ---
 # 实现语音通话
-<div class="alert note">声网已经推出下一代 Agora Web SDK (Agora Web SDK NG)，优化了 SDK 的内部架构，提高了 SDK 的可用性。Agora Web SDK NG 基于 Typescript 开发，并使用 Promise 来管理异步操作，提供了更灵活更易用的 API 方案。点击<a href="https://agoraio-community.github.io/AgoraWebSDK-NG/zh-CN/">此处</a>即刻体验 Agora Web SDK NG。</div>
+<div class="alert note">声网已经推出下一代 Agora Web SDK (Agora Web SDK NG)，优化了 SDK 的内部架构，提高了 SDK 的可用性。Agora Web SDK NG 基于 Typescript 开发，并使用 Promise 来管理异步操作，提供了更灵活更易用的 API 方案。点击<a href="https://agoraio-community.github.io/AgoraWebSDK-NG/zh-CN/">此处</a>抢先体验 Agora Web SDK NG。Agora Web SDK NG 当前处于 Beta 阶段，如有问题，可直接至 <a href="https://github.com/AgoraIO-Community/AgoraWebSDK-NG">GitHub</a> 提 issue。</div>
 
 根据本文指导快速集成 Agora Web SDK 并在你自己的 app 里实现实时音视频通话。
 

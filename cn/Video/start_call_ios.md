@@ -3,7 +3,7 @@
 title: 实现视频通话
 description: 
 platform: iOS
-updatedAt: Fri Sep 18 2020 04:49:25 GMT+0800 (CST)
+updatedAt: Tue Sep 22 2020 02:01:04 GMT+0800 (CST)
 ---
 # 实现视频通话
 本文介绍如何使用 Agora 视频通话 SDK 快速实现视频通话。
@@ -358,3 +358,4 @@ func leaveChannel() {
   - Objective-C 项目: [OpenVideoCall-iOS-Objective-C](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-iOS-Objective-C)，参考 [RoomViewController.m](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-iOS-Objective-C/OpenVideoCall/RoomViewController.m) 中的代码。
 - [如何设置日志文件？](https://docs.agora.io/cn/faq/logfile)
 - [如何处理视频黑屏问题？](https://docs.agora.io/cn/faq/video_blank)
+- [为什么在运行集成 RTC SDK 的 iOS app 时会看到查找本地网络设备的弹窗提示？](https://docs.agora.io/cn/faq/local_network_privacy)

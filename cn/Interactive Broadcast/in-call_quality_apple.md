@@ -3,7 +3,7 @@
 title: 通话中质量监测
 description: iOS/macOS 通话质量检测
 platform: iOS,macOS
-updatedAt: Wed Mar 04 2020 05:28:23 GMT+0800 (CST)
+updatedAt: Tue Sep 22 2020 02:00:39 GMT+0800 (CST)
 ---
 # 通话中质量监测
 ## 功能描述
@@ -139,3 +139,7 @@ updatedAt: Wed Mar 04 2020 05:28:23 GMT+0800 (CST)
 
 ## 开发注意事项
 [`localAudioStateChange`](#32)、[`remoteAudioStateChangedOfUid`](#34)、[`localVideoStateChange`](#42) 和 [`remoteVideoStateChangedOfUid`](#44) 状态监控回调**不会**每 2 秒被 SDK 自动触发，各自触发条件详见正文。
+	
+## 相关链接
+
+- [为什么在运行集成 RTC SDK 的 iOS app 时会看到查找本地网络设备的弹窗提示？](https://docs.agora.io/cn/faq/local_network_privacy)

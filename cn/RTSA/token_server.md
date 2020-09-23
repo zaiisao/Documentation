@@ -3,7 +3,7 @@
 title: 生成 Token
 description: Guide on how to generate tokens on the server side
 platform: CPP
-updatedAt: Fri Sep 18 2020 04:30:23 GMT+0800 (CST)
+updatedAt: Tue Sep 22 2020 09:00:15 GMT+0800 (CST)
 ---
 # 生成 Token
 Token，也称动态密钥，是 app 用户在加入频道或登录服务系统时采用的一种鉴权方式。
@@ -222,8 +222,10 @@ static std::string buildTokenWithUid(
 
 Token 的最大有效期为 24 小时。为保证通信体验，Agora 会在 Token 即将过期或已经过期时，分别触发以下回调：
 
-- `onTokenPrivilegeWillExpire`：该回调表示 Token 即将失效。收到这个回调时，你需要在服务端重新生成 Token，然后调用 `renewToken` 方法，将新生成的 Token 传给 SDK。
-- `onRequestToken`（Web 平台为 `onTokenPrivilegeDidExpire`）：该回调表示 Token 已经失效。收到这个回调时，你需要在服务端重新生成 Token，然后重新加入频道。
+- `onTokenPrivilegeWillExpire`：该回调表示 Token 即将失效。
+- `onRequestToken`（Web 平台为 `onTokenPrivilegeDidExpire`）：该回调表示 Token 已经失效。
+
+收到任一回调后，你需要在服务端重新生成 Token，然后调用 `renewToken` 方法更新 Token。
 
 ## 相关链接
 

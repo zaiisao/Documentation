@@ -3,7 +3,7 @@
 title: 实现音频直播
 description: 快速实现音频互动直播
 platform: React Native
-updatedAt: Fri Sep 04 2020 08:56:55 GMT+0800 (CST)
+updatedAt: Fri Sep 18 2020 04:54:06 GMT+0800 (CST)
 ---
 # 实现音频直播
 本文介绍如何使用 Agora React Native SDK 快速实现音频直播。
@@ -120,7 +120,7 @@ engine.setClientRole(ClientRole.Broadcaster)
 
   - `null` 或者空字符串。
   - 临时 Token。临时 Token 服务有效期为 24 小时。你可以在控制台里生成一个临时 Token，详见[获取临时 Token](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#get-a-temporary-token)。
-  - 在你的服务器端生成的 Token。在安全要求高的场景下，我们推荐你使用此种方式生成的 Token，详见[生成 Token](https://docs.agora.io/cn/Video/token_server_cpp)。
+  - 在你的服务器端生成的 Token。在安全要求高的场景下，我们推荐你使用此种方式生成的 Token，详见[生成 Token](https://docs.agora.io/cn/Video/token_server)。
   
 	 <div class="alert note">若项目已启用 App 证书，请使用 Token。</div>
 

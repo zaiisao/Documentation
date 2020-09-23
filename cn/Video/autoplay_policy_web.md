@@ -3,7 +3,7 @@
 title: 处理浏览器的自动播放策略
 description: 
 platform: Web
-updatedAt: Fri Jul 10 2020 07:38:48 GMT+0800 (CST)
+updatedAt: Wed Sep 23 2020 08:39:07 GMT+0800 (CST)
 ---
 # 处理浏览器的自动播放策略
 ## 概览
@@ -14,16 +14,16 @@ updatedAt: Fri Jul 10 2020 07:38:48 GMT+0800 (CST)
 
 结合 Agora Web SDK 的具体使用来说，只要调用 `Stream.play` 播放的流对象中包含音频且未静音，都会受到浏览器自动播放策略的限制。
 
-为了解决由于浏览器限制导致播放失败的问题，本文将分两种情况介绍绕过 Autoplay 限制的方案：
+为了解决由于浏览器限制导致播放失败的问题，本文将分两种情况介绍处理 Autoplay 限制的方案：
 
-- 播放失败时绕过 Autoplay 限制。
-- 直接绕过 Autoplay 限制。
+- 播放失败时解除 Autoplay 限制。
+- 直接解除 Autoplay 限制。
 
 <div class="alert note">本文仅适用于 Agora <a href="https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#rtc-sdk">RTC SDK</a> 的 Web 平台。</div>
 
-## 播放失败时绕过 Autoplay 限制
+## 播放失败时解除 Autoplay 限制
 
-SDK 的 `Stream.play("ID")` 方法在检测到因为 Autoplay 限制导致无法播放时会在错误回调中携带错误。我们可以利用这个方法，当检测到播放失败时执行绕过 Autoplay 限制的逻辑。因为页面不是 100% 被 Autoplay 限制，随着用户使用这个页面的次数增加，浏览器会把这个页面加入自己的 Autoplay 白名单列表中。
+SDK 的 `Stream.play("ID")` 方法在检测到因为 Autoplay 限制导致无法播放时会在错误回调中携带错误。我们可以利用这个方法，当检测到播放失败时执行解除 Autoplay 限制的逻辑。因为页面不是 100% 被 Autoplay 限制，随着用户使用这个页面的次数增加，浏览器会把这个页面加入自己的 Autoplay 白名单列表中。
 
 当检测到播放失败时，引导用户点击页面上的某个位置来恢复播放。
 
@@ -46,9 +46,9 @@ stream.play("agora_remote"+ stream.getId(), function(err){
 
 一般来说本地流不会有 Autoplay 限制（因为不会播放声音），所以只需要对远端流处理即可。
 
-## 直接绕过 Autoplay 限制
+## 直接解除 Autoplay 限制
 
-如果不希望手动执行 `Stream.resume` 这个操作，想直接绕过 Autoplay 限制主要有两种方案：
+如果不希望手动执行 `Stream.resume` 这个操作，想直接解除 Autoplay 限制主要有两种方案：
 
 - 方案一：通过 `Stream.play("ID", { muted: true })` 播放。如果媒体不包含声音，则不会被 Autoplay 限制。
 
@@ -60,7 +60,7 @@ stream.play("agora_remote"+ stream.getId(), function(err){
 
 <div class="alert note">无论使用何种方案，在自动播放策略限制下，没有用户操作之前自动播放有声媒体都是不可能的。虽然浏览器会在本地维护一个白名单来决定对哪些网站解除自动播放限制，但这部分是无法用 Javascript 探测到的。</div>
 
-### 方案一：通过 `muted: true` 绕过 Autoplay 限制
+### 方案一：通过 `muted: true` 解除 Autoplay 限制
 
 使用这个方案，媒体会首先通过静音的方式自动播放，等页面上出现任何交互操作时，再自动切成有声媒体的播放。
 
@@ -85,9 +85,9 @@ stream.play("agora_remote"+ stream.getId(), function(err){
     Stream.play("ID", { muted: false })
     ```
 
-### 方案二：通过提前产生交互行为绕过 Autoplay 限制
+### 方案二：通过提前产生交互行为解除 Autoplay 限制
 
-简单来说，只要确保在调用 `Stream.play` 之前用户和页面发生过交互行为即可。对于桌面端的浏览器，这个方案可以绕过大部分 Autoplay 限制，但是在 iOS Safari/Webview 上，自动播放策略会更为严格。
+简单来说，只要确保在调用 `Stream.play` 之前用户和页面发生过交互行为即可。对于桌面端的浏览器，这个方案可以处理大部分 Autoplay 限制，但是在 iOS Safari/Webview 上，自动播放策略会更为严格。
 
 ### iOS Safari/WebView 的特殊处理
 

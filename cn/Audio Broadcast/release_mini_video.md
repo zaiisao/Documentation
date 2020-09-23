@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: 微信小程序
-updatedAt: Mon Jul 27 2020 10:20:01 GMT+0800 (CST)
+updatedAt: Mon Sep 21 2020 10:18:02 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供声网 Agora 小程序 SDK 的发版说明。
@@ -41,6 +41,16 @@ updatedAt: Mon Jul 27 2020 10:20:01 GMT+0800 (CST)
 点击 [声网小程序 Demo 体验](../../cn/Audio%20Broadcast/start_call_wechat.md) 了解小程序通话、互通等功能。
 下载小程序可供集成的示例代码，请前往 [https://github.com/AgoraIO/Agora-Miniapp-Tutorial](https://github.com/AgoraIO/Agora-Miniapp-Tutorial) 。
 
+## **2.4.5 版**
+
+该版本于 2020 年 9 月 21 日发布。
+
+**新增功能**
+
+#### 远端用户停止发送视频回调
+
+为方便本地了解远端用户的媒体状态，该版本新增 `Client.on("mute-video")` 回调。当远端用户停止发送视频流时，SDK 会触发相应的回调。你还可以从该回调中得知停止发送的远端用户的 ID。
+
 ## **2.4.4 版**
 
 该版本于 2020 年 7 月 7 日发布。增加了对 QQ 小程序的兼容。
@@ -67,9 +77,9 @@ updatedAt: Mon Jul 27 2020 10:20:01 GMT+0800 (CST)
 
 **新增功能**
 
-#### 远端用户停止发送音、视频回调
+#### 远端用户停止发送音回调
 
-为方便本地了解远端用户的媒体状态，该版本新增 `Client.on("audio-mute")` 和 `Client.on("video-muted")` 回调。当远端用户停止发送音频或视频流时，SDK 会触发相应的回调。你还可以从该回调中得知停止发送的远端用户的 ID。
+为方便本地了解远端用户的媒体状态，该版本新增 `Client.on("mute-audio")`。当远端用户停止发送音频流时，SDK 会触发相应的回调。你还可以从该回调中得知停止发送的远端用户的 ID。
 
 ## **2.4.1 版**
 

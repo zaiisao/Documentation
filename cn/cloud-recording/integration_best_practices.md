@@ -3,10 +3,14 @@
 title: 云端录制集成最佳实践
 description: 
 platform: All Platforms
-updatedAt: Thu Sep 10 2020 07:50:12 GMT+0800 (CST)
+updatedAt: Wed Sep 23 2020 03:57:40 GMT+0800 (CST)
 ---
 # 云端录制集成最佳实践
 为了保障录制服务的可靠性，Agora 建议你在集成云端录制 RESTful API 时注意以下几点：
+
+## 使用双域名
+
+如果你使用域名 `api.agora.io` 发起 RESTful API 请求失败，可以先用该域名重试一次；如再次失败，可将域名替换为 `api.sd-rtn.com`，再次发送请求。建议使用退避策略，如第一次等待 1 秒后重试、第二次等待 3 秒后重试、第三次等待 6 秒后重试，以免超过每秒请求数（QPS）限制导致失败。
 
 ## 获取服务状态
 

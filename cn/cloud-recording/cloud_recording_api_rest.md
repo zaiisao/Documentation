@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Thu Sep 10 2020 03:36:52 GMT+0800 (CST)
+updatedAt: Fri Sep 18 2020 05:41:14 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 该文提供云端录制 RESTful API 的详细信息。
@@ -334,7 +334,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
 - `accessKey`：String 类型，第三方云存储的 access key。建议提供只写权限的访问密钥。
 - `secretKey`：String 类型，第三方云存储的 secret key。
 
-- `fileNamePrefix`：（选填）JSONArray 类型，由多个字符串组成的数组，指定录制文件在第三方云存储中的存储位置。举个例子，`fileNamePrefix` = `["directory1","directory2"]`，将在录制文件名前加上前缀 "`directory1/directory2/`"，即 `directory1/directory2/xxx.m3u8`。前缀长度（包括斜杠）不得超过 128 个字符。字符串中不得出现斜杠。以下为支持的字符集范围：
+- `fileNamePrefix`：（选填）JSONArray 类型，由多个字符串组成的数组，指定录制文件在第三方云存储中的存储位置。举个例子，`fileNamePrefix` = `["directory1","directory2"]`，将在录制文件名前加上前缀 "`directory1/directory2/`"，即 `directory1/directory2/xxx.m3u8`。前缀长度（包括斜杠）不得超过 128 个字符。字符串中不得出现斜杠、下划线、括号等符号字符。以下为支持的字符集范围：
   - 26 个小写英文字母 a-z
   - 26 个大写英文字母 A-Z
   - 10 个数字 0-9

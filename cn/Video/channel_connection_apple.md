@@ -3,7 +3,7 @@
 title: 频道连接状态管理
 description: 
 platform: iOS,macOS
-updatedAt: Tue Sep 24 2019 07:46:13 GMT+0800 (CST)
+updatedAt: Tue Sep 22 2020 03:37:20 GMT+0800 (CST)
 ---
 # 频道连接状态管理
 当用户使用 Agora SDK 进行音视频通话或互动直播时，他会有多个 Agora 频道连接状态。本文介绍 Agora 频道如何判断用户在通信的各个阶段处于什么连接状态以及各状态的转变过程。
@@ -41,7 +41,7 @@ updatedAt: Tue Sep 24 2019 07:46:13 GMT+0800 (CST)
 - T2：因网间传输延迟，UID 2 感知 UID 1 加入频道约有 100 毫秒的延迟，此时 UID 2 收到 `didJoinedOfUid` 回调，
 T3：某个时间点 UID 1 客户端因断网等原因导致上行网络变差。SDK 自动尝试重新加入频道
 T4：如果 UID 1 连续 4 秒没有收到服务器发送的任何数据，UID 1 会收到 `connectionChangedToState(AgoraConnectionStateReconnecting, AgoraConnectionChangedInterrupted)` 回调；同时 SDK 继续尝试重新加入频道
-T5：如果 UID 1 连续 15 秒没有收到服务器发送的任何数据，UID 1 会收到 `rtcEngineConnectionDidLost` 回调；同时 SDK 继续尝试重新加入频道
+T5：如果 UID 1 连续 10 秒没有收到服务器发送的任何数据，UID 1 会收到 `rtcEngineConnectionDidLost` 回调；同时 SDK 继续尝试重新加入频道
 T6：如果 UID 2 连续 20 秒没有收到 UID 1 的任何数据，SDK 判断远端用户掉线，UID 2 会收到 `didOfflineOfUid` 回调
 T7：如果 UID 1 连续 20 分钟无法重新加入频道，SDK 不再继续尝试。UID 1 收到 `connectionChangedToState(AgoraConnectionStateFailed, AgoraConnectionChangedJoinFailed)` 回调；用户需要退出当前频道，然后重新加入频道
 
