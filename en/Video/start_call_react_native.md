@@ -4,7 +4,7 @@ title: Start a Video Call
 description: Describes how quickly implement a video call with Agora React Native SDK.
 
 platform: React Native
-updatedAt: Fri Sep 18 2020 04:47:06 GMT+0800 (CST)
+updatedAt: Fri Sep 18 2020 04:48:52 GMT+0800 (CST)
 ---
 # Start a Video Call
 Learn how to quickly start a basic video call with the Agora React Native SDK.

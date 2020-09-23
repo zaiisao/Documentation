@@ -3,10 +3,16 @@
 title: Start a Video Call
 description: 
 platform: macOS
-updatedAt: Fri Sep 18 2020 04:47:01 GMT+0800 (CST)
+updatedAt: Mon Sep 21 2020 11:13:34 GMT+0800 (CST)
 ---
 # Start a Video Call
 Use this guide to quickly start a basic video call demo with the Agora Video SDK for macOS.
+
+## Video tutorial
+
+The following video demonstrates how to build an app that implements the Agora video call from scratch.
+
+<video src="https://web-cdn.agora.io/docs-files/1600686439896"  poster="https://web-cdn.agora.io/docs-files/1596188065118" controls width = 100% height = auto>Your browser does not support the <code>video</code> tag.</video>
 
 ## Sample project
 

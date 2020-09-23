@@ -3,7 +3,7 @@
 title: Generate a Token
 description: Guide on how to generate tokens on the server side
 platform: All Platforms
-updatedAt: Fri Sep 18 2020 04:30:27 GMT+0800 (CST)
+updatedAt: Tue Sep 22 2020 09:01:49 GMT+0800 (CST)
 ---
 # Generate a Token
 The Token, also known as the dynamic key, is used for authenticating app users when a user joins a channel, or logs onto the service system.
@@ -229,8 +229,10 @@ To use the token for authentication, you need to enable the App Certificate for 
 
 A token is valid for 24 hours at most. To ensure the experience of your app user, the Agora SDK that you use triggers the following callbacks when a token expires:
 
-- `onTokenPrivilegeWillExpire`: Occurs when the token expires in 30 seconds. Upon receiving this callback, you need to generate a new token on your server, and call `renewToken` to pass the new token to the SDK.
-- `onRequestToken` (`onTokenPrivilegeDidExpire` on the Web platform): Occurs when the token has expired. Upon receiving this callback, you need to generate a new token on your server, and re-join the channel.
+- `onTokenPrivilegeWillExpire`: Occurs when the token expires in 30 seconds. 
+- `onRequestToken` (`onTokenPrivilegeDidExpire` on the Web platform): Occurs when the token has expired. 
+
+Upon receiving either callback, you need to generate a new token on your server, and call `renewToken` to pass the new token to the SDK.
 
 
 ## Reference

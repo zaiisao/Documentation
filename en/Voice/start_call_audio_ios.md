@@ -3,7 +3,7 @@
 title: Start a Voice Call
 description: 
 platform: iOS
-updatedAt: Fri Sep 18 2020 04:45:36 GMT+0800 (CST)
+updatedAt: Tue Sep 22 2020 02:03:49 GMT+0800 (CST)
 ---
 # Start a Voice Call
 Use this guide to quickly start a basic voice call with the Agora Voice SDK for iOS.
@@ -259,4 +259,5 @@ We provide open-source Group-Voice-Call sample projects that implements the grou
 When integrating the Agora Voice SDK, you can also refer to the following articles: 
 
 - [How can I set the log file?](https://docs.agora.io/en/faq/logfile)
+- [Why do I see a prompt to find local network devices when launching an iOS app?](https://docs.agora.io/en/faq/local_network_privacy)
 

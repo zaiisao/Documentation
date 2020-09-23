@@ -3,7 +3,7 @@
 title: Set up Authentication
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 13 2020 11:08:49 GMT+0800 (CST)
+updatedAt: Fri Sep 18 2020 04:55:12 GMT+0800 (CST)
 ---
 # Set up Authentication
 To ensure communication security, when users log in to the RTM system, Agora needs to check their authentication information. Agora provides three authentication mechanisms. According to your scenarios, you can choose one of the following mechanisms:
@@ -134,7 +134,7 @@ If you only use the App ID for authentication, you can follow the steps below fo
 
 1. [Enable a primary app certificate](#appcertificate). 
 
-2. After successfully enabling a primary app certificate, use the primary app certificate to [generate an RTM token](https://docs.agora.io/en/Audio%20Broadcast/token_server_cpp).
+2. After successfully enabling a primary app certificate, use the primary app certificate to [generate an RTM token](https://docs.agora.io/en/Audio%20Broadcast/token_server).
 
 3. Use either an App ID or an RTM token for authentication. For example, when existing users are using App ID for authentication, new users can use an RTM token for authentication, and thus both new and old users can log in to the RTM system. You can gradually phase out the use of App ID for authentication.
 

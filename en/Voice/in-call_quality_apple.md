@@ -3,7 +3,7 @@
 title: Report In-call Statistics
 description: In-call quality for iOS/macOS
 platform: iOS,macOS
-updatedAt: Mon Jul 13 2020 10:22:06 GMT+0800 (CST)
+updatedAt: Tue Sep 22 2020 02:03:48 GMT+0800 (CST)
 ---
 # Report In-call Statistics
 ## Introduction
@@ -157,3 +157,7 @@ When the state of remote video streams changes, the SDK triggers the `remoteVide
 ## Considerations
 
 The SDK does not trigger the [`localAudioStateChange`](#32), [`remoteAudioStateChangedOfUid`](#34), [`localVideoStateChange`](#42), and [`remoteVideoStateChangedOfUid`](#44) callbacks once every two seconds. See their respective trigger conditions on this page.
+
+## Reference
+	
+- [Why do I see a prompt to find local network devices when launching an iOS app?](https://docs.agora.io/en/faq/local_network_privacy)

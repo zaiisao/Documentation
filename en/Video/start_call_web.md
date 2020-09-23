@@ -3,10 +3,10 @@
 title: Start a Video Call
 description: 
 platform: Web
-updatedAt: Fri Sep 18 2020 04:47:03 GMT+0800 (CST)
+updatedAt: Fri Sep 18 2020 04:48:46 GMT+0800 (CST)
 ---
 # Start a Video Call
-<div class="alert note">Agora has released the Agora Web SDK NG, the next generation of the Agora Web SDK, which fully optimizes the internal architecture of the SDK and improves its usability. Based on Typescript, the Agora Web SDK NG uses Promises for asynchronous operations and provides more flexible and easy-to-use APIs. Click <a href="https://agoraio-community.github.io/AgoraWebSDK-NG/en/">here</a> to learn more about the Agora Web SDK NG.</div>
+<div class="alert note">Agora has released the Agora Web SDK NG, the next generation of the Agora Web SDK, which fully optimizes the internal architecture of the SDK and improves its usability. Based on Typescript, the Agora Web SDK NG uses Promises for asynchronous operations and provides more flexible and easy-to-use APIs. The Agora Web SDK NG is in the beta stage. Click <a href="https://agoraio-community.github.io/AgoraWebSDK-NG/en/">here</a> to learn more and you can submit an <a href="https://github.com/AgoraIO-Community/AgoraWebSDK-NG">issue</a> if you have any problem.</div>
 
 Use this guide to quickly set up the Agora Web SDK and enable real-time voice and video functions in your app. 
 

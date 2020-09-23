@@ -3,10 +3,17 @@
 title: Start a Video Call
 description: 
 platform: iOS
-updatedAt: Fri Sep 18 2020 04:47:00 GMT+0800 (CST)
+updatedAt: Tue Sep 22 2020 02:03:47 GMT+0800 (CST)
 ---
 # Start a Video Call
 Use this guide to quickly start a basic video call demo with the Agora Video SDK for iOS.
+
+
+## Video tutorial
+
+The following video demonstrates how to build an app that implements the Agora video call from scratch.
+
+<video src="https://web-cdn.agora.io/docs-files/1600686032931"  poster="https://web-cdn.agora.io/docs-files/1596188065118" controls width = 100% height = auto>Your browser does not support the <code>video</code> tag.</video>
 
 ## Sample project
 
@@ -344,3 +351,4 @@ Run the project on your iOS device. You can see both the local and remote video 
   - Objective-C project: See [RoomViewController.m](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-iOS-Objective-C/OpenVideoCall/RoomViewController.m) file in the [OpenVideoCall-iOS-Objective-C](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-iOS-Objective-C) sample project.
 - [How can I set the log file?](https://docs.agora.io/en/faq/logfile)
 - [How can I solve black screen issues?](https://docs.agora.io/en/faq/video_blank)
+- [Why do I see a prompt to find local network devices when launching an iOS app?](https://docs.agora.io/en/faq/local_network_privacy)
