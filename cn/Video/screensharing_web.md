@@ -3,7 +3,7 @@
 title: 屏幕共享
 description: 
 platform: Web
-updatedAt: Wed Sep 23 2020 08:42:06 GMT+0800 (CST)
+updatedAt: Wed Sep 23 2020 09:28:09 GMT+0800 (CST)
 ---
 # 屏幕共享
 ## 功能简介
@@ -28,7 +28,7 @@ Web 端屏幕共享，实际上是通过创建一个屏幕共享的流来实现�
 - 如果只使用屏幕共享，则在新建流的时候，把 `video` 字段设为 `false`， `screen` 字段设为 `true` 即可。
 - 如果在使用屏幕共享的同时，还开启本地视频，则需要创建两个 Client 对象，一路发送屏幕共享流，一路发送视频流。新建流的时候，屏幕共享流的 `video` 字段设为 `false`， `screen` 字段设为 `true`；本地视频流的 `video` 字段设为 `true`，`screen` 字段设为 `false`。由于共享流也是一路流，因此也会占用一个 UID。
 
-自 3.2.0 版本起，Agora Web SDK 支持在创建流时通过 `optimizationMode` 字段设置视频流的传输优化策略。你可以根据屏幕共享的内容类型设置该字段：
+自 3.2.0 版本起，Agora Web SDK 支持在创建流时通过 `optimizationMode` 字段设置流的传输优化策略。你可以根据屏幕共享的内容类型设置该字段：
 
 - 如果屏幕共享的内容为电影、视频等内容，推荐你把 `optimizationMode` 字段设为 `"motion"`，SDK 会优先保障流畅性。
 - 如果屏幕共享的内容为图片、文字等内容，推荐你把 `optimizationMode` 字段设为 `"detail"`，SDK 会优先保障清晰度。
