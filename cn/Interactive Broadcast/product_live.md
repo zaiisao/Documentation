@@ -6,6 +6,7 @@ platform: All Platforms
 updatedAt: Mon Sep 14 2020 10:27:44 GMT+0800 (CST)
 ---
 # 产品概述
+
 Agora 视频互动直播（Live Interactive Video Streaming）可以实现一对多，多对多的音视频互动直播。
 
 Agora 视频互动直播不同于视频通话。视频通话不区分主播和观众，所有用户都可以发言并看见彼此；视频直播的用户分为主播和观众，只有主播可以自由发言，且被其他用户看见。详见[通信和直播场景有什么区别](https://docs.agora.io/cn/faq/profile_difference)。
