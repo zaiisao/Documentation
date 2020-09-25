@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Unity
-updatedAt: Wed Sep 16 2020 08:27:39 GMT+0800 (CST)
+updatedAt: Sat Sep 19 2020 14:30:34 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Unity SDK.
@@ -102,7 +102,7 @@ Adds the following members in the `RtcStats` class for providing more in-call st
 - `memoryTotalUsageRatio`
 - `memoryAppUsageInKbytes`
 
-On iOS, to avoid the prompt for finding local network devices, the `gatewayRtt` parameter is disabled by default. See the [FAQ](https://docs.agora.io/en/faq/local_network_privacy) for details. If you do not mind the prompt, and want to enable the `gatewayRtt` parameter, please contact Agora technical support via [support@agora.io](mailto:support@agora.io).
+On iOS, to prevent the prompt to find local network devices from popping up when an end user launches the app on an iOS 14.0 device, the `gatewayRtt` parameter is disabled by default. See the [FAQ](https://docs.agora.io/en/faq/local_network_privacy) for details. If you do not mind the prompt, and want to enable the `gatewayRtt` parameter, please contact Agora technical support via [support@agora.io](mailto:support@agora.io).
 
 #### 3. Screen sharing
 

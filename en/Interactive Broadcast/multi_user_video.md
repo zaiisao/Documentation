@@ -3,7 +3,7 @@
 title: Video for Multiple Users
 description: How to minimize bandwidth consumption and ensure smooth communication in a video scenario with multiple users.
 platform: All Platforms
-updatedAt: Mon Jul 13 2020 10:17:29 GMT+0800 (CST)
+updatedAt: Fri Sep 25 2020 03:25:21 GMT+0800 (CST)
 ---
 # Video for Multiple Users
 ## Introduction
@@ -70,6 +70,21 @@ Call `setRemoteVideoStreamType` on each subscriber's client to receive the high-
 #### 3. Set the video profile for the low-quality stream
 
 To reduce bandwidth consumption, Agora recommends calling `Client.setLowStreamParameter` to customize the video profile of the low-quality stream.
+
+```javascript
+cswitchStream = function (){
+  if (highOrLow === 0) {
+    highOrLow = 1
+    console.log("Set to low");
+  }
+  else {
+    highOrLow = 0
+    console.log("Set to high");
+  }
+
+  client.setRemoteVideoStreamType(stream, highOrLow);
+}
+```
 
 <div class="alert note"><ul><li>From v3.1.0, the low-quality video stream keeps the aspect ratio of the high-quality video stream. If the resolution of the low-quality stream has a different aspect ratio, the SDK automatically adjusts the height of the low-quality stream.</li><li>Different web browsers have different restrictions on the video profile, and the parameters that you set here may fail to take effect. The Firefox browser has a fixed frame rate of 30 fps, therefore the frame rate settings do not work on the Firefox browser.</li></ul></div>
 

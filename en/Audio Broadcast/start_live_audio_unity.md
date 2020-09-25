@@ -3,7 +3,7 @@
 title: Start Live Interactive Audio Streaming
 description: 
 platform: Unity
-updatedAt: Wed Jul 29 2020 07:29:38 GMT+0800 (CST)
+updatedAt: Fri Sep 18 2020 04:54:29 GMT+0800 (CST)
 ---
 # Start Live Interactive Audio Streaming
 Use this guide to quickly start the live interactive audio streaming with the Agora Voice SDK for Unity.
@@ -194,7 +194,7 @@ After setting the client role, you can call `JoinChannelByKey` to join a channel
 
   - `NULL`.
   - A temporary token generated in Agora Console. A temporary token is valid for 24 hours. For details, see [Get a temporary token](https://docs.agora.io/en/Agora%20Platform/token#get-a-temporary-token).
-  - A token generated at the server. This applies to scenarios with high-security requirements. For details, see [Generate a token from Your Server](https://docs.agora.io/en/Video/token_server_cpp).
+  - A token generated at the server. This applies to scenarios with high-security requirements. For details, see [Generate a token from Your Server](https://docs.agora.io/en/Video/token_server).
 
   <div class="alert note">If your project has enabled the app certificate, ensure that you provide a token.</div>
 

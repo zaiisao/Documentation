@@ -3,12 +3,12 @@
 title: Convert File Format
 description: 
 platform: All Platforms
-updatedAt: Mon Apr 20 2020 09:34:47 GMT+0800 (CST)
+updatedAt: Fri Sep 25 2020 04:20:38 GMT+0800 (CST)
 ---
 # Convert File Format
 ## Overview
 
-Composite recording mode generates one M3U8 file and multiple TS files which include the audio and video of all UIDs in a channel. You can use FFmpeg to convert an M3U8 file to MP4 or use Agora's Format Converter script to batch convert multiple TS files into MP4 or audio formats.
+Composite recording mode generates one M3U8 file and multiple TS files which include the audio and video of all or specified UIDs in a channel. You can use FFmpeg to convert an M3U8 file to MP4 or use Agora's Format Converter script to batch convert multiple TS files into MP4 or audio formats.
 
 ## Convert using FFmpeg
 

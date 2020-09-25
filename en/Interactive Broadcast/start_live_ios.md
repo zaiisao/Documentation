@@ -3,7 +3,7 @@
 title: Start Live Interactive Video Streaming
 description: 
 platform: iOS
-updatedAt: Wed Jul 29 2020 07:29:35 GMT+0800 (CST)
+updatedAt: Tue Sep 22 2020 02:03:47 GMT+0800 (CST)
 ---
 # Start Live Interactive Video Streaming
 Use this guide to quickly start the live interactive video streaming demo with the Agora Video SDK for iOS.
@@ -286,7 +286,7 @@ After initializing the `AgoraRtcEngineKit` object and setting the local video vi
 - `token`: Pass a token that identifies the role and privilege of the user.  You can set it as one of the following values:
 	- `nil`.
 	- A temporary token generated in Console. A temporary token is valid for 24 hours. For details, see [Get a Temporary Token](https://docs.agora.io/en/Agora%20Platform/token#get-a-temporary-token).
-	- A token generated at the server. This applies to scenarios with high-security requirements. For details, see [Generate a token from Your Server](../../en/Interactive%20Broadcast/token_server_cpp.md).
+	- A token generated at the server. This applies to scenarios with high-security requirements. For details, see [Generate a token from Your Server](../../en/Interactive%20Broadcast/token_server.md).
 	<div class="alert note">If your project has enabled the app certificate, ensure that you provide a token.</div>
 - `uid`: ID of the local user that is an integer and should be unique. If you set `uid` as `0`,  the SDK assigns a user ID for the local user and returns it in the `joinSuccessBlock` callback.
 - joinSuccessBlock: Returns that the user joins the specified channel. It is same as `didJoinChannel`. We recommend setting `joinSuccessBlock` as `nil`, so that the SDK can trigger the `didJoinChannel` callback.
@@ -383,3 +383,4 @@ Run the project on your iOS device. When you set the role as the host and succes
 - [How can I listen for an audience joining or leaving a live interactive streaming channel?](https://docs.agora.io/en/faq/audience_event)
 - [How can I set the log file?](https://docs.agora.io/en/faq/logfile)
 - [How can I solve black screen issues?](https://docs.agora.io/en/faq/video_blank)
+- [Why do I see a prompt to find local network devices when launching an iOS app?](https://docs.agora.io/en/faq/local_network_privacy)

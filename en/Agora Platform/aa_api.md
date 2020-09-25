@@ -3,7 +3,7 @@
 title: Agora Analytics RESTful API (Beta)
 description: AA rest api reference
 platform: All Platforms
-updatedAt: Thu Sep 17 2020 07:45:13 GMT+0800 (CST)
+updatedAt: Fri Sep 25 2020 02:20:35 GMT+0800 (CST)
 ---
 # Agora Analytics RESTful API (Beta)
 Agora Analytics provides RESTful APIs for you to retrieve the statistics of your calls and use them in your own application.
@@ -21,7 +21,7 @@ You can use the Agora Analytics RESTful APIs to request the following data.
   - Statistics of specified metrics updated per minute.
   - Detailed diagnostic data.
 
-> Agora Analytics RESTful API is in the Beta release. Contact support@agora.io to enable this service.
+<div class="alert info">Agora Analytics RESTful API is in the Beta release. Purchase the <a href="https://console.agora.io/support/plan">support package</a > or contact <a href="mailto:support@agora.io">support@agora.io</a > to enable this function.</div>
 
 ## Authentication
 

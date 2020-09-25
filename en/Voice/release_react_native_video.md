@@ -3,7 +3,7 @@
 title: Release Notes
 description: Release notes
 platform: React Native
-updatedAt: Fri Sep 04 2020 08:50:11 GMT+0800 (CST)
+updatedAt: Fri Sep 25 2020 02:32:51 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora React Native SDK.

@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Thu Sep 10 2020 03:35:32 GMT+0800 (CST)
+updatedAt: Thu Sep 24 2020 07:55:24 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API
 This article contains detailed help for the Cloud Recording RESTful APIs.
@@ -340,7 +340,7 @@ If you set up a subscription list for audio, but not for video, then Agora Cloud
 
 - `secretKey`: String. The secret key of the third-party cloud storage.
 
-- `fileNamePrefix`: (Optional) JSONArray. An array of strings. Sets the path of the recorded files in the third-party cloud storage. For example, if `fileNamePrefix` = `["directory1","directory2"]`, Agora Cloud Recording will add the prefix "`directory1/directory2/`" before the name of the recorded file, that is, `directory1/directory2/xxx.m3u8`. The prefix's length, including the slashes, should not exceed 128 characters. The string itself should not contain any slash. The supported characters are as follows:
+- `fileNamePrefix`: (Optional) JSONArray. An array of strings. Sets the path of the recorded files in the third-party cloud storage. For example, if `fileNamePrefix` = `["directory1","directory2"]`, Agora Cloud Recording will add the prefix "`directory1/directory2/`" before the name of the recorded file, that is, `directory1/directory2/xxx.m3u8`. The prefix's length, including the slashes, should not exceed 128 characters. The string itself should not contain symbols such as slash, underscore, or parenthesis. The supported characters are as follows:
   - The 26 lowercase English letters: a to z
   - The 26 uppercase English letters: A to Z
   - The 10 numbers: 0 to 9
@@ -991,7 +991,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 | 201  | The request has been fulfilled, resulting in the creation of a new resource. |
 | 206  | No user in the channel sent a stream during the recording process, or some of the recorded files are uploaded to the Agora Cloud Backup instead of the third-party cloud storage. |
 | 400  | The server cannot process the request due to malformed request syntax, or [the cloud recording service is not enabled](https://docs.agora.io/en/cloud-recording/cloud_recording_rest#enable-cloud-recording). |
-| 401  | Unauthorized (incorrect App ID/Customer Certificate).        |
+| 401  | Unauthorized (incorrect Customer ID/Customer Secret).        |
 | 404  | The requested resource could not be found.                   |
 | 500  | Internal server error.                                       |
 | 504  | The server was acting as a gateway or proxy and did not receive a timely response from the upstream server. |

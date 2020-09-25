@@ -3,7 +3,7 @@
 title: Information Security Policy
 description: 
 platform: All Platforms
-updatedAt: Wed May 27 2020 09:56:58 GMT+0800 (CST)
+updatedAt: Tue Sep 22 2020 04:05:07 GMT+0800 (CST)
 ---
 # Information Security Policy
 ## Introduction
@@ -118,6 +118,8 @@ To facilitate troubleshooting and verification, please include the following inf
 - The version of the impacted SDK or solution.
 - Description of the potential risks.
 - Miscellaneous technical details, such as your system configurations, methods or steps for reproducing the issue.
+
+To better protect our system and customers, Agora also invites security researchers to report any bug or vulnerabilities they discover to us. Click [here](../../en/Agora%20Platform/bug_bounty.md) to know more.
 
 ## Security FAQ
 

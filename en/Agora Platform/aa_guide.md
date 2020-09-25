@@ -3,7 +3,7 @@
 title: Agora Analytics
 description: Introduction to Agora Analytics
 platform: All Platforms
-updatedAt: Fri May 22 2020 05:06:00 GMT+0800 (CST)
+updatedAt: Fri Sep 18 2020 09:34:42 GMT+0800 (CST)
 ---
 # Agora Analytics
 [Agora Analytics](https://dashboard.agora.io/analytics/call/search) is a tool that tracks and analyzes the usage and quality of calls. You can use this tool to locate quality issues, find root causes, and fix the issues to improve the final user experience.
@@ -37,7 +37,7 @@ Big Channel helps you monitor and analyze quality issues of Big Channels in real
 - View a daily breakdown of call usage and call quality within a specified date range. 
 - View the quality statistics in various dimensions, including country, SDK version, network type, and more.
 
-<div class="alert info">Before using Data Insight, contact <a href="mailto:support@agora.io">support@agora.io</a > to enable this function.</div>
+<div class="alert info">Before using Data Insight, purchase the <a href="https://console.agora.io/support/plan">support package</a > or contact <a href="mailto:support@agora.io">support@agora.io</a > to enable this function.</div>
 
 ![](https://web-cdn.agora.io/docs-files/1571120894658)
 
@@ -62,6 +62,6 @@ Big Channel helps you monitor and analyze quality issues of Big Channels in real
 - View the distribution of quality factors.
 - Identify abnormalities, analyze quality factors, and locate the source of an abnormal issue.
 
-<div class="alert info">Before using Real-time Alarm, contact <a href="mailto:support@agora.io">support@agora.io</a > to enable this function.</div>
+<div class="alert info">Before using Real-time Alarm, purchase the <a href="https://console.agora.io/support/plan">support package</a > or contact <a href="mailto:support@agora.io">support@agora.io</a > to enable this function.</div>
 
 ![](https://web-cdn.agora.io/docs-files/1588838973636)

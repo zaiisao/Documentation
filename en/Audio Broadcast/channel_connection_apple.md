@@ -3,7 +3,7 @@
 title: Channel Connection
 description: 
 platform: iOS,macOS
-updatedAt: Wed Oct 09 2019 01:54:22 GMT+0800 (CST)
+updatedAt: Tue Sep 22 2020 03:38:40 GMT+0800 (CST)
 ---
 # Channel Connection
 In real-time communications, a user can be in various channel connection states. This page shows how the SDK determines the connection state of a user and transitions between the states.
@@ -41,7 +41,7 @@ Where:
 - T2: Due to network latency, UID 2 detects UID 1 100 ms after the latter joins the channel. UID 2 receives the `didJoinedOfUid` callback.
 - T3: The uplink network condition of UID 1 deteriorates. The SDK automatically tries rejoining the channel.
 - T4 : If UID 1 fails to receive any data from the server in four seconds, it receives the `connectionChangedToState(AgoraConnectionStateReconnecting, AgoraConnectionChangedInterrupted)` callback; meanwhile the SDK continues to try rejoining the channel.
-- T5 : If UID 1 fails to receive any data from the server in 15 seconds, UID 1 receives the `rtcEngineConnectionDidLost` callback; meanwhile the SDK continue to try rejoining the channel.
+- T5 : If UID 1 fails to receive any data from the server in 10 seconds, UID 1 receives the `rtcEngineConnectionDidLost` callback; meanwhile the SDK continue to try rejoining the channel.
 - T6: If UID 2 fails to receive any data from UID 1 in 20 seconds, the SDK decides that UID 1 is offline. UID 2 receives the `didOfflineOfUid` callback.
 - T7: If UID 1 fails to rejoin the channel in 20 minutes, the SDK stops trying. UID 1 receives the `connectionChangedToState(AgoraConnectionStateFailed, AgoraConnectionChangedJoinFailed)` callback. UID 1 needs to leave the channel and call the`joinChannelByToken` method to join the channel.
 

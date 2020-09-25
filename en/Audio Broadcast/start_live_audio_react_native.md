@@ -4,7 +4,7 @@ title: Start Live Interactive Audio Streaming
 description: Describes how quickly implement live interactive audio streaming with Agora React Native SDK.
 
 platform: React Native
-updatedAt: Fri Sep 04 2020 08:46:09 GMT+0800 (CST)
+updatedAt: Fri Sep 18 2020 04:54:40 GMT+0800 (CST)
 ---
 # Start Live Interactive Audio Streaming
 Learn how to quickly implement basic live interactive audio streaming with the Agora React Native SDK.
@@ -122,7 +122,7 @@ After setting the user role, you can call `joinChannel` to join a channel. In th
 
   - `null` or an empty string "".
   - A temporary token generated in Console. A temporary token is valid for 24 hours. For details, see [Get a Temporary Token](https://docs.agora.io/en/Agora%20Platform/token#get-a-temporary-token).
-  - A token generated at the server. This applies to scenarios with high-security requirements. For details, see [Generate a token from Your Server](https://docs.agora.io/en/Interactive%20Broadcast/token_server_cpp).
+  - A token generated at the server. This applies to scenarios with high-security requirements. For details, see [Generate a token from Your Server](https://docs.agora.io/en/Interactive%20Broadcast/token_server).
   
  <div class="alert note">If your project has enabled the app certificate, ensure that you provide a token.</div>
 

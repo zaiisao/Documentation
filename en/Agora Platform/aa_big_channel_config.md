@@ -3,7 +3,7 @@
 title: Big Channel Config (Beta)
 description: 
 platform: All Platforms
-updatedAt: Fri Sep 11 2020 09:51:08 GMT+0800 (CST)
+updatedAt: Thu Sep 24 2020 06:28:05 GMT+0800 (CST)
 ---
 # Big Channel Config (Beta)
 The **Big Channel Config** function of Agora Analytics enables you to customize big channels in your project, and you can choose **Enable All**, **Enable by Project** or **Enable by Channel** according to your actual needs.
@@ -30,9 +30,9 @@ Click ![](https://web-cdn.agora.io/docs-files/1579063555007) next to **Enable Al
 
 Click ![](https://web-cdn.agora.io/docs-files/1579063555007) next to **Enable by Project** to enable **Big Channel** for specified projects. After enabling/disabling **Enable by Project**, you can see the latest operating time.
 
-After enabling **Enable by Project**, you can set the benchmark (positive integer) of Peak Concurrent Users (PCU) to enable **Big Channel** for all channels where PCU are higher than the benchmark. 
+After enabling **Enable by Project**, you can set the threshold (positive integer) of Peak Concurrent Users (PCU) to enable **Big Channel** for all channels where PCU are higher than the threshold. 
 
-Select target projects, check **On Condition**, input the benchmark (positive integer) of PCU, and click **Add/Update** to add or update the **Big Channel** configuration. In the **Enable Channels** list, you can see all configuration information, delete selected entries, or download the configuration list.
+Select target projects, check **On Condition**, input the threshold (positive integer) of PCU, and click **Add/Update** to add or update the **Big Channel** configuration. In the **Enable Channels** list, you can see all configuration information, delete selected entries, or download the configuration list.
 
 ### Enable by Channel
 
@@ -50,9 +50,9 @@ Enable **Big Channel** for channels to be created. Select a target project, inpu
 
 #### **Allow Real-Time Configuration**
 
-Enable **Big Channel** for ongoing channels on the **Call \**Search\**** page. In the **Call \**Search\**** page, choose an ongoing channel where PCU are more than 50, click the magnifier at the right-down corner, and follow the instructions to enable **Big Channel** for this channel.
+Enable **Big Channel** for ongoing channels on the **Call Search** page. In the **Call Search** page, choose an ongoing channel where PCU are more than 50, click the magnifier at the right-down corner, and follow the instructions to enable **Big Channel** for this channel.
 
-<div class="alert note"><li>If a call is end or the PCU of a channel is less than 50, you cannot enable **Big Channel** for this channel in real time.<br><li>If you do not have permission to enable **Big Channel**, contact your admin to enable it for you in <a href="https://console.agora.io/role">Role Management</a >.</li></div>
+<div class="alert note"><li>If a call is end or the PCU of a channel is less than 50, you cannot enable <b>Big Channel</b> for this channel in real time.<br><li>If you do not have permission to enable <b>Big Channel</b>, contact your admin to enable it for you in <a href="https://console.agora.io/role">Role Management</a >.</li></div>
 
 ## Log
 

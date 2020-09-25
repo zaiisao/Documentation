@@ -3,7 +3,7 @@
 title: Real-time Alarm (Beta)
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 06 2020 05:54:16 GMT+0800 (CST)
+updatedAt: Fri Sep 18 2020 09:36:12 GMT+0800 (CST)
 ---
 # Real-time Alarm (Beta)
 The **Real-time Alarm** function of Agora Analytics enables you to view [users](#User) who have [poor communication experiences](#Abnormal), recognize abnormal categories and quality factors.
@@ -12,7 +12,7 @@ The **Real-time Alarm** function of Agora Analytics enables you to view [users](
 
 ## Getting started
 
-1. Contact [support@agora.io](mailto:support@agora.io) to enable the **Real-time Alarm** function for your project.
+1. Purchase the <a href="https://console.agora.io/support/plan">support package</a > or contact [support@agora.io](mailto:support@agora.io) to enable the **Real-time Alarm** function for your project.
 2. Log in to [Agora Console](https://console.agora.io/). Click **Agora Analytics** on the left navigation bar.
 3. Select a project in the top-left corner.
 4. Click **Auto Diagnosis** and **Real-time Alarm** to view and analyze users having poor communication experiences.

@@ -3,7 +3,7 @@
 title: Agora Cloud Recording Overview
 description: 
 platform: Linux
-updatedAt: Mon Jul 27 2020 03:13:46 GMT+0800 (CST)
+updatedAt: Fri Sep 25 2020 04:20:11 GMT+0800 (CST)
 ---
 # Agora Cloud Recording Overview
 Agora Cloud Recording is a component provided by Agora to record and save voice calls, video calls, and interactive streaming on your cloud storage. It is compatible with the Agora Native SDK v1.7.0+ and the Agora Web SDK v1.12.0+. 
@@ -18,7 +18,7 @@ The following table lists the main functions that Agora Cloud Recording provides
 
 | <span style="white-space:nowrap;">&emsp;&emsp;&emsp;Feature&emsp;&emsp;&emsp;</span>    | Description                                                  |
 | :------------------------------------------------ | :----------------------------------------------------------- |
-| Recording mode                                    | Supports two recording modes:<ul><li>[Composite recording mode](../../en/cloud-recording/cloud_recording_composite_mode.md): Generates a single mixed audio and video file for all UIDs in a channel.</li><li>[Individual recording mode](../../en/cloud-recording/cloud_recording_individual_mode.md): Records the audio and video as separate files for each UID in a channel.</li></ul> |
+| Recording mode                                    | Supports two recording modes:<ul><li>[Composite recording mode](../../en/cloud-recording/cloud_recording_composite_mode.md): Generates a single mixed audio and video file for all or specified UIDs in a channel.</li><li>[Individual recording mode](../../en/cloud-recording/cloud_recording_individual_mode.md): Records the audio and video as separate files for each UID in a channel.</li></ul> |
 | Capture screenshots                           | You can [take screenshots of each video stream](../../en/cloud-recording/cloud_recording_screen_capture.md) in individual recording mode.                |
 | Subscribe to specified UIDs                             | You can specify the UIDs to subscribe or unsubscribe. You can also update the subscription lists during the recording. For details, see [Set up subscription lists](https://docs.agora.io/en/cloud-recording/cloud_recording_subscription).              |
 | Subscribe to specified media types                       | You can specify the type of media to subscribe to:<ul><li>Audio only</li><li>Video only</li><li>Both audio and video</li></ul>|
