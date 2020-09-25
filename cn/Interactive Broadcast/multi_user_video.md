@@ -3,7 +3,7 @@
 title: 多人视频场景
 description: 如何通过合理的集成方式，提升多人视频通话或直播的体验。
 platform: All Platforms
-updatedAt: Wed Jul 01 2020 06:42:10 GMT+0800 (CST)
+updatedAt: Fri Sep 25 2020 03:22:53 GMT+0800 (CST)
 ---
 # 多人视频场景
 ## 概述
@@ -67,6 +67,21 @@ setParameters("{\"che.video.lowBitRateStreamParameter\":{\"width\":320,\"height\
 #### 3. 手动设置小流视频属性
 
 如果你不想要使用默认的小流视频属性，还可以调用` Client.setLowStreamParameter` 自定义小流参数，防止因小流码率过高而造成带宽压力。
+
+```javascript
+switchStream = function (){
+  if (highOrLow === 0) {
+    highOrLow = 1
+    console.log("Set to low");
+  }
+  else {
+    highOrLow = 0
+    console.log("Set to high");
+  }
+
+  client.setRemoteVideoStreamType(stream, highOrLow);
+}
+```
 
 * 从 v3.1.0 版本开始，手动设置的小流的宽高比如果和大流不一致，SDK 会自动修改小流的高，以保持宽高比一致。
 * 由于不同的浏览器对于视频属性有不同的限制，通过该接口设置的视频参数不一定都会生效。目前发现的未能充分适配的浏览器有 Firefox：在 Firefox 浏览器上，设置帧率不生效。浏览器本身会将帧率固定在 30 fps。

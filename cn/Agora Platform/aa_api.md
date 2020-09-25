@@ -3,7 +3,7 @@
 title: 水晶球 RESTful API (Beta)
 description: AA rest api reference 
 platform: All Platforms
-updatedAt: Thu Sep 17 2020 07:46:24 GMT+0800 (CST)
+updatedAt: Thu Sep 24 2020 11:52:53 GMT+0800 (CST)
 ---
 # 水晶球 RESTful API (Beta)
 水晶球现在提供 RESTful API，可以让你直接通过网络请求获取水晶球里的数据，在自己的网页或应用中灵活使用。

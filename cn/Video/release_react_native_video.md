@@ -3,7 +3,7 @@
 title: 发版说明
 description: Release notes
 platform: React Native
-updatedAt: Fri Sep 04 2020 08:43:12 GMT+0800 (CST)
+updatedAt: Fri Sep 25 2020 01:44:50 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora React Native SDK 的发版说明。

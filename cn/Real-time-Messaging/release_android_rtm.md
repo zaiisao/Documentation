@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Tue Sep 01 2020 04:03:16 GMT+0800 (CST)
+updatedAt: Thu Sep 24 2020 02:05:46 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -11,7 +11,7 @@ updatedAt: Tue Sep 01 2020 04:03:16 GMT+0800 (CST)
 Agora 实时消息 SDK 提供了稳定可靠、低延时、高并发的全球消息云服务，帮助你快速构建实时通信场景,  可实现消息通道、呼叫、聊天、状态同步等功能。点击[实时消息产品概述](../../cn/Real-time-Messaging/product_rtm.md)了解详情。
 
 
-## 1.4.0 版（Beta）
+## 1.4.0 版
 
 该版本于 2020 年 9 月 1 日发布。
 

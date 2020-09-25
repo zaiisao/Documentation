@@ -3,28 +3,38 @@
 title: 应用企业防火墙限制
 description: 
 platform: All Platforms
-updatedAt: Tue Sep 15 2020 10:23:47 GMT+0800 (CST)
+updatedAt: Thu Sep 24 2020 04:04:59 GMT+0800 (CST)
 ---
 # 应用企业防火墙限制
 ## 概览
 
-对于有外网访问限制的网络环境，在使用 Agora 相关服务之前，需要添加本文中的域名白名单、不对 IP 地址设限、且开放相应端口。
+为允许你在有网络访问限制的环境中使用 Agora 产品，Agora 提供两种解决方案：防火墙白名单方案和 Agora 云代理方案。
 
-如果你的防火墙不能完全满足上述操作，我们推荐使用 Agora 云代理功能连接到 Agora 服务。各产品云代理文档如下：
+下表列出 Agora 产品对两种方案的支持情况：
 
-- [RTC Native SDK 使用云代理](../../cn/Agora%20Platform/cloudproxy_native.md)
-- [RTC Web SDK 使用云代理](../../cn/Agora%20Platform/cloud_proxy_web.md)
-- [本地服务端录制 SDK 使用云代理](../../cn/Agora%20Platform/cloudproxy_recording.md)
+|Agora 产品| 防火墙白名单|Agora 云代理|
+|---------|-------------------|------------------|
+|RTC SDK（Native、第三方框架）| <font color="red">✘ | <font color="green">✔ |
+|RTC SDK（Web） | <font color="green">✔ | <font color="green">✔|
+|RTC SDK（微信小程序）|<font color="green"> ✔ | <font color="red">✘ |
+|RTM SDK（Native、Web、微信小程序）|<font color="green"> ✔ | <font color="red">✘ |
+|本地服务端录制 SDK| <font color="red">✘ | <font color="green">✔ |
+|互动游戏 SDK | <font color="red">✘ | <font color="red">✘ |
+
+- 使用防火墙白名单方案时，请参考**本文**添加域名白名单，开放相应端口且不对 IP 地址设限。
+- 使用 Agora 云代理方案时，请参考如下文档：
+    - [RTC SDK（Native、第三方框架）的云代理](../../cn/Agora%20Platform/cloudproxy_native.md)
+    - [RTC SDK（Web）的云代理](../../cn/Agora%20Platform/cloud_proxy_web.md)
+    - [本地服务端录制 SDK 的云代理](../../cn/Agora%20Platform/cloudproxy_recording.md)
+
 
 <div class="alert note"><li>如果你想通过 VPN 使用 Agora 的服务，请确保已联系 VPN 运营商将对应端口添加到白名单中，否则可能会遇到通话失败等未定义行为。</li><li>如无特殊说明，源地址就是集成了 Agora SDK 的客户端。</li></div>
 
-## Agora RTC SDK
 
-### Native SDK
 
-Agora RTC Native SDK 不支持通过添加域名及端口的方式提供音视频功能。Agora 推荐你参考[使用云代理](../../cn/Agora%20Platform/cloudproxy_native.md)进行连接。
+## RTC SDK
 
-### Web SDK
+### RTC SDK（Web）
 
 将以下目标域名及对应的端口添加到防火墙白名单：
 
@@ -41,7 +51,7 @@ Agora RTC Native SDK 不支持通过添加域名及端口的方式提供音视�
 |  3478；5866 - 6000（2.9.0 及以后版本）；10000 - 65535 （2.9.0 以前版本）| UDP | 允许 |
 
 
-### 微信小程序 SDK
+### RTC SDK（微信小程序）
 
 将以下目标域名及对应的端口添加到防火墙白名单：
 
@@ -60,9 +70,9 @@ miniapp.agoraio.cn
 | 80；443；3433；5668；5669；5866 - 5890；6080；6443；8667；9667 | TCP | 允许 |
 | 3478；10000 - 65535 | UDP | 允许 |
 
-## Agora RTM SDK
+## RTM SDK
 
-### Native SDK
+### RTM SDK（Native）
 
 将以下目标域名及对应的端口添加到防火墙白名单：
 
@@ -75,7 +85,7 @@ miniapp.agoraio.cn
 | 9130；9131；9140 | TCP | 允许 |
 | 1080; 8000; 8130;  9120; 9121; 9700; 25000 | UDP | 允许 |
 
-### Web SDK
+### RTM SDK（Web）
 
 将以下目标域名及对应的端口添加到防火墙白名单：
 
@@ -98,7 +108,7 @@ logservice-rtm.agoraio.cn
 | --------------- | ------------ | ------------ |
 | 443; 6443; 9591; 9593; 9601 | TCP | 允许 |
 
-### 微信小程序 SDK
+### RTM SDK（微信小程序）
 
 ```
 miniapp.agoraio.cn
@@ -113,12 +123,3 @@ ap-web-4.agoraio.cn
 | 目标端口 | 协议 | 操作 |
 | --------------- | ------------ | ------------ |
 | 443 ; 6443 | TCP | 允许 |
-
-## Agora 本地服务端录制 SDK
-
-Agora 本地服务端录制 SDK 不支持通过添加域名及端口的方式提供音视频录制功能。Agora 推荐你参考[使用云代理](../../cn/Agora%20Platform/cloudproxy_recording.md)进行连接。
-
-
-## Agora 游戏 SDK
-
-Agora 游戏 SDK 不支持通过添加域名及端口的方式提供音视频功能。Agora 推荐你参考[使用云代理](../../cn/Agora%20Platform/cloudproxy_native.md)进行连接。

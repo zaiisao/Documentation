@@ -3,7 +3,7 @@
 title: 合流录制
 description: 描述如何设置参数以进行合流录制
 platform: All Platforms
-updatedAt: Thu Sep 10 2020 09:56:11 GMT+0800 (CST)
+updatedAt: Fri Sep 25 2020 04:16:14 GMT+0800 (CST)
 ---
 # 合流录制
 ## 功能描述
@@ -11,7 +11,7 @@ updatedAt: Thu Sep 10 2020 09:56:11 GMT+0800 (CST)
 云端录制支持两种录制模式：
 
 - 单流录制模式：分别录制频道中每个 UID 的音频流和视频流，每个 UID 均有其对应的音频文件和视频文件。
-- 合流录制模式：频道内所有 UID 的音视频混合录制为一个音视频文件。
+- 合流录制模式：频道内所有或指定 UID 的音视频混合录制为一个音视频文件。
 
 本文介绍如何通过设置 RESTful API 参数在合流模式下进行录制。
 
