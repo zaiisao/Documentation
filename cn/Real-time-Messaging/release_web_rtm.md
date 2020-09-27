@@ -3,12 +3,29 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Mon Sep 07 2020 02:03:51 GMT+0800 (CST)
+updatedAt: Fri Sep 25 2020 10:14:44 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
 
 Agora 实时消息 SDK 提供了稳定可靠、低延时、高并发的全球消息云服务，帮助你快速构建实时通信场景,  可实现消息通道、呼叫、聊天、状态同步等功能。点击[实时消息产品概述](../../cn/Real-time-Messaging/product_rtm.md)了解详情。
+
+
+## 1.4.0 版
+
+该版本于 2020 年 9 月 25 日发布。
+
+
+**新增功能**
+
+增加限定访问区域功能。你可以通过 `createInstance` 方法中的 `areaCodes` 参数设置 Agora RTM SDK 的访问区域。设置之后，RTM SDK 只能连接位于限定区域的 Agora RTM 服务器。详见[限定访问区域](../../cn/Real-time-Messaging/region_web_rtm.md)。
+
+
+**API 变更**
+
+#### 新增
+
+ [`createInstance`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/modules/agorartm.html#createinstance) 方法新增 `areaCodes` 参数。
 
 
 ## 1.3.1 版
@@ -26,7 +43,7 @@ Agora 实时消息 SDK 提供了稳定可靠、低延时、高并发的全球消
 
 ## 1.3.0 版
 
-该版本于 6 月 24 日发布。
+该版本于 2020 年 6 月 24 日发布。
 
 **升级必看**
 

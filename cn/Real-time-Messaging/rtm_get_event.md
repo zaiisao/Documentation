@@ -3,7 +3,7 @@
 title: 事件与历史消息查询 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Wed Sep 09 2020 02:23:23 GMT+0800 (CST)
+updatedAt: Fri Sep 25 2020 06:37:36 GMT+0800 (CST)
 ---
 # 事件与历史消息查询 RESTful API
 事件与历史消息查询 RESTful API 目前支持以下功能：
@@ -99,18 +99,18 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/user_events
 `[event]` 包含以下内容：
 
 ```json
-{
-    "user_id": "rtmtest_RTM_4852_4857w7%",
-    "type" : "Login",
-    "ts" : 1578027420761
+{  
+    "ms" : 1578027420761,
+	"type" : "Login",
+    "user_id": "rtmtest_RTM_4852_4857w7%"
 }
 ```
 
 | 参数     | 类型   | 描述   |
 | :------- | :----- | :-------------------- |
-| `user_id` | string | 本次事件对应的用户名。   |
+| `ms`  | int    | 从1970 年 1 月 1 日（UTC）到服务器接受请求的时间（UTC）的毫秒数。     |
 | `type`   | string | 事件类型：<li>`Login`: 用户登录（上线）事件。</li><li>`Logout`: 用户登出（下线）事件。</li> |
-| `ts`  | int    | 从1970 年 1 月 1 日（UTC）到服务器接受请求的时间（UTC）的毫秒数。     |
+| `user_id` | string | 本次事件对应的用户名。   |
 
 
 ### <a name="get_channel"></a>获取用户加入或离开频道事件 API（GET）
@@ -150,19 +150,20 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/channel_events
 
 ```json
 {
-    "channel_id": "example_channel_id"
-    "user_id": "rtmtest_RTM_4852_4857w7%",
-    "type" : "Join",
-    "ts" : 1578027418981
+    "group_id": "example_channel_id",
+    "ms" : 1578027418981,
+	"type" : "Join",
+     "user_id": "userA"
 }
 ```
 
 | 参数     | 类型   | 描述   |
 | :------- | :----- | :-------------------- |
-| `channel_id` | string | 本次事件对应的频道名。   |
-| `user_id` | string | 本次事件对应的用户名。   |
+| `group_id` | string | 本次事件对应的频道名。   |
+| `ms`  | int    | 从1970 年 1 月 1 日（UTC）到服务器接受请求的时间（UTC）的毫秒数。 |
 | `type`   | string | 事件类型：<li>`Join`: 用户加入频道事件。</li><li>`Leave`: 用户离开频道事件。</li> |
-| `ts`  | int    | 从1970 年 1 月 1 日（UTC）到服务器接受请求的时间（UTC）的毫秒数。 |
+| `user_id` | string | 本次事件对应的用户名。   |
+
 
 ### 响应状态码
 
@@ -207,7 +208,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query
 | `source`        | string | （可选）消息发送方，必须是用户。 如果此参数不赋值，则 API 会筛选出消息接收方在指定时间段内收到的所有消息。     |
 | `destination`        | string | （可选）消息接收方，可以是用户或频道。如果此参数不赋值，则 API 会筛选出消息发送方在指定时间段内发送的所有消息。 |
 | `start_time`         | string   | 历史消息查询起始时间。时间为 UTC 时间，使用 ISO8601 标准。时间的格式为 `yyyy-mm-ddThh:mm:ssZ` ，例如 `2019-08-01T01:24:10Z`。`Z` 代表时间偏移量为 0，即为 UTC 时间。|
-|  `end_time`       | string | 历史消息查询结束时间。时间为 UTC 时间，使用 ISO8601 标准。时间的格式为 `yyyy-mm-ddThh:mm:ssZ` ，例如 `2019-08-01T01:24:10Z`。`Z` 代表时间偏移量为 0，即为 UTC 时间。|
+| `end_time`       | string | 历史消息查询结束时间。时间为 UTC 时间，使用 ISO8601 标准。时间的格式为 `yyyy-mm-ddThh:mm:ssZ` ，例如 `2019-08-01T01:24:10Z`。`Z` 代表时间偏移量为 0，即为 UTC 时间。|
 
 > 频道只能作为 `destination`。API 的筛选规则与 `source` 和 `destination` 的关系详见下表：
 
@@ -397,7 +398,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query/1234561234
 | `dst`        | string | 消息接收方。 |
 | `message_type`  | string  |   消息类型。可以是 `peer_message` 或 `channel_message`。    |
 | `payload` | string   | 消息体。当前版本仅支持文本消息。 |
-|  `ms`       | int |  从1970 年 1 月 1 日（UTC）到服务器接受请求的时间（UTC）的毫秒数。|
+| `ms`       | int |  从1970 年 1 月 1 日（UTC）到服务器接受请求的时间（UTC）的毫秒数。|
 
 
 ### <a name="get_history_message_count"></a>获取历史消息数目 API（GET）

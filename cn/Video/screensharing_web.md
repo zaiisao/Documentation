@@ -3,7 +3,7 @@
 title: 屏幕共享
 description: 
 platform: Web
-updatedAt: Wed Sep 23 2020 09:28:09 GMT+0800 (CST)
+updatedAt: Fri Sep 25 2020 09:34:05 GMT+0800 (CST)
 ---
 # 屏幕共享
 ## 功能简介
@@ -31,7 +31,7 @@ Web 端屏幕共享，实际上是通过创建一个屏幕共享的流来实现�
 自 3.2.0 版本起，Agora Web SDK 支持在创建流时通过 `optimizationMode` 字段设置流的传输优化策略。你可以根据屏幕共享的内容类型设置该字段：
 
 - 如果屏幕共享的内容为电影、视频等内容，推荐你把 `optimizationMode` 字段设为 `"motion"`，SDK 会优先保障流畅性。
-- 如果屏幕共享的内容为图片、文字等内容，推荐你把 `optimizationMode` 字段设为 `"detail"`，SDK 会优先保障清晰度。
+- 如果屏幕共享的内容为图片、文字等内容，推荐你把 `optimizationMode` 字段设为 `"detail"` 或留空，SDK 会优先保障清晰度。
 
 ## 实现方法
 

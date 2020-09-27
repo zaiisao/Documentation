@@ -3,7 +3,7 @@
 title: 水晶球更新历史
 description: 
 platform: All Platforms
-updatedAt: Tue Sep 15 2020 09:07:08 GMT+0800 (CST)
+updatedAt: Fri Sep 25 2020 07:13:49 GMT+0800 (CST)
 ---
 # 水晶球更新历史
 ## 简介
@@ -11,7 +11,20 @@ updatedAt: Tue Sep 15 2020 09:07:08 GMT+0800 (CST)
 
 ## 2020.09
 
-本次发布主要进行了如下改进：
+**新增特性**
+
+#### 1. 大频道 RESTful API (Beta)
+
+该版本新增大频道 RESTful API，你可以获取以下数据：
+
+- 大频道中体验异常的用户数。体验异常包含视频卡顿、加入大频道慢等。
+- 尝试加入大频道的用户数。
+- 大频道中用户对通话的评分。
+- 大频道的在线用户数。
+
+<div class="alert note">使用大频道 RESTful API 前，你需要联系 <a href="mailto:sales@agora.io">sales@agora.io</a > 开通大频道功能。详见<a href="../../cn/Agora%20Platform/aa_big_channel.md">大频道</a >和 <a href="https://docs.agora.io/cn/Agora%20Platform/aa_api?platform=All%20Platforms#big_channel">大频道 RESTful API</a >。</div>
+
+**改进**
 
 #### 1. 通话调查
 

@@ -3,7 +3,7 @@
 title: 设置订阅名单
 description: 描述如何设置音视频订阅的白名单或黑名单，以及在录制过程中更新订阅名单。
 platform: All Platforms
-updatedAt: Fri Jun 12 2020 05:00:12 GMT+0800 (CST)
+updatedAt: Sun Sep 27 2020 02:18:41 GMT+0800 (CST)
 ---
 # 设置订阅名单
 ## 功能描述
@@ -42,7 +42,7 @@ updatedAt: Fri Jun 12 2020 05:00:12 GMT+0800 (CST)
 | 订阅全部音频流，只订阅 111 和 222 的视频流 | `subscribeAudioUids`: `["#allstream#"]` `subscribeVideoUids: ["111","222"]` |
 | 订阅全部音频流，不订阅 111 和 222 的视频流 | `subscribeAudioUids: ["#allstream#"]` `unSubscribeVideoUids: ["111","222"]`<br>云端录制会订阅全部音频流以及 333、444 和两个 UID 未知用户的视频流。 |
 | 订阅全部音频流，不订阅视频流               | `subscribeAudioUids: ["#allstream#"]`<br>将 `streamType` 设置为 `0`，也可达到同样的效果。 |
-| 不订阅 222 的音频流，只订阅 111 的视频流   | `unSubscribeAudioUids: ["222"]` `subscribeVideoUids: ["111"]`<br>云端录制会订阅 111、333、444 和两个 UID 未知用户的音频流，以及 222 的视频流。 |
+| 不订阅 222 的音频流，只订阅 111 的视频流   | `unSubscribeAudioUids: ["222"]` `subscribeVideoUids: ["111"]`<br>云端录制会订阅 111、333、444 和两个 UID 未知用户的音频流，以及 111 的视频流。 |
 
 ## 开发注意事项
 
