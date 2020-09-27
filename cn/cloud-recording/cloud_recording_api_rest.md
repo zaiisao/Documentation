@@ -246,11 +246,11 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
 - `region`：Number 类型，第三方云存储指定的地区信息。
   当 `vendor` = 0，即第三方云存储为七牛云时：
 
-  - `0`：Huadong
-  - `1`：Huabei
-  - `2`：Huanan
-  - `3`：Beimei
-  - `4`：Dongnanya
+  - `0`：华东
+  - `1`：华北
+  - `2`：华南
+  - `3`：北美
+  - `4`：东南亚
 
   当 `vendor` = 1，即第三方云存储为 Amazon S3 时：
 
