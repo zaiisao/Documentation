@@ -3,7 +3,7 @@
 title: 控制台概览
 description: 
 platform: All Platforms
-updatedAt: Sun Sep 27 2020 08:33:37 GMT+0800 (CST)
+updatedAt: Mon Sep 28 2020 08:30:17 GMT+0800 (CST)
 ---
 # 控制台概览
 <div class="alert note">Dashboard 已更名为控制台。</div>
@@ -56,6 +56,19 @@ updatedAt: Sun Sep 27 2020 08:33:37 GMT+0800 (CST)
 ### 提交工单
 
 你在使用产品过程中如有任何疑问，都可以在控制台寻求解答。详见[提交工单指南](../../cn/Agora%20Platform/ticket.md)。
+
+### 查看 XLA 月报
+
+查看体验等级协议的有效期和以下指标的月度达标情况：
+
+* 登录成功达标率
+* 音频卡顿达标率
+* 视频卡顿达标率
+* 端到端网络延时达标率
+
+详见 [XLA 月报](../../cn/Agora%20Platform/xla_monthly_report.md)。
+
+<div class="alert note"> 仅对已签署体验等级协议协议的用户开放查看 XLA 月报的权限。</div>
 
 ### 使用 RESTful API
 

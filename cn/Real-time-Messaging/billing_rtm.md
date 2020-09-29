@@ -3,7 +3,7 @@
 title: 计费说明
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 02 2020 09:56:07 GMT+0800 (CST)
+updatedAt: Tue Sep 29 2020 02:27:28 GMT+0800 (CST)
 ---
 # 计费说明
 本文展示 Agora 实时消息的计费方式。
@@ -29,7 +29,7 @@ updatedAt: Thu Jul 02 2020 09:56:07 GMT+0800 (CST)
 
 ## 当月最高日活跃用户数
 
-每日每个登录实时消息系统的 `uid` (RTM) 或 `userAccount` (信令) 统计为一个活跃用户，同一个 `uid` 或 `userAccount` 在当日的多次登录只统计为一个活跃用户。声网会对当月每天的日活跃用户数进行比较，得出当月最高日活跃用户数。
+每日每个登录实时消息系统的 `uid` 统计为一个活跃用户，同一个 `uid` 在当日的多次登录只统计为一个活跃用户。声网会对当月每天的日活跃用户数进行比较，得出当月最高日活跃用户数。
 
 ## 计费示例
 

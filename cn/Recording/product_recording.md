@@ -3,7 +3,7 @@
 title: 产品概述
 description: 
 platform: Linux
-updatedAt: Wed Apr 29 2020 08:32:15 GMT+0800 (CST)
+updatedAt: Sun Sep 27 2020 09:52:25 GMT+0800 (CST)
 ---
 # 产品概述
 <div class="alert note">提示：<br>Agora 本地服务端录制 SDK 需要部署在 Linux 服务器上，并需要你自行运维。如果你不想部署 Linux 服务器，而是想要通过 RESTful API 以更加便捷的方式实现录制功能，推荐使用 <a href="https://docs.agora.io/cn/cloud-recording/product_cloud_recording?platform=Linux">Agora 云端录制</a></li>。  </div> 
@@ -37,7 +37,7 @@ Agora 本地服务端录制 SDK 应用广泛，主要可以在以下场景中发
 | 在线教育 | 在 1v1 、1v多的小班线上课堂中，提供高质量的音视频录制：<br/><li>方便用户在课程结束后，反复观看、收听录制下来的课堂视频或音频，来巩固及复习学习成果；<li>因时间冲突错过上课的用户也可以观看课堂视频或音频进行学习。 |
 | 社交直播 | <li>精彩瞬间录制<li>直播回放<li>截图鉴黄                     |
 | 金融行业 | 在开展在线理财、开户、面签等业务时，应国家监管要求，必须提供录音录像服务，形成交易记录的视频，存档备查。 |
-| 客服中心 | <li>方便后期用户调研<li>获取相关用户信息<li>客服质量评估     |
+| 客服中心 | <li>获取相关用户信息<li>客服质量评估     |
 | 远程医疗 | 对远程问诊、在线咨询过程进行在线录制，帮助病人足不出户获取医疗资源，并方便后期诊疗参考等。 |
 
 ## 产品特性

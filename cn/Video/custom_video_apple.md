@@ -3,7 +3,7 @@
 title: 自定义视频采集和渲染
 description: 
 platform: iOS,macOS
-updatedAt: Wed Jul 08 2020 04:49:57 GMT+0800 (CST)
+updatedAt: Mon Sep 28 2020 04:24:18 GMT+0800 (CST)
 ---
 # 自定义视频采集和渲染
 ## 功能介绍
@@ -65,7 +65,6 @@ let videoFrame = AgoraVideoFrame()
 videoFrame.format = "your data fromat"
 // [NSDate date].timeIntervalSince1970 为当前时间戳；1000 表示每秒钟 1000 帧
 videoFrame.time = CMTimeMakeWithSeconds([NSDate date].timeIntervalSince1970, 1000)
-videoFrame.data = "your rawData"
 videoFrame.strideInPixels = "your stride"
 videoFrame.height = "your height"
 videoFrame.dataBuf = "your rawData"
@@ -89,7 +88,6 @@ AgoraVideoFrame *videoFrame = [[AgoraVideoFrame alloc] init];
 videoFrame.format = "your data fromat";
 // [NSDate date].timeIntervalSince1970 为当前时间戳；1000 表示每秒钟 1000 帧
 videoFrame.time = CMTimeMakeWithSeconds([NSDate date].timeIntervalSince1970, 1000);
-videoFrame.data = "your rawData";
 videoFrame.strideInPixels = "your stride";
 videoFrame.height = "your height";
 videoFrame.dataBuf = "your rawData";
