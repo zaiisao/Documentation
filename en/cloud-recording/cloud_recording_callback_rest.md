@@ -3,7 +3,7 @@
 title: Agora Cloud Recording RESTful API Callback Service
 description: Cloud recording restful api callback
 platform: All Platforms
-updatedAt: Mon Sep 07 2020 10:00:21 GMT+0800 (CST)
+updatedAt: Mon Sep 28 2020 04:03:35 GMT+0800 (CST)
 ---
 # Agora Cloud Recording RESTful API Callback Service
 Agora provides the the Message Notification Service. You can set up an HTTP/HTTPS server to receive the event notifications of Agora Cloud Recording. When an event occurs, the Agora Cloud Recording service notifies the Message Notification Service, and then the Message Notification Service notifies your server of that event through an HTTP/HTTPS request.
@@ -80,7 +80,7 @@ The event type and the corresponding service type of the Agora Cloud Recording c
   - `4`: Major
   - `5`: Fatal. A fatal error may cause the recording to exit. If you receive a message of this level, call `query` to check the current status and process the error according to the error notifications.
 - `errorCode`: Number. The error code. 
-  - If the error occurs in the recorder, see [error code and warning code](https://docs.agora.io/en/Recording/the_error_native).
+  - If the error occurs in the recorder, see [error code](https://docs.agora.io/en/Recording/API%20Reference/recording_cpp/namespaceagora_1_1linuxsdk.html#a5f37e3fa14fad2982f248d247d76996b).
   - If the error occurs in the uploader, see [upload error code](#uploaderr). 
   - If the error occurs in the Agora Cloud Recording Service, see [cloud recording platform error code](#clouderr).
   - If you do not find any error code in the above-mentioned pages, contact our technical support.
@@ -97,7 +97,7 @@ The event type and the corresponding service type of the Agora Cloud Recording c
   - `0`: The recorder.
   - `1`: The uploader.
 - `warnCode`: Number. The warning code. 
-  - If the warning occurs in the recorder, see [error code and warning code](https://docs.agora.io/en/Recording/the_error_native).
+  - If the warning occurs in the recorder, see [warning code](https://docs.agora.io/en/Recording/API%20Reference/recording_cpp/namespaceagora_1_1linuxsdk.html#a11cab69078db26c1f166c68e469dcfcf).
   - If the warning occurs in the uploader, see [upload warning code](#uploadwarn).
 
 ###  <a name="3"></a>3 cloud_recording_status_update

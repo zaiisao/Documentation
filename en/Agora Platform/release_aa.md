@@ -3,7 +3,7 @@
 title: Agora Analytics Changelog
 description: 
 platform: All Platforms
-updatedAt: Tue Sep 15 2020 09:08:26 GMT+0800 (CST)
+updatedAt: Fri Sep 25 2020 07:22:24 GMT+0800 (CST)
 ---
 # Agora Analytics Changelog
 ## Overview
@@ -11,7 +11,20 @@ Agora Analytics is a tool that tracks and analyzes the usage and quality of call
 
 ## 2020.09
 
-This release improves the following features:
+**New features**
+
+#### 1. Big Channel RESTful API (Beta)
+
+This release adds the Big Channel RESTful API, and you can get the following data:
+
+- The number of users who have a poor communication experience in a Big Channel. Poor communication experience in this case refers to video freezes and channel-join delay.
+- The number of users who try to join a Big Channel.
+- Users' call rating for a Big Channel.
+- The number of online users in a Big Channel.
+
+<div class="alert note">Before using the Big Channel RESTful API, you need to contact <a href="mailto:support@agora.io">support@agora.io</a > to enable the Big Channel function. See <a href="../../en/Agora%20Platform/aa_big_channel.md">Big Channel</a > and <a href="https://docs.agora.io/en/Agora%20Platform/aa_api?platform=All%20Platforms#big_channel">Big Channel RESTful API</a >.</div>
+
+**Improvement**
 
 #### 1. Call Search
 

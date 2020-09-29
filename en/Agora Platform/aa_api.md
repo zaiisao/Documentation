@@ -3,7 +3,7 @@
 title: Agora Analytics RESTful API (Beta)
 description: AA rest api reference
 platform: All Platforms
-updatedAt: Fri Sep 25 2020 02:20:35 GMT+0800 (CST)
+updatedAt: Fri Sep 25 2020 07:23:57 GMT+0800 (CST)
 ---
 # Agora Analytics RESTful API (Beta)
 Agora Analytics provides RESTful APIs for you to retrieve the statistics of your calls and use them in your own application.
@@ -12,14 +12,20 @@ Before moving on to the RESTful APIs, check out Agora Analytics at [Agora Consol
 
 You can use the Agora Analytics RESTful APIs to request the following data.
 
+- [Realtime](#live)
+  - Statistics of specified metrics updated per minute.
+- [Big Channel](#big_channel)
+ - The number of users who have a poor communication experience in a Big Channel.
+ - The number of users who try to join a Big Channel.
+ - Users' call rating for a Big Channel.
+ - The number of online users in a Big Channel.
+- [Auto Diagnosis](#auto_diagnosis)
+  - Detailed diagnostic data.
+- [Data Insight](#insight)
+  - Usage statistics within a specified time frame.
 - [Call Search](#search)
   - A list of calls with basic information.
   - Detailed quality metrics of a call.
-- [Data Insight](#insight)
-  - Usage statistics within a specified time frame.
-- [Realtime](#live)
-  - Statistics of specified metrics updated per minute.
-  - Detailed diagnostic data.
 
 <div class="alert info">Agora Analytics RESTful API is in the Beta release. Purchase the <a href="https://console.agora.io/support/plan">support package</a > or contact <a href="mailto:support@agora.io">support@agora.io</a > to enable this function.</div>
 
@@ -33,6 +39,687 @@ All requests are sent to the host: api.agora.io.
 
 - Request: The request uses query string parameters in the URL.
 - Response: The response content is in JSON format. 
+
+## <a name="live"></a>Realtime
+
+Using Realtime APIs, you can obtain the statistics of a given metric within a certain period of time.
+
+### API limitations
+
+The Realtime RESTful APIs have the following limitations:
+
+| Endpoint                      | Request times | Maximum data delay | Response content                    | Available calls     |
+| :---------------------------- | :------------ | :----------------- | :---------------------------------- | :------------------ |
+| /beta/live/scale/by_time      | 1/s, 1000/day | 60 s ~ 120 s       | -                                   | In the past 1 hour. |
+| /beta/live/experience/by_time | 1/s, 1000/day | 60 s ~ 120 s       | -                                   | In the past 1 hour. |
+| /beta/live/net/by_time        | 1/s, 1000/day | 60 s ~ 120 s       | -                                   | In the past 1 hour. |
+
+> Maximum data delay means the time between when a call begins and when the call's data is available.
+
+### Live scale API
+
+This method gets the per-minute statistics of scale-related metrics within a certain time frame.
+
+- Method: GET
+- Endpoint: /beta/live/scale/by_time
+
+#### Request parameters
+
+The URL requires the following query string parameters:
+
+| Parameter  | Type   | Description                                                  |
+| :--------- | :----- | :----------------------------------------------------------- |
+| `start_ts` | Number | The starting time of the search time frame. Unix time (in seconds since 1 January 1970) in UTC. |
+| `end_ts`   | Number | The ending time of the search time frame. Unix time (in seconds since 1 January 1970) in UTC. |
+| `appid`    | String | [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-appid-a-app-id) of your project. |
+| `metric`   | String | The metric(s) you want to query. To query multiple metrics, add a comma between metrics, such as `pcu,pcc`. See the following table for details. |
+
+#### Metrics
+
+| Metric             | Metric ID | Description                                                  |
+| :----------------- | :-------- | :----------------------------------------------------------- |
+| Number of users    | `pcu`     | Total number of unique UIDs. <div class="note">If two channels have a same UID, Agora Analytics counts it as two users.</div> |
+| Number of channels | `pcc`     | Total number of channels. A channel begins when the first user joins the channel and ends when the last user leaves that channel. |
+
+#### An HTTP request example
+
+```http
+GET /beta/live/scale/by_time?start_ts=1548665345&end_ts=1548670821&appid=axxxxxxxxxxxxxxxxxxxx&metric=pcu,pcc HTTP/1.1
+Host: api.agora.io
+Accept: application/json
+Authorization: Basic ZGJhZDMyNmFkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxWQzYTczNzg2ODdiMmNiYjRh
+```
+
+#### A response example
+
+```json
+{
+    "code": 200,
+    "message": "success",
+    "data": [
+        {
+            "pcc": 42,
+            "pcu": 102,
+            "ts": 1548665578
+        },
+        ......
+    ]
+}
+```
+
+- `code`: Number. The [status code](https://docs-preview.agoralab.co/en/Agora%20Platform/aa_api?platform=All%20Platforms#code).
+- `message`: String. The error message.
+- `data`: JSONArray. The returned per-minute statistics of the specified metric. 
+  - `ts`: Number. Unix timestamp (sec).
+  - `pcu`: Number. Number of users.
+  - `pcc`: Number. Number of channels.
+
+### Live experience API
+
+This method gets the per-minute statistics of experience-related metrics within a certain time frame.
+
+- Method: GET
+- Endpoint: /beta/live/experience/by_time
+
+#### Request parameters
+
+The URL requires the following query string parameters:
+
+| Parameter  | Type   | Description                                                  |
+| :--------- | :----- | :----------------------------------------------------------- |
+| `start_ts` | Number | The starting time of the search time frame. Unix time (in seconds since 1 January 1970) in UTC. |
+| `end_ts`   | Number | The ending time of the search time frame. Unix time (in seconds since 1 January 1970) in UTC. |
+| `appid`    | String | [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-appid-a-app-id) of your project. |
+| `metric`   | String | The metric(s) you want to query. To query multiple metrics, add a comma between metrics. See the following table for details. |
+
+#### Metrics
+
+| Metric                     | Metric ID              | Description                                                  |
+| :------------------------- | :--------------------- | :----------------------------------------------------------- |
+| Join-channel success rate  | `joinSuccessRate`      | Number of users joined / Number of users trying to join.     |
+| Join success in 5 sec rate | `joinSuccess5SecsRate` | Number of users who have joined a channel successfully within 5 seconds / Number of users who have tried to join. |
+| Video freeze rate          | `videoFreezeRate`      | Total video freeze time / Total video playback duration. Video freeze time counts all the video freezes at least 600 ms in length. |
+| Audio freeze rate          | `audioFreezeRate`      | Total audio freeze time / Total audio playback duration. Audio freeze time counts all the audio freezes at least 200 ms in length. |
+
+#### An HTTP request example
+
+```http
+GET /beta/live/experience/by_time?start_ts=1548665345&end_ts=1548670821&appid=axxxxxxxxxxxxxxxxxxxx&metric=joinSuccessRate HTTP/1.1
+Host: api.agora.io
+Accept: application/json
+Authorization: Basic ZGJhZDMyNmFkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxWQzYTczNzg2ODdiMmNiYjRh
+```
+
+#### A response example
+
+```json
+{
+    "code": 200,
+    "message": "success",
+    "data": [
+        {
+            "joinSuccessRate": 42,
+            "ts": 1548666023
+        },
+        ......
+    ]
+}
+```
+
+- `code`: Number. The [status code](https://docs-preview.agoralab.co/en/Agora%20Platform/aa_api?platform=All%20Platforms#code).
+- `message`: String. The error message. See the following table for details.
+- `data`: JSONArray. The returned per-minute statistics of the specified metric. 
+  - `ts`: Number. Unix timestamp (sec).
+  - `joinSuccessRate`: Number. Join-channel success rate (%).
+
+### Live network API
+
+This method gets the per-minute statistics of network-related metrics within a certain time frame.
+
+- Method: GET
+- Endpoint: /beta/live/net/by_time
+
+#### Request parameters
+
+The URL requires the following query string parameters:
+
+| Parameter  | Type   | Description                                                  |
+| :--------- | :----- | :----------------------------------------------------------- |
+| `start_ts` | Number | The starting time of the search time frame. Unix time (in seconds since 1 January 1970) in UTC. |
+| `end_ts`   | Number | The ending time of the search time frame. Unix time (in seconds since 1 January 1970) in UTC. |
+| `appid`    | String | [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-appid-a-app-id) of your project. |
+| `metric`   | String | The metric(s) you want to query. To query multiple metrics, add a comma metrics. See the following table for details. |
+
+#### Metrics
+
+| Metric                                          | Metric ID                         | Description                                                  |
+| :---------------------------------------------- | :-------------------------------- | :----------------------------------------------------------- |
+| Upstream high-quality video transmission rate   | `videoUpstreamExcellentTransRate` | The high-quality video transmission rate from the sender to the Agora SD-RTN. High-quality video transmission rate means the percentage of video transmission with a ≤ 5% packet loss rate. |
+| Upstream high-quality audio transmission rate   | `audioUpstreamExcellentTransRate` | The high-quality audio transmission rate from the sender to the Agora SD-RTN. High-quality audio transmission rate means the percentage of audio transmission with a ≤ 5% packet loss rate. |
+| End-to-end high-quality video transmission rate | `videoEnd2EndExcellentTransRate`  | The high-quality video transmission rate from the sender to the receiver. |
+| End-to-end high-quality audio transmission rate | `audioEnd2EndExcellentTransRate`  | The high-quality audio transmission rate from the sender to the receiver. |
+
+#### An HTTP request example
+
+```http
+GET /beta/live/net/by_time?start_ts=1548665345&end_ts=1548670821&appid=axxxxxxxxxxxxxxxxxxxx&metric=videoUpstreamExcellentTransRate HTTP/1.1
+Host: api.agora.io
+Accept: application/json
+Authorization: Basic ZGJhZDMyNmFkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxWQzYTczNzg2ODdiMmNiYjRh
+```
+
+#### A response example
+
+```json
+{
+    "code": 200,
+    "message": "success",
+    "data": [
+        {
+            "videoUpstreamExcellentTransRate": 42,
+            "ts": 1548667235
+        },
+        ......
+    ]
+}
+```
+
+- `code`: Number. The [status code](https://docs-preview.agoralab.co/en/Agora%20Platform/aa_api?platform=All%20Platforms#code).
+- `message`: String. The error message.
+- `data`: Array. The returned per-minute statistics of the specified metric. 
+  - `ts`: Number. Unix timestamp (sec).
+  - `videoUpstreamExcellentTransRate`: Number. Upstream high-quality video transmission rate (%).
+
+## <a name="big_channel"></a>Big Channel
+
+You can use the Big Channel RESTful API to get the following data:
+
+- The number of users who have a poor communication experience in a Big Channel. Poor communication experience in this case refers to video freezes and channel-join delay.
+- The number of users who try to join a Big Channel.
+- Users' call rating for a Big Channel.
+- The number of online users in a Big Channel.
+
+<div class="alert note"><li>Before using the Big Channel RESTful API, you need to contact <a href="mailto:support@agora.io">support@agora.io</a > to enable the Big Channel function.</li><li>Agora calls a channel with more than 50 online users a Big Channel. You can define Big Channels with the <a href="https://docs.agora.io/en/Agora%20Platform/aa_big_channel_config?platform=All%20Platforms">Big Channel Config</a > function.</div>
+
+### API limitations
+
+The Big Channel RESTful API has the following limitations:
+
+- Maximum requests: 1 time per minute, 1,000 times per day.
+- Maximum data delay: 60 s - 180 s
+- Query time frame: The past one hour.
+
+<div class="alert info">Data delay is the time between when a call begins and when the data of the call is available.</div>
+
+### <a name="video_freeze_in_all_channels"></a>Get the number of users who experience video freezes in all Big Channels
+
+This method gets the number of users who experience video freezes in all Big Channels during the specified time frame.
+
+- Method: GET
+- Endpoint: /beta/live/quality/videofreeze/user_count
+
+<div class="alert info">If you need to get the number of users who experience video freezes in a specified Big Channel during the specified time frame, see <a href="#video_freeze_in_a_specified_channel">Get the number of users who experience video freezes in a specified Big Channel</a >.</div>
+
+#### Request parameters
+
+| Parameter  | Type   | Description                                                  |
+| :--------- | :----- | :----------------------------------------------------------- |
+| `start_ts` | Number | The starting time of the query time frame. Unix time (in seconds since 1 January 1970) in UTC.<p>**Note**</p><p>You can only query the data for the past one hour.</p> |
+| `end_ts`   | Number | The ending time of the query time frame. Unix time (in seconds since 1 January 1970) in UTC. |
+| `appid`      | String | The [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-appid-a-app-id) of your project. |
+
+Request example
+
+```http
+GET /beta/live/quality/videofreeze/user_count?start_ts=1577836820&end_ts=1577837820&appid=xxxxxyyyyy HTTP/1.1 
+Host: api.agora.io Accept: application/json 
+Authorization: Basic ZGJhZDMyNmFkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxWQzYTczNzg2ODdiMmNiYjRh
+```
+
+#### Response parameters
+
+| Parameter | Type      | Description                                                  |
+| :-------- | :-------- | :----------------------------------------------------------- |
+| `code`    | Number    | The [status code](https://docs.agora.io/en/Agora%20Platform/aa_api?platform=All%20Platforms#code). |
+| `message` | String    | Whether this method is called successfully:<li>`success`: Call succeeds.</li><li>Others: Call fails; an error message is returned.</li> |
+| `data`    | JSONArray | The statistical results for the specified metrics per minute, which includes the following:<li>`value`: Number type. The number of users who experience video freezes.</li><li>`ts`: Number type. Unix time (in seconds since 1 January 1970) in UTC.</li><p>**Note**</p><p>Data less than one minute is not reported.</p> |
+
+Response example
+
+```json
+{
+    "code": 200,
+    "message": "success",
+    "data": [
+        {
+            "value": 22,
+            "ts": 1577836880
+        },
+        {
+            "value": 18,
+            "ts": 1577836940
+        },
+        ...
+    ]
+}
+```
+
+### Get the number of users who experience channel-join delay
+
+This method gets the number of users who experience channel-join delay in all Big Channels during the specified time frame.
+
+- Method: GET
+- Endpoint: /beta/live/quality/slowjoining/user_count
+
+#### Request parameters
+
+| Parameter  | Type   | Description                                                  |
+| :--------- | :----- | :----------------------------------------------------------- |
+| `start_ts` | Number | The starting time of the query time frame. Unix time (in seconds since 1 January 1970) in UTC.<p>**Note**</p><p>You can only query the data for the past one hour.</p> |
+| `end_ts`   | Number | The ending time of the query time frame. Unix time (in seconds since 1 January 1970) in UTC. |
+| `appid`      | String | The [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-appid-a-app-id) of your project. |
+
+Request example
+
+```http
+GET /beta/live/quality/slowjoining/user_count?start_ts=1577836820&end_ts=1577837820&appid=xxxxxyyyyy
+Host: api.agora.io
+Accept: application/json
+Authorization: Basic ZGJhZDMyNmFkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxWQzYTczNzg2ODdiMmNiYjRh
+```
+
+#### Response parameters
+
+| Parameter | Type      | Description                                                  |
+| :-------- | :-------- | :----------------------------------------------------------- |
+| `code`    | Number    | The [status code](https://docs.agora.io/en/Agora%20Platform/aa_api?platform=All%20Platforms#code). |
+| `message` | String    | Whether this method is called successfully:<li>`success`: Call succeeds.</li><li>Others: Call fails; an error message is returned.</li> |
+| `data`    | JSONArray | The statistical results for the specified metrics per minute, which includes the following parameters:<li>`value`: Number type. The number of users who experience channel-join delay.</li><li>`ts`: Number type. Unix time (in seconds since 1 January 1970) in UTC.</li><p>**Note**</p><p>Data less than one minute is not reported.</p> |
+
+Response example
+
+```json
+{
+    "code": 200,
+    "message": "success",
+    "data": [
+        {
+            "value": 22,
+            "ts": 1577836880
+        },
+        {
+            "value": 18,
+            "ts": 1577836940
+        },
+        ...
+    ]
+}
+```
+
+### Get the number of users who try to join Big Channels
+
+This method gets the number of users who try to join Big Channels during the specified time frame.
+
+- Method: GET
+- Endpoint: /beta/live/quality/joiningtrial/user_count
+
+#### Request parameters
+
+| Parameter  | Type   | Description                                                  |
+| :--------- | :----- | :----------------------------------------------------------- |
+| `start_ts` | Number | The starting time of the query time frame. Unix time (in seconds since 1 January 1970) in UTC.<p>**Note**</p><p>You can only query the data for the past one hour.</p> |
+| `end_ts`   | Number | The ending time of the query time frame. Unix time (in seconds since 1 January 1970) in UTC. |
+| `appid`      | String | The [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-appid-a-app-id) of your project. |
+
+Request example
+
+```http
+GET /beta/live/quality/joiningtrial/user_count?start_ts=1577836820&end_ts=1577837820&appid=xxxxxyyyyy
+Host: api.agora.io
+Accept: application/json
+Authorization: Basic ZGJhZDMyNmFkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxWQzYTczNzg2ODdiMmNiYjRh
+```
+
+#### Response parameters
+
+| Parameter | Type      | Description                                                  |
+| :-------- | :-------- | :----------------------------------------------------------- |
+| `code`    | Number    | The [status code](https://docs.agora.io/en/Agora%20Platform/aa_api?platform=All%20Platforms#code). |
+| `message` | String    | Whether this method is called successfully:<li>`success`: Call succeeds.</li><li>Others: Call fails; an error message is returned.</li> |
+| `data`    | JSONArray | The statistical results for the specified metrics per minute, which includes the following parameters:<li>`value`: Number type. The number of users who try to join a Big Channel.</li><li>`ts`: Number type. Unix time (in seconds since 1 January 1970) in UTC.</li><p>**Note**</p><p>Data less than one minute is not reported.</p> |
+
+Response example
+
+```json
+{
+    "code": 200,
+    "message": "success",
+    "data": [
+        {
+            "value": 330,
+            "ts": 1577836880
+        },
+        {
+            "value": 450,
+            "ts": 1577836940
+        },
+        ...
+    ]
+}
+```
+
+### Get the call rating for a specified Big Channel
+
+This method gets the users' call rating for a specified Big Channel during the specified time frame.
+
+- Method: GET
+- Endpoint: /beta/bigchannel/live/quality/score
+
+<div class="alert note">Before using this method, you need to call the <tt>rate</tt> method in the Agora RTC SDK to implement the call rating function. See details in <a href="https://docs.agora.io/en/Interactive%20Broadcast/rate_call_android?platform=Android">Rate Call</a >.</div>
+
+#### Request parameters
+
+| Parameter  | Type   | Description                                                  |
+| :--------- | :----- | :----------------------------------------------------------- |
+| `start_ts` | Number | The starting time of the query time frame. Unix time (in seconds since 1 January 1970) in UTC.<p>**Note**</p><p>You can only query the data for the past one hour.</p> |
+| `end_ts`   | Number | The ending time of the query time frame. Unix time (in seconds since 1 January 1970) in UTC. |
+| appid      | String | The [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-appid-a-app-id) of your project. |
+| `cname`    | String | The name of the Big Channel.<p>**Note**</p><p>If the channel name does not exist, your query returns an empty `data` array.</p> |
+
+
+Request example
+
+```http
+GET /beta/bigchannel/live/quality/score?start_ts=1577836820&end_ts=1577837820&appid=xxxxxyyyyy&cname=test-cname
+Host: api.agora.io
+Accept: application/json
+Authorization: Basic ZGJhZDMyNmFkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxWQzYTczNzg2ODdiMmNiYjRh
+```
+
+#### Response parameters
+
+| Parameter | Type      | Description                                                  |
+| :-------- | :-------- | :----------------------------------------------------------- |
+| `code`    | Number    | The [status code](https://docs.agora.io/en/Agora%20Platform/aa_api?platform=All%20Platforms#code). |
+| `message` | String    | Whether this method is called successfully:<li>`success`: Call succeeds.</li><li>Others: Call fails; an error message is returned.</li> |
+| `data`    | JSONArray | The statistical results for the specified metrics per minute, which includes the following parameters:<li>`value`: Number type. The average of all user ratings for calls in a specified Big Channel.</li><li>`ts`: Number type. Unix time (in seconds since 1 January 1970) in UTC.</li><p>**Note**</p><p>Data less than one minute is not reported.</p> |
+
+
+Response example
+
+```json
+{
+    "code": 200,
+    "message": "success",
+    "data": [
+        {
+            "value": 5.0,
+            "ts": 1577836880
+        },
+        {
+            "value": 4.11,
+            "ts": 1577836940
+        },
+        ...
+    ]
+}
+```
+
+### <a name="video_freeze_in_a_specified_channel"></a>Get the number of users who experience video freezes in a specified Big Channel
+
+This method gets the number of users who experience video freezes in a specified Big Channel during the specified time frame.
+
+- Method: GET
+- Endpoint: /beta/bigchannel/live/quality/videofreeze/user_count
+
+<div class="alert info">If you need to get the number of users who experience video freezes in all Big Channels during the specified time frame, see <a href="#video_freeze_in_all_channels">Get the number of users who experience video freezes in all Big Channels</a >.</div>
+
+#### Request parameters
+
+| Parameter  | Type   | Description                                                  |
+| :--------- | :----- | :----------------------------------------------------------- |
+| `start_ts` | Number | The starting time of the query time frame. Unix time (in seconds since 1 January 1970) in UTC.<p>**Note**</p><p>You can only query the data for the past one hour.</p> |
+| `end_ts`   | Number | The ending time of the query time frame. Unix time (in seconds since 1 January 1970) in UTC. |
+| `appid`    | String | The [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-appid-a-app-id) of your project. |
+| `cname`    | String | The name of the Big Channel.<p>**Note**</p><p>If the channel name does not exist, your query returns an empty `data` array.</p> |
+
+Request example
+
+```http
+GET /beta/bigchannel/live/quality/videofreeze/user_count?start_ts=1577836820&end_ts=1577837820&appid=xxxxxyyyyy&cname=test-cname
+Host: api.agora.io
+Accept: application/json
+Authorization: Basic ZGJhZDMyNmFkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxWQzYTczNzg2ODdiMmNiYjRh
+```
+
+#### Response parameters
+
+| Parameter | Type      | Description                                                  |
+| :-------- | :-------- | :----------------------------------------------------------- |
+| `code`    | Number    | The [status code](https://docs.agora.io/en/Agora%20Platform/aa_api?platform=All%20Platforms#code). |
+| `message` | String    | Whether this method is called successfully:<li>`success`: Call succeeds.</li><li>Others: Call fails; an error message is returned.</li> |
+| `data`    | JSONArray | The statistical results for the specified metrics per minute, which includes the following parameters:<li>`value`: Number type. The number of users who experience video freezes.</li><li>`ts`: Number type. Unix time (in seconds since 1 January 1970) in UTC.</li><p>**Note**</p><p>Data less than one minute is not reported.</p> |
+
+Response example
+
+```json
+{
+    "code": 200,
+    "message": "success",
+    "data": [
+        {
+            "value": 4,
+            "ts": 1577836880
+        },
+        {
+            "value": 5,
+            "ts": 1577836940
+        },
+        ...
+    ]
+}
+```
+
+### Get the number of online users in a specified Big Channel
+
+This method gets the number of online users in a specified Big Channel during the specified time frame.
+
+- Method: GET
+- Endpoint: /beta/bigchannel/live/scale/user_count
+
+#### Request parameters
+
+| Parameter  | Type   | Description                                                  |
+| :--------- | :----- | :----------------------------------------------------------- |
+| `start_ts` | Number | The starting time of the query time frame. Unix time (in seconds since 1 January 1970) in UTC.<p>**Note**</p><p>You can only query the data for the past one hour.</p> |
+| `end_ts`   | Number | The ending time of the query time frame. Unix time (in seconds since 1 January 1970) in UTC. |
+| `appid`    | String | The [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-appid-a-app-id) of your project. |
+| `cname`    | String | The name of the Big Channel.<p>**Note**</p><p>If the channel name does not exist, your query returns an empty `data` array.</p> |
+
+Request example
+
+```http
+GET /beta/bigchannel/live/scale/user_count?start_ts=1577836820&end_ts=1577837820&appid=xxxxxyyyyy&cname=test-cname
+Host: api.agora.io
+Accept: application/json
+Authorization: Basic ZGJhZDMyNmFkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxWQzYTczNzg2ODdiMmNiYjRh
+```
+
+#### Response parameters
+
+| Parameter | Type      | Description                                                  |
+| :-------- | :-------- | :----------------------------------------------------------- |
+| `code`    | Number    | The [status code](https://docs.agora.io/en/Agora%20Platform/aa_api?platform=All%20Platforms#code). |
+| `message` | String    | Whether this method is called successfully:<li>`success`: Call succeeds.</li><li>Others: Call fails; an error message is returned.</li> |
+| `data`    | JSONArray | The statistical results for the specified metrics per minute, which includes the following parameters:<li>`value`: Number type. The number of online users.</li><li>`ts`: Number type. Unix time (in seconds since 1 January 1970) in UTC.</li><p>**Note**</p><p>Data less than one minute is not reported.</p> |
+
+Response example
+
+```json
+{
+    "code": 200,
+    "message": "success",
+    "data": [
+        {
+            "value": 160,
+            "ts": 1577836880
+        },
+        {
+            "value": 175,
+            "ts": 1577836940
+        },
+        ...
+    ]
+}
+```
+
+##  Auto Diagnosis
+
+Using Auto Diagnosis, you can get detailed diagnostic data.
+
+### API limitations
+
+The Auto Diagnosis RESTful APIs have the following limitations:
+
+| Endpoint                      | Request times | Maximum data delay | Response content                    | Available calls     |
+| :---------------------------- | :------------ | :----------------- | :---------------------------------- | :------------------ |
+| /beta/live/diagnosis          | 1/s, 1000/day | 60 s ~ 120 s       | A maximum of 10 diagnostic messages | In the past 1 hour. |
+
+### Diagnostics API
+
+This method gets the diagnostic data and the factors that cause the abnormalities within a certain time frame.
+
+- Method: GET
+- Endpoint: /beta/live/diagnosis
+
+#### Request parameters
+
+The URL requires the following query string parameters:
+
+| Parameter  | Type   | Description                                                  |
+| :--------- | :----- | :----------------------------------------------------------- |
+| `start_ts` | Number | The starting time of the search time frame. Unix time (in seconds since 1 January 1970) in UTC. |
+| `end_ts`   | Number | The ending time of the search time frame. Unix time (in seconds since 1 January 1970) in UTC. |
+| `appid`    | String | [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-appid-a-app-id) of your project. |
+
+#### An HTTP request example
+
+```http
+GET /beta/live/diagnosis?start_ts=1548665345&end_ts=1548670821&appid=axxxxxxxxxxxxxxxxxxxx HTTP/1.1
+Host: api.agora.io
+Accept: application/json
+Authorization: Basic ZGJhZDMyNmFkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxWQzYTczNzg2ODdiMmNiYjRh
+```
+
+#### A response example
+
+```json
+{
+    "code": 200,
+    "message": "success",
+    "data": [
+        {
+            "user": "83817682",
+            "exp_id": 4,
+            "cname": "C148474015",
+            "cause_tags": [
+                {
+                    "factor_id": 18,
+                    "host_user": "44361248"
+                },
+                {
+                    "factor_id": 23,
+                    "host_user": ""
+                },
+                {
+                    "factor_id": 18,
+                    "host_user": ""
+                }
+            ],
+            "ts": 1548668575
+        },
+        ......
+       ]
+}
+```
+
+- `code`: Number. The [status code](https://docs-preview.agoralab.co/en/Agora%20Platform/aa_api?platform=All%20Platforms#code).
+- `message`: String. The error message.
+- `data`: JSONArray. The returned per-minute diagnostic data. 
+  - `ts`: Number. Unix timestamp (sec).
+  - `user`: String. The UID encountering an abnormality.
+  - `exp_id`: Number. Experience ID, describing the type of abnormality. See [Experience ID](#exp_id) for details.
+  - `cname`: String. Name of the channel where the abnormality occurs.
+  - `cause_tags`: JSONArray. The factor(s) causing the abnormality and the related UIDs. `cause_tags` contains a maximum of three tags.
+    - `factor_id`: Number. Factor ID, which represents the cause of the abnormality. See [Factor ID](#factor_id) for details.
+    - `host_user`: String. 
+      - If the factor relates to a remote user, `host_user` is the UID of the remote user. 
+      - If the factor relates to the local user, `host_user` is an empty string "".
+
+## <a name="insight"></a>Data Insight
+
+You can use the Data Insight API to get the usage statistics within a specified time frame.
+
+### API limitations
+
+The Data Insight RESTful API has the following limitations:
+
+| Endpoint                    | Request frequency | Available calls    |
+| :-------------------------- | :------------ | :----------------- |
+| /beta/insight/usage/by_time | 1/min, 10/day | In the past 7 days |
+
+<div class="alert note"><b>Data Insight</b> finishes calculating data for the previous day, closing at 08:00 UTC. You may find that there is no data available prior to this time. To view real-time data, use <a href="#live">Realtime</a> RESTful APIs.</div>
+
+### Get number of channels & users
+
+This method gets the number of channels, users, and session counts within a certain time frame.
+
+- Method: GET
+- Endpoint: /beta/insight/usage/by_time
+
+#### Request parameters
+
+The URL requires the following query string parameters:
+
+| Parameter  | Type   | Description                                                  |
+| :--------- | :----- | :----------------------------------------------------------- |
+| `start_ts` | Number | The starting time of the search time frame. Unix time (in seconds since 1 January 1970) in UTC. |
+| `end_ts`   | Number | The ending time of the search time frame. Unix time (in seconds since 1 January 1970) in UTC. |
+| `appid`    | String | [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-appid-a-app-id) of your project. |
+| `metric`   | String | The metric(s) you want to query.<li>`userCount`: Total number of unique UIDs. If two channels have a same UID, Agora Analytics counts it as two users.</li><li>`sessionCount`: It counts each time a user joins a channel.</li><li>`channelCount`: Total number of channels. A channel begins when the first user joins and ends when the last user leaves.</li>To query multiple metrics, add a comma between metrics, such as `userCount,sessionCount`. |
+
+<div class="alert note">Data Insight uses one day as the time unit for data calculation. Ensure that the specified time frame is at least one day, otherwise you get an empty response.</div>
+
+#### An HTTP request example
+
+```http
+GET /beta/insight/usage/by_time?start_ts=1570579200&end_ts=1570838400&appid=axxxxxxxxxxxxxxxxxxxx&metric=userCount HTTP/1.1
+Host: api.agora.io
+Accept: application/json
+Authorization: Basic ZGJhZDMyNmFkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxWQzYTczNzg2ODdiMmNiYjRh
+```
+
+#### A response example
+
+```json
+{
+    "code": 200,
+    "message": "success",
+    "data": [
+        {
+            "userCount": 42,
+            "ts": 1570752000
+        },
+        ......
+    ]
+}
+```
+
+- `code`: Number. The [status code](#code).
+- `message`: String. The error message.
+- `data`: JSONArray. An array of JSON objects. Each JSON object contains a Unix timestamp representing the date (00:00 UTC) and the statistics of the specified metrics for that day. 
+  - `ts`: Number. Unix timestamp (sec).
+  - `userCount`: Number. Number of users.
 
 ## <a name="search"></a>Call Search
 
@@ -56,14 +743,14 @@ This method gets a list of the calls that meet the search criteria.
 - Method: GET
 - Endpoint: /beta/analytics/call/lists
 
-#### Parameters
+#### Request parameters
 
 The following query string parameters are required in the URL as search criteria.
 
 | Parameter  | Type   | Description                                                  |
 | ---------- | ------ | ------------------------------------------------------------ |
-| `start_ts` | Number | The starting time of the search time frame. Unix format (time in seconds since 1970) in UTC. |
-| `end_ts`   | Number | The ending time of the search time frame. Unix format (time in seconds since 1970) in UTC. |
+| `start_ts` | Number | The starting time of the search time frame. Unix time (in seconds since 1 January 1970) in UTC. |
+| `end_ts`   | Number | The ending time of the search time frame. Unix time (in seconds since 1 January 1970) in UTC. |
 | `cname`    | String | (Optional) The channel name.                                 |
 | `appid`    | String | [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-appid-a-app-id) of your project. |
 
@@ -115,14 +802,14 @@ This method gets the detailed statistics of a call.
 - Method: GET
 - Endpoint: /beta/analytics/call/details
 
-#### Parameters
+#### Request parameters
 
 This API requires the following parameters to specify the call.
 
 | Parameter             | Type    | Description                                                  |
 | --------------------- | ------- | ------------------------------------------------------------ |
-| `start_ts`            | Number  | The starting time of the call. Unix format (seconds since 1970) in UTC. |
-| `end_ts`              | Number  | The ending time of the call. Unix format (seconds since 1970) in UTC. |
+| `start_ts`            | Number  | The starting time of the call. Unix time (in seconds since 1 January 1970) in UTC. |
+| `end_ts`              | Number  | The ending time of the call. Unix time (in seconds since 1 January 1970) in UTC. |
 | `appid`               | String  | [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-appid-a-app-id) of your project. |
 | `call_id`             | String  | The unique ID of the call.                                   |
 | `exclude_server_user` | Boolean | (Optional) Whether or not to exclude Linux users. `true` by default.    |
@@ -205,8 +892,8 @@ Where:
   - `speaker`: Boolean. Whether or not the user speaks in the call.
   - `sdk_version`: String. The SDK version.
   - `device_type`: String. The type of the device.
-  - `join_ts`: Number. The time when the user joins the call. Unix format (time in seconds since 1970) in UTC.
-  - `leave_ts`: Number. The time when the user leaves the call. Unix format (time in seconds since 1970) in UTC.
+  - `join_ts`: Number. The time when the user joins the call. Unix time (in seconds since 1 January 1970) in UTC.
+  - `leave_ts`: Number. The time when the user leaves the call. Unix time (in seconds since 1 January 1970) in UTC.
   - `finished`: Boolean. Whether or not the user is in the call.
   - `metrics`: JSONArray. Details of each user session (`sid`). Each user session includes the following properties:
     - `sid`: String. The unique ID of the user session.
@@ -214,333 +901,6 @@ Where:
     - `mid`: Number. The ID of the metric. See [Metrics ID](#mid) for details.
     - `peer_uid`: Number. The user ID of the remote user. 0 for the local user.
     - `kvs`: Array. Pairs of the timestamp and the corresponding metric value.
-
-## <a name="insight"></a>Data Insight
-
-You can use the Data Insight API to get the usage statistics within a specified time frame.
-
-### API limitations
-
-The Data Insight RESTful API has the following limitations:
-
-| Endpoint                    | Request frequency | Available calls    |
-| :-------------------------- | :------------ | :----------------- |
-| /beta/insight/usage/by_time | 1/min, 10/day | In the past 7 days |
-
-<div class="alert note"><b>Data Insight</b> finishes calculating data for the previous day, closing at 08:00 UTC. You may find that there is no data available prior to this time. To view real-time data, use <a href="#live">Realtime</a> RESTful APIs.</div>
-
-### Get number of channels & users
-
-This method gets the number of channels, users, and session counts within a certain time frame.
-
-- Method: GET
-- Endpoint: /beta/insight/usage/by_time
-
-#### Parameters
-
-The URL requires the following query string parameters:
-
-| Parameter  | Type   | Description                                                  |
-| :--------- | :----- | :----------------------------------------------------------- |
-| `start_ts` | Number | The starting time of the search time frame. Unix format (time in seconds since 1970) in UTC. |
-| `end_ts`   | Number | The ending time of the search time frame. Unix format (time in seconds since 1970) in UTC. |
-| `appid`    | String | [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-appid-a-app-id) of your project. |
-| `metric`   | String | The metric(s) you want to query.<li>`userCount`: Total number of unique UIDs. If two channels have a same UID, Agora Analytics counts it as two users.</li><li>`sessionCount`: It counts each time a user joins a channel.</li><li>`channelCount`: Total number of channels. A channel begins when the first user joins and ends when the last user leaves.</li>To query multiple metrics, add a comma between metrics, such as `userCount,sessionCount`. |
-
-<div class="alert note">Data Insight uses one day as the time unit for data calculation. Ensure that the specified time frame is at least one day, otherwise you get an empty response.</div>
-
-#### An HTTP request example
-
-```http
-GET /beta/insight/usage/by_time?start_ts=1570579200&end_ts=1570838400&appid=axxxxxxxxxxxxxxxxxxxx&metric=userCount HTTP/1.1
-Host: api.agora.io
-Accept: application/json
-Authorization: Basic ZGJhZDMyNmFkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxWQzYTczNzg2ODdiMmNiYjRh
-```
-
-#### A response example
-
-```json
-{
-    "code": 200,
-    "message": "success",
-    "data": [
-        {
-            "userCount": 42,
-            "ts": 1570752000
-        },
-        ......
-    ]
-}
-```
-
-- `code`: Number. The [status code](#code).
-- `message`: String. The error message.
-- `data`: JSONArray. An array of JSON objects. Each JSON object contains a Unix timestamp representing the date (00:00 UTC) and the statistics of the specified metrics for that day. 
-  - `ts`: Number. Unix timestamp (sec).
-  - `userCount`: Number. Number of users.
-
-## <a name="live"></a>Realtime APIs
-
-Using Realtime APIs, you can obtain the statistics of a given metric within a certain period of time, along with detailed diagnostic data.
-
-### API limitations
-
-The Realtime RESTful APIs have the following limitations:
-
-| Endpoint                      | Request times | Maximum data delay | Response content                    | Available calls     |
-| :---------------------------- | :------------ | :----------------- | :---------------------------------- | :------------------ |
-| /beta/live/scale/by_time      | 1/s, 1000/day | 60 s ~ 120 s       | -                                   | In the past 1 hour. |
-| /beta/live/experience/by_time | 1/s, 1000/day | 60 s ~ 120 s       | -                                   | In the past 1 hour. |
-| /beta/live/net/by_time        | 1/s, 1000/day | 60 s ~ 120 s       | -                                   | In the past 1 hour. |
-| /beta/live/diagnosis          | 1/s, 1000/day | 60 s ~ 120 s       | A maximum of 10 diagnostic messages | In the past 1 hour. |
-
-> Maximum data delay means the time between when a call begins and when the call's data is available.
-
-### Live scale API
-
-This method gets the per-minute statistics of scale-related metrics within a certain time frame.
-
-- Method: GET
-- Endpoint: /beta/live/scale/by_time
-
-#### Parameters
-
-The URL requires the following query string parameters:
-
-| Parameter  | Type   | Description                                                  |
-| :--------- | :----- | :----------------------------------------------------------- |
-| `start_ts` | Number | The starting time of the search time frame. Unix format (time in seconds since 1970) in UTC. |
-| `end_ts`   | Number | The ending time of the search time frame. Unix format (time in seconds since 1970) in UTC. |
-| `appid`    | String | [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-appid-a-app-id) of your project. |
-| `metric`   | String | The metric(s) you want to query. To query multiple metrics, add a comma between metrics, such as `pcu,pcc`. See the following table for details. |
-
-#### Metrics
-
-| Metric             | Metric ID | Description                                                  |
-| :----------------- | :-------- | :----------------------------------------------------------- |
-| Number of users    | `pcu`     | Total number of unique UIDs. <div class="note">If two channels have a same UID, Agora Analytics counts it as two users.</div> |
-| Number of channels | `pcc`     | Total number of channels. A channel begins when the first user joins the channel and ends when the last user leaves that channel. |
-
-#### An HTTP request example
-
-```http
-GET /beta/live/scale/by_time?start_ts=1548665345&end_ts=1548670821&appid=axxxxxxxxxxxxxxxxxxxx&metric=pcu,pcc HTTP/1.1
-Host: api.agora.io
-Accept: application/json
-Authorization: Basic ZGJhZDMyNmFkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxWQzYTczNzg2ODdiMmNiYjRh
-```
-
-#### A response example
-
-```json
-{
-    "code": 200,
-    "message": "success",
-    "data": [
-        {
-            "pcc": 42,
-            "pcu": 102,
-            "ts": 1548665578
-        },
-        ......
-    ]
-}
-```
-
-- `code`: Number. The [status code](https://docs-preview.agoralab.co/en/Agora%20Platform/aa_api?platform=All%20Platforms#code).
-- `message`: String. The error message.
-- `data`: JSONArray. The returned per-minute statistics of the specified metric. 
-  - `ts`: Number. Unix timestamp (sec).
-  - `pcu`: Number. Number of users.
-  - `pcc`: Number. Number of channels.
-
-### Live experience API
-
-This method gets the per-minute statistics of experience-related metrics within a certain time frame.
-
-- Method: GET
-- Endpoint: /beta/live/experience/by_time
-
-#### Parameters
-
-The URL requires the following query string parameters:
-
-| Parameter  | Type   | Description                                                  |
-| :--------- | :----- | :----------------------------------------------------------- |
-| `start_ts` | Number | The starting time of the search time frame. Unix format (time in seconds since 1970) in UTC. |
-| `end_ts`   | Number | The ending time of the search time frame. Unix format (time in seconds since 1970) in UTC. |
-| `appid`    | String | [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-appid-a-app-id) of your project. |
-| `metric`   | String | The metric(s) you want to query. To query multiple metrics, add a comma between metrics. See the following table for details. |
-
-#### Metrics
-
-| Metric                     | Metric ID              | Description                                                  |
-| :------------------------- | :--------------------- | :----------------------------------------------------------- |
-| Join-channel success rate  | `joinSuccessRate`      | Number of users joined / Number of users trying to join.     |
-| Join success in 5 sec rate | `joinSuccess5SecsRate` | Number of users who have joined a channel successfully within 5 seconds / Number of users who have tried to join. |
-| Video freeze rate          | `videoFreezeRate`      | Total video freeze time / Total video playback duration. Video freeze time counts all the video freezes at least 600 ms in length. |
-| Audio freeze rate          | `audioFreezeRate`      | Total audio freeze time / Total audio playback duration. Audio freeze time counts all the audio freezes at least 200 ms in length. |
-
-#### An HTTP request example
-
-```http
-GET /beta/live/experience/by_time?start_ts=1548665345&end_ts=1548670821&appid=axxxxxxxxxxxxxxxxxxxx&metric=joinSuccessRate HTTP/1.1
-Host: api.agora.io
-Accept: application/json
-Authorization: Basic ZGJhZDMyNmFkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxWQzYTczNzg2ODdiMmNiYjRh
-```
-
-#### A response example
-
-```json
-{
-    "code": 200,
-    "message": "success",
-    "data": [
-        {
-            "joinSuccessRate": 42,
-            "ts": 1548666023
-        },
-        ......
-    ]
-}
-```
-
-- `code`: Number. The [status code](https://docs-preview.agoralab.co/en/Agora%20Platform/aa_api?platform=All%20Platforms#code).
-- `message`: String. The error message. See the following table for details.
-- `data`: JSONArray. The returned per-minute statistics of the specified metric. 
-  - `ts`: Number. Unix timestamp (sec).
-  - `joinSuccessRate`: Number. Join-channel success rate (%).
-
-### Live network API
-
-This method gets the per-minute statistics of network-related metrics within a certain time frame.
-
-- Method: GET
-- Endpoint: /beta/live/net/by_time
-
-#### Parameters
-
-The URL requires the following query string parameters:
-
-| Parameter  | Type   | Description                                                  |
-| :--------- | :----- | :----------------------------------------------------------- |
-| `start_ts` | Number | The starting time of the search time frame. Unix format (time in seconds since 1970) in UTC. |
-| `end_ts`   | Number | The ending time of the search time frame. Unix format (time in seconds since 1970) in UTC. |
-| `appid`    | String | [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-appid-a-app-id) of your project. |
-| `metric`   | String | The metric(s) you want to query. To query multiple metrics, add a comma metrics. See the following table for details. |
-
-#### Metrics
-
-| Metric                                          | Metric ID                         | Description                                                  |
-| :---------------------------------------------- | :-------------------------------- | :----------------------------------------------------------- |
-| Upstream high-quality video transmission rate   | `videoUpstreamExcellentTransRate` | The high-quality video transmission rate from the sender to the Agora SD-RTN. High-quality video transmission rate means the percentage of video transmission with a ≤ 5% packet loss rate. |
-| Upstream high-quality audio transmission rate   | `audioUpstreamExcellentTransRate` | The high-quality audio transmission rate from the sender to the Agora SD-RTN. High-quality audio transmission rate means the percentage of audio transmission with a ≤ 5% packet loss rate. |
-| End-to-end high-quality video transmission rate | `videoEnd2EndExcellentTransRate`  | The high-quality video transmission rate from the sender to the receiver. |
-| End-to-end high-quality audio transmission rate | `audioEnd2EndExcellentTransRate`  | The high-quality audio transmission rate from the sender to the receiver. |
-
-#### An HTTP request example
-
-```http
-GET /beta/live/net/by_time?start_ts=1548665345&end_ts=1548670821&appid=axxxxxxxxxxxxxxxxxxxx&metric=videoUpstreamExcellentTransRate HTTP/1.1
-Host: api.agora.io
-Accept: application/json
-Authorization: Basic ZGJhZDMyNmFkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxWQzYTczNzg2ODdiMmNiYjRh
-```
-
-#### A response example
-
-```json
-{
-    "code": 200,
-    "message": "success",
-    "data": [
-        {
-            "videoUpstreamExcellentTransRate": 42,
-            "ts": 1548667235
-        },
-        ......
-    ]
-}
-```
-
-- `code`: Number. The [status code](https://docs-preview.agoralab.co/en/Agora%20Platform/aa_api?platform=All%20Platforms#code).
-- `message`: String. The error message.
-- `data`: Array. The returned per-minute statistics of the specified metric. 
-  - `ts`: Number. Unix timestamp (sec).
-  - `videoUpstreamExcellentTransRate`: Number. Upstream high-quality video transmission rate (%).
-
-### Diagnostics API
-
-This method gets the diagnostic data and the factors that cause the abnormalities within a certain time frame.
-
-- Method: GET
-- Endpoint: /beta/live/diagnosis
-
-#### Parameters
-
-The URL requires the following query string parameters:
-
-| Parameter  | Type   | Description                                                  |
-| :--------- | :----- | :----------------------------------------------------------- |
-| `start_ts` | Number | The starting time of the search time frame. Unix format (time in seconds since 1970) in UTC. |
-| `end_ts`   | Number | The ending time of the search time frame. Unix format (time in seconds since 1970) in UTC. |
-| `appid`    | String | [App ID](https://docs.agora.io/en/Agora%20Platform/terms?platform=All%20Platforms#a-name-appid-a-app-id) of your project. |
-
-#### An HTTP request example
-
-```http
-GET /beta/live/diagnosis?start_ts=1548665345&end_ts=1548670821&appid=axxxxxxxxxxxxxxxxxxxx HTTP/1.1
-Host: api.agora.io
-Accept: application/json
-Authorization: Basic ZGJhZDMyNmFkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxWQzYTczNzg2ODdiMmNiYjRh
-```
-
-#### A response example
-
-```json
-{
-    "code": 200,
-    "message": "success",
-    "data": [
-        {
-            "user": "83817682",
-            "exp_id": 4,
-            "cname": "C148474015",
-            "cause_tags": [
-                {
-                    "factor_id": 18,
-                    "host_user": "44361248"
-                },
-                {
-                    "factor_id": 23,
-                    "host_user": ""
-                },
-                {
-                    "factor_id": 18,
-                    "host_user": ""
-                }
-            ],
-            "ts": 1548668575
-        },
-        ......
-       ]
-}
-```
-
-- `code`: Number. The [status code](https://docs-preview.agoralab.co/en/Agora%20Platform/aa_api?platform=All%20Platforms#code).
-- `message`: String. The error message.
-- `data`: JSONArray. The returned per-minute diagnostic data. 
-  - `ts`: Number. Unix timestamp (sec).
-  - `user`: String. The UID encountering an abnormality.
-  - `exp_id`: Number. Experience ID, describing the type of abnormality. See [Experience ID](#exp_id) for details.
-  - `cname`: String. Name of the channel where the abnormality occurs.
-  - `cause_tags`: JSONArray. The factor(s) causing the abnormality and the related UIDs. `cause_tags` contains a maximum of three tags.
-    - `factor_id`: Number. Factor ID, which represents the cause of the abnormality. See [Factor ID](#factor_id) for details.
-    - `host_user`: String. 
-      - If the factor relates to a remote user, `host_user` is the UID of the remote user. 
-      - If the factor relates to the local user, `host_user` is an empty string "".
 
 ## References
 

@@ -3,26 +3,34 @@
 title: Firewall Requirements
 description: 
 platform: All Platforms
-updatedAt: Tue Sep 15 2020 10:32:32 GMT+0800 (CST)
+updatedAt: Tue Sep 29 2020 02:22:01 GMT+0800 (CST)
 ---
 # Firewall Requirements
-This page describes the firewall requirements for different Agora SDKs. Before accessing Agora’s services, ensure that you open the local firewall ports and whitelist the domains specified in this article.
+## Introduction
 
-If you cannot add these ports and whitelist domains on your firewall, Agora recommends using the cloud proxy service to access Agora's service:
-- [Cloud Proxy for the RTC Native SDK](../../en/Agora%20Platform/cloudproxy_native.md)
-- [Cloud Proxy for the RTC Web SDK](../../en/Agora%20Platform/cloud_proxy_web.md)
-- [Cloud Proxy for the On-premise Recording SDK](../../en/Agora%20Platform/cloudproxy_recording.md)
+To allow you to use Agora products in environments with restricted network access, Agora provides two solutions: the firewall whitelist and the Agora cloud proxy.
 
-<div class="alert note"><li>If you use Agora SDKs across the VPN, ensure that you contact the VPN operator to add the corresponding domains on the whitelist, otherwise, you may encounter undefined issues such as failing to start a call. </li><li>Unless it is otherwise specified, the sources are the clients that integrate the Agora SDK.</li></div>
+The following table lists the support of Agora products for the two solutions:
 
-## Agora RTC SDK
+|Agora Products| Firewall Whitelist|Agora Cloud Proxy|
+|---------|-------------------|------------------|
+|RTC SDK (Native, third-party frameworks) | <font color="red">✘ | <font color="green">✔ |
+|RTC SDK (Web) | <font color="green">✔ | <font color="green">✔|
+|RTM SDK (Native, Web)|<font color="green"> ✔ | <font color="red">✘ |
+|On-premise Recording SDK| <font color="red">✘ | <font color="green">✔ |
+|Interactive Gaming SDK | <font color="red">✘ | <font color="red">✘ |
 
-### Native SDK
+- When using the firewall whitelist, refer to **this page** to add the domains and ports to the firewall whitelist, and do not set restrictions on IP addresses.
+- When using Agora cloud proxy, refer to the following pages:
+    - [Cloud Proxy for RTC SDK (Native, third-party frameworks)](../../en/Agora%20Platform/cloudproxy_native.md)
+    - [Cloud Proxy for RTC SDK (Web) ](../../en/Agora%20Platform/cloud_proxy_web.md)
+    - [Cloud proxy for On-premise Recording SDK](../../en/Agora%20Platform/cloudproxy_recording.md)
 
-The Agora RTC Native SDK does not support accessing Agora's service by adding whitelist domians. To do so, Agora recommends using the cloud proxy service. For details, see [Cloud Proxy for the RTC Native SDK](../../en/Agora%20Platform/cloudproxy_native.md).
+<div class="alert note"><li>If you want to use Agora products across a VPN, ensure that you have contacted the VPN operator to add the corresponding ports to the whitelist; otherwise, you may encounter undefined behaviors such as call failure. </li><li>Unless otherwise specified, the source address is the client that integrates the Agora SDK. </li></div>
 
+## RTC SDK
 
-### Web SDK
+### RTC SDK (Web)
 
 Add the following destination domains and the corresponding ports to the firewall whitelist:
 
@@ -38,10 +46,9 @@ Add the following destination domains and the corresponding ports to the firewal
 | 80; 443; 3433; 5668; 5669; 5866 - 6000; 6080; 6443; 8667; 9667; 30011 - 30013 (for RTMP converter)| TCP              |  Allow |
 | 3478; 5866 - 6000 (2.9.0 or later); 10000 - 65535 (before 2.9.0)   |  UDP  | Allow |
 
+## RTM SDK
 
-## Agora RTM SDK
-
-### Native SDK
+### RTM SDK (Native)
 
 Add the following destination domains and the corresponding ports to the firewall whitelist:
 
@@ -54,7 +61,7 @@ Add the following destination domains and the corresponding ports to the firewal
 | 9130; 9131     | TCP              |  Allow |
 | 8000; 1080; 25000   |  UDP  | Allow |
 
-### Web SDK
+### RTM SDK (Web)
 
 Add the following destination domains and the corresponding ports to the firewall whitelist:
 
@@ -76,11 +83,3 @@ logservice-rtm.agoraio.cn
 | Destination ports | Port type | Operation |
 | ---------- | ------------------------------------------------ | -----------------|
 | 443; 6443; 9591; 9593     | TCP              |  Allow |
-
-## Agora On-premise Recording SDK
-
-The Agora On-premise Recording SDK does not support accessing Agora's service by adding whitelist domians. To do so, Agora recommends using the cloud proxy service. For details, see [Cloud Proxy for the On-premise Recording SDK](../../en/Agora%20Platform/cloudproxy_recording.md).
-
-## Agora Gaming SDK
-
-The Agora Gaming SDK does not support accessing Agora's service by adding whitelist domians. To do so, Agora recommends using the cloud proxy service. For details, see [Cloud Proxy for the Gaming SDK](../../en/Agora%20Platform/cloudproxy_native.md).

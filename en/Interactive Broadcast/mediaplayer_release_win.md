@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows
-updatedAt: Fri Jul 10 2020 10:10:51 GMT+0800 (CST)
+updatedAt: Fri Sep 25 2020 11:22:22 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides release notes for the Agora MediaPlayer Kit.
@@ -19,6 +19,12 @@ To enrich the live interactive streaming playability and improve the real-time i
 - Online education: The teacher shares a currently playing video with the students during an online class.
 - Live sports: The host shares the live sports with the audience during his/her live interactive streaming.
 - Pseudo live interactive streaming: Share or publish the video recorded by the host in advance to the audience.
+
+## v1.1.4.0
+
+v1.1.4.0 was released on September 25, 2020.
+
+This release fixed occasional crashes.
 
 ## v1.1.1
 

@@ -3,7 +3,7 @@
 title: User and Channel Events RESTful API
 description: 
 platform: All Platforms
-updatedAt: Mon Aug 17 2020 06:03:00 GMT+0800 (CST)
+updatedAt: Fri Sep 25 2020 06:39:48 GMT+0800 (CST)
 ---
 # User and Channel Events RESTful API
 
@@ -104,7 +104,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/user_events
 {
     "user_id": "rtmtest_RTM_4852_4857w7%",
     "type" : "Login",
-    "ts" : 1578027420761
+    "ms" : 1578027420761
 }
 ```
 
@@ -112,7 +112,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/user_events
 | :------- | :----- | :-------------------- |
 | `user_id` | string | The user ID involved.   |
 | `type`   | string | Event type: <li>`Login`: A user has logged in the Agora RTM system.</li><li>`Logout`: A user has logged out of the Agora RTM system.</li> |
-| `ts`  | int    | Number of seconds starting from January 1, 1970 (UTC) to the UTC time when the server receives the message.    |
+| `ms`  | int    | Number of seconds starting from January 1, 1970 (UTC) to the UTC time when the server receives the message.    |
 
 
 ## <a name="get_channel"></a>Gets channel events (GET)
@@ -156,19 +156,19 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/hook/channel_events
 
 ```json
 {
-    "channel_id": "example_channel_id",
+    "group_id": "example_channel_id",
     "user_id": "rtmtest_RTM_4852_4857w7%",
     "type" : "Join",
-    "ts" : 1578027418981
+    "ms" : 1578027418981
 }
 ```
 
 | Parameter | Type   | Description                                                  |
 | :-------- | :----- | :----------------------------------------------------------- |
-| `channel_id` | string | The channel ID involved.                                        |
+| `group_id` | string | The channel ID involved.                                        |
 | `user_id` | string | The user ID involved.                                        |
 | `type`    | string | The event type: <li>`Join`: A user has joined the channel. </li><li>`Leave`: A user has left the channel. </li> |
-| `ts`      | int    | Number of seconds starting from January 1, 1970 (UTC) to the UTC time when the server receives the message.                             |
+| `ms`      | int    | Number of seconds starting from January 1, 1970 (UTC) to the UTC time when the server receives the message.                             |
 
 
 ## Status code

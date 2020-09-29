@@ -3,7 +3,7 @@
 title: Set up subscription lists
 description: Describes how to set up a whitelist or blacklist for audio and video subscriptions, and update the subscription lists during a recording.
 platform: All Platforms
-updatedAt: Fri Jun 12 2020 05:06:23 GMT+0800 (CST)
+updatedAt: Sun Sep 27 2020 02:19:08 GMT+0800 (CST)
 ---
 # Set up subscription lists
 ## Overview
@@ -41,7 +41,7 @@ Suppose that four users, whose UIDs are 111, 222, 333, and 444, are in a channel
 | Subscribe to all audio streams and the video streams of 111 and 222. | `subscribeAudioUids: ["#allstream#"]` `subscribeVideoUids: ["111","222"]` |
 | Subscribe to all audio streams and the video streams of all UIDs except 111 and 222. | `subscribeAudioUids: ["#allstream#"]` `unSubscribeVideoUids: ["111","222"]`<br>The recording service records the audio streams of all UIDs and the video streams of 333, 444, and the other two unknown UIDs. |
 | Subscribe to all audio streams but no video streams.         | `subscribeAudioUids: ["#allstream#"]` <br>Setting `streamType` to `0` leads to the same result. |
-| Subscribe to the audio streams of all UIDs except 222 and the video stream of 111. | `unSubscribeAudioUids: ["222"]` `subscribeVideoUids: ["111"]`<br>The recording service records the audio streams of 111, 333, 444, and the other two unknown UIDs, and the video stream of 222. |
+| Subscribe to the audio streams of all UIDs except 222 and the video stream of 111. | `unSubscribeAudioUids: ["222"]` `subscribeVideoUids: ["111"]`<br>The recording service records the audio streams of 111, 333, 444, and the other two unknown UIDs, and the video stream of 111. |
 
 ## Considerations
 

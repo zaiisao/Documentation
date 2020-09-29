@@ -3,7 +3,7 @@
 title: Custom Video Source and Renderer
 description: 
 platform: iOS,macOS
-updatedAt: Mon Jul 06 2020 04:40:32 GMT+0800 (CST)
+updatedAt: Mon Sep 28 2020 04:25:27 GMT+0800 (CST)
 ---
 # Custom Video Source and Renderer
 ## Introduction
@@ -65,7 +65,6 @@ let videoFrame = AgoraVideoFrame()
 videoFrame.format = "your data fromat"
 // [NSDate date].timeIntervalSince1970 indicates the current timestamp, and 1000 indicates 1000 frames per second.
 videoFrame.time = CMTimeMakeWithSeconds([NSDate date].timeIntervalSince1970, 1000)
-videoFrame.data = "your rawData"
 videoFrame.strideInPixels = "your stride"
 videoFrame.height = "your height"
 videoFrame.dataBuf = "your rawData"
@@ -89,7 +88,6 @@ AgoraVideoFrame *videoFrame = [[AgoraVideoFrame alloc] init];
 videoFrame.format = "your data fromat";
 // [NSDate date].timeIntervalSince1970 indicates the current timestamp, and 1000 indicates 1000 frames per second.
 videoFrame.time = CMTimeMakeWithSeconds([NSDate date].timeIntervalSince1970, 1000);
-videoFrame.data = "your rawData";
 videoFrame.strideInPixels = "your stride";
 videoFrame.height = "your height";
 videoFrame.dataBuf = "your rawData";
