@@ -3,7 +3,7 @@
 title: 术语库
 description: 
 platform: All Platforms
-updatedAt: Mon Aug 17 2020 08:13:52 GMT+0800 (CST)
+updatedAt: Wed Sep 30 2020 08:53:14 GMT+0800 (CST)
 ---
 # 术语库
 ## A
@@ -216,6 +216,10 @@ SD-RTN™ 是 Software Defined Real-time Network 的缩写，即软件定义实�
 
 ## T
 
+#### <a name="tcp"></a>[**<u>TCP</u>**](../../cn/Agora%20Platform/tcp.md)
+
+TCP（Transmission Control Protocol），即传输控制协议，是一种面向连接的、可靠的传输层通信协议。
+
 #### <a name="sound-localization"></a>[**<u>听声辨位 (sound localization)</u>**](../../cn/Agora%20Platform/sound_localization.md)
 
 听声辨位，是指通过双耳间的音量差、时间差和音色辨别声音的距离和方位。
@@ -231,6 +235,12 @@ Token 也称为动态密钥，用于在生产环境等安全要求更高的环�
 #### <a name="file_message"></a>**图片消息 (image message)**
 
 图片消息是指包含图片的文件名、文件大小、尺寸、缩略图、media ID 等相关信息的点对点消息或频道消息。用户可以使用图片消息向其他用户发送图片。详见[上传和下载图片或文件](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/index.html#multimedia)。
+
+## U
+
+#### <a name="udp"></a>[**<u>UDP</u>**](../../cn/Agora%20Platform/udp.md)
+
+UDP（User Datagram Protocol），即用户数据报协议，是一种面向无连接的、不可靠的传输层通信协议。
 
 ## W
 
