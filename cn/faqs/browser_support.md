@@ -3,82 +3,44 @@
 title: Agora Web SDK 支持哪些浏览器？
 description: 
 platform: Web
-updatedAt: Mon Sep 07 2020 20:19:23 GMT+0800 (CST)
+updatedAt: Wed Sep 30 2020 15:11:10 GMT+0800 (CST)
 ---
 # Agora Web SDK 支持哪些浏览器？
-Agora Web SDK 支持所有主流浏览器，支持的浏览器及平台如下。
+## 浏览器支持
 
-<table>
-  <tr>
-    <th>平台</th>
-    <th>Chrome 58+</th>
-    <th>Firefox 56+</th>
-    <th>Safari 11+</th>
-    <th>Opera 45+</th>
-    <th>QQ 浏览器 10.5+</th>
-    <th>360 安全浏览器</th>
-    <th>Edge 浏览器 80+</th>
-  </tr>
-  <tr>
-    <td>Android 4.1+</td>
-		<td><font color="green">✔<sup>[1]</sup></td>
-    <td><font color="red">✘</td>
-		<td><b>N/A</b></td>
-    <td><font color="red">✘</td>
-    <td><font color="red">✘</td>
-    <td><font color="red">✘</td>
-    <td><font color="red">✘</td>
-  </tr>
-  <tr>
-    <td>iOS 11+</td>
-    <td><font color="red">✘</td>
-    <td><font color="red">✘</td>
-		<td><font color="green">✔<sup>[2]</sup></td>
-    <td><font color="red">✘</td>
-    <td><font color="red">✘</td>
-    <td><font color="red">✘</td>
-    <td><font color="red">✘</td>
-  </tr>
-  <tr>
-    <td>macOS 10+</td>
-    <td><font color="green">✔</td>
-    <td><font color="green">✔</td>
-    <td><font color="green">✔</td>
-    <td><font color="green">✔</td>
-    <td><font color="green">✔</td>
-    <td><font color="red">✘</td>
-    <td><font color="red">✘</td>
-  </tr>
-  <tr>
-    <td>Windows 7+</td>
-    <td><font color="green">✔</td>
-    <td><font color="green">✔</td>
-		<td><b>N/A</b></td>
-    <td><font color="green">✔</td>
-    <td><font color="green">✔</td>
-    <td><font color="green">✔</td>
-    <td><font color="green">✔</td>
-  </tr>
-</table>
+本节列出 Agora RTC Web SDK 支持的浏览器及平台。
 
-<div class="alert warning">[1] Android Chrome 对 H.264 的支持依赖硬件，部分 Android 设备不支持 H.264 编解码。<br>
-	[2] iOS Safari 上存在较多<a href="../../cn/faq/browser_support.md">已知问题</a>，Agora 不推荐使用。你可以使用 <a href="https://docs.agora.io/cn/Interactive%20Broadcast/downloads">Agora iOS SDK</a> 在 iOS 上实现实时音视频功能。</div>
+<div class="alert note">为保证最佳的用户体验，Agora 强烈推荐使用桌面端 Google Chrome 浏览器<a href="https://www.google.com/intl/zh-CN/chrome/">官方最新版本</a>。</div>
+<div class="alert note">以下场景中请务必将 Web SDK 升级至最新版本：<li>iOS 12.1.4 及以上版本上使用 Safari 浏览器。</li><li>macOS 上使用 Safari 12.1 及以上版本。</li></li></div>
 
-<div class="alert warning">以下场景中请务必将 Agora Web SDK 升级至最新版本:
-	<li>iOS 12.1.4 及以上版本使用 Safari 浏览器。</li>
-	<li>macOS 上使用 Safari 12.1 及以上版本。</li>
-	</div>
-	
-除上表浏览器外，还有以下支持：
+### 桌面端
 
-- Agora Web SDK 2.5 及以上版本支持 Windows XP 平台的 Chrome 49 版本浏览器（仅支持 VP8 编解码，不能与 Native SDK 互通）。
-- Agora Web SDK 理论上还支持 360 极速浏览器，但未经过验证，不保证全部功能正常工作。
+Web SDK 对桌面端浏览器的支持情况详见下表：
+
+| 平台       | Chrome 58+ | Firefox 56+ | Safari 11+ | Opera 45+ | QQ 浏览器 10.5+ | 360 安全浏览器 | Edge 浏览器 80+ |
+| :--------- | :--------- | :---------- | :--------- | :-------- | :-------------- | :------------- | :-------------- |
+| macOS 10+  | <font color="green">✔</font>          | <font color="green">✔</font>           | <font color="green">✔</font>          | <font color="green">✔</font>         | <font color="green">✔</font>               | <font color="red">✘</font>              | <font color="red">✘</font>               |
+| Windows 7+ | <font color="green">✔</font>          | <font color="green">✔</font>           | N/A        | <font color="green">✔</font>         | <font color="green">✔</font>               | <font color="green">✔</font>              | <font color="green">✔</font>               |
+
+除上述浏览器外，Web SDK 对桌面端浏览器还有以下支持：
+
+- Web SDK 2.5 及以上版本支持 Windows XP 平台的 Chrome 49 版本浏览器（仅支持 VP8 编解码，不能与 Native SDK 互通）。
+- Web SDK 理论上还支持 360 极速浏览器，但未经过验证，不保证全部功能正常工作。
+
+### 移动端
+
+Web SDK 对移动端浏览器的支持情况受到具体设备和浏览器的限制：
+
+- 在 Android 4.1+ 上，Web SDK 支持 **Google Chrome 58 及以上版本**，且 Agora 建议使用 VP8 编解码格式。这是由于 Android Chrome 对 H.264 的支持依赖硬件，而部分 Android 设备不支持 H.264 编解码格式。
+- 在 iOS 11+ 上，Web SDK 支持 **Safari 11 及以上版本**。但是由于 iOS Safari 存在较多[已知问题](#ios)，Agora 不推荐使用。你可以使用 [Agora RTC iOS SDK](https://docs.agora.io/cn/Interactive%20Broadcast/downloads) 在 iOS 上实现实时音视频功能。
+
+除上述浏览器外，对于移动端的一些应用内置浏览器，Web SDK 的支持情况较为复杂，详见[移动端如何使用 Agora Web SDK？](https://docs.agora.io/cn/faq/web_on_mobile)
+
+## 浏览器使用限制
 
 由于浏览器的差异，在不同浏览器及平台上支持的功能可能不同。下面列出浏览器和平台的已知问题和限制。
 
-## 使用限制
-
-Chrome 81 及以上版本、Safari 和 Firefox 浏览器需要在获得媒体设备权限后才能获取设备 ID，详见[为什么在 Chrome 81 浏览器上无法获取设备 ID？](../../cn/faq/empty_deviceId.md)
+Chrome 81 及以上版本、Safari 和 Firefox 浏览器需要在获得媒体设备权限后才能获取设备 ID，详见[为什么在 Chrome 81 浏览器上无法获取设备 ID？](https://docs.agora.io/cn/faq/empty_deviceId)
 
 ### Chrome
 
