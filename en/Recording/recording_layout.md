@@ -3,7 +3,7 @@
 title: Set Video Layout
 description: 
 platform: Linux
-updatedAt: Wed Sep 30 2020 07:38:05 GMT+0800 (CST)
+updatedAt: Wed Sep 30 2020 07:39:05 GMT+0800 (CST)
 ---
 # Set Video Layout
 ## Overview
