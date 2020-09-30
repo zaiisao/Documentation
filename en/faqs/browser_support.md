@@ -3,7 +3,7 @@
 title: Which browsers does the Agora Web SDK support?
 description: 
 platform: Web
-updatedAt: Wed Sep 30 2020 16:23:16 GMT+0800 (CST)
+updatedAt: Wed Sep 30 2020 16:23:47 GMT+0800 (CST)
 ---
 # Which browsers does the Agora Web SDK support?
 The Agora Web SDK supports all mainstream browsers. 
