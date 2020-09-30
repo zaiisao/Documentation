@@ -3,78 +3,42 @@
 title: Which browsers does the Agora Web SDK support?
 description: 
 platform: Web
-updatedAt: Wed Sep 30 2020 16:23:47 GMT+0800 (CST)
+updatedAt: Wed Sep 30 2020 16:24:01 GMT+0800 (CST)
 ---
 # Which browsers does the Agora Web SDK support?
-The Agora Web SDK supports all mainstream browsers. 
+## Supported browsers
 
-<table>
-  <tr>
-    <th>Platform</th>
-    <th>Chrome 58 or later</th>
-    <th>Firefox 56 or later</th>
-    <th>Safari 11 or later</th>
-    <th>Opera 45 or later</th>
-    <th>QQ Browser 10.5 or later</th>
-    <th>360 Secure Browser</th>
-    <th>Edge Browser 80 or later</th>
-  </tr>
-   <tr>
-    <td>Android 4.1 or later</td>
-		 <td><font color="green">✔<sup>[1]</sup></td>
-    <td><font color="red">✘</td>
-		<td><b>N/A</b></td>
-    <td><font color="red">✘</td>
-    <td><font color="red">✘</td>
-    <td><font color="red">✘</td>
-    <td><font color="red">✘</td>
-  </tr>
-  <tr>
-    <td>iOS 11 or later</td>
-    <td><font color="red">✘</td>
-    <td><font color="red">✘</td>
-		<td><font color="green">✔<sup>[2]</sup></td>
-    <td><font color="red">✘</td>
-    <td><font color="red">✘</td>
-    <td><font color="red">✘</td>
-    <td><font color="red">✘</td>
-  </tr>
-  <tr>
-    <td>macOS 10 or later</td>
-    <td><font color="green">✔</td>
-    <td><font color="green">✔</td>
-    <td><font color="green">✔</td>
-    <td><font color="green">✔</td>
-    <td><font color="green">✔</td>
-    <td><font color="red">✘</td>
-    <td><font color="red">✘</td>
-  </tr>
-  <tr>
-    <td>Windows 7 or later</td>
-    <td><font color="green">✔</td>
-    <td><font color="green">✔</td>
-		<td><b>N/A</b></td>
-    <td><font color="green">✔</td>
-    <td><font color="green">✔</td>
-    <td><font color="green">✔</td>
-    <td><font color="green">✔</td>
-  </tr>
-</table>
+The section lists the browsers that the Agora RTC Web SDK supports on different platforms.
 
-<div class="alert warning">[1] Support for H.264 relies on hardware, and some Android devices do not support the H.264 codec.<br>[2] Agora does not recommend using the Web SDK on iOS Safari. See <a href="../../en/faq/browser_support.md">iOS Safari</a> for known issues and limitations. For better support on iOS, use the <a href="https://docs.agora.io/en/Interactive%20Broadcast/downloads">Agora iOS SDK</a>.</div>
-<div class="alert warning"> Upgrade to the latest Agora Web SDK in the following scenarios:
-	<li>Safari on iOS 12.1.4 or later.</li>
-	<li>Safari 12.1 or later on macOS.</li>
-</div>
+<div class="alert note">To ensure better end user experience, Agora highly recommends using the <a href="https://www.google.com/chrome/">latest version</a> of Google Chrome on desktop.</div>
 
-Other browser support:
+<div class="alert note">Upgrade to the latest version of the Web SDK in the following scenarios:<li>Safari on iOS 12.1.4 or later.</li><li>Safari 12.1 or later on macOS.</li></div>
 
-- The Agora Web SDK v2.5 or later supports Chrome 49 on Windows XP (supports the VP8 codec only, and cannot interop with the Native SDK).
-- The Agora Web SDK theoretically supports 360 Extreme Browser, but we do not guarantee full support.
+### Desktop
 
-Due to the various browser engine implementations, support for some features may vary by browser and platform. The following are known issues and limitations.
+See the following table for the supported browsers on desktop:
+
+| Platform   | Google Chrome 58 or later | Firefox 56 or later | Safari 11 or later | Opera 45 or later | QQ Browser 10.5 or later | 360 Secure Browser | Edge Browser 80 or later |
+| :--------- | :------------------------ | :------------------ | :----------------- | :---------------- | :----------------------- | :----------------- | :----------------------- |
+| macOS 10+  | <font color="green">✔</font>                         | <font color="green">✔</font>                   | <font color="green">✔</font>                  | <font color="green">✔</font>                 | <font color="green">✔</font>                        | <font color="red">✘</font>                  | <font color="red">✘</font>                        |
+| Windows 7+ | <font color="green">✔</font>                         | <font color="green">✔</font>                   | N/A                | <font color="green">✔</font>                 | <font color="green">✔</font>                        | <font color="green">✔</font>                  | <font color="green">✔</font>                        |
+
+Other browser support on desktop:
+
+- The Web SDK v2.5 or later supports Google Chrome 49 on Windows XP. However, in this case, it supports VP8 only, and cannot interoperate with the Native SDK.
+- The Web SDK theoretically supports 360 Extreme Browser, but we do not guarantee full support.
+
+### Mobile
+
+The browser support on mobile devices heavily depends on the capabilities of devices and the codec implementation of browsers.
+
+- On Android 4.1 or later, the Web SDK supports Chrome 58 or later. Agora recommends using VP8 on Android Chrome, because whether Google Chrome for Android supports H.264 is hardware dependent and some Android devices do not support H.264.
+- On iOS 11 or later, the Web SDK supports Safari or later. However, Agora does not recommend using the Web SDK on iOS Safari due to the large amount of known issues and limitations of [iOS Safari](#ios). For better user experience on iOS, try the [Agora RTC iOS SDK](https://docs.agora.io/en/Interactive%20Broadcast/downloads).
+
+The support for in-app browsers on mobile devices is complicated. For details, see [How can I use Agora RTC Web SDK on mobile devices?](https://docs.agora.io/en/faq/web_on_mobile)
 
 ## Limitation
+Due to the various browser engine implementations, support for some features may vary by browser and platform. The following are known issues and limitations.
 
 On Chrome 81 or later, Safari, and Firefox, device IDs are only available after the user has granted permissions to use the media device. See [Why can't I get device ID on Chrome 81?](https://docs.agora.io/en/faq/empty_deviceId)
 	
