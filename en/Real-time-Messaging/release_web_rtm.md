@@ -3,12 +3,79 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Mon Sep 07 2020 02:06:40 GMT+0800 (CST)
+updatedAt: Wed Sep 30 2020 15:05:48 GMT+0800 (CST)
 ---
 # Release Notes
   ## Overview
 
-Designed as a replacement for the legacy Agora Signaling SDK, the Agora Real-time Messaging (RTM) SDK provides a more streamlined and stable messaging mechanism for you to quickly implement real-time messaging for various scenarios. See [product overview](../../en/Real-time-Messaging/product_rtm.md) for more information.
+The Agora Real-time Messaging (RTM) SDK provides a streamlined and stable messaging mechanism for you to quickly implement real-time messaging for various scenarios. See [product overview](../../en/Real-time-Messaging/product_rtm.md) for more information.
+
+
+## v1.4.0
+
+v1.4.0 was released on September 7, 2020.
+
+
+**New features**
+
+Geofencing. You can use the `areaCodes` parameter in `createInstance` to set the region of the Agora RTM SDK. The RTM SDK can only connect to Agora RTM servers within the specified region.
+
+
+**API changes**
+
+#### Added
+
+The `areaCodes` parameter is added to  `createInstance`.
+
+
+## v1.3.1
+
+v1.3.1 was released on August 7, 2020.
+
+**Fixed issues**
+
+- Connection stability issue between the Agora RTM SDK and the Agora RTM system.
+- The same offline message might be delivered multiple times.
+- Login stability issue of the RTM SDK.
+- Stability issue of sending and receiving peer-to-peer messages. 
+- The [`TokenExpired`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmevents.rtmclientevents.html#tokenexpired) callback could not be triggered in time.
+
+
+## v1.3.0
+
+v1.3.0 was released on June 16, 2020.
+
+**Compatibility changes**
+
+- The Agora server blocks any file message or image message that you send to RTM SDK 1.2.2 or earlier, or to the Signaling SDK.
+- The typical timeout for asynchronously calling a method changes from 5 seconds to 10 seconds.
+
+**New features**
+
+#### 1. Send and receive file messages or image messages
+
+You can call `createMediaMessageByUploading` to upload non-empty files or image files no greater than 30 MB. Each uploaded file or image stays in the Agora server for seven days. The SDK returns a media ID as the unique identifier of the file or image file. You can use the `RtmFileMessage` interface or the `RtmImageMessage` interface to save the media ID. The `RtmFileMessage` interface and the `RtmImageMessage` interface are type aliases of the `RtmMessage` interface, so you can send and receive file or image messages via peer-to-peer or channel message methods. You can call `downloadMedia` to download the received file or image file.
+
+#### 2. Manage upload or download tasks
+
+You can use the `mediaTransferHandler` interface to cancel or report the progress of an upload or download task.
+
+**Fixed issues**
+
+Fixed the login issues for some users.
+
+**API changes**
+
+#### Added
+
+- [`createMediaMessageByUploading`](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/v1.3.0/classes/rtmclient.html?transId=6c56ba50-ac6c-11ea-aa07-c5bcc14a9a95#createmediamessagebyuploading) 
+- [`downloadMedia`](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/v1.3.0/classes/rtmclient.html?transId=6c56ba50-ac6c-11ea-aa07-c5bcc14a9a95#downloadmedia) 
+- [`createMessage`](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/v1.3.0/classes/rtmclient.html?transId=6c56ba50-ac6c-11ea-aa07-c5bcc14a9a95#createmessage) 
+- [`RtmImageMessage`](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/v1.3.0/interfaces/rtmimagemessage.html?transId=6c56ba50-ac6c-11ea-aa07-c5bcc14a9a95) 
+- [`RtmFileMessage`](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/v1.3.0/interfaces/rtmfilemessage.html?transId=6c56ba50-ac6c-11ea-aa07-c5bcc14a9a95) 
+- [`mediaTransferHandler`](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/v1.3.0/interfaces/mediatransferhandler.html?transId=6c56ba50-ac6c-11ea-aa07-c5bcc14a9a95) 
+- [`mediaOperationProgress`](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/v1.3.0/interfaces/mediaoperationprogress.html?transId=6c56ba50-ac6c-11ea-aa07-c5bcc14a9a95) 
+
 
 ## v1.2.2
 

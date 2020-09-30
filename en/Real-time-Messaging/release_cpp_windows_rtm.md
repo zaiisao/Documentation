@@ -3,12 +3,126 @@
 title: Release Notes
 description: 
 platform: Windows CPP
-updatedAt: Wed Sep 30 2020 04:58:56 GMT+0800 (CST)
+updatedAt: Wed Sep 30 2020 15:11:53 GMT+0800 (CST)
 ---
 # Release Notes
   ## Overview
 
-Designed as a replacement for the legacy Agora Signaling SDK, the Agora Real-time Messaging (RTM) SDK provides a more streamlined and stable messaging mechanism for you to quickly implement real-time messaging for various scenarios. See [product overview](../../en/Real-time-Messaging/product_rtm.md) for more information.
+The Agora Real-time Messaging (RTM) SDK provides a streamlined and stable messaging mechanism for you to quickly implement real-time messaging for various scenarios. See [product overview](../../en/Real-time-Messaging/product_rtm.md) for more information.
+
+## v1.4.1
+
+v1.4.0 was released on September 30, 2020.
+
+**Improvements**
+
+Improved the log file.
+
+**Bug fixes**
+
+Fixed the pop up issue in iOS 14. See [Why do I see a prompt to find local network devices when launching an iOS app integrated with the Agora RTM SDK?](../../en/faq/local_network_privacy_rtm.md).
+
+## v1.4.0
+
+v1.4.0 was released on September 1, 2020.
+
+**Compatibility changes**
+
+In `setLogFileSize`, the default log file size increases from 512 KB to 10 MB. The maximum log file size increases from 10 MB to 1 GB.
+
+**New features**
+
+- Geofencing. You can call `setRtmServiceContext` to set the region of the Agora RTM SDK. The RTM SDK can only connect to Agora RTM servers within the specified region.
+- Transport Layer Security (TLS) encryption.
+
+**Improvements**
+
+- Improved the success rate of login and message delivery of the RTM SDK in poor network conditions. 
+- Optimized the reconnection mechanism.
+
+**API changes**
+
+#### New methods
+
+[`setRtmServiceContext`](https://docs.agora.io/en/Video/API%20Reference/RTM_cpp/v1.4.0/group__get_rtm_sdk_version.html#ga55ed2d637b72bf2940872b8736a00bd3)
+
+## v1.3.0
+
+v1.3.0 was released on May 8, 2020.
+
+**Compatibility changes**
+
+The Agora server blocks any file message or image message that you send to RTM SDK 1.2.2 or earlier, or to the Signaling SDK.
+
+**New features**
+
+#### 1. Send and receive file messages
+
+v1.3.0 supports downloading non-empty files that are smaller than 30 MB. You can cancel an ongoing upload or download process at any time. Each file you upload to the Agora server corresponds to a media ID. The file stays on the Agora server for seven days. You can use the media ID to download the file as long as the it is still on the Agora server.
+
+<div class="alert note">You can only download files using the methods provided by the SDK.</div>
+
+v1.3.0 adds the `IFileMessage` message class for saving and transferring a media ID. The `IFileMessage` class inherits from the `IMessage` class, so you can use the existing peer-to-peer or channel messaging methods to transfer the `IFileMessage` instance. You can use the `IFileMessage` object to complete the following tasks:
+
+- Set the filename and thumbnail of the uploaded file.
+- Get the size of the uploaded file.
+
+<div class="alert note">The total size of the message content, the filename, and the thumbnail must not exceed 32 KB.</div>
+
+#### 2. Send and receive image messages
+
+v1.3.0 supports downloading non-empty image files that are smaller than 30 MB. You can cancel an ongoing upload or download process at any time. Each image you upload to the Agora server corresponds to a media ID. The image file stays on the Agora server for seven days. You can use the media ID to download the image file as long as it is still on the Agora server.
+
+<div class="alert note">You can only download image files using the download methods provided by the SDK.</div>
+
+v1.3.0 adds the `IImageMessage` message class for saving and transferring a media ID. The `IImageMessage` class inherits from the `IMessage` class, so you can use the existing peer-to-peer or channel messaging methods to transfer the `IImageMessage` instance. You can use the `IImageMessage` object to complete the following tasks:
+
+- Set the filename and thumbnail of the uploaded image file.
+- Get the size of the uploaded image file.
+- Get the SDK-calculated width and height of image files in JPEG, JPG, BMP, or PNG format.
+- Set the width or height of image files. The width or height you set overwrites the width or height that the SDK calculates.
+
+<div class="alert note">The total size of the message content, the filename, and the thumbnail must not exceed 32 KB.</div>
+
+#### 3. Report the progress of upload or download
+
+The SDK returns the progress of an upload or download by callback every second during a task in progress. If the upload or download task pauses, the SDK ceases to return any further callback until the task continues.
+
+**Bug fixes**
+
+- Login failure caused by the SDK's incorrect identification of user's network type.
+- Other problems that may cause the system to crash.
+
+**API changes**
+
+#### New methods
+
+- [`createFileMessageByUploading`](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/v1.3.0/classagora_1_1rtm_1_1_i_rtm_service.html?transId=e3e2dae0-8fb1-11ea-ba71-75bee5b5d68c#a99f2137ec43be135b369b7d6927b6138)
+- [`createImageMessageByUploading`](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/v1.3.0/classagora_1_1rtm_1_1_i_rtm_service.html?transId=e3e2dae0-8fb1-11ea-ba71-75bee5b5d68c#a7192d93f365c28e2d0b91547716fb5a9)
+- [`cancelMediaUpload`](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/v1.3.0/classagora_1_1rtm_1_1_i_rtm_service.html?transId=e3e2dae0-8fb1-11ea-ba71-75bee5b5d68c#a0090bbb72e250ffbaedc84d9041b64b1)
+- [`cancelMediaDownload`](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/v1.3.0/classagora_1_1rtm_1_1_i_rtm_service.html?transId=e3e2dae0-8fb1-11ea-ba71-75bee5b5d68c#adc34b7acad8b845fe1242efd127d82b9)
+- [`createFileMessageByMediaId`](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/v1.3.0/classagora_1_1rtm_1_1_i_rtm_service.html?transId=e3e2dae0-8fb1-11ea-ba71-75bee5b5d68c#a6e4b13011388ec45e8a02377b240506f)
+- [`createImageMessageByMediaId`](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/v1.3.0/classagora_1_1rtm_1_1_i_rtm_service.html?transId=e3e2dae0-8fb1-11ea-ba71-75bee5b5d68c#a97bfb847ff876ab216cf219f4b4f856d)
+- [`downloadMediaToMemory`](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/v1.3.0/classagora_1_1rtm_1_1_i_rtm_service.html?transId=e3e2dae0-8fb1-11ea-ba71-75bee5b5d68c#ade134da2be907a8078ce693849e0cc37)
+- [`downloadMediaToFile`](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/v1.3.0/classagora_1_1rtm_1_1_i_rtm_service.html?transId=e3e2dae0-8fb1-11ea-ba71-75bee5b5d68c#a70584eb57e97476b1da072f737d88c95)
+
+#### New callbacks
+
+- [`onMediaUploadingProgress`](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/v1.3.0/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html?transId=e3e2dae0-8fb1-11ea-ba71-75bee5b5d68c#a56d5464c3b5e53c44039190a3ac4dfe9)
+- [`onMediaDownloadingProgress`](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/v1.3.0/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html?transId=e3e2dae0-8fb1-11ea-ba71-75bee5b5d68c#a9c4dfbb224f69b73f64dc1bf34f28567)
+- [`onMediaCancelResult`](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/v1.3.0/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html?transId=e3e2dae0-8fb1-11ea-ba71-75bee5b5d68c#a64cac4d387e2bf6a419bb478358570f6)
+- [`onFileMediaUploadResult`](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/v1.3.0/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html?transId=e3e2dae0-8fb1-11ea-ba71-75bee5b5d68c#aadaa8cd5309e4e70ab2cbdfc1ef21241)
+- [`onImageMediaUploadResult`](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/v1.3.0/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html?transId=e3e2dae0-8fb1-11ea-ba71-75bee5b5d68c#abaeeaeb6d69b98510d6c3b012849251e)
+- [`onFileMessageReceivedFromPeer`](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/v1.3.0/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html?transId=e3e2dae0-8fb1-11ea-ba71-75bee5b5d68c#a4642bb3a8ddf026617fff47d1c9f3e3a)
+- [`onImageMessageReceivedFromPeer`](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/v1.3.0/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html?transId=e3e2dae0-8fb1-11ea-ba71-75bee5b5d68c#a2682e64be745cf7af816a12f9895ce07)
+- [`onFileMessageReceived`](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/v1.3.0/classagora_1_1rtm_1_1_i_channel_event_handler.html?transId=e3e2dae0-8fb1-11ea-ba71-75bee5b5d68c#a416dd103c84387a5147e962398eff8d1)
+- [`onImageMessageReceived`](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/v1.3.0/classagora_1_1rtm_1_1_i_channel_event_handler.html?transId=e3e2dae0-8fb1-11ea-ba71-75bee5b5d68c#a6d710170df9b3c1f0ef092012af2e317)
+- [`onMediaDownloadToMemoryResult`](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/v1.3.0/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html?transId=e3e2dae0-8fb1-11ea-ba71-75bee5b5d68c#ad0de249a8f0b79973f34f295cabe4904)
+- [`onMediaDownloadToFileResult`](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/v1.3.0/classagora_1_1rtm_1_1_i_rtm_service_event_handler.html?transId=e3e2dae0-8fb1-11ea-ba71-75bee5b5d68c#a0b6edc7b944eab02d545bb2d2d1bfe2f)
+
+#### Deprecated methods
+
+[`sendMessage`](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/v1.3.0/classagora_1_1rtm_1_1_i_channel.html?transId=e3e2dae0-8fb1-11ea-ba71-75bee5b5d68c#a4ae01f44d49f334f7c2950d95f327d30) is deprecated. Use [`sendMessage (const IMessage *message, const SendMessageOptions &options)`](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/v1.3.0/classagora_1_1rtm_1_1_i_channel.html?transId=e3e2dae0-8fb1-11ea-ba71-75bee5b5d68c#a056dfe9e83c168c3c94e47a017a6ec3f) instead.
 
 ## v1.2.2
 
