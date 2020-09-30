@@ -3,7 +3,7 @@
 title: 设置合流布局
 description: 
 platform: Linux
-updatedAt: Wed Sep 30 2020 07:42:08 GMT+0800 (CST)
+updatedAt: Wed Sep 30 2020 07:42:18 GMT+0800 (CST)
 ---
 # 设置合流布局
 ## 功能描述
@@ -15,9 +15,13 @@ updatedAt: Wed Sep 30 2020 07:42:08 GMT+0800 (CST)
 
 >  如果原视频的宽高比和布局中用户视窗的宽高比不一致，可能出现裁剪或压缩。用户视窗的宽高比取决于视频画布的长宽比以及合流布局方式。
 
-Agora 本地服务端录制的 demo 提供三种预设的合流布局样式，你只需选择其中一种样式，就能实现预设的布局效果。
 
-## 实现方法
+Agora 本地服务端录制支持两种合流布局的方式：
+- **选择预设的合流布局样式**：如果你通过命令行进行录制，Agora 本地服务端录制的 demo 提供悬浮布局、自适应布局和垂直布局三种预设的布局样式。你只需选择其中一种样式，就能实现预设的布局效果。
+- **自定义合流布局**：如果你调用 API 进行录制，你可以灵活设置用户画面的大小，指定用户画面在视频画布上的相对位置。
+
+## 选择预设的合流布局样式
+### 实现方法
 
 在命令行中开始录制时设置 `--isMixingEnabled 1` 使用合流模式，同时设置 `--layoutMode` 参数选择一种布局：
 - `--layoutMode 0`  使用[悬浮布局](#float)（默认）。第一个加入频道的用户在画布上会显示为大视窗，铺满整个画布；其他用户按照加入的顺序从画布左下角开始依次水平排列，显示为小视窗，最多 4 行，每行 4 个视窗。小视窗会悬浮在大视窗上面。最多支持共 17 个用户视窗。
@@ -91,3 +95,90 @@ Agora 本地服务端录制的 demo 提供三种预设的合流布局样式，�
 - 8 - 9 人布局，小视窗 1 - 8 依次显示在画布右侧, 且不会覆盖大视窗。小视窗宽度是总宽的 1/9，视窗高度是总高的 1/8，如下左图所示。
 - 10 - 17 人布局，小视窗 1 - 16 依次显示在画布右侧, 且不会覆盖大视窗。小视窗宽度是总宽的 1/10，视窗高度是总高的 1/8，如下右图所示。
 
+## 自定义合流布局
+
+如果预设的布局样式无法满足你的场景需求，可直接调用 API 实现自定义合流布局，灵活设置用户画面的大小，指定用户画面在视频画布上的相对位置。
+
+### 实现方法
+
+在加入频道后，先通过 [`VideoMixingLayout`](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/structagora_1_1linuxsdk_1_1_video_mixing_layout.html#abb3d1ffd1269badf23786b6a7abe0bdb) 类设置合流布局的参数，然后调用 [`setVideoMixingLayout`](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/classagora_1_1recording_1_1_i_recording_engine.html#a4ac28b9e2342729c1b54400a5abb1d90) 方法来实现自定义的合流布局。
+
+![](https://web-cdn.agora.io/docs-files/1600076506070)
+
+设置视频合流布局时，需在 [`VideoMixingLayout`](https://docs.agora.io/cn/Recording/API%20Reference/recording_cpp/structagora_1_1linuxsdk_1_1_video_mixing_layout.html#abb3d1ffd1269badf23786b6a7abe0bdb) 中传入以下参数：
+
+- `canvasWidth`：整个画布的宽度，单位为像素。
+- `canvasHeight`：整个画布的高度，单位为像素。
+- `backgroundColor`：整个画布的背景颜色。可根据所需颜色填写对应的 6 位 RGB 值，如 "#000000"。
+- `regionCount`：频道内显示头像或视频的用户（通信模式）/主播（直播模式）的数量。
+- `regions`：频道内每位用户（通信模式）/主播（直播模式）在画布上的画面，包含如下参数：
+  - `uid`：待显示在该画面的用户/主播的 UID。每当有用户/主播加入频道时，调用 `onUserJoined` 方法可以获得当前加入频道用户的 `uid`。如果不指定 UID，会按照用户加入频道的顺序自动匹配 `regions` 中的画面设置。
+  - `x`：（必填）画布上该画面左上角的横坐标的相对值，取值范围是 [0.0,1.0]。从左到右布局，0.0 在最左端，1.0 在最右端。
+  - `y`：（必填）画布上该画面左上角的纵坐标的相对值，取值范围是 [0.0,1.0]。从上到下布局，0.0 在最上端，1.0 在最下端。
+  - `width`：（必填）该画面宽度的相对值，取值范围是 [0.0,1.0]。
+  - `height`：（必填）该画面高度的相对值，取值范围是 [0.0,1.0]。
+  - `alpha`：图像的透明度。取值范围是 [0.0,1.0] 。0.0 表示图像为透明的，1.0 表示图像为完全不透明的。
+  - `renderMode`：画面显示模式：
+    - `RENDER_MODE_HIDDEN(0)`: (默认）裁剪模式。
+    - `RENDER_MODE_FIT(1)`: 缩放模式。
+
+其中，`x`，`y`，`width` 和 `height` 四个参数为必填，都是 0.0 至 1.0 之间的浮点数。
+
+以视频画布左上角为原点，`x` 和 `y` 设置用户画面在视频画布上的相对位置，分别代表用户画面左上角到原点的水平相对距离和垂直相对距离。`width` 和 `height` 设置用户画面的相对宽度和相对高度，即用户画面的宽度和高度占画布的宽度和高度的比例。确保 `x` + `width` ≤ 1，`y` + `height` ≤ 1。
+
+如下图所示：
+
+![](https://web-cdn.agora.io/docs-files/1600075503129)
+
+### 示例代码
+
+本节以设置 4 人画面的合流布局为例，并结合示例代码介绍如何设置自定义合流布局。
+
+在示例中，第一个加入频道的用户在画布上显示为大视窗，铺满整个画布；其他三个用户显示为小视窗，悬浮在大视窗上面，效果如下图所示：
+![](https://web-cdn.agora.io/docs-files/1600075569027)
+
+```
+// 创建 IRecordingEngine 实例并加入频道后，设置整个画布的宽度、高度、背景颜色和用户画面的数量。
+agora::linuxsdk::VideoMixingLayout layout;
+layout.canvasWidth = 720;
+layout.canvasHeight = 480;
+layout.backgroundColor = "#E7E6E6";
+layout.regionCount = 4;
+
+// 设置 4 个用户画面的参数。
+agora::linuxsdk::VideoMixingLayout::Region * regionList = new agora::linuxsdk::VideoMixingLayout::Region[4];
+// 设置第一个加入频道的用户在屏幕上显示为大视窗，铺满整个画布。
+regionList[0].uid = <uid0>;
+regionList[0].x = 0.f;
+regionList[0].y = 0.f;
+regionList[0].width = 1.f;
+regionList[0].height = 1.f;
+regionList[0].alpha = 1.f;
+regionList[0].renderMode = 0; 
+
+// 设置其他 3 个用户按照加入的顺序从画布左下角开始依次水平排列，显示为小视窗。 
+// 每个小画面的宽为整个画布宽的 0.235，高为小画面的宽 ×（整个画布的高/整个画布的宽），即小画面的宽高比与整个画布的宽高比相同。
+// 相邻小画面的左右间距为整个画布宽的 0.012，上下间距为左右间距 × （整个画布的高/整个画布的宽）。
+// 小画面距离画布的水平距离也为整个画布宽的 0.012，距离画布的垂直距离为水平距离 × （整个画布的高/整个画布的宽）。
+float canvasWidth = 720;
+float canvasHeight = 480;
+float viewWidth = 0.235f;
+float viewHEdge = 0.012f;
+float viewHeight = viewWidth * (canvasHeight/canvasWidth);
+float viewVEdge = viewHEdge * (canvasHeight/canvasWidth);
+
+for (size_t i = 1; i < 4; i++) {
+regionList[i].uid = <uidi>;
+float xIndex = static_cast<float>((i-1) % 4);
+float yIndex = static_cast<float>((i-1) / 4);
+regionList[i].x = xIndex * (viewWidth + viewHEdge) + viewHEdge;
+regionList[i].y = 1 - (yIndex + 1) * (viewHeight + viewVEdge);
+regionList[i].width = viewWidth;
+regionList[i].height = viewHeight;
+regionList[i].alpha = static_cast<double>(i + 1);
+regionList[i].renderMode = 0;
+}
+layout.regions = regionList;
+// 调用 setVideoMixingLayout 实现自定义的合流布局。
+m_engine->setVideoMixingLayout(layout);
+```
