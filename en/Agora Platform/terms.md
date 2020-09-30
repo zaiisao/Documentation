@@ -3,7 +3,7 @@
 title: Glossary
 description: 
 platform: All Platforms
-updatedAt: Mon Jul 06 2020 11:44:36 GMT+0800 (CST)
+updatedAt: Wed Sep 30 2020 08:52:48 GMT+0800 (CST)
 ---
 # Glossary
 ## A
@@ -251,6 +251,11 @@ Stream mixing means combining multiple media streams into one. It may include th
 In the Agora RTC SDK, subscribing is the action of receiving media streams published to the channel. In the Agora RTM SDK, subscribing is the action of monitoring the online status of one or multiple RTM users.
 
 ## T
+
+#### <a name="tcp"></a>[**<u>TCP</u>**](../../en/Agora%20Platform/tcp.md)
+
+TCP (Transmission Control Protocol) is a connection-oriented and reliable transport layer communication protocol.
+
 #### <a name="token"></a>[**<u>token</u>**](../../en/Agora%20Platform/term_token.md)
 
 A token, also known as a dynamic key, is used for authentication when an app user joins an RTC channel or logs onto the Agora RTM system.
@@ -261,6 +266,10 @@ A token, also known as a dynamic key, is used for authentication when an app use
 Transcoding is the process of decoding audio and video data and then re-encoding them into the target conversion output or format.
 
 ## U
+
+#### <a name="udp"></a>[**<u>UDP</u>**](../../en/Agora%20Platform/udp.md)
+
+UDP (User Datagram Protocol) is a connectionless-oriented and unreliable transport layer communication protocol.
 
 #### <a name="user-attribute"></a>[**<u>user attribute</u>**](../../en/Agora%20Platform/user_attribute.md)
 
