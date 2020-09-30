@@ -3,7 +3,7 @@
 title: Generate a Token
 description: Guide on how to generate tokens on the server side
 platform: All Platforms
-updatedAt: Tue Sep 22 2020 09:01:49 GMT+0800 (CST)
+updatedAt: Wed Sep 30 2020 01:31:45 GMT+0800 (CST)
 ---
 # Generate a Token
 The Token, also known as the dynamic key, is used for authenticating app users when a user joins a channel, or logs onto the service system.
