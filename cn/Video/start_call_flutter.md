@@ -52,7 +52,7 @@ updatedAt: Wed Sep 30 2020 16:15:09 GMT+0800 (CST)
 
    [![img](https://web-cdn.agora.io/docs-files/1594287028966)](https://dashboard.agora.io/projects)
 
-3. 在弹出的对话框内输入**项目名称**，选择**鉴权机制**为 **APP ID + Token**。
+3. 在弹出的对话框内输入**项目名称**，选择**鉴权机制**为 **APP ID**。
 
 4. 点击**提交**，新建的项目就会显示在**项目管理**页中。Agora 会给每个项目自动分配一个 App ID 作为项目唯一标识。
 
