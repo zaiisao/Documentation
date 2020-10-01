@@ -3,13 +3,25 @@
 title: 发版说明
 description: 
 platform: iOS,macOS
-updatedAt: Thu Sep 24 2020 02:05:51 GMT+0800 (CST)
+updatedAt: Wed Sep 30 2020 16:27:17 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
 
 Agora 实时消息 SDK 提供了稳定可靠、低延时、高并发的全球消息云服务，帮助你快速构建实时通信场景,  可实现消息通道、呼叫、聊天、状态同步等功能。点击[实时消息产品概述](../../cn/Real-time-Messaging/product_rtm.md)了解详情。
 
+
+## 1.4.1 版
+
+该版本于 2020 年 9 月 30 日发布。
+
+**改进**
+
+优化了日志文件。
+
+**问题修复**
+
+解决了 iOS 14 下触发弹窗的问题。详见[为什么在运行集成声网 RTM SDK 的 iOS app 时会看到查找本地网络设备的弹窗提示？](../../cn/faq/local_network_privacy_rtm.md)。
 
 ## 1.4.0 版
 

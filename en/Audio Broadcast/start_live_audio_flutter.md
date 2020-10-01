@@ -3,7 +3,7 @@
 title: Start Live Interactive Audio Streaming
 description: 
 platform: Flutter
-updatedAt: Wed Sep 30 2020 11:30:48 GMT+0800 (CST)
+updatedAt: Wed Sep 30 2020 16:14:58 GMT+0800 (CST)
 ---
 # Start Live Interactive Audio Streaming
 This page includes the following sections:
@@ -62,28 +62,14 @@ Click ![img](https://web-cdn.agora.io/docs-files/1592488399929) to view and copy
 
 ![img](https://web-cdn.agora.io/docs-files/1574924570426)
 
-**Step 3. Generate a temporary token**
-
-To facilitate authentication at the test stage, Agora Console provides temporary tokens. Take the following steps to generate a temporary token:
-
-1. On the Project Management page, find the project for which you want to generate a temporary token, and click ![img](https://web-cdn.agora.io/docs-files/1574923151660).
-
-   ![img](https://web-cdn.agora.io/docs-files/1574927794840)
-
-2. On the Token page, enter the name of the channel that you want to join, and click Generate Temp Token to get a temporary token.
-
-   ![img](https://web-cdn.agora.io/docs-files/1574928048948)
-
-  <div class="alert note">When in a production environment, Agora recommends generating a token at your server by calling <code>buildTokenWithUid</code>. See <a href="https://docs.agora.io/en/Audio%20Broadcast/token_server">Generate a token</a>.</div>
 
 
-**Step 4. Run the project**
+**Step 3. Run the project**
 
 1. Download the [Agora-Flutter-Quickstart](https://github.com/AgoraIO-Community/Agora-Flutter-Quickstart) repository. Open `settings.dart` (`lib/src/utils/settings.dart`). Add App ID and Token.
 
 	```
   const APP_ID ="";
-  const Token ="";
 	```
 
 2. Run the following command to install dependencies.
@@ -125,7 +111,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.3
   # Please use the latest version of agora_rtc_engine
-  agora_rtc_engine: ^3.0.1-dev.7
+  agora_rtc_engine: ^3.1.2
   permission_handler: ^3.0.0
 ```
 

@@ -3,7 +3,7 @@
 title: 生成 Token
 description: Guide on how to generate tokens on the server side
 platform: CPP
-updatedAt: Tue Sep 22 2020 09:00:15 GMT+0800 (CST)
+updatedAt: Wed Sep 30 2020 01:32:16 GMT+0800 (CST)
 ---
 # 生成 Token
 Token，也称动态密钥，是 app 用户在加入频道或登录服务系统时采用的一种鉴权方式。
