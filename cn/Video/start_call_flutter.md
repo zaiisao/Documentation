@@ -66,7 +66,7 @@ updatedAt: Wed Sep 30 2020 16:15:09 GMT+0800 (CST)
 
 #### 步骤三：运行示例项目
 
-1. 下载 [Agora-Flutter-Quickstart](https://github.com/AgoraIO-Community/Agora-Flutter-Quickstart) 仓库。打开 `settings.dart` (`lib/src/utils/settings.dart`)文件并添加 App ID 和 Token。
+1. 下载 [Agora-Flutter-Quickstart](https://github.com/AgoraIO-Community/Agora-Flutter-Quickstart) 仓库。打开 `settings.dart` (`lib/src/utils/settings.dart`)文件并添加 App ID。
 
 	```
   const APP_ID ="";

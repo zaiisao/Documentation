@@ -3,7 +3,7 @@
 title: 错误码和警告码
 description: 
 platform: All Platforms
-updatedAt: Tue Sep 29 2020 08:07:31 GMT+0800 (CST)
+updatedAt: Tue Sep 29 2020 08:52:25 GMT+0800 (CST)
 ---
 # 错误码和警告码
 在调用 Agora API 过程中，SDK 可能会返回错误码和警告码。其中**错误码**意味着 SDK 遭遇了不可恢复的错误，需要 app 干预；**警告码**意味着 SDK 遇到问题，但有可能恢复。警告码仅起告知作用，一般情况下 app 可以忽略警告码。
@@ -204,7 +204,7 @@ Agora SDK 在运行过程中，可能通过如下方式返回错误码或警告�
 
 ## Web
 
-Agora RTC Web SDK 在运行过程中可能会出现的错误码、警告码及其解决方案，请参考[错误码](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/index.html#-a-name-error-codes)或[警告码](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/index.html#-a-name-warning-codes)。
+Agora RTC Web SDK 在运行过程中可能会出现的错误码、警告码及其解决方案，请参考[错误码](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/index.html#error-codes)或[警告码](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/index.html#warning-codes)。
 
 ## 微信小程序
 

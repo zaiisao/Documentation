@@ -1,144 +1,154 @@
 
 ---
-title: Start Live Interactive Video Streaming
+title: 实现视频直播
 description: 
 platform: Flutter
-updatedAt: Wed Sep 30 2020 16:14:57 GMT+0800 (CST)
+updatedAt: Wed Sep 30 2020 16:15:08 GMT+0800 (CST)
 ---
-# Start Live Interactive Video Streaming
-This page includes the following sections:
+# 实现视频直播
+本文分以下两个部分：
 
-- [Run the sample project](#run-the-sample-project): Agora provides an [open-source sample project](https://github.com/AgoraIO-Community/Agora-Flutter-Quickstart) on GitHub that implements Agora Flutter Quickstart. Learn how to run the sample project.
-- [Implement live video streaming](#implement-live-video-streaming): Learn how to create a simple project and implement live video streaming using the Agora Flutter SDK.
+- [快速跑通示例项目](#快速跑通示例项目)：Agora 在 GitHub 上提供一个开源的[一对一视频直播示例项目](https://github.com/AgoraIO-Community/Agora-Flutter-Quickstart)。介绍如何快速跑通该示例项目，体验 Agora 视频直播效果。
+- [实现视频直播](#实现视频直播)：详细介绍如何建立一个简单的项目并使用 Agora Flutter SDK 实现视频直播。
 
-## Run the sample project
+## 快速跑通示例项目
 
-### Prerequisites
+### 前提条件
 
-**Development environment**
+#### 开发环境要求
 
-If your target platform is iOS, your development environment must meet the following requirements:
+如果你的目标平台为 iOS，你的开发环境需要满足以下需求：
 
-- Flutter 2.0.0 or later
-- macOS
-- Xcode (Latest version recommended)
+- Flutter 2.0.0 或更高版本
+- macOS 操作系统
+- 最新版本的 Xcode
 
-If your target platform is Android, your development environment must meet the following requirements:
+如果你的目标平台为 Android，你的开发环境需要满足以下需求：
 
-- Flutter 2.0.0 or later
-- macOS or Windows 
-- Android Studio (Latest version recommended)
+- Flutter 2.0.0 或更高版本
+- macOS 或 Windows 操作系统
+- 最新版本的 Android Studio
 
-**Deployment environment**
+#### 运行环境要求
 
-- If your target platform is iOS, you need a real iOS device.
-- If your target platform is Android, you need an Android simulator or a real Android device.
+- 如果你的目标平台为 iOS，你需要有一台 iOS 的真机。
+- 如果你的目标平台为 Android，你需要有一台 Android 真机或模拟器。
 
-<div class="alert note">You need to run <code>flutter doctor</code> to check whether the development environment and the deployment environment are correct.</div>
+<div class="alert note">你需要运行 <code>flutter doctor</code> 命令检查开发环境和运行环境是否满足要求。</div>
 
-#### Other
+#### 其他要求
 
-A valid Agora [developer account](https://docs.agora.io/en/Agora%20Platform/sign_in_and_sign_up).
+一个有效的 Agora [开发者账号](https://docs.agora.io/cn/Agora%20Platform/sign_in_and_sign_up)。
 
-### Steps to run
+### 操作步骤
 
-**Step 1. Create an Agora project**
+#### 步骤一：创建 Agora 项目
 
-Take the following steps to create an Agora project in Agora Console.
+按照以下步骤，在控制台创建一个 Agora 项目。
 
-1. Log in to Agora [Console](https://console.agora.io/) and click ![img](https://web-cdn.agora.io/docs-files/1551254998344) in the left navigation menu to enter the [Project Management](https://console.agora.io/projects) page.
+1. 登录 Agora [控制台](https://console.agora.io/)，点击左侧导航栏 ![img](https://web-cdn.agora.io/docs-files/1594283671161) **项目管理**按钮进入**[项目管理](https://dashboard.agora.io/projects)**页面**。**
 
-2. Click **Create**.
+2. 在**项目管理**页面，点击**创建**按钮。
 
-   ![img](https://web-cdn.agora.io/docs-files/1574924327108)
+   [![img](https://web-cdn.agora.io/docs-files/1594287028966)](https://dashboard.agora.io/projects)
 
-3. Enter your project name, set the App ID authentication mechanism as **APP ID + Token** in the dialog box, and click **Submit**.
+3. 在弹出的对话框内输入**项目名称**，选择**鉴权机制**为 **APP ID + Token**。
 
-4. When the project is created successfully, you can see the newly created project in the project list. Agora assigns an App ID to each project as the only identifier.
-
-**Step 2. Get App ID**
-
-Click ![img](https://web-cdn.agora.io/docs-files/1592488399929) to view and copy the App ID.
-
-![img](https://web-cdn.agora.io/docs-files/1574924570426)
+4. 点击**提交**，新建的项目就会显示在**项目管理**页中。Agora 会给每个项目自动分配一个 App ID 作为项目唯一标识。
 
 
+####  步骤二：获取 App ID
 
-**Step 3. Run the project**
+在控制台的**项目管理**页面，找到你的项目，点击 App ID 右侧的眼睛图标就可以直接复制项目的 App ID。
 
-1. Download the [Agora-Flutter-Quickstart](https://github.com/AgoraIO-Community/Agora-Flutter-Quickstart) repository. Open `settings.dart` (`lib/src/utils/settings.dart`). Add App ID.
+
+
+
+#### 步骤三：运行示例项目
+
+1. 下载 [Agora-Flutter-Quickstart](https://github.com/AgoraIO-Community/Agora-Flutter-Quickstart) 仓库。打开 `settings.dart` (`lib/src/utils/settings.dart`)文件并添加 App ID。
 
 	```
   const APP_ID ="";
 	```
 
-2. Run the following command to install dependencies.
-
+2. 在仓库根目录运行以下命令安装依赖项。
+   
 	 ```bash
    flutter packages get
 	 ```
 
-3. Run the project.
+3. 启动示例项目。
 
    ```bash
    flutter run
    ```
 
-## Create a Flutter Project
 
-This article uses Visual Studio Code to create a Flutter project. Before you begin, you need to install the Flutter plugin in Visual Studio Code. See [Set up an editor](https://flutter.dev/docs/get-started/editor?tab=vscode).
+## 实现视频直播
 
-1. Launch Visual Studio Code. Select the **Flutter: New Project** command in **View > Command**. Enter the project name and press `<Enter>`. 
-2. Select the location of the project in the pop-up window. Visual Studio Code automatically generates a simple project.
+### 创建 Flutter 项目
 
-### Add dependencies
+本文使用 Visual Studio Code 创建 Flutter 项目。你需要在 Visual Studio Code 中安装 Flutter plugin。关于详细设置可以参考 [Set up an editor](https://flutter.dev/docs/get-started/editor?tab=vscode)。
 
-Add the following dependencies in `pubspec.yaml`:
+1. 打开 Visual Studio Code，在 **View > Command** 菜单选择 **Flutter: New Project** 命令，按回车键，然后输入项目名称，按回车键。在弹出的窗口中选择项目的创建位置。
+2. 选择完成后，Visual Studio Code 会自动生成一个简单的示例项目。
 
-1. Add the `agora_rtc_engine` dependency to integrate Agora Flutter SDK. See https://pub.dev/packages/agora_rtc_engine for the latest version of `agora_rtc_engine`.
-2. Add the `permission_handler` dependency to add the permission handling function.
+### 添加依赖项
+
+在 `pubspec.yaml` 文件中添加以下依赖项：
+
+1. 添加 `agora_rtc_engine` 依赖项，集成 Agora Flutter SDK。关于 `agora_rtc_engine` 的最新版本可以查询 https://pub.dev/packages/agora_rtc_engine。
+2. 添加 `permission_handler` 依赖项，安装权限处理插件。
 
 ```
 environment:
   sdk: ">=2.7.0 <3.0.0"
-  
+ 
+// 依赖项
 dependencies:
   flutter:
     sdk: flutter
-  
-  
+ 
+ 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.3
-  # Please use the latest version of agora_rtc_engine
+  //  Agora Flutter SDK 依赖项，请使用最新版本的 agora_rtc_engine
   agora_rtc_engine: ^3.1.2
+  //  权限处理插件依赖项
   permission_handler: ^3.0.0
 ```
 
-### Implement live video streaming
+### 基本流程
 
-Open `main.dart`, remove all code after
+打开 `main.dart`，删除
 
 ```
 void main() => runApp(MyApp());
 ```
 
-Use these steps to add the following code:
+语句下方的全部代码。并按照步骤增加以下代码：
 
-**Step 1: Define App ID and Token**
+#### 步骤一：定义 App ID 和 Token
+
+定义 App ID 和 Token：
 
 ```
-/// Define App ID and Token
+/// 定义 App ID 和 Token
 const APP_ID = '<Your App ID>';
 const Token = '<Your Token>';
 ```
 
-**Step 2: Define MyApp Class**
 
+#### 步骤二：定义 Flutter 应用类
+
+定义 MyApp 应用类：
 
 ```
+/// MyApp 类扩展 StatelessWidget 类
 class MyApp extends StatelessWidget {
-  
+ 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -152,31 +162,32 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-**Step 3: Define UI and code logic of the login page**
+#### 步骤三：定义 Flutter 应用登录页面的 UI 布局和基本逻辑
 
-1. Ensure that you have imported the following packages in the file header:
+1. 确保你已经在文件头部导入以下 package：
 
 ```
 import 'dart:async';
-  
+ 
 import 'package:agora_rtc_engine/rtc_engine.dart';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
 ```
 
-2. Define `IndexPage` class for the login page and the `IndexState` class for the state of the login page:
+2. 定义应用的登录页面类 `IndexPage` 和页面状态类 `IndexState` ：
 
 ```
+/// IndexPage 类扩展 StatefulWidget 类
 class IndexPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => IndexState();
 }
- 
+/// IndexState 类扩展 State 类,获取 IndexPage 的状态
 class IndexState extends State<IndexPage> {
   final _channelController = TextEditingController();
   bool _validateError = false;
   ClientRole _role = ClientRole.Broadcaster;
-  
+ 
   @override
   void dispose() {
     // dispose input controller
@@ -185,9 +196,11 @@ class IndexState extends State<IndexPage> {
   }
 ```
 
-3. Set the UI layout of the login page:
+
+3. 设置登录页面 UI 布局：
 
 ```
+/// 设置登录页面的 UI 布局
 @override
 Widget build(BuildContext context) {
   return Scaffold(
@@ -267,10 +280,10 @@ Widget build(BuildContext context) {
 }
 ```
 
-4. Define the code logic to join a channel and handle device permissions.
+4. 设置加入频道的逻辑和权限管理逻辑：
 
 ```
-  /// The button to join channel
+  /// 设置加入频道按钮逻辑
   Future<void> onJoin() async {
     setState(() {
       _channelController.text.isEmpty
@@ -278,9 +291,9 @@ Widget build(BuildContext context) {
           : _validateError = false;
     });
     if (_channelController.text.isNotEmpty) {
-      // Wait for the permission for camera and microphone
+      // 等待摄像头和麦克风的权限批准后再进入直播页面
       await _handleCameraAndMic();
-      // Enter the page for live streaming and join channel using the channel name and role specified in the login page
+      // 进入直播页面,使用登录页面的频道名和角色登录频道
       await Navigator.push(
         context,
         MaterialPageRoute(
@@ -292,8 +305,8 @@ Widget build(BuildContext context) {
       );
     }
   }
-  
-  // Ask for the permission for camera and microphone
+ 
+  // 请求摄像头和麦克风的权限
   Future<void> _handleCameraAndMic() async {
     await PermissionHandler().requestPermissions(
       [PermissionGroup.camera, PermissionGroup.microphone],
@@ -302,39 +315,41 @@ Widget build(BuildContext context) {
 }
 ```
 
-**Step 4: Define UI and code logic of the live streaming page**
+#### 步骤四：定义 Flutter 应用直播页面的 UI 布局和基本逻辑
 
-1. Ensure you have imported the following packages in the file header (in addition to the packages previously specified):
+1. 除步骤二已导入的 package 之外，确保你已经在文件头部导入以下 package：
 
 ```
 import 'package:agora_rtc_engine/rtc_local_view.dart' as RtcLocalView;
 import 'package:agora_rtc_engine/rtc_remote_view.dart' as RtcRemoteView;
 ```
 
-2. Define the CallPage class for the live streaming page.
+
+2. 定义直播页面的类 `CallPage` ：
 
 ```
+/// 定义直播页面 CallPage 类
 class CallPage extends StatefulWidget {
   final String channelName;
   final ClientRole role;
   const CallPage({Key key, this.channelName, this.role}) : super(key: key);
-  
+ 
   @override
   _CallPageState createState() => _CallPageState();
 }
 ```
 
-3. Define the CallPageState class for the state of the live streaming page.
+3. 定义直播页面的状态类 `CallPageState`：
 
 ```
+/// 定义直播页面的状态类：
 class _CallPageState extends State<CallPage> {
   final _users = <int>[];
   final _infoStrings = <String>[];
   bool muted = false;
   RtcEngine _engine;
-  
-  
-  
+ 
+ 
   @override
   void dispose() {
     _users.clear();
@@ -342,13 +357,13 @@ class _CallPageState extends State<CallPage> {
     _engine.destroy();
     super.dispose();
   }
-  
+ 
   @override
   void initState() {
     super.initState();
     initialize();
   }
-  
+ 
   Future<void> initialize() async {
     if (APP_ID.isEmpty) {
       setState(() {
@@ -359,63 +374,144 @@ class _CallPageState extends State<CallPage> {
       });
       return;
     }
-  
+ 
     await _initAgoraRtcEngine();
     _addAgoraEventHandlers();
     await _engine.enableWebSdkInteroperability(true);
+    // 设置视频编码属性
+    VideoEncoderConfiguration configuration = VideoEncoderConfiguration();
+    configuration.dimensions = VideoDimensions(1920, 1080);
+    await _engine.setVideoEncoderConfiguration(configuration);
+    // 加入频道
     await _engine.joinChannel(Token, widget.channelName, null, 0);
   }
 ```
 
-4. Define the RTC client instance, channel profile, and user role:
+4. 创建 SDK 客户端实例，开启视频，设置频道属性和用户角色：
 
 ```
-Future<void> _initAgoraRtcEngine() async {
-  _engine = await RtcEngine.create(APP_ID);
-  await _engine.setChannelProfile(ChannelProfile.LiveBroadcasting);
-  await _engine.setClientRole(widget.role);
-}
+/// 创建 SDK 客户端实例，开启视频，设置频道属性和用户角色
+  Future<void> _initAgoraRtcEngine() async {
+    // 创建客户端实例
+    _engine = await RtcEngine.create(APP_ID);
+    // 开启视频
+    await _engine.enableVideo();
+    // 设置频道属性
+    await _engine.setChannelProfile(ChannelProfile.LiveBroadcasting);
+    // 设置用户角色
+    await _engine.setClientRole(widget.role);
+  }
 ```
 
-5. Define event handlers:
+5. 定义事件处理回调：
 
 ```
-void _addAgoraEventHandlers() {
-  _engine.setEventHandler(RtcEngineEventHandler(error: (code) {
-    setState(() {
-      final info = 'onError: $code';
-      _infoStrings.add(info);
-    });
-  }, joinChannelSuccess: (channel, uid, elapsed) {
-    setState(() {
-      final info = 'onJoinChannel: $channel, uid: $uid';
-      _infoStrings.add(info);
-    });
-  }, leaveChannel: (stats) {
-    setState(() {
-      _infoStrings.add('onLeaveChannel');
-      _users.clear();
-    });
-  }, userJoined: (uid, elapsed) {
-    setState(() {
-      final info = 'userJoined: $uid';
-      _infoStrings.add(info);
-      _users.add(uid);
-    });
-  }, userOffline: (uid, elapsed) {
-    setState(() {
-      final info = 'userOffline: $uid';
-      _infoStrings.add(info);
-      _users.remove(uid);
-    });
-  }));
-}
+/// 增加事件处理回调
+  void _addAgoraEventHandlers() {
+    _engine.setEventHandler(RtcEngineEventHandler(error: (code) {
+      setState(() {
+        final info = 'onError: $code';
+        _infoStrings.add(info);
+      });
+    }, joinChannelSuccess: (channel, uid, elapsed) {
+      setState(() {
+        final info = 'onJoinChannel: $channel, uid: $uid';
+        _infoStrings.add(info);
+      });
+    }, leaveChannel: (stats) {
+      setState(() {
+        _infoStrings.add('onLeaveChannel');
+        _users.clear();
+      });
+    }, userJoined: (uid, elapsed) {
+      setState(() {
+        final info = 'userJoined: $uid';
+        _infoStrings.add(info);
+        _users.add(uid);
+      });
+    }, userOffline: (uid, elapsed) {
+      setState(() {
+        final info = 'userOffline: $uid';
+        _infoStrings.add(info);
+        _users.remove(uid);
+      });
+    }, firstRemoteVideoFrame: (uid, width, height, elapsed) {
+      setState(() {
+        final info = 'firstRemoteVideo: $uid ${width}x $height';
+        _infoStrings.add(info);
+      });
+    }));
+  }
 ```
 
-6. Define the UI of the live streaming page:
+6. 设置直播页面 UI：
 
 ```
-  /// Toolbar layout
+/// 获取 view 列表
+  List<Widget> _getRenderViews() {
+    final List<StatefulWidget> list = [];
+    if (widget.role == ClientRole.Broadcaster) {
+      list.add(RtcLocalView.SurfaceView());
+    }
+    _users.forEach((int uid) => list.add(RtcRemoteView.SurfaceView(uid: uid)));
+    return list;
+  }
+ 
+ 
+  /// 视频 view
+  Widget _videoView(view) {
+    return Expanded(child: Container(child: view));
+  }
+ 
+  /// 视频 view 行
+  Widget _expandedVideoRow(List<Widget> views) {
+    final wrappedViews = views.map<Widget>(_videoView).toList();
+    return Expanded(
+      child: Row(
+        children: wrappedViews,
+      ),
+    );
+  }
+ 
+  /// 视频区域布局
+  Widget _viewRows() {
+    final views = _getRenderViews();
+    switch (views.length) {
+      case 1:
+        return Container(
+            child: Column(
+          children: <Widget>[_videoView(views[0])],
+        ));
+      case 2:
+        return Container(
+            child: Column(
+          children: <Widget>[
+            _expandedVideoRow([views[0]]),
+            _expandedVideoRow([views[1]])
+          ],
+        ));
+      case 3:
+        return Container(
+            child: Column(
+          children: <Widget>[
+            _expandedVideoRow(views.sublist(0, 2)),
+            _expandedVideoRow(views.sublist(2, 3))
+          ],
+        ));
+      case 4:
+        return Container(
+            child: Column(
+          children: <Widget>[
+            _expandedVideoRow(views.sublist(0, 2)),
+            _expandedVideoRow(views.sublist(2, 4))
+          ],
+        ));
+      default:
+    }
+    return Container();
+  }
+ 
+  /// 工具栏布局
   Widget _toolbar() {
     if (widget.role == ClientRole.Audience) return Container();
     return Container(
@@ -464,9 +560,9 @@ void _addAgoraEventHandlers() {
       ),
     );
   }
-  
-  
- // Information panel to display logs
+ 
+ 
+ 
   Widget _panel() {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 48),
@@ -515,20 +611,24 @@ void _addAgoraEventHandlers() {
       ),
     );
   }
-  
-/// Stop live streaming
+ 
+/// 结束通话
 void _onCallEnd(BuildContext context) {
     Navigator.pop(context);
   }
-  
-  /// Mute
+ 
+  /// 静音
   void _onToggleMute() {
     setState(() {
       muted = !muted;
     });
     _engine.muteLocalAudioStream(muted);
   }
-  
+ /// 切换摄像头
+  void _onSwitchCamera() {
+    _engine.switchCamera();
+  }
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -539,6 +639,7 @@ void _onCallEnd(BuildContext context) {
       body: Center(
         child: Stack(
           children: <Widget>[
+            _viewRows(),
             _panel(),
             _toolbar(),
           ],
@@ -549,34 +650,36 @@ void _onCallEnd(BuildContext context) {
 }
 ```
 
-### Run the project
 
-1. Run the following command in the root folder to install dependencies.
+### 运行项目 
 
-```
-flutter packages get
-```
+1. 在项目根目录运行以下命令安装依赖项。
 
-2. Run the project.
+   ```bash
+	 flutter packages get
+   ```
+	 
+2. 运行项目。
+   
+	 ```bash
+   flutter run
+   ```
+	 
+### 常见问题
 
-```
-flutter run
-```
+如果运行环境为 Android，对于中国大陆用户，运行 `flutter run` 时可能会卡在 `Running Gradle task 'assembleDebug'...` 或出现以下错误：
 
-### Common issues
-
-If the deployment environment is Android, users in mainland China may get stuck in `Running Gradle task 'assembleDebug'...` or see the following error:
-
-```
+```dart
 Running Gradle task 'assembleDebug'...
 Exception in thread "main" java.net.ConnectException: Connection timed out: connect
 ```
 
-Take the following steps to resolve this issue:
 
-1. In the `build.gradle` file of the Android project, use mirrors in China for `google` and `jcenter.`
+解决方案如下：
 
-```
+1. 在相应 Android 项目的 `build.gradle` 文件中，对于 `google` 和 `jcenter` 使用国内镜像源。下面的示例代码使用了阿里镜像源。
+
+```java
 buildscript {
     ext.kotlin_version = '1.3.50'
     repositories {
@@ -598,10 +701,8 @@ allprojects {
 }
 ```
 
-2. In the `gradle-wrapper.properties` file, set `distributionUrl` to a local file. For example, for gradle 5.6.4, you can copy `gradle-5.6.4-all.zip` to `gradle/wrapper` and set `distributionUrl` to:
+2. 在相应 Android 项目的 `gradle-wrapper.properties` 文件中，将 `distributionUrl` 设为本地路径。以 gradle 5.6.4 为例，你可以将 `gradle-5.6.4-all.zip` 文件复制到 `gradle/wrapper` 目录，然后 `distributionUrl` 设置为：
 
 ```
 distributionUrl=gradle-5.6.4-all.zip
 ```
-
-
