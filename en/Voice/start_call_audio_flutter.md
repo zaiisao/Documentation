@@ -66,7 +66,7 @@ Click ![img](https://web-cdn.agora.io/docs-files/1592488399929) to view and copy
 
 **Step 3. Run the project**
 
-1. Download the [Agora-Flutter-Quickstart](https://github.com/AgoraIO-Community/Agora-Flutter-Quickstart) repository. Open `settings.dart` (`lib/src/utils/settings.dart`). Add App ID and Token.
+1. Download the [Agora-Flutter-Quickstart](https://github.com/AgoraIO-Community/Agora-Flutter-Quickstart) repository. Open `settings.dart` (`lib/src/utils/settings.dart`). Add App ID.
 
 	```
   const APP_ID ="";
