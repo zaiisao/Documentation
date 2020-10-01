@@ -52,7 +52,7 @@ Take the following steps to create an Agora project in Agora Console.
 
    ![img](https://web-cdn.agora.io/docs-files/1574924327108)
 
-3. Enter your project name, set the App ID authentication mechanism as **APP ID + Token** in the dialog box, and click **Submit**.
+3. Enter your project name, set the App ID authentication mechanism as **APP ID** in the dialog box, and click **Submit**.
 
 4. When the project is created successfully, you can see the newly created project in the project list. Agora assigns an App ID to each project as the only identifier.
 
