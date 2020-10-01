@@ -3,7 +3,7 @@
 title: RTM Limitations
 description: 
 platform: Linux CPP
-updatedAt: Wed Sep 30 2020 15:32:45 GMT+0800 (CST)
+updatedAt: Wed Sep 30 2020 15:54:28 GMT+0800 (CST)
 ---
 # RTM Limitations
 
@@ -53,7 +53,7 @@ The call limit is for one <code>IRtmService</code> instance. If an operation cor
 
 ## Miscellaneous
 
-- Notifications of a member joining or leaving the channel are automatically disabled when the number of channel members exceeds 512. Agora recommends that you call the [Gets channel events RESTful API](../../en/Real-time-Messaging/rtm_get_event.md)) from your server to get the notifications of channel events. 
+- Notifications of a member joining or leaving the channel are automatically disabled when the number of channel members exceeds 512. Agora recommends that you call the [Gets channel events RESTful API](../../en/Real-time-Messaging/rtm_get_event.md) from your server to get the notifications of channel events. 
 - The current version supports querying the online status of up to 256 users.
 - You can subscribe to the online status of up to 512 users in one method call, and you can subscribe to the online status of up to 512 users. 
 - Attribute settings in one user attribute operation must not exceed 16 KB in size. Attribute settings in one channel attribute operation must not exceed 32 KB in size. Each attribute (key/value pair) must not exceed 8 KB in size. You must not set over 32 key/value pairs for one attribute operation.

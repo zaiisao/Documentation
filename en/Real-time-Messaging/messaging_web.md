@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: 1.1.0
 platform: Web
-updatedAt: Mon Sep 14 2020 01:45:15 GMT+0800 (CST)
+updatedAt: Wed Sep 30 2020 16:12:54 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 
@@ -79,10 +79,10 @@ You can skip to [Integrate the SDK into your project](#integrate) if you already
 
 Download the Agora RTM Web SDK and include with a `<script>` tag, and `AgoraRTM` is registered as a global variable.
 
-Add to the HTML file the following code and replace `/path/to/agora-rtm-sdk-1.2.2.js` with the URL of `agora-rtm-sdk-1.2.2.js`:
+Add to the HTML file the following code and replace `/path/to/agora-rtm-sdk-1.4.0.js` with the URL of `agora-rtm-sdk-1.4.0.js`:
 
 ```html
-<script src="/path/to/agora-rtm-sdk-1.2.2.js"></script>
+<script src="/path/to/agora-rtm-sdk-1.4.0.js"></script>
 ```
 
 > Ensure that the address specified by `src` is accessible as a URL in a web browser.
@@ -203,7 +203,7 @@ if (sendResult.hasPeerReceived) {
 
 #### Receive a peer-to-peer message
 
-Set a listener to the [MessageFromPeer](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmclientevents.html#messagefrompeer) event on [RtmClient](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html) to receive a peer-to-peer message.
+Set a listener to the [MessageFromPeer](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/interfaces/rtmevents.rtmclientevents.html#messagefrompeer) event on [RtmClient](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/classes/rtmclient.html) to receive a peer-to-peer message.
 
 ```JavaScript
 client.on('MessageFromPeer', ({ text }, peerId) => { // text: text of the received message; peerId: User ID of the sender.

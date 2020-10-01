@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: 
 platform: Android
-updatedAt: Thu Aug 27 2020 07:36:55 GMT+0800 (CST)
+updatedAt: Wed Sep 30 2020 16:05:32 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 
@@ -68,13 +68,13 @@ Choose either of the following methods to integrate the Agora RTM Android SDK in
 
 **Method 1: Automatically integrate the SDK using JCenter**
 
-Add the following line in the **/app/build.gradle** file of your project (1.2.2 is the version number):
+Add the following line in the **/app/build.gradle** file of your project (1.4.1 is the version number):
 
 ```java
 ...
 dependencies {
     ...
-    implementation 'io.agora.rtm:rtm-sdk:1.2.2'
+    implementation 'io.agora.rtm:rtm-sdk:1.4.1'
 }
 ```
 
@@ -128,23 +128,6 @@ Add the following line in the **app/proguard-rules.pro** file to prevent code ob
 
 This section provides API call sequence diagrams and sample codes related to peer-to-peer messaging and channel messaging. 
 
-### API Call sequence diagrams
-
-#### Login and logout of the Agora RTM system
-
-![](https://web-cdn.agora.io/docs-files/1562566527083)
-
-#### Send or receive peer-to-peer messages
-
-![](https://web-cdn.agora.io/docs-files/1562566549404)
-
-#### Join and leave an Agora RTM channel 
-
-![](https://web-cdn.agora.io/docs-files/1562566630113)
-
-#### Send or receive channel messages
-
-![](https://web-cdn.agora.io/docs-files/1562566639888)
 
 ### Create and Initialize an Agora RTM Client
 
@@ -190,7 +173,7 @@ public void init() {
 }
 ```
 
-### Log in and log out of the Agora RTM system
+### Log in to and log out of the Agora RTM system
 
 Only when you successfully log in the Agora RTM system, can you use most of the core features provided by the Agora RTM SDK. When logging in the Agora RTM system, you need to:
 

@@ -3,7 +3,7 @@
 title: Release Notes
 description: migration information
 platform: iOS,macOS
-updatedAt: Wed Sep 30 2020 15:11:51 GMT+0800 (CST)
+updatedAt: Wed Sep 30 2020 16:28:13 GMT+0800 (CST)
 ---
 # Release Notes
   ## Overview
@@ -20,7 +20,7 @@ Improved the log file.
 
 **Bug fixes**
 
-Fixed the pop up issue in iOS 14. See [Why do I see a prompt to find local network devices when launching an iOS app integrated with the Agora RTM SDK?](../../en/faq/local_network_privacy_rtm.md).
+Fixed the pop up issue in iOS 14. See [this FAQ](../../en/faq/local_network_privacy_rtm.md).
 
 ## v1.4.0
 

@@ -3,7 +3,7 @@
 title: RTM Limitations
 description: 
 platform: Linux Java
-updatedAt: Wed Sep 30 2020 15:33:17 GMT+0800 (CST)
+updatedAt: Wed Sep 30 2020 15:53:56 GMT+0800 (CST)
 ---
 # RTM Limitations
 
@@ -49,9 +49,12 @@ The call limit is for one <code>RtmClient</code> instance. If an operation corre
   - [`createImageMessageByUploading`](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#afc93fad7700593a803ddbc87482c0ac0)
   - [`downloadMediaToFile`](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a34e0bd19fb0bbd1d91dec0a1af100038)
 
-## Miscellaneous 
+## Miscellaneous
 
 - Notifications of a member joining or leaving the channel are automatically disabled when the number of channel members exceeds 512. Agora recommends that you call the [Gets channel events RESTful API](../../en/Real-time-Messaging/rtm_get_event.md) from your server to get the notifications of channel events. 
-- The current version supports querying the online status of a maximum of 256 users.
-- You can subscribe to the online status of a maximxim of 512 users in one method call, and you can subscribe to the online status of at most 512 users. 
-- Attribute settings in one user attribute operation should not exceed 16 KB in size; attribute settings in one channel attribute operation should not exceed 32 KB in size; each attribute (key/value pair) should not excced 8 KB in size; the number of key/value pairs you set in one attribute operation should not exceed 32. 
+- The current version supports querying the online status of up to 256 users.
+- You can subscribe to the online status of up to 512 users in one method call, and you can subscribe to the online status of up to 512 users.
+- Attribute settings in one user attribute operation must not exceed 16 KB in size. Attribute settings in one channel attribute operation must not exceed 32 KB in size. Each attribute (key/value pair) must not exceed 8 KB in size. The number of key/value pairs you set in one attribute operation must not exceed 32.
+- Each file or image you upload to the Agora server stays for 7 days. The corresponding media ID also stays valid for seven days.
+- Each file or image to upload must not exceed 30 MB.
+- Each client instance can only support up to 9 upload and download processes at the same time.

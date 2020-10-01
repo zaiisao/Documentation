@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Wed Sep 30 2020 15:05:48 GMT+0800 (CST)
+updatedAt: Wed Sep 30 2020 16:29:09 GMT+0800 (CST)
 ---
 # Release Notes
   ## Overview
@@ -13,7 +13,7 @@ The Agora Real-time Messaging (RTM) SDK provides a streamlined and stable messag
 
 ## v1.4.0
 
-v1.4.0 was released on September 7, 2020.
+v1.4.0 was released on September 25, 2020.
 
 
 **New features**
