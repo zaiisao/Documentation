@@ -39,7 +39,7 @@ We will review and merge your PR as soon as possible.
 
 ## <a name="feedback"></a>Submit feedback on the documentation
 
-If you have questions about any part of our documentation or suggestions for improving it, you can submit feedback on the relevant page.
+If you have questions about any part of our documentation or suggestions for improving it, or if the quick edit option is unavailable (for example in the API Reference), you can submit feedback on the relevant page.
 
 1. Click the feedback button on the bottom right corner of the page.
 
