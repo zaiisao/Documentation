@@ -3,7 +3,7 @@
 title: Start Voice Call
 description: 
 platform: Flutter
-updatedAt: Wed Sep 30 2020 16:14:59 GMT+0800 (CST)
+updatedAt: Thu Oct 01 2020 02:07:14 GMT+0800 (CST)
 ---
 # Start Voice Call
 This page includes the following sections:
@@ -139,6 +139,9 @@ import 'package:permission_handler/permission_handler.dart';
 
 
 **Step 2: Define App ID and Token**
+
+See [Set up Authentication](../../en/Agora%20Platform/token.md).
+
 
 ```
 /// Define App ID and Token

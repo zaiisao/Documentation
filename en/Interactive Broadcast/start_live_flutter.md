@@ -3,7 +3,7 @@
 title: Start Live Interactive Video Streaming
 description: 
 platform: Flutter
-updatedAt: Wed Sep 30 2020 16:14:57 GMT+0800 (CST)
+updatedAt: Thu Oct 01 2020 02:05:40 GMT+0800 (CST)
 ---
 # Start Live Interactive Video Streaming
 This page includes the following sections:
@@ -126,6 +126,8 @@ void main() => runApp(MyApp());
 Use these steps to add the following code:
 
 **Step 1: Define App ID and Token**
+
+See [Set up Authentication](../../en/Agora%20Platform/token.md).
 
 ```
 /// Define App ID and Token

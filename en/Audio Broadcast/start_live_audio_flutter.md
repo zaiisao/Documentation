@@ -3,7 +3,7 @@
 title: Start Live Interactive Audio Streaming
 description: 
 platform: Flutter
-updatedAt: Wed Sep 30 2020 16:14:58 GMT+0800 (CST)
+updatedAt: Thu Oct 01 2020 02:06:18 GMT+0800 (CST)
 ---
 # Start Live Interactive Audio Streaming
 This page includes the following sections:
@@ -126,6 +126,9 @@ void main() => runApp(MyApp());
 Use these steps to add the following code:
 
 **Step 1: Define App ID and Token**
+
+See [Set up Authentication](../../en/Agora%20Platform/token.md).
+
 
 ```
 /// Define App ID and Token
