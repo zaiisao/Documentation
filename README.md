@@ -33,7 +33,7 @@ If you find minor issues such as spelling errors or broken links, you can quickl
 
 5. Now you need to create a PR to merge your changes to the current document. Click **Create a pull request**.
 
-   ![Create PR](https://web-cdn.agora.io/docs-files/1601456238928)
+   ![Create PR](https://web-cdn.agora.io/docs-files/1602216236092)
 
 We will review and merge your PR as soon as possible.
 
