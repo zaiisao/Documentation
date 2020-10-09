@@ -1,15 +1,15 @@
 
 ---
-title: 实现视频直播
+title: 实现音频直播
 description: 
 platform: Flutter
-updatedAt: Thu Oct 01 2020 01:42:19 GMT+0800 (CST)
+updatedAt: Thu Oct 01 2020 01:42:20 GMT+0800 (CST)
 ---
-# 实现视频直播
+# 实现音频直播
 本文分以下两个部分：
 
-- [快速跑通示例项目](#快速跑通示例项目)：Agora 在 GitHub 上提供一个开源的[一对一视频直播示例项目](https://github.com/AgoraIO-Community/Agora-Flutter-Quickstart)。介绍如何快速跑通该示例项目，体验 Agora 视频直播效果。
-- [实现视频直播](#实现视频直播)：详细介绍如何建立一个简单的项目并使用 Agora Flutter SDK 实现视频直播。
+- [快速跑通示例项目](#快速跑通示例项目)：Agora 在 GitHub 上提供一个开源的[视频直播示例项目](https://github.com/AgoraIO-Community/Agora-Flutter-Quickstart)。介绍如何快速跑通该示例项目，体验 Agora 视频直播效果。
+- [实现音频直播](#实现音频直播)：详细介绍如何建立一个简单的项目并使用 Agora Flutter SDK 实现音频直播。
 
 ## 快速跑通示例项目
 
@@ -85,7 +85,7 @@ updatedAt: Thu Oct 01 2020 01:42:19 GMT+0800 (CST)
    ```
 
 
-## 实现视频直播
+## 实现音频直播
 
 ### 创建 Flutter 项目
 
@@ -283,7 +283,7 @@ Widget build(BuildContext context) {
 4. 设置加入频道的逻辑和权限管理逻辑：
 
 ```
-  /// 设置加入频道按钮逻辑
+     /// 设置加入频道按钮逻辑
   Future<void> onJoin() async {
     setState(() {
       _channelController.text.isEmpty
@@ -291,8 +291,8 @@ Widget build(BuildContext context) {
           : _validateError = false;
     });
     if (_channelController.text.isNotEmpty) {
-      // 等待摄像头和麦克风的权限批准后再进入直播页面
-      await _handleCameraAndMic();
+      // 等待麦克风的权限批准后再进入直播页面
+      await _handleMic();
       // 进入直播页面,使用登录页面的频道名和角色登录频道
       await Navigator.push(
         context,
@@ -306,10 +306,11 @@ Widget build(BuildContext context) {
     }
   }
  
-  // 请求摄像头和麦克风的权限
-  Future<void> _handleCameraAndMic() async {
+ 
+  // 设置权限管理逻辑
+  Future<void> _handleMic() async {
     await PermissionHandler().requestPermissions(
-      [PermissionGroup.camera, PermissionGroup.microphone],
+      [PermissionGroup.microphone],
     );
   }
 }
@@ -334,6 +335,7 @@ class CallPage extends StatefulWidget {
   final ClientRole role;
   const CallPage({Key key, this.channelName, this.role}) : super(key: key);
  
+ 
   @override
   _CallPageState createState() => _CallPageState();
 }
@@ -348,6 +350,7 @@ class _CallPageState extends State<CallPage> {
   final _infoStrings = <String>[];
   bool muted = false;
   RtcEngine _engine;
+ 
  
  
   @override
@@ -378,11 +381,6 @@ class _CallPageState extends State<CallPage> {
     await _initAgoraRtcEngine();
     _addAgoraEventHandlers();
     await _engine.enableWebSdkInteroperability(true);
-    // 设置视频编码属性
-    VideoEncoderConfiguration configuration = VideoEncoderConfiguration();
-    configuration.dimensions = VideoDimensions(1920, 1080);
-    await _engine.setVideoEncoderConfiguration(configuration);
-    // 加入频道
     await _engine.joinChannel(Token, widget.channelName, null, 0);
   }
 ```
@@ -390,23 +388,18 @@ class _CallPageState extends State<CallPage> {
 4. 创建 SDK 客户端实例，开启视频，设置频道属性和用户角色：
 
 ```
-/// 创建 SDK 客户端实例，开启视频，设置频道属性和用户角色
-  Future<void> _initAgoraRtcEngine() async {
-    // 创建客户端实例
-    _engine = await RtcEngine.create(APP_ID);
-    // 开启视频
-    await _engine.enableVideo();
-    // 设置频道属性
-    await _engine.setChannelProfile(ChannelProfile.LiveBroadcasting);
-    // 设置用户角色
-    await _engine.setClientRole(widget.role);
-  }
+/// 创建 Agora RTC SDK 客户端实例，设置频道属性和用户角色
+Future<void> _initAgoraRtcEngine() async {
+  _engine = await RtcEngine.create(APP_ID);
+  await _engine.setChannelProfile(ChannelProfile.LiveBroadcasting);
+  await _engine.setClientRole(widget.role);
+}
 ```
 
 5. 定义事件处理回调：
 
 ```
-/// 增加事件处理回调
+/// 定义事件处理方法
   void _addAgoraEventHandlers() {
     _engine.setEventHandler(RtcEngineEventHandler(error: (code) {
       setState(() {
@@ -435,11 +428,6 @@ class _CallPageState extends State<CallPage> {
         _infoStrings.add(info);
         _users.remove(uid);
       });
-    }, firstRemoteVideoFrame: (uid, width, height, elapsed) {
-      setState(() {
-        final info = 'firstRemoteVideo: $uid ${width}x $height';
-        _infoStrings.add(info);
-      });
     }));
   }
 ```
@@ -447,70 +435,6 @@ class _CallPageState extends State<CallPage> {
 6. 设置直播页面 UI：
 
 ```
-/// 获取 view 列表
-  List<Widget> _getRenderViews() {
-    final List<StatefulWidget> list = [];
-    if (widget.role == ClientRole.Broadcaster) {
-      list.add(RtcLocalView.SurfaceView());
-    }
-    _users.forEach((int uid) => list.add(RtcRemoteView.SurfaceView(uid: uid)));
-    return list;
-  }
- 
- 
-  /// 视频 view
-  Widget _videoView(view) {
-    return Expanded(child: Container(child: view));
-  }
- 
-  /// 视频 view 行
-  Widget _expandedVideoRow(List<Widget> views) {
-    final wrappedViews = views.map<Widget>(_videoView).toList();
-    return Expanded(
-      child: Row(
-        children: wrappedViews,
-      ),
-    );
-  }
- 
-  /// 视频区域布局
-  Widget _viewRows() {
-    final views = _getRenderViews();
-    switch (views.length) {
-      case 1:
-        return Container(
-            child: Column(
-          children: <Widget>[_videoView(views[0])],
-        ));
-      case 2:
-        return Container(
-            child: Column(
-          children: <Widget>[
-            _expandedVideoRow([views[0]]),
-            _expandedVideoRow([views[1]])
-          ],
-        ));
-      case 3:
-        return Container(
-            child: Column(
-          children: <Widget>[
-            _expandedVideoRow(views.sublist(0, 2)),
-            _expandedVideoRow(views.sublist(2, 3))
-          ],
-        ));
-      case 4:
-        return Container(
-            child: Column(
-          children: <Widget>[
-            _expandedVideoRow(views.sublist(0, 2)),
-            _expandedVideoRow(views.sublist(2, 4))
-          ],
-        ));
-      default:
-    }
-    return Container();
-  }
- 
   /// 工具栏布局
   Widget _toolbar() {
     if (widget.role == ClientRole.Audience) return Container();
@@ -562,7 +486,7 @@ class _CallPageState extends State<CallPage> {
   }
  
  
- 
+ // 信息栏，显示日志信息
   Widget _panel() {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 48),
@@ -612,7 +536,7 @@ class _CallPageState extends State<CallPage> {
     );
   }
  
-/// 结束通话
+/// 结束直播
 void _onCallEnd(BuildContext context) {
     Navigator.pop(context);
   }
@@ -623,10 +547,6 @@ void _onCallEnd(BuildContext context) {
       muted = !muted;
     });
     _engine.muteLocalAudioStream(muted);
-  }
- /// 切换摄像头
-  void _onSwitchCamera() {
-    _engine.switchCamera();
   }
  
   @override
@@ -639,7 +559,6 @@ void _onCallEnd(BuildContext context) {
       body: Center(
         child: Stack(
           children: <Widget>[
-            _viewRows(),
             _panel(),
             _toolbar(),
           ],
@@ -706,3 +625,4 @@ allprojects {
 ```
 distributionUrl=gradle-5.6.4-all.zip
 ```
+

@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: Flutter
-updatedAt: Wed Sep 30 2020 16:15:10 GMT+0800 (CST)
+updatedAt: Thu Oct 01 2020 01:42:22 GMT+0800 (CST)
 ---
 # 实现语音通话
 本文分以下两个部分：
@@ -144,7 +144,7 @@ import 'package:permission_handler/permission_handler.dart';
 
 #### 步骤二：定义 App ID 和 Token
 
-定义 App ID 和 Token：
+定义 App ID 和 Token。详见[校验用户权限](../../cn/Agora%20Platform/token.md)。
 
 ```
 /// 定义 App ID 和 Token
