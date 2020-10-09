@@ -33,7 +33,7 @@
 
 5. 现在需要创建一个 PR，将你的更改合并到现在的文档中。点击 **Create a pull request**，如下图所示。
 
-   ![Create PR](https://web-cdn.agora.io/docs-files/1601456238928)
+   ![Create PR](https://web-cdn.agora.io/docs-files/1602216236092)
 
 Agora 文档团队成员会尽快评审并合并你的 PR。
 
