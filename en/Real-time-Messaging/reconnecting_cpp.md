@@ -2,7 +2,7 @@
 ---
 title: Manage Connection States
 description: 
-platform: Linux CPP
+platform: Linux CPP,Windows CPP
 updatedAt: Wed Sep 25 2019 07:12:13 GMT+0800 (CST)
 ---
 # Manage Connection States

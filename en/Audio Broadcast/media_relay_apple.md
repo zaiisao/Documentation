@@ -3,7 +3,7 @@
 title: Co-host across Channels
 description: 
 platform: iOS,macOS
-updatedAt: Mon Jul 06 2020 10:33:35 GMT+0800 (CST)
+updatedAt: Sat Oct 10 2020 02:42:57 GMT+0800 (CST)
 ---
 # Co-host across Channels
 ## Introduction
@@ -25,9 +25,9 @@ Before relaying media streams across channels, ensure that you have implemented 
 
 As of v2.9.0, the Agora Native SDK supports co-hosting across channels with the following methods:
 
-- startChannelMediaRelay
-- updateChannelMediaRelay
-- stopChannelMediaRelay
+- `startChannelMediaRelay`
+- `updateChannelMediaRelay`
+- `stopChannelMediaRelay`
 
 Once the channel media relay starts, the SDK relays the media streams of a host from the source channel to at most four destination channels.
 
@@ -35,7 +35,7 @@ During the relay, the SDK reports the states and events of the channel media rel
 
 | State codes | Event codes | The media stream relay state |
 | ---------------- | ---------------- | ---------------- |
-| AgoraChannelMediaRelayStateRunning(2) and AgoraChannelMediaRelayErrorNone(0)      | AgoraChannelMediaRelayEventSentToDestinationChannel(4)     | The channel media relay starts.      |
+| AgoraChannelMediaRelayStateRunning(2) and AgoraChannelMediaRelayErrorNone(0)      | AgoraChannelMediaRelayEventSent-</br>ToDestinationChannel(4)     | The channel media relay starts.      |
 | AgoraChannelMediaRelayStateFailure(3)      | /     | Exceptions occur for the media stream relay. Refer to the error parameter for troubleshooting.      |
 | AgoraChannelMediaRelayStateIdle(0) and AgoraChannelMediaRelayErrorNone(0)      | /     | The channel media relay stops.      |
 
@@ -52,47 +52,47 @@ Follow the API call sequence to implement your code logic:
 ### Sample code
 
 ```swift
-func getMediaRelayConfiguration() -> AgoraChannelMediaRelayConfiguration? {
-	guard let list = destinationList else {
-		alert(string: "destination list nil")
-		return nil
-	}
-	
-	let config = AgoraChannelMediaRelayConfiguration()
-	
-	if let uid = sourceUid {
-		config.sourceInfo.uid = uid
-	} else {
-		config.sourceInfo.uid = currentUid ?? 0
-	}
-	
-	if let token = sourceToken {
-		config.sourceInfo.token = token
-	}
-	
-	for item in list where item.isPrepareForMediaRelay() {
-		let info = getRelayInfoFromDestination(item)
-		config.setDestinationInfo(info, forChannelName: item.channel)
-	}
-	
-	return config
-}
+// Configures the information of the source channel. Set channelName as the current channel name, and uid as 0.
+let config = AgoraChannelMediaRelayConfiguration()
+// Ensure that the uid you use to generate the sourceChannelToken is set as 0.
+config.sourceInfo = AgoraChannelMediaRelayInfo(token: sourceChannelToken)
+  
+// Configures the information of the destination channel.
+let destinationInfo = AgoraChannelMediaRelayInfo(token: destinationChannelToken)
+config.setDestinationInfo(destinationInfo, forChannelName: destinationChannelName)
+// Starts the channel media relay.
+agoraKit.startChannelMediaRelay(config)
 
+// Stops the channel media relay.
+agoraKit.stopChannelMediaRelay()
+```
 
-if let config = getMediaRelayConfiguration() {
-	// Sets the destination channel you want to join.
-	let value = rtcEngine.startChannelMediaRelay(config)
-}
-
-if let config = getMediaRelayConfiguration() {
-	// Updates the media relay channel.
-	let value = rtcEngine.updateChannelMediaRelay(config)
+```swift
+// Uses the channelMediaRelayStateDidChange callback to monitor the state of the channel media relay.
+func rtcEngine)(_ engine: AgoraRtcEngineKit, channelMediaRelayStateDidChange state: AgoraChannelMediaRelayState, error: AgoraChannelMediaRelayError) {
+  LogUtils.log(message: "channelMediaRelayStateDidChange: \(state.rawVlue) error \(error.rawValue)", level: .info)
+  
+  switch(state){
+    case .running:
+        isRelaying = true
+        break
+    case .failure:
+        showAlert(message: "Media Relay Failed: \(error.rawValue)")
+        isRelaying = false
+        break
+    case .idle:
+        isRelaying = false
+        break
+    default:break
+  }
 }
 ```
 
 <div class="alert note">After calling the <code>startChannelMediaRelay</code> method, you can call the <code>updateChannelMediaRelay</code> method to add or delete the relay channels.</div>
 
-We provide an open-source [Cross-Channel-OpenLive-iOS](https://github.com/AgoraIO/Advanced-Video/tree/dev/backup/Cross-Channel/Cross-Channel-OpenLive-iOS) demo project that implements channel media relay on GitHub. You can try the demo and view the source code.
+We provide an open-source channel media relay demo project that implements channel media relay on GitHub. You can try the demo and view the source code.
+- iOS: [ChannelMediaRelay](https://github.com/AgoraIO/API-Examples/blob/master/iOS/APIExample/Examples/Advanced/MediaChannelRelay/MediaChannelRelay.swift) 
+- macOS: [ChannelMediaRelay](https://github.com/AgoraIO/API-Examples/blob/master/macOS/APIExample/Examples/Advanced/ChannelMediaRelay/ChannelMediaRelay.swift)
 
 ### API Reference
 

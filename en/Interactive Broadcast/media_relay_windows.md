@@ -22,9 +22,9 @@ Before relaying media streams across channels, ensure that you have implemented 
 
 As of v2.9.0, the Agora Native SDK supports co-hosting across channels with the following methods:
 
-- startChannelMediaRelay
-- updateChannelMediaRelay
-- stopChannelMediaRelay
+- `startChannelMediaRelay`
+- `updateChannelMediaRelay`
+- `stopChannelMediaRelay`
 
 Once the channel media relay starts, the SDK relays the media streams of a host from the source channel to at most four destination channels.
 

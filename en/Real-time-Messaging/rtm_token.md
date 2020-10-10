@@ -3,7 +3,7 @@
 title: Set up Authentication
 description: 
 platform: All Platforms
-updatedAt: Fri Sep 18 2020 04:55:12 GMT+0800 (CST)
+updatedAt: Fri Oct 09 2020 10:17:04 GMT+0800 (CST)
 ---
 # Set up Authentication
 To ensure communication security, when users log in to the RTM system, Agora needs to check their authentication information. Agora provides three authentication mechanisms. According to your scenarios, you can choose one of the following mechanisms:
@@ -81,29 +81,11 @@ To enable a primary certificate, do the following:
 
 **<a name = "generatetoken"></a>3. Generate an RTM token**
 
-Agora provides an open source [Agora Dynamic Key](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey) repository on GitHub. The `./<language>/src` folder of each language holds source codes for generating different types of dynamic keys and tokens. You can use `RtmTokenBuilder` to generate an RTM Token. The `./<language>/sample` folder of each language holds token generator examples that Agora creates for demonstration purposes. `RtmTokenBuilderSample` is a demo for generating an RTM token.
+Agora provides an open source [Agora Dynamic Key](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey) repository on GitHub. The `./<language>/src` folder of each language holds source codes for generating different types of dynamic keys and tokens. You can use `RtmTokenBuilder` to generate an RTM Token. The `./<language>/sample` folder of each language holds token generator examples that Agora creates for demonstration purposes. `RtmTokenBuilderSample` is a demo for generating an RTM token. 
+
+For detailed steps to generate an RTM Token, see [Generate an RTM Token](../../en/Real-time-Messaging/token_server_rtm.md).
 
 <div class="alert note">The token encoding uses the standard HMAC/SHA1 approach, and the libraries are available on common server-side development platforms, such as Node.js, Java, PHP, Python, and C++. For more information, see <a href="http://en.wikipedia.org/wiki/Hash-based_message_authentication_code">Authentication code</a>.</div>
-
-`RtmTokenBuilder` parameter description (C++)
-
-```c++
-static std::string buildToken(const std::string& appId,
-                                const std::string& appCertificate,
-                                const std::string& userAccount,
-                                RtmUserRole userRole,
-                                uint32_t privilegeExpiredTs = 0);
-```
-
-| Parameter             | Description                                                       |
-| :----------------- | :----------------------------------------------------------- |
-| appId              | The App ID of your project.|
-| appCertificate     | The App Certificate of your project.                                          |
-| userAccount        | The user ID of the RTM system.                                   |
-| userRole           | The user role. Agora supports only one user role. Set the value as the default value  `Rtm_User`. |
-| privilegeExpiredTs | This parameter is currently invalid. You can ignore this parameter. |
-
-<div class="alert note">An RTM token is valid for 24 hours.</div>
 
 **4. Switch and delete the primary certificate**
 
@@ -134,7 +116,7 @@ If you only use the App ID for authentication, you can follow the steps below fo
 
 1. [Enable a primary app certificate](#appcertificate). 
 
-2. After successfully enabling a primary app certificate, use the primary app certificate to [generate an RTM token](https://docs.agora.io/en/Audio%20Broadcast/token_server).
+2. After successfully enabling a primary app certificate, use the primary app certificate to [generate an RTM token](#generatetoken).
 
 3. Use either an App ID or an RTM token for authentication. For example, when existing users are using App ID for authentication, new users can use an RTM token for authentication, and thus both new and old users can log in to the RTM system. You can gradually phase out the use of App ID for authentication.
 
