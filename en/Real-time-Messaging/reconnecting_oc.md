@@ -3,93 +3,83 @@
 title: Manage Connection States
 description: 
 platform: iOS,macOS
-updatedAt: Wed Sep 25 2019 07:12:02 GMT+0800 (CST)
+updatedAt: Sat Oct 10 2020 06:55:38 GMT+0800 (CST)
 ---
 # Manage Connection States
-## Connection State Definitions
+## Overview
 
-The connection between the Agora RTM SDK and the Agora RTM system has the following five states:
+When users log in and out of the Agora RTM system, or when the network connection state changes, the connection between the Agora RTM SDK and the Agora RTM system switches between different states. The possible connection states are as follows:
 
-- AgoraRtmConnectionStateDisconnected
-- AgoraRtmConnectionStateConnecting
-- AgoraRtmConnectionStateConnected
-- AgoraRtmConnectionStateReconnecting
-- AgoraRtmConnectionStateAborted
+- AgoraRtmConnectionStateDisconnected (The user is not connected.)
+- AgoraRtmConnectionStateConnecting (The user is connecting.)
+- AgoraRtmConnectionStateConnected (The user is connected.)
+- AgoraRtmConnectionStateReconnecting (The user is reconnecting.)
+- AgoraRtmConnectionStateAborted (The user is kicked out.)
 
-> Whenever the connection switches state, the `connectionStateChanged` callback returns the new state and the reason of state change.
-
-### AgoraRtmConnectionStateDisconnected
-
-This is the initial connection state before the App calls the `loginByToken` method. 
-
-- Once the App calls the `loginByToken` method, the local client receives the `connectionStateChanged` callback: 
-  - The state switches to: `AgoraRtmConnectionStateConnecting`;
-  - Reason for the connection change: `AgoraRtmConnectionChangeReasonLoginSuccess`. 
-
-### AgoraRtmConnectionStateConnecting
-
-This state indicates that the App has called the `loginByToken` method and is now logging in the Agora RTM system. 
-
-- If the SDK logs in the Agora RTM system,
-  - The local client receives the `AgoraRtmLoginErrorOk` error code;
-  - The local client receives the `connectionStateChanged` callback:
-    - The new state: `AgoraRtmConnectionStateConnected `;
-    - Reason for the connection change: `AgoraRtmConnectionChangeReasonLoginSuccess`.
-- If the SDK fails to log in the Agora RTM system:
-  - The local client receives the corresponding error code.
-  - The local client receives the `connectionStateChanged` callback:
-    - The new state: `AgoraRtmConnectionStateDisconnected`; 
-    - Possible reasons for the connection change:
-      - `AgoraRtmConnectionChangeReasonLoginFailure`: The login fails for unknow reasons. 
-      - `AgoraRtmConnectionChangeReasonLoginTimeout`: A timeout occurs. The SDK fails to log in the Agora RTM system in six seconds. 
-
-### AgoraRtmConnectionStateConnected
-
-This state indicates that the SDK has logged in the Agora RTM system and that the corresponding user is 'online'. In this state, the Agora RTM system checks the online status of the SDK through heartbeat. 
-- If, for network reasons, the connection between the SDK and the Agora RTM system is interupted and cannot recover in four seconds: 
-  - The local client automatically starts to reconnect to the Agora RTM system and receives the `connectionStateChanged` callback:
-    - The new state: `AgoraRtmConnectionStateReconnecting`;
-    - Reason for the connection change: `AgoraRtmConnectionChangeReasonInterrupted`.
--  If another instance of the same `uid` logs in the Agora RTM system, the current instance will be kicked out: 
-  - The local client receives the`connectionStateChanged` callback:
-    - The new state: `AgoraRtmConnectionStateAborted`;
-    - Reason for the connection change: `AgoraRtmConnectionChangeReasonRemoteLogin`.
-- If the App calls the `logout` method to log out of the Agora RTM system: 
-  - The local client receives the `connectionStateChanged`:
-    - The new state: `AgoraRtmConnectionStateDisconnected`;
-    - Reason for the connection change: `AgoraRtmConnectionChangeReasonlogout`.
-
-### AgoraRtmConnectionStateReconnecting
-
-When the connection between the SDK and the Agora RTM system is interrupted and cannot recover in four seconds, the SDK enters this state. So long as the App does not call the `logoutWithCompletion` method, the SDK keeps reconnecting to the Agora RTM system until success.
-
-> Please note that the Agora RTM system presumes that the instance is online for 30 seconds since the connection to the SDK is interrupted. The system remove the instance from the online-user list if the SDK fails to reconnect to the Agora RTM system within 30 seconds. 
-
-- If the SDK manages to reconnect to the Agora RTM system within 30 seconds, the SDK will take the instance to the channel that it was in when the interruption occurred：
-  - The local client receives `connectionStateChanged` callback:
-    - The new state: `AgoraRtmConnectionStateConnected`;
-    - Reason for the connection change: `AgoraRtmConnectionChangeReasonLoginSuccess`.
-- If the SDK manages to reconnect to the Agora RTM system after 30 seconds, the SDK will take the instance to the channel, which the user was in when the interruption occurred, and keep the user attributes in sync with the server：
-  - The local client receives `connectionStateChanged` callback:
-    - The new state: `AgoraRtmConnectionStateConnected `;
-    - Reason for the connection change: `AgoraRtmConnectionChangeReasonLoginSuccess`.
-  - All remote memebers of the channel(s), which the user was in when the interrruption occurred: 
-    - Receive the `memberLeft` callback 30 seconds after the interruption occurs, if the SDK still fails to reconnect. 
-    - Receive the `memberJoined` callback if the SDK manages to reconnect after 30 seconds. 
-- The SDK keeps trying to reconnect to the Agora RTM system in the `AgoraRtmConnectionStateReconnecting` state. If the token expires during this period, the SDK returns the `rtmKitTokenDidExpire` callback. The return of this callback does not change the connection state. 
-- If the SDK still cannot reconnect to the Agora RTM system, it stays in this connection state. You can call the `logoutWithCompletion` method to log out. Then:
-  - The local client receives `connectionStateChanged` callback:
-    - The new state: `AgoraRtmConnectionStateDisconnected`
-    - Reason for the connection change:  `AgoraRtmConnectionChangeReasonLogout`.
-  - The local client receives the`AgoraRtmLogoutErrorOk` callback. 
-
-### AgoraRtmConnectionStateAborted 
-
-When another instance of the same `uid` logs in the Agora RTM system,  the current instance will be kicked out and switch to this state. At this point, we recommend that you call the `logoutWithCompletion` method to log out of the system and call the `loginByToken` method at an appropriate time. 
+In the following figure, the solid lines show conditions where the SDK automatically switches states, and the dotted lines show conditions where the user needs to actively call APIs to switch states.
 
 
-## Considerations
+<div class="alert note">Whenever the connection state changes, the RTM SDK returns the latest state (the <code>connectionStateChanged</code> enumeration) and the cause for the state change (the <code>AgoraRtmConnectionChangeReason</code> enumeration) through the <code>connectionStateChanged</code> callback. You can manage connection states through this callback.</div>
 
-- When the connection is interrupted, the SDK starts to reconnect to the Agora RTM system. This is an automatic reaction and does not need human intervention. 
-- You will not receive an `AgoraRtmLoginErrorOk` error code when the SDK manages to reconnect to the Agora RTM system. The callback only returns when the `loginByToken` method call succeeds. 
-- If the SDK does not manage to reconnect to the Agora RTM system 30 seconds after the connection is interrupted, the Agora RTM system removes the corresponding user from the online-user list it maintains. 
+![](https://web-cdn.agora.io/docs-files/1602310309202)
+
+## Call APIs to change connection states
+
+You can use the state and cause for the state change returned by the `connectionStateChanged` callback to actively call the API to change the connection state in the following situations.
+
+### Log in to the RTM system
+
+When you call `loginByToken` to log in to the RTM system, the connection state changes from AgoraRtmConnectionStateDisconnected to AgoraRtmConnectionStateConnecting, and the cause for the state change is AgoraRtmConnectionChangeReasonLogin. When the state is AgoraRtmConnectionStateConnecting, you do not need to perform any operations and the connection state automatically changes to one of the following states:
+
+- AgoraRtmConnectionStateDisconnected: The login fails or times out (the user fails to log in within 6 seconds).
+- AgoraRtmConnectionStateConnected: The login succeeds. 
+
+When the connection state turns to AgoraRtmConnectionStateDisconnected, you need to call `loginByToken` again to log in.
+
+### Disconnected from the RTM system due to network problems
+
+When the connection state is AgoraRtmConnectionStateConnected, if the connection with the Agora RTM system is interrupted and cannot recover in four seconds due to network reasons, the connection state changes to AgoraRtmConnectionStateReconnecting, and the cause for the state change is AgoraRtmConnectionChangeReasonInterrupted. When in the AgoraRtmConnectionStateReconnecting state, the RTM SDK continues to automatically reconnect to the RTM system until the login is successful, so you do not need to perform any login operations. After successful reconnection, the connection state changes to AgoraRtmConnectionStateConnected, but the SDK does not return the `AgoraRtmLoginBlock` callback.
+
+
+After the automatic reconnection is successful, the RTM system resends messages that occurred during the disconnection, as follows:
+
+- All peer-to-peer messages during the disconnection.
+- A maximum of 32 channel messages that were sent within the 30-second period before successful reconnection. 
+
+
+If the reconnection keeps failing, the connection state remains at AgoraRtmConnectionStateReconnecting. You can call `logoutWithCompletion` to log out of the system first, and then call the `loginByToken` method to reconnect at an appropriate time.
+
+
+The RTM system responds differently per the length of time between the interruption of the connection and the successful reconnection:
+
+- If the user successfully logs in again within 30 seconds of the interruption, the connection state changes to the AgoraRtmConnectionStateConnected. The user's online state remains unchanged.
+- If the user is still offline 30 seconds after the interruption, the RTM system removes the user from the online user list and channel, and users in the same channel receive the `memberLeft` callback. If the user successfully logs in later, the connection state changes to the AgoraRtmConnectionStateConnected. The SDK automatically adds the user to the previous channel, and users in the same channel receive the `memberJoined` callback. Because the RTM system has removed the user from the online list, the SDK will also automatically synchronize user attributes to the RTM system.
+
+
+In the AgoraRtmConnectionStateReconnecting state, the SDK keeps reconnecting to the Agora RTM system. If the token expires, the SDK returns the `rtmKitTokenDidExpire` callback, which does not affect the connection state.
+
+
+### Kicked out of the RTM system
+
+If the same user ID logs in to the RTM system from another client instance, the user who is currently connected in the client instance gets kicked out by the RTM system, and the connection state changes to AgoraRtmConnectionStateAborted. You can call `logoutWithCompletion` to log out of the system first, and then call the `loginByToken` method to reconnect in an appropriate time. 
+
+### Log out of the RTM system
+
+If you call `logoutWithCompletion` to log out of the RTM system, the connection state changes to AgoraRtmConnectionStateDisconnected.
+
+## Sample code
+
+Refer to the following sample code to monitor the connection state:
+
+```
+// Monitors the connection state
+- (void)rtmKit:(AgoraRtmKit *)kit connectionStateChanged:(AgoraRtmConnectionState)state reason:(AgoraRtmConnectionChangeReason)reason {
+    NSString *message = [NSString stringWithFormat:@"connection state changed: %ld", state];
+}
+```
+
+
+## API reference
+- [`connectionStateChanged`](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Protocols/AgoraRtmDelegate.html#//api/name/rtmKit:connectionStateChanged:reason:)
+- [`AgoraRtmConnectionState`](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Constants/AgoraRtmConnectionState.html)
+- [`AgoraRtmConnectionChangeReason`](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_oc/Constants/AgoraRtmConnectionChangeReason.html)

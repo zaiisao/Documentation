@@ -83,7 +83,7 @@ The following technologies ensure that the speaker's voice always stands out fro
 
 **Voice changer**
 
-During a live broadcast, adding voice changer and reverberation effects brings much fun and enhances the atmosphere of the live room. Agora provides an enriched selection of voice changer options, which developers can easily implement by calling an API.
+During live interactive streaming, adding voice changer and reverberation effects brings much fun and enhances the atmosphere of the live room. Agora provides an enriched selection of voice changer options, which developers can easily implement by calling an API.
 
 **High-definition video**
 
@@ -100,7 +100,7 @@ For more enriched and diversified scenarios, you can easily import third-party s
 
 **Traceability**
 
-- Agora provides a variety of methods for measuring network quality. We also have callbacks that report on communication quality during a live broadcast. Use these methods to ensure a smooth experience and to troubleshoot quality issues.
+- Agora provides a variety of methods for measuring network quality. We also have callbacks that report on communication quality during live interactive streaming. Use these methods to ensure a smooth experience and to troubleshoot quality issues.
 - You can also use [Agora Analytics](https://console.agora.io/analytics/call/search) to monitor the quality, user behavior, device state, and Quality of Experience (QoE)/Quality of Service (QoS) statistics.
 
 **Compatibility**

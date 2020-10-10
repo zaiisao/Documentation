@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Fri Sep 11 2020 07:17:43 GMT+0800 (CST)
+updatedAt: Sat Oct 10 2020 07:07:37 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -14,73 +14,10 @@ The Agora Web SDK is a JavaScript library loaded by an HTML web page. The Agora 
 
 ### Compatibility
 
-See the table below for the web browser support of the Agora Web SDK:
+For the web browser support of the Agora Web SDK, see [Which browsers does the Agora Web SDK support?](https://docs.agora.io/en/faq/browser_support)
 
-<table>
-  <tr>
-    <th>Platform</th>
-    <th>Chrome 58 or later</th>
-    <th>Firefox 56 or later</th>
-    <th>Safari 11 or later</th>
-    <th>Opera 45 or later</th>
-    <th>QQ Browser 10.5 or later</th>
-    <th>360 Secure Browser</th>
-    <th>Edge Browser 80 or later</th>
-  </tr>
-   <tr>
-    <td>Android 4.1 or later</td>
-		 <td><font color="green">✔<sup>[1]</sup></td>
-    <td><font color="red">✘</td>
-		<td><b>N/A</b></td>
-    <td><font color="red">✘</td>
-    <td><font color="red">✘</td>
-    <td><font color="red">✘</td>
-    <td><font color="red">✘</td>
-  </tr>
-  <tr>
-    <td>iOS 11 or later</td>
-    <td><font color="red">✘</td>
-    <td><font color="red">✘</td>
-		<td><font color="green">✔<sup>[2]</sup></td>
-    <td><font color="red">✘</td>
-    <td><font color="red">✘</td>
-    <td><font color="red">✘</td>
-    <td><font color="red">✘</td>
-  </tr>
-  <tr>
-    <td>macOS 10 or later</td>
-    <td><font color="green">✔</td>
-    <td><font color="green">✔</td>
-    <td><font color="green">✔</td>
-    <td><font color="green">✔</td>
-    <td><font color="green">✔</td>
-    <td><font color="red">✘</td>
-    <td><font color="red">✘</td>
-  </tr>
-  <tr>
-    <td>Windows 7 or later</td>
-    <td><font color="green">✔</td>
-    <td><font color="green">✔</td>
-		<td><b>N/A</b></td>
-    <td><font color="green">✔</td>
-    <td><font color="green">✔</td>
-    <td><font color="green">✔</td>
-    <td><font color="green">✔</td>
-  </tr>
-</table>
-
-<div class="alert warning">[1] Support for H.264 relies on hardware, and some Android devices do not support the H.264 codec.<br>[2] Agora does not recommend using the Web SDK on iOS Safari. See <a href="../../en/faq/browser_support.md">iOS Safari</a> for known issues and limitations. For better support on iOS, use the <a href="https://docs.agora.io/en/Interactive%20Broadcast/downloads">Agora iOS SDK</a>.</div>
-<div class="alert warning"> Upgrade to the latest Agora Web SDK in the following scenarios:
-	<li>Safari on iOS 12.1.4 or later.</li>
-	<li>Safari 12.1 or later on macOS.</li>
-</div>
-
-Other browser support:
-
-- The Agora Web SDK v2.5 or later supports Chrome 49 on Windows XP (supports the VP8 codec only, and cannot interop with the Native SDK).
-- The Agora Web SDK theoretically supports 360 Extreme Browser, but we do not guarantee full support.
-
-> To enable interoperability between the Agora Native SDK and Agora Web SDK, use the Agora Native SDK v1.12 or later.
+<div class="alert note">To ensure better end user experience, Agora highly recommends using the <a href="https://www.google.com/chrome/">latest version</a> of Google Chrome on desktop.</div>
+<div class="alert info">To enable interoperability between the Agora Native SDK and Agora Web SDK, use the Agora Native SDK v1.12 or later.</div>
 
 ### Known issues and limitations
 

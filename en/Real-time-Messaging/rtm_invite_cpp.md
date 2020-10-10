@@ -2,8 +2,8 @@
 ---
 title: Call Invitation
 description: 
-platform: Android
-updatedAt: Sat Oct 10 2020 09:12:17 GMT+0800 (CST)
+platform: Windows C++
+updatedAt: Sat Oct 10 2020 07:50:18 GMT+0800 (CST)
 ---
 # Call Invitation
 ## Overview
@@ -41,17 +41,30 @@ The steps to send a call invitation are as follows:
 The sample code for sending a call invitation is as follows:
 
 ```
-// Gets RtmCallManager instance
-RtmCallManager = mRtmClient.getRtmCallManager();
-```
-
-```
-void inviteCall(final String peerUid, final String channel) {
-    // Creates LocalInvitation
-    LocalInvitation invitation = RtmCallManager.createLocalInvitation(peerUid);
-    invitation.setContent(channel);
-    // Sends call invitation
-    RtmCallManager.sendLocalInvitation(invitation, this);
+// The sample code is based on Qt.
+ 
+// Get call manager.
+bool CAgoraRtmInstance::InitCallManager()
+{
+    if(!m_callService)
+        return false;
+    m_callManager =m_callService->getRtmCallManager(m_callEventHandler.get());
+    return m_callManager != nullptr;
+}
+ 
+bool CAgoraRtmInstance::CallRemoteUser(QString remoteUserId)
+{
+    if(!m_callManager)
+        return false;
+    m_remoteUserId   = remoteUserId;
+		// Create the LocalInvitation.
+    m_callInvitation = m_callManager->createLocalCallInvitation(remoteUserId.toUtf8());
+    if(m_callInvitation){
+		    // Send a call invitation.
+        int ret = m_callManager->sendLocalInvitation(m_callInvitation);
+        return ret == 0 ? true : false;
+    }
+    return false;
 }
 ```
 
@@ -61,17 +74,22 @@ void inviteCall(final String peerUid, final String channel) {
 
 The caller cancels the call invitation by calling `cancelLocalInvitation`. The lifecycle of the `RemoteInvitation` ends as the callee receives the `onRemoteInvitationCanceled` callback. And then the lifecycle of the `LocalInvitation` ends as the caller receives the `onLocalInvitationCanceled` callback.
 
-![img](https://web-cdn.agora.io/docs-files/1598604551624)
+![img](https://web-cdn.agora.io/docs-files/1598604387439)
 
 The sample code for canceling a call invitation is as follows:
 
 ```
+// The sample code is based on Qt.
+ 
+ 
 // Cancel a call invitation.
-void cancelLocalInvitation() {
-        if (RtmCallManager != null && invitation != null) {
-            RtmCallManager.cancelLocalInvitation(invitation, this);
-        }
-    }
+bool CAgoraRtmInstance::CancelLocalInvitation()
+{
+    if(!m_callManager || !m_callInvitation)
+        return false;
+    int ret = m_callManager->cancelLocalInvitation(m_callInvitation);
+    return ret == 0 ? true : false;
+}
 ```
 
 
@@ -82,39 +100,49 @@ The callee accepts the call invitation by calling `acceptRemoteInvitation`. The 
 
 
 
-![img](https://web-cdn.agora.io/docs-files/1598604558155)
+![img](https://web-cdn.agora.io/docs-files/1598604394009)
 
 The sample code for accepting a call invitation is as follows:
 
 ```
-// Accept a call invitation.
-void answerCall(final RemoteInvitation invitation) {
-        if (RtmCallManager != null && invitation != null) {
-            RtmCallManager.acceptRemoteInvitation(invitation, this);
-        }
-    }
+// The sample code is based on Qt.
+ 
+ 
+//Accept a call invitation.
+bool CAgoraRtmInstance::AcceptRemoteInvitation()
+{
+    if(!m_callManager || !m_RemoteInvitation)
+        return false;
+    int ret = m_callManager->acceptRemoteInvitation(m_RemoteInvitation);
+    return ret == 0 ? true : false;
+}
 ```
 
 ###  Refuse a call invitation
 
 The callee refuses the call invitation by calling `refuseRemoteInvitation`. The lifecycle of the `RemoteInvitation` ends as the caller receives the `onRemoteInvitationRefused` callback. The lifecycle of the `LocalInvitation` ends as the caller receives the `onLocalInvitationRefused` callback.
 
-![img](https://web-cdn.agora.io/docs-files/1598604564189)
+![img](https://web-cdn.agora.io/docs-files/1598604400671)
 
 The sample code for refusing a call invitation is as follows:
 
 ```
-// Refuse a call invitation.
-void refuseRemoteInvitation(@NonNull RemoteInvitation invitation) {
-        if (RtmCallManager != null) {
-            RtmCallManager.refuseRemoteInvitation(invitation, this);
-        }
-    }
+// The sample code is based on Qt.
+ 
+ 
+//Refuse a call invitation.
+bool CAgoraRtmInstance::RefuseRemoteInvitation(IRemoteCallInvitation* invitation)
+{
+    if(!m_callManager || !m_currentRemoteInvitation)
+        return false;
+    int ret = m_callManager->refuseRemoteInvitation(invitation);
+    return ret == 0 ? true : false;
+}
 ```
 
 ##  API Reference
 
-See [Call invitation](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/index.html#callinvitation).
+See [Call invitation](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_cpp/index.html#callinvitation).
 
 ## Sample Project
 

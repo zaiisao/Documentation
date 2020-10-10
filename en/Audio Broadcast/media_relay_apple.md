@@ -3,7 +3,7 @@
 title: Co-host across Channels
 description: 
 platform: iOS,macOS
-updatedAt: Sat Oct 10 2020 02:42:57 GMT+0800 (CST)
+updatedAt: Sat Oct 10 2020 04:27:49 GMT+0800 (CST)
 ---
 # Co-host across Channels
 ## Introduction
@@ -14,6 +14,12 @@ Co-hosting across channels refers to the process where the Agora SDK relays the 
 - The audiences in the relay channels can see and hear all hosts.
 
 Co-hosting across channels applies to scenarios such as an online singing contest, where hosts of different channels interact with each other.
+
+## Sample project
+
+We provide an open-source channel media relay demo project that implements channel media relay on GitHub. You can try the demo and view the source code.
+- iOS: [ChannelMediaRelay](https://github.com/AgoraIO/API-Examples/blob/master/iOS/APIExample/Examples/Advanced/MediaChannelRelay/MediaChannelRelay.swift) 
+- macOS: [ChannelMediaRelay](https://github.com/AgoraIO/API-Examples/blob/master/macOS/APIExample/Examples/Advanced/ChannelMediaRelay/ChannelMediaRelay.swift)
 
 ## Implementation
 
@@ -89,10 +95,6 @@ func rtcEngine)(_ engine: AgoraRtcEngineKit, channelMediaRelayStateDidChange sta
 ```
 
 <div class="alert note">After calling the <code>startChannelMediaRelay</code> method, you can call the <code>updateChannelMediaRelay</code> method to add or delete the relay channels.</div>
-
-We provide an open-source channel media relay demo project that implements channel media relay on GitHub. You can try the demo and view the source code.
-- iOS: [ChannelMediaRelay](https://github.com/AgoraIO/API-Examples/blob/master/iOS/APIExample/Examples/Advanced/MediaChannelRelay/MediaChannelRelay.swift) 
-- macOS: [ChannelMediaRelay](https://github.com/AgoraIO/API-Examples/blob/master/macOS/APIExample/Examples/Advanced/ChannelMediaRelay/ChannelMediaRelay.swift)
 
 ### API Reference
 

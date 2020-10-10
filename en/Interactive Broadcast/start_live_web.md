@@ -3,7 +3,7 @@
 title: Start Live Interactive Video Streaming
 description: 
 platform: Web
-updatedAt: Fri Sep 18 2020 04:52:34 GMT+0800 (CST)
+updatedAt: Sat Oct 10 2020 07:32:02 GMT+0800 (CST)
 ---
 # Start Live Interactive Video Streaming
 <div class="alert note">Agora has released the Agora Web SDK NG, the next generation of the Agora Web SDK, which fully optimizes the internal architecture of the SDK and improves its usability. Based on Typescript, the Agora Web SDK NG uses Promises for asynchronous operations and provides more flexible and easy-to-use APIs. The Agora Web SDK NG is in the beta stage. Click <a href="https://agoraio-community.github.io/AgoraWebSDK-NG/en/">here</a> to learn more and you can submit an <a href="https://github.com/AgoraIO-Community/AgoraWebSDK-NG">issue</a> if you have any problem.</div>
@@ -20,14 +20,9 @@ You can also use this [online demo](https://webdemo.agora.io/agora-web-showcase/
 
 ## Prerequisites
 
-1. Install a browser supported by the Agora Web SDK, as shown in the following table:     <div class="alert info">Agora recommends using the latest Chrome browser.</div>
+1. Install a browser supported by the Agora Web SDK. For the supported browsers, see [Which browsers does the Agora Web SDK support?](https://docs.agora.io/en/faq/browser_support)
 
-   | Platform             | Chrome 58 or later | Firefox 56 or later | Safari 11 or later | Opera 45 or later | QQ Browser 10.5 or later | 360 Secure Browser | Edge Browser or later|
-   | :------------------- | :----------------- | :------------------ | :----------------- | :---------------- | :--------- | :----------------- | :---------------------- |
-   | Android 4.1 or later | ✔                  | ✘                   | N/A                | ✘                 | ✘          | ✘                  | ✘                       |
-   | iOS 11 or later      | ✘                  | ✘                   | ✔                  | ✘                 | ✘          | ✘                  | ✘                       |
-   | macOS 10 or later    | ✔                  | ✔                   | ✔                  | ✔                 | ✔          | ✘                  | ✘                       |
-   | Windows 7 or later   | ✔                  | ✔                   | N/A                | ✔                 | ✔          | ✔                  | ✔                      |
+<div class="alert note">To ensure better end user experience, Agora highly recommends using the <a href="https://www.google.com/chrome/">latest version</a> of Google Chrome on desktop.</div>
 
 2. Get a valid [Agora account](https://docs.agora.io/en/Agora%20Platform/sign_in_and_sign_up) and an [App ID](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#get-an-app-id).
 

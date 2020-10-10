@@ -2,8 +2,8 @@
 ---
 title: Call Invitation
 description: 
-platform: Android
-updatedAt: Sat Oct 10 2020 09:12:17 GMT+0800 (CST)
+platform: Linux Java
+updatedAt: Sat Oct 10 2020 09:12:52 GMT+0800 (CST)
 ---
 # Call Invitation
 ## Overview
@@ -114,8 +114,4 @@ void refuseRemoteInvitation(@NonNull RemoteInvitation invitation) {
 
 ##  API Reference
 
-See [Call invitation](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java/index.html#callinvitation).
-
-## Sample Project
-
-We provide a [demo project](https://github.com/AgoraIO-Usecase/Video-Calling) on GitHub. You can try the demo and view the source code.
+See [Call invitation](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_java_linux/index.html#callinvitation).
