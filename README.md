@@ -31,7 +31,7 @@ If you find minor issues such as spelling errors or broken links, you can quickl
 
    ![Commit changes](https://web-cdn.agora.io/docs-files/1601456230185)
 
-5. Now you need to create a PR to merge your changes to the current document. Click **Create a pull request**.
+5. Now you need to create a PR to merge your changes to the current document. Scroll down the page to review your changes. If you are satisfied, click **Create a pull request**.
 
    ![Create PR](https://web-cdn.agora.io/docs-files/1602216236092)
 
@@ -39,7 +39,7 @@ We will review and merge your PR as soon as possible.
 
 ## <a name="feedback"></a>Submit feedback on the documentation
 
-If you have questions about any part of our documentation or suggestions for improving it, or if the quick edit option is unavailable (for example in the API Reference), you can submit feedback on the relevant page.
+If you have questions about any part of our documentation or suggestions for improving it, or if the quick edit option is unavailable (for example, in the API Reference), you can submit feedback on the relevant page.
 
 1. Click the feedback button on the bottom right corner of the page.
 
