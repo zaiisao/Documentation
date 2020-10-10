@@ -3,7 +3,7 @@
 title: 跨直播间连麦
 description: 
 platform: iOS,macOS
-updatedAt: Fri May 08 2020 08:32:11 GMT+0800 (CST)
+updatedAt: Sat Oct 10 2020 02:43:03 GMT+0800 (CST)
 ---
 # 跨直播间连麦
 ## 功能描述
@@ -25,9 +25,9 @@ updatedAt: Fri May 08 2020 08:32:11 GMT+0800 (CST)
 
 Agora Native SDK 在 v2.9.0 中新增如下跨频道媒体流转发接口，支持将源频道中的媒体流转发至最多 4 个目标频道，实现跨直播间连麦功能：
 
-- startChannelMediaRelay
-- updateChannelMediaRelay
-- stopChannelMediaRelay
+- `startChannelMediaRelay`
+- `updateChannelMediaRelay`
+- `stopChannelMediaRelay`
 
 在跨频道媒体流转发过程中，SDK 会通过 `channelMediaRelayStateDidChange` 和 `didReceiveChannelMediaRelayEvent` 回调报告媒体流转发的状态和事件，你可以参考如下状态码或事件码的含义实现相关的业务逻辑：
 
@@ -51,47 +51,47 @@ Agora Native SDK 在 v2.9.0 中新增如下跨频道媒体流转发接口，支�
 ### 示例代码
 
 ```swift
-func getMediaRelayConfiguration() -> AgoraChannelMediaRelayConfiguration? {
-	guard let list = destinationList else {
-		alert(string: "destination list nil")
-		return nil
-	}
-	
-	let config = AgoraChannelMediaRelayConfiguration()
-	
-	if let uid = sourceUid {
-		config.sourceInfo.uid = uid
-	} else {
-		config.sourceInfo.uid = currentUid ?? 0
-	}
-	
-	if let token = sourceToken {
-		config.sourceInfo.token = token
-	}
-	
-	for item in list where item.isPrepareForMediaRelay() {
-		let info = getRelayInfoFromDestination(item)
-		config.setDestinationInfo(info, forChannelName: item.channel)
-	}
-	
-	return config
-}
+// 配置源频道信息，其中 channelName 使用当前频道名，uid 设为 0
+let config = AgoraChannelMediaRelayConfiguration()
+// 请确保生成 sourceChannelToken 的 uid 为 0
+config.sourceInfo = AgoraChannelMediaRelayInfo(token: sourceChannelToken)
+  
+// 配置目标频道信息
+let destinationInfo = AgoraChannelMediaRelayInfo(token: destinationChannelToken)
+config.setDestinationInfo(destinationInfo, forChannelName: destinationChannelName)
+// 开始跨频道媒体流转发
+agoraKit.startChannelMediaRelay(config)
 
+// 停止跨频道媒体流转发
+agoraKit.stopChannelMediaRelay()
+```
 
-if let config = getMediaRelayConfiguration() {
-	// 设置要加入的远端频道信息
-	let value = rtcEngine.startChannelMediaRelay(config)
-}
-
-if let config = getMediaRelayConfiguration() {
-	// 设置要更新的远端频道信息
-	let value = rtcEngine.updateChannelMediaRelay(config)
+```swift
+// 使用 channelMediaRelayStateDidChange 回调监控跨频道媒体流的状态
+func rtcEngine)(_ engine: AgoraRtcEngineKit, channelMediaRelayStateDidChange state: AgoraChannelMediaRelayState, error: AgoraChannelMediaRelayError) {
+  LogUtils.log(message: "channelMediaRelayStateDidChange: \(state.rawVlue) error \(error.rawValue)", level: .info)
+  
+  switch(state){
+    case .running:
+        isRelaying = true
+        break
+    case .failure:
+        showAlert(message: "Media Relay Failed: \(error.rawValue)")
+        isRelaying = false
+        break
+    case .idle:
+        isRelaying = false
+        break
+    default:break
+  }
 }
 ```
 
-<div class="alert note"><code>updateChannelMediaRelay</code> 方法需在 <code>startChannelMediaRelay</code> 后调用。</div>
+<div class="alert note">在跨频道过程中，如果需要更新跨频道媒体流转发的信息，则可以在  <code>startChannelMediaRelay</code> 后调用<code>updateChannelMediaRelay</code> 方法。</div>
 
-我们在 GitHub 提供了一个开源的 [Cross-Channel-OpenLive-iOS](https://github.com/AgoraIO/Advanced-Video/tree/dev/backup/Cross-Channel/Cross-Channel-OpenLive-iOS) 示例项目，你可以前往下载，并参考其中的源代码。
+我们在 GitHub 提供了开源的跨频道媒体流转发示例项目，你可以前往下载，并参考其中的源代码。
+- iOS: [ChannelMediaRelay](https://github.com/AgoraIO/API-Examples/blob/master/iOS/APIExample/Examples/Advanced/MediaChannelRelay/MediaChannelRelay.swift) 
+- macOS: [ChannelMediaRelay](https://github.com/AgoraIO/API-Examples/blob/master/macOS/APIExample/Examples/Advanced/ChannelMediaRelay/ChannelMediaRelay.swift)
 
 ### API 参考
 

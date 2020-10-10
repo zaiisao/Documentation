@@ -22,9 +22,9 @@ updatedAt: Fri May 08 2020 08:31:45 GMT+0800 (CST)
 
 Agora Native SDK 在 v2.9.0 中新增如下跨频道媒体流转发接口，支持将源频道中的媒体流转发至最多 4 个目标频道，实现跨直播间连麦功能：
 
-- startChannelMediaRelay
-- updateChannelMediaRelay
-- stopChannelMediaRelay
+- `startChannelMediaRelay`
+- `updateChannelMediaRelay`
+- `stopChannelMediaRelay`
 
 在跨频道媒体流转发过程中，SDK 会通过 `onChannelMediaRelayStateChanged` 和 `onChannelMediaRelayEvent` 回调报告媒体流转发的状态和事件，你可以参考如下状态码或事件码的含义实现相关的业务逻辑：
 

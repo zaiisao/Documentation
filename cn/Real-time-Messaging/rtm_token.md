@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 16 2020 09:53:43 GMT+0800 (CST)
+updatedAt: Fri Oct 09 2020 10:16:42 GMT+0800 (CST)
 ---
 # 校验用户权限
 为保证通信安全，当用户登录 RTM 系统时，Agora 需要对其鉴权。Agora 提供如下鉴权方案，你可以根据自己的实际使用场景，选择合适的鉴权方式：
@@ -80,27 +80,10 @@ App 证书是 Agora 控制台为开发项目生成的字符串。根据不同的
 
 我们在 GitHub 上提供了一个开源的 [Agora Dynamic Key](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey) 仓库。`./<language>/src` 文件夹下包含生成各种版本的 Dynamic key 和 RTM Token 的源码。你可以使用 `RtmTokenBuilder` 生成 RTM Token。`./<language>/sample` 文件夹下包含用于演示 RTM Token 生成的示例代码。`RtmTokenBuilderSample` 可以用来演示如何生成 RTM Token。
 
+关于生成 RTM Token 的方法详见[生成 RTM Token](../../cn/Real-time-Messaging/token_server_rtm.md)。
+
 <div class="alert note">RTM Token 采用业界标准化的 HMAC/SHA1 加密方案，在 Node.js、Java、Python、C++ 等绝大多数通用的服务端开发平台上均可获得所需加密库。具体加密方案可参考 <a href="http://en.wikipedia.org/wiki/Hash-based_message_authentication_code">Authentication code</a >。</div>
 
-`RtmTokenBuilder` 参数说明（C++）
-
-```c++
-static std::string buildToken(const std::string& appId,
-                                const std::string& appCertificate,
-                                const std::string& userAccount,
-                                RtmUserRole userRole,
-                                uint32_t privilegeExpiredTs = 0);
-```
-
-| 参数               | 描述                                                         |
-| :----------------- | :----------------------------------------------------------- |
-| appId              | 你的项目 App ID。                                            |
-| appCertificate     | 你的项目 App 证书。                                          |
-| userAccount        | RTM 系统用户 ID。                                   |
-| userRole           | 用户角色。暂时只支持一种角色，请使用默认值 `Rtm_User`。 |
-| privilegeExpiredTs | 此参数暂不生效。你无需设置此参数。 |
-
-<div class="alert note">每个 RTM Token 的有效期都是 24 小时。</div>
 
 **4. 更换和删除 App 证书**
 
