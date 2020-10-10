@@ -1,11 +1,11 @@
 
 ---
-title: 播放音效与混音文件
+title: 播放音频文件
 description: How to play audio effect files and enable audio mixing
 platform: iOS,macOS
-updatedAt: Mon Jul 06 2020 03:46:47 GMT+0800 (CST)
+updatedAt: Sat Oct 10 2020 04:36:42 GMT+0800 (CST)
 ---
-# 播放音效与混音文件
+# 播放音频文件
 ## 功能描述
 
 在通话或直播过程中，除了用户自己说话的声音，有时候需要播放自定义的声音或者音乐文件并且让频道内的其他人也听到，比如需要给游戏添加音效，或者需要播放背景音乐等，Agora 提供以下两组方法可以满足播放音效和音乐文件的需求。
@@ -13,6 +13,13 @@ updatedAt: Mon Jul 06 2020 03:46:47 GMT+0800 (CST)
 开始前请确保已在你的项目中实现基本的实时音视频功能。详见快速开始文档：
 - iOS: [实现音视频通话](../../cn/Audio%20Broadcast/start_call_ios.md)/[实现互动直播](../../cn/Audio%20Broadcast/start_live_ios.md)
 - macOS: [实现音视频通话](../../cn/Audio%20Broadcast/start_call_mac.md)/[实现互动直播](../../cn/Audio%20Broadcast/start_live_mac.md)
+
+## 示例项目
+
+我们在 GitHub 上提供已实现播放混音和音效文件功能的开源示例项目。你可以下载体验并参考源代码。
+
+- iOS: [AudioMixing](https://github.com/AgoraIO/API-Examples/blob/master/iOS/APIExample/Examples/Advanced/AudioMixing/AudioMixing.swift)
+- macOS: [AudioMixing](https://github.com/AgoraIO/API-Examples/blob/master/macOS/APIExample/Examples/Advanced/AudioMixing/AudioMixing.swift)
 
 ## 播放音效文件
 
@@ -29,7 +36,7 @@ updatedAt: Mon Jul 06 2020 03:46:47 GMT+0800 (CST)
 在开始播放音效后你还可以调用其他音效相关的方法实现更多功能，包括暂停播放音效、设置音效音量、释放预加载的音效等。
 
 ```swift
-// swift
+// Swift
 // 预加载音效（推荐），需注意音效文件的大小，并在加入频道前完成加载
 // 仅支持 mp3，aac，m4a，3gp，wav 格式
 // 开发者可能需要额外记录 id 与文件路径的关联关系，用来播放和停止音效
@@ -55,9 +62,12 @@ agoraKit.pauseAllEffects()
 // 获取音效的音量，范围为 0 ~ 100
 let volume = agoraKit.getEffectsVolume()
 
-// 保证音效音量在原始音量的 80% 以上
+// 保证所有音效文件的播放音量在原始音量的 80% 以上
 volume = volume < 80 ? 80 : volume
 agoraKit.setEffectsVolume(volume)
+
+// 设置指定音效文件的播放音量为原始音量的 50%
+agoraKit.setVolumeOfEffect(soundId:"1", 50)
 
 // 继续播放暂停的音效
 agoraKit.resumeAllEffects()
@@ -67,7 +77,7 @@ agoraKit.stopAllEffects()
 ```
 
 ```objective-c
-// objective-c
+// Objective-C
 // 预加载音效（推荐），需注意音效文件的大小，并在加入频道前完成加载
 // 仅支持 mp3，aac，m4a，3gp，wav 格式
 // 开发者可能需要额外记录 id 与文件路径的关联关系，用来播放和停止音效
@@ -94,9 +104,12 @@ BOOL publish = true;
 // 获取音效的音量，范围为 0 ~ 100
 int volume = [agoraKit getEffectsVolume];
 
-// 保证音效音量在原始音量的 80% 以上
+// 保证所有音效文件的播放音量在原始音量的 80% 以上
 volume = volume < 80 ? 80 : volume;
 [agoraKit setEffectsVolume: volume];
+
+// 设置指定音效文件的播放音量为原始音量的 50%
+[agoraKit setVolumeOfEffect: soundId:@"1" volume:50];
 
 // 继续播放暂停的音效
 [agoraKit resumeAllEffects];
@@ -112,6 +125,7 @@ volume = volume < 80 ? 80 : volume;
 - [`pauseAllEffects`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/pauseAllEffects)
 - [`getEffectsVolume`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getEffectsVolume)
 - [`setEffectsVolume`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setEffectsVolume:)
+- [`setVolumeOfEffect`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVolumeOfEffect:withVolume:)
 - [`resumeAllEffects`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/resumeAllEffects)
 - [`stopAllEffects`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopAllEffects)
 
@@ -133,7 +147,7 @@ Agora 混音功能支持如下设置：
 ### 实现方法
 
 ```swift
-// swift
+// Swift
 // loopback 为 true 只有本地可以听到混音或替换后的音频流; 为 false 本地和对方都可以听到混音或替换后的音频流
 // replace 为 true 只推送设置的本地音频文件或者线上音频文件; 不传输麦克风收录的音频, 为 false 音频文件内容将会和麦克风采集的音频流进行混音
 // cycle 为 -1 代表永久循环；其它 >0 的整数表示预设混音播放的循环次数
@@ -144,10 +158,13 @@ let cycle = 1
   
 // 开始播放混音
 agoraKit.startAudioMixing(filePath, loopback: loopback, replace: replace, cycle: cycle)
+
+// 设置混音音量。将本地及远端用户听到的音乐文件音量设置为原始音量的 50%。
+agoraKit.adjustAudioMixingVolume(50)
 ```
 
 ```objective-c
-// objective-c
+// Objective-C
 // loopback 为 YES 只有本地可以听到混音或替换后的音频流; 为 NO 本地和对方都可以听到混音或替换后的音频流
 // replace 为 true 只推送设置的本地音频文件或者线上音频文件; 不传输麦克风收录的音频, 为 false 音频文件内容将会和麦克风采集的音频流进行混音
 // cycle 为 -1 代表永久循环；其它 >0 的整数表示预设混音播放的循环次数
@@ -158,24 +175,38 @@ NSInteger cycle = 1;
 
 // 开始播放混音
 [agoraKit startAudioMixing: filePath loopback: loopback replace: replace cycle: cycle];
+
+// 设置混音音量。将本地及远端用户听到的音乐文件音量设置为原始音量的 50%
+[agoraKit adjustAudioMixingVolume: 50];
 ```
 
-同时，我们在 GitHub 上提供已实现混音功能的开源示例项目。你可以下载体验并参考源代码。
+你也可以通过 `adjustAudioMixingPlayoutVolume` 方法和 `adjustAudioMixingPublishVolume` 方法分别调节本地用户和远端用户听到的混音音量。其中 `volume` 的取值范围为 [0, 100]。
 
-**iOS**
+```swift
+// Swift
+// 将远端用户听到的音乐文件音量设置为原始音量的 50%
+agoraKit.adjustAudioMixingPublishVolume(50)
+// 将本地用户听到的音乐文件音量设置为原始音量的 50%
+agoraKit.adjustAudioMixingPlayoutVolume(50)
+```
 
-- Swift 项目：[OpenVideoCall-iOS](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-iOS)，参考 [`RoomViewController.swift`](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-iOS/OpenVideoCall/RoomViewController.swift#L45) 中的代码。
-- Objective-C 项目：[OpenVideoCall-iOS-Objective-C](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-iOS-Objective-C)，参考 [`RoomViewController.m`](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-iOS-Objective-C/OpenVideoCall/RoomViewController.m#L60) 中的代码。
+```objective-c
+// Objective-C
+// 将远端用户听到的音乐文件音量设置为原始音量的 50%
+[agoraKit adjustAudioMixingPublishVolume: 50];
+// 将本地用户听到的音乐文件音量设置为原始音量的 50%
+[agoraKit adjustAudioMixingPlayoutVolume: 50];
+```
 
-**macOS**
-
-- Swift 项目：[OpenVideoCall-macOS](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-macOS)，参考 [`RoomViewController.swift`](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-macOS/OpenVideoCall/RoomViewController.swift#L232) 中的代码。
+<div class="alert note">adjustAudioMixingPlayoutVolume 方法和 adjustAudioMixingPublishVolume 方法要在加入频道后调用。</div>
 
 ### API 参考
 
 - [`startAudioMixing`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startAudioMixing:loopback:replace:cycle:)
 - [`stopAudioMixing`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopAudioMixing)
 - [`adjustAudioMixingVolume`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingVolume:)
+- [`adjustAudioMixingPublishVolume`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingPublishVolume:)
+- [`adjustAudioMixingPlayoutVolume`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingPlayoutVolume:)
 - [`setLocalVoicePitch`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoicePitch:)
 - [`setAudioMixingPitch`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setAudioMixingPitch:)
 - [`pauseAudioMixing`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/pauseAudioMixing)

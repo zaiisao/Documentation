@@ -3,7 +3,7 @@
 title: 跨直播间连麦
 description: 
 platform: iOS,macOS
-updatedAt: Sat Oct 10 2020 02:43:03 GMT+0800 (CST)
+updatedAt: Sat Oct 10 2020 04:27:12 GMT+0800 (CST)
 ---
 # 跨直播间连麦
 ## 功能描述
@@ -14,6 +14,12 @@ updatedAt: Sat Oct 10 2020 02:43:03 GMT+0800 (CST)
 - 频道中的观众可以看到所有主播，并听到主播的声音。
 
 该功能因其实时性和互动性，尤其适用于连麦 PK、在线合唱等直播场景，在增加直播趣味的同时，有效吸粉。
+
+## 示例项目
+
+我们在 GitHub 提供了开源的跨频道媒体流转发示例项目，你可以前往下载，并参考其中的源代码。
+- iOS: [ChannelMediaRelay](https://github.com/AgoraIO/API-Examples/blob/master/iOS/APIExample/Examples/Advanced/MediaChannelRelay/MediaChannelRelay.swift) 
+- macOS: [ChannelMediaRelay](https://github.com/AgoraIO/API-Examples/blob/master/macOS/APIExample/Examples/Advanced/ChannelMediaRelay/ChannelMediaRelay.swift)
 
 ## 实现方法
 
@@ -89,9 +95,6 @@ func rtcEngine)(_ engine: AgoraRtcEngineKit, channelMediaRelayStateDidChange sta
 
 <div class="alert note">在跨频道过程中，如果需要更新跨频道媒体流转发的信息，则可以在  <code>startChannelMediaRelay</code> 后调用<code>updateChannelMediaRelay</code> 方法。</div>
 
-我们在 GitHub 提供了开源的跨频道媒体流转发示例项目，你可以前往下载，并参考其中的源代码。
-- iOS: [ChannelMediaRelay](https://github.com/AgoraIO/API-Examples/blob/master/iOS/APIExample/Examples/Advanced/MediaChannelRelay/MediaChannelRelay.swift) 
-- macOS: [ChannelMediaRelay](https://github.com/AgoraIO/API-Examples/blob/master/macOS/APIExample/Examples/Advanced/ChannelMediaRelay/ChannelMediaRelay.swift)
 
 ### API 参考
 

@@ -3,7 +3,7 @@
 title: 调整通话音量
 description: How to adjust volume on iOS
 platform: iOS
-updatedAt: Tue Aug 18 2020 10:23:04 GMT+0800 (CST)
+updatedAt: Sat Oct 10 2020 04:35:24 GMT+0800 (CST)
 ---
 # 调整通话音量
 ## 功能描述
@@ -15,6 +15,10 @@ updatedAt: Tue Aug 18 2020 10:23:04 GMT+0800 (CST)
 本文梳理了在使用 SDK 从音频采集到播放各阶段中，用户可能需要调整音量的场景、各场景对应的 API 及其使用注意事项。
 
 ![](https://web-cdn.agora.io/docs-files/1578022890462)
+
+## 示例项目
+
+我们在 GitHub 上提供已实现调整录音、播放、耳返音量的开源示例项目 [JoinChannelAudio](https://github.com/AgoraIO/API-Examples/blob/master/iOS/APIExample/Examples/Basic/JoinChannelAudio/JoinChannelAudio.swift)。你可以下载体验并参考源代码。
 
 ## 实现方法
 在调整通话音量前，请确保已在你的项目中实现基本的实时音视频功能。详见[实现音视频通话](../../cn/Audio%20Broadcast/start_call_ios.md)或[实现互动直播](../../cn/Audio%20Broadcast/start_live_ios.md)。
@@ -90,103 +94,6 @@ agoraKit.adjustUserPlaybackSignalVolume(uid, volume: 50)
 - [`adjustPlaybackSignalVolume`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustPlaybackSignalVolume:)
 - [`adjustUserPlaybackSignalVolume`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustUserPlaybackSignalVolume:volume:)
 - [`adjustAudioMixingPlayoutVolume`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingPlayoutVolume:)
-
-### 设置混音音量
-
-混音是指播放本地或者在线音乐文件，同时让频道内的其他人听到此音乐。你可以参考[播放音效/混音](../../cn/Audio%20Broadcast/audio_effect_mixing_apple.md)开启混音功能。
-
-![](https://web-cdn.agora.io/docs-files/1578023131879)
-
-你可以直接调用 `adjustAudioMixingVolume`，同时调节本地及远端用户听到的音乐文件混音音量。
-
-该方法中 `volume` 参数表示音乐文件的音量，取值范围为 [0, 100]。默认值 100 表示原始文件音量，即不对信号做缩放。0 表示混音音乐文件播放静音。
-
-#### 示例代码
-
-```swift
-// swift
-// 将本地及远端用户听到的音乐文件音量设置为原始音量的 50%。
-agoraKit.adjustAudioMixingVolume(50)
-```
-
-```objective-c
-// objective-c
-// 将本地及远端用户听到的音乐文件音量设置为原始音量的 50%。
-[agoraKit adjustAudioMixingVolume: 50];
-```
-
-你也可以通过 `adjustAudioMixingPlayoutVolume` 方法和 `adjustAudioMixingPublishVolume` 方法分别调节混音音量。
-- `adjustAudioMixingPlayoutVolume`：
-  - 用于调节音乐文件在本地播放的混音音量。
-  - 该方法中 `volume` 参数表示音乐文件在本地播放的混音音量，取值范围为 [0, 100]。
-- `adjustAudioMixingPublishVolume`：
-  - 用于调节音乐文件在远端播放的混音音量。
-  - 该方法中 `volume` 参数表示音乐文件在远端播放的混音音量，取值范围为 [0, 100]。
-
-<div class="alert note">adjustAudioMixingPlayoutVolume 方法和 adjustAudioMixingPublishVolume 方法要在加入频道后调用。</div>
-
-#### 示例代码
-
-```swift
-// swift
-// 将远端用户听到的音乐文件音量设置为原始音量的 50%。
-agoraKit.adjustAudioMixingPublishVolume(50)
-// 将本地用户听到的音乐文件音量设置为原始音量的 50%。
-agoraKit.adjustAudioMixingPlayoutVolume(50)
-```
-
-```objective-c
-// objective-c
-// 将远端用户听到的音乐文件音量设置为原始音量的 50%。
-[agoraKit adjustAudioMixingPublishVolume: 50];
-// 将本地用户听到的音乐文件音量设置为原始音量的 50%。
-[agoraKit adjustAudioMixingPlayoutVolume: 50];
-```
-
-#### API 参考
-
-- [`adjustAudioMixingPublishVolume`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingPublishVolume:)
-- [`adjustAudioMixingPlayoutVolume`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingPlayoutVolume:)
-- [`adjustAudioMixingVolume`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingVolume:)
-
-### 设置音效音量
-
-播放音效是指播放短小的音频，如鼓掌、子弹撞击的声音等。你可以参考[播放音效/混音](../../cn/Audio%20Broadcast/audio_effect_mixing_apple.md)开启音效播放。
-
-![](https://web-cdn.agora.io/docs-files/1578023363870)
-
-使用播放设备播放音效音量时，你可以通过 `setEffectsVolume` 方法或 `setVolumeOfEffect` 方法设置音效文件在本地的播放音量。
-- `setEffectsVolume`：
-  - 用于设置所有音效文件的播放音量。
-  - 该方法中 `volume` 参数表示音效文件的音量，取值范围为 [0, 100]。
-- `setVolumeOfEffect`：
-  - 用于设置指定音效文件的播放音量。
-  - 该方法中 `volume` 参数表示音效文件的音量，取值范围为 [0, 100]。
-
-#### 示例代码
-
-```swift
-// swift
-// 将所有音效文件的播放音量设置为原始音量的 50%。
-agoraKit.setEffectsVolume(50.0)
-// 将单个音效文件的播放音量设置为原始音量的 50%。
-// @param soundId 是你在调用 playEffect 时设置的音效 ID。
-agoraKit.setVolumeOfEffect(soundId:"1", 50.0)
-```
-
-```objective-c
-// objective-c
-// 将所有音效文件的播放音量设置为原始音量的 50%。
-[agoraKit setEffectsVolume: 50.0];
-// 将单个音效文件的播放音量设置为原始音量的 50%。
-// @param soundId 是你在调用 playEffect 时设置的音效 ID。
-[agoraKit setVolumeOfEffect: soundId:@"1" volume:50.0];
-```
-
-#### API 参考
-
-- [`setEffectsVolume`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setEffectsVolume:)
-- [`setVolumeOfEffect`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVolumeOfEffect:withVolume:)
 
 ### 设置耳返音量
 
@@ -280,6 +187,8 @@ func rtcEngine(_ engine: AgoraRtcEngineKit, activeSpeaker speakerUid: UInt) {
 
 ## 相关链接
 
+
 实现调整通话音量过程中，你还可以参考如下文档：
 
+- 如果想调整混音或音效文件的播放音量，可以参考[播放音频文件](../../cn/Audio%20Broadcast/audio_effect_mixing_apple.md)。
 - [如何处理音量太小问题？](https://docs.agora.io/cn/faq/audio_low)

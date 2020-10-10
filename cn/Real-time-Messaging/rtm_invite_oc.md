@@ -2,7 +2,7 @@
 ---
 title: 呼叫邀请
 description: 
-platform: iOS,macOS
+platform: iOS
 updatedAt: Fri Jul 17 2020 06:41:45 GMT+0800 (CST)
 ---
 # 呼叫邀请

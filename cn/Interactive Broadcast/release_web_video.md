@@ -3,86 +3,22 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Fri Sep 11 2020 07:17:55 GMT+0800 (CST)
+updatedAt: Sat Oct 10 2020 06:58:48 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
 
 ## 概览
 
-Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库在网页浏览器中调用 API 建立连接，控制音视频通话和直播服务。点击[语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms)、[视频通话产品概述](https://docs.agora.io/cn/Video/product_video?platform=All%20Platforms) 以及[互动直播产品概述](https://docs.agora.io/cn/Interactive%20Broadcast/product_live?platform=All%20Platforms)了解关键特性。
+Agora Web SDK 是通过 HTML 网页加载的 JavaScript 库。 Agora Web SDK 库在网页浏览器中调用 API 建立连接，控制音视频通话和直播服务。点击[语音通话产品概述](https://docs.agora.io/cn/Voice/product_voice?platform=All%20Platforms)、[视频通话产品概述](https://docs.agora.io/cn/Video/product_video?platform=All%20Platforms)以及[互动直播产品概述](https://docs.agora.io/cn/Interactive%20Broadcast/product_live?platform=All%20Platforms)了解关键特性。
 
 ### 兼容性说明
 
-下表列出目前 Agora Web SDK 对浏览器的支持情况：
+Agora Web SDK 对浏览器的支持情况详见 [Agora Web SDK 支持哪些浏览器？](https://docs.agora.io/cn/faq/browser_support)
 
-<table>
-  <tr>
-    <th>平台</th>
-    <th>Chrome 58+</th>
-    <th>Firefox 56+</th>
-    <th>Safari 11+</th>
-    <th>Opera 45+</th>
-    <th>QQ 浏览器 10.5+</th>
-    <th>360 安全浏览器</th>
-    <th>Edge 浏览器 80+</th>
-  </tr>
-  <tr>
-    <td>Android 4.1+</td>
-		<td><font color="green">✔<sup>[1]</sup></td>
-    <td><font color="red">✘</td>
-		<td><b>N/A</b></td>
-    <td><font color="red">✘</td>
-    <td><font color="red">✘</td>
-    <td><font color="red">✘</td>
-    <td><font color="red">✘</td>
-  </tr>
-  <tr>
-    <td>iOS 11+</td>
-    <td><font color="red">✘</td>
-    <td><font color="red">✘</td>
-		<td><font color="green">✔<sup>[2]</sup></td>
-    <td><font color="red">✘</td>
-    <td><font color="red">✘</td>
-    <td><font color="red">✘</td>
-    <td><font color="red">✘</td>
-  </tr>
-  <tr>
-    <td>macOS 10+</td>
-    <td><font color="green">✔</td>
-    <td><font color="green">✔</td>
-    <td><font color="green">✔</td>
-    <td><font color="green">✔</td>
-    <td><font color="green">✔</td>
-    <td><font color="red">✘</td>
-    <td><font color="red">✘</td>
-  </tr>
-  <tr>
-    <td>Windows 7+</td>
-    <td><font color="green">✔</td>
-    <td><font color="green">✔</td>
-		<td><b>N/A</b></td>
-    <td><font color="green">✔</td>
-    <td><font color="green">✔</td>
-    <td><font color="green">✔</td>
-    <td><font color="green">✔</td>
-  </tr>
-</table>
+<div class="alert note">为保证最佳的用户体验，Agora 强烈推荐使用桌面端 Google Chrome 浏览器<a href="https://www.google.com/intl/zh-CN/chrome/">官方最新版本</a>。</div>
 
-<div class="alert warning">[1] Android Chrome 对 H.264 的支持依赖硬件，部分 Android 设备不支持 H.264 编解码。<br>
-	[2] iOS Safari 上存在较多<a href="../../cn/faq/browser_support.md">已知问题</a>，Agora 不推荐使用。你可以使用 <a href="https://docs.agora.io/cn/Interactive%20Broadcast/downloads">Agora iOS SDK</a> 在 iOS 上实现实时音视频功能。</div>
-
-<div class="alert warning">以下场景中请务必将 Agora Web SDK 升级至最新版本:
-	<li>iOS 12.1.4 及以上版本使用 Safari 浏览器。</li>
-	<li>macOS 上使用 Safari 12.1 及以上版本。</li>
-	</div>
-	
-除上表浏览器外，还有以下支持：
-
-- Agora Web SDK 2.5 及以上版本支持 Windows XP 平台的 Chrome 49 版本浏览器（仅支持 VP8 编解码，不能与 Native SDK 互通）。
-- Agora Web SDK 理论上还支持 360 极速浏览器，但未经过验证，不保证全部功能正常工作。
-
-> 如需实现 Agora Native SDK 与 Agora Web SDK 的互通，必须将 Agora Native SDK 升级至 1.12 及以上版本。
+<div class="alert info">如需实现 Agora Native SDK 与 Agora Web SDK 的互通，必须将 Agora Native SDK 升级至 1.12 及以上版本。</div>
 
 ### 已知问题和局限性
 

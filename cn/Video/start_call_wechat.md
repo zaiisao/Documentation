@@ -3,7 +3,7 @@
 title: 实现视频通话
 description: wechat call 
 platform: 微信小程序
-updatedAt: Fri Oct 09 2020 14:21:56 GMT+0800 (CST)
+updatedAt: Sat Oct 10 2020 04:08:46 GMT+0800 (CST)
 ---
 # 实现视频通话
 本文介绍如何使用 Agora 微信小程序 SDK 快速实现视频通话。
@@ -97,6 +97,8 @@ Agora 在 GitHub 上提供一个开源的实时音视频示例项目 [Agora-Mini
 完成开发环境准备后，你可以参考下图中的业务流程图，在你的项目中实现通话功能。
 
 ![](https://web-cdn.agora.io/docs-files/1568008978759)
+
+<div class="alert note">-2301 和 -1307 是微信小程序  live-player 和 live-pusher 组件的状态码，表示网络断连，需要自行重启。详见微信小程序 <a href="https://developers.weixin.qq.com/miniprogram/dev/component/live-player.html">live-player</a > 和 <a href="https://developers.weixin.qq.com/miniprogram/dev/component/live-pusher.html">live-pusher</a > 组件文档。</div>
 
 ### 1. 初始化客户端对象
 
@@ -262,5 +264,5 @@ client.leave(onSuccess, onFailure);
 使用微信小程序 SDK 开发过程中，你还可以参考如下文档：
 
 * [小程序 SDK 常见问题集](https://docs.agora.io/cn/faq/wechat)
-* [错误码和警告码](../../cn/Video/the_error_wechat.md)
+* [错误码和警告码](https://docs.agora.io/cn/Video/error_rtc?platform=All%20Platforms#微信小程序)
 
