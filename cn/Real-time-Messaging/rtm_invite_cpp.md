@@ -3,7 +3,7 @@
 title: 呼叫邀请
 description: 
 platform: Windows CPP
-updatedAt: Sat Oct 10 2020 09:49:09 GMT+0800 (CST)
+updatedAt: Sat Oct 10 2020 09:53:17 GMT+0800 (CST)
 ---
 # 呼叫邀请
 ## 概述
@@ -100,7 +100,7 @@ bool CAgoraRtmInstance::CancelLocalInvitation()
 
 ### 接受呼叫邀请
 
-被叫调用 `acceptRemoteInvitation` 接受呼叫邀请。主叫收到 `onRemoteInvitationAccepted` 回调，此时 `RemoteInvitation` 生命周期结束。主叫收到 `onLocalInvitationAccepted` 回调，此时 `LocalInvitation` 生命周期结束。
+被叫从 `onRemoteInvitationReceived` 回调获取 `RemoteInvitation` 并调用 `acceptRemoteInvitation` 接受呼叫邀请。主叫收到 `onRemoteInvitationAccepted` 回调，此时 `RemoteInvitation` 生命周期结束。主叫收到 `onLocalInvitationAccepted` 回调，此时 `LocalInvitation` 生命周期结束。
 
 ![](https://web-cdn.agora.io/docs-files/1598604332061)
 
@@ -108,21 +108,24 @@ bool CAgoraRtmInstance::CancelLocalInvitation()
 
 ```
 // 示例代码基于 Qt
- 
- 
-//接受呼叫邀请
-bool CAgoraRtmInstance::AcceptRemoteInvitation()
+
+// 从 onRemoteInvitationReceived 回调获取 RemoteInvitation
+void onRemoteInvitationReceived(void* invitation)
 {
-    if(!m_callManager || !m_RemoteInvitation)
-        return false;
-    int ret = m_callManager->acceptRemoteInvitation(m_RemoteInvitation);
+    IRemoteCallInvitation* remoteInvitation = (IRemoteCallInvitation*)invitation;
+}
+
+// 接受呼叫邀请
+bool CAgoraRtmInstance::AcceptRemoteInvitation(IRemoteCallInvitation* invitation)
+{
+    int ret = m_callManager->acceptRemoteInvitation(invitation);
     return ret == 0 ? true : false;
 }
 ```
 
 ###  拒绝呼叫邀请
 
-被叫调用 `refuseRemoteInvitation` 拒绝呼叫邀请。主叫收到 `onRemoteInvitationRefused` 回调，此时 `RemoteInvitation` 生命周期结束。主叫收到 `onLocalInvitationRefused` 回调，此时 `LocalInvitation` 生命周期结束。
+被叫从 `onRemoteInvitationReceived` 回调获取 `RemoteInvitation` 并调用 `refuseRemoteInvitation` 拒绝呼叫邀请。主叫收到 `onRemoteInvitationRefused` 回调，此时 `RemoteInvitation` 生命周期结束。主叫收到 `onLocalInvitationRefused` 回调，此时 `LocalInvitation` 生命周期结束。
 
 ![](https://web-cdn.agora.io/docs-files/1598604339097)
 
@@ -130,13 +133,16 @@ bool CAgoraRtmInstance::AcceptRemoteInvitation()
 
 ```
 // 示例代码基于 Qt
- 
+
+// 从 onRemoteInvitationReceived 回调获取 RemoteInvitation
+void onRemoteInvitationReceived(void* invitation)
+{
+    IRemoteCallInvitation* remoteInvitation = (IRemoteCallInvitation*)invitation;
+}
  
 //拒绝呼叫邀请
-bool CAgoraRtmInstance::RefuseRemoteInvitation(IRemoteCallInvitation* invitation)
+bool RefuseRemoteInvitation(IRemoteCallInvitation* invitation)
 {
-    if(!m_callManager || !m_currentRemoteInvitation)
-        return false;
     int ret = m_callManager->refuseRemoteInvitation(invitation);
     return ret == 0 ? true : false;
 }
