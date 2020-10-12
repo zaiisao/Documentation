@@ -3,7 +3,7 @@
 title: H5 实时直播
 description: 
 platform: Web
-updatedAt: Fri Jun 12 2020 09:56:09 GMT+0800 (CST)
+updatedAt: Mon Oct 12 2020 02:36:41 GMT+0800 (CST)
 ---
 # H5 实时直播
 ## 功能简介
@@ -155,7 +155,7 @@ rtsStream 对象是一个特殊的用于接收和播放软解码流的对象，�
 - 原有 SDK 中的 Stream 对象实际是封装了 WebRTC 的 [MediaStream](https://developer.mozilla.org/zh-CN/docs/Web/API/MediaStream) 音视频流。 
 - rtsStream 通过我们实现的软件解码器输出音视频流，不支持 MediaStream 相关的方法和功能。
 
-rtsStream 对象中的 API 是完全对照 SDK 原有 Stream 的 API 实现的，但是只实现了与订阅流相关的方法，详见[开发注意事项](#audience)。
+rtsStream 对象中的 API 是完全对照 SDK 原有 Stream 的 API 实现的，但是只实现了与订阅流相关的方法，详见[开发注意事项](#rtsnote)。
 
 ### 订阅 rtsStream
 
@@ -173,7 +173,7 @@ client.subscribe(stream, { video: true, audio: true }, console.log);
 - 在代理 Client 以后，Client 的事件中，没有 `"active-speaker"`。
 - 使用 H5 实时直播组件时，不要调用会长时间阻塞主线程的方法，如 `Window.alert()`。
 - 受浏览器策略影响，在 iOS 平台所有的网页端以及 Android 平台的 Chrome 70+ 浏览器上，音频不会自动播放，我们建议通过用户手势触发播放订阅的流，详情请参考[处理浏览器的自动播放策略](../../cn/Interactive%20Broadcast/autoplay_policy_web.md)。
-- rtsStream 对象不同于 Agora Web SDK 原有的 Stream 对象：
+- <a name="rtsnote"></a>rtsStream 对象不同于 Agora Web SDK 原有的 Stream 对象：
   - rtsStream 没有事件抛出。
   - rtsStream 不支持 `getTrack` 和 `enableAudioVolumeIndicator` 方法。
   - rtsStream 支持的方法如下：
