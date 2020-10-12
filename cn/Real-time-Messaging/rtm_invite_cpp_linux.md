@@ -2,8 +2,8 @@
 ---
 title: 呼叫邀请
 description: 
-platform: Android
-updatedAt: Sun Oct 11 2020 13:08:54 GMT+0800 (CST)
+platform: Linux CPP
+updatedAt: Sat Oct 10 2020 10:59:09 GMT+0800 (CST)
 ---
 # 呼叫邀请
 ## 概述
@@ -40,41 +40,13 @@ Agora RTM SDK 提供的呼叫邀请功能仅实现了呼叫邀请的基本控制
 1. 主叫通过调用 `createLocalInvitation` 创建 `LocalInvitation`。此时 `LocalInvitation` 生命周期开始。
 2. 主叫调用 `sendLocalInvitation` 发送呼叫邀请。被叫收到 `onRemoteInvitationReceived` 回调，此时 `RemoteInvitation` 生命周期开始。主叫收到 `onLocalInvitationReceivedByPeer` 回调。
 
-发送呼叫邀请的示例代码如下：
-
-```
-// 获取 RtmCallManager 实例
-RtmCallManager = RtmClient.getRtmCallManager();
-```
-
-```
-void inviteCall(final String peerUid, final String channel) {
-    //创建 LocalInvitation
-    LocalInvitation invitation = RtmCallManager.createLocalInvitation(peerUid);
-    invitation.setContent(channel);
-    //发送呼叫邀请
-    RtmCallManager.sendLocalInvitation(invitation);
-}
-```
-
 
 
 ### 取消呼叫邀请
 
 主叫调用 `cancelLocalInvitation` 取消呼叫邀请。被叫收到 `onRemoteInvitationCanceled` 回调，此时 `RemoteInvitation` 生命周期结束。主叫收到 `onLocalInvitationCanceled` 回调，此时 `LocalInvitation` 生命周期结束。
 
-![](https://web-cdn.agora.io/docs-files/1598604493206)
-
-取消呼叫邀请的示例代码如下：
-
-```
-//取消呼叫邀请
-void cancelLocalInvitation() {
-        if (RtmCallManager != null && invitation != null) {
-            RtmCallManager.cancelLocalInvitation(invitation);
-        }
-    }
-```
+![](https://web-cdn.agora.io/docs-files/1598604324660)
 
 
 
@@ -82,40 +54,16 @@ void cancelLocalInvitation() {
 
 被叫从 `onRemoteInvitationReceived` 回调获取 `RemoteInvitation` 并调用 `acceptRemoteInvitation` 接受呼叫邀请。主叫收到 `onRemoteInvitationAccepted` 回调，此时 `RemoteInvitation` 生命周期结束。主叫收到 `onLocalInvitationAccepted` 回调，此时 `LocalInvitation` 生命周期结束。
 
-![](https://web-cdn.agora.io/docs-files/1598604501010)
+![](https://web-cdn.agora.io/docs-files/1598604332061)
 
-接受呼叫邀请的示例代码如下：
-
-```
-// 接受呼叫邀请
-void answerCall(final RemoteInvitation invitation) {
-        if (RtmCallManager != null && invitation != null) {
-            RtmCallManager.acceptRemoteInvitation(invitation);
-        }
-    }
-```
 
 ###  拒绝呼叫邀请
 
 被叫从 `onRemoteInvitationReceived` 回调获取 `RemoteInvitation` 并调用 `refuseRemoteInvitation` 拒绝呼叫邀请。主叫收到 `onRemoteInvitationRefused` 回调，此时 `RemoteInvitation` 生命周期结束。主叫收到 `onLocalInvitationRefused` 回调，此时 `LocalInvitation` 生命周期结束。
 
-![](https://web-cdn.agora.io/docs-files/1598604507520)
+![](https://web-cdn.agora.io/docs-files/1598604339097)
 
-拒绝呼叫邀请的示例代码如下：
-
-```
-// 拒绝呼叫邀请
-void refuseRemoteInvitation(@NonNull RemoteInvitation invitation) {
-        if (RtmCallManager != null) {
-            RtmCallManager.refuseRemoteInvitation(invitation);
-        }
-    }
-```
 
 ##  API 参考
 
-API 详见[呼叫邀请 API 文档](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/index.html#callinvitation)。
-
-## 示例项目
-
-我们在 GitHub 提供一个开源的[示例项目](https://github.com/AgoraIO-Usecase/Video-Calling)，你也可以前往下载体验并参考源代码。
+API 详见[呼叫邀请 API 文档](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_cpp/index.html#callinvitation)。

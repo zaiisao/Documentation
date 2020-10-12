@@ -3,7 +3,7 @@
 title: 限定访问区域
 description: 
 platform: Web
-updatedAt: Fri Sep 25 2020 10:08:24 GMT+0800 (CST)
+updatedAt: Sun Oct 11 2020 13:04:03 GMT+0800 (CST)
 ---
 # 限定访问区域
 ## 功能描述
@@ -16,7 +16,7 @@ updatedAt: Fri Sep 25 2020 10:08:24 GMT+0800 (CST)
 
 你需要在调用 `createInstance` 初始化 RTM 客户端时通过 `areaCodes` 参数设置限定区域。RTM SDK 支持以下区域：
 
-- `GLOBAL`: （默认）全球。
+- `GLOB`: （默认）全球。
 - `CN`: 中国大陆。
 - `NA`: 北美区域。
 - `EU`: 欧洲区域。
@@ -28,7 +28,7 @@ updatedAt: Fri Sep 25 2020 10:08:24 GMT+0800 (CST)
 
 ```javascript
 // 设置限定区域
-AgoraRTM.createInstance('<appid>', { areaCodes: ["CN","GLOBAL"] })；
+AgoraRTM.createInstance('<appid>', { areaCodes: ["CN","GLOB"] })；
 ```
 
 ##  开发注意事项

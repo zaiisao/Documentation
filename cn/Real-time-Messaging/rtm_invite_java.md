@@ -3,7 +3,7 @@
 title: 呼叫邀请
 description: 
 platform: Linux Java
-updatedAt: Sat Oct 10 2020 09:11:24 GMT+0800 (CST)
+updatedAt: Sat Oct 10 2020 10:00:21 GMT+0800 (CST)
 ---
 # 呼叫邀请
 ## 概述
@@ -80,7 +80,7 @@ void cancelLocalInvitation() {
 
 ### 接受呼叫邀请
 
-被叫调用 `acceptRemoteInvitation` 接受呼叫邀请。主叫收到 `onRemoteInvitationAccepted` 回调，此时 `RemoteInvitation` 生命周期结束。主叫收到 `onLocalInvitationAccepted` 回调，此时 `LocalInvitation` 生命周期结束。
+被叫从 `onRemoteInvitationReceived` 回调获取 `RemoteInvitation` 并调用 `acceptRemoteInvitation` 接受呼叫邀请。主叫收到 `onRemoteInvitationAccepted` 回调，此时 `RemoteInvitation` 生命周期结束。主叫收到 `onLocalInvitationAccepted` 回调，此时 `LocalInvitation` 生命周期结束。
 
 ![](https://web-cdn.agora.io/docs-files/1598604501010)
 
@@ -97,7 +97,7 @@ void answerCall(final RemoteInvitation invitation) {
 
 ###  拒绝呼叫邀请
 
-被叫调用 `refuseRemoteInvitation` 拒绝呼叫邀请。主叫收到 `onRemoteInvitationRefused` 回调，此时 `RemoteInvitation` 生命周期结束。主叫收到 `onLocalInvitationRefused` 回调，此时 `LocalInvitation` 生命周期结束。
+被叫从 `onRemoteInvitationReceived` 回调获取 `RemoteInvitation` 并调用 `refuseRemoteInvitation` 拒绝呼叫邀请。主叫收到 `onRemoteInvitationRefused` 回调，此时 `RemoteInvitation` 生命周期结束。主叫收到 `onLocalInvitationRefused` 回调，此时 `LocalInvitation` 生命周期结束。
 
 ![](https://web-cdn.agora.io/docs-files/1598604507520)
 

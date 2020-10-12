@@ -3,7 +3,7 @@
 title: 呼叫邀请
 description: 
 platform: Windows CPP
-updatedAt: Sat Oct 10 2020 09:53:17 GMT+0800 (CST)
+updatedAt: Sat Oct 10 2020 10:01:39 GMT+0800 (CST)
 ---
 # 呼叫邀请
 ## 概述
@@ -109,12 +109,6 @@ bool CAgoraRtmInstance::CancelLocalInvitation()
 ```
 // 示例代码基于 Qt
 
-// 从 onRemoteInvitationReceived 回调获取 RemoteInvitation
-void onRemoteInvitationReceived(void* invitation)
-{
-    IRemoteCallInvitation* remoteInvitation = (IRemoteCallInvitation*)invitation;
-}
-
 // 接受呼叫邀请
 bool CAgoraRtmInstance::AcceptRemoteInvitation(IRemoteCallInvitation* invitation)
 {
@@ -133,12 +127,6 @@ bool CAgoraRtmInstance::AcceptRemoteInvitation(IRemoteCallInvitation* invitation
 
 ```
 // 示例代码基于 Qt
-
-// 从 onRemoteInvitationReceived 回调获取 RemoteInvitation
-void onRemoteInvitationReceived(void* invitation)
-{
-    IRemoteCallInvitation* remoteInvitation = (IRemoteCallInvitation*)invitation;
-}
  
 //拒绝呼叫邀请
 bool RefuseRemoteInvitation(IRemoteCallInvitation* invitation)
