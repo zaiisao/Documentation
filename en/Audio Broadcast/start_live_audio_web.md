@@ -3,7 +3,7 @@
 title: Start Live Interactive Audio Streaming
 description: 
 platform: Web
-updatedAt: Sat Oct 10 2020 07:31:09 GMT+0800 (CST)
+updatedAt: Tue Oct 13 2020 08:54:29 GMT+0800 (CST)
 ---
 # Start Live Interactive Audio Streaming
 <div class="alert note">Agora has released the Agora Web SDK NG, the next generation of the Agora Web SDK, which fully optimizes the internal architecture of the SDK and improves its usability. Based on Typescript, the Agora Web SDK NG uses Promises for asynchronous operations and provides more flexible and easy-to-use APIs. The Agora Web SDK NG is in the beta stage. Click <a href="https://agoraio-community.github.io/AgoraWebSDK-NG/en/">here</a> to learn more and you can submit an <a href="https://github.com/AgoraIO-Community/AgoraWebSDK-NG">issue</a> if you have any problem.</div>
@@ -26,7 +26,7 @@ You can also use this [online demo](https://webdemo.agora.io/agora-web-showcase/
 
 2. Get a valid [Agora account](https://docs.agora.io/en/Agora%20Platform/sign_in_and_sign_up) and an [App ID](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#get-an-app-id).
 
-<div class="alert note">Open the specified ports in <a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a> if your network has a firewall.</div>
+<div class="alert note">Open the specified ports in <a href="https://docs.agora.io/en/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a> if your network has a firewall.</div>
 
 ## Set up the development environment
 

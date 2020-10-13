@@ -3,7 +3,7 @@
 title: Call Invitation
 description: 
 platform: Linux Java
-updatedAt: Sat Oct 10 2020 09:12:52 GMT+0800 (CST)
+updatedAt: Sat Oct 10 2020 10:08:31 GMT+0800 (CST)
 ---
 # Call Invitation
 ## Overview
@@ -78,7 +78,7 @@ void cancelLocalInvitation() {
 
 ### Accept a call invitation
 
-The callee accepts the call invitation by calling `acceptRemoteInvitation`. The lifecycle of the `RemoteInvitation` ends as the caller receives the `onRemoteInvitationAccepted` callback. The lifecycle of the `LocalInvitation` ends as the caller receives the `onLocalInvitationAccepted` callback.
+The callee gets `RemoteInvitation` from `onRemoteInvitationReceived` and accepts the call invitation by calling `acceptRemoteInvitation`. The lifecycle of the `RemoteInvitation` ends as the caller receives the `onRemoteInvitationAccepted` callback. The lifecycle of the `LocalInvitation` ends as the caller receives the `onLocalInvitationAccepted` callback.
 
 
 
@@ -97,7 +97,7 @@ void answerCall(final RemoteInvitation invitation) {
 
 ###  Refuse a call invitation
 
-The callee refuses the call invitation by calling `refuseRemoteInvitation`. The lifecycle of the `RemoteInvitation` ends as the caller receives the `onRemoteInvitationRefused` callback. The lifecycle of the `LocalInvitation` ends as the caller receives the `onLocalInvitationRefused` callback.
+The callee gets `RemoteInvitation` from `onRemoteInvitationReceived` and  refuses the call invitation by calling `refuseRemoteInvitation`. The lifecycle of the `RemoteInvitation` ends as the caller receives the `onRemoteInvitationRefused` callback. The lifecycle of the `LocalInvitation` ends as the caller receives the `onLocalInvitationRefused` callback.
 
 ![img](https://web-cdn.agora.io/docs-files/1598604564189)
 

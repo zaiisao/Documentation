@@ -3,7 +3,7 @@
 title: Start a Video Call
 description: 
 platform: Electron
-updatedAt: Fri Jul 31 2020 12:04:08 GMT+0800 (CST)
+updatedAt: Tue Oct 13 2020 08:54:25 GMT+0800 (CST)
 ---
 # Start a Video Call
 Use this guide to quickly start a basic call with the Agora SDK for Electron.
@@ -18,7 +18,7 @@ We provide an open-source sample project that implements [Agora Electron Quickst
 * Electron 1.8.3 or later
 
 <div class="alert note">If you use Windows for development, ensure that you run <code>npm install -D --arch=ia32 electron</code> to install a 32-bit Electron. Otherwise you may receive the error: <code>Not a valid win32 application</code>.</div>
-<div class="alert note">Open the specified ports in <a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a> if your network has a firewall.</div>
+<div class="alert note">Open the specified ports in <a href="https://docs.agora.io/en/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a> if your network has a firewall.</div>
 
 ## Set up the development environment
 

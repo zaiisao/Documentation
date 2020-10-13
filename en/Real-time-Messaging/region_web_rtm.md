@@ -3,7 +3,7 @@
 title: Geofencing
 description: 
 platform: Web
-updatedAt: Wed Sep 30 2020 15:41:58 GMT+0800 (CST)
+updatedAt: Sun Oct 11 2020 13:04:22 GMT+0800 (CST)
 ---
 # Geofencing
 ## Description
@@ -16,7 +16,7 @@ To meet the laws and regulations of different countries or regions, the Agora RT
 
 You need to use the `areaCodes` parameter when calling `createInstance` to set the region. The RTM SDK supports the following regions:
 
-- `GLOBAL`: (Default) Global.
+- `GLOB`: (Default) Global.
 - `CN`: Mainland China.
 - `NA`: North America.
 - `EU`: Europe.
@@ -28,7 +28,7 @@ You need to use the `areaCodes` parameter when calling `createInstance` to set t
 
 ```javascript
 // Set region for geofencing
-AgoraRTM.createInstance('<appid>', { areaCodes: ["CN","GLOBAL"] })；
+AgoraRTM.createInstance('<appid>', { areaCodes: ["CN","GLOB"] })；
 ```
 
 ##  Considerations

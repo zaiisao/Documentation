@@ -3,7 +3,7 @@
 title: Start a Voice Call
 description: 
 platform: Android
-updatedAt: Tue Jun 09 2020 04:08:52 GMT+0800 (CST)
+updatedAt: Tue Oct 13 2020 08:54:26 GMT+0800 (CST)
 ---
 # Start a Voice Call
 Use this guide to quickly start a basic voice call with the Agora Voice SDK for Android.
@@ -19,7 +19,7 @@ We provide an open-source [Agora-Android-Voice-Tutorial-1to1](https://github.com
 * A mobile device running Android 4.1 or later
 * A valid [Agora account](https://docs.agora.io/en/Agora%20Platform/sign_in_and_sign_up) and an [App ID](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#get-an-app-id)
 
-<div class="alert note">Open the specified ports in <a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a> if your network has a firewall.</div>
+<div class="alert note">Open the specified ports in <a href="https://docs.agora.io/en/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a> if your network has a firewall.</div>
 
 ## Set up the development environment
 

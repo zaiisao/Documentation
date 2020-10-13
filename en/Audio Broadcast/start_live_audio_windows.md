@@ -3,7 +3,7 @@
 title: Start Live Interactive Audio Streaming
 description: 
 platform: Windows
-updatedAt: Fri Jul 10 2020 06:56:07 GMT+0800 (CST)
+updatedAt: Tue Oct 13 2020 08:54:30 GMT+0800 (CST)
 ---
 # Start Live Interactive Audio Streaming
 Use this guide to quickly start the live interactive audio streaming with the Agora Voice SDK for Windows.
@@ -17,7 +17,7 @@ We provide open-source [OpenLive-Windows](https://github.com/AgoraIO/Basic-Video
 - A Windows device running Windows 7 or later
 - A valid Agora account. ([Sign up](https://dashboard.agora.io) for free)
 
-<div class="alert note">Open the specified ports in <a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a> if your network has a firewall.</div>
+<div class="alert note">Open the specified ports in <a href="https://docs.agora.io/en/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a> if your network has a firewall.</div>
 
 ## Set up the development environment
 In this section, we will create a Windows project and integrate the SDK into the project.

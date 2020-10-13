@@ -3,7 +3,7 @@
 title: Call Invitation
 description: 
 platform: Android
-updatedAt: Sat Oct 10 2020 09:12:17 GMT+0800 (CST)
+updatedAt: Sun Oct 11 2020 13:09:19 GMT+0800 (CST)
 ---
 # Call Invitation
 ## Overview
@@ -42,7 +42,7 @@ The sample code for sending a call invitation is as follows:
 
 ```
 // Gets RtmCallManager instance
-RtmCallManager = mRtmClient.getRtmCallManager();
+RtmCallManager = RtmClient.getRtmCallManager();
 ```
 
 ```
@@ -51,7 +51,7 @@ void inviteCall(final String peerUid, final String channel) {
     LocalInvitation invitation = RtmCallManager.createLocalInvitation(peerUid);
     invitation.setContent(channel);
     // Sends call invitation
-    RtmCallManager.sendLocalInvitation(invitation, this);
+    RtmCallManager.sendLocalInvitation(invitation);
 }
 ```
 
@@ -69,7 +69,7 @@ The sample code for canceling a call invitation is as follows:
 // Cancel a call invitation.
 void cancelLocalInvitation() {
         if (RtmCallManager != null && invitation != null) {
-            RtmCallManager.cancelLocalInvitation(invitation, this);
+            RtmCallManager.cancelLocalInvitation(invitation);
         }
     }
 ```
@@ -78,9 +78,7 @@ void cancelLocalInvitation() {
 
 ### Accept a call invitation
 
-The callee accepts the call invitation by calling `acceptRemoteInvitation`. The lifecycle of the `RemoteInvitation` ends as the caller receives the `onRemoteInvitationAccepted` callback. The lifecycle of the `LocalInvitation` ends as the caller receives the `onLocalInvitationAccepted` callback.
-
-
+The callee gets `RemoteInvitation` from `onRemoteInvitationReceived` and accepts the call invitation by calling `acceptRemoteInvitation`. The lifecycle of the `RemoteInvitation` ends as the caller receives the `onRemoteInvitationAccepted` callback. The lifecycle of the `LocalInvitation` ends as the caller receives the `onLocalInvitationAccepted` callback.
 
 ![img](https://web-cdn.agora.io/docs-files/1598604558155)
 
@@ -90,14 +88,14 @@ The sample code for accepting a call invitation is as follows:
 // Accept a call invitation.
 void answerCall(final RemoteInvitation invitation) {
         if (RtmCallManager != null && invitation != null) {
-            RtmCallManager.acceptRemoteInvitation(invitation, this);
+            RtmCallManager.acceptRemoteInvitation(invitation);
         }
     }
 ```
 
 ###  Refuse a call invitation
 
-The callee refuses the call invitation by calling `refuseRemoteInvitation`. The lifecycle of the `RemoteInvitation` ends as the caller receives the `onRemoteInvitationRefused` callback. The lifecycle of the `LocalInvitation` ends as the caller receives the `onLocalInvitationRefused` callback.
+The callee gets `RemoteInvitation` from `onRemoteInvitationReceived` and refuses the call invitation by calling `refuseRemoteInvitation`. The lifecycle of the `RemoteInvitation` ends as the caller receives the `onRemoteInvitationRefused` callback. The lifecycle of the `LocalInvitation` ends as the caller receives the `onLocalInvitationRefused` callback.
 
 ![img](https://web-cdn.agora.io/docs-files/1598604564189)
 
@@ -107,7 +105,7 @@ The sample code for refusing a call invitation is as follows:
 // Refuse a call invitation.
 void refuseRemoteInvitation(@NonNull RemoteInvitation invitation) {
         if (RtmCallManager != null) {
-            RtmCallManager.refuseRemoteInvitation(invitation, this);
+            RtmCallManager.refuseRemoteInvitation(invitation);
         }
     }
 ```

@@ -3,7 +3,7 @@
 title: Start a Video Call
 description: 
 platform: Windows
-updatedAt: Thu Jul 09 2020 06:24:09 GMT+0800 (CST)
+updatedAt: Tue Oct 13 2020 08:54:23 GMT+0800 (CST)
 ---
 # Start a Video Call
 Use this guide to quickly start a basic video call with the Agora Video SDK for Windows.
@@ -21,7 +21,7 @@ Before implementing a video call, you can download the sample projects and refer
 - A Windows device running Windows 7 or later
 - A valid Agora account. ([Sign up](https://dashboard.agora.io) for free)
 
-<div class="alert note">Open the specified ports in <a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a> if your network has a firewall.</div>
+<div class="alert note">Open the specified ports in <a href="https://docs.agora.io/en/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a> if your network has a firewall.</div>
 
 ## Set up the development environment
 In this section, we will create a Windows project and integrate the SDK into the project.

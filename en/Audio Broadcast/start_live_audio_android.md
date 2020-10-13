@@ -3,7 +3,7 @@
 title: Start Live Interactive Audio Streaming
 description: 
 platform: Android
-updatedAt: Mon Jul 13 2020 10:25:36 GMT+0800 (CST)
+updatedAt: Tue Oct 13 2020 08:54:27 GMT+0800 (CST)
 ---
 # Start Live Interactive Audio Streaming
 Use this guide to quickly start the live interactive audio streaming with the Agora Voice SDK for Android.
@@ -19,7 +19,7 @@ We provide an open-source [OpenLive-Voice-Only-Android](https://github.com/Agora
 * A mobile device running Android 4.1 or later
 * A valid [Agora account](https://docs.agora.io/en/Agora%20Platform/sign_in_and_sign_up) and an [App ID](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#get-an-app-id)
 
-<div class="alert note">Open the specified ports in <a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a> if your network has a firewall.</div>
+<div class="alert note">Open the specified ports in <a href="https://docs.agora.io/en/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a> if your network has a firewall.</div>
 
 ## Set up the development environment
 
