@@ -112,7 +112,7 @@ func rtcEngine)(_ engine: AgoraRtcEngineKit, channelMediaRelayStateDidChange sta
 
 
 
-- 在设置源频道信息（`setSrcChannelInfo`）时，请确保 `uid` 必须为 0，且用于生成 token 的 `uid` 也必须为 0。
+- 在设置源频道信息时，请确保 `uid` 必须为 0，且用于生成 token 的 `uid` 也必须为 0。
 
 - 在成功调用 `startChannelMediaRelay` 方法后，如果想再次调用该方法，必须先调用 `stopChannelMediaRelay` 方法退出当前的转发状态。
 

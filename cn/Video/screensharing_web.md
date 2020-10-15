@@ -3,21 +3,17 @@
 title: 屏幕共享
 description: 
 platform: Web
-updatedAt: Fri Sep 25 2020 09:34:05 GMT+0800 (CST)
+updatedAt: Mon Oct 12 2020 07:33:58 GMT+0800 (CST)
 ---
 # 屏幕共享
 ## 功能简介
 
-在视频通话或互动直播中进行屏幕共享，可以将说话人或主播的屏幕内容，以视频画面的方式分享给其他说话人或观众观看，以提高沟通效率。
-
-<div class="alert note">Agora Web SDK 支持在桌面端以下浏览器进行屏幕共享：<li>Chrome 58 或以上版本</li><li>Edge 80 或以上版本（Windows 10 平台）</li><li>Firefox 56 或以上版本</li></div>
-
-
-屏幕共享在如下场景中应用广泛：
+Agora RTC Web SDK 支持在视频通话或互动直播中进行屏幕共享，将说话人或主播的屏幕内容，以视频画面的方式分享给其他说话人或观众观看，以提高沟通效率。屏幕共享在如下场景中应用广泛：
 
 - 视频会议场景中，屏幕共享可以将讲话者本地的文件、数据、网页、PPT 等画面分享给其他与会人；
 - 在线课堂场景中，屏幕共享可以将老师的课件、笔记、讲课内容等画面展示给学生观看。
 
+<div class="alert note">Web SDK 仅支持在以下<b>桌面端</b>浏览器中进行屏幕共享：<li>Chrome 58 或以上版本。</li><li>Firefox 56 或以上版本。</li><li>Windows 10+ 平台上的 Edge 80 及以上版本。</li></div>
 
 <div class="alert info">点击<a href="https://webdemo.agora.io/agora-web-showcase/examples/Agora-Screen-Sharing-Web/">在线体验</a>试用屏幕共享功能。</div>
 
@@ -26,12 +22,9 @@ updatedAt: Fri Sep 25 2020 09:34:05 GMT+0800 (CST)
 Web 端屏幕共享，实际上是通过创建一个屏幕共享的流来实现的。开始屏幕共享前，你需要在创建流的时候配置某些属性。不同浏览器在创建流的时候，相关的属性是不同的。建流的过程中浏览器会询问需要共享哪些屏幕，根据用户的选择去获取屏幕信息。
 
 - 如果只使用屏幕共享，则在新建流的时候，把 `video` 字段设为 `false`， `screen` 字段设为 `true` 即可。
-- 如果在使用屏幕共享的同时，还开启本地视频，则需要创建两个 Client 对象，一路发送屏幕共享流，一路发送视频流。新建流的时候，屏幕共享流的 `video` 字段设为 `false`， `screen` 字段设为 `true`；本地视频流的 `video` 字段设为 `true`，`screen` 字段设为 `false`。由于共享流也是一路流，因此也会占用一个 UID。
+- 如果在使用屏幕共享的同时，还开启本地视频采集，则需要创建两个 Client 对象，一路发送屏幕共享流，一路发送本地采集视频流。新建流的时候，屏幕共享流的 `video` 字段设为 `false`， `screen` 字段设为 `true`；本地采集视频流的 `video` 字段设为 `true`，`screen` 字段设为 `false`。由于屏幕共享流也是一路流，因此也会占用一个 UID。
 
-自 3.2.0 版本起，Agora Web SDK 支持在创建流时通过 `optimizationMode` 字段设置流的传输优化策略。你可以根据屏幕共享的内容类型设置该字段：
-
-- 如果屏幕共享的内容为电影、视频等内容，推荐你把 `optimizationMode` 字段设为 `"motion"`，SDK 会优先保障流畅性。
-- 如果屏幕共享的内容为图片、文字等内容，推荐你把 `optimizationMode` 字段设为 `"detail"` 或留空，SDK 会优先保障清晰度。
+自 3.2.0 版本起，Web SDK 支持在创建流时通过 `optimizationMode` 字段设置流的传输优化策略。对于屏幕共享流，该字段默认值为 `"detail"`，SDK 会优先保障清晰度，适用于屏幕共享图片、文字等内容。如果你屏幕共享的内容为视频，你可以把 `optimizationMode` 字段设为 `"motion"`，SDK 会优先保障流畅性。
 
 ## 实现方法
 
@@ -41,11 +34,18 @@ Web 端屏幕共享，实际上是通过创建一个屏幕共享的流来实现�
 
 ### <a name = "chrome"></a>Chrome 屏幕共享
 
-#### 无插件屏幕共享
+Web SDK 支持在 Chrome 58 及以上版本上进行屏幕共享。有两种方式：无插件屏幕共享和使用屏幕共享插件。
 
-在 Chrome 上屏幕共享直接在 `createStream` 时把 `video` 字段设为 `false`， `screen` 字段设为 `true` 即可。
+无插件屏幕共享需同时满足以下两个要求：
 
-<div class="alert note">该功能要求 Agora Web SDK 2.6.0 或以上版本，Chrome 72 或以上版本。如果你使用的软件版本不满足此要求，请<a href="#ext">使用屏幕共享插件</a>实现在 Chrome 上共享屏幕。</div>
+- Web SDK 2.6.0 或以上版本。
+- Chrome 72 或以上版本。
+
+如果无法满足上述要求，请<a href="#ext">使用屏幕共享插件</a>实现在 Chrome 上共享屏幕。
+
+#### <a name="no-ext"></a>无插件屏幕共享
+
+直接调用 `createStream` 创建屏幕共享流，把 `video` 字段设为 `false`， `screen` 字段设为 `true `即可。
 
 ```javascript
 // Check if the browser supports screen sharing without an extension
@@ -63,7 +63,9 @@ if(parseInt(tem[2]) >= 72  && navigator.mediaDevices.getDisplayMedia ) {
 
 #### <a name="ext"></a>使用屏幕共享插件
 
-安装 Agora 提供的 [Chrome 屏幕共享插件](../../cn/Video/chrome_screensharing_plugin.md) ，并获取插件的 `extensionId`，在建流的时候填入 `extensionId`。
+使用屏幕共享插件的步骤如下：
+1. 安装 Agora 提供的 [Chrome 屏幕共享插件](../../cn/Video/chrome_screensharing_plugin.md)，并获取插件的 `extensionId`。
+2. 调用 `createStream` 创建屏幕共享流时，把 `video` 字段设为 `false`， `screen` 字段设为 `true` ，同时传入 `extensionId`。
 
 ```javascript
 screenStream = AgoraRTC.createStream({
@@ -78,7 +80,9 @@ screenStream = AgoraRTC.createStream({
 
 ### Edge 屏幕共享
 
-在 Edge 上屏幕共享直接在 `createStream` 时把 `video` 字段设为 `false`， `screen` 字段设为 `true` 即可。
+Web SDK 支持在 Windows 10+ 平台上的 Edge 80 及以上版本上进行屏幕共享。
+
+直接调用 `createStream` 创建屏幕共享流，把 `video` 字段设为 `false`， `screen` 字段设为 `true` 即可。
 
 ```javascript
 screenStream = AgoraRTC.createStream({
@@ -91,11 +95,15 @@ screenStream = AgoraRTC.createStream({
 
 ### <a name="ff"></a>Firefox 屏幕共享
 
-Firefox 屏幕共享需要通过设置 `mediaSource` 指定分享屏幕的类型，`mediaSource` 的选择如下：
+Web SDK 支持在 Firefox 56 及以上版本上进行屏幕共享。
 
-- `screen`：分享整个显示器屏幕
-- `application`：分享某个应用的所有窗口
-- `window`：分享某个应用的某个窗口
+你需要在调用 `createStream` 创建屏幕共享流时把 `video` 字段设为 `false`， `screen` 字段设为 `true`，同时设置 `mediaSource` 指定分享屏幕的类型。`mediaSource` 的选择如下：
+
+- `screen`: 分享整个显示器屏幕。
+- `application`: 分享某个应用的所有窗口。
+- `window`: 分享某个应用的某个窗口。
+
+> Firefox 在 Windows 平台不支持 application 模式。
 
 ```javascript
 screenStream = AgoraRTC.createStream({
@@ -107,13 +115,12 @@ screenStream = AgoraRTC.createStream({
 });
 ```
 
-> Firefox 在 Windows 平台不支持 application 模式。
-
 ### Electron 屏幕共享
 
-Electron 屏幕共享的选择界面需要你自行绘制，为方便快速集成，我们提供一个默认的选择界面。
+Electron 屏幕共享的选择界面需要你自行绘制。
 
-1. 调用 `AgoraRTC.createStream`， 将 `screen` 设置为 `true` 创建屏幕共享流。
+为方便快速集成，我们提供一个默认的选择界面。使用默认选择界面进行屏幕共享的步骤如下：
+1. 调用 `AgoraRTC.createStream`，将 `video` 设为 `false`，`screen` 设为 `true`，创建屏幕共享流。
 
     ```javascript
     localStream = AgoraRTC.createStream({
@@ -131,7 +138,7 @@ Electron 屏幕共享的选择界面需要你自行绘制，为方便快速集�
 
 如果你需要自定义选择界面，参考以下步骤：
 
-1. 调用 SDK 提供的  `AgoraRTC.getScreenSources` 方法获取可共享的屏幕信息。
+1. 调用  `AgoraRTC.getScreenSources` 方法获取可共享的屏幕信息。
 
     ```javascript
     AgoraRTC.getScreenSources(function(err, sources) {
@@ -142,19 +149,19 @@ Electron 屏幕共享的选择界面需要你自行绘制，为方便快速集�
     `sources` 是一个 `source` 对象的列表，`source` 里包含了分享源的信息和 `sourceId`，`source` 的属性如下：
 
     ![](https://web-cdn.agora.io/docs-files/1547455349613)
-    - `id`： 即 `sourceId`
-    - `name`：屏幕源的名字
-    - `thumbnail`：屏幕源的快照
+    - `id`:  即 `sourceId`。
+    - `name`: 屏幕源的名字。
+    - `thumbnail`: 屏幕源的快照。
 
-2. 根据 `source` 的属性，（用 html 和 css）绘制选择界面，让用户选择要共享的屏幕源。
+2. 根据 `source` 的属性，（用 html 和 css）绘制选择界面，让终端用户选择要共享的屏幕源。
 
     `source` 的属性与屏幕共享的选择界面对应关系如下：
 
     ![](https://web-cdn.agora.io/docs-files/1547456888707)
 
-3. 获取用户选择的 `sourceId`。
+3. 获取终端用户选择的 `sourceId`。
 
-4. 调用 `AgoraRTC.createStream`， 将 `screen` 设置为 `true` 并填入 `sourceId`，就能创建相应的屏幕共享流了。
+4. 调用 `AgoraRTC.createStream`， 将 `video` 设为 `false`，`screen` 设为 `true`，并传入 `sourceId`，就能创建相应的屏幕共享流了。
 
     ```javascript
     localStream = AgoraRTC.createStream({
@@ -172,17 +179,7 @@ Electron 屏幕共享的选择界面需要你自行绘制，为方便快速集�
 
 ### <a name = "screenAudio"></a>分享音频
 
-Agora Web SDK 从 3.0.0 版本起支持在 Windows 平台的 Chrome 浏览器 74 及以上版本同时共享屏幕和本地播放的背景音，在 `createStream` 时把 `screen` 字段和 `screenAudio` 字段都设为 `true` 即可。
-
-```javascript
-screenStream = AgoraRTC.createStream({
-  streamID: uid,
-  audio: false,
-  video: false,
-  screen: true,
-  screenAudio: true
-});
-```
+Web SDK 自 3.0.0 版本起支持在 Windows 平台的 Chrome 浏览器 74 及以上版本上同时共享屏幕和本地播放的背景音。如需实现分享音频，在调用 `createStream` 创建屏幕共享流时把 `screen` 字段和 `screenAudio` 字段都设为 `true` 即可。
 
 <div class="alert note">注意事项：
 	<ul>
@@ -197,13 +194,23 @@ screenStream = AgoraRTC.createStream({
 		</ul>
 </div>
 
+```javascript
+screenStream = AgoraRTC.createStream({
+  streamID: uid,
+  audio: false,
+  video: false,
+  screen: true,
+  screenAudio: true
+});
+```
+
 ![](https://web-cdn.agora.io/docs-files/1574070243757)
 
 ### 示例代码
 
-下面的示例代码展示了屏幕共享的完整步骤，同时，我们在 GitHub 提供一个开源的[示例项目](https://github.com/AgoraIO/Advanced-Video/tree/master/Web/Agora-Screen-Sharing-Web-Webpack)，你可以[在线体验](https://webdemo.agora.io/agora-web-showcase/examples/Agora-Screen-Sharing-Web/)或者下载参考  [`rtc-client.js`](https://github.com/AgoraIO/Advanced-Video/blob/master/Web/Agora-Screen-Sharing-Web-Webpack/src/rtc-client.js) 和 [`index.js`](https://github.com/AgoraIO/Advanced-Video/blob/master/Web/Agora-Screen-Sharing-Web-Webpack/src/index.js) 文件的源代码。
+以下示例代码展示了屏幕共享的完整步骤。
 
-<div class="alert note">下面的代码用了 <code>isFirefox</code> 和 <code>isCompatibleChrome</code> 来判断浏览器类型，你需要自己实现，也可以参考 <a href="https://github.com/AgoraIO/Advanced-Video/blob/master/Web/Agora-Screen-Sharing-Web-Webpack/src/common.js#L29"><code>common.js</code></a> 中的代码。</div>
+<div class="alert info">以下示例代码用了 <code>isFirefox</code> 和 <code>isCompatibleChrome</code> 来判断浏览器类型，你需要自己实现，也可以参考 <a href="https://github.com/AgoraIO/Advanced-Video/blob/master/Web/Agora-Screen-Sharing-Web-Webpack/src/common.js#L29"><code>common.js</code></a> 中的代码。</div>
 
 ```javascript
 //TODO: 填入你的项目的 App ID
@@ -251,12 +258,14 @@ screenClient.init(appID, function() {
 });
 ```
 
+此外，我们在 GitHub 提供一个开源的[示例项目](https://github.com/AgoraIO/Advanced-Video/tree/master/Web/Agora-Screen-Sharing-Web-Webpack)，你可以[在线体验](https://webdemo.agora.io/agora-web-showcase/examples/Agora-Screen-Sharing-Web/)或者下载参考  [`rtc-client.js`](https://github.com/AgoraIO/Advanced-Video/blob/master/Web/Agora-Screen-Sharing-Web-Webpack/src/rtc-client.js) 和 [`index.js`](https://github.com/AgoraIO/Advanced-Video/blob/master/Web/Agora-Screen-Sharing-Web-Webpack/src/index.js) 文件的源代码。
+
 ## <a name="both"></a>同时共享屏幕和开启视频
 
-因为每个 Client 对象只能发送一路 Stream 流，所以如果要在一个发送端同时分享屏幕和开启视频，需要创建两个 Client，一路发送屏幕共享流，一路发送视频流。
+因为每个 Client 对象只能发送一路 Stream 流，所以如果一个发送端需要同时分享屏幕和开启本地视频采集，你需要创建两个 Client，一路发送屏幕共享流，一路发送本地采集视频流。
 
 ```javascript
-// 创建用于发送屏幕共享流的Client
+// 创建用于发送屏幕共享流的 Client
 var screenClient = AgoraRTC.createClient({mode: 'rtc', codec: 'vp8'});
 screenClient.init(key, function() {
  screenClient.join(channelKey, channel, null, function(uid) {
@@ -266,7 +275,7 @@ screenClient.init(key, function() {
  }
   }
 
-// 创建用于发送视频流的 Client
+// 创建用于发送本地采集视频流的 Client
 var videoClient = AgoraRTC.createClient({mode: 'rtc', codec: 'vp8'});
 videoClient.init(key, function() {
 videoClient.join(channelKey, channel, null, function(uid) {
@@ -277,12 +286,12 @@ videoClient.join(channelKey, channel, null, function(uid) {
 }
 ```
 
-自己订阅自己，会产生额外的计费，如图：
+本地 Client 对象互相订阅，会产生额外的费用，如图：
 
 <img alt="../_images/screensharing_streams.png" src="https://web-cdn.agora.io/docs-files/cn/screensharing_streams.png" style="width: 500px;" />
 
-Agora 建议，为避免重复计费，用于发送屏幕共享流的 Client 成功加入频道以后，把返回的 `uid` 存在列表里，然后按照以下方式处理订阅行为：
--  用于发布本地视频流的 Client，监听到 `'stream-added'` 事件的时候，先判断加入的流是否是本地的屏幕共享流，如果是，则不订阅。
+Agora 建议，为避免重复计费，用于发送屏幕共享流的 Client 成功加入频道以后，把返回的 uid 存在列表里，然后按照以下方式处理订阅行为：
+-  用于发布本地采集视频流的 Client，监听到 `'stream-added'` 事件的时候，先判断加入的流是否是本地的屏幕共享流，如果是，则不订阅。
 -  用于发布屏幕共享流的 Client 不需要订阅任何流，因此无需监听  `'stream-added'` 事件。
 
 ```javascript
@@ -290,7 +299,7 @@ var localStreams = [];
 ...
 
 screenClient.join(channelKey, channel, null, function(uid) {
- // 保存本地屏幕共享流的uid
+ // 保存本地屏幕共享流的 uid
  localStreams.push(uid);
 }
 ...
@@ -298,7 +307,7 @@ screenClient.join(channelKey, channel, null, function(uid) {
 videoClient.on('stream-added', function(evt) {
  var stream = evt.stream;
  var uid = stream.getId()
- // 收到流加入频道的事件后，先判定是不是本地的uid
+ // 收到流加入频道的事件后，先判定是不是本地的 uid
  if(!localStreams.includes(uid)) {
   console.log('subscribe stream: ' + uid);
   // 订阅流

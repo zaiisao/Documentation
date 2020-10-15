@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: wechat call 
 platform: 微信小程序
-updatedAt: Tue Jun 09 2020 04:28:14 GMT+0800 (CST)
+updatedAt: Wed Oct 14 2020 05:57:07 GMT+0800 (CST)
 ---
 # 实现语音通话
 本文介绍如何使用 Agora 微信小程序 SDK 快速实现语音通话。
@@ -97,6 +97,8 @@ Agora 在 GitHub 上提供一个开源的实时音视频示例项目 [Agora-Mini
 完成开发环境准备后，你可以参考下图中的业务流程图，在你的项目中实现通话功能。
 
 ![](https://web-cdn.agora.io/docs-files/1583744980016)
+
+<div class="alert note">-2301 和 -1307 是微信小程序  live-player 和 live-pusher 组件的状态码，表示网络断连，需要自行重启。详见微信小程序 <a href="https://developers.weixin.qq.com/miniprogram/dev/component/live-player.html">live-player</a > 和 <a href="https://developers.weixin.qq.com/miniprogram/dev/component/live-pusher.html">live-pusher</a > 组件文档。</div>
 
 ### 1. 初始化客户端对象
 

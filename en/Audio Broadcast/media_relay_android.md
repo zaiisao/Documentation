@@ -108,6 +108,6 @@ We provide an open-source [Cross-Channel-OpenLive-Android](https://github.com/Ag
 
 
 
-- When setting the souce channel information (`setSrcChannelInfo`), ensure that you set `uid` as 0, and the `uid` that you use to generate the token should also be set as 0.
+- When setting the souce channel information, ensure that you set `uid` as 0, and the `uid` that you use to generate the token should also be set as 0.
 
 - To call `startChannelMediaRelay` again after it succeeds, you must call `stopChannelMediaRelay` to quit the current relay.

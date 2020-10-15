@@ -3,7 +3,7 @@
 title: 实现视频通话
 description: wechat call 
 platform: 微信小程序
-updatedAt: Sat Oct 10 2020 04:08:46 GMT+0800 (CST)
+updatedAt: Wed Oct 14 2020 05:59:31 GMT+0800 (CST)
 ---
 # 实现视频通话
 本文介绍如何使用 Agora 微信小程序 SDK 快速实现视频通话。

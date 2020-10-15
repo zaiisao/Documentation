@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Android
-updatedAt: Mon Sep 14 2020 03:12:49 GMT+0800 (CST)
+updatedAt: Tue Oct 13 2020 10:42:03 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Video SDK for Android.
@@ -32,6 +32,10 @@ If your app needs to access a device's hardware serial number, you should instea
 Apps targeting Android 9 should honor the private DNS APIs. In particular, apps should ensure that, if the system resolver is doing DNS-over-TLS, any built-in DNS client either uses encrypted DNS to the same hostname as the system, or is disabled in favor of the system resolver.
 
 For more information about privacy changes, see [Android Privacy Changes](https://developer.android.com/about/versions/pie/android-9.0-changes-28#privacy-changes-p).
+
+## v3.1.3
+
+v3.1.3 was released on October 13, 2020. This release fixed the occasional crashes when leaving a channel.
 
 ## v3.1.2
 v3.1.2 was released on September 14, 2020. This release fixed the following issues:

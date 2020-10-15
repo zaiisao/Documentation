@@ -3,12 +3,12 @@
 title: Chrome 屏幕共享插件
 description: 
 platform: Web
-updatedAt: Tue Jun 02 2020 07:56:14 GMT+0800 (CST)
+updatedAt: Mon Oct 12 2020 07:34:44 GMT+0800 (CST)
 ---
 # Chrome 屏幕共享插件
 在 Chrome 上使用屏幕共享功能需要安装 Agora 提供的屏幕共享插件。
 
-> Agora Web SDK 支持在 Chrome 72 及以后版本实现[无插件屏幕共享](../../cn/Quickstart%20Guide/screensharing_web.md)。
+> 自 2.6.0 版本起，Agora Web SDK 支持在 Chrome 72 及以后版本实现[无插件屏幕共享](../../cn/Quickstart%20Guide/screensharing_web.md)。
 
 ## 获取 Chrome 屏幕共享插件
 
