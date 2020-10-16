@@ -3,7 +3,7 @@
 title: 媒体流加密
 description: 
 platform: iOS,macOS
-updatedAt: Fri Aug 14 2020 08:07:18 GMT+0800 (CST)
+updatedAt: Thu Oct 15 2020 03:27:26 GMT+0800 (CST)
 ---
 # 媒体流加密
 ## 功能描述
@@ -90,7 +90,7 @@ config.encryptionMode = AgoraEncryptionMode.SM4128ECB
 // 设置加密密钥
 config.encryptionKey = "xxxxxxxxxxxxxxxx"
 // 启用内置加密
-agoraKit.enableEncryption(YES, config)
+agoraKit.enableEncryption(true, config)
 ```
 		
 ```objective-c

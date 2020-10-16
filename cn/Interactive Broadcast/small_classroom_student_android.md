@@ -98,12 +98,12 @@ updatedAt: Mon May 11 2020 09:13:43 GMT+0800 (CST)
 <details>
 <summary>白板</summary>
 参考下列常用功能文档，在你的项目中实现白板相关功能。
-	<li><a href="https://developer.netless.link/docs/android/guides/android-document/">文档转换</a></li>
-		<li><a href="https://developer.netless.link/docs/android/guides/android-state/">状态管理</a></li>
-	<li><a href="https://developer.netless.link/docs/android/guides/android-tools/">使用教具</a></li>
-	<li><a href="https://developer.netless.link/docs/android/guides/android-view/">视角操作</a></li>
-	<li><a href="https://developer.netless.link/docs/android/guides/android-operation/">白板操作</a></li>
-	<li><a href="https://developer.netless.link/docs/android/guides/android-scenes/">页面（场景）管理</a></li>
+	<li><a href="https://developer.netless.link/android-zh/home/android-document">文档转换</a></li>
+		<li><a href="https://developer.netless.link/android-zh/home/android-state">状态管理</a></li>
+	<li><a href="https://developer.netless.link/android-zh/home/android-tools">使用教具</a></li>
+	<li><a href="https://developer.netless.link/android-zh/home/android-view">视角操作</a></li>
+	<li><a href="https://developer.netless.link/android-zh/home/android-operation">白板操作</a></li>
+	<li><a href="https://developer.netless.link/android-zh/home/android-scenes">页面（场景）管理</a></li>
 </details>
 
 

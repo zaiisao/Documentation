@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Android
-updatedAt: Mon Sep 14 2020 03:13:46 GMT+0800 (CST)
+updatedAt: Tue Oct 13 2020 10:41:55 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 视频 SDK 的发版说明。
@@ -33,6 +33,10 @@ Android 视频 SDK 支持两种主要场景:
 以 Android 9 为目标平台的应用应采用私有 DNS API。 具体而言，当系统解析程序正在执行 DNS-over-TLS 时，应用应确保任何内置 DNS 客户端均使用加密的 DNS 查找与系统相同的主机名，或停用它而改用系统解析程序。
 
 详情请参考 [Android 隐私权变更](https://developer.android.com/about/versions/pie/android-9.0-changes-28?hl=zh-CN#privacy-changes-p)。
+
+## **3.1.3 版**
+
+该版本于 2020 年 10 月 13 发布，修复了离开频道时偶现的崩溃问题。
 
 ## **3.1.2 版**
 

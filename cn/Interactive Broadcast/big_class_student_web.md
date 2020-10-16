@@ -100,12 +100,12 @@ updatedAt: Mon May 11 2020 08:54:43 GMT+0800 (CST)
 <details>
 <summary>白板</summary>
 参考下列常用功能文档，在你的项目中实现白板相关功能。
-	<li><a href="https://developer.netless.link/docs/javascript/features/js-document/">文档转换</a></li>
-	<li><a href="https://developer.netless.link/docs/javascript/features/js-state/">状态监听</a></li>
-	<li><a href="https://developer-en.netless.link/docs/javascript/features/js-tools/">使用教具</a></li>
-	<li><a href="https://developer-en.netless.link/docs/javascript/features/js-view/">视角操作</a></li>
-	<li><a href="https://developer.netless.link/docs/javascript/features/js-operation/">白板操作</a></li>
-	<li><a href="https://developer.netless.link/docs/javascript/features/js-scenes/">页面（场景）管理</a></li>
+	<li><a href="https://developer.netless.link/javascript-zh/home/document-converter">文档转换</a></li>
+	<li><a href="https://developer.netless.link/javascript-zh/home/business-state-management">房间与回放的业务状态管理</a></li>
+	<li><a href="https://developer.netless.link/javascript-zh/home/tools">教具</a></li>
+	<li><a href="https://developer.netless.link/javascript-zh/home/view">视角</a></li>
+	<li><a href="https://developer.netless.link/javascript-zh/home/room-methods">白板操作</a></li>
+	<li><a href="https://developer.netless.link/document-zh/home/scene-manangement">页面（场景）管理</a></li>
 </details>
 
 

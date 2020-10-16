@@ -3,7 +3,7 @@
 title: 校验用户权限
 description: 
 platform: All Platforms
-updatedAt: Fri Sep 18 2020 04:34:08 GMT+0800 (CST)
+updatedAt: Thu Oct 15 2020 05:40:57 GMT+0800 (CST)
 ---
 # 校验用户权限
 为保证通信安全，当用户加入 RTC 频道或服务端开始录制时，Agora 需要对其鉴权。Agora 提供如下鉴权方案，你可以根据自己的实际使用场景，选择合适的鉴权方式：
@@ -157,7 +157,7 @@ App 证书是 Agora 控制台为开发项目生成的字符串。根据不同的
 
 1. app 客户端调用 Agora 的 API 接口实现功能，如加入频道时，需要填入生成的 Token、以及生成 Token 时使用的用户名、频道名等。
 2. Agora 服务端接收到填入的 Token 等信息后，会验证用户是否有权限访问频道。如果验证通过，用户可以加入频道并使用相应的 Agora 服务。
-3. Token 具有有效期。在 Token 失效后，你需要在 app 服务端重新生成 Token，并使用新的 Token 加入频道或使用相应的 Agora 服务。
+3. Token 具有有效期。在 Token 失效后，你需要在 app 服务端重新生成 Token，并调用 `renewToken`。
 
 ## <a name="appid_token"></a>同时使用 App ID 和 Token 鉴权
 

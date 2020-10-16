@@ -98,12 +98,12 @@ updatedAt: Mon May 11 2020 08:10:31 GMT+0800 (CST)
 <details>
 <summary>白板</summary>
 参考下列常用功能文档，在你的项目中实现白板相关功能。
-	<li><a href="https://developer.netless.link/docs/ios/guides/ios-document/">文档转换</a></li>
-		<li><a href="https://developer.netless.link/docs/ios/guides/ios-state/">状态管理</a></li>
-	<li><a href="https://developer.netless.link/docs/ios/guides/ios-tools/">使用教具</a></li>
-	<li><a href="https://developer.netless.link/docs/ios/guides/ios-view/">视角操作</a></li>
-	<li><a href="https://developer.netless.link/docs/ios/guides/ios-operation/">白板操作</a></li>
-	<li><a href="https://developer.netless.link/docs/ios/guides/ios-scenes/">页面（场景）管理</a></li>
+	<li><a href="https://developer.netless.link/ios-zh/home/ios-document">文档转换</a></li>
+		<li><a href="https://developer.netless.link/ios-zh/home/ios-state">状态管理</a></li>
+	<li><a href="https://developer.netless.link/ios-zh/home/ios-tools">使用教具</a></li>
+	<li><a href="https://developer.netless.link/ios-zh/home/ios-view">视角操作</a></li>
+	<li><a href="https://developer.netless.link/ios-zh/home/ios-operation">白板操作</a></li>
+	<li><a href="https://developer.netless.link/ios-zh/home/ios-scenes">页面（场景）管理</a></li>
 </details>
 
 

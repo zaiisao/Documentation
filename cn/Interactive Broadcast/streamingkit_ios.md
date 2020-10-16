@@ -3,7 +3,7 @@
 title: 推流组件
 description: 
 platform: iOS
-updatedAt: Tue Aug 18 2020 09:16:30 GMT+0800 (CST)
+updatedAt: Thu Oct 15 2020 09:32:15 GMT+0800 (CST)
 ---
 # 推流组件
 ## 简介
@@ -11,6 +11,12 @@ updatedAt: Tue Aug 18 2020 09:16:30 GMT+0800 (CST)
 Agora 为 CDN 直播推流场景研发 Streaming Kit（推流组件），支持将单个主播音视频流推送到 CDN。如果你同时集成 Streaming Kit 和 Agora RTC SDK，你还可以在观众无感知的情况下实现单主播和多主播画面的动态切换。
 
 ![](https://web-cdn.agora.io/docs-files/1597407339661)
+
+## 示例项目
+
+Agora 在 GitHub 上提供开源的 [Agora-Extensions](https://github.com/AgoraIO/Agora-Extensions) 示例项目供你参考：
+- [RtmpStreaming](https://github.com/AgoraIO/Agora-Extensions/tree/master/RtmpStreaming)：适用于无需美颜的开发者参考。
+- [RtmpSteramingWithBeauty](https://github.com/AgoraIO/Agora-Extensions/tree/master/RtmpStreamingWithBeauty)：适用于需要美颜功能的开发者参考。
 
 ## 准备开发环境
 

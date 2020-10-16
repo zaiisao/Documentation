@@ -3,7 +3,7 @@
 title: 管理成员和角色
 description: 
 platform: All Platforms
-updatedAt: Fri Jul 17 2020 03:10:44 GMT+0800 (CST)
+updatedAt: Mon Oct 12 2020 05:27:18 GMT+0800 (CST)
 ---
 # 管理成员和角色
 你创建了一个 Agora 开发者账号后，该账号的角色为**管理员**。在控制台，你可以为你的账号添加新的成员，不同的成员拥有不同的权限，从而实现分工协作。
@@ -33,7 +33,7 @@ updatedAt: Fri Jul 17 2020 03:10:44 GMT+0800 (CST)
 
 - 点击 ![](https://web-cdn.agora.io/docs-files/1594629837950)，根据需求重新设置该成员的角色和权限。
 - 点击 ![](https://web-cdn.agora.io/docs-files/1594629848548)，重置成员的登录密码，该成员会收到密码重置邮件。
-- 点击 ![](https://web-cdn.agora.io/docs-files/1594629865302)，删除成员，将不需要继续参与该项目的成员移出。
+- 点击 ![](https://web-cdn.agora.io/docs-files/1594868785328)，删除成员，将不需要继续参与该项目的成员移出。
 
 ## <a name="permission"></a>角色权限说明
 

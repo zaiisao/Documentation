@@ -3,7 +3,7 @@
 title: 跨直播间连麦
 description: 
 platform: iOS,macOS
-updatedAt: Sat Oct 10 2020 04:27:12 GMT+0800 (CST)
+updatedAt: Thu Oct 15 2020 01:50:20 GMT+0800 (CST)
 ---
 # 跨直播间连麦
 ## 功能描述
@@ -57,7 +57,7 @@ Agora Native SDK 在 v2.9.0 中新增如下跨频道媒体流转发接口，支�
 ### 示例代码
 
 ```swift
-// 配置源频道信息，其中 channelName 使用当前频道名，uid 设为 0
+// 配置源频道信息，其中 channelName 使用默认值，即当前的频道名；uid 使用默认值 0
 let config = AgoraChannelMediaRelayConfiguration()
 // 请确保生成 sourceChannelToken 的 uid 为 0
 config.sourceInfo = AgoraChannelMediaRelayInfo(token: sourceChannelToken)

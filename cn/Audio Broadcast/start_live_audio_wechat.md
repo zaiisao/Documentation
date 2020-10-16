@@ -3,7 +3,7 @@
 title: 实现音频直播
 description: wechat live
 platform: 微信小程序
-updatedAt: Fri Sep 18 2020 04:53:52 GMT+0800 (CST)
+updatedAt: Fri Oct 16 2020 02:38:33 GMT+0800 (CST)
 ---
 # 实现音频直播
 本文介绍如何使用 Agora 微信小程序 SDK 快速实现音频直播。
@@ -83,11 +83,11 @@ Agora 在 GitHub 上提供一个开源的实时音视频示例项目 [Agora-Mini
 ### 集成微信小程序 SDK
 
 1. 下载[声网小程序 SDK](https://docs.agora.io/cn/Agora%20Platform/downloads) 并解压。
-2. 将 SDK 包中到的 **mini-app-sdk-production** 文件复制到你的小程序项目文件夹中。
+2. 将 SDK 包中到的 **Agora_Miniapp_SDK_for_WeChat.js** 文件复制到你的小程序项目文件夹中。
 3. 使用 `require` 将小程序 SDK 集成到项目中：
 
 	```javascript
-	// ../../lib/mini-app-sdk-production.js 为你的 js 文件本地路径
+	// ../../lib/Agora_Miniapp_SDK_for_WeChat.js 为你的 js 文件本地路径
 	const AgoraMiniappSDK = require('../../lib/Agora_Miniapp_SDK_for_WeChat.js');
 	```
 
@@ -96,6 +96,8 @@ Agora 在 GitHub 上提供一个开源的实时音视频示例项目 [Agora-Mini
 完成开发环境准备后，你可以参考下图中的业务流程图，在你的项目中实现直播功能。
 
 ![](https://web-cdn.agora.io/docs-files/1583745198722)
+
+<div class="alert note">-2301 和 -1307 是微信小程序  live-player 和 live-pusher 组件的状态码，表示网络断连，需要自行重启。详见微信小程序 <a href="https://developers.weixin.qq.com/miniprogram/dev/component/live-player.html">live-player</a > 和 <a href="https://developers.weixin.qq.com/miniprogram/dev/component/live-pusher.html">live-pusher</a > 组件文档。</div>
 
 ### 1. 初始化客户端对象
 
