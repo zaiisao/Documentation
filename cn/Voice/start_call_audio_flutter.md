@@ -72,16 +72,16 @@ updatedAt: Thu Oct 01 2020 01:42:22 GMT+0800 (CST)
 在控制台的项目管理页面，点击已创建项目的![](https://web-cdn.agora.io/docs-files/1602840930382)图标，打开 Token 页面。
 
 1. 输入一个频道名，例如 test，然后点击生成临时Token。临时 Token 的有效期为 24 小时。![](https://web-cdn.agora.io/docs-files/1602840948519)
-2. 临时 Token 仅作为演示和测试用途。在生产环境中，你需要自行部署服务器签发 Token，详见生成 Token。![](https://web-cdn.agora.io/docs-files/1602840954561)
-
+2. 临时 Token 仅作为演示和测试用途。在生产环境中，你需要自行部署服务器签发 Token，详见[生成 Token](../../cn/Video/token_server.md)。![](https://web-cdn.agora.io/docs-files/1602840954561)
 
 
 #### 步骤四：运行示例项目
 
-1. 下载 [Agora-Flutter-Quickstart](https://github.com/AgoraIO-Community/Agora-Flutter-Quickstart) 仓库。打开 `settings.dart` (`lib/src/utils/settings.dart`)文件并添加 App ID。
+1. 下载 [Agora-Flutter-Quickstart](https://github.com/AgoraIO-Community/Agora-Flutter-Quickstart) 仓库。打开 `settings.dart` (`lib/src/utils/settings.dart`)文件并添加 App ID 和 Token。
 
 	```
-  const APP_ID ="";
+const APP_ID = Your_App_ID;
+const Token = Your_Token;
 	```
 
 2. 在仓库根目录运行以下命令安装依赖项。
