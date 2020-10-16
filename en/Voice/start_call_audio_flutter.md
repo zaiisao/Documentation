@@ -75,7 +75,7 @@ When in a production environment, Agora recommends generating a token at your se
 
 **Step 4. Run the project**
 
-1. Download the [Agora-Flutter-Quickstart](https://github.com/AgoraIO-Community/Agora-Flutter-Quickstart) repository. Open `settings.dart` (`lib/src/utils/settings.dart`). Add App ID.
+1. Download the [Agora-Flutter-Quickstart](https://github.com/AgoraIO-Community/Agora-Flutter-Quickstart) repository. Open `settings.dart` (`lib/src/utils/settings.dart`). Add App ID and Token.
 
 	```
 const APP_ID = Your_App_ID;
