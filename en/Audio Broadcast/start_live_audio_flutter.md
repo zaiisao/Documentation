@@ -62,14 +62,24 @@ Click ![img](https://web-cdn.agora.io/docs-files/1592488399929) to view and copy
 
 ![img](https://web-cdn.agora.io/docs-files/1574924570426)
 
+**Step 3. Generate a temporary token **
+
+To facilitate authentication at the test stage, Agora Console provides temporary tokens. Take the following steps to generate a temporary token:
+
+1.  Project Management page, find the project for which you want to generate a temporary token, and click ![](https://web-cdn.agora.io/docs-files/1602841076825).![](https://web-cdn.agora.io/docs-files/1602841103054)
+2. On the Token page, enter the name of the channel that you want to join, and click Generate Temp Token to get a temporary token.![](https://web-cdn.agora.io/docs-files/1602841110522)
+
+When in a production environment, Agora recommends generating a token at your server by calling `buildTokenWithUid`. See [Generate a token](../../en/Audio%20Broadcast/token_server.md).
 
 
-**Step 3. Run the project**
+
+**Step 4. Run the project**
 
 1. Download the [Agora-Flutter-Quickstart](https://github.com/AgoraIO-Community/Agora-Flutter-Quickstart) repository. Open `settings.dart` (`lib/src/utils/settings.dart`). Add App ID.
 
 	```
-  const APP_ID ="";
+const APP_ID = Your_App_ID;
+const Token = Your_Token;
 	```
 
 2. Run the following command to install dependencies.

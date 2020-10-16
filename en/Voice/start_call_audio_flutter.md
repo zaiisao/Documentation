@@ -69,6 +69,8 @@ To facilitate authentication at the test stage, Agora Console provides temporary
 1.  Project Management page, find the project for which you want to generate a temporary token, and click ![](https://web-cdn.agora.io/docs-files/1602841076825).![](https://web-cdn.agora.io/docs-files/1602841103054)
 2. On the Token page, enter the name of the channel that you want to join, and click Generate Temp Token to get a temporary token.![](https://web-cdn.agora.io/docs-files/1602841110522)
 
+When in a production environment, Agora recommends generating a token at your server by calling `buildTokenWithUid`. See [Generate a token](../../en/Audio%20Broadcast/token_server.md).
+
 
 
 **Step 4. Run the project**
