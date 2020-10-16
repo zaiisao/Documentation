@@ -75,13 +75,13 @@ updatedAt: Thu Oct 01 2020 01:42:19 GMT+0800 (CST)
 2. 临时 Token 仅作为演示和测试用途。在生产环境中，你需要自行部署服务器签发 Token，详见生成 Token。![](https://web-cdn.agora.io/docs-files/1602840954561)
 
 
-
 #### 步骤四：运行示例项目
 
 1. 下载 [Agora-Flutter-Quickstart](https://github.com/AgoraIO-Community/Agora-Flutter-Quickstart) 仓库。打开 `settings.dart` (`lib/src/utils/settings.dart`)文件并添加 App ID。
 
 	```
-  const APP_ID ="";
+const APP_ID = Your_App_ID;
+const Token = Your_Token;
 	```
 
 2. 在仓库根目录运行以下命令安装依赖项。

@@ -3,7 +3,7 @@
 title: Channel Encryption
 description: 
 platform: Windows
-updatedAt: Fri Aug 14 2020 08:10:50 GMT+0800 (CST)
+updatedAt: Fri Oct 16 2020 08:31:03 GMT+0800 (CST)
 ---
 # Channel Encryption
 ## Introduction

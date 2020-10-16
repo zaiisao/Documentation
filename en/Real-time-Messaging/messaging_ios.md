@@ -3,19 +3,13 @@
 title: Peer-to-peer or Channel Messaging
 description: v1.0
 platform: iOS
-updatedAt: Thu Aug 27 2020 06:52:43 GMT+0800 (CST)
+updatedAt: Fri Oct 16 2020 06:30:23 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 
 You can use this guide to quickly start messaging with the [Agora RTM iOS SDK](https://docs.agora.io/en/Real-time-Messaging/downloads). 
 
 
-## Try the demo
-
-We provide open-source demo projects on GitHub, which implement an elementary messaging system. You can try out the corresponding demo and view our source code. 
-
-- [Agora-RTM-Tutorial-iOS-Objective-C](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-iOS-Objective-C)
-- [Agora-RTM-Tutorial-iOS-Swift](https://github.com/AgoraIO/RTM/tree/master/Agora-RTM-Tutorial-iOS)
 
 
 ## Prerequisites
