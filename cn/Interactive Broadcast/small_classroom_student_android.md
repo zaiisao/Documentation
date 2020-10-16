@@ -98,6 +98,7 @@ updatedAt: Mon May 11 2020 09:13:43 GMT+0800 (CST)
 <details>
 <summary>白板</summary>
 参考下列常用功能文档，在你的项目中实现白板相关功能。
+	<li><a href="https://developer.netless.link/android-zh/home/android-create-room">创建白板房间和获取白板房间信息</a></li>
 	<li><a href="https://developer.netless.link/android-zh/home/android-document">文档转换</a></li>
 		<li><a href="https://developer.netless.link/android-zh/home/android-state">状态管理</a></li>
 	<li><a href="https://developer.netless.link/android-zh/home/android-tools">使用教具</a></li>
