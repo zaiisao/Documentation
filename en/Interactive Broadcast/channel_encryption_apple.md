@@ -3,7 +3,7 @@
 title: Channel Encryption
 description: 
 platform: iOS,macOS
-updatedAt: Fri Aug 14 2020 08:10:32 GMT+0800 (CST)
+updatedAt: Thu Oct 15 2020 03:27:03 GMT+0800 (CST)
 ---
 # Channel Encryption
 ## Introduction
@@ -91,7 +91,7 @@ config.encryptionMode = AgoraEncryptionMode.AES128XTS
 // Sets the encryption key.
 config.encryptionKey = "xxxxxxxxxxxxxxxx"
 // Enables the built-in encryption.
-agoraKit.enableEncryption(YES, config)
+agoraKit.enableEncryption(true, config)
 ```
 		
 ```objective-c

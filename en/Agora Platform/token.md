@@ -3,7 +3,7 @@
 title: Set up Authentication
 description: token authentication
 platform: All Platforms
-updatedAt: Fri Sep 18 2020 04:34:31 GMT+0800 (CST)
+updatedAt: Thu Oct 15 2020 05:41:36 GMT+0800 (CST)
 ---
 # Set up Authentication
 To ensure communication security, when users join an RTC channel or you start recording on the server, Agora needs to check their authentication information. Agora provides three authentication mechanisms. According to your scenarios, you can choose one of the following mechanisms:
@@ -160,7 +160,7 @@ After generating a token, see the following steps to use the token:
 
 1. When a client app calls an Agora API for certain functions, such as joining a channel, the client app needs to fill in the generated token, the user name, the channel name, and other information.
 2. After the Agora server receives the token and other information, it authenticates the user's identity and decides if the user have the permission to join the channel. If the authentication is passed, the user can successfully join the channel and use the Agora services.
-3. Token has expiration time. Once the token expires, it becomes invalid, and you need to generate a new token on your app server. Use the new token for joining a channel or using the Agora services.
+3. Token has expiration time. Once the token expires, it becomes invalid, and you need to generate a new token on your app server and call `renewToken`.
 
 
 ## <a name="appid_token"></a>Use either an App ID or a token for authentication

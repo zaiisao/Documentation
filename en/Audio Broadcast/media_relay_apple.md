@@ -3,7 +3,7 @@
 title: Co-host across Channels
 description: 
 platform: iOS,macOS
-updatedAt: Sat Oct 10 2020 04:27:49 GMT+0800 (CST)
+updatedAt: Thu Oct 15 2020 01:52:20 GMT+0800 (CST)
 ---
 # Co-host across Channels
 ## Introduction
@@ -58,7 +58,7 @@ Follow the API call sequence to implement your code logic:
 ### Sample code
 
 ```swift
-// Configures the information of the source channel. Set channelName as the current channel name, and uid as 0.
+// Configures the information of the source channel. Set channelName as the default value, meaning the current channel name. Set uid as the default value 0.
 let config = AgoraChannelMediaRelayConfiguration()
 // Ensure that the uid you use to generate the sourceChannelToken is set as 0.
 config.sourceInfo = AgoraChannelMediaRelayInfo(token: sourceChannelToken)

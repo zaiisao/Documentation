@@ -125,12 +125,12 @@ Refer to the following documents on screen sharing:
 <details>
 <summary>Whiteboard</summary>
 Implement the following whiteboard functions in your project:
-	<li><a href="https://developer-en.netless.link/docs/javascript/features/js-document/">Document conversion</a></li>
-	<li><a href="https://developer-en.netless.link/docs/javascript/features/js-state/">Status Listen</a></li>
-	<li><a href="https://developer-en.netless.link/docs/javascript/features/js-tools/">Tools</a></li>
-	<li><a href="https://developer-en.netless.link/docs/javascript/features/js-view/">Perspective Operation</a></li>
-	<li><a href="https://developer-en.netless.link/docs/javascript/features/js-operation/">Whiteboard Operation</a></li>
-	<li><a href="https://developer-en.netless.link/docs/javascript/features/js-scenes/">Page (Scene) Management</a></li>
+	<li><a href="https://developer.netless.link/javascript-en/home/document-converter">Document conversion</a></li>
+	<li><a href="https://developer.netless.link/javascript-en/home/business-state-management">Status Listen</a></li>
+	<li><a href="https://developer.netless.link/javascript-en/home/tools">Tools</a></li>
+	<li><a href="https://developer.netless.link/javascript-en/home/view">Perspective Operation</a></li>
+	<li><a href="https://developer.netless.link/javascript-en/home/room-methods">Whiteboard Operation</a></li>
+	<li><a href="https://developer.netless.link/document-en/home/scene-manangement">Page (Scene) Management</a></li>
 </details>
 
 

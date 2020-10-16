@@ -3,7 +3,7 @@
 title: Best Practices in Integrating Cloud Recording
 description: 
 platform: All Platforms
-updatedAt: Wed Sep 23 2020 03:57:54 GMT+0800 (CST)
+updatedAt: Thu Oct 15 2020 03:04:01 GMT+0800 (CST)
 ---
 # Best Practices in Integrating Cloud Recording
 To improve application robustness, Agora recommends that you do the following when integrating Cloud Recording RESTful APIs:
@@ -40,8 +40,6 @@ You can periodically call `query` to ensure that the recording service is in pro
 #### Periodically query service status
 
 If the reliability of the status of a cloud recording is a high priority, Agora strongly recommends using the `query` method to periodically query the recording service status. The interval between two calls can be around two minutes. Take the corresponding measure based on the received HTTP status code:
-
-<div class="alert note">The queries per second (QPS) quota is 10 requests per second for each App ID. You can estimate the QPS quota your project needs according to your PCU and query frequency, and contact <a href="mailto:support@agora.io">support@agora.io</a> to increase your quota if necessary.</div>
 
 - If the returned HTTP status code is always `40x`, check the parameter values in your request.
 - If the returned HTTP status code is `404`, and the request parameters are confirmed to be correct, the recording has either not started successfully, or the recording quit after starting. Agora recommends that you use a backoff strategy, for example, retry after 5, 10, and 15 seconds successively.

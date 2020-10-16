@@ -3,7 +3,7 @@
 title: In-ear Monitoring
 description: How to enable in-ear monitoring and adjust the volume
 platform: Unity
-updatedAt: Fri Jul 10 2020 08:44:50 GMT+0800 (CST)
+updatedAt: Thu Oct 15 2020 08:25:49 GMT+0800 (CST)
 ---
 # In-ear Monitoring
 In-ear monitoring provides a mix of the audio sources (for example, a mix of the vocals and music) to the host with low latency, commonly used in professional scenarios, such as in concerts.
@@ -21,7 +21,7 @@ The Agora SDK provides the `EnableInEarMonitoring` and `SetInEarMonitoringVolume
 
 ```c#
 // Enables in-ear monitoring. The default value is false.
-int ret = mRtcEngine.EnableInEarMonitoring(false);
+int ret = mRtcEngine.EnableInEarMonitoring(true);
 
 // Sets the volume of the in-ear monitor as 80% of the original volume. The value ranges between 0 and 100. The default value is 100, which represents the original volume captured by the microphone.
 int ret = mRtcEngine.SetInEarMonitoringVolume(80);

@@ -104,12 +104,13 @@ Once enabled, the <code>reportAudioVolumeIndicationOfSpeakers</code> callback re
 <details>
 <summary>Whiteboard</summary>
 Implement the following whiteboard functions in your project:
-	<li><a href="https://developer-en.netless.link/docs/ios/guides/ios-document/">Document Conversion</a></li>
-		<li><a href="https://developer-en.netless.link/docs/ios/guides/ios-state/">State Management</a></li>
-	<li><a href="https://developer-en.netless.link/docs/ios/guides/ios-tools/">Tools</a></li>
-	<li><a href="https://developer-en.netless.link/docs/ios/guides/ios-view/">Perspective operation</a></li>
-	<li><a href="https://developer-en.netless.link/docs/ios/guides/ios-operation/">Whiteboard Operation</a></li>
-	<li><a href="https://developer-en.netless.link/docs/ios/guides/ios-scenes/">Page (Scene) Management</a></li>
+	<li><a href="https://developer.netless.link/ios-en/home/ios-create-room">Create room/Get room information</a></li>
+	<li><a href="https://developer.netless.link/ios-en/home/ios-document">Document Conversion</a></li>
+		<li><a href="https://developer.netless.link/ios-en/home/ios-state">State Management</a></li>
+	<li><a href="https://developer.netless.link/ios-en/home/ios-tools">Tools</a></li>
+	<li><a href="https://developer.netless.link/ios-en/home/ios-view">Perspective operation</a></li>
+	<li><a href="https://developer.netless.link/ios-en/home/ios-operation">Whiteboard Operation</a></li>
+	<li><a href="https://developer.netless.link/ios-en/home/ios-sceneshttps://developer-en.netless.link/docs/ios/guides/ios-scenes/">Page (Scene) Management</a></li>
 </details>
 
 

@@ -98,12 +98,13 @@ Once enabled, the <code>onAudioVolumeIndication</code> callback reports whether 
 <details>
 <summary>Whiteboard</summary>
 Implement the following whiteboard functions in your project:
-	<li><a href="https://developer-en.netless.link/docs/android/guides/android-document/">Document Conversion</a></li>
-		<li><a href="https://developer-en.netless.link/docs/android/guides/android-state/">State Managment</a></li>
-	<li><a href="https://developer-en.netless.link/docs/android/guides/android-tools/">Tools</a></li>
-	<li><a href="https://developer-en.netless.link/docs/android/guides/android-view/">Perspective Operation</a></li>
-	<li><a href="https://developer-en.netless.link/docs/android/guides/android-operation/">Whiteboard Operation</a></li>
-	<li><a href="https://developer-en.netless.link/docs/android/guides/android-scenes/">Page (Scene) Management</a></li>
+	<li><a href="https://developer.netless.link/android-en/home/android-create-room">Create room/Get room information</a></li>
+	<li><a href="https://developer.netless.link/android-en/home/android-document">Document Conversion</a></li>
+		<li><a href="https://developer.netless.link/android-en/home/android-state">State Managment</a></li>
+	<li><a href="https://developer.netless.link/android-en/home/android-tools">Tools</a></li>
+	<li><a href="https://developer.netless.link/android-en/home/android-view">Perspective Operation</a></li>
+	<li><a href="https://developer.netless.link/android-en/home/android-operation">Whiteboard Operation</a></li>
+	<li><a href="https://developer.netless.link/android-en/home/android-scenes">Page (Scene) Management</a></li>
 </details>
 
 
