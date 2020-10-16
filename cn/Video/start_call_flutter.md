@@ -62,9 +62,21 @@ updatedAt: Thu Oct 01 2020 01:42:21 GMT+0800 (CST)
 在控制台的**项目管理**页面，找到你的项目，点击 App ID 右侧的眼睛图标就可以直接复制项目的 App ID。
 
 
+#### 步骤三：生成临时 Token
 
 
-#### 步骤三：运行示例项目
+为提高项目的安全性，Agora 使用 Token（动态密钥）对即将加入频道的用户进行鉴权。
+
+为了方便测试，Agora 控制台提供生成临时 Token 的功能，具体步骤如下：
+
+在控制台的项目管理页面，点击已创建项目的![](https://web-cdn.agora.io/docs-files/1602840930382)图标，打开 Token 页面。
+
+1. 输入一个频道名，例如 test，然后点击生成临时Token。临时 Token 的有效期为 24 小时。![](https://web-cdn.agora.io/docs-files/1602840948519)
+2. 临时 Token 仅作为演示和测试用途。在生产环境中，你需要自行部署服务器签发 Token，详见生成 Token。![](https://web-cdn.agora.io/docs-files/1602840954561)
+
+
+
+#### 步骤四：运行示例项目
 
 1. 下载 [Agora-Flutter-Quickstart](https://github.com/AgoraIO-Community/Agora-Flutter-Quickstart) 仓库。打开 `settings.dart` (`lib/src/utils/settings.dart`)文件并添加 App ID。
 
