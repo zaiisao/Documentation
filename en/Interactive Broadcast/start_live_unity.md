@@ -65,7 +65,7 @@ Choose either of the following approaches to integrate the Agora Unity SDK into 
 
 **Approach 2: Manually add the SDK files**
 
-1. Go to [SDK Downloads](https://docs.agora.io/en/Agora%20Platform/downloads), download the Agora SDK for Unity under **Video SDK**, and unzip the downloaded SDK package.
+1. Go to [SDK Downloads](https://docs.agora.io/en/Agora%20Platform/downloads), download the Agora SDK for Unity under **Video SDK**, and extract the files from the downloaded SDK package.
 2. Create a **Plugins** folder under the **Assets** folder in your project.
 3. Copy the following file or subfolder from the **libs** folder of the downloaded SDK to the corresponding directory of your project.
 

@@ -3,7 +3,7 @@
 title: Share the Screen
 description: 
 platform: Android
-updatedAt: Tue Jul 21 2020 10:44:49 GMT+0800 (CST)
+updatedAt: Tue Oct 20 2020 03:55:08 GMT+0800 (CST)
 ---
 # Share the Screen
 ## Introduction
@@ -48,7 +48,7 @@ rtcEngine.pushExternalVideoFrame(new AgoraVideoFrame(...));
 projection.stop();
 ```
 
-We also provide an open-souce [Agora-Screen-Sharing-Android](https://github.com/AgoraIO/Advanced-Video/tree/dev/win-screenshare/Screensharing/Agora-Screen-Sharing-Android) demo project on GitHub that implements screen sharing. You can download it and refer to the source code. 
+We also provide an open-souce [Agora-Screen-Sharing-Android](https://github.com/AgoraIO/Advanced-Video/tree/dev/backup/Screensharing/Agora-Screen-Sharing-Android) demo project on GitHub that implements screen sharing. You can download it and refer to the source code. 
 
 
 ## Considerations

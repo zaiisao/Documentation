@@ -70,7 +70,7 @@ dependencies {
 
 **Method 2: Manually copy the SDK files**
 
-1. Go to [SDK Downloads](https://docs.agora.io/en/Agora%20Platform/downloads), download the latest version of the Agora Voice SDK, and unzip the downloaded SDK package.
+1. Go to [SDK Downloads](https://docs.agora.io/en/Agora%20Platform/downloads), download the latest version of the Agora Voice SDK, and extract the files from the downloaded SDK package.
 2. Copy the following files or subfolders from the libs folder of the downloaded SDK package to the path of your project.
 
 | File or subfolder | Path of your project | 

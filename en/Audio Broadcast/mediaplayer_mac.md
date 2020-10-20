@@ -3,7 +3,7 @@
 title: MediaPlayer Kit
 description: 
 platform: macOS
-updatedAt: Thu Jul 16 2020 04:13:07 GMT+0800 (CST)
+updatedAt: Tue Oct 20 2020 06:42:34 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
 ## Function description
@@ -44,7 +44,7 @@ Now, let's build a macOS project from scratch.
 
 ### Integrate the MediaPlayer Kit
 
-1. Go to [Downloads](https://docs.agora.io/en/Agora%20Platform/downloads), download the latest version of the MediaPlayer Kit, and unzip the download package.
+1. Go to [Downloads](https://docs.agora.io/en/Agora%20Platform/downloads), download the latest version of the MediaPlayer Kit, and extract the files from the download package.
 
 2. Add the `AgoraMediaPlayer.framework` file in the **libs** folder to the project folder.
 
@@ -77,7 +77,7 @@ Integration steps: See [Integrate the Native SDK](https://docs.agora.io/en/Inter
 
 ### Integrate the RtcChannelPublishPlugin
 
-1. [Download](https://github.com/AgoraIO/Agora-Extensions/releases) and unzip the MediaPlayerExtensions.zip.
+1. [Download](https://github.com/AgoraIO/Agora-Extensions/releases) and extract the files from the MediaPlayerExtensions.zip.
 2. Unzip the ./MediaPlayerExtensions/apple/RtcChannelPublishPlugin.zip and add to your project folder.
 
 

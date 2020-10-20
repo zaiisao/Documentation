@@ -3,7 +3,7 @@
 title: Play Audio Effects/Audio Mixing File
 description: How to play audio effects and enable audio mixing for iOS
 platform: iOS,macOS
-updatedAt: Fri Oct 16 2020 09:02:43 GMT+0800 (CST)
+updatedAt: Fri Oct 16 2020 10:10:55 GMT+0800 (CST)
 ---
 # Play Audio Effects/Audio Mixing File
 ## Introduction
@@ -14,6 +14,13 @@ Before proceeding, ensure that you implement a basic call or live interactive st
 - iOS: [Start a Call](../../en/Video/start_call_ios.md)/[Start Live Interactive Streaming](../../en/Video/start_live_ios.md)
 - macOS: [Start a call](../../en/Video/start_call_mac.md)/[Start Live Interactive Streaming](../../en/Video/start_live_mac.md)
 
+## Sample project
+
+Agora provides an open-source demo project that has implemented audio mixing on GitHub. You can download the project and view the source code:
+
+- iOS: [AudioMixing](https://github.com/AgoraIO/API-Examples/blob/master/iOS/APIExample/Examples/Advanced/AudioMixing/AudioMixing.swift)
+- macOS: [AudioMixing](https://github.com/AgoraIO/API-Examples/blob/master/macOS/APIExample/Examples/Advanced/AudioMixing/AudioMixing.swift)
+
 ## Play audio effect files
 
 The play audio effect methods can be used to play ambient sound, such as clapping and gunshots. You can play multiple audio effects at the same time, and preload the audio effect file for efficiency.
@@ -23,7 +30,7 @@ The audio effect file is specified by the file path, but the SDK uses the sound 
 ### Implementation
 
 ```swift
-// swift
+// Swift
 // Preloads the audio effect (recommended). Note the file size and preload the file before joining the channel.
 // Only mp3, aac, m4a, 3gp, and wav files are supported.
 // You may need to record the correlation between the sound IDs and the file paths.
@@ -49,9 +56,12 @@ agoraKit.pauseAllEffects()
 // Gets the volume of the audio effect. The value ranges between 0 and 100.
 let volume = agoraKit.getEffectsVolume()
 
-// Ensures that the audio effect's volume is at least 80% of the original volume.
+// Ensures that the volume of all audio effect files is at least 80% of the original volume.
 volume = volume < 80 ? 80 : volume
 agoraKit.setEffectsVolume(volume)
+
+// Sets the volume of a specified audio effect file as 50% of the original volume.
+agoraKit.setVolumeOfEffect(soundId:"1", 50)
 
 // Resumes playing the audio effect.
 agoraKit.resumeAllEffects()
@@ -61,7 +71,7 @@ agoraKit.stopAllEffects()
 ```
 
 ```objective-c
-// objective-c
+// Objective-C
 // Preloads the audio effect (recommended). Note the file size and preload the file before joining the channel.
 // Only mp3, aac, m4a, 3gp, and wav files are supported.
 // You may need to record the correlation between the sound IDs and the file paths.
@@ -87,9 +97,12 @@ BOOL publish = true; // Sets whether to publish the audio effect.
 // Gets the volume of the audio effect. The value ranges between 0 and 100.
 int volume = [agoraKit getEffectsVolume];
 
-// Ensures that the audio effect's volume is at least 80% of the original volume.
+// Ensures that the volume of all audio effect files is at least 80% of the original volume.
 volume = volume < 80 ? 80 : volume;
 [agoraKit setEffectsVolume: volume];
+
+// Sets the volume of a specified audio effect file as 50% of the original volume.
+[agoraKit setVolumeOfEffect: soundId:@"1" volume:50];
 
 // Resumes playing the audio effect.
 [agoraKit resumeAllEffects];
@@ -105,6 +118,7 @@ volume = volume < 80 ? 80 : volume;
 - [pauseAllEffects](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/pauseAllEffects)
 - [getEffectsVolume](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/getEffectsVolume)
 - [setEffectsVolume](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setEffectsVolume:)
+- [`setVolumeOfEffect`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setVolumeOfEffect:withVolume:)
 - [resumeAllEffects](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/resumeAllEffects)
 - [stopAllEffects](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopAllEffects)
 
@@ -129,7 +143,7 @@ Agora audio mixing supports the following options:
 ### Implementation
 
 ```swift
-// swift
+// Swift
 // loopback sets whether other users can hear the audio mixing. If loopback is set as true, only the local user can hear the audio mixing.
 // replace sets whether the audio captured by the microphone is replaced by the audio mixing file. 
 // Setting cycle as -1 means looping the audio mixing file infinitely. Setting cycle as a positive integer means the number of times to play the file.
@@ -140,10 +154,13 @@ let cycle = 1
   
 // Starts audio mixing.
 agoraKit.startAudioMixing(filePath, loopback: loopback, replace: replace, cycle: cycle)
+
+// Sets the audio mixing volume for both local and remote playback as 50% of the original volume.
+agoraKit.adjustAudioMixingVolume(50)
 ```
 
-```objective-c
-// objective-c
+```bjective-c
+// Objective-C
 // loopback sets whether other users can hear the audio mixing. If loopback is set as YES, only the local user can hear the audio mixing.
 // replace sets whether the audio captured by the microphone is replaced by the audio mixing file. 
 // Setting cycle as -1 means looping the audio mixing file infinitely. Setting cycle as a positive integer means the number of times to play the file.
@@ -154,24 +171,38 @@ NSInteger cycle = 1;
 
 // Starts audio mixing.
 [agoraKit startAudioMixing: filePath loopback: loopback replace: replace cycle: cycle];
+
+
+// Sets the audio mixing volume for both local and remote playback as 50% of the original volume.
+[agoraKit adjustAudioMixingVolume: 50];
 ```
 
-We also provide open-source demo projects that implement audio mixing on GitHub. You can try the demo and refer to the source code.
+You can also use `startAudioMixingPlayoutVolume` and `adjustAudioMixingPublishVolume` to adjust the audio mixing volume for the local and remote playback respectively. The value range of `volume` id [0, 100].
 
-**iOS**
+```swift
+// Swift
+// Sets the audio mixing volume for remote playback as 50% of the original volume.
+agoraKit.adjustAudioMixingPublishVolume(50)
+// Sets the audio mixing volume for local playback as 50% of the original volume.
+agoraKit.adjustAudioMixingPlayoutVolume(50)
+```
 
-- [OpenVideoCall-iOS](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-iOS) for Swift. Refer to the code in [`RoomViewController.swift`](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-iOS/OpenVideoCall/RoomViewController.swift#L45) .
-- [OpenVideoCall-iOS-Objective-C](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-iOS-Objective-C) for Objective-C. Refer to the code in [`RoomViewController.m`](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-iOS-Objective-C/OpenVideoCall/RoomViewController.m#L60).
+```objective-c
+// Objective-C
+// Sets the audio mixing volume for remote playback as 50% of the original volume.
+[agoraKit adjustAudioMixingPublishVolume: 50];
+// Sets the audio mixing volume for local playback as 50% of the original volume.
+[agoraKit adjustAudioMixingPlayoutVolume: 50];
+```
 
-**macOS**
-
-- [OpenVideoCall-macOS](https://github.com/AgoraIO/Basic-Video-Call/tree/master/Group-Video/OpenVideoCall-macOS) for Swift. Refer to the code in [`RoomViewController.swift`](https://github.com/AgoraIO/Basic-Video-Call/blob/master/Group-Video/OpenVideoCall-macOS/OpenVideoCall/RoomViewController.swift#L232).
 
 ### API reference
 
 - [`startAudioMixing`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/startAudioMixing:loopback:replace:cycle:)
 - [`stopAudioMixing`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/stopAudioMixing)
 - [`adjustAudioMixingVolume`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingVolume:)
+- [`adjustAudioMixingPublishVolume`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingPublishVolume:)
+- [`adjustAudioMixingPlayoutVolume`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/adjustAudioMixingPlayoutVolume:)
 - [`setLocalVoicePitch`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setLocalVoicePitch:)
 - [`setAudioMixingPitch`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/setAudioMixingPitch:)
 - [`pauseAudioMixing`](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/pauseAudioMixing)

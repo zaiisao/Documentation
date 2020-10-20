@@ -3,7 +3,7 @@
 title: Chrome Extension for Screen Sharing
 description: 
 platform: Web
-updatedAt: Mon Oct 12 2020 07:33:25 GMT+0800 (CST)
+updatedAt: Tue Oct 20 2020 06:40:16 GMT+0800 (CST)
 ---
 # Chrome Extension for Screen Sharing
 To enable screen sharing on Chrome, you need to add our Chrome extension for screen sharing.
@@ -18,7 +18,7 @@ Follow these steps to add the screen-sharing extension.
 
 ### 1. Get the screen-sharing extension
 
-[Download](http://download.agora.io/sdk/release/chrome-extension.zip) the screen-sharing extension and unzip the package. The package includes the following files.
+[Download](http://download.agora.io/sdk/release/chrome-extension.zip) the screen-sharing extension and extract the files from the package. The package includes the following files.
 
 <img alt="../_images/chrome_extension_screenshare.png" src="https://web-cdn.agora.io/docs-files/en/chrome_extension_screenshare.png" style="width: 630px; "/>
 

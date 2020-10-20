@@ -3,7 +3,7 @@
 title: MediaPlayer Kit
 description: 
 platform: Windows
-updatedAt: Thu Jul 16 2020 04:13:08 GMT+0800 (CST)
+updatedAt: Tue Oct 20 2020 06:42:35 GMT+0800 (CST)
 ---
 # MediaPlayer Kit
 ## Function description
@@ -43,7 +43,7 @@ Build a Windows project from scratch:
 
 #### Configure the project files
 
-1. Go to [Downloads](https://docs.agora.io/en/Agora%20Platform/downloads), download the latest version of the MediaPlayer Kit, and unzip the download package.
+1. Go to [Downloads](https://docs.agora.io/en/Agora%20Platform/downloads), download the latest version of the MediaPlayer Kit, and extract the files from the download package.
 
 2. Copy the **sdk** to the project folder.
 
@@ -68,7 +68,7 @@ Version requirements: The same as the Native SDK version series you are using.
 
 Integration steps:
 
-1. [Download](https://github.com/AgoraIO/Agora-Extensions/releases) and unzip the MediaPlayerExtensions.zip.
+1. [Download](https://github.com/AgoraIO/Agora-Extensions/releases) and extract the files from the MediaPlayerExtensions.zip.
 2. Add the ./MediaPlayerExtensions/win/RtcChannelPublishHelper folder to your project folder.
 3. Right-click the project name in the **Solution Explorer** window, click **Properties** to configure the following project properties, and click **OK**:
    Go to the **VC++ > General > Additional Include Directories** menu, click **Edit**, and input **./RtcChannelPublishPlugin/utils** in the pop-up window.

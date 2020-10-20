@@ -3,7 +3,7 @@
 title: Co-host across Channels
 description: 
 platform: Windows
-updatedAt: Tue Sep 15 2020 03:10:15 GMT+0800 (CST)
+updatedAt: Mon Oct 19 2020 10:24:27 GMT+0800 (CST)
 ---
 # Co-host across Channels
 ## Introduction
