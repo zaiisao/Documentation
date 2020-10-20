@@ -2,8 +2,8 @@
 ---
 title: 发送和接收图片或文件消息
 description: 
-platform: Android
-updatedAt: Mon Oct 19 2020 06:56:30 GMT+0800 (CST)
+platform: Linux Java
+updatedAt: Mon Oct 19 2020 07:04:42 GMT+0800 (CST)
 ---
 # 发送和接收图片或文件消息
 ## 功能描述
@@ -346,19 +346,19 @@ Agora RTM SDK 引入了 `RtmImageMessage` 类和 `RtmFileMessage` 类用于保�
 
 ## API 参考
 
-- [`createFileMessageByMediaId`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#ae4104179072ed6ebcf050d12250c7a1b)
-- [`createImageMessageByMediaId`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#aaa3e2556fc93af882fd2758419c682af)
-- [`createFileMessageByUploading`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a1b08207278d611e5e4b87e6d9712e0c7)
-- [`createImageMessageByUploading`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#afc93fad7700593a803ddbc87482c0ac0)
-- [`downloadMediaToMemory`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a3d2568cc940dfd8c8110e70dcc4fb85d)
-- [`downloadMediaToFile`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a34e0bd19fb0bbd1d91dec0a1af100038)
-- [`cancelMediaUpload`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a17467b5b336a39bc0d29058244aa7c0c)
-- [`cancelMediaDownload`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a21af4c790dcb6547253ffd43114696a5)
-- [`onImageMessageReceived`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_channel_listener.html#aa5e74313bc9c7a47e2e877690bbd5b8d)
-- [`onFileMessageReceived`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_channel_listener.html#a0d6889ad993ae6e99edaa1d05e67ba77)
-- [`onImageMessageReceivedFromPeer`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_client_listener.html#a9cdc9016e7b3349d8340318411852ccf)
-- [`onFileMessageReceivedFromPeer`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_client_listener.html#a812843550667e2e13068d4715d2fa98b)
-- [`onMediaUploadingProgress`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_client_listener.html#ad54b344caf11bcbfb086a15e96fbb9f2)
-- [`onMediaDownloadingProgress`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/interfaceio_1_1agora_1_1rtm_1_1_rtm_client_listener.html#a1f774858444cc9b36369cbee4770df9c)
+- [`createFileMessageByMediaId`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#ae4104179072ed6ebcf050d12250c7a1b)
+- [`createImageMessageByMediaId`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#aaa3e2556fc93af882fd2758419c682af)
+- [`createFileMessageByUploading`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a1b08207278d611e5e4b87e6d9712e0c7)
+- [`createImageMessageByUploading`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#afc93fad7700593a803ddbc87482c0ac0)
+- [`downloadMediaToMemory`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a3d2568cc940dfd8c8110e70dcc4fb85d)
+- [`downloadMediaToFile`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a34e0bd19fb0bbd1d91dec0a1af100038)
+- [`cancelMediaUpload`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a17467b5b336a39bc0d29058244aa7c0c)
+- [`cancelMediaDownload`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a21af4c790dcb6547253ffd43114696a5)
+- [`onImageMessageReceived`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_rtm_channel_listener.html#aa5e74313bc9c7a47e2e877690bbd5b8d)
+- [`onFileMessageReceived`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_rtm_channel_listener.html#a0d6889ad993ae6e99edaa1d05e67ba77)
+- [`onImageMessageReceivedFromPeer`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_rtm_client_listener.html#a9cdc9016e7b3349d8340318411852ccf)
+- [`onFileMessageReceivedFromPeer`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_rtm_client_listener.html#a812843550667e2e13068d4715d2fa98b)
+- [`onMediaUploadingProgress`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_rtm_client_listener.html#ad54b344caf11bcbfb086a15e96fbb9f2)
+- [`onMediaDownloadingProgress`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java_linux/interfaceio_1_1agora_1_1rtm_1_1_rtm_client_listener.html#a1f774858444cc9b36369cbee4770df9c)
 
 

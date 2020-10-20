@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: Flutter
-updatedAt: Thu Oct 01 2020 01:42:22 GMT+0800 (CST)
+updatedAt: Sun Oct 18 2020 09:29:30 GMT+0800 (CST)
 ---
 # 实现语音通话
 本文分以下两个部分：
@@ -110,7 +110,7 @@ const Token = Your_Token;
 
 在 `pubspec.yaml` 文件中添加以下依赖项：
 
-1. 添加 `agora_rtc_engine` 依赖项，集成 Agora Flutter SDK。关于 `agora_rtc_engine` 的最新版本可以查询 https://pub.dev/packages/agora_rtc_engine。
+1. 添加 `agora_rtc_engine` 依赖项，集成 Agora Flutter SDK。关于 `agora_rtc_engine` 的最新版本可以查询 [https://pub.dev/packages/agora_rtc_engine](https://pub.dev/packages/agora_rtc_engine)。
 2. 添加 `permission_handler` 依赖项，安装权限处理插件。
 
 ```

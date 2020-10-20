@@ -3,12 +3,16 @@
 title: 发送和接收图片或文件消息
 description: 
 platform: Web
-updatedAt: Wed Jul 01 2020 09:29:54 GMT+0800 (CST)
+updatedAt: Mon Oct 19 2020 07:00:39 GMT+0800 (CST)
 ---
 # 发送和接收图片或文件消息
 ## 功能描述
 
 你可以通过 `createMediaMessageByUploading` 方法将不超过 30 MB 的图片或文件上传到 Agora 服务器。每个上传成功的图片或文件保存 7 天，SDK 会返回一个 media ID 作为此图片或文件的唯一标识。你可以使用 `RtmFileMessage` 接口和 `RtmImageMessage` 接口用于保存和传递 SDK 返回的 media ID。`RtmFileMessage` 接口和 `RtmImageMessage` 接口都属于 `RtmMessage` 接口的类型别名，因此你可以通过这两个接口发送和接收图片或文件消息。你可以使用 `downloadMedia` 方法下载接收到的图片或文件。
+
+文件或图片的数据流转过程如下：
+
+![](https://web-cdn.agora.io/docs-files/1603090445866)
 
 ## 实现方法
 
