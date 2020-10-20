@@ -3,7 +3,7 @@
 title: Send and Receive Image or File Messages
 description: 
 platform: Windows CPP,Linux CPP
-updatedAt: Wed Sep 30 2020 15:45:01 GMT+0800 (CST)
+updatedAt: Mon Oct 19 2020 07:17:27 GMT+0800 (CST)
 ---
 # Send and Receive Image or File Messages
 ## Introduction
@@ -12,7 +12,10 @@ You can use Agora RTM SDK to send and receive image or file messages.
 
 The RTM SDK supports sending non-empty images and files that do not exceed 30 MB in size. Each image or file you upload to the Agora server stays for seven days and has a corresponding media ID. You can download the image or file from the Agora server with the media ID. 
 
-The RTM SDK adds the `IImageMessage` class and the `IFileMessage` class to save and transfer media ID. Because the `IImageMessage` class and the `IFileMessage` class inherit from the `IMessage` class, you can use existing peer-to-peer or channel messaging to transfer the `IImageMessage` instance and the `IFileMessage` instance. Therefore, you can send and receive image or file messages.
+
+The following diagram shows how the file or image is sent and received:
+
+![](https://web-cdn.agora.io/docs-files/1603091741374)
 
 You can use the `IImageMessage` class to perform the following image operations:
 
@@ -27,6 +30,8 @@ You can use the `IFileMessage` class to perform the following file operations:
 - Get the size of the uploaded file.
 
 ## Implementation
+
+The RTM SDK adds the `IImageMessage` class and the `IFileMessage` class to save and transfer media ID. Because the `IImageMessage` class and the `IFileMessage` class inherit from the `IMessage` class, you can use existing peer-to-peer or channel messaging to transfer the `IImageMessage` instance and the `IFileMessage` instance. Therefore, you can send and receive image or file messages.
 
 ### Send and receive image messages
 

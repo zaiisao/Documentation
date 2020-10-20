@@ -3,7 +3,7 @@
 title: Send and Receive Image or File Messages
 description: 
 platform: iOS,macOS
-updatedAt: Wed Sep 30 2020 15:44:20 GMT+0800 (CST)
+updatedAt: Mon Oct 19 2020 07:16:40 GMT+0800 (CST)
 ---
 # Send and Receive Image or File Messages
 ## Introduction
@@ -12,7 +12,10 @@ You can use the Agora RTM SDK to send and receive image or file messages.
 
 The Agora RTM SDK supports sending non-empty images and files that do not exceed 30 MB in size. Each image or file you upload to the Agora server stays for 7 days and has a corresponding media ID. You can download the image or file from the Agora server with the media ID. 
 
-The Agora RTM SDK adds the `AgoraRtmImageMessage` interface and the `AgoraRtmFileMessage` interface to save and transfer media ID. Because the `AgoraRtmImageMessage` interface and the `AgoraRtmFileMessage` interface inherit from the `AgoraRtmMessage` interface, you can use existing peer-to-peer or channel messaging to transfer the `AgoraRtmImageMessage` instance and the `AgoraRtmFileMessage` instance. Thus, you can send and receive image or file messages.
+The following diagram shows how the file or image is sent and received:
+
+![](https://web-cdn.agora.io/docs-files/1603091741374)
+
 
 You can use the `AgoraRtmImageMessage` interface to perform the following image operations:
 
@@ -27,6 +30,8 @@ You can use the `AgoraRtmFileMessage` interface to perform the following file op
 - Get the size of the uploaded file.
 
 ## Implementation
+
+The Agora RTM SDK adds the `AgoraRtmImageMessage` interface and the `AgoraRtmFileMessage` interface to save and transfer media ID. Because the `AgoraRtmImageMessage` interface and the `AgoraRtmFileMessage` interface inherit from the `AgoraRtmMessage` interface, you can use existing peer-to-peer or channel messaging to transfer the `AgoraRtmImageMessage` instance and the `AgoraRtmFileMessage` instance. Thus, you can send and receive image or file messages.
 
 ### Send and receive image messages
 

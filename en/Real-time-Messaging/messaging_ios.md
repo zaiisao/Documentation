@@ -94,7 +94,7 @@ end
 
 **Method 2: Manually add the SDK files**
 
-1. Download the latest version of the [Agora RTM iOS SDK](https://docs.agora.io/cn/Agora%20Platform/downloads), and unzip.
+1. Download the latest version of the [Agora RTM iOS SDK](https://docs.agora.io/cn/Agora%20Platform/downloads), and extract the files from.
 2. Copy the **AgoraRtmKit.framework** file in the **libs** folder to the project folder.
 3. In **Xcode**, go to the **TARGETS > Project Name > Build Phases > Link Binary with Libraries** menu, and click <b>+</b> to add the following frameworks and libraries. To add the **AgoraRtmKit.framework** file, remember to click **Add Other...** after clicking **+**.
 

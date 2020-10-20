@@ -64,9 +64,9 @@ You can skip to [Integrate the SDK](#sdk) if you already have an App ID.
 ### <a name="sdk"></a> Integrate the SDK
 
 
-- Download the latest version of the <a href="https://docs.agora.io/en/Real-time-Messaging/downloads">Agora RTM Linux Java SDK</a> and unzip.
-- Save the **.so** file under the **libs** folder of the unzipped SDK package to the default library search directory of the Linux system, usually **/usr/lib**. 
-- Save the **.jar** file under the **libs** folder of the unzipped SDK package to the *lib* folder of your own project. 
+- Download the latest version of the <a href="https://docs.agora.io/en/Real-time-Messaging/downloads">Agora RTM Linux Java SDK</a> and extract the files from it.
+- Save the **.so** file under the **libs** folder of the SDK package to the default library search directory of the Linux system, usually **/usr/lib**. 
+- Save the **.jar** file under the **libs** folder of the SDK package to the *lib* folder of your own project. 
 - Right click the **.jar** file: **Build Path > Add to Build Path** to add the **.jar** package to your project directory. 
 <i> You can now see a reference to this <b>.jar</b> package under <b>Referenced Libraries</b> folder. </i>
 

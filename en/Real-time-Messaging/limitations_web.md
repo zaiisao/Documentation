@@ -3,7 +3,7 @@
 title: RTM Limitations
 description: 
 platform: Web
-updatedAt: Wed Sep 30 2020 15:18:12 GMT+0800 (CST)
+updatedAt: Tue Oct 20 2020 02:58:27 GMT+0800 (CST)
 ---
 # RTM Limitations
 
@@ -49,6 +49,9 @@ Supports channel and peer-to-peer messages, invitation content, and invitation r
 ## Miscellaneous 
 
 - Notifications of a member joining or leaving the channel are automatically disabled when the number of channel members exceeds 512. Agora recommends that you call the [Gets channel events RESTful API](../../en/Real-time-Messaging/rtm_get_event.md) from your server to get the notifications of channel events. 
-- The current version supports querying the online status of a maximum of 256 users.
-- You can subscribe to the online status of a maximxim of 512 users in one method call, and you can subscribe to the online status of at most 512 users. 
-- Attribute settings in one user attribute operation should not exceed 16 KB in size; attribute settings in one channel attribute operation should not exceed 32 KB in size; each attribute (key/value pair) should not excced 8 KB in size; the number of key/value pairs you set in one attribute operation should not exceed 32. 
+- The current version supports querying the online status of up to 256 users.
+- You can subscribe to the online status of up to 512 users in one method call, and you can subscribe to the online status of up to 512 users.
+- Attribute settings in one user attribute operation must not exceed 16 KB in size. Attribute settings in one channel attribute operation must not exceed 32 KB in size. Each attribute (key/value pair) must not exceed 8 KB in size. The number of key/value pairs you set in one attribute operation must not exceed 32.
+- Each file or image you upload to the Agora server stays for 7 days. The corresponding media ID also stays valid for seven days.
+- Each file or image to upload must not exceed 30 MB.
+- Each client instance can only support up to 9 upload and download processes at the same time.

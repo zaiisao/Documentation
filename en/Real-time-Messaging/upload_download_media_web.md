@@ -3,12 +3,16 @@
 title: Send and Receive Image or File Messages 
 description: 
 platform: Web
-updatedAt: Sat Oct 10 2020 11:03:51 GMT+0800 (CST)
+updatedAt: Mon Oct 19 2020 07:17:53 GMT+0800 (CST)
 ---
 # Send and Receive Image or File Messages 
 ## Introduction
 
 You can call `createMediaMessageByUploading` to upload non-empty files or image files no greater than 30 MB. Each uploaded file or image stays in the Agora server for seven days. The SDK returns a media ID as the unique indentifier of the file or image file. You can use the `RtmFileMessage` interface or the `RtmImageMessage` interface to save the media ID. The `RtmFileMessage` interface and the `RtmImageMessage` interface are type aliases of the `RtmMessage` interface, so you can send and receive file or image messages via peer-to-peer or channel message methods. You can call `downloadMedia` to download the received file or image file.
+
+The following diagram shows how the file or image is sent and received:
+
+![](https://web-cdn.agora.io/docs-files/1603091741374)
 
 ## Implementation
 
@@ -18,9 +22,9 @@ Before you start, ensure that you have integrated the latest SDK into your proje
 
 Complete the following steps to send and receive image messages:
 
-1. Convert a local or internet image to an blob.
+1. Convert a local or internet image to a Blob.
 
-   Convert a local image to an blob:
+   Convert a local image to a Blob:
 
     ```JavaScript
     // Convert a local image file to a Blob
@@ -33,7 +37,7 @@ Complete the following steps to send and receive image messages:
     const fileName = fileBlob.name
     ```
 
-   Convert an internet image to an blob:
+   Convert an internet image to a Blob:
 
    ```JavaScript
    //Convert an internet image to a Blob. The following sample code does not support Internet Explorer.
@@ -74,9 +78,9 @@ Complete the following steps to send and receive image messages:
     }
    ```
 
-2. Upload an blob to the Agora server. When the upload is successful, the SDK returns an `RtmImageMessage` instance via Promise.
+2. Upload a Blob to the Agora server. When the upload is successful, the SDK returns an `RtmImageMessage` instance via Promise.
 
-   Upload an blob to the Agora server:
+   Upload a Blob to the Agora server:
 
    ```JavaScript
    // Upload a Blob to the Agora server:
@@ -180,10 +184,10 @@ Before you start, ensure that you have integrated the latest SDK into your proje
 
 Complete the following steps to send and receive file messages:
 
-1. Convert the local file to a blob.
+1. Convert the local file to a Blob.
 
     ```JavaScript
-	  // Convert a local file to an blob:
+	  // Convert a local file to a Blob:
 
     // Add input tag in the HTML file
     <input type="file" class="file-input" />
@@ -193,9 +197,9 @@ Complete the following steps to send and receive file messages:
     const fileName = fileBlob.name
 	```
 
-2. Upload an blob to the Agora server. When the upload is successful, the SDK returns an `RtmFileMessage` instance via Promise.
+2. Upload a Blob to the Agora server. When the upload is successful, the SDK returns an `RtmFileMessage` instance via Promise.
 
-   Upload an blob to the Agora server:
+   Upload a Blob to the Agora server:
 
    ```JavaScript
     // Upload a Blob to the Agora server

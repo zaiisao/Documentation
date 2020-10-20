@@ -82,8 +82,8 @@ dependencies {
 
 <ol>
 
-<li>Download the latest version of the <a href="https://docs.agora.io/en/Real-time-Messaging/downloads">Agora RTM Android SDK</a> and unzip.</li>
-<li>Save the <b>.jar</b> package and <b>.so</b> files under the <b>libs</b> folder of the unzipped SDK package to the corresponding folders of your project. </li>
+<li>Download the latest version of the <a href="https://docs.agora.io/en/Real-time-Messaging/downloads">Agora RTM Android SDK</a> and extract the files from it.</li>
+<li>Save the <b>.jar</b> package and <b>.so</b> files under the <b>libs</b> folder of the SDK package to the corresponding folders of your project. </li>
 
 | File                                     | Project Folder                          |
 | ---------------------------------------- | --------------------------------------- |

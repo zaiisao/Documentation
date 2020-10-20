@@ -2,8 +2,8 @@
 ---
 title: Send and Receive Image or File Messages
 description: 
-platform: Android,Linux Java
-updatedAt: Wed Sep 30 2020 15:43:59 GMT+0800 (CST)
+platform: Android
+updatedAt: Mon Oct 19 2020 07:16:14 GMT+0800 (CST)
 ---
 # Send and Receive Image or File Messages
 ## Introduction
@@ -12,7 +12,9 @@ You can use Agora RTM SDK to send and receive image or file messages.
 
 The RTM SDK supports sending non-empty images and files that do not exceed 30 MB in size. Each image or file you upload to the Agora server stays for seven days and has a corresponding media ID. You can download the image or file from the Agora server with the media ID. 
 
-The RTM SDK adds the `RtmImageMessage` class and the `RtmFileMessage` class to save and transfer media ID. Because the `RtmImageMessage` class and the `RtmFileMessage` class inherit from the `RtmMessage` class, you can use existing peer-to-peer or channel messaging to transfer the `RtmImageMessage` instance and the `RtmFileMessage` instance. Thus, you can send and receive image or file messages.
+The following diagram shows how the file or image is sent and received:
+
+![](https://web-cdn.agora.io/docs-files/1603091741374)
 
 You can use the `RtmImageMessage` class to perform the following image operations:
 
@@ -27,6 +29,8 @@ You can use the `RtmFileMessage` class to perform the following file operations:
 - Get the size of the uploaded file.
 
 ## Implementation
+
+The RTM SDK adds the `RtmImageMessage` class and the `RtmFileMessage` class to save and transfer media ID. Because the `RtmImageMessage` class and the `RtmFileMessage` class inherit from the `RtmMessage` class, you can use existing peer-to-peer or channel messaging to transfer the `RtmImageMessage` instance and the `RtmFileMessage` instance. Thus, you can send and receive image or file messages.
 
 ### Send and receive image messages
 
