@@ -3,7 +3,7 @@
 title: 实现视频直播
 description: 
 platform: Web
-updatedAt: Sat Oct 10 2020 07:28:29 GMT+0800 (CST)
+updatedAt: Wed Oct 21 2020 04:20:20 GMT+0800 (CST)
 ---
 # 实现视频直播
 <div class="alert note">声网已经推出下一代 Agora Web SDK (Agora Web SDK NG)，优化了 SDK 的内部架构，提高了 SDK 的可用性。Agora Web SDK NG 基于 Typescript 开发，并使用 Promise 来管理异步操作，提供了更灵活更易用的 API 方案。Agora Web SDK NG 当前处于 Beta 阶段，点击<a href="https://agoraio-community.github.io/AgoraWebSDK-NG/zh-CN/">此处</a>抢先体验，如有问题，可直接提交 <a href="https://github.com/AgoraIO-Community/AgoraWebSDK-NG">Issue</a>。</div>
@@ -182,7 +182,7 @@ updatedAt: Sat Oct 10 2020 07:28:29 GMT+0800 (CST)
 
 下图展示了基础互动直播的 API 调用。注意图中的方法是对不同的对象调用的。
 
-![](https://web-cdn.agora.io/docs-files/1592907146444)
+![](https://web-cdn.agora.io/docs-files/1603253537169)
 
 > 本文只介绍 Agora Web SDK 最基础的方法和回调。完整的 API 方法和回调详见 [Web API 参考](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/web/index.html)。
 

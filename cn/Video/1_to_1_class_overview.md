@@ -3,7 +3,7 @@
 title: 1 对 1 互动教学
 description: 
 platform: All Platforms
-updatedAt: Fri Feb 14 2020 02:12:01 GMT+0800 (CST)
+updatedAt: Tue Oct 20 2020 04:13:03 GMT+0800 (CST)
 ---
 # 1 对 1 互动教学
 ## 场景描述
@@ -26,7 +26,7 @@ updatedAt: Fri Feb 14 2020 02:12:01 GMT+0800 (CST)
 
 
 
-## Demo 体验
+## <a name="demo"></a>Demo 体验
 
 Agora 为 1 对 1 互动教学提供如下平台的 Demo，点击链接进入应用。
 

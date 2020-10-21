@@ -3,7 +3,7 @@
 title: 屏幕共享
 description: 
 platform: Android
-updatedAt: Tue Jul 21 2020 10:42:42 GMT+0800 (CST)
+updatedAt: Tue Oct 20 2020 03:54:48 GMT+0800 (CST)
 ---
 # 屏幕共享
 ## 功能简介
@@ -50,7 +50,7 @@ rtcEngine.pushExternalVideoFrame(new AgoraVideoFrame(...));
 projection.stop();
 ```
 
-同时，我们在 GitHub 提供已实现屏幕共享功能的开源示例项目。你可以前往 [Agora-Screen-Sharing-Android](https://github.com/AgoraIO/Advanced-Video/tree/dev/win-screenshare/Screensharing/Agora-Screen-Sharing-Android) 下载体验。该示例项目还提供了同时发布屏幕共享流和开启本地视频流的实现逻辑。
+同时，我们在 GitHub 提供已实现屏幕共享功能的开源示例项目。你可以前往 [Agora-Screen-Sharing-Android](https://github.com/AgoraIO/Advanced-Video/tree/dev/backup/Screensharing/Agora-Screen-Sharing-Android) 下载体验。该示例项目还提供了同时发布屏幕共享流和开启本地视频流的实现逻辑。
 
 
 ## 开发注意事项

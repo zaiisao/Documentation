@@ -3,7 +3,7 @@
 title: 实现音频直播
 description: wechat live
 platform: 微信小程序
-updatedAt: Fri Oct 16 2020 02:38:33 GMT+0800 (CST)
+updatedAt: Wed Oct 21 2020 07:40:05 GMT+0800 (CST)
 ---
 # 实现音频直播
 本文介绍如何使用 Agora 微信小程序 SDK 快速实现音频直播。
@@ -229,7 +229,7 @@ client.leave(onSuccess, onFailure);
 		const ts = new Date().getTime();
 		console.log(`stream ${uid} added`);
 		// 订阅相应 Url 地址的音频流
-		client.subscribe(uid, (url, rotation) => {
+		client.subscribe(uid, (url) => {
 			console.log(`stream ${uid} subscribed successful`);
 			// 将 Url 地址发送至 live-player
 		}, e => {

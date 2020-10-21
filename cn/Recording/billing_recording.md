@@ -3,7 +3,7 @@
 title: 计费说明
 description: 
 platform: All Platforms
-updatedAt: Tue Jul 07 2020 05:44:58 GMT+0800 (CST)
+updatedAt: Tue Oct 20 2020 06:56:24 GMT+0800 (CST)
 ---
 # 计费说明
 本文展示 Agora 本地服务端录制产品的计费方式。
@@ -125,6 +125,8 @@ Agora 录制视频单价分两档：
 ## 计费示例
 
 本章节中，所有提及视频单价处，均指录制的视频集合分辨率所对应的视频单价。
+
+<div class="alert note">录制的计费与录制模式无关。无论你采用单流录制模式还是合流录制模式，录制的计费仅与录制实例数量、录制流数、录制时间以及录制集合分辨率相关。</div>
 
 ### 四人视频通话
 
