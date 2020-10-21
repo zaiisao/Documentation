@@ -3,7 +3,7 @@
 title: Billing for Cloud Recording
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 09 2020 03:21:58 GMT+0800 (CST)
+updatedAt: Tue Oct 20 2020 06:49:45 GMT+0800 (CST)
 ---
 # Billing for Cloud Recording
 This article introduces the billing policy for the cloud recording service provided by Agora.
@@ -98,6 +98,8 @@ If you create multiple recording sessions and record multiple audio and video st
 ## Examples
 
 Use the following examples to better understand the billing policy for the Agora Cloud Recording service:
+
+<div class="alert note">Your recording fee has nothing to do with the recording mode you choose. Regardless of whether you use the individual mode or composite mode, your recording fee relates only to the number of recording sessions, the number of the streams recorded, the recording time, and the aggregate recording resolutions.</div>
 
 ### Video call with four users
 

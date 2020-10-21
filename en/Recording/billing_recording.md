@@ -3,7 +3,7 @@
 title: Billing for On-premise Recording
 description: 
 platform: All Platforms
-updatedAt: Thu Jul 09 2020 03:16:50 GMT+0800 (CST)
+updatedAt: Tue Oct 20 2020 06:58:42 GMT+0800 (CST)
 ---
 # Billing for On-premise Recording
 This article introduces the billing policy for the on-premise recording service provided by Agora.
@@ -21,15 +21,19 @@ Billing for the on-premise recording service begins once you use the Agora On-pr
 
 ## Composition
 
-Agora calculates the recording minutes of video and audio used by your projects on a monthly basis and makes the following charges:
+At the end of each month, Agora calculates the service minutes of video and audio used by your projects on a monthly basis and makes the following charges:
 
 - Video charges: Apply when the recording server successfully records video in an RTC channel.
 - Audio charges: Apply when the recording server does not record video in an RTC channel, regardless of whether the server records any audio.
 
 **Cost = video charges + audio charges = (video pricing × video service minutes) + (audio pricing × audio service minutes)**.
 
-- If the recording server successfully records both audio and video at the same time, then Agora only charges for the video minutes.
-- During a recording, the idle minutes are charged based on the audio pricing. The cost is the audio pricing × idle minutes.
+<div class="alert note">
+	<ul>
+		<li>If the recording server successfully records both audio and video at the same time, then Agora only charges for the video minutes.</li>
+		<li>During a recording, the idle minutes are charged based on the audio pricing. The cost is the audio pricing × idle minutes.</li>
+	</ul>
+</div>
 
 ## Pricing
 
@@ -98,6 +102,8 @@ If you create multiple recording instances and record multiple audio and video s
 
 Use the following examples to better understand the billing policy for the Agora On-premise Recording service:
 
+<div class="alert note">Your recording fee has nothing to do with the recording mode you choose. Regardless of whether you use the individual mode or composite mode, your recording fee relates only to the number of recording instances, the number of the streams recorded, the recording time, and the aggregate recording resolutions.</div>
+
 ### Video call with four users
 
 **Example 1**
@@ -129,6 +135,10 @@ Cost: The recording service generates charges for the video minutes. The aggrega
 Billing = Video pricing × video minutes/1,000 × the number of recording instances= $14.99 × 1,000/1,000 × 1 = $14.99
 
 ## Considerations
+
+### Accuracy of service minutes
+
+At the end of each month, Agora adds up the usage duration (in seconds) of audio, HD video, and HD+ video, and divides them by 60 to get the respective service minutes (rounded up to the next integer). For example, if the duration of audio service of the month is 59 seconds, then the audio service minutes is calculated as 1 minute; if the duration of video service is 61 seconds, then the video service minutes is calculated as 2 minutes. The error of service minutes for each month is within 1 minute. 
 
 
 
