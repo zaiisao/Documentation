@@ -3,7 +3,7 @@
 title: 事件与历史消息查询 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Mon Oct 19 2020 02:33:24 GMT+0800 (CST)
+updatedAt: Wed Oct 21 2020 09:05:30 GMT+0800 (CST)
 ---
 # 事件与历史消息查询 RESTful API
 事件与历史消息查询 RESTful API 目前支持以下功能：
@@ -177,7 +177,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/channel_events
 
 ### <a name="create_history_res"></a>创建历史消息查询资源 API（POST）
 
-该方法向 Agora RTM 服务器申请历史消息查询资源。若请求成功，你可以通过 GET 方法从服务器返回的 `location` 获取查询到的历史消息。
+该方法向 Agora RTM 服务器申请历史消息查询资源。若请求成功，你可以通过[获取历史消息 API](#get_history_message)从服务器返回的 `location` 获取查询到的历史消息。
 
 <div class="alert note">如果需要将某条点对点或频道消息存为历史消息，你必须在调用 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_channel.html#a6e16eb0e062953980a92e10b0baec235"><code>sendMessage</code></a> 或 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_rtm_client.html#a729079805644b3307297fb2e902ab4c9"><code>sendMessageToPeer</code></a> 时将 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_send_message_options.html"><code>sendMessageOptions</code></a> 类中的 <a href="https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_java/classio_1_1agora_1_1rtm_1_1_send_message_options.html#a924ef8c28e7a1d41a215a7331e284330"><code>enableHistoricalMessaging</code></a> 成员变量设为 <code>true</code>。否则你无法通过 RESTful API 查询到这条历史消息。</div>
 
@@ -197,9 +197,10 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query
 | 参数            | 类型   | 描述                          |
 | :------------- | :----- | :--------------------------- |
 | `filter`        | JSON | 筛选条件。                |
-| `offset`        | int | （可选）当前时间段内的消息偏移量。 |
-| `limit`         | int   | （可选）单页历史消息条数。可选值：<ul><li>20</li><li>50</li><li>100</li></ul> |
+| `offset`        | int | （可选）需要返回的历史消息起始序号偏移量。默认值为 0，即不发生偏移，[获取历史消息 API](#get_history_message) 从第一条消息开始返回。如果设为 1，则偏移值为 1，[获取历史消息 API](#get_history_message) 从第二条消息开始返回。返回的消息数为 `limit` 的值。 |
+| `limit`         | int   | （可选）单次返回的历史消息条数。可选值：<ul><li>（默认）20</li><li>50</li><li>100</li></ul> 如果历史消息数量大于单次返回的历史消息条数，你可以通过 <code>offset</code> 设置偏移量，获取其余的历史消息。 |
 | `order`       | string | （可选）排序方法 <ul><li> `asc`（默认）：按时间顺序。 </li><li> `desc`：按时间倒序。 </li></ul>                 |
+
 
 `filter` 中需要填写的内容如下：
 
