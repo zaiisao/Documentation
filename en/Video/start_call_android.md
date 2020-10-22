@@ -3,7 +3,7 @@
 title: Start a Video Call
 description: 
 platform: Android
-updatedAt: Tue Oct 13 2020 08:54:16 GMT+0800 (CST)
+updatedAt: Thu Oct 22 2020 09:08:18 GMT+0800 (CST)
 ---
 # Start a Video Call
 Use this guide to quickly start a basic video call with the Agora Video SDK for Android.
@@ -24,7 +24,7 @@ We provide an open-source [Agora-Android-Tutorial-1to1](https://github.com/Agora
 * Android Studio 3.0 or later
 * Android SDK API Level 16 or higher
 * A mobile device running Android 4.1 or later
-* A valid [Agora account](https://docs.agora.io/en/Agora%20Platform/sign_in_and_sign_up) and an [App ID](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#get-an-app-id)
+* A valid [Agora account](https://docs.agora.io/en/Agora%20Platform/sign_in_and_sign_up) and an [App ID](https://docs.agora.io/en/Agora%20Platform/token?platform=All%20Platforms#getappid)
 
 <div class="alert note">Open the specified ports in <a href="https://docs.agora.io/en/Agora%20Platform/firewall?platform=All%20Platforms">Firewall Requirements</a> if your network has a firewall.</div>
 
@@ -288,8 +288,7 @@ protected void onCreate(Bundle savedInstanceState) {
     setContentView(R.layout.activity_video_chat_view);
  
     // If all the permissions are granted, initialize the RtcEngine object and join a channel.
-    if (checkSelfPermission(REQUESTED_PERMISSIONS[0], PERMISSION_REQ_ID) &&
-            checkSelfPermission(REQUESTED_PERMISSIONS[1], PERMISSION_REQ_ID) &&
+    if (checkSelfPermission(REQUESTED_PERMISSIONS[0], PERMISSION_REQ_ID) undefined
             checkSelfPermission(REQUESTED_PERMISSIONS[2], PERMISSION_REQ_ID)) {
         initEngineAndJoinChannel();
     }
