@@ -1,13 +1,11 @@
 
 ---
-title: 产品概述
+title: 产品简介
 description: 
 platform: All Platforms
-updatedAt: Thu Oct 22 2020 05:21:00 GMT+0800 (CST)
+updatedAt: Thu Oct 22 2020 10:54:42 GMT+0800 (CST)
 ---
-# 产品概述
-## 产品概述
-
+# 产品简介
 开发者在声网 Agora RTC SDK 的基础上，可通过集成火山引擎 AI 视觉 SDK 来获得跨平台、功能丰富、高可用的视觉特效技术解决方案，用于视频直播、短视频、社交娱乐、在线教育、互动娱乐、运动健身等场景。
 
 ## 产品特性

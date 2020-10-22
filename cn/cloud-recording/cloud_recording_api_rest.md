@@ -270,6 +270,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
   - `13`：CA_CENTRAL_1
   - `14`：AP_SOUTH_1
   - `15`：CN_NORTH_1
+  - `16`：CN_NORTHWEST_1
   - `17`：US_GOV_WEST_1
 
   当 `vendor` = 2，即第三方云存储为阿里云时：
