@@ -3,7 +3,7 @@
 title: 实现视频通话
 description: 
 platform: iOS
-updatedAt: Tue Sep 22 2020 02:01:04 GMT+0800 (CST)
+updatedAt: Thu Oct 22 2020 10:50:25 GMT+0800 (CST)
 ---
 # 实现视频通话
 本文介绍如何使用 Agora 视频通话 SDK 快速实现视频通话。
@@ -253,7 +253,7 @@ func setupLocalVideo() {
 - channelId: 传入能标识频道的频道 ID。输入频道 ID 相同的用户会进入同一个频道。
 - token: 传入能标识用户角色和权限的 Token。你可以设置如下值：
 	- `nil`。
-	-控制台中生成的临时 Token。一个临时 Token 的有效期为 24 小时，详情见[获取临时 Token](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#%E8%8E%B7%E5%8F%96%E4%B8%B4%E6%97%B6-token)。
+	-控制台中生成的临时 Token。一个临时 Token 的有效期为 24 小时，详情见[获取临时 Token](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#get-a-temporary-token)。
 	- 你的服务器端生成的正式 Token。适用于对安全要求较高的生产环境，详情见[生成 Token](../../cn/Video/token_server.md)。
 
 <div class="alert note">若项目已启用 App 证书，请使用 Token。</div>

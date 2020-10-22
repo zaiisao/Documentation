@@ -1,11 +1,11 @@
 
 ---
-title: 快速开始
+title: 审核频道内的音频
 description: 
 platform: All Platforms
-updatedAt: Thu Oct 22 2020 02:35:03 GMT+0800 (CST)
+updatedAt: Thu Oct 22 2020 09:19:26 GMT+0800 (CST)
 ---
-# 快速开始
+# 审核频道内的音频
 本文介绍如何使用金山智能语音审核 RESTful API 对频道内的音频进行实时审核。
 
 ## 前提条件
