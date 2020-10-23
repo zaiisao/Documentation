@@ -3,7 +3,7 @@
 title: 消息发送 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Wed Jul 29 2020 06:20:06 GMT+0800 (CST)
+updatedAt: Fri Oct 23 2020 03:26:44 GMT+0800 (CST)
 ---
 # 消息发送 RESTful API
 ## 认证
@@ -159,7 +159,8 @@ Request request = new Request.Builder()
 接收端离线：
 
 ```json
-{   "code": "message_offline",
+{   
+    "code": "message_offline",
     "request_id": "123"
 }
 ```
