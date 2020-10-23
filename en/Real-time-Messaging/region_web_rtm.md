@@ -3,7 +3,7 @@
 title: Geofencing
 description: 
 platform: Web
-updatedAt: Sun Oct 11 2020 13:04:22 GMT+0800 (CST)
+updatedAt: Fri Oct 23 2020 03:49:05 GMT+0800 (CST)
 ---
 # Geofencing
 ## Description
@@ -57,4 +57,4 @@ If a firewall is deployed in your network environment, ensure that you add the d
 
 ## API reference
 
-[`createInstance`](https://docs.agora.io/cn/Real-time-Messaging/API%20Reference/RTM_web/modules/agorartm.html#createinstance)
+[`createInstance`](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/modules/agorartm.html#createinstance)
