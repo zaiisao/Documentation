@@ -3,7 +3,7 @@
 title: 事件与历史消息查询 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Fri Oct 23 2020 04:10:11 GMT+0800 (CST)
+updatedAt: Fri Oct 23 2020 04:11:12 GMT+0800 (CST)
 ---
 # 事件与历史消息查询 RESTful API
 事件与历史消息查询 RESTful API 目前支持以下功能：
@@ -76,19 +76,35 @@ Request request = new Request.Builder()
 
 - 方法：GET
 - 接入点：`/rtm/vendor/user_events`
-- 请求 URL：
+
+#### 请求示例
+
+请求 URL：
 ```
 https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/user_events
 ```
 
+#### 请求参数
+
+此 API 无请求参数。
+
+
 #### 响应示例
+
 ```json
 {
     "result": "success",
     "request_id" : "10116762670167749259",
-    "events" : [event]
+    "events" : [{
+    "ms" : 1578027420761,
+	"type" : "Login",
+    "user_id": "rtmtest_RTM_4852_4857w7%"
+}]
 }
 ```
+
+#### 响应参数
+
 
 | 参数     | 类型   | 描述        |
 | :------- | :----- | :-------------------- |
@@ -96,15 +112,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/user_events
 | `request_id`   | string | 本次请求唯一的 ID。 |
 | `events`  | JSON    | 用户上线下线事件。      |
 
-`[event]` 包含以下内容：
-
-```json
-{  
-    "ms" : 1578027420761,
-	"type" : "Login",
-    "user_id": "rtmtest_RTM_4852_4857w7%"
-}
-```
+`events` 的成员包含以下内容：
 
 | 参数     | 类型   | 描述   |
 | :------- | :----- | :-------------------- |
@@ -125,18 +133,32 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/user_events
 
 - 方法：GET
 - 接入点：`/rtm/vendor/channel_events`
-- 请求 URL：
+
+#### 请求示例
+
+请求 URL：
 ```
 https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/channel_events
 ```
 
+#### 请求参数
+
+此 API 无请求参数。
+
+
 
 #### 响应示例
+
 ```json
 {
     "result": "success",
     "request_id" : "10116762670167749259",
-    "events" : [event]
+    "events" : [{
+    "group_id": "example_channel_id",
+    "ms" : 1578027418981,
+	"type" : "Join",
+    "user_id": "userA"
+}]
 }
 ```
 
@@ -144,18 +166,12 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/channel_events
 | :------- | :----- | :-------------------- |
 | `result` | string | 本次请求结果。   |
 | `request_id`   | string | 本次请求唯一的 ID。 |
-| `events`  | JSON   | 加入退出频道事件。      |
+| `events`  | JSON Array   | 加入退出频道事件。      |
 
-`[event]` 包含以下内容：
+#### 响应参数
 
-```json
-{
-    "group_id": "example_channel_id",
-    "ms" : 1578027418981,
-	"type" : "Join",
-     "user_id": "userA"
-}
-```
+`events` 的成员包含以下内容：
+
 
 | 参数     | 类型   | 描述   |
 | :------- | :----- | :-------------------- |
@@ -187,10 +203,14 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/vendor/channel_events
 
 - 方法：POST
 - 接入点：`/rtm/message/history/query`
-- 请求 URL：
+
+#### 请求示例
+
+请求 URL：
 ```
 https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query
 ```
+#### 请求参数
 
 请求包体的参数如下：
 
@@ -316,6 +336,8 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query
 }
 ```
 
+#### 响应参数
+
 响应包体的参数如下：
 
 | 参数       | 类型   | 描述                                                         |
@@ -344,7 +366,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query
 https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query/$handle
 ```
 
-#### URL 参数
+#### 请求参数
 
 此 API 需要下列 URL 参数：
 
@@ -367,20 +389,17 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query/1234561234
 {
     "result": "success",
     "code" : "ok",
-    "messages" : [Message]
-}
-```
-单个 `message` JSON 响应示例：
-
-```json
-{
+    "messages" : [{
     "dst": "dst",
 	"message_type": "peer_message",
 	"ms": 1587009745719,
     "payload": "123",
 	"src": "src"
+}]
 }
 ```
+
+#### 响应参数
 
 响应包体的参数如下：
 
@@ -391,7 +410,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query/1234561234
 | `message`         | JSON   | 历史消息列表。 |
 
 
-每个 `message` 包含以下参数：
+`messages` 的成员包含以下参数：
 
 | 参数            | 类型   | 描述                          |
 | :------------- | :----- | :--------------------------- |
@@ -415,10 +434,15 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query/1234561234
 
 - 方法：GET
 - 接入点：`/rtm/message/history/count`
-- 请求 URL：
+
+#### 请求示例
+
+请求 URL：
 ```
 https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/count
 ```
+
+#### 请求参数
 
 请求的查询参数如下：
 
@@ -427,7 +451,7 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/count
 | `source`        | string | （可选）消息发送方，必须是用户。 如果此参数不赋值，则 API 会筛选出消息接收方在指定时间段内收到的所有消息。     |
 | `destination`        | string | （可选）消息接收方，可以是用户或频道。如果此参数不赋值，则 API 会筛选出消息发送方在指定时间段内发送的所有消息。 |
 | `start_time`         | string   | 历史消息查询起始时间。时间为 UTC 时间，使用 ISO8601 标准。时间的格式为 `yyyy-mm-ddThh:mm:ssZ` ，例如 `2019-08-01T01:24:10Z`。`Z` 代表时间偏移量为 0，即为 UTC 时间。|
-|  `end_time`       | string | 历史消息查询结束时间。时间为 UTC 时间，使用 ISO8601 标准。时间的格式为 `yyyy-mm-ddThh:mm:ssZ` ，例如 `2019-08-01T01:24:10Z`。`Z` 代表时间偏移量为 0，即为 UTC 时间。|
+| `end_time`       | string | 历史消息查询结束时间。时间为 UTC 时间，使用 ISO8601 标准。时间的格式为 `yyyy-mm-ddThh:mm:ssZ` ，例如 `2019-08-01T01:24:10Z`。`Z` 代表时间偏移量为 0，即为 UTC 时间。|
 
 > 频道只能作为 `destination`。API 的筛选规则与 `source` 和 `destination` 的关系详见下表：
 
@@ -477,7 +501,6 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/count?source="us
 
 #### 响应示例
 
-响应包体参数如下：
 
 ```json
 {
@@ -486,6 +509,9 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/count?source="us
     "count" : 123
 }
 ```
+
+#### 响应参数
+
 | 参数            | 类型   | 描述                          |
 | :------------- | :----- | :--------------------------- |
 | `result`        | string | 本次请求结果。                |
