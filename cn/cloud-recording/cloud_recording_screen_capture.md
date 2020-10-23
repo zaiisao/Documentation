@@ -3,15 +3,14 @@
 title: 视频截图
 description: 
 platform: All Platforms
-updatedAt: Thu Sep 10 2020 03:34:28 GMT+0800 (CST)
+updatedAt: Fri Oct 23 2020 08:42:12 GMT+0800 (CST)
 ---
 # 视频截图
 ## 功能描述
 
 本文介绍如何通过设置 RESTful API 参数对视频进行截图，并将图片上传至你的第三方云存储。
 
-> - 云端录制只支持在单流录制模式（`individual`）下进行截图。
-> - 云端录制不支持在同一个进程中同时进行录制和截图。如果你需要对频道内的媒体流同时进行录制和截图，需要调用两次 [`acquire`](https://docs.agora.io/cn/cloud-recording/restfulapi/#/云端录制/acquire) 方法，获取两个 resource ID, 分别进行录制和截图。
+<div class="alert note">云端录制不支持在同一个进程中同时进行录制和截图。如果你需要对频道内的媒体流同时进行录制和截图，需要调用两次 <a href="https://docs.agora.io/cn/cloud-recording/restfulapi/#/云端录制/acquire">acquire</a> 方法，获取两个 resource ID, 分别进行录制和截图。</div>
 
 阅读本文前，请确保你已了解如何使用 RESTful API 进行云端录制，详见[云端录制 RESTful API 快速开始](https://docs.agora.io/cn/cloud-recording/cloud_recording_rest)。
 

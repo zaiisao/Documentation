@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: Unity
-updatedAt: Fri Sep 18 2020 04:39:42 GMT+0800 (CST)
+updatedAt: Fri Oct 23 2020 08:23:37 GMT+0800 (CST)
 ---
 # 实现语音通话
 本文介绍如何使用 Agora Unity SDK 快速实现语音通话。
@@ -109,7 +109,7 @@ Agora 在 GitHub 上提供开源的实时语音通话示例项目 [Hello-Unity3D
 
 根据场景需要，为你的项目创建语音通话的用户界面。若已有界面，可以直接查看[获取设备权限（仅 Android 平台）](#permission)或[初始化 IRtcEngine](#initialize)。
 
-在语音通话播中，Agora 推荐你添加如下 UI 元素：
+在语音通话中，Agora 推荐你添加如下 UI 元素：
 
 - 加入频道按钮
 - 退出频道按钮
