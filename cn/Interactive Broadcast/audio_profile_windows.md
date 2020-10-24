@@ -3,13 +3,17 @@
 title: 设置音频属性
 description: How to set the audio profile on Windows
 platform: Windows
-updatedAt: Fri Oct 16 2020 09:00:02 GMT+0800 (CST)
+updatedAt: Fri Oct 23 2020 10:34:26 GMT+0800 (CST)
 ---
 # 设置音频属性
 ## 功能描述
  在一些比较专业的场景里，用户对声音的效果尤为敏感，比如语音电台，此时就需要对双声道和高音质的支持。
  所谓的高音质指的是我们提供采样率为 48 kHz、码率 192 Kbps 的能力，帮助用户实现高逼真的音乐场景，这种能力在语音电台、唱歌比赛类直播场景中应用较多。
 本文指导开发者根据对音质、声道、场景等的不同需求，选择不同的音频属性，获得最佳实时互动效果。
+
+## 示例项目
+我们在 GitHub 上提供已实现[设置音频属性](https://github.com/AgoraIO/API-Examples/tree/master/windows/APIExample/APIExample/Advanced/AudioProfile)功能的开源示例项目。你可以下载体验并参考源代码。
+
 ## 实现方法
 在设置音频属性前，请确保已在你的项目中实现基本的实时音视频功能。详见[实现音视频通话](../../cn/Interactive%20Broadcast/start_call_windows.md)或[实现互动直播](../../cn/Interactive%20Broadcast/start_live_windows.md)。
 

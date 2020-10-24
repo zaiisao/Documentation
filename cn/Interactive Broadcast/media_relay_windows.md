@@ -3,7 +3,7 @@
 title: 跨直播间连麦
 description: 
 platform: Windows
-updatedAt: Mon Oct 19 2020 10:05:28 GMT+0800 (CST)
+updatedAt: Fri Oct 23 2020 10:25:47 GMT+0800 (CST)
 ---
 # 跨直播间连麦
 ## 功能描述
@@ -13,6 +13,9 @@ updatedAt: Mon Oct 19 2020 10:05:28 GMT+0800 (CST)
 - 频道中的观众可以看到所有主播，并听到主播的声音。
 
 该功能因其实时性和互动性，尤其适用于连麦 PK、在线合唱等直播场景，在增加直播趣味的同时，有效吸粉。
+
+## 示例项目
+我们在 GitHub 上提供已实现[跨频道媒体流转发](https://github.com/AgoraIO/API-Examples/tree/dev/3.2.0/windows/APIExample/APIExample/Advanced/CrossChannel)的开源示例项目。你可以下载体验并参考源代码。
 
 ## 实现方法
 
@@ -48,6 +51,7 @@ Agora Native SDK 在 v2.9.0 中新增如下跨频道媒体流转发接口，支�
 ### 示例代码
 
 ```C++
+// 配置源频道信息、目标频道信息和目标频道数量。
 ChannelMediaInfo *lpSrcinfo = new ChannelMediaInfo;
 lpSrcinfo->channelName = nullptr;
 lpSrcinfo->token = nullptr;
@@ -70,17 +74,17 @@ cmrc.srcInfo = lpSrcinfo;
 cmrc.destInfos = lpDestInfos;
 cmrc.destCount = nDestCount;
 int ret = 0;
-// 设置要加入的远端频道信息
+// 开始跨频道媒体流转发。
 ret = m_lpAgoraEngine->startChannelMediaRelay(cmrc);
 
-
+// 更新目标频道信息和目标频道数量。
 ChannelMediaInfo *lpUpdateDestInfos = new ChannelMediaInfo;
 lpUpdateDestInfos->channelName = "test";
 lpUpdateDestInfos->token = nullptr;
 lpUpdateDestInfos->uid = 0;
 cmrc.destInfos = lpUpdateDestInfos;
 cmrc.destCount = 1;
-// 设置要更新的远端频道信息
+// 更新媒体流转发的频道。
 ret = m_lpAgoraEngine->updateChannelMediaRelay(cmrc);	
 ```
 

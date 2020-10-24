@@ -3,7 +3,7 @@
 title: 媒体流加密
 description: 
 platform: Windows
-updatedAt: Fri Oct 16 2020 08:26:18 GMT+0800 (CST)
+updatedAt: Fri Oct 23 2020 10:33:41 GMT+0800 (CST)
 ---
 # 媒体流加密
 ## 功能描述
@@ -20,6 +20,9 @@ updatedAt: Fri Oct 16 2020 08:26:18 GMT+0800 (CST)
 下图描述了启用媒体流加密后的数据传输流程：
 
 ![](https://web-cdn.agora.io/docs-files/1596706031835)
+
+## 示例项目
+我们在 GitHub 上提供已实现[内置加密](https://github.com/AgoraIO/API-Examples/tree/master/windows/APIExample/APIExample/Advanced/MediaEncrypt)和[自定义加密](https://github.com/AgoraIO/API-Examples/tree/master/windows/APIExample/APIExample/Advanced/CustomEncrypt)功能的开源示例项目。你可以下载体验并参考源代码。
 
 ## 实现方法
 

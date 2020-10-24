@@ -3,7 +3,7 @@
 title: 调整通话音量
 description: How to adjust volume on Windows
 platform: Windows
-updatedAt: Mon Oct 19 2020 06:49:04 GMT+0800 (CST)
+updatedAt: Fri Oct 23 2020 10:38:27 GMT+0800 (CST)
 ---
 # 调整通话音量
 ## 功能描述
@@ -15,6 +15,9 @@ updatedAt: Mon Oct 19 2020 06:49:04 GMT+0800 (CST)
 本文梳理了在使用 SDK 从音频采集到播放各阶段中，用户可能需要调整音量的场景、各场景对应的 API 及其使用注意事项。
 
 ![](https://web-cdn.agora.io/docs-files/1577198346751)
+
+## 示例项目
+我们在 GitHub 上提供已实现[调整录音、播放、耳返音量](https://github.com/AgoraIO/API-Examples/tree/dev/3.2.0/windows/APIExample/APIExample/Advanced/AudioVolume)的开源示例项目。你可以下载体验并参考源代码。
 
 ## 实现方法
 在调整通话音量前，请确保已在你的项目中实现基本的实时音视频功能。详见[实现音视频通话](../../cn/Voice/start_call_windows.md)或[实现互动直播](../../cn/Voice/start_live_windows.md)。
@@ -30,7 +33,7 @@ updatedAt: Mon Oct 19 2020 06:49:04 GMT+0800 (CST)
 
 <div class="alert note">该方法影响对应设备的全局音量。</div>
 
-该方法中 `volume` 参数表示录音设备的音量，取值范围为 [0, 255]：
+该方法中 `volume` 参数表示录音设备的音量，取值范围为 [0,255]：
 - 0：设备静音。
 - 255：设备的最大音量。
 
@@ -48,7 +51,7 @@ int setRecordingDeviceVolume(50);
 
 如果调用 `setRecordingDeviceVolume` 方法设置的录音设备音量无法满足需求，你可以通过 `adjustRecordingSignalVolume` 方法直接调节录制声音的信号幅度，由此实现调节录音的音量。
 
-该方法中 `volume` 参数表示录音信号的音量，取值范围为 [0, 400]：
+该方法中 `volume` 参数表示录音信号的音量，取值范围为 [0,400]：
 - 0: 静音。
 - 100: （默认值）原始音量，即不对信号做缩放。
 - 400: 原始音量的 4 倍（把信号放大到原始信号的 4 倍）。
@@ -56,7 +59,7 @@ int setRecordingDeviceVolume(50);
 示例代码
 
 ```cpp  
-// 将录音信号音量设置为原始音量的 200%。
+// 将录音信号的音量设置为 200。
 int ret = rtcEngine.adjustRecordingSignalVolume(200);
 ```
 
@@ -76,7 +79,7 @@ int ret = rtcEngine.adjustRecordingSignalVolume(200);
 
 <div class="alert note">该方法影响对应设备的全局音量。</div>
 
-该方法中 `volume` 参数表示播放设备的音量，取值范围为 [0, 255]：
+该方法中 `volume` 参数表示播放设备的音量，取值范围为 [0,255]：
 - 0：设备静音。
 - 255：设备的最大音量。
 
@@ -95,19 +98,19 @@ int setPlaybackDeviceVolume(50);
 如果调用 `setPlaybackDeviceVolume` 方法设置的播放设备音量无法满足需求，你可以通过 `adjustPlaybackSignalVolume` 方法或 `adjustUserPlaybackSignalVolume` 方法直接调节播放声音的信号幅度，由此实现调节播放的音量。
 - `adjustPlaybackSignalVolume`：
   - 用于调节本地播放的所有远端用户混音后的音量。
-  - 该方法中 `volume` 参数表示播放音量，取值范围为 [0, 400]。
+  - 该方法中 `volume` 参数表示播放音量，取值范围为 [0,400]。
 - `adjustUserPlaybackSignalVolume`：
   - 用于调节本地播放的指定远端用户混音后的音量。你可以多次调用该方法来调节不同远端用户在本地播放的音量，或对某个远端用户在本地播放的音量调节多次。
-  - 该方法中 `volume` 参数表示播放音量，取值范围为 [0, 100]。
+  - 该方法中 `volume` 参数表示播放音量，取值范围为 [0,100]。
 
 <div class="alert note"><li>从 v2.3.2 开始，adjustPlaybackSignalVolume 接口仅支持调节所有远端用户的本地播放音量。如果你使用的是 v2.3.2 及之后版本的 Native SDK，静音本地音频请同时调用 adjustPlaybackSignalVolume(0) 和 adjustAudioMixingPlayoutVolume(0)。<li>adjustUserPlaybackSignalVolume 方法要在加入频道后调用。</li></div>
 
 示例代码
 
 ```cpp
-// 将本地播放的所有远端用户音量设置为原始音量的 200%。
+// 将本地播放的所有远端用户音量设置为 200。
 int ret = rtcEngine.adjustPlaybackSignalVolume(200);
-// 将本地播放的指定远端用户混音后的音量设置为原始音量的 50%。
+// 将本地播放的指定远端用户混音后的音量设置为 50。
 int ret = rtcEngine.adjustUserPlaybackSignalVolume(uid, 50);
 ```
 
@@ -117,75 +120,6 @@ int ret = rtcEngine.adjustUserPlaybackSignalVolume(uid, 50);
 - [`adjustPlaybackSignalVolume`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a98919705c8b2346811f91f9ce5e97a79)
 - [`adjustUserPlaybackSignalVolume`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a609e74c9a6e8df205543326f2ca6a965)
 - [`adjustAudioMixingPlayoutVolume`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a8677c3f3160927d25d9814a88ab06da6)
-
-### 设置混音音量
-
-**混音**是指播放本地或者在线音乐文件，同时让频道内的其他人听到此音乐。你可以参考[播放音效/混音](../../cn/Voice/audio_effect_mixing_windows.md)开启混音功能。
-![](https://web-cdn.agora.io/docs-files/1577199472359)
-
-你可以直接调用 `adjustAudioMixingVolume`，同时调节本地及远端用户听到的音乐文件混音音量。
-
-该方法中 `volume` 参数表示音乐文件的音量，取值范围为 [0, 100]。默认值 100 表示原始文件音量，即不对信号做缩放。0 表示混音音乐文件播放静音。
-
-示例代码
-
-```cpp
-// 将本地及远端用户听到的音乐文件音量设置为原始音量的 50%。
-int ret = rtcEngine.adjustAudioMixingVolume(50);
-```
-
-你也可以通过 `adjustAudioMixingPlayoutVolume` 方法和 `adjustAudioMixingPublishVolume` 方法分别调节混音音量。
-- `adjustAudioMixingPlayoutVolume`：
-  - 用于调节音乐文件在本地播放的混音音量。
-  - 该方法中 `volume` 参数表示音乐文件在本地播放的混音音量，取值范围为 [0, 100]。
-- `adjustAudioMixingPublishVolume`：
-  - 用于调节音乐文件在远端播放的混音音量。
-  - 该方法中 `volume` 参数表示音乐文件在远端播放的混音音量，取值范围为 [0, 100]。
-
-<div class="alert note">adjustAudioMixingPlayoutVolume 方法和 adjustAudioMixingPublishVolume 方法要在加入频道后调用。</div>
-
-示例代码
-
-```cpp
-// 将远端用户听到的音乐文件音量设置为原始音量的 50%。
-int ret = rtcEngine.adjustAudioMixingPublishVolume(50);
-// 将本地用户听到的音乐文件音量设置为原始音量的 50%。
-int ret = rtcEngine.adjustAudioMixingPlayoutVolume(50);
-```
-
-#### API 参考
-
-- [`adjustAudioMixingPublishVolume`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a9fafbaaf39578810ec9c11360fc7f027)
-- [`adjustAudioMixingPlayoutVolume`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a8677c3f3160927d25d9814a88ab06da6)
-- [`adjustAudioMixingVolume`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a544aee96b789ac5a57d26b61b7e1a5fa)
-
-### 设置音效音量
-
-播放**音效**是指播放短小的音频，如鼓掌、子弹撞击的声音等。你可以参考[播放音效/混音](../../cn/Voice/audio_effect_mixing_windows.md)开启音效播放。
-![](https://web-cdn.agora.io/docs-files/1577200683216)
-
-使用播放设备播放音效音量时，你可以通过 `setEffectsVolume` 方法或 `setVolumeOfEffect` 方法设置音效文件在本地的播放音量。
-- `setEffectsVolume`：
-  - 用于设置所有音效文件的播放音量。
-  - 该方法中 `volume` 参数表示音效文件的音量，取值范围为 [0, 100]。
-- `setVolumeOfEffect`：
-  - 用于设置指定音效文件的播放音量。
-  - 该方法中 `volume` 参数表示音效文件的音量，取值范围为 [0, 100]。
-
-#### 示例代码
-
-```cpp
-// 将所有音效文件的播放音量设置为原始音量的 50%。
-int ret = rtcEngine.setEffectsVolume(50);
-// 将单个音效文件的播放音量设置为原始音量的 50%。
-// @param soundId 是你在调用 playEffect 时设置的音效 ID。
-int ret = rtcEngine.setVolumeOfEffect(soundId, 50);
-```
-
-#### API 参考
-
-- [`setEffectsVolume`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#add9a7fd856700acd288d47ff3c7da19d)
-- [`setVolumeOfEffect`](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a08287428f277b7bf24d51a86ef61799b)
 
 ### 获取用户音量（回调）
 
@@ -199,9 +133,9 @@ int ret = rtcEngine.setVolumeOfEffect(soundId, 50);
 
 ```cpp
 // 获取瞬时说话音量最高的几个用户（即说话者）的用户 ID、他们的音量及本地用户是否在说话。
-// @param speakers 为一个数组，包含说话者的用户 ID 、音量及本地用户人声状态。音量的取值范围为 [0, 255]。
-// @param speakerNumber 说话者的人数，取值范围为 [0, 3]。
-// @param totalVolume 指混音后频道内的总音量，取值范围为 [0, 255]。
+// @param speakers 为一个数组，包含说话者的用户 ID 、音量及本地用户人声状态。音量的取值范围为 [0,255]。
+// @param speakerNumber 说话者的人数，取值范围为 [0,3]。
+// @param totalVolume 指混音后频道内的总音量，取值范围为 [0,255]。
 void onAudioVolumeIndication(const AudioVolumeInfo* speakers, unsigned int speakerNumber, int totalVolume)  {
 }
 ```

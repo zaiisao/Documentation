@@ -3,7 +3,7 @@
 title: 云端录制集成最佳实践
 description: 
 platform: All Platforms
-updatedAt: Thu Oct 15 2020 03:03:31 GMT+0800 (CST)
+updatedAt: Fri Oct 23 2020 09:07:20 GMT+0800 (CST)
 ---
 # 云端录制集成最佳实践
 为了保障录制服务的可靠性，Agora 建议你在集成云端录制 RESTful API 时注意以下几点：
@@ -28,6 +28,7 @@ updatedAt: Thu Oct 15 2020 03:03:31 GMT+0800 (CST)
 1. 确认 `start` 请求成功，即成功获得 `sid` (录制 ID)。如果 `start` 请求失败，需要根据状态码采取相应措施：
    - 如果返回的 HTTP 状态码为 `40x`，则表示请求参数错误，需要进行排查。
    - 如果返回的 HTTP 状态码为 `50x`，可使用相同的参数重试多次，直到成功返回 `sid` 为止。建议使用退避策略，如第一次等待 3 秒后重试、第二次等待 6 秒后重试、第三次等待 9 秒后重试，以免超过 QPS 限制导致失败。如果三次重试均失败，建议更换 UID 再次调用 `acquire`， 获得一个新的 resource ID，并用该 resource ID 再次调用 `start` 方法。
+   - 如果收到错误码 `65`，需要使用相同的参数再次调用 `start`。建议使用退避策略重试两次，如第一次等待 3 秒后重试、第二次等待 6 秒后重试。
 2. 获得 `sid` 之后的 5 秒后，使用退避策略调用 `query` 方法，退避间隔建议小于 `start` 请求中的 `maxIdleTime` (最长空闲频道时间)。如果 `query` 请求成功，且 `serverResponse` 中的 `status` 参数值为 `4` 或 `5`，则表示录制服务已成功启动。如果在获得 `sid` 之后的 90 秒后 `status` 仍非 `4` 或 `5`， 则可以认为录制未启动或成功后超时退出。
 
 <div class="alert note">建议你准备一个备份 UID，在重新启动录制时使用，以避免频道内两个相同 UID 互踢。主备 UID 可以交替使用。</div>

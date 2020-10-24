@@ -102,6 +102,7 @@ end
  - libresolv.tbd
  - SystemConfiguration.framework
  - CoreTelephony.framework
+ - CoreWLAN.framework (仅适用于 macOS)
 
 
 ## 实时消息和基本频道操作

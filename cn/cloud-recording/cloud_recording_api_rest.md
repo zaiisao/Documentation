@@ -3,7 +3,7 @@
 title: 云端录制 RESTful API
 description: Cloud recording restful api reference
 platform: All Platforms
-updatedAt: Thu Sep 24 2020 07:53:33 GMT+0800 (CST)
+updatedAt: Fri Oct 23 2020 09:03:17 GMT+0800 (CST)
 ---
 # 云端录制 RESTful API
 该文提供云端录制 RESTful API 的详细信息。
@@ -988,7 +988,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/resourceid/<resourceid>
 - `49`：使用同一个 resource ID 和录制 ID（sid）重复 `stop` 请求。
 - `53`：录制已经在进行中。当采用相同参数再次调用 `acquire` 获得新的 resource ID，并用于 `start` 请求时，会发生该错误。如需发起多路录制，需要在 `acquire` 方法中填入不同的 UID。
 - `62`：调用 `Acquire` 请求时，如果出现该错误，表示你填入的 App ID 没有[开通云端录制权限](https://docs.agora.io/cn/cloud-recording/cloud_recording_rest?platform=All%20Platforms#%E5%BC%80%E9%80%9A%E4%BA%91%E7%AB%AF%E5%BD%95%E5%88%B6%E6%9C%8D%E5%8A%A1)。
-- `65`：多为网络抖动引起。使用相同 resource ID 重试即可。
+- `65`：多为网络抖动引起。当调用 `start` 方法收到该错误码时，需要使用同一 resource ID 再次调用 `start`。建议使用退避策略重试两次，如第一次等待 3 秒后重试、第二次等待 6 秒后重试。
 - `432`：请求参数错误。请求参数不合法，或请求中的 App ID，频道名或用户 ID 与 resource ID 不匹配。
 - `433`：resource ID 过期。获得 resource ID 后必须在 5 分钟内开始云端录制。请重新调用 [`acquire`](#acquire) 获取新的 resource ID。
 - `435`：没有录制文件产生。频道内没有用户发流，无录制对象。
