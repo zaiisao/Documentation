@@ -3,7 +3,7 @@
 title: Common Errors
 description: 
 platform: All Platforms
-updatedAt: Tue Jul 21 2020 10:42:25 GMT+0800 (CST)
+updatedAt: Fri Oct 23 2020 09:09:34 GMT+0800 (CST)
 ---
 # Common Errors
 This article lists the common errors you may encounter when using the Cloud Recording RESTful APIs. If you encounter other errors, contact support@agora.io.
@@ -23,7 +23,7 @@ This article lists the common errors you may encounter when using the Cloud Reco
 - `49`: Caused by repeated `stop` requests with the same resource ID and recording ID (sid).
 - `53`: The recording is already running. This error occurs when you use the same parameters to call `acquire` again and use the new resource ID in the `start` request. To start multiple recording instances, use a different UID for each instance.
 - `62`: If you receive this error when calling `acquire`, the cloud recording service is not enabled. See [Enable Cloud Recording](https://docs.agora.io/en/cloud-recording/cloud_recording_rest#enable-cloud-recording) for details.
-- `65`: Usually caused by network jitter. Try again with the same resource ID.
+- `65`: Usually caused by network jitter. Retry with the same resource ID. Agora recommends that you use a backoff strategy, for example, retry after 3 and 6 seconds successively.
 - `432`: The parameter in the request is incorrect. Either the parameter is invalid, or the App ID, channel name, or UID does not match the resource ID.
 - `433`: The resource ID has expired. You need to start recording within five minutes after getting a resource ID. Call acquire to get a new resource ID.
 - `435`: No recorded files created. There is nothing to record because no user is sending any stream in the channel.

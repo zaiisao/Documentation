@@ -113,6 +113,7 @@ end
 	- libresolv.tbd
 	- SystemConfiguration.framework
 	- CoreTelephony.framework
+	- CoreWLAN.framework (macOS only)
 
 
 ## Implement peer-to-peer and channel messaging

@@ -3,7 +3,7 @@
 title: Set the Audio Profile
 description: How to set high-quality audio on Windows
 platform: Windows
-updatedAt: Fri Oct 16 2020 10:42:56 GMT+0800 (CST)
+updatedAt: Fri Oct 23 2020 10:35:15 GMT+0800 (CST)
 ---
 # Set the Audio Profile
 ## Introduction
@@ -11,6 +11,10 @@ updatedAt: Fri Oct 16 2020 10:42:56 GMT+0800 (CST)
 High-fidelity audio is essential for professional audio scenarios, such as for podcasts and singing competitions. For example, podcasts require stereo and high-fidelity audio. High-fidelity audio refers to an audio profile with a sample rate of 48 kHz and a bitrate of 192 Kbps.
 
 To obtain high-fidelity audio during real-time communications, you can choose the appropriate audio profile based on the audio quality, channel, and scenario.
+
+## Sample project
+
+We provide an open-source demo project that implements [setting audio profile](https://github.com/AgoraIO/API-Examples/tree/master/windows/APIExample/APIExample/Advanced/AudioProfile) on GitHub. You can try the demo and view the source code.
 
 ## Implementation
 

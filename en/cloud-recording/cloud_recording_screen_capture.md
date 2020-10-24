@@ -3,15 +3,14 @@
 title: Capture Screenshots
 description: snapshot
 platform: All Platforms
-updatedAt: Thu Sep 10 2020 03:34:47 GMT+0800 (CST)
+updatedAt: Fri Oct 23 2020 08:40:53 GMT+0800 (CST)
 ---
 # Capture Screenshots
 ## Overview
 
 This article describes how to use Cloud Recording RESTful APIs to take video screenshots and upload the screenshots to your third-party cloud storage.
 
-> - You can take video screenshots only in individual recording mode.
-> - You cannot record a channel and take screenshots simultaneously in one session. To both record a channel and take screenshots, call [`acquire`](https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/acquire) twice to get two resource IDs, one for recording and the other for capturing screenshots.
+<div class="alert note">You cannot record a channel and take screenshots simultaneously in one session. To both record a channel and take screenshots, call <a href="https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/acquire">acquire</a> twice to get two resource IDs, one for recording and the other for capturing screenshots.</div>
 
 Ensure you understand how to use Cloud Recording RESTful APIs for recording before reading this article. See [Cloud Recording RESTful API Quickstart](https://docs.agora.io/en/cloud-recording/cloud_recording_rest) for details.
 

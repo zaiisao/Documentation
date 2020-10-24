@@ -3,7 +3,7 @@
 title: Channel Encryption
 description: 
 platform: Windows
-updatedAt: Fri Oct 16 2020 08:31:03 GMT+0800 (CST)
+updatedAt: Fri Oct 23 2020 10:32:29 GMT+0800 (CST)
 ---
 # Channel Encryption
 ## Introduction
@@ -20,6 +20,10 @@ You can choose an encryption schema according to your needs.
 The following diagram describes the encrypted data transmission process:
 
 ![](https://web-cdn.agora.io/docs-files/1596711714514)
+
+## Sample project
+
+We provide an open-source demo project that implements [built-in encryption](https://github.com/AgoraIO/API-Examples/tree/master/windows/APIExample/APIExample/Advanced/MediaEncrypt) and [customized encryption](https://github.com/AgoraIO/API-Examples/tree/master/windows/APIExample/APIExample/Advanced/CustomEncrypt) on GitHub. You can try the demo and view the source code.
 
 ## Implementation
 

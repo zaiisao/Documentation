@@ -3,7 +3,7 @@
 title: Co-host across Channels
 description: 
 platform: Windows
-updatedAt: Mon Oct 19 2020 10:24:27 GMT+0800 (CST)
+updatedAt: Fri Oct 23 2020 10:26:51 GMT+0800 (CST)
 ---
 # Co-host across Channels
 ## Introduction
@@ -13,6 +13,10 @@ Co-hosting across channels refers to the process where the Agora SDK relays the 
 - The audiences in the relay channels can see and hear all hosts.
 
 Co-hosting across channels applies to scenarios such as an online singing contest, where hosts of different channels interact with each other.
+
+## Sample project
+
+We provide an open-source demo project that implements [channel media relay](https://github.com/AgoraIO/API-Examples/tree/dev/3.2.0/windows/APIExample/APIExample/Advanced/CrossChannel) on GitHub. You can try the demo and view the source code.
 
 ## Implementation
 
@@ -49,6 +53,7 @@ Follow the API call sequence to implement your code logic:
 ### Sample code
 
 ```C++
+// Configures the source channel information, the destination channel information, and the number of destination channels.
 ChannelMediaInfo *lpSrcinfo = new ChannelMediaInfo;
 lpSrcinfo->channelName = nullptr;
 lpSrcinfo->token = nullptr;
@@ -71,17 +76,16 @@ cmrc.srcInfo = lpSrcinfo;
 cmrc.destInfos = lpDestInfos;
 cmrc.destCount = nDestCount;
 int ret = 0;
-// Sets the destination channel you want to join.
+// Starts the channel media relay.
 ret = m_lpAgoraEngine->startChannelMediaRelay(cmrc);
 
-
+// Updates the destination channels for media stream relay.
 ChannelMediaInfo *lpUpdateDestInfos = new ChannelMediaInfo;
 lpUpdateDestInfos->channelName = "test";
 lpUpdateDestInfos->token = nullptr;
 lpUpdateDestInfos->uid = 0;
 cmrc.destInfos = lpUpdateDestInfos;
 cmrc.destCount = 1;
-// Updates the media relay channels.
 ret = m_lpAgoraEngine->updateChannelMediaRelay(cmrc);	
 ```
 
