@@ -3,7 +3,7 @@
 title: Join Multiple Channels
 description: 3.0 feature multi-channel
 platform: Windows
-updatedAt: Mon Oct 26 2020 06:48:14 GMT+0800 (CST)
+updatedAt: Mon Oct 26 2020 06:48:53 GMT+0800 (CST)
 ---
 # Join Multiple Channels
 ## Introduction
