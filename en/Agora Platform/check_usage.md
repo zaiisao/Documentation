@@ -3,7 +3,7 @@
 title: Check Usage
 description: 
 platform: All Platforms
-updatedAt: Fri Jul 17 2020 01:35:22 GMT+0800 (CST)
+updatedAt: Mon Oct 26 2020 05:10:24 GMT+0800 (CST)
 ---
 # Check Usage
 This page introduces how to check your usage in Console.
@@ -18,7 +18,7 @@ Follow these steps to check your usage:
 
   ![](https://web-cdn.agora.io/docs-files/1594910404077)
 
->- The time frame can not exceed three months.
+>- The time frame can not exceed 12 months.
 >
 >- Video Quality Types
 >	
