@@ -3,7 +3,7 @@
 title: 查看用量
 description: 
 platform: All Platforms
-updatedAt: Fri Jul 17 2020 03:03:33 GMT+0800 (CST)
+updatedAt: Mon Oct 26 2020 04:59:28 GMT+0800 (CST)
 ---
 # 查看用量
 本页介绍如何在 Agora 控制台查看项目用量。
@@ -18,7 +18,7 @@ updatedAt: Fri Jul 17 2020 03:03:33 GMT+0800 (CST)
 
 ![](https://web-cdn.agora.io/docs-files/1594292978571)
 
-> - 时间段范围不能超过 3 个月。
+> - 时间段范围不能超过一年。
 >
 > - 视频清晰度分类标准：
 > 	- 高清：视频分辨率范围为 (16p × 16p, 1280p × 720p]
