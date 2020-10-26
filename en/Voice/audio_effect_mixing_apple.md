@@ -3,7 +3,7 @@
 title: Play Audio Effects/Audio Mixing File
 description: How to play audio effects and enable audio mixing for iOS
 platform: iOS,macOS
-updatedAt: Fri Oct 16 2020 10:10:55 GMT+0800 (CST)
+updatedAt: Mon Oct 26 2020 04:17:42 GMT+0800 (CST)
 ---
 # Play Audio Effects/Audio Mixing File
 ## Introduction
@@ -159,7 +159,7 @@ agoraKit.startAudioMixing(filePath, loopback: loopback, replace: replace, cycle:
 agoraKit.adjustAudioMixingVolume(50)
 ```
 
-```bjective-c
+```objective-c
 // Objective-C
 // loopback sets whether other users can hear the audio mixing. If loopback is set as YES, only the local user can hear the audio mixing.
 // replace sets whether the audio captured by the microphone is replaced by the audio mixing file. 
