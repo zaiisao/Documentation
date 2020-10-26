@@ -3,7 +3,7 @@
 title: Start Voice Call
 description: 
 platform: Flutter
-updatedAt: Thu Oct 01 2020 02:07:14 GMT+0800 (CST)
+updatedAt: Mon Oct 26 2020 02:58:23 GMT+0800 (CST)
 ---
 # Start Voice Call
 This page includes the following sections:
@@ -215,80 +215,20 @@ class _MyAppState extends State<MyApp> {
     await engine.joinChannel(Token, '123', null, 0);
   }
  
-  // Create UI, including remote user and local user
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Example app'),
-        ),
-        body: Stack(
-          children: [
-            Center(
-              child: _switch ? _remoteCaller() : _localCaller(),
-            ),
-            Align(
-              alignment: Alignment.topLeft,
-              child: Container(
-                width: 100,
-                height: 100,
-                color: Colors.blue,
-                child: GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      _switch = !_switch;
-                    });
-                  },
-                  child: Center(
-                    child:
-                    _switch ? _localCaller() : _remoteCaller(),
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
- 
-  //View: local user not in channel
-  Widget _localCaller() {
-    if (_joined) {
-      return _localJoinedView();
-    } else {
-      return Text(
-        'Please join channel first',
-        textAlign: TextAlign.center,
-      );
-    }
-  }
-  // View: remote user not in channel
-  Widget _remoteCaller() {
-    if (_remoteUid != null) {
-      return _remoteJoinedView();
-    } else {
-      return Text(
-        'Please wait remote user join',
-        textAlign: TextAlign.center,
-      );
-    }
-  }
-  // View: local user in channel
-  Widget _localJoinedView() {
-    return Text(
-        'Local user joined',
-        textAlign: TextAlign.center,
-      );
-  }
-  // View: remote user in channel
-  Widget _remoteJoinedView() {
-    return Text(
-        'Remote user joined',
-        textAlign: TextAlign.center,
-      );
-  }
+  // Create a simple chat UI
+	Widget build(BuildContext context) {
+			return MaterialApp(
+				title: 'Agora Audio quickstart',
+				home: Scaffold(
+					appBar: AppBar(
+						title: Text('Agora Audio quickstart'),
+					),
+					body: Center(
+						child: Text('Please chat!'),
+					),
+				),
+			);
+		}
 }
 ```
 
