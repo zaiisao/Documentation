@@ -3,7 +3,7 @@
 title: 加入多频道
 description: 加入多频道v3.0首次上线
 platform: Windows
-updatedAt: Thu Jun 04 2020 08:44:12 GMT+0800 (CST)
+updatedAt: Mon Oct 26 2020 06:44:34 GMT+0800 (CST)
 ---
 # 加入多频道
 ## 功能描述
