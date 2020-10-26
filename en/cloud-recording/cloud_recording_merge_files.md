@@ -3,7 +3,7 @@
 title: Merge Audio and Video Files
 description: 
 platform: All Platforms
-updatedAt: Fri Jul 10 2020 03:32:56 GMT+0800 (CST)
+updatedAt: Mon Oct 26 2020 07:29:20 GMT+0800 (CST)
 ---
 # Merge Audio and Video Files
 ## Overview
@@ -28,7 +28,7 @@ To run the script, you need to install Python 2, version 2.7 or later.
 
 ### 1. Get the merging script
 
-Download the [Agora Audio & Video File Merging](https://download.agora.io/acrsdk/release/Agora_Cloud_Recording_Tools_v1.10.0.1_20200602-1591091578_1209.tar.gz) script and decompress it. Find `ffmpeg.tar.gz` and `convert.py`. Decompress `ffmpeg.tar.gz`, and make sure it is in the same directory as `convert.py.`
+Download the [Agora Audio & Video File Merging](https://download.agora.io/acrsdk/release/Agora_Cloud_Recording_Tools_v1.14.1_20201026-1603685854_1361.tar.gz) script and decompress it. Find `ffmpeg.tar.gz` and `convert.py`. Decompress `ffmpeg.tar.gz`, and make sure it is in the same directory as `convert.py.`
 
 <div class="alert note">To avoid compatibility issues, Agora suggests that you use the FFmpeg binary in the zipped file or install FFmpeg 3.3.</div>
 
