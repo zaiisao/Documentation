@@ -3,7 +3,7 @@
 title: 事件与历史消息查询 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Fri Oct 23 2020 04:11:12 GMT+0800 (CST)
+updatedAt: Tue Oct 27 2020 03:10:06 GMT+0800 (CST)
 ---
 # 事件与历史消息查询 RESTful API
 事件与历史消息查询 RESTful API 目前支持以下功能：
@@ -245,7 +245,10 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query
 
 #### 请求示例
 
+下面的示例从第 101 条消息开始返回，单次返回 20 条消息，消息排序为按时间顺序。
+
 ##### userA 在指定时间段内收到的所有消息
+
 
 ```json
 {
@@ -262,6 +265,8 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query
 
 ##### channelA 在指定时间段内收到的所有消息
 
+
+
 ```json
 {
     "filter": {
@@ -276,6 +281,8 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query
 ```
 
 ##### userA 在指定时间段内发送的所有消息
+
+
 
 ```json
 {
@@ -292,6 +299,8 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query
 
 ##### userA 在指定时间段内发送给 userB 的所有点对点消息
 
+
+
 ```json
 {
     "filter": {
@@ -307,6 +316,8 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query
 ```
 
 ##### userA 在指定时间段内发送到 channelA 的所有频道消息
+
+
 
 ```json
 {
@@ -387,15 +398,16 @@ https://api.agora.io/dev/v2/project/<appid>/rtm/message/history/query/1234561234
 
 ```json
 {
-    "result": "success",
-    "code" : "ok",
-    "messages" : [{
-    "dst": "dst",
-	"message_type": "peer_message",
-	"ms": 1587009745719,
-    "payload": "123",
-	"src": "src"
-}]
+    "code": "ok",
+    "messages": [
+            {"dst": "dst",
+            "message_type": "peer_message",
+            "ms": 1587009745719,
+            "payload": "123",
+            "src": "src"}
+        ],
+    "request_id": "125877_12008901591665642856",
+    "result": "success"
 }
 ```
 

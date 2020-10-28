@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: Flutter
-updatedAt: Sun Oct 18 2020 09:29:30 GMT+0800 (CST)
+updatedAt: Mon Oct 26 2020 02:58:01 GMT+0800 (CST)
 ---
 # 实现语音通话
 本文分以下两个部分：
@@ -230,80 +230,21 @@ class _MyAppState extends State<MyApp> {
     await engine.joinChannel(Token, '123', null, 0);
   }
  
-  // 构建 UI，显示远端用户和本地用户
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Example app'),
-        ),
-        body: Stack(
-          children: [
-            Center(
-              child: _switch ? _remoteCaller() : _localCaller(),
-            ),
-            Align(
-              alignment: Alignment.topLeft,
-              child: Container(
-                width: 100,
-                height: 100,
-                color: Colors.blue,
-                child: GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      _switch = !_switch;
-                    });
-                  },
-                  child: Center(
-                    child:
-                    _switch ? _localCaller() : _remoteCaller(),
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
- 
-  // 视图：本地用户未加入频道
-  Widget _localCaller() {
-    if (_joined) {
-      return _localJoinedView();
-    } else {
-      return Text(
-        'Please join channel first',
-        textAlign: TextAlign.center,
-      );
-    }
-  }
-  // 视图：远端用户未加入频道
-  Widget _remoteCaller() {
-    if (_remoteUid != null) {
-      return _remoteJoinedView();
-    } else {
-      return Text(
-        'Please wait remote user join',
-        textAlign: TextAlign.center,
-      );
-    }
-  }
-  // 视图：本地用户已加入频道
-  Widget _localJoinedView() {
-    return Text(
-        'Local user joined',
-        textAlign: TextAlign.center,
-      );
-  }
-  // 视图：远端用户已加入频道
-  Widget _remoteJoinedView() {
-    return Text(
-        'Remote user joined',
-        textAlign: TextAlign.center,
-      );
-  }
+  // 构建简单通话 UI
+	Widget build(BuildContext context) {
+			return MaterialApp(
+				title: 'Agora Audio quickstart',
+				home: Scaffold(
+					appBar: AppBar(
+						title: Text('Agora Audio quickstart'),
+					),
+					body: Center(
+						child: Text('Please chat!'),
+					),
+				),
+			);
+		}
+
 }
 ```
 
