@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Wed Oct 28 2020 04:43:21 GMT+0800 (CST)
+updatedAt: Wed Oct 28 2020 09:11:08 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora Web SDK 的发版说明。
@@ -28,6 +28,12 @@ Agora Web SDK 对浏览器的支持情况详见 [Agora Web SDK 支持哪些浏�
 - Agora Web SDK 暂不支持代码二次混淆。
 
 更多问题，详见 [Web 常见问题集](https://docs.agora.io/cn/search?type=faq&platform=Web)。
+
+## 3.2.3 版
+该版本于 2020 年 10 月 28 日发布，修复了以下问题：
+
+- 调用 `setLiveTranscoding` 后，如果在收到 `Client.on("liveTranscodingUpdated")` 事件前调用 `startLiveStreaming`，推流到 CDN 会失败。
+- 调用 `stopLiveStreaming` 后 SDK 没有触发 `Client.on("liveStreamingStopped")` 事件。
 
 ## 3.2.1 版
 该版本于 2020 年 9 月 11 日发布，修复了部分用户升级 3.2.0 后编译打包报错的问题。
