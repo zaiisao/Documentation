@@ -3,7 +3,7 @@
 title: 互动直播大班课
 description: 
 platform: All Platforms
-updatedAt: Tue Jan 21 2020 08:03:12 GMT+0800 (CST)
+updatedAt: Thu Oct 29 2020 13:23:46 GMT+0800 (CST)
 ---
 # 互动直播大班课
 ## 场景描述

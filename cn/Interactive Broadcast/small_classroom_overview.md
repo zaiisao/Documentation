@@ -3,7 +3,7 @@
 title: 1 对 N 在线小班课
 description: 
 platform: All Platforms
-updatedAt: Thu Oct 29 2020 13:20:43 GMT+0800 (CST)
+updatedAt: Thu Oct 29 2020 13:24:15 GMT+0800 (CST)
 ---
 # 1 对 N 在线小班课
 ## 场景描述
