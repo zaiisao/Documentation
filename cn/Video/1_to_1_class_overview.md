@@ -44,7 +44,7 @@ Agora 为 1 对 1 互动教学提供如下平台的 Demo，点击链接进入应
 
 ## 技术方案
 
-Agora 使用 [Agora RTC SDK](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#agora-rtc-sdk)、[Agora RTM SDK](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#agora-rtm-sdk)、[Agora 云端录制服务](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#cloud-recording)、[Agora Edu 云服务](https://github.com/AgoraIO-Usecase/eEducation/wiki/Agora-Edu-%E4%BA%91%E6%9C%8D%E5%8A%A1)和第三方白板 SDK 共同搭建一对一小班课场景。
+Agora 使用 [Agora RTC SDK](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#agora-rtc-sdk)、[Agora RTM SDK](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#agora-rtm-sdk)、[Agora 云端录制服务](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#cloud-recording)、[Agora 教育云服务](https://github.com/AgoraIO-Usecase/eEducation/wiki/Agora-Edu-%E4%BA%91%E6%9C%8D%E5%8A%A1)和第三方白板 SDK 共同搭建一对一小班课场景。
 
 ![](https://web-cdn.agora.io/docs-files/1589183490012)
 
@@ -55,7 +55,7 @@ Agora 使用 [Agora RTC SDK](https://docs.agora.io/cn/Agora%20Platform/terms?pla
 | Agora RTC SDK      | 加入 RTC 频道，进行实时音视频互动。      | 
 | Agora RTM SDK      | 登录 RTM 系统并加入 RTM 频道，实现收发实时文字消息。      | 
 | Agora 云端录制服务 | 录制实时音视频、录制完成后即时回放。 |
-| Agora Edu 云服务      | 为教师端和学生端提供教室后台服务，实现教室信息管理、权限控制等功能。      | 
+| Agora 教育云服务      | 为教师端和学生端提供教室后台服务，实现教室信息管理、权限控制等功能。      | 
 | 第三方白板 SDK | 实现互动白板相关功能。|
 
 ## 方案优势
