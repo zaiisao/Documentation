@@ -3,7 +3,7 @@
 title: 推流组件
 description: 
 platform: iOS
-updatedAt: Thu Oct 15 2020 09:32:15 GMT+0800 (CST)
+updatedAt: Thu Oct 29 2020 08:11:40 GMT+0800 (CST)
 ---
 # 推流组件
 ## 简介
@@ -176,9 +176,9 @@ Agora 在 GitHub 上提供开源的 [Agora-Extensions](https://github.com/AgoraI
 
 ```objective-c
 // 开启录音，不支持推流过程中调用
-[self.streamingKit enableVideoCapturing:YES];
-// 开启视频采集，不支持推流过程中调用
 [self.streamingKit enableAudioRecording:YES];
+// 开启视频采集，不支持推流过程中调用
+[self.streamingKit enableVideoCapturing:YES];
 ```
 
 #### 5. 添加和删除自定义美颜
