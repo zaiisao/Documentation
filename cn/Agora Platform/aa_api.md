@@ -3,7 +3,7 @@
 title: 水晶球 RESTful API (Beta)
 description: AA rest api reference 
 platform: All Platforms
-updatedAt: Fri Sep 25 2020 07:04:48 GMT+0800 (CST)
+updatedAt: Thu Oct 29 2020 09:29:29 GMT+0800 (CST)
 ---
 # 水晶球 RESTful API (Beta)
 水晶球现在提供 RESTful API，可以让你直接通过网络请求获取水晶球里的数据，在自己的网页或应用中灵活使用。
@@ -996,6 +996,8 @@ Cache-Control: no-cache
 | 20018 | 视频端到端丢包率                         |
 | 20019 | 视频分辨率的宽                           |
 | 20020 | 视频分辨率的高                           |
+| 20021 | SDK 任务调度延迟，单位 ms                           |
+| 20022 | 客户端到本地路由器的往返时延，单位 ms                           |
 
 ### <a name="exp_id"></a>体验 ID 映射表
 
