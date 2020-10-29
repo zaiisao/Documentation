@@ -3,7 +3,7 @@
 title: Start Live Interactive Audio Streaming
 description: 
 platform: Unity
-updatedAt: Fri Sep 18 2020 04:54:29 GMT+0800 (CST)
+updatedAt: Wed Oct 28 2020 06:40:23 GMT+0800 (CST)
 ---
 # Start Live Interactive Audio Streaming
 Use this guide to quickly start the live interactive audio streaming with the Agora Voice SDK for Unity.
@@ -179,7 +179,7 @@ An interactive streaming channel has two client roles: `BROADCASTER` and `AUDIEN
 1. Allow the user to set the role as BROADCASTER or AUDIENCE.
 2. Call the `SetClientRole` method and pass in the client role set by the user.
 
-Note that in an live interactive streaming, only the host can be heard. If you want to switch the client role after joining the channel, call the `SetClientRole` method.
+Note that in a live interactive streaming, only the host can be heard. If you want to switch the client role after joining the channel, call the `SetClientRole` method.
 
 ```C#
 // Set the client role as the host.
@@ -188,7 +188,7 @@ mRtcEngine.SetClientRole(CLIENT_ROLE.BROADCASTER);
 
 ### 6. Join a channel
 
-After setting the client role, you can call `JoinChannelByKey` to join a channel. Set the following parameters when calling this method::
+After setting the client role, you can call `JoinChannelByKey` to join a channel. Set the following parameters when calling this method:
 
 - `channelKey`: The token for identifying the role and privileges of a user. Set it as one of the following values:
 

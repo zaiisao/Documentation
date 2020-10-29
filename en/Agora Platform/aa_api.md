@@ -3,7 +3,7 @@
 title: Agora Analytics RESTful API (Beta)
 description: AA rest api reference
 platform: All Platforms
-updatedAt: Fri Sep 25 2020 07:23:57 GMT+0800 (CST)
+updatedAt: Thu Oct 29 2020 09:31:20 GMT+0800 (CST)
 ---
 # Agora Analytics RESTful API (Beta)
 Agora Analytics provides RESTful APIs for you to retrieve the statistics of your calls and use them in your own application.
@@ -937,6 +937,8 @@ Where:
 | 20018 | The end-to-end packet loss rate of the sent video.           |
 | 20019 | The width of the video.                                      |
 | 20020 | The height of the video.                                     |
+| 20021 | The task scheduling delay (ms).                                      |
+| 20022 | The round-trip time delay (ms) from the client to the local router.                                     |
 
 ### <a name="exp_id"></a>Experience ID
 

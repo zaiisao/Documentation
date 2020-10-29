@@ -3,7 +3,7 @@
 title: Start a Voice Call
 description: 
 platform: Unity
-updatedAt: Fri Sep 18 2020 04:44:44 GMT+0800 (CST)
+updatedAt: Wed Oct 28 2020 06:40:24 GMT+0800 (CST)
 ---
 # Start a Voice Call
 Use this guide to quickly start a basic one-to-one voice call with the Agora SDK for Unity.
@@ -166,7 +166,7 @@ mRtcEngine.OnUserOfflineHandler = OnUserOfflineHandler;
 
 ### 4. Join a channel
 
-After initializing the `IRtcEngine` object, you can call `JoinChannelByKey` to join a channel. Set the following parameters when calling this method::
+After initializing the `IRtcEngine` object, you can call `JoinChannelByKey` to join a channel. Set the following parameters when calling this method:
 
 - `channelKey`: The token for identifying the role and privileges of a user. Set it as one of the following values:
 

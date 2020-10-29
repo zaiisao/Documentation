@@ -3,7 +3,7 @@
 title: Start a Video Call
 description: 
 platform: Unity
-updatedAt: Fri Sep 18 2020 06:49:08 GMT+0800 (CST)
+updatedAt: Wed Oct 28 2020 06:40:22 GMT+0800 (CST)
 ---
 # Start a Video Call
 Use this guide to quickly start a basic video call with the Agora SDK for Unity.
@@ -212,7 +212,7 @@ After initializing an `IRtcEngine` object, set the local video before joining a 
 
 ### 5. Join a channel
 
-After initializing an `IRtcEngine` object and setting the local video, call `JoinChannelByKey` to join a channel. Set the following parameters when calling this method::
+After initializing an `IRtcEngine` object and setting the local video, call `JoinChannelByKey` to join a channel. Set the following parameters when calling this method:
 
 - `channelKey`: The token for identifying the role and privileges of a user. Set it as one of the following values:
 

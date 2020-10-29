@@ -3,7 +3,7 @@
 title: Start Live Interactive Video Streaming
 description: 
 platform: Unity
-updatedAt: Fri Sep 18 2020 04:52:38 GMT+0800 (CST)
+updatedAt: Wed Oct 28 2020 06:40:23 GMT+0800 (CST)
 ---
 # Start Live Interactive Video Streaming
 Use this guide to quickly start the live interactive video streaming with the Agora Video SDK for Unity.
@@ -183,7 +183,7 @@ An interactive streaming channel has two client roles: `BROADCASTER` and `AUDIEN
 1. Allow the user to set the role as BROADCASTER or AUDIENCE.
 2. Call the `SetClientRole` method and pass in the client role set by the user.
 
-Note that in an live interactive streaming, only the host can be heard and seen. If you want to switch the client role after joining the channel, call the `SetClientRole` method.
+Note that in a live interactive streaming, only the host can be heard and seen. If you want to switch the client role after joining the channel, call the `SetClientRole` method.
 
 ```C#
 // Set the client role as the host.
@@ -220,7 +220,7 @@ After setting the channel profile and client role, set the local video view befo
 
 ### 7. Join a channel
 
-After setting the client role and the local video view (for the interactive video streaming), you can call `JoinChannelByKey` to join a channel. Set the following parameters when calling this method::
+After setting the client role and the local video view (for the interactive video streaming), you can call `JoinChannelByKey` to join a channel. Set the following parameters when calling this method:
 
 - `channelKey`: The token for identifying the role and privileges of a user. Set it as one of the following values:
 

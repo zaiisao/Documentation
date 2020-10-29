@@ -3,7 +3,7 @@
 title: Start Live Interactive Video Streaming
 description: 
 platform: macOS
-updatedAt: Fri Sep 18 2020 04:52:30 GMT+0800 (CST)
+updatedAt: Wed Oct 28 2020 06:39:04 GMT+0800 (CST)
 ---
 # Start Live Interactive Video Streaming
 Use this guide to quickly start the live interactive video streaming demo with the Agora Video SDK for macOS.
@@ -238,7 +238,7 @@ An interactive streaming channel has two client roles: `Broadcaster` and `Audien
 1. Allow the user to set the role as `Broadcaster` or `Audience`. 
 2. Call the `setClientRole` method and pass in the client role set by the user.
 
-Note that in an live interactive streaming, only the host can be heard and seen. If you want to switch the client role after joining the channel, call the `setClientRole` method.
+Note that in a live interactive streaming, only the host can be heard and seen. If you want to switch the client role after joining the channel, call the `setClientRole` method.
 
 ```objective-c
 // Objective-C

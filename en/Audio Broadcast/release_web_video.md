@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Sat Oct 10 2020 07:07:37 GMT+0800 (CST)
+updatedAt: Wed Oct 28 2020 09:12:53 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Web SDK.
@@ -27,6 +27,12 @@ For the web browser support of the Agora Web SDK, see [Which browsers does the A
 - The Agora Web SDK does not support code obfuscation.
 
 For more issues, see [Web FAQs](https://docs.agora.io/en/search?type=faq&platform=Web).
+
+## v3.2.3
+v3.2.3 was released on October 28, 2020. This release fixed the following issues:
+
+- After `setLiveTranscoding` was called, pushing streams to CDN failed if `startLiveStreaming` was called before the SDK triggers the `Client.on("liveTranscodingUpdated")` event.
+- After `stopLiveStreaming` was called, the SDK failed to trigger the `Client.on("liveStreamingStopped")` event.
 
 ## v3.2.1
 v3.2.1 was released on September 11, 2020. This version fixed the error in compiling and packaging after some users upgraded to v3.2.0.
