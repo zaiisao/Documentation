@@ -44,7 +44,7 @@ Agora 为互动直播大班课提供如下平台的 Demo，点击下方链接进
 
 ## 技术方案
 
-Agora 使用 [Agora RTC SDK](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#agora-rtc-sdk)、[Agora RTM SDK](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#agora-rtm-sdk)、[Agora 云端录制服务](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#cloud-recording)、[Agora 教育云服务](https://github.com/AgoraIO-Usecase/eEducation/wiki/Agora-Edu-%E4%BA%91%E6%9C%8D%E5%8A%A1)和第三方白板 SDK 共同搭建互动直播大班课场景。
+Agora 使用 [Agora RTC SDK](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#agora-rtc-sdk)、[Agora RTM SDK](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#agora-rtm-sdk)、[Agora 云端录制服务](https://docs.agora.io/cn/Agora%20Platform/terms?platform=All%20Platforms#cloud-recording)、[Agora 教育云服务](https://agoradoc.github.io/cn/edu-cloud-service/restfulapi/)和第三方白板 SDK 共同搭建互动直播大班课场景。
 
 ![](https://web-cdn.agora.io/docs-files/1589179187327)
 
