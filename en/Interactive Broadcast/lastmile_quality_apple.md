@@ -2,7 +2,7 @@
 ---
 title: Lastmile Tests
 description: Conduct a Pre-call Lastmile Test
-platform: iOS,macOS
+platform: macOS
 updatedAt: Mon Jul 06 2020 03:37:55 GMT+0800 (CST)
 ---
 # Lastmile Tests

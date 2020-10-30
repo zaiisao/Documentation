@@ -3,7 +3,7 @@
 title: Manage Recorded Files
 description: 
 platform: All Platforms
-updatedAt: Sun Apr 26 2020 06:54:00 GMT+0800 (CST)
+updatedAt: Fri Oct 30 2020 05:06:10 GMT+0800 (CST)
 ---
 # Manage Recorded Files
 ## Overview
@@ -99,6 +99,8 @@ sid713476478245_cnameagora__uid_s_123__uid_e_video_20190920125142485.ts
 ```
 
 The sample M3U8 file above contains the file name of a TS file and three descriptive symbols, which indicates that the TS file is the first slice file after the video stream starts or restarts after an interruption, the video rotates by 90 degrees anticlockwise, and the TS file lasts for 6.332 seconds.
+
+<div class="alert note">The generated M3U8 file does not have a comma after <code>#EXTINF:&#60;length&#62;</code>, and thus may cause some compatibility issues with certain players. You can set <code>privateParams</code> in <code>recordingConfig</code> in the <a href="https://docs.agora.io/en/cloud-recording/restfulapi/#/Cloud%20Recording/start">start</a>  request to automatically add the comma: <code>"recordingConfig": {"privateParams":"{"correctEXTINF":true}", ...}</code>. </div>
 
 ## Slicing
 
