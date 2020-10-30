@@ -3,7 +3,7 @@
 title: 管理录制文件
 description: 介绍录制文件的命名规则和如何解析 M3U8 文件
 platform: All Platforms
-updatedAt: Fri Oct 30 2020 03:57:36 GMT+0800 (CST)
+updatedAt: Fri Oct 30 2020 05:07:26 GMT+0800 (CST)
 ---
 # 管理录制文件
 ## 功能描述
@@ -103,7 +103,8 @@ M3U8 文件包含多个切片文件的文件名及其描述符。Agora 云端录
 sid713476478245_cnameagora__uid_s_123__uid_e_video_20190920125142485.ts
 ```
 
-上述 M3U8 文件中包含一个 TS 切片文件的文件名以及三个描述符，表示该切片文件是视频流开始或中断后重新开始后的第一片切片文件，相对前一片 TS 文件逆时针旋转了 90 度，总时长为 6.332 秒。
+<div class="alert note">如果某些播放器因 <code>#EXTINF:&#60;length&#62;</code> 后没有逗号而出现兼容性问题，你可以在 <a href="https://docs.agora.io/cn/cloud-recording/restfulapi/#/%E4%BA%91%E7%AB%AF%E5%BD%95%E5%88%B6/start">start</a> 请求中的 <code>recordingConfig</code> 参数中配置参数 <code>privateParams</code>，即 <code>"recordingConfig": {"privateParams":"{"correctEXTINF":true}", ...}</code> </div>
+
 
 ## 切片规则
 
