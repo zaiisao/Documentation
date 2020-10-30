@@ -81,7 +81,7 @@ updatedAt: Mon May 11 2020 09:01:36 GMT+0800 (CST)
 <summary>网络质量监测</summary>
 你可以通过使用 RTC SDK 的 <code>networkQuality</code> 回调，实时监控通话中每个用户的网络上下行 last mile 网络质量。
 更多质量透明相关方法，可参考如下文档：
-<li><a href="https://docs.agora.io/cn/Interactive%20Broadcast/lastmile_quality_apple?platform=iOS">通话前网络质量探测</a></li>
+<li><a href="https://docs.agora.io/cn/Interactive%20Broadcast/lastmile_quality_ios?platform=iOS">通话前网络质量探测</a></li>
 <li><a href="https://docs.agora.io/cn/Interactive%20Broadcast/in-call_quality_apple?platform=iOS">通话中质量监测</a></li>
 </details>
 <details>
