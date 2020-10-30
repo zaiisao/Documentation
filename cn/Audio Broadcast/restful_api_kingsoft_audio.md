@@ -3,7 +3,7 @@
 title: 金山语音智能审核 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Thu Oct 22 2020 02:35:24 GMT+0800 (CST)
+updatedAt: Fri Oct 30 2020 06:17:25 GMT+0800 (CST)
 ---
 # 金山语音智能审核 RESTful API
 该文提供金山智能语音审核 RESTful API 的详细信息。
@@ -42,7 +42,7 @@ updatedAt: Thu Oct 22 2020 02:35:24 GMT+0800 (CST)
 
 > 每个 App ID 每秒钟的请求数限制为 10 次。如需提高此限制，请[提交工单](https://agora-ticket.agora.io/)联系技术支持。
 
-调用该方法成功后，你可以从 HTTP 响应包体中的 `resourceId` 字段得到一个 resource ID。这个 resource ID 的时效为 5 分钟，你需要在 5 分钟内用这个 resource ID 去调用开始审核的 API。
+调用该方法成功后，你可以从 HTTP 响应包体中的 `resourceId` 字段得到一个 resource ID。这个 resource ID 的时效为 5 分钟，你需要在 5 分钟内用该 resource ID 调用 `start` 方法，超时需重新调用 `acquire` 申请。在审核中该资源一直有效，直到审核结束。
 
 ### 参数
 
@@ -93,7 +93,7 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
 ```
 
 - `code`：Number 类型，[响应状态码](#response_status)。
-- `resourceId`：String 类型，金山智能语音审核的 resource ID，使用这个 resource ID 可以开始一段审核。这个 resource ID 的有效期为 5 分钟，超时需要重新请求。
+- `resourceId`：String 类型，金山智能语音审核的 resource ID，使用这个 resource ID 可以开始一段审核。
 
 ## 开始审核的 API
 
