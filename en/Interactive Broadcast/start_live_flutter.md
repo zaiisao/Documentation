@@ -3,7 +3,7 @@
 title: Start Live Interactive Video Streaming
 description: 
 platform: Flutter
-updatedAt: Thu Oct 01 2020 02:05:40 GMT+0800 (CST)
+updatedAt: Fri Oct 30 2020 08:41:49 GMT+0800 (CST)
 ---
 # Start Live Interactive Video Streaming
 This page includes the following sections:
@@ -375,6 +375,7 @@ class _CallPageState extends State<CallPage> {
     await _initAgoraRtcEngine();
     _addAgoraEventHandlers();
     await _engine.enableWebSdkInteroperability(true);
+		/// Join channel
     await _engine.joinChannel(Token, widget.channelName, null, 0);
   }
 ```

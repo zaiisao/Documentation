@@ -3,7 +3,7 @@
 title: Firewall Requirements
 description: 
 platform: All Platforms
-updatedAt: Fri Oct 30 2020 06:52:56 GMT+0800 (CST)
+updatedAt: Fri Oct 30 2020 09:49:36 GMT+0800 (CST)
 ---
 # Firewall Requirements
 ## Introduction
@@ -58,8 +58,8 @@ Add the following destination domains and the corresponding ports to the firewal
 
 | Destination ports | Port type | Operation |
 | ---------- | ------------------------------------------------ | -----------------|
-| 9130; 9131     | TCP              |  Allow |
-| 8000; 1080; 25000   |  UDP  | Allow |
+| 9130；9131；9140	    | TCP              |  Allow |
+| 1080; 8000; 8130; 9120; 9121; 9700; 25000	   |  UDP  | Allow |
 
 ### RTM SDK (Web)
 
@@ -82,4 +82,4 @@ logservice-rtm.agoraio.cn
 
 | Destination ports | Port type | Operation |
 | ---------- | ------------------------------------------------ | -----------------|
-| 443; 6443; 9591; 9593     | TCP              |  Allow |
+| 443; 6443; 9591; 9593; 9601	    | TCP              |  Allow |
