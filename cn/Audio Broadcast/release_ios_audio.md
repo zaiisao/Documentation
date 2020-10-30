@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: iOS
-updatedAt: Tue Sep 15 2020 03:43:37 GMT+0800 (CST)
+updatedAt: Fri Oct 30 2020 02:46:31 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora 语音 SDK 的发版说明。
@@ -788,7 +788,7 @@ Agora SDK 计划在下一个版本对如下 API 进行进一步改进：
 
 - [`lastmileQuality`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/oc/Protocols/AgoraRtcEngineDelegate.html#//api/name/rtcEngine:lastmileQuality:)：通话前网络上下行 Last mile 质量报告回调
 
-该版本对数据统计相关回调进行了统一梳理，相关回调及算法详见[通话前检测网络质量](../../cn/Audio%20Broadcast/lastmile_quality_apple.md)。
+该版本对数据统计相关回调进行了统一梳理，相关回调及算法详见[通话前检测网络质量](../../cn/Audio%20Broadcast/lastmile_quality_ios.md)。
 
 ##### 2. 改进获取 SDK 网络连接状态的生成策略
 
