@@ -3,7 +3,7 @@
 title: 媒体流加密
 description: 
 platform: iOS,macOS
-updatedAt: Mon Nov 02 2020 02:59:58 GMT+0800 (CST)
+updatedAt: Mon Nov 02 2020 07:49:47 GMT+0800 (CST)
 ---
 # 媒体流加密
 ## 功能描述
@@ -128,7 +128,7 @@ Agora 提供 C++ 的 `registerPacketObserver` 方法及 `IPacketObserver` 类，
 
 <div class="alert note">实现自定义加密需要在 iOS 或 macOS 平台上调用 SDK 的 C++ API，注意事项如下：
 	<li>代码中涉及 Objective-C 与 C++ 混编的逻辑必须在 <code>.mm</code> 文件中实现。</li>
-	<li>.mm 文件的开头需要引入 C++ 头文件: <code>#include &lt;AgoraRtcKit/IAgoraRtcEngine.h></code></li></div>
+	<li><code>.mm</code> 文件的开头需要引入 C++ 头文件: <code>#include &lt;AgoraRtcKit/IAgoraRtcEngine.h></code>。</li></div>
 
 参考步骤如下：
 
