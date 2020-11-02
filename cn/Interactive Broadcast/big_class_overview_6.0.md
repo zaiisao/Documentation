@@ -3,7 +3,7 @@
 title: 互动直播大班课
 description: 
 platform: All Platforms
-updatedAt: Mon Nov 02 2020 04:03:06 GMT+0800 (CST)
+updatedAt: Mon Nov 02 2020 04:08:58 GMT+0800 (CST)
 ---
 # 互动直播大班课
 ## 场景描述
@@ -11,6 +11,21 @@ updatedAt: Mon Nov 02 2020 04:03:06 GMT+0800 (CST)
 一名老师在课堂上进行教学，成千上万的学生通过网络实时观看和收听；同时，学生可以举手请求发言，与老师进行实时音视频互动，这就是一个典型的互动直播大班课场景。该场景在大型网络公开课中应用尤为广泛。
 
 ![](https://web-cdn.agora.io/docs-files/1579169438469)
+
+## 平台说明
+
+声网互动直播大班课场景方案的平台支持如下：
+
+| 课堂角色 | Web<sup>1</sup> | iOS<sup>2</sup> | Android<sup>3</sup> |
+| :------- | :--- | :--- | :------- |
+| 教师端   | <font color="green">Y    | <font color="red">X    | <font color="red">X        |
+| 学生端   | <font color="green">Y    | <font color="green">Y    | <font color="green">Y        |
+
+说明：
+
+1. Web Chrome 72 及以上，Web 其他浏览器未经验证。
+2. iOS 10 及以上，iOS 9 系列版本未经验证。
+3. Android 4.4 及以上。
 
 ## 功能列表
 
@@ -26,18 +41,14 @@ updatedAt: Mon Nov 02 2020 04:03:06 GMT+0800 (CST)
 
 
 
-## Demo 体验
+## App 体验
 
-Agora 为互动直播大班课提供如下平台的 Demo，点击下方链接进入应用。
+Agora 为互动直播大班课提供如下平台的演示 app，点击下方链接进入应用。
 
 <style> table th:first-of-type {     width: 120px; } th:second-of-type {     width: 100px; }</style>
 | Android | iOS | PC Web | Windows | macOS |
 | ---------------- | ---------------- | ---------------- | ---------------- | ---------------- |
-| [点击体验](https://download.agora.io/demo/release/app-AgoraCloudClass-release.apk)  | ![](https://web-cdn.agora.io/docs-files/1581407452682) |  [点击体验](https://solutions.agora.io/education/web/#/)      | 敬请期待 | 敬请期待 |
-
-目前：
-- Android 和 iOS 端为学生端
-- Web 端既可以为学生端，又可以为教师端
+| [点击体验](https://download.agora.io/demo/release/app-AgoraCloudClass-release.apk)  | ![](https://web-cdn.agora.io/docs-files/1581407452682) |  [点击体验](https://solutions.agora.io/education/web_v2)      | 敬请期待 | 敬请期待 |
 
 打开应用后，按屏幕提示依次填入房间号、用户名，并选择**大班课**教室。根据你的平台选择老师或学生，点击**加入房间**即可体验。
 
