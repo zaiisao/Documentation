@@ -3,7 +3,7 @@
 title: 1 对 N 在线小班课
 description: 
 platform: All Platforms
-updatedAt: Thu Oct 29 2020 13:24:15 GMT+0800 (CST)
+updatedAt: Mon Nov 02 2020 03:52:52 GMT+0800 (CST)
 ---
 # 1 对 N 在线小班课
 ## 场景描述
@@ -11,6 +11,33 @@ updatedAt: Thu Oct 29 2020 13:24:15 GMT+0800 (CST)
 声网 1 对 N 在线小班课是指 1 位教师对多位学生进行在线辅导教学的场景。教师对学生授课，学生可实时向老师提问，学生之间也可进行实时互动。常见有 1 对 2、 1 对 4、1 对 6 等场景。
 
 ![](https://web-cdn.agora.io/docs-files/1579681786107)
+
+## 平台说明
+
+声网 1 对 N 在线小班课场景方案的平台支持如下：
+
+| 课堂角色 | Web<sup>1</sup> | iOS<sup>2</sup> | Android<sup>3</sup> |
+| :------- | :--- | :--- | :------- |
+| 教师端   | <font color="green">Y    | <font color="red">X    | <font color="red">X        |
+| 学生端   | <font color="green">Y    | <font color="green">Y    | <font color="green">Y        |
+
+说明：
+
+1. Web Chrome 72 及以上，Web 其他浏览器未经验证。
+2. iOS 10 及以上，iOS 9 系列版本未经验证。
+3. Android 4.4 及以上。
+
+## App 体验
+
+Agora 为 1 对 N 在线小班课提供如下示例 app，点击下方链接进入应用。
+
+<style> table th:first-of-type {     width: 120px; } th:second-of-type {     width: 100px; }</style>
+| Android | iOS | PC Web | Windows | macOS |
+| ---------------- | ---------------- | ---------------- | ---------------- | ---------------- |
+| [点击体验](https://download.agora.io/demo/release/app-AgoraCloudClass-release.apk)  | ![](https://web-cdn.agora.io/docs-files/1581407452682) |  [点击体验](https://solutions.agora.io/education/web_v2)      | 敬请期待 | 敬请期待 |
+
+打开应用后，按屏幕提示依次填入房间号、用户名，并选择**小班课**教室。根据你的平台选择老师或学生，点击**加入房间**即可体验。
+
 
 ## 功能列表
 
@@ -24,22 +51,6 @@ updatedAt: Thu Oct 29 2020 13:24:15 GMT+0800 (CST)
 | 设备及网络检测 | 正式上课前，教师可以检测麦克风、摄像头等音视频设备能否正常工作，<br>同时整个上课过程中，学生和教师都可以实时检测网络质量，确保课堂顺利进行。 |
 | 屏幕共享 | 教师将自己屏幕的内容分享给学生观看，提高教学效果。 |
 
-
-
-## Demo 体验
-
-Agora 为 1 对 N 在线小班课提供如下平台的 Demo，点击下方链接进入应用。
-
-<style> table th:first-of-type {     width: 120px; } th:second-of-type {     width: 100px; }</style>
-| Android | iOS | PC Web | Windows | macOS |
-| ---------------- | ---------------- | ---------------- | ---------------- | ---------------- |
-| [点击体验](https://download.agora.io/demo/release/app-AgoraCloudClass-release.apk)  | ![](https://web-cdn.agora.io/docs-files/1581407452682) |  [点击体验](https://solutions.agora.io/education/web/#/)      | 敬请期待 | 敬请期待 |
-
-目前：
-- Android 和 iOS 端为学生端
-- Web 端既可以为学生端，又可以为教师端
-
-打开应用后，按屏幕提示依次填入房间号、用户名，并选择**小班课**教室。根据你的平台选择老师或学生，点击**加入房间**即可体验。
 
 
 ## 技术方案
