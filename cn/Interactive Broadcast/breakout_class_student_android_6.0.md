@@ -25,7 +25,7 @@ updatedAt: Fri Oct 30 2020 12:55:42 GMT+0800 (CST)
 
 参考下图了解学生端实现的基础流程和 API 调用。
 
-<div class="alert info">教育 SDK 是基于 Agora RTC SDK、Agora RTM SDK 和 Agora 教育云服务封装的场景化 SDK，API 设计与实际业务场景更贴近、更易用。教育 SDK 当前处于内部测试体验阶段。</div>
+<div class="alert note">教育 SDK 是基于 Agora RTC SDK、Agora RTM SDK 和 Agora 教育云服务封装的场景化 SDK，API 设计与实际业务场景更贴近、更易用。教育 SDK 当前处于内部测试体验阶段，如有疑问，请至 GitHub 提交 <a href="https://github.com/AgoraIO-Usecase/eEducation">issue</a>。</div>
 
 ![](https://web-cdn.agora.io/docs-files/1604032009302)
 
