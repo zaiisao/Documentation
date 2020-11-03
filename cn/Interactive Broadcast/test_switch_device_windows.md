@@ -101,7 +101,7 @@ for (UINT nIndex = 0; nIndex < lCount; nIndex++){
 }
 
 // 选择一个音频播放设备
-lpDeviceManager->setPlaybackDevice(strDeviceID); // device ID chosen
+lpDeviceManager->setPlaybackDevice(strDeviceID); 
 
 #ifdef UNICODE
 	CHAR wdFilePath[MAX_PATH];
