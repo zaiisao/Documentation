@@ -73,9 +73,7 @@ virtual void onAudioVolumeIndication(const AudioVolumeInfo* speakers, unsigned i
     }
 
 // Enable the audio volume callback.
-rtcEngine.enableAudioVolumeIndication(1000, // Callback interval (ms)
-	10 // Smoothness
-	);
+rtcEngine.enableAudioVolumeIndication(1000, 10, true);
 
 // Start the audio capture device test.
 (*lpDeviceManager)->startRecordingDeviceTest(1000);

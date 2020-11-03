@@ -3,7 +3,7 @@
 title: Pre-call Network and Device Tests
 description: 
 platform: iOS
-updatedAt: Fri Oct 30 2020 02:51:06 GMT+0800 (CST)
+updatedAt: Tue Nov 03 2020 07:11:23 GMT+0800 (CST)
 ---
 # Pre-call Network and Device Tests
 ## Description
@@ -117,7 +117,7 @@ Refer to the following steps to start an echo test.
 2. When the echo test starts, let the user speak for a while. If the recording plays back within the set time interval, the audio devices and the network connection are working properly.
 3. Once you get the test result, call `stopEchoTest` to stop the current test before joining a channel using `joinChannelByToken`.
 
-### Sample cide
+### Sample code
 
 Refer to the following sample code to implement this function.
 
