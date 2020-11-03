@@ -60,7 +60,7 @@ for (UINT nIndex = 0; nIndex < lCount; nIndex++){
 }
 
 // 选择一个音频采集设备
-lpDeviceManager->setRecordingDevice(strDeviceID); // device ID chosen
+lpDeviceManager->setRecordingDevice(strDeviceID); 
 
 // 实现音频音量回调接口
 virtual void onAudioVolumeIndication(const AudioVolumeInfo* speakers, unsigned int speakerNumber, int totalVolume) {
@@ -70,9 +70,7 @@ virtual void onAudioVolumeIndication(const AudioVolumeInfo* speakers, unsigned i
     }
 
 // 启用音频音量回调功能
-rtcEngine.enableAudioVolumeIndication(1000, // 回调间隔，以毫秒为单位
-	10 // 顺滑度
-	);
+rtcEngine.enableAudioVolumeIndication(1000, 10, true);
 
 // 开始音频采集设备测试
 (*lpDeviceManager)->startRecordingDeviceTest(1000);
