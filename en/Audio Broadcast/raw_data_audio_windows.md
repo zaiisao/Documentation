@@ -3,7 +3,7 @@
 title: Raw Audio Data
 description: 
 platform: Windows
-updatedAt: Mon Jul 06 2020 10:35:12 GMT+0800 (CST)
+updatedAt: Tue Nov 03 2020 02:00:57 GMT+0800 (CST)
 ---
 # Raw Audio Data
 ## Introduction
@@ -28,7 +28,8 @@ Follow these steps to implement the raw data functions in your project:
 
 The following diagram shows how to implement the raw data functions in your project:
 
-![](https://web-cdn.agora.io/docs-files/1569211586291)
+![](https://web-cdn.agora.io/docs-files/1604368836368)
+
 
 ### Sample code
 

@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Wed Sep 30 2020 16:29:09 GMT+0800 (CST)
+updatedAt: Tue Nov 03 2020 02:28:09 GMT+0800 (CST)
 ---
 # Release Notes
   ## Overview
@@ -25,7 +25,7 @@ Geofencing. You can use the `areaCodes` parameter in `createInstance` to set the
 
 #### Added
 
-The `areaCodes` parameter is added to  `createInstance`.
+The `areaCodes` parameter is added to  [`createInstance`](https://docs.agora.io/en/Real-time-Messaging/API%20Reference/RTM_web/modules/agorartm.html#createinstance).
 
 
 ## v1.3.1
