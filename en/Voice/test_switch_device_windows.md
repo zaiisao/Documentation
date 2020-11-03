@@ -3,7 +3,7 @@
 title: Test a Media Device
 description: 
 platform: Windows
-updatedAt: Mon Jul 06 2020 08:07:53 GMT+0800 (CST)
+updatedAt: Tue Nov 03 2020 07:59:41 GMT+0800 (CST)
 ---
 # Test a Media Device
 ## Introduction
@@ -26,7 +26,7 @@ Before proceeding, ensure that you have implemented basic real-time functions in
 
 Call the `startEchoTest` method to test if the audio devices, such as the microphone and the speaker, are working properly.
 
-To consuct the test, call `startEchoTest`, and set the interval parameter in this method to notify the SDK when to report the result of this test. The user speaks, and if the recording plays back within the set time interval, the audio devices and the network connection are working properly.
+To conduct the test, call `startEchoTest`, and set the interval parameter in this method to notify the SDK when to report the result of this test. The user speaks, and if the recording plays back within the set time interval, the audio devices and the network connection are working properly.
 
 ```C++
 // Start an echo test.

@@ -1,11 +1,11 @@
 
 ---
-title: Lastmile Tests
+title: Pre-call Network and Device Tests
 description: 
 platform: Windows
-updatedAt: Mon Jul 06 2020 03:39:25 GMT+0800 (CST)
+updatedAt: Tue Nov 03 2020 07:58:05 GMT+0800 (CST)
 ---
-# Lastmile Tests
+# Pre-call Network and Device Tests
 ## Introduction
 
 To check if the uplink network condition is good enough to support the audio bitrate or target bitrate of the chosen video profile, you can conduct a last-mile network quality test before joining the channel.
