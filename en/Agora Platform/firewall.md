@@ -3,7 +3,7 @@
 title: Firewall Requirements
 description: 
 platform: All Platforms
-updatedAt: Fri Oct 30 2020 09:49:36 GMT+0800 (CST)
+updatedAt: Wed Nov 04 2020 02:39:50 GMT+0800 (CST)
 ---
 # Firewall Requirements
 ## Introduction
@@ -43,7 +43,7 @@ Add the following destination domains and the corresponding ports to the firewal
 
 | Destination ports | Port type | Operation |
 | ---------- | ------------------------------------------------ | -----------------|
-| 80; 443; 3433; 5668; 5669; 4700 - 5000; 6080; 6443; 8667; 9667; 30011 - 30013 (for RTMP converter)| TCP              |  Allow |
+| 80; 443; 3433; 4700 - 5000; 5668; 5669; 6080; 6443; 8667; 9667; 30011 - 30013 (for RTMP converter)| TCP              |  Allow |
 | 3478; 4700 - 5000 (2.9.0 or later); 10000 - 65535 (before 2.9.0)   |  UDP  | Allow |
 
 ## RTM SDK
