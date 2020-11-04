@@ -3,7 +3,7 @@
 title: Interactive Gaming API
 description: 
 platform: Cocos
-updatedAt: Wed Sep 16 2020 09:27:23 GMT+0800 (CST)
+updatedAt: Wed Nov 04 2020 08:24:00 GMT+0800 (CST)
 ---
 # Interactive Gaming API
 This page provides the **C++ Interface**, with which you can integrate the voice and video function into your app. 
@@ -4576,5 +4576,5 @@ The SDK triggers this callback when the user role switches, for example, from a 
 
 ### Error Codes
 
-See [Error Codes and Warning Codes](../../en/Interactive%20Gaming/the_error_game.md).
+See [Error Codes and Warning Codes](../../en/Interactive%20Gaming/error_rtc.md).
 
