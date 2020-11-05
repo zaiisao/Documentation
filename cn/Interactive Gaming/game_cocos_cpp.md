@@ -3,7 +3,7 @@
 title: 游戏 API
 description: 
 platform: Cocos
-updatedAt: Wed Sep 16 2020 09:28:21 GMT+0800 (CST)
+updatedAt: Wed Nov 04 2020 08:23:23 GMT+0800 (CST)
 ---
 # 游戏 API
 本文提供游戏 SDK 的 **C++ 接口**，使应用程序实现音视频功能。
@@ -4080,6 +4080,6 @@ virtual void onClientRoleChanged(CLIENT_ROLE_TYPE oldRole, CLIENT_ROLE_TYPE newR
 
 ### 错误码和警告码 - Agora Native SDK
 
-详见 [错误码和警告码](../../cn/API%20Reference/the_error_native.md)。
+详见 [错误码和警告码](../../cn/Interactive%20Gaming/error_rtc.md)。
 
 

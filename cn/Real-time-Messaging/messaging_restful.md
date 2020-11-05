@@ -3,12 +3,14 @@
 title: 消息发送 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Fri Oct 23 2020 03:26:44 GMT+0800 (CST)
+updatedAt: Wed Nov 04 2020 10:19:43 GMT+0800 (CST)
 ---
 # 消息发送 RESTful API
 ## 认证
 
 <div class="alert note">如果你使用 basic HTTP 认证，则可以通过服务端使用任意用户 ID 发送点对点消息或频道消息。如果你使用 Token 认证，则只能通过服务端使用生成 RTM Token 时使用的用户 ID 发送点对点消息或频道消息。</div>
+
+<div class="alert note">如果你的业务场景中要求服务端到客户端的消息延时必须小于 200 ms，Agora 建议你使用 RTM Linux C++ SDK 或 RTM Linux Java SDK 实现服务端消息发送。</div>
 
 ### Basic HTTP 认证
 

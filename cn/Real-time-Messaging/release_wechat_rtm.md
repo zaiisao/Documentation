@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: 微信小程序
-updatedAt: Tue Sep 01 2020 06:35:33 GMT+0800 (CST)
+updatedAt: Thu Nov 05 2020 02:32:21 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora RTM 微信小程序 SDK（Beta） 的发版说明。

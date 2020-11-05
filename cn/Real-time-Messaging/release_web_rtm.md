@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Tue Nov 03 2020 02:27:49 GMT+0800 (CST)
+updatedAt: Thu Nov 05 2020 02:16:55 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
