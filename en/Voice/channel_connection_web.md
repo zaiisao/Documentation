@@ -3,7 +3,7 @@
 title: Channel Connection
 description: 
 platform: Web
-updatedAt: Tue Nov 03 2020 09:34:12 GMT+0800 (CST)
+updatedAt: Wed Nov 04 2020 08:44:07 GMT+0800 (CST)
 ---
 # Channel Connection
 In real-time communications, a user can be in various channel connection states. This page shows how the SDK determines the connection state of a user and transitions between the states.
@@ -31,7 +31,7 @@ When network interruption occurs, the SDK automatically tries reconnecting to th
 
 The following diagram shows the callbacks received by UID 1 and UID 2, where UID 1 joins the channel, gets a network exception, loses connection, and rejoins the channel.
 
-![](https://web-cdn.agora.io/docs-files/1569310010072)
+![](https://web-cdn.agora.io/docs-files/1604479403744)
 
 Where:
 
@@ -43,7 +43,7 @@ Where:
 - T5: The uplink network condition of UID 1 deteriorates. The SDK automatically tries rejoining the channel.
 - T6: If UID 2 fails to receive any data from UID 1 in 10 seconds, the SDK decides that UID 1 is not publishing any stream, and UID 2 receives `Client.on("stream-removed")`. Meanwhile the SDK continues to try rejoining the channel.
 - T7: During the reconnection, the connection state changes to `Client.on("connection-state-change", CONNECTING)`.
-- T8: If the server fails to receive any data from UID 1 in 30 seconds, the SDK decides that UID 1 is offline, and UID 2 receives the `Client.on("peer-leave")` callback. Meanwhile the SDK continues to try rejoining the channel.
+- T8: If the server fails to receive any data from UID 1 in 10 seconds, the SDK decides that UID 1 is offline, and UID 2 receives the `Client.on("peer-leave")` callback. Meanwhile the SDK continues to try rejoining the channel.
 - T9: When UID 1 successfully rejoins the channel, the connection state changes to `Client.on("connection-state-change", CONNECTED)`.
 - T10: UID2 receives the `Client.on("peer-online")` callback of UID 1, indicating that UID 1 is back in the channel.
 
