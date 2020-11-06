@@ -3,7 +3,7 @@
 title: Call Invitation
 description: 
 platform: iOS,macOS
-updatedAt: Sat Oct 10 2020 10:06:32 GMT+0800 (CST)
+updatedAt: Fri Nov 06 2020 02:47:53 GMT+0800 (CST)
 ---
 # Call Invitation
 ## Overview
@@ -35,7 +35,7 @@ In a complete call invitation process, the call invitation states of the caller 
 
 The steps to send a call invitation are as follows:
 
-1. The caller creates the `AgoraRtmLocalInvitation` by calling `createLocalInvitation`; at the same time, the lifecycle of the `AgoraRtmLocalInvitation` begins.
+1. The caller creates the `AgoraRtmLocalInvitation` by calling `initWithCalleeId`; at the same time, the lifecycle of the `AgoraRtmLocalInvitation` begins.
 2. The caller sends a call invitation by calling `sendLocalInvitation`. The lifecycle of the `AgoraRtmRemoteInvitation` begins as the callee receives the `remoteInvitationReceived` callback, and then the caller receives the `localInvitationReceivedByPeer` callback.
 
 

@@ -3,13 +3,21 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Thu Nov 05 2020 02:25:49 GMT+0800 (CST)
+updatedAt: Thu Nov 05 2020 09:51:13 GMT+0800 (CST)
 ---
 # Release Notes
   ## Overview
 
 The Agora Real-time Messaging (RTM) SDK provides a streamlined and stable messaging mechanism for you to quickly implement real-time messaging for various scenarios. See [product overview](../../en/Real-time-Messaging/product_rtm.md) for more information.
 
+
+## v1.4.1
+
+v1.4.1 was released on November 5, 2020.
+
+**New features**
+
+Fixed the performance issue when communicating with the RTM Native SDK.
 
 ## v1.4.0
 
