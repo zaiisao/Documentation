@@ -3,7 +3,7 @@
 title: Start a Video Call
 description: 
 platform: Unity
-updatedAt: Wed Oct 28 2020 06:40:22 GMT+0800 (CST)
+updatedAt: Fri Nov 06 2020 07:29:34 GMT+0800 (CST)
 ---
 # Start a Video Call
 Use this guide to quickly start a basic video call with the Agora SDK for Unity.
@@ -226,6 +226,8 @@ After initializing an `IRtcEngine` object and setting the local video, call `Joi
 
 - `uid`: Integer. The unique ID of the local user. If you set `uid` as 0, the SDK automatically assigns one user ID and returns it in the `OnJoinChannelSuccessHandler` callback.
 
+ <div class="alert note">Once the user joins the channel, the user subscribes to the audio and video streams of all the other users in the channel by default, giving rise to usage and billing calculation. If you do not want to subscribe to a specified stream or all remote streams, call the <tt>Mute</tt> methods accordingly.</div>
+ 
 ```C#
 // Join a channel. 
 mRtcEngine.JoinChannelByKey(null, channel, null, 0);

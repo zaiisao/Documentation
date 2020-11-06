@@ -3,7 +3,7 @@
 title: Peer-to-peer or Channel Messaging
 description: 1.1.0
 platform: Web
-updatedAt: Wed Sep 30 2020 16:12:54 GMT+0800 (CST)
+updatedAt: Fri Nov 06 2020 07:29:58 GMT+0800 (CST)
 ---
 # Peer-to-peer or Channel Messaging
 
@@ -71,7 +71,7 @@ You can skip to [Integrate the SDK into your project](#integrate) if you already
 ![](https://web-cdn.agora.io/docs-files/1574924570426)
 </details>
 
-
+<div class="alert note">For Agora RTM SDK for Web 1.4.0 or higher, the version of TypeScript must be 3.8 or higher. </div>
 
 ### <a name="integrate"></a> Integrate the SDK
 
@@ -79,10 +79,10 @@ You can skip to [Integrate the SDK into your project](#integrate) if you already
 
 Download the Agora RTM Web SDK and include with a `<script>` tag, and `AgoraRTM` is registered as a global variable.
 
-Add to the HTML file the following code and replace `/path/to/agora-rtm-sdk-1.4.0.js` with the URL of `agora-rtm-sdk-1.4.0.js`:
+Add to the HTML file the following code and replace `/path/to/agora-rtm-sdk-1.4.1.js` with the URL of `agora-rtm-sdk-1.4.1.js`:
 
 ```html
-<script src="/path/to/agora-rtm-sdk-1.4.0.js"></script>
+<script src="/path/to/agora-rtm-sdk-1.4.1.js"></script>
 ```
 
 > Ensure that the address specified by `src` is accessible as a URL in a web browser.

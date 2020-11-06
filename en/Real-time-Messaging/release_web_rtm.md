@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Web
-updatedAt: Thu Nov 05 2020 09:51:13 GMT+0800 (CST)
+updatedAt: Fri Nov 06 2020 07:33:21 GMT+0800 (CST)
 ---
 # Release Notes
   ## Overview
@@ -22,6 +22,10 @@ Fixed the performance issue when communicating with the RTM Native SDK.
 ## v1.4.0
 
 v1.4.0 was released on September 25, 2020.
+
+**Compatibility changes**
+
+v1.4.0 supports only TypeScript 3.8 or higher.
 
 
 **New features**

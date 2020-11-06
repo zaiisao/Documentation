@@ -3,7 +3,7 @@
 title: Start a Video Call
 description: 
 platform: macOS
-updatedAt: Mon Sep 21 2020 11:13:34 GMT+0800 (CST)
+updatedAt: Fri Nov 06 2020 07:24:53 GMT+0800 (CST)
 ---
 # Start a Video Call
 Use this guide to quickly start a basic video call demo with the Agora Video SDK for macOS.
@@ -272,6 +272,8 @@ After initializing the `AgoraRtcEngineKit` object and setting the local video vi
 
 - `uid`: ID of the local user that is an integer and should be unique. If you set `uid` as 0,  the SDK assigns a user ID for the local user and returns it in the `joinSuccessBlock` callback.
 
+ <div class="alert note">Once the user joins the channel, the user subscribes to the audio and video streams of all the other users in the channel by default, giving rise to usage and billing calculation. If you do not want to subscribe to a specified stream or all remote streams, call the <tt>mute</tt> methods accordingly.</div>
+ 
 - `joinSuccessBlock`: Returns that the user joins the specified channel. It is same as `didJoinChannel`. We recommend setting `joinSuccessBlock` as `nil`, so that the SDK can trigger the `didJoinChannel` callback.
 
 For more details on the parameter settings, see [joinChannelByToken](https://docs.agora.io/en/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByToken:channelId:info:uid:joinSuccess:).
