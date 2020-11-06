@@ -3,7 +3,7 @@
 title: Start Live Interactive Video Streaming
 description: 
 platform: Unity
-updatedAt: Wed Oct 28 2020 06:40:23 GMT+0800 (CST)
+updatedAt: Fri Nov 06 2020 07:28:54 GMT+0800 (CST)
 ---
 # Start Live Interactive Video Streaming
 Use this guide to quickly start the live interactive video streaming with the Agora Video SDK for Unity.
@@ -234,6 +234,8 @@ After setting the client role and the local video view (for the interactive vide
 
 - `uid`: Integer. The unique ID of the local user. If you set `uid` as `0`, the SDK automatically assigns one user ID and returns it in the `OnJoinChannelSuccessHandler` callback.
 
+ <div class="alert note">Once the user joins the channel, the user subscribes to the audio and video streams of all the other users in the channel by default, giving rise to usage and billing calculation. If you do not want to subscribe to a specified stream or all remote streams, call the <tt>Mute</tt> methods accordingly.</div>
+ 
 If an interactive streaming channel uses both the RTC Native SDK and the RTC Web SDK, ensure that you call the `EnableWebSdkInteroperability` method before joining the channel.
 
 ```C#

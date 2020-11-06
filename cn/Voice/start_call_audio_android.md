@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: Android
-updatedAt: Thu Oct 22 2020 09:07:09 GMT+0800 (CST)
+updatedAt: Fri Nov 06 2020 08:16:03 GMT+0800 (CST)
 ---
 # 实现语音通话
 本文介绍如何使用 Agora 语音通话 SDK 快速实现语音通话。

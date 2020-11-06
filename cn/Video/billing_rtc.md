@@ -3,7 +3,7 @@
 title: 实时音视频计费
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 06 2020 06:45:23 GMT+0800 (CST)
+updatedAt: Fri Nov 06 2020 10:20:08 GMT+0800 (CST)
 ---
 # 实时音视频计费
 本文展示 Agora 实时音视频服务的计费方式。
@@ -198,7 +198,7 @@ Agora 在每月底结算整月用量时，会把当月产生的音频、高清�
 - 如果订阅的是大流，则用户的集合分辨率根据发送端设置的大流分辨率计算。
 - 如果订阅的是小流，则用户的集合分辨率根据用户实际收到的分辨率计算。
 
-### 屏幕共享场景计费
+### 屏幕共享流的分辨率
 
 如果你的场景中涉及屏幕共享，则屏幕共享流的视频单价以你在 `ScreenCaptureParameters` 中设置的视频分辨率档位为准。详见以下类中的说明：
 - Windows: [`ScreenCaptureParameters`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_screen_capture_parameters.html) 
