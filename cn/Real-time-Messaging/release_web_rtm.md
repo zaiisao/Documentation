@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Web
-updatedAt: Thu Nov 05 2020 09:50:48 GMT+0800 (CST)
+updatedAt: Fri Nov 06 2020 07:32:33 GMT+0800 (CST)
 ---
 # 发版说明
 ## 简介
@@ -23,6 +23,9 @@ Agora 实时消息 SDK 提供了稳定可靠、低延时、高并发的全球消
 
 该版本于 2020 年 9 月 25 日发布。
 
+**升级必看**
+
+1.4.0 版仅支持 TypeScript 3.8 或以上版本。
 
 **新增功能**
 

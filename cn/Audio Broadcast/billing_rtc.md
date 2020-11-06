@@ -3,7 +3,7 @@
 title: 实时音视频计费
 description: 
 platform: All Platforms
-updatedAt: Fri Sep 18 2020 04:20:39 GMT+0800 (CST)
+updatedAt: Fri Nov 06 2020 06:45:23 GMT+0800 (CST)
 ---
 # 实时音视频计费
 本文展示 Agora 实时音视频服务的计费方式。
@@ -19,6 +19,7 @@ Agora 会按月统计你的开发者账户下所有项目产生的费用。
 <div class="alert note">
 	<ul>
 		<li>Agora 给予每个 Agora 开发者账号每个月一万分钟的免费时长。具体的扣除顺序和适用范围请参考<a href="https://docs.agora.io/cn/faq/billing_free">每月一万分钟免费说明</a>。</li>
+		<li>当用户通过集成了Agora RTC SDK 的 app 加入 RTC 频道后，默认会订阅 RTC 频道内所有用户发送的音视频流，并产生相应的用量。Agora RTC SDK 包括适用于 Native  平台和第三方框架的 Agora 语音和视频 SDK。</li>
 		<li>Agora 还提供预付费套餐包，详见 FAQ：<a href="https://docs.agora.io/cn/faq/pricing_package_minute">声网对预付费是否有相应的优惠策略</a>。</li>
 		<li>如果你的场景中涉及 RTMP 转码推流，除实时音视频费用外，还需要计算转码的费用。</li>
 	</ul>
@@ -196,6 +197,12 @@ Agora 在每月底结算整月用量时，会把当月产生的音频、高清�
 
 - 如果订阅的是大流，则用户的集合分辨率根据发送端设置的大流分辨率计算。
 - 如果订阅的是小流，则用户的集合分辨率根据用户实际收到的分辨率计算。
+
+### 屏幕共享场景计费
+
+如果你的场景中涉及屏幕共享，则屏幕共享流的视频单价以你在 `ScreenCaptureParameters` 中设置的视频分辨率档位为准。详见以下类中的说明：
+- Windows: [`ScreenCaptureParameters`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_screen_capture_parameters.html) 
+- macOS: [`AgoraScreenCaptureParameters`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraScreenCaptureParameters.html)
 
 ### 分辨率校准
 

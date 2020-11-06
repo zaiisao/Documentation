@@ -50,7 +50,6 @@ updatedAt: Thu Oct 22 2020 09:07:10 GMT+0800 (CST)
 </details>
 
 
-
 <a name="integrate_sdk"></a>
 ### 集成 SDK
 
@@ -74,7 +73,7 @@ dependencies {
 
 **方法二：手动复制 SDK 文件**
 
-1. 前往 [SDK 下载](https://docs.agora.io/cn/Agora%20Platform/downloads)页面，获取最新版的 Agora 语音 SDK，然后解压。
+1. 前往 [SDK 下载](../../cn/Audio%20Broadcast/downloads.md)页面，获取最新版的 Agora 语音 SDK，然后解压。
 2. 将 SDK 包内 libs 路径下的如下文件，拷贝到你的项目路径下：
 
 | 文件或文件夹                   | 项目路径                               | 

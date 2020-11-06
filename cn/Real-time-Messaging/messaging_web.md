@@ -3,7 +3,7 @@
 title: 发送和接收点对点消息及频道消息
 description: 
 platform: Web
-updatedAt: Tue Sep 01 2020 10:28:26 GMT+0800 (CST)
+updatedAt: Fri Nov 06 2020 07:37:18 GMT+0800 (CST)
 ---
 # 发送和接收点对点消息及频道消息
 
@@ -52,9 +52,11 @@ updatedAt: Tue Sep 01 2020 10:28:26 GMT+0800 (CST)
 <div class="alert note">如果你的网络环境部署了防火墙，请根据<a href="https://docs.agora.io/cn/Agora%20Platform/firewall?platform=All%20Platforms">应用企业防火墙限制</a >打开相关端口并设置域名白名单。</div> 
 
 
+<div class="alert note">如果你使用的 RTM Web SDK 是 1.4.0 或以上版本，TypeScript 必须是 3.8 或以上版本。</div>
+
 ## 设置开发环境
 
-本节介绍如何获取 App ID 并将 Agora RTM SDK for Web 集成至你的项目中。
+本节介绍如何获取 App ID 并将 RTM Web SDK 集成至你的项目中。
 
 ### <a name="appid"></a> 获取 App ID
 
@@ -92,11 +94,11 @@ updatedAt: Tue Sep 01 2020 10:28:26 GMT+0800 (CST)
 
 
 1. 从 Agora 官方网站下载最新版 [Agora RTM SDK for Web](../../cn/Real-time-Messaging/downloads.md) 压缩包。
-2. 将下载下来的压缩包中路径为 `libs/agora-rtm-sdk-1.3.1.js` 的文件保存到你所操作的项目下。
-3. 在项目相应的前端页面文件中，对刚才保存的 SDK 文件进行引用（其中 `/path/to/agora-rtm-sdk-1.3.1.js` 替换为可访问的 SDK 公开网址）：
+2. 将下载下来的压缩包中路径为 `libs/agora-rtm-sdk-1.4.1.js` 的文件保存到你所操作的项目下。
+3. 在项目相应的前端页面文件中，对刚才保存的 SDK 文件进行引用（其中 `/path/to/agora-rtm-sdk-1.4.1.js` 替换为可访问的 SDK 公开网址）：
 
     ```html
-    <script src="/path/to/agora-rtm-sdk-1.3.1.js"></script>
+    <script src="/path/to/agora-rtm-sdk-1.4.1.js"></script>
     ```
 
 <details>

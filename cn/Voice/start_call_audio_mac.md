@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: macOS
-updatedAt: Thu Oct 22 2020 10:50:32 GMT+0800 (CST)
+updatedAt: Fri Nov 06 2020 04:10:12 GMT+0800 (CST)
 ---
 # 实现语音通话
 本文介绍如何使用 Agora 语音通话 SDK 快速实现语音通话。
@@ -218,6 +218,9 @@ func initializeAgoraEngine() {
   <div class="alert note">若项目已启用 App 证书，请使用 Token。</div>
 
 - `uid`: 本地用户的 ID。数据类型为整型，且频道内每个用户的 `uid` 必须是唯一的。若将 `uid` 设为 0，则 SDK 会自动分配一个 `uid`，并在 `joinSuccessBlock` 回调中报告。
+
+ <div class="alert note">用户成功加入频道后，会默认订阅频道内其他所有用户的音频流，因此产生用量并影响计费。如果想取消订阅，可以通过调用相应的 <tt>mute</tt> 方法实现。</div>
+	
 - `joinSuccessBlock`：成功加入频道回调。`joinSuccessBlock` 优先级高于 `didJoinChannel`，2 个同时存在时，`didJoinChannel` 会被忽略。 需要有 `didJoinChannel` 回调时，请将 `joinSuccessBlock` 设置为 `nil`。
 
 更多的参数设置注意事项请参考 [joinChannelByToken](https://docs.agora.io/cn/Voice/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByToken:channelId:info:uid:joinSuccess:) 接口中的参数描述。

@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: Unity
-updatedAt: Fri Oct 23 2020 08:23:37 GMT+0800 (CST)
+updatedAt: Fri Nov 06 2020 04:11:24 GMT+0800 (CST)
 ---
 # 实现语音通话
 本文介绍如何使用 Agora Unity SDK 快速实现语音通话。
@@ -195,7 +195,9 @@ mRtcEngine.OnUserOfflineHandler = OnUserOfflineHandler;
 - `channelName`: 传入能标识频道的频道 ID。输入频道 ID 相同的用户会进入同一个频道。
 
 - `uid`: 本地用户的 ID。数据类型为整型，且频道内每个用户的 `uid` 必须是唯一的。若将 `uid` 设为 0，则 SDK 会自动分配一个 `uid`，并在 `OnJoinChannelSuccessHandler` 回调中报告。
-
+ 
+ <div class="alert note">用户成功加入频道后，会默认订阅频道内其他所有用户的音频流，因此产生用量并影响计费。如果想取消订阅，可以通过调用相应的 <tt>Mute</tt> 方法实现。</div>
+ 
 ```C#
 // 加入频道。 
 mRtcEngine.JoinChannelByKey(null, channel, null, 0);

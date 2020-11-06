@@ -3,7 +3,7 @@
 title: 实现视频通话
 description: 
 platform: macOS
-updatedAt: Thu Oct 22 2020 10:50:26 GMT+0800 (CST)
+updatedAt: Fri Nov 06 2020 04:14:13 GMT+0800 (CST)
 ---
 # 实现视频通话
 本文介绍如何使用 Agora 视频通话 SDK 快速实现视频通话。
@@ -272,9 +272,12 @@ func setupLocalVideo() {
   -  临时 Token。临时 Token 服务有效期为 24 小时。你可以在控制台里生成一个临时 Token，详见[获取临时 Token](https://docs.agora.io/cn/Agora%20Platform/token?platform=All%20Platforms#get-a-temporary-token)。
   -  在你的服务器端生成的 Token。在安全要求高的场景下，我们推荐你使用此种方式生成的 Token，详见[生成 Token](../../cn/Video/token_server.md)。
 
-  <div class="alert note">若项目已启用 App 证书，请使用 Token。</div>
+ <div class="alert note">若项目已启用 App 证书，请使用 Token。</div>
 
 - `uid`: 本地用户的 ID。数据类型为整型，且频道内每个用户的 `uid` 必须是唯一的。若将 `uid` 设为 0，则 SDK 会自动分配一个 `uid`，并在 `joinSuccessBlock` 回调中报告。
+
+ <div class="alert note">用户成功加入频道后，会默认订阅频道内其他所有用户的音频流和视频流，因此产生用量并影响计费。如果想取消订阅，可以通过调用相应的 <tt>mute</tt> 方法实现。</div>
+
 - `joinSuccessBlock`：成功加入频道回调。`joinSuccessBlock` 优先级高于 `didJoinChannel`，2 个同时存在时，`didJoinChannel` 会被忽略。 需要有 `didJoinChannel` 回调时，请将 `joinSuccessBlock` 设置为 `nil`。
 
 更多的参数设置注意事项请参考 [joinChannelByToken](https://docs.agora.io/cn/Video/API%20Reference/oc/Classes/AgoraRtcEngineKit.html#//api/name/joinChannelByToken:channelId:info:uid:joinSuccess:) 接口中的参数描述。
