@@ -3,7 +3,7 @@
 title: 实现视频直播
 description: wechat live
 platform: 微信小程序
-updatedAt: Thu Oct 22 2020 09:07:07 GMT+0800 (CST)
+updatedAt: Thu Nov 05 2020 03:15:29 GMT+0800 (CST)
 ---
 # 实现视频直播
 本文介绍如何使用 Agora 微信小程序 SDK 快速实现视频直播。
@@ -273,5 +273,5 @@ client.leave(onSuccess, onFailure);
 使用微信小程序 SDK 开发过程中，你还可以参考如下文档：
 
 - [小程序 SDK 常见问题集](https://docs.agora.io/cn/faq/wechat)
-- [错误码和警告码](../../cn/Interactive%20Broadcast/the_error_wechat.md)
+- [错误码和警告码](../../cn/Interactive%20Broadcast/error_rtc.md)
 

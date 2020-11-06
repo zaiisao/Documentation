@@ -3,7 +3,7 @@
 title: 双流模式 (dual-stream mode)
 description: 
 platform: All Platforms
-updatedAt: Fri Jul 03 2020 10:29:49 GMT+0800 (CST)
+updatedAt: Thu Nov 05 2020 08:00:36 GMT+0800 (CST)
 ---
 # 双流模式 (dual-stream mode)
 实时音视频互动过程中，Agora 需要将发布的视频流传输给订阅了这路视频流的用户。发布一路视频流，就会传输一路视频流。
@@ -17,7 +17,7 @@ updatedAt: Fri Jul 03 2020 10:29:49 GMT+0800 (CST)
 - SDK 根据大流的视频属性自动设置小流的默认视频属性
 - 小流的宽高比例默认与大流的宽高比例一致
 
-<div class="alert info">相关链接：<li><a href="https://docs.agora.io/cn/Interactive%20Broadcast/multi_user_video_android?platform=Android">7 人以上视频场景</a></li>
+<div class="alert info">相关链接：<li><a href="https://docs.agora.io/cn/Interactive%20Broadcast/multi_user_video?platform=All%20Platforms">多人视频场景</a></li>
 <li><a href="#fallback">流回退</a></li>
 <li><a href="#high-stream">大流</a></li>
 <li><a href="#low-stream">小流</a></li>

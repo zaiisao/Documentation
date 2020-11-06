@@ -89,16 +89,18 @@ class IAudioFrameObserver
 
 ### API 参考
 
+- [registerAudioFrameObserver](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1media_1_1_i_media_engine.html#ae46ca0d20789787aaab2fb268a524100)
+- [setRecordingAudioFrameParameters](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a2c4717760b5fbf1bb8c1a3c16ca67fe5)
+- [setPlaybackAudioFrameParameters](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#aa5f2f6eb3db5acaaf8c40818d90694f1)
+- [setMixedAudioFrameParameters](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a520ebcda51b5eb488339f3a12dfb8013)
 - [onRecordAudioFrame](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html#ac6ab0c792420daf929fed78f9d39f728)
 - [onPlaybackAudioFrame](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html#aefc7f9cb0d1fcbc787775588bc849bac)
 - [onPlaybackAudioFrameBeforeMixing](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html#ae04d85a65eefec5e7c1e0477bcaa067c)
 - [onMixedAudioFrame](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1media_1_1_i_audio_frame_observer.html#a78d095cbd0b8ee04f657430bb6de8100)
 
-如果想要修改上述回调中的音频采样率，可以根据场景需求，调用如下方法进行设置：
 
-- [setRecordingAudioFrameParameters](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a2c4717760b5fbf1bb8c1a3c16ca67fe5)
-- [setPlaybackAudioFrameParameters](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#aa5f2f6eb3db5acaaf8c40818d90694f1)
-- [setMixedAudioFrameParameters](https://docs.agora.io/cn/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#a520ebcda51b5eb488339f3a12dfb8013)
+
+
 
 
 ## 开发注意事项

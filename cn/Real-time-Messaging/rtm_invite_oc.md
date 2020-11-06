@@ -3,7 +3,7 @@
 title: 呼叫邀请
 description: 
 platform: iOS,macOS
-updatedAt: Sat Oct 10 2020 10:06:26 GMT+0800 (CST)
+updatedAt: Fri Nov 06 2020 02:47:35 GMT+0800 (CST)
 ---
 # 呼叫邀请
 ## 概述
@@ -37,7 +37,7 @@ Agora RTM SDK 提供的呼叫邀请功能仅实现了呼叫邀请的基本控制
 发送呼叫邀请的步骤如下：
 
 
-1. 主叫通过调用 `createLocalInvitation` 创建 `AgoraRtmLocalInvitation`。此时 `AgoraRtmLocalInvitation` 生命周期开始。
+1. 主叫通过调用 `initWithCalleeId` 创建 `AgoraRtmLocalInvitation`。此时 `AgoraRtmLocalInvitation` 生命周期开始。
 2. 主叫调用 `sendLocalInvitation` 发送呼叫邀请。被叫收到 `remoteInvitationReceived` 回调，此时 `AgoraRtmRemoteInvitation` 生命周期开始。主叫收到 `localInvitationReceivedByPeer` 回调。
 
 

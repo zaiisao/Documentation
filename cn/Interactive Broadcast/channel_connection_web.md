@@ -3,7 +3,7 @@
 title: 频道连接状态管理
 description: 
 platform: Web
-updatedAt: Fri Jun 12 2020 03:34:25 GMT+0800 (CST)
+updatedAt: Wed Nov 04 2020 08:44:19 GMT+0800 (CST)
 ---
 # 频道连接状态管理
 当用户使用 Agora SDK 进行音视频通话或互动直播时，他会有多个 Agora 频道连接状态。本文介绍 Agora 频道如何判断用户在通信的各个阶段处于什么连接状态以及各状态的转变过程。
@@ -31,7 +31,7 @@ updatedAt: Fri Jun 12 2020 03:34:25 GMT+0800 (CST)
 
 下图展示从用户 UID 1 加入频道，到连接中断，再到连接完全失败过程中，本地及远端用户 UID 2 会收到的回调：
 
-![](https://web-cdn.agora.io/docs-files/1569309919946)
+![](https://web-cdn.agora.io/docs-files/1604479301342)
 
 其中：
 
@@ -43,7 +43,7 @@ updatedAt: Fri Jun 12 2020 03:34:25 GMT+0800 (CST)
 - T5：通信过程中 UID 1 网络发生中断，SDK 开始自动重连。
 - T6：如果 UID 2 连续 10 秒没有收到 UID 1 的任何数据，SDK 判断 UID 1 不在发布音视频流，UID 2 会收到 `Client.on("stream-removed")` 回调。同时，SDK 继续尝试重连。
 - T7：SDK 自动重连过程中，网络连接状态会先变为 `Client.on("connection-state-change", CONNECTING)`。
-- T8：如果服务端连续 3 分钟没有收到 UID 1 的任何数据，SDK 判断 UID 1 掉线，UID 2 会收到 `Client.on("peer-leave")` 回调。同时，SDK 仍旧尝试重连。
+- T8：如果服务端连续 10 秒内没有收到 UID 1 的任何数据，SDK 判断 UID 1 掉线，UID 2 会收到 `Client.on("peer-leave")` 回调。同时，SDK 仍旧尝试重连。
 - T9：成功重连建立连接后，网络状态会改变为 `Client.on("connection-state-change", CONNECTED)`。
 - T10：UID 2 重新收到 UID 1 的 `Client.on("peer-online")`。
 

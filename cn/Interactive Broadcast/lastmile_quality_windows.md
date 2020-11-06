@@ -3,7 +3,7 @@
 title: 通话前网络和设备检测
 description: 通话前的网络质量和设备检测
 platform: Windows
-updatedAt: Fri Oct 30 2020 09:13:00 GMT+0800 (CST)
+updatedAt: Tue Nov 03 2020 08:04:06 GMT+0800 (CST)
 ---
 # 通话前网络和设备检测
 ## 功能描述

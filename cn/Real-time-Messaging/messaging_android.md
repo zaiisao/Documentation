@@ -3,7 +3,7 @@
 title: 发送和接收点对点消息及频道消息
 description: 
 platform: Android
-updatedAt: Tue Sep 01 2020 10:26:29 GMT+0800 (CST)
+updatedAt: Thu Nov 05 2020 09:54:30 GMT+0800 (CST)
 ---
 # 发送和接收点对点消息及频道消息
 
@@ -83,14 +83,14 @@ Agora 在 GitHub 上提供一个开源的实时消息示例项目 [Agora-RTM-Tut
 
 **方法 1：使用 JCenter 自动集成**
 
-在项目的 **/app/build.gradle** 文件添加以下代码（1.4.0 为当前版本号）：
+在项目的 **/app/build.gradle** 文件添加以下代码（1.4.1 为当前版本号）：
 
 ```java
 
 ...
 dependencies {
     ...
-    implementation 'io.agora.rtm:rtm-sdk:1.4.0'
+    implementation 'io.agora.rtm:rtm-sdk:1.4.1'
 }
 ```
 

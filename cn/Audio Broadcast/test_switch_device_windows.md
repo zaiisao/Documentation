@@ -142,10 +142,10 @@ for (UINT nIndex = 0; nIndex < lCount; nIndex++){
 }
 
 // 选择一个视频采集设备
-lpDeviceManager->setDevice(strDeviceID); // device ID chosen
+lpDeviceManager->setDevice(strDeviceID); 
 
 // 开始视频采集设备测试，如果正常的话，你将会看到画面预览
-(*lpDeviceManager)->startDeviceTest(view); // pass a window handler to it
+(*lpDeviceManager)->startDeviceTest(view); 
 
 // 停止视频采集设备测试
 (*lpDeviceManager)->stopDeviceTest();

@@ -3,7 +3,7 @@
 title: 错误码和警告码
 description: 
 platform: All Platforms
-updatedAt: Sat Oct 10 2020 03:38:43 GMT+0800 (CST)
+updatedAt: Wed Nov 04 2020 03:00:16 GMT+0800 (CST)
 ---
 # 错误码和警告码
 在调用 Agora API 过程中，SDK 可能会返回错误码和警告码。其中**错误码**意味着 SDK 遭遇了不可恢复的错误，需要 app 干预；**警告码**意味着 SDK 遇到问题，但有可能恢复。警告码仅起告知作用，一般情况下 app 可以忽略警告码。

@@ -3,7 +3,7 @@
 title: 应用企业防火墙限制
 description: 
 platform: All Platforms
-updatedAt: Fri Oct 30 2020 06:51:52 GMT+0800 (CST)
+updatedAt: Wed Nov 04 2020 02:39:12 GMT+0800 (CST)
 ---
 # 应用企业防火墙限制
 ## 概览
@@ -27,10 +27,7 @@ updatedAt: Fri Oct 30 2020 06:51:52 GMT+0800 (CST)
     - [RTC SDK（Web）的云代理](../../cn/Agora%20Platform/cloud_proxy_web.md)
     - [本地服务端录制 SDK 的云代理](../../cn/Agora%20Platform/cloudproxy_recording.md)
 
-
 <div class="alert note"><li>如果你想通过 VPN 使用 Agora 的服务，请确保已联系 VPN 运营商将对应端口添加到白名单中，否则可能会遇到通话失败等未定义行为。</li><li>如无特殊说明，源地址就是集成了 Agora SDK 的客户端。</li></div>
-
-
 
 ## RTC SDK
 
@@ -47,7 +44,7 @@ updatedAt: Fri Oct 30 2020 06:51:52 GMT+0800 (CST)
 
 | 目标端口 | 协议 | 操作 |
 | -------------- | ----------------- | -------------|
-|  80；443；3433；5668；5669；4700 - 5000；6080；6443；8667；9667；30011 - 30013（用于推流）| TCP | 允许 
+|  80；443；3433；4700 - 5000；5668；5669；6080；6443；8667；9667；30011 - 30013（用于推流）| TCP | 允许 
 |  3478；4700 - 5000（2.9.0 及以后版本）；10000 - 65535 （2.9.0 以前版本）| UDP | 允许 |
 
 
