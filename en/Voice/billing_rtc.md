@@ -3,7 +3,7 @@
 title: Billing for Real-time Communication
 description: 
 platform: All Platforms
-updatedAt: Fri Sep 18 2020 04:19:13 GMT+0800 (CST)
+updatedAt: Fri Nov 06 2020 06:43:19 GMT+0800 (CST)
 ---
 # Billing for Real-time Communication
 This article introduces the billing policy for the real-time communication (RTC) service provided by Agora.
@@ -21,6 +21,7 @@ Agora calculates the billing of all projects under your Agora account monthly. O
 <div class="alert note">
 	<ul>
 		<li>Agora gives each Agora account 10,000 charge-free minutes each month. For more information on the deduction sequence and applicable products, see<a href="https://docs.agora.io/en/faq/billing_free"> Agora's free-of-charge policy for the first 10,000 minutes</a>.</li>
+		<li>Once a user joins an RTC channel from apps integrated with the Agora RTC SDK, the user subscribes to the audio and video streams sent by all other users in the channel by default, giving rise to usage and cost. The Agora RTC SDK includes the Agora Voice or Video SDK for native platforms and third-party frameworks.</li>
 		<li>If your scenario involves the RTMP converter, expect additional transcoding charges.</li>
 	</ul>
 </div>
@@ -182,6 +183,13 @@ In dual-stream mode, the aggregate video resolution is calculated as follows:
 
 - If the user subscribes to the high-quality video stream, the aggregate resolution is calculated based on the resolution of the high-quality video.
 - If the user subscribes to the low-quality video stream, the aggregate resolution is calculated based on the resolution of the video received by the user.
+
+### Video resolution in the screen sharing scenario
+
+In scenarios involving screen sharing, the unit price of the screen-sharing stream is calculated on the basis of the video dimension that you set in <code>ScreenCaptureParameters</code>. For details, see descriptions in the following classes:
+
+- Windows: [`ScreenCaptureParameters`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/structagora_1_1rtc_1_1_screen_capture_parameters.html)
+- macOS: [`AgoraScreenCaptureParameters`](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/oc/Classes/AgoraScreenCaptureParameters.html)
 
 ### Resolution calibration
 

@@ -3,7 +3,7 @@
 title: Glossary
 description: 
 platform: All Platforms
-updatedAt: Wed Sep 30 2020 08:52:48 GMT+0800 (CST)
+updatedAt: Fri Nov 06 2020 06:29:32 GMT+0800 (CST)
 ---
 # Glossary
 ## A
@@ -230,7 +230,7 @@ Rendering the first video frame is the action of rendering the first video frame
 
 SD-RTN™, or Software Defined Real-time Network, is a real-time transmission network built by Agora and is the only network infrastructure specifically designed for real-time communications in the world. 
 
-#### <a name="slice"></a>**slice**
+#### <a name="slice"></a>[**<u>Slice</u>**](../../en/Agora%20Platform/slice.md)
 
 Slicing means cutting recorded audio or video into separate files according to specific rules. During an Agora Cloud Recording, the recording service cuts the streams and generates multiple slice files (TS or WebM files) and M3U8 files that serve as a playlist of the slice files. See [Manage Recorded Files](https://docs.agora.io/en/cloud-recording/cloud_recording_manage_files?platform=All%20Platforms).
 
