@@ -2,7 +2,7 @@
 ---
 title: 设置输出视频属性
 description: 
-platform: All Platforms
+platform: Linux
 updatedAt: Sun Sep 27 2020 14:07:25 GMT+0800 (CST)
 ---
 # 设置输出视频属性

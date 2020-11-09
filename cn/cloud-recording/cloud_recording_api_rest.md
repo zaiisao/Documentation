@@ -331,7 +331,12 @@ https://api.agora.io/v1/apps/<yourappid>/cloud_recording/acquire
   - `8`：NA_Russia_1
   - `9`：NA_Singapore_1
 
-- `bucket`：String 类型，第三方云存储的 bucket。
+- `bucket`：String 类型，第三方云存储的 bucket。当第三方云存储为金山云时，字符串内容仅可为字母、数字或 "-"。字符串长度限制如下：
+	- 当第三方云存储为七牛云时，长度无限制。
+	- 当第三方云存储为 Amazon S3 时，长度无限制。
+	- 当第三方云存储为阿里云时，不得超过 63 个字符。
+	- 当第三方云存储为腾讯云时，不得超过 50 个字符。
+	- 当第三方云存储为金山云时，不得超过 63 个字符。
 - `accessKey`：String 类型，第三方云存储的 access key。建议提供只写权限的访问密钥。
 - `secretKey`：String 类型，第三方云存储的 secret key。
 

@@ -3,7 +3,7 @@
 title: 术语库
 description: 
 platform: All Platforms
-updatedAt: Fri Nov 06 2020 06:27:24 GMT+0800 (CST)
+updatedAt: Fri Nov 06 2020 09:31:06 GMT+0800 (CST)
 ---
 # 术语库
 ## A
@@ -151,6 +151,11 @@ Last mile 指 Agora 边缘服务器和终端用户设备之间的网络。
 在多人实时音视频场景中，如果网络环境不理想，无法同时保证音频和视频的质量，实时音视频的质量就会下降。
 
 ## M
+
+#### <a name="m3u"></a>[**<u>M3U</u>**](../../cn/Agora%20Platform/m3u.md)
+
+M3U 是一种文件格式，用于存储多媒体文件的播放列表。
+
 #### <a name="media-player"></a>[**<u>媒体播放器组件 (MediaPlayer Kit)</u>**](../../cn/Agora%20Platform/mediaplayer_kit.md)
 
 媒体播放器组件是 Agora RTC SDK 的一个组件，适用于直播场景下播放本地或在线媒体资源，并将主播播放的媒体流发送给其他用户。
@@ -177,9 +182,14 @@ Last mile 指 Agora 边缘服务器和终端用户设备之间的网络。
 频道消息是指 Agora RTM SDK 中一个用户向所在频道内所有用户发送的消息。
 
 ## Q
-#### <a name="slice"></a>**切片 (slice)**
+#### <a name="slice"></a>[**<u>切片 (slice)</u>**](../../cn/Agora%20Platform/slice.md)
 
 切片指在录制过程中将音视频数据按照一定规则进行定期切割，生成多个录制文件的行为。切片后会生成多个切片文件（如 TS 或 WebM 文件）以及用于存储切片文件索引的 M3U8 文件。详见[管理录制文件](https://docs.agora.io/cn/cloud-recording/cloud_recording_manage_files)。
+
+## R
+#### <a name="rest"></a>[**<u>REST</u>**](../../cn/Agora%20Platform/rest.md)
+
+REST，全称 Representational State Transfer，是一种软件架构风格，规定了创建 Web 服务时所需要遵循的一系列约束条件。凡是符合 REST 架构风格的 API，均可称为 RESTful API。
 
 ## S
 #### <a name="sd-rtn"></a>[**<u>SD-RTN™</u>**](../../cn/Agora%20Platform/sd_rtn.md)
