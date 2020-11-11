@@ -2,7 +2,7 @@
 ---
 title: Set the Video Profile
 description: 
-platform: All Platforms
+platform: Linux
 updatedAt: Sun Sep 27 2020 14:07:50 GMT+0800 (CST)
 ---
 # Set the Video Profile

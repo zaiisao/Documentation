@@ -2,7 +2,7 @@
 ---
 title: Get the Raw Data
 description: draft
-platform: All Platforms
+platform: Linux
 updatedAt: Wed Mar 11 2020 02:00:40 GMT+0800 (CST)
 ---
 # Get the Raw Data

@@ -3,7 +3,7 @@
 title: Start Live Interactive Video Streaming
 description: 
 platform: Windows
-updatedAt: Tue Oct 13 2020 08:54:24 GMT+0800 (CST)
+updatedAt: Tue Nov 10 2020 08:46:16 GMT+0800 (CST)
 ---
 # Start Live Interactive Video Streaming
 Use this guide to quickly start the live interactive video streaming with the Agora Video SDK for Windows. 
@@ -200,6 +200,7 @@ After setting the client role and the local video view, you can call the `joinCh
  <div class="alert note">If your project has enabled the app certificate, ensure that you provide a token.</div>
 
 - `uid`: ID of the local user that is an integer and should be unique. If you set `uid` as 0,  the SDK assigns a user ID for the local user and returns it in the `onJoinChannelSuccess` callback.
+  <div class="alert note">Once the user joins the channel, the user subscribes to the audio and video streams of all the other users in the channel by default, giving rise to usage and billing calculation. If you do not want to subscribe to a specified stream or all remote streams, call the <code>mute</code> methods accordingly.</div>
 
 For more details on the parameter settings, see [joinChannel](https://docs.agora.io/en/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#adc937172e59bd2695ea171553a88188c).
 

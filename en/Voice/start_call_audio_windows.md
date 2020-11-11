@@ -3,7 +3,7 @@
 title: Start a Voice Call
 description: 
 platform: Windows
-updatedAt: Tue Oct 13 2020 08:54:31 GMT+0800 (CST)
+updatedAt: Tue Nov 10 2020 08:45:44 GMT+0800 (CST)
 ---
 # Start a Voice Call
 Use this guide to quickly start a basic voice call with the Agora Voice SDK for Windows.
@@ -154,6 +154,7 @@ After initializing the `IRtcEngine` object, you can call the `joinChannel` metho
  <div class="alert note">If your project has enabled the app certificate, ensure that you provide a token.</div>
 
 - `uid`: ID of the local user that is an integer and should be unique. If you set `uid` as 0,  the SDK assigns a user ID for the local user and returns it in the `onJoinChannelSuccess` callback.
+  <div class="alert note">Once the user joins the channel, the user subscribes to the audio streams of all the other users in the channel by default, giving rise to usage and billing calculation. If you do not want to subscribe to a specified stream or all remote streams, call the <code>mute</code> methods accordingly.</div>
 
 For more details on the parameter settings, see [joinChannel](https://docs.agora.io/en/Voice/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#adc937172e59bd2695ea171553a88188c).
 

@@ -2,7 +2,7 @@
 ---
 title: Manage the Recording Files
 description: 
-platform: All Platforms
+platform: Linux
 updatedAt: Thu Dec 19 2019 11:48:36 GMT+0800 (CST)
 ---
 # Manage the Recording Files

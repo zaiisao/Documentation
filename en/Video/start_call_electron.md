@@ -3,7 +3,7 @@
 title: Start a Video Call
 description: 
 platform: Electron
-updatedAt: Tue Oct 13 2020 08:54:25 GMT+0800 (CST)
+updatedAt: Tue Nov 10 2020 06:42:36 GMT+0800 (CST)
 ---
 # Start a Video Call
 Use this guide to quickly start a basic call with the Agora SDK for Electron.
@@ -74,6 +74,8 @@ agora_electron_dependent = 3.0.6
 agora_electron_dependent = 4.2.8
 // Downloads a prebuilt add-on With Electron 5.0.8
 agora_electron_dependent = 5.0.8
+// Downloads a prebuilt add-on With Electron 7.1.2
+agora_electron_dependent = 7.1.2
 ```
 
 ### Install the dependency

@@ -2,7 +2,7 @@
 ---
 title: Capture Screenshots
 description: 
-platform: All Platforms
+platform: Linux
 updatedAt: Wed Sep 25 2019 03:41:06 GMT+0800 (CST)
 ---
 # Capture Screenshots

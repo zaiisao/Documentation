@@ -3,12 +3,14 @@
 title: Set Video Layout
 description: v1
 platform: All Platforms
-updatedAt: Thu Jul 09 2020 03:00:40 GMT+0800 (CST)
+updatedAt: Wed Nov 11 2020 07:25:38 GMT+0800 (CST)
 ---
 # Set Video Layout
 ## Overview
 
-When there are multiple users sending streams in a channel, the Agora Cloud Recording Service mixes the streams of all the users into one stream. This is called **composite recording** mode. This page shows you how to set the video layout for composite recording.
+<div class="alert note">This article explains the layout types you can choose in a composite recording. See <a href="https://docs.agora.io/en/cloud-recording/cloud_recording_composite_mode?platform=All%20Platforms">Composite Recording</a> for more details about this recording mode。</div>
+
+In [composite recording](../../en/cloud-recording/cloud_recording_composite_mode.md), the Agora Cloud Recording Service mixes the streams of all the users into one stream.  This page shows you how to set the video layout for composite recording.
 
 As shown in the following image, the background of the video is **canvas**, and each user occupies a **region** on the canvas.
 

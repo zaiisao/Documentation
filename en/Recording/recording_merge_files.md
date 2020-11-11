@@ -2,7 +2,7 @@
 ---
 title: Use the Transcoding Script 
 description: 
-platform: All Platforms
+platform: Linux
 updatedAt: Thu Dec 19 2019 11:49:19 GMT+0800 (CST)
 ---
 # Use the Transcoding Script 

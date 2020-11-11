@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Cocos Creator
-updatedAt: Fri Nov 06 2020 14:37:07 GMT+0800 (CST)
+updatedAt: Fri Nov 06 2020 15:23:43 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora Cocos Creator SDK.
@@ -42,7 +42,11 @@ This release supports encrypting audio streams. The following table shows the en
 
 #### 4. Cloud proxy
 
-This release supports the cloud proxy service. See [Use Cloud Proxy](../../en/Voice/cloudproxy_native.md) for details.
+This release supports the cloud proxy service. If your network has a firewall, you can use the cloud proxy to access Agora's services.
+
+#### 5. Regional connection
+
+This release adds `initWithAreaCode` to specify regions for regional connection when initializing the Agora engine. This advanced feature applies to scenarios that have regional restrictions. You can choose from areas including Mainland China, North America, Europe, Asia (excluding Mainland China), and global (default).
 
 **Reference**
 

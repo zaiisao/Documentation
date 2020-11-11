@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Electron
-updatedAt: Fri Jul 10 2020 08:29:03 GMT+0800 (CST)
+updatedAt: Wed Nov 11 2020 03:11:59 GMT+0800 (CST)
 ---
 # Release Notes
 This page provides the release notes for the Agora SDK for Electron.
@@ -50,6 +50,10 @@ Adds [`adjustUserPlaybackSignalVolume`](https://docs.agora.io/en/Video/API%20Ref
 #### 3. Detecting local voice activity
 
 This release adds the `report_vad(boolean)` parameter to the [`enableAudioVolumeIndication`](https://docs.agora.io/en/Video/API%20Reference/electron/classes/agorartcengine.html#enableaudiovolumeindication) method to enable local voice activity detection. Once it is enabled, you can check the `groupAudioVolumeIndication` callback for the voice activity status of the local user.
+
+#### 4. Image enhancement
+
+Adds `setBeautyEffectOptions` for enabling image enhancement in scenarios such as video social networking, an online class, or live interactive streaming. You can call this method to set parameters including contrast, brightness, smoothness, and red saturation. 
 
 **Improvements**
 
@@ -115,6 +119,7 @@ When connected to a headset or Bluetooth, the macOS device changes its audio rou
 - [`AgoraRtcChannel`](https://docs.agora.io/en/Video/API%20Reference/electron/classes/agorartcchannel.html) class
 - The `gatewayRtt`, `memoryAppUsageRatio`, `memoryTotalUsageRatio` and `memoryAppUsageInKbytes` properties in the [`RtcStats`](https://docs.agora.io/en/Video/API%20Reference/electron/interfaces/rtcstats.html) interface
 - [`startAudioRecording`](https://docs.agora.io/en/Video/API%20Reference/electron/classes/agorartcengine.html#startaudiorecording)
+- [`setBeautyEffectOptions`](https://docs.agora.io/en/Video/API%20Reference/electron/classes/agorartcengine.html#setbeautyeffectoptions)
 - [`addVideoWatermark`](https://docs.agora.io/en/Video/API%20Reference/electron/classes/agorartcengine.html#addvideowatermark)
 - [`clearVideoWatermark`](https://docs.agora.io/en/Video/API%20Reference/electron/classes/agorartcengine.html#clearvideowatermarks)
 - The `report_vad` parameter in the [`enableAudioVolumeIndication`](https://docs.agora.io/en/Video/API%20Reference/electron/classes/agorartcengine.html#enableaudiovolumeindication) method

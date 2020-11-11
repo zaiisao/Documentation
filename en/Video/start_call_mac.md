@@ -70,15 +70,15 @@ Choose either of the following methods to integrate the Agora SDK into your proj
 **Method 2: Manually add the SDK files**
 
 1. Go to [SDK Downloads](https://docs.agora.io/en/Agora%20Platform/downloads), download the latest version of the Agora SDK for macOS, and extract the files from the downloaded SDK package.	
-2. Copy the `AgoraRtcEngineKit.framework` file in the `libs` folder to the project folder.
+2. Copy the `AgoraRtcKit.framework` file in the `libs` folder to the project folder.
 3. Open **Xcode** (take the Xcode 11.0 as an example), go to the **TARGETS > Project Name > General > Frameworks, Libraries, and Embedded Content** menu, click **Add Other...** after clicking **+** to add `AgoraRtcKit.framework`. Once added, the project automatically links to other system libraries. To ensure that the signature of the dynamic library is the same as the signature of the app, you need to set the **Embed** attribute of the dynamic library to **Embed & Sign**.
 
 <details>
 	<summary><font color="#3ab7f8">To integrate the SDK earlier than v3.0.0, click here to see the integration steps.</font></summary>
 	
 1. Unzip the downloaded SDK package.
-2. Copy `AgoraRtcEngineKit.framework` to the project folder.
-3. Open **Xcode** (take the Xcode 11.0 as an example), go to the **TARGETS > Project Name > Build Phases > Link Binary with Libraries** menu, and click **+** to add the following frameworks and libraries. To add the `AgoraRtcEngineKit.framework` file, remember to click **Add Other...** after clicking **+**.
+2. Copy `AgoraRtcKit.framework` to the project folder.
+3. Open **Xcode** (take the Xcode 11.0 as an example), go to the **TARGETS > Project Name > Build Phases > Link Binary with Libraries** menu, and click **+** to add the following frameworks and libraries. To add the `AgoraRtcKit.framework` file, remember to click **Add Other...** after clicking **+**.
 
  - AgoraRtcKit.framework
  - Accelerate.framework

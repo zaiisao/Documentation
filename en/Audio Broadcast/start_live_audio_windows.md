@@ -3,7 +3,7 @@
 title: Start Live Interactive Audio Streaming
 description: 
 platform: Windows
-updatedAt: Tue Oct 13 2020 08:54:30 GMT+0800 (CST)
+updatedAt: Tue Nov 10 2020 08:45:41 GMT+0800 (CST)
 ---
 # Start Live Interactive Audio Streaming
 Use this guide to quickly start the live interactive audio streaming with the Agora Voice SDK for Windows.
@@ -178,6 +178,7 @@ After setting the client role, you can call the `joinChannel` method to join a c
  <div class="alert note">If your project has enabled the app certificate, ensure that you provide a token.</div>
 
 - `uid`: ID of the local user that is an integer and should be unique. If you set `uid` as 0,  the SDK assigns a user ID for the local user and returns it in the `onJoinChannelSuccess` callback.
+  <div class="alert note">Once the user joins the channel, the user subscribes to the audio streams of all the other users in the channel by default, giving rise to usage and billing calculation. If you do not want to subscribe to a specified stream or all remote streams, call the <code>mute</code> methods accordingly.</div>
 
 For more details on the parameter settings, see [joinChannel](https://docs.agora.io/en/Audio%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#adc937172e59bd2695ea171553a88188c).
 

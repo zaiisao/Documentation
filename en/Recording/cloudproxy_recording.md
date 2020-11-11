@@ -2,7 +2,7 @@
 ---
 title: Use Cloud Proxy
 description: How to enable cloud proxy for recording
-platform: All Platforms
+platform: Linux
 updatedAt: Mon Jun 22 2020 08:36:47 GMT+0800 (CST)
 ---
 # Use Cloud Proxy
