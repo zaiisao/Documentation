@@ -71,10 +71,10 @@ Choose either of the following methods to integrate the Agora SDK into your proj
 	<summary><font color="#3ab7f8">To integrate the SDK earlier than v3.0.0, click here to see the integration steps.</font></summary>
 	
 1. Unzip the downloaded SDK package.
-2. Copy `AgoraRtcKit.framework` to the project folder.
-3. Open **Xcode** (take the Xcode 11.0 as an example), go to the **TARGETS > Project Name > Build Phases > Link Binary with Libraries** menu, and click **+** to add the following frameworks and libraries. To add the `AgoraRtcKit.framework` file, remember to click **Add Other...** after clicking **+**.
+2. Copy `AgoraRtcEngineKit.framework` to the project folder.
+3. Open **Xcode** (take the Xcode 11.0 as an example), go to the **TARGETS > Project Name > Build Phases > Link Binary with Libraries** menu, and click **+** to add the following frameworks and libraries. To add the `AgoraRtcEngineKit.framework` file, remember to click **Add Other...** after clicking **+**.
 
- - AgoraRtcKit.framework
+ - AgoraRtcEngineKit.framework
  - Accelerate.framework
  - CoreWLAN.framework
  - libc++.tbd
