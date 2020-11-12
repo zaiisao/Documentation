@@ -67,7 +67,7 @@ updatedAt: Fri Nov 06 2020 04:34:02 GMT+0800 (CST)
 
 **方法二：手动复制 SDK 文件**
 
-1. 前往 [SDK 下载页面](https://docs.agora.io/cn/Agora%20Platform/downloads)，在**语音通话/音频互动直播 SDK** 中下载最新版的 **Agora Unity SDK**，然后解压。
+1. 前往 [SDK 下载页面](https://docs.agora.io/cn/Agora%20Platform/downloads)，在**音频 SDK** 中下载最新版的 **Agora Unity SDK**，然后解压。
 
 2. 在你的项目路径下，找到 **Assets** 文件夹，并在该文件夹中新建 **Plugins** 文件夹
 

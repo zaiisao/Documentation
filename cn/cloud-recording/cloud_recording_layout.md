@@ -3,10 +3,12 @@
 title: 设置合流布局
 description: 
 platform: Linux
-updatedAt: Mon Nov 09 2020 09:20:37 GMT+0800 (CST)
+updatedAt: Tue Nov 10 2020 10:57:48 GMT+0800 (CST)
 ---
 # 设置合流布局
 ## 功能描述
+
+<div class="alert note">本文主要介绍合流录制中的布局样式，合流录制的详细使用方法请参考<a href="https://docs.agora.io/cn/cloud-recording/cloud_recording_composite_mode?platform=All%20Platforms">合流录制</a>。</div>
 
 当一个频道中有多个用户时，Agora 云端录制会进行**合流转码**，把多路音视频流混合成一路。
 

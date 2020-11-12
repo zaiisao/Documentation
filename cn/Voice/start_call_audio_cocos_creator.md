@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: Describes how quickly implement the voice call.
 platform: Cocos Creator
-updatedAt: Fri Nov 06 2020 14:38:03 GMT+0800 (CST)
+updatedAt: Thu Nov 12 2020 10:12:26 GMT+0800 (CST)
 ---
 # 实现语音通话
 本文详细介绍如何快速集成 Agora Cocos Creator SDK，并在你自己的 app 里实现基础的语音通话。
@@ -48,13 +48,13 @@ updatedAt: Fri Nov 06 2020 14:38:03 GMT+0800 (CST)
 
 现在，我们已经将 Agora Cocos Creator SDK 集成到项目中了。你可以根据需要创建组件脚本及场景，并将组件脚本添加到场景节点中。详见[创建和使用组件脚本](https://docs.cocos.com/creator/manual/zh/scripting/use-component.html)。
 
-接下来我们要在组件脚本中调用 Agora Cocos Creator SDK 提供的核心 API 实现基础的音频互动直播功能，API 调用时序见下图。
+接下来我们要在组件脚本中调用 Agora Cocos Creator SDK 提供的核心 API 实现基础的语音通话功能，API 调用时序见下图。
 
 ![](https://web-cdn.agora.io/docs-files/1603985058010)
 
 ### 1. 创建用户界面
 
-根据场景需要，为你的项目创建音频互动直播的用户界面。如果已有界面，可以直接查看[初始化 Agora 引擎](#initialize)。
+根据场景需要，为你的项目创建语音通话的用户界面。如果已有界面，可以直接查看[初始化 Agora 引擎](#initialize)。
 
 Agora 推荐你添加如下 UI 元素：
 

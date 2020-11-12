@@ -3,7 +3,7 @@
 title: 实现视频直播
 description: 
 platform: Windows
-updatedAt: Tue Jul 07 2020 07:52:40 GMT+0800 (CST)
+updatedAt: Tue Nov 10 2020 08:37:54 GMT+0800 (CST)
 ---
 # 实现视频直播
 本文介绍如何通过 Agora SDK 快速实现视频互动直播。
@@ -203,6 +203,7 @@ m_lpRtcEngine->setupLocalVideo(vc);
  <div class="alert note">若项目已启用 App 证书，请使用 Token。</div>
 
 - `uid`: 本地用户的 ID。数据类型为整型，且频道内每个用户的 `uid` 必须是唯一的。若将 `uid` 设为 0，则 SDK 会自动分配一个 `uid`，并在 `onJoinChannelSuccess` 回调中报告。
+  <div class="alert note">用户成功加入频道后，会默认订阅频道内其他所有用户的音频流和视频流，因此产生用量并影响计费。如果想取消订阅，可以通过调用相应的 <code>mute</code> 方法实现。</div>
 
 更多的参数设置注意事项请参考 [`joinChannel`](https://docs.agora.io/cn/Interactive%20Broadcast/API%20Reference/cpp/classagora_1_1rtc_1_1_i_rtc_engine.html#adc937172e59bd2695ea171553a88188c) 接口中的参数描述。
 

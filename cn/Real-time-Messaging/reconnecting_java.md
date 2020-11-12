@@ -3,7 +3,7 @@
 title: 连接状态管理
 description: 
 platform: Linux Java
-updatedAt: Sat Oct 10 2020 06:53:19 GMT+0800 (CST)
+updatedAt: Tue Nov 10 2020 03:14:52 GMT+0800 (CST)
 ---
 # 连接状态管理
 ## 概述
@@ -18,7 +18,7 @@ updatedAt: Sat Oct 10 2020 06:53:19 GMT+0800 (CST)
 
 如下图所示，实线表示 SDK 会根据条件自动实现部分状态切换。虚线表示需要用户主动调用 API 来实现。
 
-<div class="alertnote">每当连接状态发生改变，RTM SDK 都会通过 <code>onConnectionStateChanged</code> 回调返回最新的状态 <code>ConnectionState</code> 枚举以及状态变化的原因 <code>ConnectionStateReason</code> 枚举。你可以通过此回调对连接状态进行管理。</div>
+<div class="alert note">每当连接状态发生改变，RTM SDK 都会通过 <code>onConnectionStateChanged</code> 回调返回最新的状态 <code>ConnectionState</code> 枚举以及状态变化的原因 <code>ConnectionStateReason</code> 枚举。你可以通过此回调对连接状态进行管理。</div>
 
 ![](https://web-cdn.agora.io/docs-files/1602304327265)
 

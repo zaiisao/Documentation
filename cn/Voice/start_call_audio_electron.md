@@ -3,7 +3,7 @@
 title: 实现语音通话
 description: 
 platform: Electron
-updatedAt: Fri Jul 31 2020 12:03:21 GMT+0800 (CST)
+updatedAt: Tue Nov 10 2020 06:39:05 GMT+0800 (CST)
 ---
 # 实现语音通话
 本文介绍如何使用 Agora Electron SDK 快速实现语音通话。
@@ -76,6 +76,8 @@ agora_electron_dependent = 3.0.6
 agora_electron_dependent = 4.2.8
 // 下载使用 Electron 5.0.8 预编译的版本
 agora_electron_dependent = 5.0.8
+// 下载使用 Electron 7.1.2 预编译的版本
+agora_electron_dependent = 7.1.2
 ```
 
 ### 安装依赖项

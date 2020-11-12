@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: Electron
-updatedAt: Fri May 22 2020 04:12:27 GMT+0800 (CST)
+updatedAt: Wed Nov 11 2020 03:07:27 GMT+0800 (CST)
 ---
 # 发版说明
 本文提供 Agora SDK for Electron 的发版说明。
@@ -50,6 +50,11 @@ Agora SDK for Electron 基于 Agora SDK for macOS 和 Agora SDK for Windows，�
 #### 3. 人声检测
 
 为判断本地用户是否说话，该版本在启用说话者音量提示 [`enableAudioVolumeIndication`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#enableaudiovolumeindication) 方法中新增 `boolean` 型的 `report_vad` 参数。启用该参数后，你会在 `groupAudioVolumeIndication` 回调中获取本地用户的人声状态。
+
+#### 4. 美颜（Windows）
+
+常见的视频社交、在线教育和连麦直播等场景中，用户普遍希望有基础的美颜功能。该版本新增接口 setBeautyEffectOptions，你可以调用该接口设置对比度、亮度、平滑度等参数，达到美白、磨皮、红润肤色等美颜效果。
+
 
 **改进**
 
@@ -110,6 +115,7 @@ Agora SDK for Electron 基于 Agora SDK for macOS 和 Agora SDK for Windows，�
 - [`AgoraRtcChannel`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/electron/classes/agorartcchannel.html) 类
 - [`RtcStats`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/electron/interfaces/rtcstats.html) 接口中新增 `gatewayRtt`、`memoryAppUsageRatio`、`memoryTotalUsageRatio` 和 `memoryAppUsageInKbytes` 属性
 - [`startAudioRecording`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#startaudiorecording) 
+- [`setBeautyEffectOptions`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#setbeautyeffectoptions)
 - [`addVideoWatermark`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#addvideowatermark) 
 - [`clearVideoWatermark`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#clearvideowatermarks) 
 - [`enableAudioVolumeIndication`](https://docs.agora.io/cn/Audio%20Broadcast/API%20Reference/electron/classes/agorartcengine.html#enableaudiovolumeindication) ，新增 `report_vad` 参数
