@@ -3,7 +3,7 @@
 title: Start a Voice Call
 description: Describes how quickly implement a voice call.
 platform: Cocos Creator
-updatedAt: Fri Nov 06 2020 14:34:41 GMT+0800 (CST)
+updatedAt: Thu Nov 12 2020 10:13:32 GMT+0800 (CST)
 ---
 # Start a Voice Call
 This article describes how to integrate the Agora Cocos Creator SDK and implement a basic voice call in your app.
@@ -51,7 +51,7 @@ You can use core APIs of the Agora Cocos Creator SDK in a component script to im
 
 ### 1. Create a user interface
 
-Create a user interface (UI) for the live interactive audio streaming in your project. If you already have a UI in your project, skip to [Initialize the Agora engine](#initialize).
+Create a user interface (UI) for the voice call in your project. If you already have a UI in your project, skip to [Initialize the Agora engine](#initialize).
 
 Agora recommends adding the following elements to the UI:
 

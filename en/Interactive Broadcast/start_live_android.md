@@ -78,6 +78,7 @@ dependencies {
 | **agora-rtc-sdk.jar** file      | **/app/libs/**     | 
 | **arm-v8a** folder      | **/app/src/main/jniLibs/**     | 
 | **armeabi-v7a** folder      | **/app/src/main/jniLibs/**     | 
+| **include** folder   | **/app/src/main/jniLibs/**     | 
 | **x86** folder      | **/app/src/main/jniLibs/**     | 
 | **x86_64** folder      | **/app/src/main/jniLibs/**     | 
 
@@ -279,7 +280,8 @@ protected void onCreate(Bundle savedInstanceState) {
     setContentView(R.layout.activity_video_chat_view);
  
     // If all the permissions are granted, initialize the RtcEngine object and join a channel.
-    if (checkSelfPermission(REQUESTED_PERMISSIONS[0], PERMISSION_REQ_ID) undefined
+    if (checkSelfPermission(REQUESTED_PERMISSIONS[0], PERMISSION_REQ_ID) &&
+            checkSelfPermission(REQUESTED_PERMISSIONS[1], PERMISSION_REQ_ID) &&
             checkSelfPermission(REQUESTED_PERMISSIONS[2], PERMISSION_REQ_ID)) {
         initEngineAndJoinChannel();
     }

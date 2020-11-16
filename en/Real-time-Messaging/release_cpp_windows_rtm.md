@@ -3,7 +3,7 @@
 title: Release Notes
 description: 
 platform: Windows CPP
-updatedAt: Tue Oct 20 2020 05:33:15 GMT+0800 (CST)
+updatedAt: Mon Nov 16 2020 04:52:52 GMT+0800 (CST)
 ---
 # Release Notes
   ## Overview
@@ -12,7 +12,7 @@ The Agora Real-time Messaging (RTM) SDK provides a streamlined and stable messag
 
 ## v1.4.1
 
-v1.4.0 was released on September 30, 2020.
+v1.4.1 was released on September 30, 2020.
 
 **Improvements**
 

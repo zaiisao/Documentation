@@ -78,6 +78,7 @@ dependencies {
 | **agora-rtc-sdk.jar** file      | **/app/libs/**     | 
 | **arm-v8a** folder      | **/app/src/main/jniLibs/**     | 
 | **armeabi-v7a** folder      | **/app/src/main/jniLibs/**     | 
+| **include** folder   | **/app/src/main/jniLibs/**     | 
 | **x86** folder      | **/app/src/main/jniLibs/**     | 
 | **x86_64** folder      | **/app/src/main/jniLibs/**     | 
 
