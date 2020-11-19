@@ -3,7 +3,7 @@
 title: 水晶球 RESTful API (Beta)
 description: AA rest api reference 
 platform: All Platforms
-updatedAt: Thu Oct 29 2020 09:29:29 GMT+0800 (CST)
+updatedAt: Fri Nov 13 2020 04:13:41 GMT+0800 (CST)
 ---
 # 水晶球 RESTful API (Beta)
 水晶球现在提供 RESTful API，可以让你直接通过网络请求获取水晶球里的数据，在自己的网页或应用中灵活使用。
@@ -792,7 +792,7 @@ Authorization: Basic ZGJhZDMyNmFkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 - `code`: Number 类型，响应状态码。200 表示请求成功，详见[状态码](#code)。
 - `message`: String 类型，错误消息。
 - `has_more`: Boolean 类型，是否还有更多通话未列出。如果为 `true`，表示还有更多符合查询条件的通话没有在 `call_lists` 中列出。如果你要查找的通话未列出，请修改查询条件重新发送请求。
-- `call_lists`: JSONArray 类型,，返回的通话。默认返回最近的 10 个通话，按通话开始时间降序排列。每个通话中包含以下信息：
+- `call_lists`: JSONArray 类型，返回的通话。默认返回最近的 10 个通话，按通话开始时间降序排列。每个通话中包含以下信息：
   - `call_id`: String 类型，通话的唯一标识。
   - `cname`: String 类型，频道名称。
   - `created_ts`: Number 类型，通话开始的时间。Unix 时间戳（秒）。
