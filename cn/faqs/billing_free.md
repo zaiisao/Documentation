@@ -3,7 +3,7 @@
 title: 每月一万分钟免费说明
 description: 
 platform: All Platforms
-updatedAt: Mon Jan 04 2021 11:04:40 GMT+0800 (CST)
+updatedAt: Mon Jan 04 2021 12:22:58 GMT+0800 (CST)
 ---
 # 每月一万分钟免费说明
 
