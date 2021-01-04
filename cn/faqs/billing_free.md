@@ -3,10 +3,11 @@
 title: 每月一万分钟免费说明
 description: 
 platform: All Platforms
-updatedAt: Tue Dec 10 2019 17:33:57 GMT+0800 (CST)
+updatedAt: Mon Jan 04 2021 11:04:40 GMT+0800 (CST)
 ---
 # 每月一万分钟免费说明
-声网会给予每个 [Agora 开发者账号](https://console.agora.io/) 每个月1 万分钟的免费时长，按照以下顺序从总分钟数扣除：
+
+声网会给予每个 [Agora 开发者账号](https://console.agora.io/)每个月1 万分钟的免费时长，按照以下顺序从总分钟数扣除：
 
 1. 音频分钟数
 2. 本地服务端录制音频分钟数
@@ -22,4 +23,10 @@ updatedAt: Tue Dec 10 2019 17:33:57 GMT+0800 (CST)
 
 如果实际使用分钟数未超过 10000 分钟，则本月免费；如果 1 万分钟的免费额度扣完，则对剩余的分钟数扣取相应服务费用。
 
-<div class="alert note"><ul><li>每月剩余分钟数会清零。</li><li>每月 10000 分钟免费时长<b>不适用于</b>实时消息产品。</li></ul></div>
+<div class="alert note">
+	<ul>
+		<li>每月剩余分钟数会清零。</li>
+		<li>每月 10000 分钟免费时长不适用于 CDN 推流服务，直接使用会导致账户冻结。如果你的场景中涉及 CDN 推流，我们强烈建议自助购买分钟数套餐、充值、或联系 <a href="mailto:sales@agora.io">sales@agora.io</a> 开启后付费模式。</li>
+		<li>每月 10000 分钟免费时长不适用于实时消息产品。</li>
+	</ul>
+	</div>
