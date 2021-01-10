@@ -3,14 +3,16 @@
 title: 发版说明
 description: 
 platform: All Platforms
-updatedAt: Sun Jan 10 2021 14:46:16 GMT+0800 (CST)
+updatedAt: Sun Jan 10 2021 14:46:38 GMT+0800 (CST)
 ---
 # 发版说明
 本页提供 Agora 下一代 RTC SDK 的发版说明。
 
+## v3.1.226
+
 该版本于 2020 年 12 月 8 日发布。
 
-### 新增特性
+#### 新增特性
 
 **1. 镜像模式**
 
@@ -51,7 +53,7 @@ updatedAt: Sun Jan 10 2021 14:46:16 GMT+0800 (CST)
 - `addPublishStreamUrl`: 开始 CDN 直播推流。你需要传入 CDN 推流地址，并设置是否开启转码。
 - `removePublishStreamUrl`: 结束 CDN 直播推流。
 
-### 改进
+#### 改进
 
 **1. 视频帧观测器**
 
