@@ -15,7 +15,7 @@ If you find minor issues such as spelling errors or broken links, you can quickl
 
 1. When browsing Agora [Developer Center](http://docs.agora.io/) documentation, you will see the **Edit** button if the quick edit option is available. Click this button to open the source file on GitHub.
 
-   ![Edit button](https://web-cdn.agora.io/docs-files/1602215619549)
+   ![Edit button](https://web-cdn.agora.io/docs-files/1610526274708)
 
 2. On the GitHub page, click the pencil icon to edit the document. If the icon is grayed out, you need to log in to GitHub first.
 
@@ -43,7 +43,7 @@ If you have questions about any part of our documentation or suggestions for imp
 
 1. Click the feedback button on the bottom right corner of the page.
 
-   ![Feedback button](https://web-cdn.agora.io/docs-files/1602215698770)
+   ![Feedback button](https://web-cdn.agora.io/docs-files/1610526280367)
    
 2. In the pop-up window, give the document a positive (thumbs up) or negative (thumbs down) rating, and then describe your feedback in detail under **More Suggestions**. Leave your email address if you would like us to contact you. Then click **Submit**.
 
