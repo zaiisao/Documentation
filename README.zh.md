@@ -15,7 +15,7 @@
 
 1. 在 Agora [开发者中心](http://docs.agora.io/)浏览文档时，可编辑的文档标题右侧会显示 **Edit** 按钮。点击该按钮打开 GitHub 上的源文件。
 
-   ![Edit 按钮](https://web-cdn.agora.io/docs-files/1601456043378)
+   ![Edit 按钮](https://web-cdn.agora.io/docs-files/1610526257257)
 
 2. 在 GitHub 页面右上角点击铅笔图标来编辑文档，如下图所示。如果该图标无法点击，你需要先登入 GitHub。
 
@@ -43,7 +43,7 @@ Agora 文档团队成员会尽快评审并合并你的 PR。
 
 1. 在文档页面的右下角，点击反馈按钮。
 
-   ![反馈按钮](https://web-cdn.agora.io/docs-files/1601456256173)
+   ![反馈按钮](https://web-cdn.agora.io/docs-files/1610526268084)
    
 2. 在弹窗中对文档进行评价，在**更多建议**中详细描述你的问题或建议。如果愿意和我们取得联系，可以填写你的电子邮箱地址。点击**提交**。
 
