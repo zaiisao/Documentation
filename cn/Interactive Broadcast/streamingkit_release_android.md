@@ -3,7 +3,7 @@
 title: Agora Streaming Kit 发版说明
 description: 
 platform: Android
-updatedAt: Fri Sep 11 2020 08:08:15 GMT+0800 (CST)
+updatedAt: Tue Feb 23 2021 06:57:33 GMT+0800 (CST)
 ---
 # Agora Streaming Kit 发版说明
 本文提供 Agora Streaming Kit 的发版说明。
