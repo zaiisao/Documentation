@@ -3,7 +3,7 @@
 title: Agora Streaming Kit 发版说明
 description: 
 platform: iOS
-updatedAt: Mon Nov 16 2020 10:26:42 GMT+0800 (CST)
+updatedAt: Tue Feb 23 2021 06:55:52 GMT+0800 (CST)
 ---
 # Agora Streaming Kit 发版说明
 本文提供 Agora Streaming Kit 的发版说明。
