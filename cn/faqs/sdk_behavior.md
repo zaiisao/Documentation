@@ -3,12 +3,12 @@
 title: SDK 是否支持断线重连机制？
 description: SDK 对断网、杀进程的处理
 platform: Android,iOS,macOS,Windows,Unity,Cocos,Cocos Creator,electron
-updatedAt: Tue Feb 23 2021 16:59:24 GMT+0800 (CST)
+updatedAt: Tue Feb 23 2021 17:02:27 GMT+0800 (CST)
 ---
 # SDK 是否支持断线重连机制？
 在 app 断网或进程被杀时，SDK 会自动启用断线重连机制。本文展示 Agora SDK 在这两个情况下连接状态的处理逻辑。
 
-<div class=="alert note">本文不适用于 Agora RTC Web SDK。</div>
+<div class="alert note">本文不适用于 Agora RTC Web SDK。</div>
 
 ## 断网
 
