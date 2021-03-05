@@ -3,7 +3,7 @@
 title: 发版说明
 description: 
 platform: All Platforms
-updatedAt: Sun Jan 10 2021 14:46:38 GMT+0800 (CST)
+updatedAt: Fri Mar 05 2021 10:46:09 GMT+0800 (CST)
 ---
 # 发版说明
 本页提供 Agora 下一代 RTC SDK 的发版说明。
