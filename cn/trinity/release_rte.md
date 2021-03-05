@@ -3,10 +3,54 @@
 title: 发版说明
 description: 
 platform: All Platforms
-updatedAt: Fri Mar 05 2021 10:46:09 GMT+0800 (CST)
+updatedAt: Fri Mar 05 2021 10:46:25 GMT+0800 (CST)
 ---
 # 发版说明
 本页提供 Agora 下一代 RTC SDK 的发版说明。
+
+## v3.3.202
+
+该版本于 2021 年 3 月 5 日发布。
+
+#### 新增特性
+
+**1. String 型用户名**
+
+很多 App 使用 String 类型的用户名。为降低开发成本，Agora 新增支持 String 型的 User Account，方便用户通过如下接口直接使用 App 账号加入 Agora 频道：
+
+- `registerLocalUserAccount`
+- `joinChannelWithUserAccount`
+
+对于其他接口，Agora 沿用 Int 型的 UID。Agora Engine 会维护 UID 和 User Account 映射表，你可以随时通过 User Account 获取 UID，或者通过 UID 获取 User Account，无需自己维护映射表。
+
+为保证通信质量，频道内所有用户需使用同一数据类型的用户名，即频道内的所有用户名应同为 Int 型或同为 String 型。
+
+<div class="alert note"><ul><li>同一频道内，Int 型的 UID 和 String 型的 User Account 不可混用。</li><li>如果你的频道内有不支持 String 型 User Account 的用户，则只能使用 Int 型的 UID。</li><li>如果使用 String 型的 User Account，请确保你的服务端用户生成 Token 的脚本已升级至最新版本。</li></ul></div>
+
+**2. 音频设备测试**
+
+为方便你在通话前测试音频设备是否正常工作，该版本新增如下方法：
+
+- `startRecordingDeviceTest`: 开始音频采集设备测试。
+- `startPlaybackDeviceTest`: 开始音频播放设备测试。
+- `startAudioDeviceLoopbackTest`: 开始音频采集设备和播放设备测试。
+
+#### 改进
+
+**1. 端到端网络延迟**
+
+该版本新增在 RemoteAudioStats 中新增 networkTransportDelay，以报告发送端到接收端的网络延迟（毫秒）。
+
+![](https://web-cdn.agora.io/docs-files/1565595137741)
+
+**2. 发布和订阅状态改变回调**
+
+该版本新增以下回调方便你了解音视频流当前的发布及订阅状态，有助于订阅和发布相关的数据统计：
+
+- `onAudioPublishStateChanged`: 音频发布状态发生改变。
+- `onVideoPublishStateChanged`: 视频发布状态发生改变。
+- `onAudioSubscribeStateChanged`: 音频订阅状态发生改变。
+- `onVideoSubscribeStateChanged`: 视频订阅状态发生改变。
 
 ## v3.1.226
 
