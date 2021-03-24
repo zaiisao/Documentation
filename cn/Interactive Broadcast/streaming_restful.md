@@ -3,7 +3,7 @@
 title: 推流 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Wed Mar 24 2021 11:05:32 GMT+0800 (CST)
+updatedAt: Wed Mar 24 2021 11:16:40 GMT+0800 (CST)
 ---
 # 推流 RESTful API
 <div class="alert note"><p>本服务在 2021 年 5 月 1 日前免费。</p>
@@ -15,61 +15,63 @@ updatedAt: Wed Mar 24 2021 11:05:32 GMT+0800 (CST)
 
 你可以使用推流 RESTful API 将 Agora 频道内的音视频流由 Agora 私有协议转换为标准协议（如 RTMP），然后推到 CDN（Content Delivery Network）。这个过程相当于 Agora 通过一个 Converter 将音视频流处理后输出并推到 CDN。
 
-你可以通过如下 RESTful API 控制 Converter：
+## 工作原理
+
+你可以通过如下方法控制 Converter：
 
 - `Create`：为指定的项目创建一个 Converter，并设置相关配置。频道内用户音视频流会按照指定的配置经过 Converter 处理后输出推到 CDN。
 - `Delete`：销毁指定的 Converter。销毁该 Converter 后，此频道内用户音视频流将不再经过 Converter 处理并输出推到 CDN。
 - `Update`：更新指定的 Converter 配置。
 
-Converter 中包含如下字段：
-- `name`: String 型字段。Converter 的名字。
-- `transcodeOptions`: JSON Object 型字段。Converter 的转码配置。
-    - `rtcChannel`: String 型字段。Agora 频道名称。
-    - `audioOptions`: JSON Object 型字段。Converter 的音频转码配置。
-        - `codecProfile`: String 型字段。Converter 输出的音频编解码器。
-        - `sampleRate`: Number 型字段。Converter 输出的音频编码采样率 (Hz)。
-        - `bitrate`: Number 型字段。Converter 输出的音频编码码率 (Kbps)。
-        - `audioChannels`: Number 型字段。Converter 输出的音频声道数。
-        - `rtcStreamUids`: JSON Array 型字段。参与混音的用户 UID/Account。
-    - `videoOptions`: JSON Object 型字段。Converter 的视频转码配置。
-        - `canvas`: JSON Object 型字段。视频画布。
-            - `width`: Number 型字段。画布的宽度 (pixel)。
-            - `height`: Number 型字段。画布的高度 (pixel)。
-            - `color`: Number 型字段。画布的背景色。RGB 颜色值，以十进制数表示。如 255 代表蓝色。
-        - `layout`: JSON Array 型字段。画布上视频画面的内容描述。支持两种元素：
-            - RtcStreamView **元素**。画布上各用户的视频画面。包含如下**字段**：
-                - `rtcStreamUid`: Number 型字段。视频流所属用户的 UID。
-                - `rtcStreamAccount`: String 型字段。视频流所属用户的 Account。
-                - `region`: JSON Object 型字段。用户视频画面在画布上的显示区域。
-                    - `xPos`: Number 型字段。画面在画布上的 x 坐标 (pixel)。以画布左上角为原点，x 坐标为画面左上角相对于原点的横向位移。
-                    - `yPos`: Number 型字段。画面在画布上的 y 坐标 (pixel)。以画布左上角为原点，y 坐标为画面左上角相对于原点的纵向位移。
-                    - `zIndex`: Number 型字段。画面的图层编号。取值范围为 [0,100]。`0` 代表最下层的图层。`100` 代表最上层的图层。
-                    - `width`: Number 型字段。画面的宽度 (pixel)。
-                    - `height`: Number 型字段。画面的高度 (pixel)。
-                - `placeholderImageUrl`: String 型字段。替代图片的 HTTP(s) URL。
-            - ImageView **元素**。画布上的视频图片，可用于当水印。包含如下**字段**：
-                - `imageUrl`: String 型字段。图片的 HTTP(S) URL。
-                - `region`: JSON Object 型字段。图片在画布上的显示区域。
-                    - `xPos`: Number 型字段。图片在画布上的 x 坐标 (pixel)。以画布左上角为原点，x 坐标为图片左上角相对于原点的横向位移。
-                    - `yPos`: Number 型字段。图片在画布上的 y 坐标 (pixel)。以画布左上角为原点，y 坐标为图片左上角相对于原点的纵向位移。
-                    - `zIndex`: Number 型字段。图片的图层编号。取值范围为 [0,100]。`0` 代表最下层的图层。`100` 代表最上层的图层。
-                    - `width`: Number 型字段。图片的宽度 (pixel)。
-                    - `height`: Number 型字段。图片的高度 (pixel)。
-        - `bitrate`: Number 型字段。输出视频的编码码率 (Kbps)。
-        - `frameRate`: Number 型字段。输出视频的编码帧率 (fps)。
-        - `codecProfile`: String 型字段。输出视频的编码规格。
-        - `seiExtraInfo`: String 型字段。输出视频中携带的用户 SEI 信息。用于向 CDN 发送用户自定义的 SEI 信息。长度限制 4096 字节。默认为空。
-- `rtmpUrl`: String 型字段。CDN 推流地址。
-- `idleTimeOut`: Number 型字段。Converter 处于空闲状态的最大时长（秒）。空闲指 Converter 处理的音视频流所对应的所有用户均已离开频道。取值范围为 5 到 600。默认值为 300。取值超出范围会报错。
-- `id`: String 型字段。Converter 的 ID。它是 Agora 服务器生成的一个 UUID（通用唯一识别码），标识一个已创建的 Converter。
-- `createTs`: Number 型字段。创建 Converter 时的 Unix 时间戳（秒）。
-- `updateTs`: Number 型字段。最近一次更新 Converter 配置时的 Unix 时间戳（秒）。
-- `state`: String 型字段。Converter 的运行状态：
-    - `idle`: 推流未开始或已结束。
-    - `connecting`: 正在连接 Agora 推流服务器和 CDN 服务器。
-    - `running`: 正在进行推流。
-    - `recovering`: 正在恢复推流。
-    - `failure`: 推流失败。
+在推流 RESTful API 中，Converter 通过 `converter` 字段设置，字段结构如图所示：
+字段含义详见下表：
+
+| 字段 | 类型 | 描述  |
+|---|----|---|
+|id   | String | Converter 的 ID。它是 Agora 服务器生成的一个 UUID（通用唯一识别码），标识一个已创建的 Converter。|
+|name  | String，可选| Converter 的名字。长度必须在 64 个字符以内，支持的字符集范围为：<li>所有小写英文字母（a-z）</li><li>所有大写英文字母（A-Z）</li><li>数字 0-9</li><li>"-", "_"</li>不传值时该字段为空。同一时间，一个项目下可以有多个 `name` 为空的 Converter。同一时间，一个项目下不允许出现重名的 Converter，否则在尝试创建同名的 Converter 时会收到响应状态码 409(Conflict)。<div class="alert note">为避免重复创建多个 Converter 重复推流，请使用 name 字段管理指定项目下的 Converter。Agora 推荐你以“频道名（rtcChannel）”和 “Converter 特性”组合来给 `name` 赋值。如 `show68_horizontal` 和 `show68_vertical`，分别代表在频道 `show68` 中创建的用户画面为水平布局和和垂直布局的 Converter。</div>|
+|transcodeOptions| JSON Object| Converter 的转码配置。|
+|transcodeOptions.rtcChannel|String|Agora 频道名称。|
+|transcodeOptions.audioOptions|JSON Object|Converter 的音频转码配置。|
+|transcodeOptions.audioOptions.codecProfile|String|Converter 输出的音频编解码器。|
+|transcodeOptions.audioOptions.sampleRate|Number|Converter 输出的音频编码采样率 (Hz)。|
+|transcodeOptions.audioOptions.bitrate|Number|Converter 输出的音频编码码率 (Kbps)。|
+|transcodeOptions.audioOptions.audioChannels|Number| Converter 输出的音频声道数。|
+|transcodeOptions.audioOptions.rtcStreamUids|JSON Array|参与混音的用户 UID/Account。|
+|transcodeOptions.videoOptions|JSON Object|Converter 的视频转码配置。|
+|transcodeOptions.videoOptions.canvas|JSON Object |视频画布。|
+|transcodeOptions.videoOptions.canvas.width|Number|画布的宽度 (pixel)。|
+|transcodeOptions.videoOptions.canvas.height|Number|画布的高度 (pixel)。|
+|transcodeOptions.videoOptions.canvas.color|Number|画布的背景色。RGB 颜色值，以十进制数表示。如 255 代表蓝色。|
+|transcodeOptions.videoOptions.layout|JSON Array|画布上视频画面的内容描述。支持 RtcStreamView 和 ImageView 两种元素。</li>|
+|transcodeOptions.videoOptions.layout.RtcStreamView 元素|无|画布上各用户的视频画面。|
+|`transcodeOptions.videoOptions.layout.RtcStreamView 元素.rtcStreamUid|Number|视频流所属用户的 UID。|
+|transcodeOptions.videoOptions.layout.RtcStreamView 元素.rtcStreamAccount|String|视频流所属用户的 Account。|
+|transcodeOptions.videoOptions.layout.RtcStreamView 元素.region|JSON Object|用户视频画面在画布上的显示区域。|
+|transcodeOptions.videoOptions.layout.RtcStreamView 元素.region.xPos|Number|画面在画布上的 x 坐标 (pixel)。以画布左上角为原点，x 坐标为画面左上角相对于原点的横向位移。|
+|transcodeOptions.videoOptions.layout.RtcStreamView 元素.region.yPos|Number|画面在画布上的 y 坐标 (pixel)。以画布左上角为原点，y 坐标为画面左上角相对于原点的纵向位移。|
+|transcodeOptions.videoOptions.layout.RtcStreamView 元素.region.zIndex|Number|画面的图层编号。取值范围为 [0,100]。`0` 代表最下层的图层。`100` 代表最上层的图层。|
+|transcodeOptions.videoOptions.layout.RtcStreamView 元素.region.width|Number|画面的宽度 (pixel)。|
+|transcodeOptions.videoOptions.layout.RtcStreamView 元素.region.height|Number| 画面的高度 (pixel)。 |
+|transcodeOptions.videoOptions.layout.RtcStreamView 元素.placeholderImageUrl|String|替代图片的 HTTP(s) URL。|
+|transcodeOptions.videoOptions.layout.ImageView 元素|无| 画布上的视频图片，可用于当水印。 |
+|transcodeOptions.videoOptions.layout.ImageView 元素.imageUrl|String| 图片的 HTTP(S) URL。 |
+|transcodeOptions.videoOptions.layout.ImageView 元素.region|JSON Object| 图片在画布上的显示区域。|
+|transcodeOptions.videoOptions.layout.ImageView 元素.region.xPos|Number|图片在画布上的 x 坐标 (pixel)。以画布左上角为原点，x 坐标为图片左上角相对于原点的横向位移。|
+|transcodeOptions.videoOptions.layout.ImageView 元素.region.yPos|Number|图片在画布上的 y 坐标 (pixel)。以画布左上角为原点，y 坐标为图片左上角相对于原点的纵向位移。|
+|transcodeOptions.videoOptions.layout.ImageView 元素.region.zIndex|Number|图片的图层编号。取值范围为 [0,100]。`0` 代表最下层的图层。`100` 代表最上层的图层。|
+|transcodeOptions.videoOptions.layout.ImageView 元素.region.width|Number|图片的宽度 (pixel)。|
+|transcodeOptions.videoOptions.layout.ImageView 元素.region.height|Number|图片的高度 (pixel)。|
+|transcodeOptions.videoOptions.bitrate|Number|输出视频的编码码率 (Kbps)。|
+|transcodeOptions.videoOptions.frameRate|Number| 输出视频的编码帧率 (fps)。|
+|transcodeOptions.videoOptions.codecProfile|String|输出视频的编码规格。|
+|transcodeOptions.videoOptions.seiExtraInfo|String|输出视频中携带的用户 SEI 信息。用于向 CDN 发送用户自定义的 SEI 信息。长度限制 4096 字节。默认为空。|
+|rtmpUrl|String|CDN 推流地址。|
+|idleTimeOut|Number|Converter 处于空闲状态的最大时长（秒）。空闲指 Converter 处理的音视频流所对应的所有用户均已离开频道。取值范围为 5 到 600。默认值为 300。取值超出范围会报错。|
+|createTs|Number|创建 Converter 时的 Unix 时间戳（秒）。|
+|updateTs|Number|最近一次更新 Converter 配置时的 Unix 时间戳（秒）。|
+|state|String|Converter 的运行状态：<li>`idle`: 推流未开始或已结束。</li><li>`connecting`: 正在连接 Agora 推流服务器和 CDN 服务器。</li><li>`running`: 正在进行推流。</li><li>`recovering`: 正在恢复推流。</li><li>`failure`: 推流失败。</li>|
+
 
 一个完整的 Converter 示例如下：
 
@@ -221,78 +223,50 @@ POST https://api.agora.io/v1/projects/<appId>/rtmp-converters?regionHintIp={regi
 ```
 
 <a name="mean"></a>
-请求 Body 为 JSON Object 类型的 `converter` 字段，包含如下字段：
-
-- `name`: String 型可选字段。Converter 的名字。长度必须在 64 个字符以内，支持的字符集范围为：
-    - 所有小写英文字母（a-z）
-    - 所有大写英文字母（A-Z）
-    - 数字 0-9
-    - "-", "_"
-
-    不传值时该字段为空。同一时间，一个项目下可以有多个 `name` 为空的 Converter。同一时间，一个项目下不允许出现重名的 Converter，否则在尝试创建同名的 Converter 时会收到响应状态码 `409(Conflict)`。
-
-    > 为避免重复创建多个 Converter 重复推流，请使用 `name` 字段管理指定项目下的 Converter。Agora 推荐你以“频道名（`rtcChannel`）”和 “Converter 特性”组合来给 `name` 赋值。如 `show68_horizontal` 和 `show68_vertical`，分别代表在频道 `show68` 中创建的用户画面为水平布局和和垂直布局的 Converter。
-
-- `transcodeOptions`: JSON Object 型必填字段。Converter 的转码配置。
-    - `rtcChannel`: String 型必填字段。Agora 频道名称。即 Converter 处理的流所属的频道。字符串长度必须在 64 字节以内，支持以下字符集（共 89 个字符）：
-        - 所有小写英文字母（a-z）
-        - 所有大写英文字母（A-Z）
-        - 数字 0-9
-        - 空格
-        - "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "\|", "~", ","
-    - `audioOptions`: JSON Object 型可选字段。Converter 的音频转码配置。
-        - `codecProfile`: String 型可选字段。Converter 输出的音频编解码器。支持如下值：
-            - `LC-AAC`（默认值）: MPEG-4 AAC LC。
-            - `HE-AAC`: High-Efficiency AAC。
-        - `sampleRate`: Number 型可选字段。Converter 输出的音频编码采样率 (Hz)，可填 `32000`，`44100` 或 `48000`（默认值）。
-        - `bitrate`: Number 型可选字段。Converter 输出的音频编码码率 (Kbps)，取值范围为 [32,128]。默认值为 48。如果音频编解码器为 LC-AAC，推荐音频编码码率取值范围为 [32, 112]。如果音频编解码器为 HE-AAC，推荐音频编码码率取值范围为 [40, 96]。
-        - `audioChannels`: Number 型可选字段。Converter 输出的音频声道数，可填 `1`（默认值） 或 `2`。
-        - `rtcStreamUids`: JSON Array 型可选字段。参与混音的用户 UID/Account。默认值为空数组，代表 Agora 不对任何用户的音频流进行混音。
-
-    > - 当 `converter.transcodeOptions` 中无 `audioOptions` 字段且有 `videoOptions` 字段时，Converter 输出纯视频流。
-    > - 当 `converter.transcodeOptions.audioOptions` 字段中无 `rtcStreamUids` 字段时，Agora 会将频道内所有用户的音频流进行混音并通过 Converter 输出混音后的音频流。
-    > - 当 `converter.transcodeOptions.audioOptions` 字段中有 `rtcStreamUids` 字段时，Agora 会将指定用户的音频流进行混音并通过 Converter 输出混音后的音频流。
-    - `videoOptions`: JSON Object 型可选字段。Converter 的视频转码配置。
-        - `canvas`: JSON Object 型必填字段。视频画布。
-            - `width`: Number 型必填字段。画布的宽度 (pixel)。取值范围为 [66,1920]。
-            - `height`: Number 型必填字段。画布的高度 (pixel)。取值范围为 [66,1920]。
-            - `color`: Number 型可选字段。画布的背景色。RGB 颜色值，以十进制数表示。如 255 代表蓝色。取值范围为 [0,16777215]。默认值为 0，即黑色。
-        - `layout`: JSON Array 型必填字段。画布上视频画面的内容描述。支持两种元素：
-            - RtcStreamView **元素**。画布上各用户的视频画面。包含如下**字段**：
-
-                > Agora 支持频道内用户名为 Number 型的 UID 或 String 型的 Account。如果使用 String 型 Account，请确保已经阅读[如何使用 String 型用户名](https://docs.agora.io/cn/faqs/string)。
-
-                - `rtcStreamUid`: Number 型字段。请在 `rtcStreamUid` 和 `rtcStreamAccount` 中选择一个使用。视频流所属用户的 UID。取值范围为 0 到（2<sup>32</sup>-1）。取值 0 时，Agora 自动为用户分配一个 UID。
-                - `rtcStreamAccount`: String 型字段。请在 `rtcStreamUid` 和 `rtcStreamAccount` 中选择一个使用。视频流所属用户的 Account。该字段不能超过 255 字节，也不能为空字符串。支持的字符集范围（共 89 个字符）如下：
-                    - 所有小写英文字母（a-z）
-                    - 所有大写英文字母（A-Z）
-                    - 数字 0-9
-                    - 空格
-                    - "!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "\|", "~", ","
-                - `region`: JSON Object 型必填字段。用户视频画面在画布上的显示区域。超出画布的视频画面会被裁剪，无法显示。
-                    - `xPos`: Number 型必填字段。画面在画布上的 x 坐标 (pixel)。以画布左上角为原点，x 坐标为画面左上角相对于原点的横向位移。
-                    - `yPos`: Number 型必填字段。画面在画布上的 y 坐标 (pixel)。以画布左上角为原点，y 坐标为画面左上角相对于原点的纵向位移。
-                    - `zIndex`: Number 型必填字段。画面的图层编号。取值范围为 [0,100]。`0` 代表最下层的图层。`100` 代表最上层的图层。
-                    - `width`: Number 型必填字段。画面的宽度 (pixel)。
-                    - `height`: Number 型必填字段。画面的高度 (pixel)。
-                - `placeholderImageUrl`: String 型可选字段。替代图片的 HTTP(S) URL。支持 JPG 和 PNG 格式的图片。当频道内用户不发布视频流时，如果设置了该字段，替代图片会替代该用户的视频画面，否则会显示该用户的最后一帧视频。
-            - ImageView **元素**。画布上的视频图片，可用于当水印。包含如下**字段**：
-                - `imageUrl`: String 型必填字段。图片的 HTTP(S) URL。支持 JPG 和 PNG 格式的图片。
-                - `region`: JSON Object 型必填字段。图片在画布上的显示区域。超出画布的图片会被裁剪，无法显示。
-                    - `xPos`: Number 型必填字段。图片在画布上的 x 坐标 (pixel)。以画布左上角为原点，x 坐标为图片左上角相对于原点的横向位移。
-                    - `yPos`: Number 型必填字段。图片在画布上的 y 坐标 (pixel)。以画布左上角为原点，y 坐标为图片左上角相对于原点的纵向位移。
-                    - `zIndex`: Number 型必填字段。图片的图层编号。取值范围为 [0,100]。`0` 代表最下层的图层。`100` 代表最上层的图层。
-                    - `width`: Number 型必填字段。图片的宽度 (pixel)。
-                    - `height`: Number 型必填字段。图片的高度 (pixel)。
-        - `bitrate`: Number 型必填字段。输出视频的编码码率 (Kbps)。取值范围为 [1,10000]。详见[常用视频属性](https://docs-preview.agoralab.co/cn/rtmp-converter/rtmp_push_cdn_android?platform=Android#常用视频属性)。
-        - `frameRate`: Number 型可选字段。输出视频的编码帧率 (fps)。取值范围为 [1,30]。默认值为 15。详见[常用视频属性](https://docs-preview.agoralab.co/cn/rtmp-converter/rtmp_push_cdn_android?platform=Android#常用视频属性)。
-        - `codecProfile`: String 型可选字段。输出视频的编码规格。支持如下值：
-            - `high`（默认值）: High 级别的视频编码规格，一般用于广播及视频碟片存储，高清电视。
-            - `baseline`: Baseline 级别的视频编码规格，一般用于低阶或需要额外容错的应用，比如视频通话、手机视频等。
-            - `main`: Main 级别的视频编码规格，一般用于主流消费类电子产品，如 mp4、便携的视频播放器、PSP 和 iPad 等。
-        - `seiExtraInfo`: String 型可选字段。输出视频中携带的用户 SEI 信息。用于向 CDN 发送用户自定义的 SEI 信息。长度限制 4096 字节。默认为空。详见[声网 SEI 规范](https://docs.agora.io/cn/faq/sei?_ga=2.96778972.2136046418.1596424964-2007697402.1585210498#声网-sei-规范)。
-- `rtmpUrl`: String 型必填字段。CDN 推流地址。必须为有效的 RTMP 地址，且长度在 1024 个字符以内。
-- `idleTimeOut`: Number 型可选字段。Converter 处于空闲状态的最大时长（秒）。空闲指 Converter 处理的音视频流所对应的所有用户均已离开频道。空闲状态超过设置的 `idleTimeOut` 后，Converter 会自动销毁。
+请求 Body 为 JSON Object 类型的 `converter` 字段，字段结构如图所示：
+字段含义详见下表：
+<style> table th:first-of-type {     width: 100px; } th:third-of-type {     width: 150px; }</style>
+| 字段 | 类型 | 描述  |
+|---|----|---|
+|name | String（可选） | Converter 的名字。长度必须在 64 个字符以内，支持的字符集范围为：<li>所有小写英文字母（a-z）</li><li>所有大写英文字母（A-Z）</li><li>数字 0-9</li><li>"-", "_"</li>不传值时该字段为空。同一时间，一个项目下可以有多个 `name` 为空的 Converter。同一时间，一个项目下不允许出现重名的 Converter，否则在尝试创建同名的 Converter 时会收到响应状态码 `409(Conflict)`。<div class="alert note">为避免重复创建多个 Converter 重复推流，请使用 `name` 字段管理指定项目下的 Converter。Agora 推荐你以“频道名（`rtcChannel`）”和 “Converter 特性”组合来给 `name` 赋值。如 `show68_horizontal` 和 `show68_vertical`，分别代表在频道 `show68` 中创建的用户画面为水平布局和和垂直布局的 Converter。</div>|
+|transcodeOptions| JSON Object（必填）| Converter 的转码配置。<div class="alert note"><li>当 `converter.transcodeOptions` 中无 `audioOptions` 字段且有 `videoOptions` 字段时，Converter 输出纯视频流。</li><li>当 `converter.transcodeOptions.audioOptions` 字段中无 `rtcStreamUids` 字段时，Agora 会将频道内所有用户的音频流进行混音并通过 Converter 输出混音后的音频流。</li><li>当 `converter.transcodeOptions.audioOptions` 字段中有 `rtcStreamUids` 字段时，Agora 会将指定用户的音频流进行混音并通过 Converter 输出混音后的音频流。</li></div>|
+|transcodeOptions.rtcChannel|String（必填）|Agora 频道名称。即 Converter 处理的流所属的频道。字符串长度必须在 64 字节以内，支持以下字符集（共 89 个字符）：<li>所有小写英文字母（a-z）</li><li>所有大写英文字母（A-Z）</li><li>数字 0-9</li><li>空格</li><li>"!", "#", "$", "%", "&", "(", ")", "+", "-", ":", ";", "<", "=", ".", ">", "?", "@", "[", "]", "^", "_", " {", "}", "\|", "~", ","</li>|
+|transcodeOptions.audioOptions|JSON Object（可选）|Converter 的音频转码配置。|
+|transcodeOptions.audioOptions.codecProfile|String（可选）|Converter 输出的音频编解码器。支持如下值：<li>`LC-AAC`（默认值）: MPEG-4 AAC LC。</li><li>`HE-AAC`: High-Efficiency AAC。</li>|
+|transcodeOptions.audioOptions.sampleRate|Number（可选）|Converter 输出的音频编码采样率 (Hz)，可填 `32000`，`44100` 或 `48000`（默认值）。|
+|transcodeOptions.audioOptions.bitrate|Number（可选）|Converter 输出的音频编码码率 (Kbps)取值范围为 [32,128]。默认值为 48。如果音频编解码器为 LC-AAC，推荐音频编码码率取值范围为 [32, 112]。如果音频编解码器为 HE-AAC，推荐音频编码码率取值范围为 [40, 96]。|
+|transcodeOptions.audioOptions.audioChannels|Number（可选）| Converter 输出的音频声道数，可填 `1`（默认值） 或 `2`。|
+|transcodeOptions.audioOptions.rtcStreamUids|JSON Array（可选）|参与混音的用户 UID/Account。默认值为空数组，代表 Agora 不对任何用户的音频流进行混音。|
+|transcodeOptions.videoOptions|JSON Object（可选）|Converter 的视频转码配置。|
+|transcodeOptions.videoOptions.canvas|JSON Object（必填）|视频画布。|
+|transcodeOptions.videoOptions.canvas.width|Number（必填）|画布的宽度 (pixel)。取值范围为 [66,1920]。|
+|transcodeOptions.videoOptions.canvas.height|Number（必填）|画布的高度 (pixel)。取值范围为 [66,1920]。|
+|transcodeOptions.videoOptions.canvas.color|Number（可选）|画布的背景色。RGB 颜色值，以十进制数表示。如 255 代表蓝色。取值范围为 [0,16777215]。默认值为 0，即黑色。|
+|transcodeOptions.videoOptions.layout|JSON Array（必填）|画布上视频画面的内容描述。支持 RtcStreamView 和 ImageView 两种元素。</li>|
+|transcodeOptions.videoOptions.layout.RtcStreamView 元素|无|画布上各用户的视频画面。<div class="alert note">Agora 支持频道内用户名为 Number 型的 UID 或 String 型的 Account。如果使用 String 型 Account，请确保已经阅读[如何使用 String 型用户名](https://docs.agora.io/cn/faqs/string)。</div>|
+|transcodeOptions.videoOptions.layout.RtcStreamView 元素.rtcStreamUid|Number|视频流所属用户的 UID。请在 `rtcStreamUid` 和 `rtcStreamAccount` 中选择一个使用。|
+|transcodeOptions.videoOptions.layout.RtcStreamView 元素.rtcStreamAccount|String|视频流所属用户的 Account。请在 `rtcStreamUid` 和 `rtcStreamAccount` 中选择一个使用。|
+|transcodeOptions.videoOptions.layout.RtcStreamView 元素.region|JSON Object（必填）|用户视频画面在画布上的显示区域。超出画布的视频画面会被裁剪，无法显示。|
+|transcodeOptions.videoOptions.layout.RtcStreamView 元素.region.xPos|Number（必填）|画面在画布上的 x 坐标 (pixel)。以画布左上角为原点，x 坐标为画面左上角相对于原点的横向位移。|
+|transcodeOptions.videoOptions.layout.RtcStreamView 元素.region.yPos|Number（必填）|画面在画布上的 y 坐标 (pixel)。以画布左上角为原点，y 坐标为画面左上角相对于原点的纵向位移。|
+|transcodeOptions.videoOptions.layout.RtcStreamView 元素.region.zIndex|Number（必填）|画面的图层编号。取值范围为 [0,100]。`0` 代表最下层的图层。`100` 代表最上层的图层。|
+|transcodeOptions.videoOptions.layout.RtcStreamView 元素.region.width|Number（必填）|画面的宽度 (pixel)。|
+|transcodeOptions.videoOptions.layout.RtcStreamView 元素.region.height|Number（必填）| 画面的高度 (pixel)。 |
+|transcodeOptions.videoOptions.layout.RtcStreamView 元素.placeholderImageUrl|String（必填）|替代图片的 HTTP(s) URL。支持 JPG 和 PNG 格式的图片。当频道内用户不发布视频流时，如果设置了该字段，替代图片会替代该用户的视频画面，否则会显示该用户的最后一帧视频。|
+|transcodeOptions.videoOptions.layout.ImageView 元素|无| 画布上的视频图片，可用于当水印。 |
+|transcodeOptions.videoOptions.layout.ImageView 元素.imageUrl|String（必填）| 图片的 HTTP(S) URL。支持 JPG 和 PNG 格式的图片。 |
+|transcodeOptions.videoOptions.layout.ImageView 元素.region|JSON Object（必填）| 图片在画布上的显示区域。超出画布的图片会被裁剪，无法显示。|
+|transcodeOptions.videoOptions.layout.ImageView 元素.region.xPos|Number（必填）|图片在画布上的 x 坐标 (pixel)。以画布左上角为原点，x 坐标为图片左上角相对于原点的横向位移。|
+|transcodeOptions.videoOptions.layout.ImageView 元素.region.yPos|Number（必填）|图片在画布上的 y 坐标 (pixel)。以画布左上角为原点，y 坐标为图片左上角相对于原点的纵向位移。|
+|transcodeOptions.videoOptions.layout.ImageView 元素.region.zIndex|Number（必填）|图片的图层编号。取值范围为 [0,100]。`0` 代表最下层的图层。`100` 代表最上层的图层。|
+|transcodeOptions.videoOptions.layout.ImageView 元素.region.width|Number（必填）|图片的宽度 (pixel)。|
+|transcodeOptions.videoOptions.layout.ImageView 元素.region.height|Number（必填）|图片的高度 (pixel)。|
+|transcodeOptions.videoOptions.bitrate|Number（必填）|输出视频的编码码率 (Kbps)。取值范围为 [1,10000]。详见[常用视频属性](https://docs-preview.agoralab.co/cn/rtmp-converter/rtmp_push_cdn_android?platform=Android#常用视频属性)。|
+|transcodeOptions.videoOptions.frameRate|Number（可选）| 输出视频的编码帧率 (fps)。取值范围为 [1,30]。默认值为 15。详见[常用视频属性](https://docs-preview.agoralab.co/cn/rtmp-converter/rtmp_push_cdn_android?platform=Android#常用视频属性)。|
+|transcodeOptions.videoOptions.codecProfile|String（可选）|输出视频的编码规格。输出视频的编码规格。支持如下值：<li>`high`（默认值）: High 级别的视频编码规格，一般用于广播及视频碟片存储，高清电视。</li><li>`baseline`: Baseline 级别的视频编码规格，一般用于低阶或需要额外容错的应用，比如视频通话、手机视频等。</li><li>`main`: Main 级别的视频编码规格，一般用于主流消费类电子产品，如 mp4、便携的视频播放器、PSP 和 iPad 等。</li>|
+|transcodeOptions.videoOptions.seiExtraInfo|String（可选）|输出视频中携带的用户 SEI 信息。用于向 CDN 发送用户自定义的 SEI 信息。长度限制 4096 字节。默认为空。详见[声网 SEI 规范](https://docs.agora.io/cn/faq/sei?_ga=2.96778972.2136046418.1596424964-2007697402.1585210498#声网-sei-规范)。|
+|rtmpUrl|String（必填）|CDN 推流地址。必须为有效的 RTMP 地址，且长度在 1024 个字符以内。|
+|idleTimeOut|Number（可选）|Converter 处于空闲状态的最大时长（秒）。空闲指 Converter 处理的音视频流所对应的所有用户均已离开频道。空闲状态超过设置的 `idleTimeOut` 后，Converter 会自动销毁。|
 
 ### HTTP 响应
 
@@ -320,19 +294,17 @@ POST https://api.agora.io/v1/projects/<appId>/rtmp-converters?regionHintIp={regi
 }
 ```
 
-如果状态码为 2XX，请求成功。Body 中包含如下字段：
+如果状态码为 2XX，请求成功。Body 中包含字段结构如图所示：
+字段含义详见下表：
 
-- `converter`: JSON Object 类型。包含如下字段：
-    - `id`: String 型字段。Converter 的 ID。它是 Agora 服务器生成的一个 UUID（通用唯一识别码），标识一个已创建的 Converter。
-    - `createTs`: Number 型字段。创建 Converter 时的 Unix 时间戳（秒）。
-    - `updateTs`: Number 型字段。最近一次更新 Converter 配置时的 Unix 时间戳（秒）。
-    - `state`: String 型字段。Converter 的运行状态：
-        - `idle`: 推流未开始或已结束。
-        - `connecting`: 正在连接 Agora 推流服务器和 CDN 服务器。
-        - `running`: 正在进行推流。
-        - `recovering`: 正在恢复推流。
-        - `failure`: 推流失败。
-- `fields`: String 型字段。JSON 编码方式的字段掩码，详见[谷歌 protobuf FieldMask 文档](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask)。用于描述返回的 `converter` 中包含的字段集合。在本示例中，`fields` 指定了 Agora 服务器返回 `converter` 字段中的 `id`，`createTs`，`updateTs` 和 `state` 字段子集。
+| 字段 | 类型 | 描述  |
+|---|----|---|
+|converter.id| String| Converter 的 ID。它是 Agora 服务器生成的一个 UUID（通用唯一识别码），标识一个已创建的 Converter。|
+|converter.createTs| Number| 创建 Converter 时的 Unix 时间戳（秒）。|
+|converter.updateTs| Number| 最近一次更新 Converter 配置时的 Unix 时间戳（秒）。|
+|converter.state| String| Converter 的运行状态：<li>`idle`: 推流未开始或已结束。</li><li>`connecting`: 正在连接 Agora 推流服务器和 CDN 服务器。</li><li>`running`: 正在进行推流。</li><li>`recovering`: 正在恢复推流。</li><li>`failure`: 推流失败。</li>|
+|fields| String| JSON 编码方式的字段掩码，详见[谷歌 protobuf FieldMask 文档](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask)。用于描述返回的 `converter` 中包含的字段集合。在本示例中，`fields` 指定了 Agora 服务器返回 `converter` 字段中的 `id`，`createTs`，`updateTs` 和 `state` 字段子集。|
+
 
 如果状态码不为 2XX，请求失败。Body 中包含 String 类型的 `message` 字段，描述失败的具体原因。
 
@@ -527,19 +499,17 @@ PATCH https://api.agora.io/v1/projects/<appId>/rtmp-converters/<converterId>?seq
 }
 ```
 
-如果状态码为 2XX，请求成功。Body 中包含如下字段：
+如果状态码为 2XX，请求成功。Body 中包含字段结构如图所示：
+字段含义详见下表：
 
-- `converter`: JSON Object 类型。包含如下字段：
-    - `id`: String 型字段。Converter 的 ID。它是 Agora 服务器生成的一个 UUID（通用唯一识别码），标识一个已创建的 Converter。
-    - `createTs`: Number 型字段。创建 Converter 时的 Unix 时间戳（秒）。
-    - `updateTs`: Number 型字段。最近一次更新 Converter 配置时的 Unix 时间戳（秒）。
-    - `state`: String 型字段。Converter 的运行状态：
-        - `idle`: 推流未开始或已结束。
-        - `connecting`: 正在连接 Agora 推流服务器和 CDN 服务器。
-        - `running`: 正在进行推流。
-        - `recovering`: 正在恢复推流。
-        - `failure`: 推流失败。
-- `fields`: String 型字段。JSON 编码方式的字段掩码，详见[谷歌 protobuf FieldMask 文档](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask)。用于描述返回的 `converter` 中包含的字段集合。在本示例中，`fields` 指定了 Agora 服务器返回 `converter` 字段中的 `id`，`createTs`，`updateTS` 和 `state` 字段子集。
+| 字段 | 类型 | 描述  |
+|---|----|---|
+|converter.id| String| Converter 的 ID。它是 Agora 服务器生成的一个 UUID（通用唯一识别码），标识一个已创建的 Converter。|
+|converter.createTs| Number| 创建 Converter 时的 Unix 时间戳（秒）。|
+|converter.updateTs| Number| 最近一次更新 Converter 配置时的 Unix 时间戳（秒）。|
+|converter.state| String| Converter 的运行状态：<li>`idle`: 推流未开始或已结束。</li><li>`connecting`: 正在连接 Agora 推流服务器和 CDN 服务器。</li><li>`running`: 正在进行推流。</li><li>`recovering`: 正在恢复推流。</li><li>`failure`: 推流失败。</li>|
+|fields| String| JSON 编码方式的字段掩码，详见[谷歌 protobuf FieldMask 文档](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask)。用于描述返回的 `converter` 中包含的字段集合。在本示例中，`fields` 指定了 Agora 服务器返回 `converter` 字段中的 `id`，`createTs`，`updateTs` 和 `state` 字段子集。|
+
 
 如果状态码不为 2XX，请求失败。Body 中包含 String 类型的 `message` 字段，描述失败的具体原因。
 
