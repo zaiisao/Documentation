@@ -3,10 +3,26 @@
 title: 发版说明
 description: 
 platform: All Platforms
-updatedAt: Thu Mar 25 2021 10:05:08 GMT+0800 (CST)
+updatedAt: Thu Mar 25 2021 10:05:14 GMT+0800 (CST)
 ---
 # 发版说明
 本页提供 Agora 下一代 RTC SDK 的发版说明。
+
+## 3.3.204
+
+该版本于 2021 年 3 月 25 日发布。
+
+#### 新增特性
+
+**屏幕共享**
+
+为方便开发者在 Android 平台上实现屏幕共享，该版本新增 `startScreenCapture` 方法。你可以调用该方法，并使用 Android 系统原生的 `MediaProjection` 开启全屏共享。
+
+#### 改进
+
+**离开频道（高级选项）**
+
+为防止用户离开频道时音效播放被打断，该版本在 `LeaveChannelOptions` 结构体中新增 `stopAllEffect` 成员。你可以通过该成员设置是否在用户离开频道时停止播放音效。
 
 ## v3.3.202
 
