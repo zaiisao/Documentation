@@ -3,7 +3,7 @@
 title: 推流 RESTful API
 description: 
 platform: All Platforms
-updatedAt: Tue Mar 30 2021 02:43:59 GMT+0800 (CST)
+updatedAt: Tue Mar 30 2021 02:44:25 GMT+0800 (CST)
 ---
 # 推流 RESTful API
 <div class="alert note"><p>本服务在 2021 年 5 月 1 日前免费。</p>
@@ -225,7 +225,7 @@ POST https://api.agora.io/v1/projects/<appId>/rtmp-converters?regionHintIp={regi
 <a name="mean"></a>
 请求 Body 为 JSON Object 类型的 `converter` 字段，字段结构如图所示：
 字段含义详见下表：
-<style> table th:first-of-type {     width: 100px; } th:third-of-type {     width: 150px; }</style>
+<style> table th:first-of-type {     width: 80px; } th:third-of-type {     width: 80px; }</style>
 | 字段 | 类型 | 描述  |
 |---|----|---|
 |name | String（可选） | Converter 的名字。长度必须在 64 个字符以内，支持的字符集范围为：<li>所有小写英文字母（a-z）</li><li>所有大写英文字母（A-Z）</li><li>数字 0-9</li><li>"-", "_"</li>不传值时该字段为空。同一时间，一个项目下可以有多个 `name` 为空的 Converter。同一时间，一个项目下不允许出现重名的 Converter，否则在尝试创建同名的 Converter 时会收到响应状态码 `409(Conflict)`。<div class="alert note">为避免重复创建多个 Converter 重复推流，请使用 `name` 字段管理指定项目下的 Converter。Agora 推荐你以“频道名（`rtcChannel`）”和 “Converter 特性”组合来给 `name` 赋值。如 `show68_horizontal` 和 `show68_vertical`，分别代表在频道 `show68` 中创建的用户画面为水平布局和和垂直布局的 Converter。</div>|
