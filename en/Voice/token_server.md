@@ -180,7 +180,7 @@ Before proceeding, ensure that you have installed the latest version of Golang.
 <details>
 	<summary><font color="#3ab7f8">Ruby</font></summary>
 Before proceeding, ensure that you have installed Ruby v1.9 or later. Run the following command to check your current Ruby version:
-	<pre><code>ruby -version</code></pre>
+	<pre><code>ruby --version</code></pre>
 	<ol>
 		<li>Download or clone the <a href="https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey">AgoraDynamicKey</a> repository.</li>
 		<li>Open the <code>AgoraDynamicKey/ruby/sample/rtc_token_builder_sample.rb</code> file, replace the value of <code>appID</code>, <code>appCertificate</code>, <code>channelName</code>, and <code>uid</code> with your own, and comment out the code snippets of <code>buildTokenWithUserAccount</code>.</li>
